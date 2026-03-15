@@ -43,41 +43,14 @@ export default function HomePage() {
 
   // ─── Login screen ───────────────────────────────────────────────────────────
   if (!student) {
-    const stageCards = [
-      { emoji: "🌾", name: "Ordängen",          label: "Åk 1–3",    color: "from-sang-600 to-sang-800" },
-      { emoji: "🌲", name: "Berättelseskogen",   label: "Åk 4–6",    color: "from-skog-700 to-skog-900" },
-      { emoji: "🌊", name: "Texthavet",          label: "Åk 7–9",    color: "from-hav-600 to-hav-900" },
-      { emoji: "🏰", name: "Skrivakademin",      label: "Gymnasiet",  color: "from-torn-700 to-torn-900" },
-    ];
-
     return (
       <div
-        className="min-h-screen flex items-center justify-center p-4 gap-6"
+        className="min-h-screen flex items-center justify-center p-4"
         style={{
           background: "linear-gradient(135deg, #fed7aa 0%, #fef3c7 30%, #fde68a 60%, #d9f99d 100%)"
         }}
       >
-        {/* Left stage cards */}
-        <div className="hidden lg:flex flex-col gap-4 w-64 xl:w-72 flex-shrink-0">
-          {stageCards.slice(0, 2).map((s, i) => (
-            <div
-              key={s.name}
-              className={`rounded-3xl overflow-hidden aspect-[4/3] relative border-3 border-white/50 cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-xl bg-gradient-to-br ${s.color}`}
-              style={{
-                boxShadow: "0 6px 0 0 rgba(249, 115, 22, 0.2), 0 10px 20px -4px rgba(249, 115, 22, 0.15)",
-                animation: `float 3s ease-in-out infinite ${i * 0.5}s`
-              }}
-            >
-              <div className="absolute inset-0 flex flex-col justify-end p-5">
-                <div className="text-4xl mb-2">{s.emoji}</div>
-                <p className="text-white font-bold text-base leading-tight drop-shadow-lg">{s.name}</p>
-                <p className="text-white/80 text-sm font-medium">{s.label}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Center: login card */}
+        {/* Login card */}
         <div className="w-full max-w-md animate-slide-up flex-shrink-0">
           {/* Title */}
           <div className="text-center mb-6">
@@ -165,26 +138,6 @@ export default function HomePage() {
               </button>
             </form>
           </div>
-        </div>
-
-        {/* Right stage cards */}
-        <div className="hidden lg:flex flex-col gap-4 w-64 xl:w-72 flex-shrink-0">
-          {stageCards.slice(2, 4).map((s, i) => (
-            <div
-              key={s.name}
-              className={`rounded-3xl overflow-hidden aspect-[4/3] relative border-3 border-white/50 cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-xl bg-gradient-to-br ${s.color}`}
-              style={{
-                boxShadow: "0 6px 0 0 rgba(249, 115, 22, 0.2), 0 10px 20px -4px rgba(249, 115, 22, 0.15)",
-                animation: `float 3s ease-in-out infinite ${(i + 2) * 0.5}s`
-              }}
-            >
-              <div className="absolute inset-0 flex flex-col justify-end p-5">
-                <div className="text-4xl mb-2">{s.emoji}</div>
-                <p className="text-white font-bold text-base leading-tight drop-shadow-lg">{s.name}</p>
-                <p className="text-white/80 text-sm font-medium">{s.label}</p>
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     );
