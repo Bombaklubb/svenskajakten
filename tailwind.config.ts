@@ -101,6 +101,8 @@ const config: Config = {
         "wiggle": "wiggle 0.5s ease-in-out",
         "float": "float 3s ease-in-out infinite",
         "squish": "squish 0.2s ease-out",
+        "shimmer": "shimmer 2s linear infinite",
+        "gradient": "gradient 6s linear infinite",
       },
       keyframes: {
         fadeIn: {
@@ -128,6 +130,15 @@ const config: Config = {
           "0%": { transform: "scale(1, 1)" },
           "50%": { transform: "scale(1.1, 0.9)" },
           "100%": { transform: "scale(1, 1)" },
+        },
+        shimmer: {
+          "0%": { backgroundPosition: "200% 0" },
+          "100%": { backgroundPosition: "-200% 0" },
+        },
+        gradient: {
+          "0%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+          "100%": { backgroundPosition: "0% 50%" },
         },
       },
     },
