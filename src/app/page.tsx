@@ -7,7 +7,14 @@ import Header from "@/components/ui/Header";
 import { loadStudent, createStudent, clearStudent } from "@/lib/storage";
 import { STAGES } from "@/lib/stages";
 import { AVATARS } from "@/lib/avatars";
-import type { StudentData } from "@/lib/types";
+import type { StudentData, StageId } from "@/lib/types";
+
+const SCENE_EMOJIS: Record<StageId, string> = {
+  lagstadiet:    "🌾 🌿 ✏️",
+  mellanstadiet: "🌲 📖 🧚",
+  hogstadiet:    "🌊 📜 🍾",
+  gymnasiet:     "🏛️ 📚 🎓",
+};
 
 export default function HomePage() {
   const [student, setStudent] = useState<StudentData | null>(null);
@@ -148,74 +155,78 @@ export default function HomePage() {
     <div className="min-h-screen bg-amber-50 dark:bg-gray-900">
       <Header student={student} onLogout={handleLogout} />
 
-      <main className="max-w-5xl mx-auto px-4 py-8">
-        <div className="mb-6">
+      <main className="max-w-5xl mx-auto px-4 py-4">
+        <div className="mb-4">
           <h2 className="text-2xl font-black text-sv-800 dark:text-gray-100">Välj din värld</h2>
-          <p className="text-sv-400 dark:text-gray-400 font-medium mt-1">
+          <p className="text-sv-500 dark:text-gray-400 font-semibold mt-0.5">
             Välkommen tillbaka, {student.name}! Vilket stadie vill du träna på?
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          {STAGES.map((stage) => {
-            const stageProgress = student.stages[stage.id];
-            const grammarCompleted = Object.values(stageProgress.grammarModules).filter((m) => m.completed).length;
-            const readingCompleted = Object.values(stageProgress.readingModules).filter((m) => m.completed).length;
-            const spellingCompleted = Object.values(stageProgress.spellingModules ?? {}).filter((m) => m.completed).length;
-            const totalCompleted = grammarCompleted + readingCompleted + spellingCompleted;
-            const stagePoints = Object.values(stageProgress.grammarModules)
-              .concat(Object.values(stageProgress.readingModules))
-              .concat(Object.values(stageProgress.spellingModules ?? {}))
-              .reduce((sum, m) => sum + m.points, 0);
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {STAGES.map((stage) => {
+                const stageProgress = student.stages[stage.id];
+                const grammarMods  = Object.values(stageProgress.grammarModules);
+                const readingMods  = Object.values(stageProgress.readingModules);
+                const spellingMods = Object.values(stageProgress.spellingModules ?? {});
+                const totalCompleted = grammarMods.filter((m) => m.completed).length
+                  + readingMods.filter((m) => m.completed).length
+                  + spellingMods.filter((m) => m.completed).length;
+                const stagePoints = [...grammarMods, ...readingMods, ...spellingMods]
+                  .reduce((sum, m) => sum + m.points, 0);
 
-            return (
-              <Link key={stage.id} href={`/world/${stage.id}`} className="block group">
-                <div
-                  className={`relative rounded-3xl overflow-hidden border-3 transition-all duration-200 group-hover:-translate-y-2 cursor-pointer ${stage.borderClass}`}
-                  style={{
-                    boxShadow: "0 6px 0 0 rgba(0, 0, 0, 0.15), 0 12px 24px -6px rgba(0, 0, 0, 0.2)",
-                  }}
-                >
-                  {/* Background */}
-                  <div className={`${stage.bgClass} p-6 pb-8`}>
-                    <div className="flex items-start justify-between mb-4">
-                      <div>
-                        <span className="text-5xl drop-shadow-lg">{stage.emoji}</span>
-                      </div>
-                      {stagePoints > 0 && (
-                        <div className="bg-white/20 backdrop-blur-sm rounded-xl px-3 py-1.5 flex items-center gap-1.5">
-                          <span className="text-yellow-300 text-sm">⭐</span>
-                          <span className="text-white font-bold text-sm">{stagePoints}</span>
-                        </div>
-                      )}
-                    </div>
-                    <h3 className="text-2xl font-black text-white text-shadow">{stage.name}</h3>
-                    <p className="text-white/70 font-semibold text-sm mt-0.5">{stage.subtitle} · {stage.grades}</p>
-                    <p className="text-white/60 text-xs mt-2 leading-relaxed">{stage.description}</p>
-                  </div>
-
-                  {/* Footer */}
-                  <div className="bg-white dark:bg-gray-800 px-6 py-4 flex items-center justify-between">
-                    {totalCompleted > 0 ? (
-                      <span className="text-sm font-semibold text-gray-600 dark:text-gray-300">
-                        {totalCompleted} modul{totalCompleted !== 1 ? "er" : ""} klarade
-                      </span>
-                    ) : (
-                      <span className="text-sm font-semibold text-gray-400 dark:text-gray-500">
-                        Inte börjat än
-                      </span>
-                    )}
-                    <span
-                      className="text-sm font-bold px-4 py-1.5 rounded-xl text-white transition-transform group-hover:scale-105"
-                      style={{ background: "linear-gradient(135deg, #f97316, #ea6c0a)" }}
+                return (
+                  <Link key={stage.id} href={`/world/${stage.id}`} className="block group">
+                    <div
+                      className={`rounded-2xl overflow-hidden border-3 transition-all duration-200 group-hover:-translate-y-1 cursor-pointer ${stage.borderClass}`}
+                      style={{ boxShadow: "0 4px 0 0 rgba(0,0,0,0.12), 0 8px 16px -4px rgba(0,0,0,0.15)" }}
                     >
-                      Öppna →
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            );
-          })}
+                      {/* Gradient header */}
+                      <div className={`${stage.bgClass} px-5 py-4`}>
+                        <div className="flex items-start justify-between">
+                          <div className="flex items-center gap-3">
+                            <span className="text-4xl drop-shadow-lg">{stage.emoji}</span>
+                            <div>
+                              <div className="text-xs font-bold text-white bg-black/30 rounded-full px-2 py-0.5 inline-block mb-1">
+                                {stage.subtitle} · {stage.grades}
+                              </div>
+                              <h3 className="text-xl font-black text-white leading-tight" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.6), 0 2px 8px rgba(0,0,0,0.4)" }}>{stage.name}</h3>
+                            </div>
+                          </div>
+                          {stagePoints > 0 && (
+                            <div className="bg-black/20 rounded-lg px-2 py-1 flex items-center gap-1 flex-shrink-0">
+                              <span className="text-yellow-300 text-xs">⭐</span>
+                              <span className="text-white font-bold text-xs">{stagePoints}</span>
+                            </div>
+                          )}
+                        </div>
+                        <div className="mt-2 text-xl opacity-80 tracking-widest">
+                          {SCENE_EMOJIS[stage.id as StageId]}
+                        </div>
+                      </div>
+
+                      {/* Footer */}
+                      <div className="bg-white dark:bg-gray-800 px-5 py-3 flex items-center justify-between">
+                        {totalCompleted > 0 ? (
+                          <span className="text-sm font-semibold text-gray-600 dark:text-gray-300">
+                            {totalCompleted} modul{totalCompleted !== 1 ? "er" : ""} klarade
+                          </span>
+                        ) : (
+                          <span className="text-sm font-semibold text-gray-400 dark:text-gray-500">
+                            Inte börjat än
+                          </span>
+                        )}
+                        <span
+                          className="text-sm font-bold px-4 py-1.5 rounded-xl text-white transition-transform group-hover:scale-105"
+                          style={{ background: "linear-gradient(135deg, #f97316, #ea6c0a)" }}
+                        >
+                          Öppna →
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                );
+              })}
         </div>
       </main>
     </div>
