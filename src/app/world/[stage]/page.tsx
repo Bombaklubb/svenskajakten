@@ -7,6 +7,7 @@ import Header from "@/components/ui/Header";
 import ModuleCard from "@/components/ui/ModuleCard";
 import { loadStudent } from "@/lib/storage";
 import { getStage } from "@/lib/stages";
+import { BlurFade } from "@/components/magicui/blur-fade";
 import type { StudentData, StageContent } from "@/lib/types";
 
 interface RuleItem {
@@ -110,8 +111,8 @@ export default function WorldPage({ params }: Props) {
 
       {/* Stats bar */}
       {student && stageProgress && (
-        <div className="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
-          <div className="max-w-5xl mx-auto px-4 py-3 flex gap-3 flex-wrap">
+        <div className="bg-white dark:bg-gray-800 border-b border-sv-100 dark:border-gray-700" style={{ boxShadow: "0 2px 8px -2px rgba(249,115,22,0.06)" }}>
+          <div className="max-w-5xl mx-auto px-4 py-3 flex gap-2 flex-wrap">
             {[
               { label: "Grammatik", icon: "📝", count: Object.values(stageProgress.grammarModules).filter((m) => m.completed).length, total: content?.grammar.length ?? 0 },
               { label: "Läsning",   icon: "📖", count: Object.values(stageProgress.readingModules).filter((m) => m.completed).length, total: content?.reading.length ?? 0 },
@@ -121,10 +122,18 @@ export default function WorldPage({ params }: Props) {
             ].map(({ label, icon, count, total }) => {
               const done = total > 0 && count === total;
               return (
-                <div key={label} className={`border rounded-xl px-3 py-2 text-center transition-colors ${done ? `${stage.borderClass} bg-gradient-to-b from-white to-gray-50 dark:from-gray-800 dark:to-gray-700` : "bg-gray-50 dark:bg-gray-700 border-gray-100 dark:border-gray-600"}`}>
-                  <div className="text-base">{icon}</div>
-                  <div className={`text-lg font-black ${done ? stage.textClass : "text-gray-900 dark:text-gray-100"}`}>{count}/{total}</div>
-                  <div className="text-xs text-gray-500 dark:text-gray-400">{label}</div>
+                <div
+                  key={label}
+                  className={`border-2 rounded-2xl px-3 py-2 text-center transition-all min-w-[60px] ${
+                    done
+                      ? `${stage.borderClass} bg-gradient-to-b from-white to-sv-50/30 dark:from-gray-800 dark:to-gray-700`
+                      : "bg-sv-50 dark:bg-gray-700 border-sv-100 dark:border-gray-600"
+                  }`}
+                  style={done ? { boxShadow: "0 2px 0 0 rgba(249,115,22,0.15)" } : {}}
+                >
+                  <div className="text-base leading-none mb-0.5">{icon}</div>
+                  <div className={`text-base font-black leading-none ${done ? stage.textClass : "text-sv-700 dark:text-gray-100"}`}>{count}/{total}</div>
+                  <div className="text-xs text-sv-400 dark:text-gray-400 mt-0.5 font-medium">{label}</div>
                 </div>
               );
             })}
@@ -134,23 +143,24 @@ export default function WorldPage({ params }: Props) {
 
       <main className="max-w-5xl mx-auto px-4 py-8">
         {/* Tabs */}
-        <div className="overflow-x-auto pb-1 mb-6">
-          <div className="flex gap-1 bg-gray-100 dark:bg-gray-800 p-1 rounded-2xl w-max min-w-full">
+        <BlurFade delay={0.05} className="overflow-x-auto pb-1 mb-6">
+          <div className="flex gap-1.5 bg-white dark:bg-gray-800 p-1.5 rounded-2xl w-max min-w-full border-2 border-sv-100 dark:border-gray-700" style={{ boxShadow: "0 2px 0 0 rgba(249,115,22,0.08), inset 0 1px 3px rgba(0,0,0,0.04)" }}>
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-4 py-2 rounded-xl font-semibold text-xs sm:text-sm whitespace-nowrap transition-all duration-200 cursor-pointer ${
+                className={`px-4 py-2 rounded-xl font-bold text-xs sm:text-sm whitespace-nowrap transition-all duration-200 cursor-pointer ${
                   activeTab === tab.id
-                    ? `${stage.colorClass} text-white shadow-md`
-                    : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 hover:bg-white/50 dark:hover:bg-gray-700/50"
+                    ? `${stage.colorClass} text-white shadow-md scale-[1.02]`
+                    : "text-sv-400 dark:text-gray-400 hover:text-sv-700 dark:hover:text-gray-200 hover:bg-sv-50 dark:hover:bg-gray-700"
                 }`}
+                style={activeTab === tab.id ? { boxShadow: "0 2px 0 0 rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.2)" } : {}}
               >
                 {tab.label}
               </button>
             ))}
           </div>
-        </div>
+        </BlurFade>
 
         {/* Language rules tab */}
         {activeTab === "regler" ? (
