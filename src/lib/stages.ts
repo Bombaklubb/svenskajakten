@@ -47,7 +47,7 @@ export const STAGES: Stage[] = [
     id: "gymnasiet",
     name: "Skrivakademin",
     subtitle: "Gymnasiet",
-    emoji: "🏰",
+    emoji: "🏛️",
     grades: "Gymnasiet",
     description: "Nå toppen med avancerat svenska på akademisk nivå.",
     colorClass: "bg-torn-600",
