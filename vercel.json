@@ -1,6 +1,5 @@
 {
   "framework": "nextjs",
   "buildCommand": "npm run build",
-  "installCommand": "npm install",
-  "ignoreCommand": "git diff --quiet origin/main $VERCEL_GIT_COMMIT_SHA -- svenska/ 2>/dev/null && exit 0 || exit 1"
+  "installCommand": "npm install"
 }
