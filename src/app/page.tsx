@@ -187,14 +187,14 @@ export default function HomePage() {
                           <div className="flex items-center gap-3">
                             <span className="text-4xl drop-shadow-lg">{stage.emoji}</span>
                             <div>
-                              <div className="text-xs font-bold text-white/90 bg-black/20 rounded-full px-2 py-0.5 inline-block mb-1">
+                              <div className="text-xs font-bold text-white bg-black/30 rounded-full px-2 py-0.5 inline-block mb-1">
                                 {stage.subtitle} · {stage.grades}
                               </div>
-                              <h3 className="text-xl font-black text-white drop-shadow-md leading-tight">{stage.name}</h3>
+                              <h3 className="text-xl font-black text-white leading-tight" style={{ textShadow: "0 1px 3px rgba(0,0,0,0.6), 0 2px 8px rgba(0,0,0,0.4)" }}>{stage.name}</h3>
                             </div>
                           </div>
                           {stagePoints > 0 && (
-                            <div className="bg-white/20 rounded-lg px-2 py-1 flex items-center gap-1 flex-shrink-0">
+                            <div className="bg-black/20 rounded-lg px-2 py-1 flex items-center gap-1 flex-shrink-0">
                               <span className="text-yellow-300 text-xs">⭐</span>
                               <span className="text-white font-bold text-xs">{stagePoints}</span>
                             </div>
