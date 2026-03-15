@@ -15,7 +15,7 @@ export default function FillInBlank({ exercise, onAnswer, isLast }: Props) {
   const [showHint, setShowHint] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const parts = exercise.sentence.split("___");
+  const parts = exercise.question.split("___");
 
   function normalizeAnswer(s: string) {
     return s.trim().toLowerCase()

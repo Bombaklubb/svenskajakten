@@ -35,7 +35,7 @@ export interface MultipleChoiceExercise {
 export interface FillInBlankExercise {
   id: string;
   type: "fill-in-blank";
-  sentence: string;
+  question: string;
   answer: string;
   alternativeAnswers?: string[];
   hint?: string;
