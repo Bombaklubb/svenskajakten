@@ -54,7 +54,7 @@ export default function HomePage() {
       <div
         className="min-h-screen flex items-center justify-center p-4 gap-6"
         style={{
-          background: "linear-gradient(135deg, #e8f4fd 0%, #f0f9ff 30%, #fffbeb 70%, #f0fdf4 100%)"
+          background: "linear-gradient(135deg, #fed7aa 0%, #fef3c7 30%, #fde68a 60%, #d9f99d 100%)"
         }}
       >
         {/* Left stage cards */}
@@ -64,7 +64,7 @@ export default function HomePage() {
               key={s.name}
               className={`rounded-3xl overflow-hidden aspect-[4/3] relative border-3 border-white/50 cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-xl bg-gradient-to-br ${s.color}`}
               style={{
-                boxShadow: "0 6px 0 0 rgba(0, 106, 167, 0.2), 0 10px 20px -4px rgba(0, 106, 167, 0.15)",
+                boxShadow: "0 6px 0 0 rgba(249, 115, 22, 0.2), 0 10px 20px -4px rgba(249, 115, 22, 0.15)",
                 animation: `float 3s ease-in-out infinite ${i * 0.5}s`
               }}
             >
@@ -84,16 +84,16 @@ export default function HomePage() {
             <div
               className="inline-flex items-center justify-center w-24 h-24 rounded-3xl mb-4 text-5xl animate-float border-4 border-white/60"
               style={{
-                background: "linear-gradient(135deg, #006AA7, #004a75)",
-                boxShadow: "0 8px 0 0 rgba(0, 74, 117, 0.4), 0 12px 24px -4px rgba(0, 106, 167, 0.3), inset 0 4px 8px 0 rgba(255, 255, 255, 0.3)"
+                background: "linear-gradient(135deg, #f97316, #ea6c0a)",
+                boxShadow: "0 8px 0 0 rgba(234, 108, 10, 0.4), 0 12px 24px -4px rgba(249, 115, 22, 0.3), inset 0 4px 8px 0 rgba(255, 255, 255, 0.3)"
               }}
             >
               🇸🇪
             </div>
-            <h1 className="text-5xl font-black tracking-tight drop-shadow-sm" style={{ color: "#003a5c" }}>
+            <h1 className="text-5xl font-black tracking-tight drop-shadow-sm" style={{ color: "#7c2d12" }}>
               Svenskajakten
             </h1>
-            <p className="mt-2 text-lg font-bold" style={{ color: "#006AA7" }}>
+            <p className="mt-2 text-lg font-bold" style={{ color: "#f97316" }}>
               Lär dig svenska på ett roligt sätt!
             </p>
           </div>
@@ -102,10 +102,10 @@ export default function HomePage() {
           <div
             className="bg-white rounded-4xl p-8 border-3 border-sv-100"
             style={{
-              boxShadow: "0 8px 0 0 rgba(0, 106, 167, 0.12), 0 16px 32px -8px rgba(0, 106, 167, 0.18), inset 0 4px 8px 0 rgba(255, 255, 255, 0.8)"
+              boxShadow: "0 8px 0 0 rgba(249, 115, 22, 0.12), 0 16px 32px -8px rgba(249, 115, 22, 0.18), inset 0 4px 8px 0 rgba(255, 255, 255, 0.8)"
             }}
           >
-            <h2 className="text-2xl font-bold mb-1" style={{ color: "#003a5c" }}>Välkommen!</h2>
+            <h2 className="text-2xl font-bold mb-1" style={{ color: "#7c2d12" }}>Välkommen!</h2>
             <p className="text-sv-400 text-base mb-6 font-medium">
               Skriv ditt namn för att börja eller fortsätta.
             </p>
@@ -123,7 +123,7 @@ export default function HomePage() {
 
               {/* Avatar selection */}
               <div>
-                <p className="text-base font-bold mb-3" style={{ color: "#004a75" }}>Välj din karaktär</p>
+                <p className="text-base font-bold mb-3" style={{ color: "#c2570a" }}>Välj din karaktär</p>
                 <div className="grid grid-cols-5 gap-3">
                   {AVATARS.map((avatar) => (
                     <button
@@ -150,7 +150,7 @@ export default function HomePage() {
                     </button>
                   ))}
                 </div>
-                <p className="text-sm font-bold mt-3 text-center" style={{ color: "#006AA7" }}>
+                <p className="text-sm font-bold mt-3 text-center" style={{ color: "#f97316" }}>
                   {AVATARS.find((a) => a.id === selectedAvatar)?.name}
                 </p>
               </div>
@@ -159,7 +159,7 @@ export default function HomePage() {
                 type="submit"
                 disabled={!nameInput.trim()}
                 className="w-full btn-primary text-xl py-4 rounded-2xl border-3 border-sv-400 disabled:from-gray-200 disabled:to-gray-300 disabled:text-gray-400 disabled:border-gray-200"
-                style={{ background: nameInput.trim() ? "linear-gradient(135deg, #006AA7, #004a75)" : undefined }}
+                style={{ background: nameInput.trim() ? "linear-gradient(135deg, #f97316, #ea6c0a)" : undefined }}
               >
                 Starta jakten! 🚀
               </button>
@@ -174,7 +174,7 @@ export default function HomePage() {
               key={s.name}
               className={`rounded-3xl overflow-hidden aspect-[4/3] relative border-3 border-white/50 cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:shadow-xl bg-gradient-to-br ${s.color}`}
               style={{
-                boxShadow: "0 6px 0 0 rgba(0, 106, 167, 0.2), 0 10px 20px -4px rgba(0, 106, 167, 0.15)",
+                boxShadow: "0 6px 0 0 rgba(249, 115, 22, 0.2), 0 10px 20px -4px rgba(249, 115, 22, 0.15)",
                 animation: `float 3s ease-in-out infinite ${(i + 2) * 0.5}s`
               }}
             >
@@ -192,12 +192,12 @@ export default function HomePage() {
 
   // ─── Logged in – stage selection ────────────────────────────────────────────
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen bg-amber-50 dark:bg-gray-900">
       <Header student={student} onLogout={handleLogout} />
 
       <main className="max-w-5xl mx-auto px-4 py-8">
         <div className="mb-6">
-          <h2 className="text-2xl font-black text-sv-900 dark:text-gray-100">Välj din värld</h2>
+          <h2 className="text-2xl font-black text-sv-800 dark:text-gray-100">Välj din värld</h2>
           <p className="text-sv-400 dark:text-gray-400 font-medium mt-1">
             Välkommen tillbaka, {student.name}! Vilket stadie vill du träna på?
           </p>
@@ -254,7 +254,7 @@ export default function HomePage() {
                     )}
                     <span
                       className="text-sm font-bold px-4 py-1.5 rounded-xl text-white transition-transform group-hover:scale-105"
-                      style={{ background: "linear-gradient(135deg, #006AA7, #004a75)" }}
+                      style={{ background: "linear-gradient(135deg, #f97316, #ea6c0a)" }}
                     >
                       Öppna →
                     </span>

@@ -12,7 +12,7 @@
   }
 
   body {
-    @apply bg-sv-50 text-sv-900;
+    @apply bg-amber-50 text-sv-900;
   }
 
   .dark body {
@@ -23,10 +23,10 @@
 @layer components {
   /* Claymorphism card – Swedish style */
   .card {
-    @apply bg-white rounded-3xl p-4 sm:p-6 border-3 border-sv-100;
+    @apply bg-white rounded-3xl p-4 sm:p-6 border-3 border-orange-100;
     box-shadow:
-      0 4px 0 0 rgba(0, 106, 167, 0.12),
-      0 8px 16px -4px rgba(0, 106, 167, 0.08),
+      0 4px 0 0 rgba(249, 115, 22, 0.12),
+      0 8px 16px -4px rgba(249, 115, 22, 0.08),
       inset 0 2px 4px 0 rgba(255, 255, 255, 0.8);
   }
 
@@ -64,8 +64,8 @@
   .btn-secondary {
     @apply inline-flex items-center justify-center gap-2 px-5 py-3 sm:px-6 rounded-2xl font-bold border-3 transition-all duration-200 cursor-pointer bg-white;
     box-shadow:
-      0 3px 0 0 rgba(0, 106, 167, 0.18),
-      0 4px 8px -2px rgba(0, 106, 167, 0.1),
+      0 3px 0 0 rgba(249, 115, 22, 0.18),
+      0 4px 8px -2px rgba(249, 115, 22, 0.1),
       inset 0 2px 4px 0 rgba(255, 255, 255, 0.8);
   }
   .btn-secondary:hover {
@@ -74,7 +74,7 @@
   .btn-secondary:active {
     transform: translateY(1px);
     box-shadow:
-      0 1px 0 0 rgba(0, 106, 167, 0.18),
+      0 1px 0 0 rgba(249, 115, 22, 0.18),
       inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
   }
 
@@ -82,7 +82,7 @@
   .input-field {
     @apply w-full px-5 py-4 rounded-2xl border-3 border-sv-200 bg-white text-sv-900 focus:border-sv-500 focus:outline-none text-lg transition-all font-medium;
     box-shadow:
-      inset 0 3px 6px -2px rgba(0, 106, 167, 0.08),
+      inset 0 3px 6px -2px rgba(249, 115, 22, 0.08),
       0 2px 0 0 rgba(255, 255, 255, 0.8);
   }
   .input-field::placeholder {
@@ -90,8 +90,8 @@
   }
   .input-field:focus {
     box-shadow:
-      inset 0 3px 6px -2px rgba(0, 106, 167, 0.12),
-      0 0 0 4px rgba(0, 106, 167, 0.1);
+      inset 0 3px 6px -2px rgba(249, 115, 22, 0.12),
+      0 0 0 4px rgba(249, 115, 22, 0.1);
   }
 
   .dark .input-field {
@@ -109,8 +109,8 @@
   }
 
   .progress-bar-track {
-    @apply w-full h-4 bg-sv-100 rounded-full overflow-hidden border-2 border-sv-200/50;
-    box-shadow: inset 0 2px 4px -1px rgba(0, 106, 167, 0.15);
+    @apply w-full h-4 bg-orange-100 rounded-full overflow-hidden border-2 border-orange-200/50;
+    box-shadow: inset 0 2px 4px -1px rgba(249, 115, 22, 0.15);
   }
 
   .progress-bar-fill {
