@@ -103,6 +103,7 @@ const config: Config = {
         "squish": "squish 0.2s ease-out",
         "shimmer": "shimmer 2s linear infinite",
         "gradient": "gradient 6s linear infinite",
+        "rainbow": "rainbow 2s linear infinite",
       },
       keyframes: {
         fadeIn: {
@@ -139,6 +140,10 @@ const config: Config = {
           "0%": { backgroundPosition: "0% 50%" },
           "50%": { backgroundPosition: "100% 50%" },
           "100%": { backgroundPosition: "0% 50%" },
+        },
+        rainbow: {
+          "0%": { backgroundPosition: "0%" },
+          "100%": { backgroundPosition: "200%" },
         },
       },
     },
