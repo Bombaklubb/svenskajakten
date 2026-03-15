@@ -112,6 +112,183 @@
           "explanation": "Ad hominem = man angriper personen bakom argumentet snarare än argumentet självt."
         }
       ]
+    },
+    {
+      "id": "stilnivaer-1",
+      "title": "Stilnivåer",
+      "description": "Formellt, neutralt och informellt språk",
+      "icon": "🎭",
+      "bonusPoints": 40,
+      "helpText": [
+        "Formellt: akademiska texter, myndigheter ('Härmed översänder jag...')",
+        "Neutralt: nyheter, faktatexter",
+        "Informellt: vardagsspråk, SMS, sociala medier"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilket alternativ är mest formellt?",
+          "options": [
+            "Jag skickar dokumentet till dig.",
+            "Härmed översänder jag de begärda handlingarna.",
+            "Här kommer pappren du frågade om.",
+            "Kolla, här är grejen du ville ha."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Härmed översänder jag' är formellt myndighetsspråk med passiv och formella fraser."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "I vilket sammanhang passar informellt språk bäst?",
+          "options": [
+            "En ansökan till universitetet",
+            "En rapport till chefen",
+            "Ett SMS till en vän",
+            "En debattartikel i en tidning"
+          ],
+          "correctIndex": 2,
+          "explanation": "Informellt språk passar i privat kommunikation som SMS till vänner."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Skriv om till formellt språk: 'Vi tar upp det på mötet.' → '___ kommer att behandlas vid kommande möte.'",
+          "answer": "Frågan",
+          "hint": "Nominalisera – gör om 'det' till ett substantiv.",
+          "explanation": "'Frågan kommer att behandlas' – formellt språk nominaliserar och undviker 'vi'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord signalerar formellt skriftspråk?",
+          "options": ["kolla", "kul", "följaktligen", "typ"],
+          "correctIndex": 2,
+          "explanation": "'Följaktligen' är en formell konjunktion som används i akademiska och formella texter."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad kännetecknar neutralt språk?",
+          "options": [
+            "Vardagliga ord och slang",
+            "Passiv konstruktion och nominaliseringar",
+            "Tydligt, sakligt och utan starka värdeladdningar",
+            "Personliga tilltal och känslosamma ord"
+          ],
+          "correctIndex": 2,
+          "explanation": "Neutralt språk är klart och sakligt – det informerar utan att vara vare sig formellt eller informellt."
+        }
+      ]
+    },
+    {
+      "id": "nominalisering-1",
+      "title": "Nominalisering",
+      "description": "Omvandla verb till substantiv",
+      "icon": "🔄",
+      "bonusPoints": 40,
+      "helpText": [
+        "Nominalisering = verb→substantiv för formellare text",
+        "Ex: 'Man diskuterar' → 'En diskussion förs'",
+        "Vanliga suffix: -ning, -ande, -else, -tion"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilket substantiv är en nominalisering av verbet 'diskutera'?",
+          "options": ["diskutant", "diskussion", "diskuterande", "diskurs"],
+          "correctIndex": 1,
+          "explanation": "'Diskussion' är nominaliseringen av 'diskutera' – verb → substantiv med -ion."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Nominalisera verbet: 'Man undersöker frågan' → '___ av frågan pågår.'",
+          "answer": "Undersökningen",
+          "hint": "Undersöka + -ning = undersökning",
+          "explanation": "'Undersökningen' – verb 'undersöka' + suffix '-ning' = substantiv."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket suffix bildar nominaliseringar av rörelseverb?",
+          "options": ["-ig", "-ning", "-lig", "-bar"],
+          "correctIndex": 1,
+          "explanation": "Suffixet -ning bildar nominaliseringar: springa→springning, röra→rörelse (obs -else)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening använder nominalisering?",
+          "options": [
+            "Vi beslutar om åtgärder.",
+            "Beslutet om åtgärder fattas.",
+            "De ska bestämma vad de gör.",
+            "Man kommer att välja."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Beslutet' är en nominalisering av verbet 'besluta' – mer formell konstruktion."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg den formella meningen med nominalisering!",
+          "words": ["En", "utredning", "av", "ärendet", "krävs"],
+          "correctOrder": [0, 1, 2, 3, 4],
+          "explanation": "'Utredning' är en nominalisering av 'utreda' – verb→substantiv med -ning."
+        }
+      ]
+    },
+    {
+      "id": "formellt-sprak-1",
+      "title": "Formellt skriftspråk",
+      "description": "Skriv som en akademiker",
+      "icon": "📋",
+      "bonusPoints": 45,
+      "helpText": [
+        "Formellt språk: passiv konstruktion, formella konjunktioner, nominaliseringar",
+        "Undvik: du-tilltal, slang, förkortningar",
+        "Använd: 'Dessutom', 'Följaktligen', 'Vad gäller...'"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilken av dessa meningar är skriven i formellt skriftspråk?",
+          "options": [
+            "Man har koll på att det funkar.",
+            "Det har konstaterats att metoden är effektiv.",
+            "Folk vet att grejen stämmer.",
+            "Typ, det verkar ju funka bra."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Det har konstaterats' – passiv konstruktion utan personligt tilltal, typiskt formellt språk."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken konjunktion signalerar formellt akademiskt språk?",
+          "options": ["och sen", "plus att", "Följaktligen", "dessutom liksom"],
+          "correctIndex": 2,
+          "explanation": "'Följaktligen' är en formell kausalkonjunktion som används i akademiska texter."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Skriv om informellt till formellt: 'Resultaten visar att det funkar' → 'Resultaten ___ att metoden är verksam.'",
+          "answer": "påvisar",
+          "hint": "Använd ett mer formellt synonym till 'visar'.",
+          "explanation": "'Påvisar' är ett formellare verb än 'visar' – typiskt för akademiskt skrivande."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad bör man UNDVIKA i formellt skriftspråk?",
+          "options": [
+            "Passiva konstruktioner",
+            "Nominalisieringar",
+            "Förkortningar som 'bl.a.' och 'osv.'",
+            "Formella konjunktioner"
+          ],
+          "correctIndex": 2,
+          "explanation": "I formella texter skrivs ord ut i sin helhet – undvik förkortningar som 'osv.' och 'bl.a.'."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg en formell mening med rätt ordval!",
+          "words": ["Studien", "påvisar", "ett", "signifikant", "samband"],
+          "correctOrder": [0, 1, 2, 3, 4],
+          "explanation": "'Påvisar' och 'signifikant' är formella akademiska ord som kännetecknar vetenskapligt skrivande."
+        }
+      ]
     }
   ],
   "reading": [
@@ -247,6 +424,165 @@
           "correctIndex": 0,
           "explanation": "Elision är utelämning av ljud, vanligt i talspråk."
         }
+      ]
+    },
+    {
+      "id": "akademiskt-ordforrad",
+      "title": "Akademiskt ordförråd",
+      "description": "Ord för avancerade texter",
+      "icon": "📖",
+      "bonusPoints": 40,
+      "helpText": [
+        "Akademiska ord: analys, syntes, kontext, perspektiv, implikation, evidens, diskurs"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilket akademiskt ord betyder ungefär 'bevis' eller 'underlag'?",
+          "options": ["diskurs", "evidens", "kontext", "syntes"],
+          "correctIndex": 1,
+          "explanation": "'Evidens' = bevis, underlag. Används i akademiska och vetenskapliga texter."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas ordet för 'sammansättning av idéer till en helhet'?",
+          "options": ["sinttes", "syntes", "syntäs", "synttes"],
+          "correctIndex": 1,
+          "explanation": "'Syntes' – s-y-n-t-e-s. Att syntetisera = sätta samman till en helhet."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt ord: 'Texten måste förstås i sin historiska ___.' (omgivning/bakgrund)",
+          "answer": "kontext",
+          "hint": "Kon- + text",
+          "explanation": "'Kontext' – sammanhang, bakgrund. k-o-n-t-e-x-t."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord beskriver ett samtal om idéer inom ett ämnesområde?",
+          "options": ["diskurs", "dialog", "debatt", "diskussion"],
+          "correctIndex": 0,
+          "explanation": "'Diskurs' – ett akademiskt begrepp för den samlade diskussionen/konversationen inom ett ämne."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas konsekvenser eller slutsatser av något?",
+          "options": ["implikashon", "implikation", "implikasjon", "implikasion"],
+          "correctIndex": 1,
+          "explanation": "'Implikation' – im-pli-ka-tion. Vad något innebär eller medför."
+        }
+      ]
+    },
+    {
+      "id": "svara-sammansatta",
+      "title": "Svåra sammansatta ord",
+      "description": "Långa och knepiga ord",
+      "icon": "🏗️",
+      "bonusPoints": 40,
+      "helpText": [
+        "Sammansatta ord kan bli långa: 'välfärdssystemets', 'utrikespolitikens'",
+        "Kontrollera varje del för sig"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas systemet för samhällets välfärd?",
+          "options": ["välfärds system", "välfärdsystem", "välfärdssystem", "välfärd-system"],
+          "correctIndex": 2,
+          "explanation": "'Välfärdssystem' – sammansatta ord skrivs ihop. Välfärd + s + system."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket alternativ stavas rätt?",
+          "options": [
+            "utrikes politiken",
+            "utrikespolitiken",
+            "utrikespolitiiken",
+            "utrikespollitiken"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Utrikespolitiken' – utrikes + politik + en. Skrivs ihop utan bindestreck."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt stavning av det långa ordet: 'Den svenska ___modellen är känd internationellt.' (välfärd)",
+          "answer": "välfärds",
+          "hint": "Välfärd + s (fogekonsonant) + modellen.",
+          "explanation": "'Välfärdsmodellen' – välfärd + s (foge-s) + modell + en."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas politiken för miljön?",
+          "options": ["miljö politik", "miljö-politik", "miljöpolitik", "miljöpollitik"],
+          "correctIndex": 2,
+          "explanation": "'Miljöpolitik' – sammansatt ord ihop: miljö + politik."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket sammansatt ord är FELSTAVAT?",
+          "options": [
+            "arbetsmarknadspolitik",
+            "utbildningsväsende",
+            "samhällsvetenskapen",
+            "hälso vård"
+          ],
+          "correctIndex": 3,
+          "explanation": "'Hälso vård' är felstavat – ska skrivas ihop: 'hälsovård'."
+        }
+      ]
+    }
+  ],
+  "wordsearch": [
+    {
+      "id": "ordsokning-filosofi",
+      "title": "Filosofiska begrepp",
+      "description": "Sök filosofiska termer",
+      "icon": "🤔",
+      "bonusPoints": 45,
+      "words": [
+        {"word": "ETIK", "clue": "Läran om rätt och fel"},
+        {"word": "MORAL", "clue": "Regler för rätt uppförande"},
+        {"word": "LOGIK", "clue": "Konsten att tänka korrekt"},
+        {"word": "DIALEKTIK", "clue": "Metod att nå sanning genom dialog"},
+        {"word": "UTOPI", "clue": "Idealsamhälle som inte finns"},
+        {"word": "EMPATI", "clue": "Förmågan att förstå andras känslor"},
+        {"word": "ONTOLOGI", "clue": "Läran om varats natur"},
+        {"word": "LIBERAL", "clue": "Frihetsinriktad politisk åskådning"}
+      ]
+    },
+    {
+      "id": "ordsokning-politik-gym",
+      "title": "Politisk teori",
+      "description": "Statsvetenskapliga begrepp",
+      "icon": "🗳️",
+      "bonusPoints": 45,
+      "words": [
+        {"word": "NATION", "clue": "Folk med gemensam kultur och identitet"},
+        {"word": "STAT", "clue": "Politisk organisation med territorium"},
+        {"word": "DEMOKRATI", "clue": "Folkstyre – folket bestämmer"},
+        {"word": "REPUBLIK", "clue": "Statsskick utan ärftlig kung"},
+        {"word": "MONARKI", "clue": "Statsskick med kung eller drottning"},
+        {"word": "FRIHET", "clue": "Rätten att handla utan tvång"},
+        {"word": "RÄTTVISA", "clue": "Att behandla alla lika och rätt"},
+        {"word": "SUVERÄN", "clue": "Oberoende och självstyrande"}
+      ]
+    },
+    {
+      "id": "ordsokning-kultur",
+      "title": "Kulturbegrepp",
+      "description": "Ord från kulturen",
+      "icon": "🎨",
+      "bonusPoints": 45,
+      "words": [
+        {"word": "OPERA", "clue": "Musikdramatisk konstform med sång"},
+        {"word": "TEATER", "clue": "Skådespel framförda på scen"},
+        {"word": "MUSEUM", "clue": "Byggnad med samlingar av konst"},
+        {"word": "POESI", "clue": "Konstform med rytm och språklig skönhet"},
+        {"word": "ROMAN", "clue": "Långt litterärt berättarverk"},
+        {"word": "KONST", "clue": "Mänskligt skapande för estetiskt värde"},
+        {"word": "KULTUR", "clue": "Gemensamma värden och sedvänjor"},
+        {"word": "BALETT", "clue": "Klassisk danskonst med musik"},
+        {"word": "SYMFONI", "clue": "Stor komposition för orkester"}
       ]
     }
   ]

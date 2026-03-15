@@ -147,6 +147,103 @@
           "explanation": "'Förra veckan' och 'cyklade' visar att det hände i dåtid."
         }
       ]
+    },
+    {
+      "id": "adjektiv-adverb-1",
+      "title": "Adjektiv och adverb",
+      "description": "Beskriv saker och handlingar",
+      "icon": "🌈",
+      "bonusPoints": 25,
+      "helpText": [
+        "Adjektiv beskriver substantiv: stor bil",
+        "Adverb beskriver verb: springer snabbt",
+        "Adverb slutar ofta på -t"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är ett adjektiv i: 'Den snabba bilen körde förbi'?",
+          "options": ["snabba", "snabbt", "körde", "förbi"],
+          "correctIndex": 0,
+          "explanation": "'Snabba' är ett adjektiv – det beskriver substantivet 'bilen'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är ett adverb i: 'Hon sjunger vackert'?",
+          "options": ["Hon", "sjunger", "vackert", "vacker"],
+          "correctIndex": 2,
+          "explanation": "'Vackert' är ett adverb – det beskriver hur hon sjunger (verbet)."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Gör om adjektivet till adverb: 'Han är snabb' → 'Han springer ___.'",
+          "answer": "snabbt",
+          "hint": "Adverb bildas ofta av adjektiv + -t.",
+          "explanation": "Adjektivet 'snabb' blir adverbet 'snabbt' när det beskriver ett verb."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad beskriver adverbet 'försiktigt' i: 'Hon gick försiktigt'?",
+          "options": ["Hon (subjektet)", "gick (verbet)", "en plats", "en tid"],
+          "correctIndex": 1,
+          "explanation": "Adverb beskriver verb – 'försiktigt' beskriver hur hon gick."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Sätt adjektivet och adverbet på rätt plats!",
+          "words": ["Den", "stora", "hunden", "skällde", "högt"],
+          "correctOrder": [0, 1, 2, 3, 4],
+          "explanation": "'Stora' (adjektiv) beskriver hunden, 'högt' (adverb) beskriver skällde."
+        }
+      ]
+    },
+    {
+      "id": "satsdelar-2",
+      "title": "Satsdelar – objekt och adverbial",
+      "description": "Objekt och adverbial",
+      "icon": "🔍",
+      "bonusPoints": 30,
+      "helpText": [
+        "Objekt svarar på frågan: Vad/vem gör subjektet det till?",
+        "Adverbial svarar på: Var? När? Hur?"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vad är objektet i: 'Maja läser en bok'?",
+          "options": ["Maja", "läser", "en bok", "i skolan"],
+          "correctIndex": 2,
+          "explanation": "'En bok' är objektet – det är det Maja läser (vad läser hon?)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är adverbialet i: 'Vi spelar fotboll i parken'?",
+          "options": ["Vi", "spelar", "fotboll", "i parken"],
+          "correctIndex": 3,
+          "explanation": "'I parken' är ett adverbial – det svarar på frågan 'var?'."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "I meningen 'Hon sjunger vackert' svarar 'vackert' på frågan ___?",
+          "answer": "hur",
+          "hint": "Adverbial svarar på var, när eller hur.",
+          "explanation": "'Vackert' svarar på hur hon sjunger – det är ett sättsadverbial."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket är objektet i: 'Kalle gav Lisa en blomma'?",
+          "options": ["Kalle", "gav", "Lisa", "en blomma"],
+          "correctIndex": 3,
+          "explanation": "'En blomma' är det direkta objektet – det Kalle gav."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen: subjekt + predikat + objekt + adverbial!",
+          "words": ["Läraren", "undervisar", "eleverna", "varje", "dag"],
+          "correctOrder": [0, 1, 2, 3, 4],
+          "explanation": "'Läraren'=subj, 'undervisar'=pred, 'eleverna'=obj, 'varje dag'=adverbial (när?)."
+        }
+      ]
     }
   ],
   "reading": [
@@ -251,6 +348,221 @@
           "correctIndex": 0,
           "explanation": "'Mus' – u-et är långt, därför ingen dubbelkonsonant."
         }
+      ]
+    },
+    {
+      "id": "sj-ljud-1",
+      "title": "Sj-ljudet",
+      "description": "De många sätten att skriva sj-ljud",
+      "icon": "🌊",
+      "bonusPoints": 25,
+      "helpText": [
+        "Sj-ljud kan skrivas: sj, sk (före e,i,y,ä,ö), skj, stj, sch, ch",
+        "Ex: sjunga, skjuta, stjärna, schema, chef"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord har sj-ljud?",
+          "options": ["skola", "sjunga", "sova", "snö"],
+          "correctIndex": 1,
+          "explanation": "'Sjunga' börjar med sj-ljud, skrivet 'sj'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur skrivs sj-ljudet i 'skämt'?",
+          "options": ["sj-", "sk- (före ä)", "sch-", "stj-"],
+          "correctIndex": 1,
+          "explanation": "Sk + ä/e/i/y/ö ger sj-ljud. 'Skämt' uttalas med sj-ljud."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt stavning: '___ärna lyser på natthimlen.' (himmelskroppar)",
+          "answer": "stj",
+          "hint": "Stjärna börjar med stj-.",
+          "explanation": "'Stjärna' – sj-ljudet skrivs 'stj' i det här ordet."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord stavas rätt?",
+          "options": ["sjema", "schema", "scema", "skema"],
+          "correctIndex": 1,
+          "explanation": "'Schema' – sj-ljudet skrivs 'sch' i lånord från tyskan."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas ledaren för ett företag?",
+          "options": ["sjef", "skef", "chef", "chäf"],
+          "correctIndex": 2,
+          "explanation": "'Chef' – sj-ljudet skrivs 'ch' i detta franska lånord."
+        }
+      ]
+    },
+    {
+      "id": "tj-ljud-1",
+      "title": "Tj-ljudet",
+      "description": "Lär dig skriva tj-ljud rätt",
+      "icon": "🧊",
+      "bonusPoints": 25,
+      "helpText": [
+        "Tj-ljud kan skrivas: tj, k (före e,i,y,ä,ö), kj",
+        "Ex: tjuv, kyckling, kyss, tjäna, kinda"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord har tj-ljud?",
+          "options": ["kaka", "tjuv", "kopp", "tall"],
+          "correctIndex": 1,
+          "explanation": "'Tjuv' börjar med tj-ljud, skrivet 'tj'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur skrivs tj-ljudet i 'kyckling'?",
+          "options": ["tj-", "k- (före y)", "kj-", "ch-"],
+          "correctIndex": 1,
+          "explanation": "K + y/e/i/ä/ö ger tj-ljud. 'Kyckling' uttalas med tj-ljud."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt stavning: '___ärlek är ett fint ord.' (känslor för någon)",
+          "answer": "k",
+          "hint": "Kärlek börjar med k- + ä = tj-ljud.",
+          "explanation": "'Kärlek' – k + ä ger tj-ljud. Alltså k-ä-r-l-e-k."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är rätt stavat? (det lilla fågeldjuret)",
+          "options": ["tjyckling", "kyckling", "kjyckling", "chyckling"],
+          "correctIndex": 1,
+          "explanation": "'Kyckling' – tj-ljudet skrivs k (före y)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas 'tjäna' (att arbeta och få lön)?",
+          "options": ["käna", "tjäna", "kjäna", "chäna"],
+          "correctIndex": 1,
+          "explanation": "'Tjäna' – tj-ljud skrivs med 'tj' i detta ord."
+        }
+      ]
+    },
+    {
+      "id": "ng-ljud-1",
+      "title": "Ng-ljudet",
+      "description": "Ng-ljud i slutet av ord",
+      "icon": "🔔",
+      "bonusPoints": 25,
+      "helpText": [
+        "Ng-ljud skrivs 'ng': sång, ring, lång",
+        "Observera: 'ngt' i ord som 'ingenting', 'något'"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord innehåller ng-ljud?",
+          "options": ["sova", "sång", "sala", "som"],
+          "correctIndex": 1,
+          "explanation": "'Sång' – avslutas med ng-ljud, skrivet 'ng'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas smycket man bär på fingret?",
+          "options": ["rin", "ring", "rinng", "ryng"],
+          "correctIndex": 1,
+          "explanation": "'Ring' – avslutas med ng-ljud."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i: 'Det finns ___ kvar i skåpet.' (inget alls)",
+          "answer": "ingenting",
+          "hint": "Tänk på: ing + en + ting.",
+          "explanation": "'Ingenting' – innehåller 'ng' + 't': ing-en-ting."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt stavning: 'Han är väldigt lå___.'",
+          "options": ["ng", "ngg", "n", "nk"],
+          "correctIndex": 0,
+          "explanation": "'Lång' – avslutas med ng-ljud, skrivet 'ng'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas ordet för 'en viss mängd'?",
+          "options": ["något", "nåt", "nångot", "nåhot"],
+          "correctIndex": 0,
+          "explanation": "'Något' – innehåller ng-ljud: n-å-g-o-t."
+        }
+      ]
+    }
+  ],
+  "wordsearch": [
+    {
+      "id": "ordsokning-yrken",
+      "title": "Vad jobbar du med?",
+      "description": "Hitta olika yrken",
+      "icon": "👷",
+      "bonusPoints": 35,
+      "words": [
+        {"word": "LÄKARE", "clue": "Jobbar på sjukhuset och botar sjuka"},
+        {"word": "PILOT", "clue": "Flyger flygplan"},
+        {"word": "LÄRARE", "clue": "Undervisar elever i skolan"},
+        {"word": "POLIS", "clue": "Skyddar ordningen i samhället"},
+        {"word": "BAGARE", "clue": "Bakar bröd och bullar"},
+        {"word": "MÅLARE", "clue": "Målar hus och väggar"},
+        {"word": "BONDE", "clue": "Odlar mat och håller djur"},
+        {"word": "FRISÖR", "clue": "Klipper och stylar hår"},
+        {"word": "KOCK", "clue": "Lagar mat på restaurang"}
+      ]
+    },
+    {
+      "id": "ordsokning-sport",
+      "title": "Sporttema",
+      "description": "Hitta sportord",
+      "icon": "⚽",
+      "bonusPoints": 35,
+      "words": [
+        {"word": "FOTBOLL", "clue": "Spelas med en rund boll och två mål"},
+        {"word": "TENNIS", "clue": "Spelas med racket på en tennisbana"},
+        {"word": "SIMNING", "clue": "Sport i vattnet"},
+        {"word": "HOCKEY", "clue": "Spelas med puck och klubba på is"},
+        {"word": "BASKET", "clue": "Kasta bollen i korgen"},
+        {"word": "GOLF", "clue": "Slå bollen i hålet med en klubba"},
+        {"word": "BOXING", "clue": "Slåss med handskar i en ring"},
+        {"word": "GYMPA", "clue": "Röra på kroppen i en gymnastikhall"}
+      ]
+    },
+    {
+      "id": "ordsokning-historia",
+      "title": "Historiska ord",
+      "description": "Ord från historien",
+      "icon": "🏰",
+      "bonusPoints": 35,
+      "words": [
+        {"word": "KUNG", "clue": "Härskare över ett kungadöme"},
+        {"word": "RIDDARE", "clue": "Bepansrad krigare till häst"},
+        {"word": "SLOTT", "clue": "Stor borg där kungen bodde"},
+        {"word": "BONDE", "clue": "Vanlig person som odlade på medeltiden"},
+        {"word": "PRÄST", "clue": "Religiös ledare i kyrkan"},
+        {"word": "KYRKA", "clue": "Byggnaden där man bad till Gud"},
+        {"word": "VIKING", "clue": "Nordisk sjöfarare och krigare"},
+        {"word": "SVÄRD", "clue": "Vapnet riddaren bar vid sidan"}
+      ]
+    },
+    {
+      "id": "ordsokning-djur-mel",
+      "title": "Djurriket",
+      "description": "Hitta djuren i djurriket",
+      "icon": "🦁",
+      "bonusPoints": 35,
+      "words": [
+        {"word": "ELEFANT", "clue": "Världens största landdjur med snabel"},
+        {"word": "LEJON", "clue": "Lejongårdens konung"},
+        {"word": "ZEBRA", "clue": "Svartvitrandig hästliknande djur"},
+        {"word": "GEPARD", "clue": "Världens snabbaste landdjur"},
+        {"word": "PINGVIN", "clue": "Fågel som inte flyger men simmar"},
+        {"word": "DELFIN", "clue": "Intelligent havsdäggdjur"},
+        {"word": "ÖRN", "clue": "Stort rovfågel som flyger högt"},
+        {"word": "GORILLA", "clue": "Stor apa från Afrika"}
       ]
     }
   ]

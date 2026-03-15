@@ -23,46 +23,112 @@
       ]
     },
     {
-      "id": "skiljetecken",
-      "title": "Skiljetecken",
-      "icon": "⁉️",
+      "id": "ordföljd",
+      "title": "Ordföljd",
+      "icon": "📐",
       "content": [
         {
-          "term": "Punkt (.)",
-          "explanation": "Avslutar en påståendemening.",
-          "examples": ["Jag heter Maja.", "Solen skiner idag."]
+          "term": "Rak ordföljd",
+          "explanation": "Subjekt + Predikat + Objekt. Den vanligaste ordföljden.",
+          "examples": ["Han åt pizza igår.", "Lisa läser en bok.", "Vi spelar fotboll."]
         },
         {
-          "term": "Kommatecken (,)",
-          "explanation": "Används vid uppräkningar, inskott och ibland bisatser.",
-          "examples": ["Jag köpte äpplen, päron och bananer.", "Ja, det stämmer."]
+          "term": "Omvänd ordföljd",
+          "explanation": "Adverbial + Predikat + Subjekt. Används när meningen inleds med adverbial.",
+          "examples": ["Igår åt han pizza.", "Aldrig har jag sett det.", "Imorgon reser vi."]
         },
         {
-          "term": "Kolon (:)",
-          "explanation": "Inleder en lista, förklaring eller direkt anföring.",
-          "examples": ["Vi behöver: mjölk, bröd och ägg.", "Han sa: 'Hej!'"]
-        },
-        {
-          "term": "Semikolon (;)",
-          "explanation": "Förbinder två nära relaterade meningar utan konjunktion.",
-          "examples": ["Det regnade; vi stannade inne.", "Hon kom tidigt; han kom sent."]
+          "term": "Bisatsens ordföljd",
+          "explanation": "I bisatsen: bindeord + subjekt + bisatsadverbial + predikat.",
+          "examples": ["...att han aldrig kom dit", "...om du inte vill", "...när hon inte är hemma"]
         }
       ]
     },
     {
-      "id": "de-dem",
-      "title": "De och dem",
-      "icon": "👥",
+      "id": "kongruens",
+      "title": "Kongruens",
+      "icon": "⚖️",
       "content": [
         {
-          "term": "De – subjektsform",
-          "explanation": "Används när 'de' är subjekt (utför handlingen). Tips: byt mot 'vi'.",
-          "examples": ["De spelar fotboll. (Vi spelar fotboll ✓)", "De kom tidigt. (Vi kom tidigt ✓)"]
+          "term": "Genus (utrumord / neutrumord)",
+          "explanation": "Utrumord (en-ord): en stor bil. Neutrumord (ett-ord): ett stort hus.",
+          "examples": ["en röd blomma (utrum)", "ett rött hus (neutrum)", "den/det"]
         },
         {
-          "term": "Dem – objektsform",
-          "explanation": "Används när 'dem' är objekt (tar emot handlingen). Tips: byt mot 'oss'.",
-          "examples": ["Jag såg dem. (Jag såg oss ✓)", "Vi hälsade på dem. (Vi hälsade på oss ✓)"]
+          "term": "Adjektivböjning",
+          "explanation": "Adjektiv böjs efter substantivets genus och numerus (singular/plural).",
+          "examples": ["en stor bil", "ett stort hus", "stora bilar", "den stora bilen"]
+        },
+        {
+          "term": "Predikativ kongruens",
+          "explanation": "Adjektivet i predikativ ställning böjs som neutrumform för n-ord, men med -a i bestämd form.",
+          "examples": ["Bilen är stor.", "Huset är stort.", "Bilarna är stora."]
+        }
+      ]
+    },
+    {
+      "id": "homofoner",
+      "title": "Homofoner och vanliga förväxlingar",
+      "icon": "👂",
+      "content": [
+        {
+          "term": "De och dem",
+          "explanation": "De = subjekt (byt mot 'vi'). Dem = objekt (byt mot 'oss').",
+          "examples": ["De spelar. (Vi spelar ✓)", "Jag ser dem. (Jag ser oss ✓)"]
+        },
+        {
+          "term": "Sin och hans/hennes",
+          "explanation": "Sin/sitt/sina: reflexivt – ägaren är subjektet. Hans/hennes/deras: ägaren är utanför satsen.",
+          "examples": ["Kalle tvättade sina händer. (Kalles egna)", "Hon tog hans bok. (inte hennes)"]
+        },
+        {
+          "term": "Sig och honom/henne",
+          "explanation": "Sig: reflexivt pronomen när objektet syftar på subjektet.",
+          "examples": ["Han tvättade sig. (Han tvättade sig själv)", "Hon klädde sig. (sig själv)"]
+        }
+      ]
+    },
+    {
+      "id": "sammansattning",
+      "title": "Samman- och särskrivning",
+      "icon": "🔗",
+      "content": [
+        {
+          "term": "Sammansatta ord skrivs ihop",
+          "explanation": "På svenska skrivs sammansatta ord alltid ihop – inte med mellanslag.",
+          "examples": ["skolbuss (inte skol buss)", "rödvin (inte röd vin)", "handväska"]
+        },
+        {
+          "term": "Adjektiv + substantiv skrivs isär",
+          "explanation": "Adjektiv som bestämmer substantiv skrivs som separata ord.",
+          "examples": ["en gammal bil", "ett rött äpple", "stora hundar"]
+        },
+        {
+          "term": "Foge-s",
+          "explanation": "Ibland sätts ett s mellan de sammansatta leden.",
+          "examples": ["arbetsplats (arbete+s+plats)", "landsväg (land+s+väg)", "statsminister"]
+        }
+      ]
+    },
+    {
+      "id": "skiljetecken-avancerat",
+      "title": "Skiljetecken – avancerat",
+      "icon": "⁉️",
+      "content": [
+        {
+          "term": "Semikolon (;)",
+          "explanation": "Förbinder nära relaterade meningar utan konjunktion.",
+          "examples": ["Det regnade; vi stannade inne.", "Hon kom tidigt; han kom sent."]
+        },
+        {
+          "term": "Tankstreck (–)",
+          "explanation": "Markerar inskott, paus eller ersätter parentes för dramatisk effekt.",
+          "examples": ["Sverige – landet i norr – är vackert.", "Hon log – och allt förändrades."]
+        },
+        {
+          "term": "Kolon (:)",
+          "explanation": "Inleder lista, förklaring eller direktcitat.",
+          "examples": ["Vi behöver: mjölk och bröd.", "Han sa: 'Hej!'"]
         }
       ]
     }

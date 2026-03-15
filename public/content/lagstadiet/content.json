@@ -146,6 +146,112 @@
           "explanation": "'Lilla' är adjektivet som beskriver hunden."
         }
       ]
+    },
+    {
+      "id": "stor-bokstav-1",
+      "title": "Stor bokstav",
+      "description": "När skriver man stor bokstav?",
+      "icon": "🔠",
+      "bonusPoints": 15,
+      "helpText": [
+        "Stor bokstav i meningens början",
+        "Namn på personer och platser börjar alltid med stor bokstav"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Hur ska namnet stavas?",
+          "options": ["karin", "Karin", "KARIN", "kArin"],
+          "correctIndex": 1,
+          "explanation": "Namn på personer börjar alltid med stor bokstav: Karin."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas landet vi bor i?",
+          "options": ["sverige", "Sverige", "sVERIGE", "sverIGE"],
+          "correctIndex": 1,
+          "explanation": "Namn på länder och platser börjar med stor bokstav: Sverige."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i: '___ heter Maja och bor i Stockholm.' (börja meningen)",
+          "answer": "Hon",
+          "hint": "Det första ordet i en mening ska ha stor bokstav.",
+          "explanation": "Varje mening börjar med stor bokstav."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är rätt skriven?",
+          "options": [
+            "min kompis heter erik.",
+            "Min kompis heter erik.",
+            "Min kompis heter Erik.",
+            "min Kompis heter Erik."
+          ],
+          "correctIndex": 2,
+          "explanation": "Meningen börjar med stor M och namnet Erik har stor E."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med stor bokstav där det behövs!",
+          "words": ["Anna", "bor", "i", "Göteborg"],
+          "correctOrder": [0, 1, 2, 3],
+          "explanation": "'Anna' (namn) och 'Göteborg' (plats) börjar med stor bokstav. Meningen börjar med 'Anna'."
+        }
+      ]
+    },
+    {
+      "id": "skiljetecken-1",
+      "title": "Punkt och frågetecken",
+      "description": "Avsluta meningen rätt",
+      "icon": "❓",
+      "bonusPoints": 15,
+      "helpText": [
+        "Punkt avslutar påståenden",
+        "Frågetecken avslutar frågor"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilket tecken ska stå i slutet av: 'Jag heter Lena___'",
+          "options": ["?", ".", "!", ","],
+          "correctIndex": 1,
+          "explanation": "Det är ett påstående – det avslutas med punkt."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket tecken ska stå i slutet av: 'Vad heter du___'",
+          "options": [".", "!", "?", ","],
+          "correctIndex": 2,
+          "explanation": "Det är en fråga – den avslutas med frågetecken."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Vilket tecken fattas? 'Hur gammal är du___'",
+          "answer": "?",
+          "hint": "Meningen är en fråga.",
+          "explanation": "Frågor avslutas alltid med frågetecken."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är rätt skriven?",
+          "options": [
+            "Var bor du.",
+            "Var bor du?",
+            "var bor du?",
+            "Var bor du"
+          ],
+          "correctIndex": 1,
+          "explanation": "Frågan börjar med stor bokstav och avslutas med frågetecken."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: 'Hunden sover på mattan___'",
+          "options": ["?", "!", ".", ","],
+          "correctIndex": 2,
+          "explanation": "'Hunden sover på mattan' är ett påstående – det avslutas med punkt."
+        }
+      ]
     }
   ],
   "reading": [
@@ -244,6 +350,226 @@
           "correctIndex": 1,
           "explanation": "'År' stavas med å – ett av årets 12 månader tar ett år."
         }
+      ]
+    },
+    {
+      "id": "vanliga-ord-1",
+      "title": "Vanliga ord",
+      "description": "Lär dig stava de vanligaste orden",
+      "icon": "📝",
+      "bonusPoints": 20,
+      "helpText": [
+        "Dessa ord är viktiga att kunna stava: och, det, är, jag, inte, på, att, en, som, med"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är rätt stavat? (det engelska 'and')",
+          "options": ["ock", "och", "ok", "oc"],
+          "correctIndex": 1,
+          "explanation": "'Och' stavas o-c-h. Det är ett av de vanligaste orden på svenska."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i: 'Jag ___ inte trött.' (negation)",
+          "answer": "är",
+          "hint": "Det är en form av verbet vara.",
+          "explanation": "'Är' är presensformen av 'vara' – ett mycket vanligt ord."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken stavning är korrekt? (det engelska 'I')",
+          "options": ["jag", "yag", "iag", "jäg"],
+          "correctIndex": 0,
+          "explanation": "'Jag' stavas j-a-g. Jag = I på engelska."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt stavning: 'Jag ___ inte hemma idag.'",
+          "options": ["inte", "intte", "ine", "int"],
+          "correctIndex": 0,
+          "explanation": "'Inte' stavas i-n-t-e. Det är negationsord på svenska."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med vanliga ord!",
+          "words": ["Jag", "och", "du", "är", "kompisar"],
+          "correctOrder": [0, 1, 2, 3, 4],
+          "explanation": "'Jag', 'och', 'är' är alla vanliga ord som är viktiga att kunna stava."
+        }
+      ]
+    },
+    {
+      "id": "dubbelteckning-1",
+      "title": "Dubbelteckning",
+      "description": "Lär dig när man skriver dubbla bokstäver",
+      "icon": "🔤",
+      "bonusPoints": 25,
+      "helpText": [
+        "Glass, katt, mugg - kort vokal ger dubbel konsonant",
+        "Test: är vokalen kort? → dubbel konsonant"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas det kalla väderkortet på vintern?",
+          "options": ["is", "iss", "iis", "iz"],
+          "correctIndex": 0,
+          "explanation": "'Is' – vokalens i-ljud är långt, därför ingen dubbelkonsonant."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas det glasiga godiset man slickar på?",
+          "options": ["glas", "glass", "glaas", "glaz"],
+          "correctIndex": 1,
+          "explanation": "'Glass' – kort a-ljud kräver dubbelt s."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt stavning: 'Katten sover på ku___en.' (mjukt underlag)",
+          "answer": "dd",
+          "hint": "Kudde eller kude? Har vokalen kort u-ljud?",
+          "explanation": "'Kudde' – kort u-ljud kräver dubbelt d. Ku-DD-e."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord har rätt stavning?",
+          "options": ["boll", "bol", "bool", "boll"],
+          "correctIndex": 0,
+          "explanation": "'Boll' – kort o-ljud kräver dubbelt l."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas det mörka på natten?",
+          "options": ["nat", "natt", "naatt", "nnat"],
+          "correctIndex": 1,
+          "explanation": "'Natt' – kort a-ljud kräver dubbelt t."
+        }
+      ]
+    },
+    {
+      "id": "sammansatta-ord-1",
+      "title": "Sammansatta ord",
+      "description": "Sätt ihop ord till nya ord",
+      "icon": "🧩",
+      "bonusPoints": 25,
+      "helpText": [
+        "Solstol = sol + stol",
+        "Skolbuss = skola + buss",
+        "Husdjur = hus + djur"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vad blir 'sol' + 'ros'?",
+          "options": ["rossol", "solros", "sol-ros", "rosol"],
+          "correctIndex": 1,
+          "explanation": "'Solros' – en blomma som vänder mot solen. Sol + ros = solros."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Sätt ihop orden: 'hund' + 'hus' = ___",
+          "answer": "hundhus",
+          "hint": "Var bor hunden?",
+          "explanation": "'Hundhus' – ett hus för hunden. Hund + hus = hundhus."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket sammansatt ord betyder 'buss som går till skolan'?",
+          "options": ["busskola", "skolbuss", "skol-buss", "bussSkola"],
+          "correctIndex": 1,
+          "explanation": "'Skolbuss' = skola + buss. Det sista ordet talar om vad det är (buss)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är 'dag' + 'bok'?",
+          "options": ["bokdag", "dag-bok", "dagbok", "dagbök"],
+          "correctIndex": 2,
+          "explanation": "'Dagbok' – en bok där man skriver om sin dag. Dag + bok = dagbok."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med ett sammansatt ord!",
+          "words": ["Min", "skolväska", "är", "röd"],
+          "correctOrder": [0, 1, 2, 3],
+          "explanation": "'Skolväska' är ett sammansatt ord: skol + väska."
+        }
+      ]
+    }
+  ],
+  "wordsearch": [
+    {
+      "id": "ordsokning-djur",
+      "title": "Hitta djuren!",
+      "description": "Sök efter djur i bokstavshavet",
+      "icon": "🐾",
+      "bonusPoints": 30,
+      "words": [
+        {"word": "KATT", "clue": "Mjällt sällskapsdjur som spinner"},
+        {"word": "HUND", "clue": "Människans bästa vän"},
+        {"word": "FISK", "clue": "Djur som simmar i vattnet"},
+        {"word": "HÄST", "clue": "Stort djur som man rider på"},
+        {"word": "FÅR", "clue": "Ulligt djur på ängen"},
+        {"word": "KO", "clue": "Ger oss mjölk"},
+        {"word": "GRIS", "clue": "Rosa djur som bor i svinstian"},
+        {"word": "ÄLG", "clue": "Stort hjortdjur i skogen"},
+        {"word": "BJÖRN", "clue": "Stort brunt djur i skogen"},
+        {"word": "RÄV", "clue": "Rödbrun och listig skogsdjur"}
+      ]
+    },
+    {
+      "id": "ordsokning-frukter",
+      "title": "Fruktjakt!",
+      "description": "Hitta alla frukter",
+      "icon": "🍎",
+      "bonusPoints": 30,
+      "words": [
+        {"word": "ÄPPLE", "clue": "Röd eller grön frukt"},
+        {"word": "PÄRON", "clue": "Gul frukt med smal topp"},
+        {"word": "BANAN", "clue": "Gul krökt frukt"},
+        {"word": "MANGO", "clue": "Tropisk orange frukt"},
+        {"word": "CITRON", "clue": "Sur gul frukt"},
+        {"word": "PLOMMON", "clue": "Lila eller röd frukt med kärna"},
+        {"word": "MELON", "clue": "Stor grön eller gul frukt"},
+        {"word": "KÖRSBÄR", "clue": "Liten röd frukt som sitter i par"}
+      ]
+    },
+    {
+      "id": "ordsokning-skolan",
+      "title": "I skolan",
+      "description": "Ord du ser i skolan varje dag",
+      "icon": "🏫",
+      "bonusPoints": 30,
+      "words": [
+        {"word": "BORD", "clue": "Man sitter vid det och jobbar"},
+        {"word": "STOL", "clue": "Man sitter på den"},
+        {"word": "PENNA", "clue": "Man skriver med den"},
+        {"word": "BOK", "clue": "Man läser i den"},
+        {"word": "LINJAL", "clue": "Man mäter med den"},
+        {"word": "KRITA", "clue": "Man skriver med den på tavlan"},
+        {"word": "TAVLA", "clue": "Läraren skriver på den"},
+        {"word": "VÄSKA", "clue": "Man bär böckerna i den"},
+        {"word": "SUDD", "clue": "Man suddar med den"},
+        {"word": "ATLAS", "clue": "En bok med kartor"}
+      ]
+    },
+    {
+      "id": "ordsokning-kroppen",
+      "title": "Kroppsdelar",
+      "description": "Hitta kroppsdelar",
+      "icon": "👤",
+      "bonusPoints": 30,
+      "words": [
+        {"word": "ARM", "clue": "Den hänger på sidan av kroppen"},
+        {"word": "BEN", "clue": "Man går på dem"},
+        {"word": "ÖRA", "clue": "Man hör med det"},
+        {"word": "ÖGA", "clue": "Man ser med det"},
+        {"word": "NÄS", "clue": "Man andas och luktar med den"},
+        {"word": "MUN", "clue": "Man äter och pratar med den"},
+        {"word": "HUVUD", "clue": "Sitter överst på kroppen"},
+        {"word": "HAND", "clue": "Sitter i slutet av armen"},
+        {"word": "FOT", "clue": "Sitter i slutet av benet"},
+        {"word": "RYGG", "clue": "Baksidan av kroppen"}
       ]
     }
   ]

@@ -150,6 +150,172 @@
           "explanation": "Kolon används för att inleda en lista eller förklaring."
         }
       ]
+    },
+    {
+      "id": "ordföljd-1",
+      "title": "Ordföljd",
+      "description": "Rätt ordning i meningen",
+      "icon": "📐",
+      "bonusPoints": 30,
+      "helpText": [
+        "Normal ordföljd: Subjekt – Predikat – Objekt",
+        "Omvänd ordföljd: Adverbial – Predikat – Subjekt – Objekt",
+        "Vid bisats: bindeord + subjekt + bisatsadverbial + predikat"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening har normal (rak) ordföljd?",
+          "options": [
+            "Igår åt han pizza.",
+            "Han åt pizza igår.",
+            "Pizza åt han igår.",
+            "Åt han pizza igår?"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Han åt pizza igår' – subjekt (Han) + predikat (åt) + objekt (pizza) = rak ordföljd."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad händer med ordföljden när meningen börjar med ett adverbial?",
+          "options": [
+            "Ingenting – ordföljden är densamma",
+            "Subjekt och predikat byter plats (omvänd ordföljd)",
+            "Objektet försvinner",
+            "Man lägger till ett komma"
+          ],
+          "correctIndex": 1,
+          "explanation": "Vid omvänd ordföljd byter subjektet och predikatet plats: 'Igår åt HAN pizza' (predikat före subjekt)."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Sätt in rätt ordföljd: 'Idag ___ vi till skolan.' (verb + subjekt)",
+          "answer": "cyklar",
+          "hint": "Adverbialet 'Idag' är först – vad ska komma härnäst?",
+          "explanation": "När 'Idag' inleder meningen, ska predikatet (verbet) komma före subjektet: Idag + cyklar + vi."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är grammatiskt korrekt?",
+          "options": [
+            "Aldrig jag har sett det.",
+            "Aldrig har jag sett det.",
+            "Jag aldrig har sett det.",
+            "Har aldrig jag sett det."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Aldrig' (adverbial) leder till omvänd ordföljd: 'Aldrig har jag sett det.'"
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med omvänd ordföljd – adverbialet är först!",
+          "words": ["Imorgon", "reser", "vi", "till", "Paris"],
+          "correctOrder": [0, 1, 2, 3, 4],
+          "explanation": "'Imorgon' (adverbial) + 'reser' (predikat) + 'vi' (subjekt) = omvänd ordföljd."
+        }
+      ]
+    },
+    {
+      "id": "kongruens-1",
+      "title": "Kongruens",
+      "description": "Ord ska stämma överens",
+      "icon": "⚖️",
+      "bonusPoints": 35,
+      "helpText": [
+        "Kongruens = ord i en mening ska 'matcha' varandra",
+        "Adjektivet böjs efter substantivets genus och numerus",
+        "Ex: en stor bil / ett stort hus / stora bilar"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilket adjektiv passar? '___ hus är gammalt.'",
+          "options": ["en", "ett", "Det", "Den"],
+          "correctIndex": 2,
+          "explanation": "'Hus' är ett n-ord (neutrum) – artikeln 'ett' och pronomenet 'det' passar."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt form: 'Jag ser en ___ bil.'",
+          "options": ["stort", "stora", "stor", "store"],
+          "correctIndex": 2,
+          "explanation": "'En stor bil' – obestämd form singular av ett utrum-adjektiv."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt adjektivform: 'Jag bor i ett ___ hus.' (stor)",
+          "answer": "stort",
+          "hint": "Hus är ett n-ord (neutrum) – adjektiv + t.",
+          "explanation": "'Stort hus' – adjektiv i neutrum singular tar -t: stor → stort."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt form av adjektivet: 'De ___ bilarna parkerade fel.'",
+          "options": ["stor", "stort", "stora", "store"],
+          "correctIndex": 2,
+          "explanation": "Plural form: 'stora bilar' – adjektiv i plural tar -a."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med kongruent adjektiv!",
+          "words": ["Det", "gamla", "huset", "är", "vackert"],
+          "correctOrder": [0, 1, 2, 3, 4],
+          "explanation": "'Det gamla huset' – bestämd form + -a på adjektivet. 'Vackert' i predikativ ställning."
+        }
+      ]
+    },
+    {
+      "id": "satsdelar-avancerat",
+      "title": "Satsdelar – avancerat",
+      "description": "Attribut och predikativ",
+      "icon": "🧩",
+      "bonusPoints": 35,
+      "helpText": [
+        "Attribut: Adjektiv som bestämmer ett substantiv ('den snabba bilen')",
+        "Predikativ: Adjektiv som hör till subjektet via 'vara/bli' ('bilen är snabb')"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilket är attributet i: 'Den röda boken låg på bordet'?",
+          "options": ["Den", "röda", "låg", "bordet"],
+          "correctIndex": 1,
+          "explanation": "'Röda' är ett attribut – det bestämmer substantivet 'boken'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket är predikativet i: 'Hunden är snäll'?",
+          "options": ["Hunden", "är", "snäll", "Finns inget"],
+          "correctIndex": 2,
+          "explanation": "'Snäll' är predikativ – det hör till subjektet 'Hunden' via 'är'."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "I meningen 'Den trötta läraren vilade' är 'trötta' ett ___.",
+          "answer": "attribut",
+          "hint": "Adjektivet sitter direkt vid substantivet.",
+          "explanation": "'Trötta' är ett attribut – det bestämmer 'läraren' direkt."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "I vilken mening är adjektivet ett predikativ?",
+          "options": [
+            "Den glada flickan sjöng.",
+            "Flickan blev glad.",
+            "Den leende flickan log.",
+            "Flickans glada leende syntes."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Flickan blev glad' – 'glad' är predikativ, kopplat till 'flickan' via 'blev'."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med ett predikativ!",
+          "words": ["Himlen", "är", "klarblå", "idag"],
+          "correctOrder": [0, 1, 2, 3],
+          "explanation": "'Klarblå' är predikativ – det hör till 'himlen' via 'är'."
+        }
+      ]
     }
   ],
   "reading": [
@@ -260,6 +426,223 @@
           "correctIndex": 1,
           "explanation": "'De' används som subjekt i skriftlig svenska."
         }
+      ]
+    },
+    {
+      "id": "svara-ord-1",
+      "title": "Svåra ord",
+      "description": "Ord som ofta stavas fel",
+      "icon": "📚",
+      "bonusPoints": 30,
+      "helpText": [
+        "Observera: 'klistra' inte 'klibba', 'ryggsäck' inte 'ryggsäck', 'februari' inte 'febrari'"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas årets andra månad?",
+          "options": ["febrari", "februari", "febuari", "februrari"],
+          "correctIndex": 1,
+          "explanation": "'Februari' – fe-bru-a-ri. Tänk på 'febrer' (feber). Det är lätt att glömma det andra u."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas platsen man köper medicin?",
+          "options": ["apotek", "apotäk", "appoteck", "apoteck"],
+          "correctIndex": 0,
+          "explanation": "'Apotek' – a-p-o-t-e-k. Lånord från grekiskan."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt stavning: 'Jag lånade en bok på ___et.' (bibliotek)",
+          "answer": "bibliotek",
+          "hint": "bibl-i-o-tek",
+          "explanation": "'Bibliotek' – bi-b-li-o-tek. Lånord med o inuti."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas läkarens skriftliga instruktion om medicin?",
+          "options": ["recäpt", "resept", "recept", "resäpt"],
+          "correctIndex": 2,
+          "explanation": "'Recept' – re-c-e-p-t. Lånord från latinet."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas det som mäter hur varmt det är?",
+          "options": ["temperatur", "tämperatur", "temperratyr", "temporatur"],
+          "correctIndex": 0,
+          "explanation": "'Temperatur' – tem-pe-ra-tur. Lånord med e i mitten."
+        }
+      ]
+    },
+    {
+      "id": "lanord-1",
+      "title": "Lånord",
+      "description": "Ord vi lånat från andra språk",
+      "icon": "🌍",
+      "bonusPoints": 30,
+      "helpText": [
+        "Lånord kan ha oväntad stavning",
+        "Från franska: chansen, chef, bagage",
+        "Från engelska: jobb, team, jazz"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas det engelska ordet för arbete (på svenska)?",
+          "options": ["job", "jobb", "djobb", "chobb"],
+          "correctIndex": 1,
+          "explanation": "'Jobb' – det engelska 'job' stavas med dubbelt b på svenska."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas musikgenren från New Orleans?",
+          "options": ["jass", "jazz", "jas", "djazz"],
+          "correctIndex": 1,
+          "explanation": "'Jazz' – behåller den engelska stavningen i svenska."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt stavning: 'Hon är ___ för avdelningen.' (ledare, från franska 'chef')",
+          "answer": "chef",
+          "hint": "Franskt lånord med ch som sj-ljud.",
+          "explanation": "'Chef' – franskt lånord. Ch uttalas som sj i svenska."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas möjligheten/turen? (från franska 'chance')",
+          "options": ["sjans", "chans", "chanse", "sjanse"],
+          "correctIndex": 1,
+          "explanation": "'Chans' – franskt lånord. Ch uttalas sj. Chans = möjlighet."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas arbetsgruppen? (från engelska 'team')",
+          "options": ["tim", "team", "tem", "tiim"],
+          "correctIndex": 1,
+          "explanation": "'Team' – engelskt lånord som behålls med ea-stavning i svenska."
+        }
+      ]
+    },
+    {
+      "id": "sarskrivning-1",
+      "title": "Samman- och särskrivning",
+      "description": "Ska det vara ett eller två ord?",
+      "icon": "🔗",
+      "bonusPoints": 35,
+      "helpText": [
+        "På svenska skrivs sammansatta ord ihop: 'skolbuss' inte 'skol buss'",
+        "Jämför: 'en gammal bil' (adjektiv+substantiv=isär) vs 'gammalsvenska' (eget ord=ihop)"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilket alternativ är korrekt?",
+          "options": ["skol buss", "skol-buss", "skolbuss", "Skolbuss"],
+          "correctIndex": 2,
+          "explanation": "'Skolbuss' – sammansatta ord skrivs ihop på svenska."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket alternativ är korrekt för 'röd + vin'?",
+          "options": ["röd vin", "rödvin", "röd-vin", "RödVin"],
+          "correctIndex": 1,
+          "explanation": "'Rödvin' – ett slags vin, sammansatt ord skrivs ihop."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Skriv rätt: 'Det är en ___.' (buss som går till flyget)",
+          "answer": "flygbuss",
+          "hint": "Flyg + buss = sammansatt ord.",
+          "explanation": "'Flygbuss' – sammansatt ord skrivs ihop: flyg + buss."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket alternativ är en felaktig särskrivning?",
+          "options": [
+            "en lång väg",
+            "ett kort svar",
+            "en ny bil",
+            "en stor bil affär"
+          ],
+          "correctIndex": 3,
+          "explanation": "'en stor bil affär' är fel – det ska vara 'en stor bilaffär'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket sammansatt ord är korrekt skrivet?",
+          "options": ["hand väska", "hand-väska", "handväska", "HandVäska"],
+          "correctIndex": 2,
+          "explanation": "'Handväska' – sammansatta ord skrivs ihop: hand + väska."
+        }
+      ]
+    }
+  ],
+  "wordsearch": [
+    {
+      "id": "ordsokning-samhalle",
+      "title": "Samhällsord",
+      "description": "Ord i samhällskunskapen",
+      "icon": "🏛️",
+      "bonusPoints": 40,
+      "words": [
+        {"word": "RIKSDAG", "clue": "Sveriges parlament där lagar stiftas"},
+        {"word": "REGERING", "clue": "Den styrande makten i Sverige"},
+        {"word": "RÖSTA", "clue": "Välja politiker i val"},
+        {"word": "LAGAR", "clue": "Regler som alla måste följa"},
+        {"word": "MEDIA", "clue": "Tv, tidningar och internet"},
+        {"word": "DEBATT", "clue": "Diskussion där man argumenterar"},
+        {"word": "BUDGET", "clue": "Plan för pengar som ska spenderas"},
+        {"word": "REFORM", "clue": "En förändring i samhället"}
+      ]
+    },
+    {
+      "id": "ordsokning-politik",
+      "title": "Politiska begrepp",
+      "description": "Förstå politiken",
+      "icon": "🗳️",
+      "bonusPoints": 40,
+      "words": [
+        {"word": "PARTI", "clue": "Grupp av politiker med liknande åsikter"},
+        {"word": "VALET", "clue": "När medborgarna väljer politiker"},
+        {"word": "MOTION", "clue": "Förslag i riksdagen"},
+        {"word": "MANDAT", "clue": "En plats i riksdagen"},
+        {"word": "LEDARE", "clue": "Den som leder ett parti"},
+        {"word": "LIBERAL", "clue": "En som värnar om frihet"},
+        {"word": "MINISTER", "clue": "Regeringens departementschef"}
+      ]
+    },
+    {
+      "id": "ordsokning-historia-hog",
+      "title": "Historiska epoker",
+      "description": "Epoker i historien",
+      "icon": "📜",
+      "bonusPoints": 40,
+      "words": [
+        {"word": "ANTIKEN", "clue": "Forntida Grekland och Rom"},
+        {"word": "INDUSTRI", "clue": "Fabriker och maskiner på 1800-talet"},
+        {"word": "KOLONI", "clue": "Land styrt av en annan nation"},
+        {"word": "MONARKI", "clue": "Statsskick med kung eller drottning"},
+        {"word": "FEODAL", "clue": "Medeltida system med herrar och bönder"},
+        {"word": "IMPERIUM", "clue": "Stor rike som kontrollerar många länder"},
+        {"word": "REPUBLIK", "clue": "Statsskick utan kung"}
+      ]
+    },
+    {
+      "id": "ordsokning-vetenskap",
+      "title": "Vetenskapliga ord",
+      "description": "Termer från naturvetenskapen",
+      "icon": "🔬",
+      "bonusPoints": 40,
+      "words": [
+        {"word": "ATOM", "clue": "Ämnets minsta byggsten"},
+        {"word": "MOLEKYL", "clue": "Atomer bundna tillsammans"},
+        {"word": "KEMI", "clue": "Vetenskapen om ämnen och reaktioner"},
+        {"word": "FYSIK", "clue": "Vetenskapen om kraft och rörelse"},
+        {"word": "BIOLOGI", "clue": "Vetenskapen om levande organismer"},
+        {"word": "PLASMA", "clue": "Det fjärde aggregationstillståndet"},
+        {"word": "ENERGI", "clue": "Förmågan att utföra arbete"},
+        {"word": "EVOLUTION", "clue": "Arternas förändring över tid"}
       ]
     }
   ]
