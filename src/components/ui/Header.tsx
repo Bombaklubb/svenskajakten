@@ -41,9 +41,9 @@ export default function Header({ student, onLogout }: HeaderProps) {
 
   return (
     <header
-      className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-sv-100 dark:border-gray-700 sticky top-0 z-50"
+      className="bg-white/95 dark:bg-gray-900/90 backdrop-blur-md border-b border-orange-100 dark:border-gray-700 sticky top-0 z-50"
       style={{
-        boxShadow: "0 4px 0 0 rgba(0, 106, 167, 0.06), 0 6px 12px -4px rgba(0, 106, 167, 0.08)"
+        boxShadow: "0 4px 0 0 rgba(249, 115, 22, 0.08), 0 6px 12px -4px rgba(249, 115, 22, 0.1)"
       }}
     >
       <div className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
@@ -55,8 +55,8 @@ export default function Header({ student, onLogout }: HeaderProps) {
           <div
             className="w-10 h-10 rounded-xl flex items-center justify-center text-2xl"
             style={{
-              background: "linear-gradient(135deg, #006AA7, #004a75)",
-              boxShadow: "0 3px 0 0 rgba(0,74,117,0.4), inset 0 1px 0 rgba(255,255,255,0.2)"
+              background: "linear-gradient(135deg, #f97316, #ea6c0a)",
+              boxShadow: "0 3px 0 0 rgba(234,108,10,0.4), inset 0 1px 0 rgba(255,255,255,0.2)"
             }}
           >
             🇸🇪

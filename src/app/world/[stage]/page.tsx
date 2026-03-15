@@ -56,7 +56,7 @@ export default function WorldPage({ params }: Props) {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="min-h-screen flex items-center justify-center bg-amber-50">
         <div className="text-4xl animate-bounce-slow">{stage.emoji}</div>
       </div>
     );
@@ -85,7 +85,7 @@ export default function WorldPage({ params }: Props) {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen bg-amber-50 dark:bg-gray-900">
       <Header student={student} />
 
       {/* Hero */}
