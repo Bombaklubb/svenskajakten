@@ -38,13 +38,101 @@
       ]
     },
     {
+      "id": "stilnivaer",
+      "title": "Stilnivåer",
+      "icon": "🎭",
+      "content": [
+        {
+          "term": "Formellt språk",
+          "explanation": "Används i akademiska texter, myndigheter och affärskorrespondens. Passiva konstruktioner, nominaliseringar, formella konjunktioner.",
+          "examples": ["Härmed översänder jag...", "Det har konstaterats att...", "Följaktligen kan man dra slutsatsen..."]
+        },
+        {
+          "term": "Neutralt språk",
+          "explanation": "Används i nyheter, faktatexter och rapporter. Sakligt och tydligt utan starka värdeladdningar.",
+          "examples": ["Studien visar att...", "Enligt rapporten...", "Undersökningen genomfördes..."]
+        },
+        {
+          "term": "Informellt språk",
+          "explanation": "Används i samtal, SMS och sociala medier. Vardagliga ord, förkortningar, slang.",
+          "examples": ["Va händer?", "Kolla det här!", "Typ, jag fattar inte..."]
+        }
+      ]
+    },
+    {
+      "id": "nominalisering",
+      "title": "Nominalisering",
+      "icon": "🔄",
+      "content": [
+        {
+          "term": "Vad är nominalisering?",
+          "explanation": "Att omvandla verb eller adjektiv till substantiv för att skapa ett formellare och mer komprimerat språk.",
+          "examples": ["diskutera → diskussion", "undersöka → undersökning", "besluta → beslut"]
+        },
+        {
+          "term": "Vanliga suffix",
+          "explanation": "Suffix som bildar nominalisieringar: -ning, -ande, -else, -tion, -het.",
+          "examples": ["röra → rörelse", "fri → frihet", "förändra → förändring", "organisera → organisation"]
+        },
+        {
+          "term": "Effekten av nominalisering",
+          "explanation": "Nominaliseringar skapar ett mer opersonligt, formellt och komprimerat uttryck typiskt för akademisk och myndighetsprosa.",
+          "examples": ["Aktivt: 'Man genomförde en analys.'", "Nominaliserat: 'Genomförandet av analysen...'"]
+        }
+      ]
+    },
+    {
+      "id": "akademiskt-sprak",
+      "title": "Akademiskt språk",
+      "icon": "📖",
+      "content": [
+        {
+          "term": "Akademiska nyckelord",
+          "explanation": "Ord som ofta förekommer i vetenskapliga och akademiska texter.",
+          "examples": ["analys, syntes, kontext, perspektiv, implikation, evidens, diskurs, hypotes"]
+        },
+        {
+          "term": "Passiv konstruktion",
+          "explanation": "Akademiska texter använder ofta passiv för att betona fenomen snarare än person.",
+          "examples": ["Data samlades in. (passiv)", "Studien genomfördes 2020.", "Resultaten analyserades."]
+        },
+        {
+          "term": "Formella konjunktioner",
+          "explanation": "Ord som binder samman argument på ett formellt sätt.",
+          "examples": ["Följaktligen, Dessutom, Emellertid, Vad gäller, Av detta följer att"]
+        }
+      ]
+    },
+    {
+      "id": "kallhanvisning",
+      "title": "Källhänvisning",
+      "icon": "📚",
+      "content": [
+        {
+          "term": "Varför källhänvisa?",
+          "explanation": "Källhänvisningar visar var information kommer ifrån och stärker textens trovärdighet.",
+          "examples": ["Undviker plagiat", "Möjliggör för läsaren att kontrollera uppgifter", "Visar akademisk hederlighet"]
+        },
+        {
+          "term": "APA-format (förenklat)",
+          "explanation": "Vanligt format för källhänvisning: Efternamn, Förnamn. (År). Titel. Förlag.",
+          "examples": ["Lindgren, A. (1945). Pippi Långstrump. Rabén & Sjögren.", "I texten: (Lindgren, 1945)"]
+        },
+        {
+          "term": "Primär- och sekundärkälla",
+          "explanation": "Primärkälla: originaldokument. Sekundärkälla: tolkning av primärkälla.",
+          "examples": ["Primär: dagbok, lagtext, originalstudie", "Sekundär: lärobok, artikel om en annan studie"]
+        }
+      ]
+    },
+    {
       "id": "texttyper",
       "title": "Texttyper och syften",
       "icon": "📄",
       "content": [
         {
           "term": "Argumenterande text",
-          "explanation": "Syftar till att övertala läsaren. Innehåller tes, argument och belägga.",
+          "explanation": "Syftar till att övertala läsaren. Innehåller tes, argument och belägg.",
           "examples": ["Debattartikel", "Insändare", "Recension"]
         },
         {
@@ -61,33 +149,6 @@
           "term": "Informerande text",
           "explanation": "Förmedlar fakta och information objektivt.",
           "examples": ["Lärobok", "Manual", "Nyhetsartikel"]
-        }
-      ]
-    },
-    {
-      "id": "avancerad-interpunktion",
-      "title": "Avancerad interpunktion",
-      "icon": "—",
-      "content": [
-        {
-          "term": "Tankstreck (–)",
-          "explanation": "Markerar inskott, paus eller ersätter parentes för dramatisk effekt.",
-          "examples": ["Sverige – landet i norr – är vackert.", "Hon log – och allt förändrades."]
-        },
-        {
-          "term": "Kolon (:)",
-          "explanation": "Inleder lista, förklaring eller direktcitat.",
-          "examples": ["Vi behöver: mjölk och bröd.", "Han sa: 'Hej!'"]
-        },
-        {
-          "term": "Semikolon (;)",
-          "explanation": "Förbinder nära relaterade meningar utan konjunktion.",
-          "examples": ["Hon kom tidigt; han kom sent.", "Det regnade; vi stannade inne."]
-        },
-        {
-          "term": "Apostrof (')",
-          "explanation": "Markerar genitiv vid s/x/z-namn, eller utelämnade ljud.",
-          "examples": ["Jonas' bok", "Felix' cykel", "'ello istället för 'hello'"]
         }
       ]
     }

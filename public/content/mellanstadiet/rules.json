@@ -19,6 +19,11 @@
           "term": "Objekt",
           "explanation": "Det som handlingen riktas mot. Svarar på 'Vem?' eller 'Vad?' efter predikatet.",
           "examples": ["Jag äter en smörgås.", "Han läser en bok.", "Vi ser filmen."]
+        },
+        {
+          "term": "Adverbial",
+          "explanation": "Bestämmer hur, när eller var något händer.",
+          "examples": ["Vi spelar i parken. (var?)", "Hon sjunger vackert. (hur?)", "De kom igår. (när?)"]
         }
       ]
     },
@@ -58,6 +63,72 @@
           "term": "Reflexiva pronomen",
           "explanation": "Syftar tillbaka på subjektet.",
           "examples": ["sig, mig, dig, oss, er"]
+        }
+      ]
+    },
+    {
+      "id": "adjektiv-adverb",
+      "title": "Adjektiv och adverb",
+      "icon": "🌈",
+      "content": [
+        {
+          "term": "Adjektiv",
+          "explanation": "Beskriver ett substantiv – hur något är.",
+          "examples": ["en stor bil", "en snäll lärare", "ett gult hus"]
+        },
+        {
+          "term": "Adverb",
+          "explanation": "Beskriver ett verb – hur något görs. Slutar ofta på -t.",
+          "examples": ["springer snabbt", "sjunger vackert", "bor nära"]
+        }
+      ]
+    },
+    {
+      "id": "sj-tj-ng-ljud",
+      "title": "Sj-, tj- och ng-ljud",
+      "icon": "🔤",
+      "content": [
+        {
+          "term": "Sj-ljud",
+          "explanation": "Kan skrivas: sj, sk (före e/i/y/ä/ö), skj, stj, sch, ch.",
+          "examples": ["sjunga, skämt, skjuta, stjärna, schema, chef"]
+        },
+        {
+          "term": "Tj-ljud",
+          "explanation": "Kan skrivas: tj, k (före e/i/y/ä/ö), kj.",
+          "examples": ["tjuv, kyckling, kyss, kärlek, kjol"]
+        },
+        {
+          "term": "Ng-ljud",
+          "explanation": "Skrivs 'ng'. Förekommer i slutet av stavelser.",
+          "examples": ["sång, ring, lång, ingenting, något"]
+        }
+      ]
+    },
+    {
+      "id": "skiljetecken",
+      "title": "Skiljetecken",
+      "icon": "⁉️",
+      "content": [
+        {
+          "term": "Punkt (.)",
+          "explanation": "Avslutar en påståendemening.",
+          "examples": ["Jag heter Maja.", "Solen skiner idag."]
+        },
+        {
+          "term": "Kommatecken (,)",
+          "explanation": "Används vid uppräkningar, inskott och ibland bisatser.",
+          "examples": ["Jag köpte äpplen, päron och bananer.", "Ja, det stämmer."]
+        },
+        {
+          "term": "Kolon (:)",
+          "explanation": "Inleder en lista, förklaring eller direkt anföring.",
+          "examples": ["Vi behöver: mjölk, bröd och ägg.", "Han sa: 'Hej!'"]
+        },
+        {
+          "term": "Semikolon (;)",
+          "explanation": "Förbinder två nära relaterade meningar utan konjunktion.",
+          "examples": ["Det regnade; vi stannade inne.", "Hon kom tidigt; han kom sent."]
         }
       ]
     }
