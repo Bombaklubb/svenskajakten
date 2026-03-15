@@ -58,6 +58,38 @@
           "term": "En mening slutar med punkt",
           "explanation": "När meningen är klar sätter man en punkt (.) i slutet.",
           "examples": ["Jag heter Maja.", "Vi bor i Sverige.", "Solen skiner."]
+        },
+        {
+          "term": "En fråga slutar med frågetecken",
+          "explanation": "Frågor avslutas alltid med frågetecken (?).",
+          "examples": ["Vad heter du?", "Hur mår du?", "Var bor du?"]
+        },
+        {
+          "term": "Namn börjar med stor bokstav",
+          "explanation": "Namn på personer och platser skrivs alltid med stor bokstav.",
+          "examples": ["Anna", "Kalle", "Sverige", "Stockholm", "Göteborg"]
+        }
+      ]
+    },
+    {
+      "id": "vanliga-fel",
+      "title": "Vanliga fel att undvika",
+      "icon": "⚠️",
+      "content": [
+        {
+          "term": "Dubbelteckning",
+          "explanation": "Kort vokal följs av dubbel konsonant. Lång vokal följs av enkel konsonant.",
+          "examples": ["katt (kort a) men mat (långt a)", "glass (kort a) men glas (långt a)", "boll (kort o) men bol (finns ej)"]
+        },
+        {
+          "term": "Glöm inte specialbokstäverna",
+          "explanation": "Svenska har å, ä och ö – blanda inte ihop dem med a och o.",
+          "examples": ["äpple (inte apple)", "öga (inte oga)", "år (inte ar)"]
+        },
+        {
+          "term": "Sammansatta ord skrivs ihop",
+          "explanation": "På svenska skrivs sammansatta ord som ett ord, inte som två.",
+          "examples": ["skolbuss (inte skol buss)", "hundhus (inte hund hus)", "solros (inte sol ros)"]
         }
       ]
     }

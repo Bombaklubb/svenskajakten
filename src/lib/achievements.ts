@@ -24,11 +24,10 @@ function stageStats(student: StudentData, stageId: StageId) {
   const read  = Object.values(s.readingModules).filter((m) => m.completed);
   const spell = Object.values(s.spellingModules    ?? {}).filter((m) => m.completed);
   const ws    = Object.values(s.wordsearchModules  ?? {}).filter((m) => m.completed);
-  const cross = Object.values(s.crosswordModules   ?? {}).filter((m) => m.completed);
-  const all   = [...gram, ...read, ...spell, ...ws, ...cross];
+  const all   = [...gram, ...read, ...spell, ...ws];
   const points = all.reduce((sum, m) => sum + m.points, 0);
   return { gram: gram.length, read: read.length, spell: spell.length,
-           ws: ws.length, cross: cross.length, total: all.length, points };
+           ws: ws.length, total: all.length, points };
 }
 
 export const ACHIEVEMENTS: Achievement[] = [
@@ -44,7 +43,7 @@ export const ACHIEVEMENTS: Achievement[] = [
   { id: "lag-9",  stageId: "lagstadiet", icon: "🏆", title: "Ängshjälte",        description: "Klara 10 moduler i Ordängen." },
   { id: "lag-10", stageId: "lagstadiet", icon: "🌟", title: "Ängskung",          description: "Klara 18 moduler i Ordängen." },
   { id: "lag-11", stageId: "lagstadiet", icon: "🔍", title: "Ordjägaren I",      description: "Klara en ordsökningsmodul i Ordängen." },
-  { id: "lag-12", stageId: "lagstadiet", icon: "🔠", title: "Korsordsmästaren I",description: "Klara en korsordmodul i Ordängen." },
+  { id: "lag-12", stageId: "lagstadiet", icon: "🔍", title: "Ordjägaren II",      description: "Klara 3 ordsökningsmoduler i Ordängen." },
 
   // ── Berättelseskogen ──────────────────────────────────────────────────────
   { id: "mel-1",  stageId: "mellanstadiet", icon: "🌲", title: "Skogsvandrare",     description: "Klara din första modul i Berättelseskogen." },
@@ -58,7 +57,7 @@ export const ACHIEVEMENTS: Achievement[] = [
   { id: "mel-9",  stageId: "mellanstadiet", icon: "🏆", title: "Skogshjälte",       description: "Klara 10 moduler i Berättelseskogen." },
   { id: "mel-10", stageId: "mellanstadiet", icon: "🌟", title: "Skogslegende",      description: "Klara 18 moduler i Berättelseskogen." },
   { id: "mel-11", stageId: "mellanstadiet", icon: "🔍", title: "Ordjägaren II",     description: "Klara en ordsökningsmodul i Berättelseskogen." },
-  { id: "mel-12", stageId: "mellanstadiet", icon: "🔠", title: "Korsordsmästaren II",description: "Klara en korsordmodul i Berättelseskogen." },
+  { id: "mel-12", stageId: "mellanstadiet", icon: "🔍", title: "Ordjägaren III",    description: "Klara 3 ordsökningsmoduler i Berättelseskogen." },
 
   // ── Texthavet ─────────────────────────────────────────────────────────────
   { id: "hog-1",  stageId: "hogstadiet", icon: "🌊", title: "Havsfarare",        description: "Klara din första modul i Texthavet." },
@@ -72,7 +71,7 @@ export const ACHIEVEMENTS: Achievement[] = [
   { id: "hog-9",  stageId: "hogstadiet", icon: "🏆", title: "Havsmästare",       description: "Klara 10 moduler i Texthavet." },
   { id: "hog-10", stageId: "hogstadiet", icon: "🌟", title: "Havslegende",       description: "Klara 18 moduler i Texthavet." },
   { id: "hog-11", stageId: "hogstadiet", icon: "🔍", title: "Ordjägaren III",    description: "Klara en ordsökningsmodul i Texthavet." },
-  { id: "hog-12", stageId: "hogstadiet", icon: "🔠", title: "Korsordsmästaren III",description: "Klara en korsordmodul i Texthavet." },
+  { id: "hog-12", stageId: "hogstadiet", icon: "🔍", title: "Ordjägaren IV",      description: "Klara 3 ordsökningsmoduler i Texthavet." },
 
   // ── Skrivakademin ─────────────────────────────────────────────────────────
   { id: "gym-1",  stageId: "gymnasiet", icon: "🏰", title: "Akademiklättrare",   description: "Klara din första modul i Skrivakademin." },
@@ -86,7 +85,7 @@ export const ACHIEVEMENTS: Achievement[] = [
   { id: "gym-9",  stageId: "gymnasiet", icon: "🏆", title: "Akademimästare",     description: "Klara 10 moduler i Skrivakademin." },
   { id: "gym-10", stageId: "gymnasiet", icon: "🌟", title: "Akademilegende",     description: "Klara 18 moduler i Skrivakademin." },
   { id: "gym-11", stageId: "gymnasiet", icon: "🔍", title: "Ordjägaren IV",      description: "Klara en ordsökningsmodul i Skrivakademin." },
-  { id: "gym-12", stageId: "gymnasiet", icon: "🔠", title: "Korsordsmästaren IV",description: "Klara en korsordmodul i Skrivakademin." },
+  { id: "gym-12", stageId: "gymnasiet", icon: "🔍", title: "Ordjägaren V",       description: "Klara 3 ordsökningsmoduler i Skrivakademin." },
 
   // ── Globala ────────────────────────────────────────────────────────────────
   { id: "global-1", stageId: "global", icon: "🚀", title: "Första steget",       description: "Klara din allra första modul." },
@@ -120,7 +119,7 @@ export function isUnlocked(a: Achievement, student: StudentData): boolean {
   }
 
   const sid = a.stageId as StageId;
-  const { gram, read, spell, ws, cross, total, points } = stageStats(student, sid);
+  const { gram, read, spell, ws, total, points } = stageStats(student, sid);
 
   const prefix = sid === "lagstadiet" ? "lag"
     : sid === "mellanstadiet" ? "mel"
@@ -138,7 +137,7 @@ export function isUnlocked(a: Achievement, student: StudentData): boolean {
   if (a.id === `${prefix}-9`)  return total >= 10;
   if (a.id === `${prefix}-10`) return total >= 18;
   if (a.id === `${prefix}-11`) return ws >= 1;
-  if (a.id === `${prefix}-12`) return cross >= 1;
+  if (a.id === `${prefix}-12`) return ws >= 3;
   return false;
 }
 
