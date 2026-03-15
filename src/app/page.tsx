@@ -7,7 +7,14 @@ import Header from "@/components/ui/Header";
 import { loadStudent, createStudent, clearStudent } from "@/lib/storage";
 import { STAGES } from "@/lib/stages";
 import { AVATARS } from "@/lib/avatars";
-import type { StudentData } from "@/lib/types";
+import type { StudentData, StageId } from "@/lib/types";
+
+const SCENE_EMOJIS: Record<StageId, string> = {
+  lagstadiet:    "🌾 🌿 ✏️",
+  mellanstadiet: "🌲 📖 🧚",
+  hogstadiet:    "🌊 📜 🍾",
+  gymnasiet:     "🏛️ 📚 🎓",
+};
 
 export default function HomePage() {
   const [student, setStudent] = useState<StudentData | null>(null);
@@ -156,25 +163,16 @@ export default function HomePage() {
           </p>
         </div>
 
-        {(() => {
-          const sceneEmojis: Record<string, string> = {
-            lagstadiet:    "🌾 🌿 ✏️",
-            mellanstadiet: "🌲 📖 🧚",
-            hogstadiet:    "🌊 📜 🍾",
-            gymnasiet:     "🏛️ 📚 🎓",
-          };
-
-          return (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {STAGES.map((stage) => {
                 const stageProgress = student.stages[stage.id];
-                const grammarCompleted = Object.values(stageProgress.grammarModules).filter((m) => m.completed).length;
-                const readingCompleted = Object.values(stageProgress.readingModules).filter((m) => m.completed).length;
-                const spellingCompleted = Object.values(stageProgress.spellingModules ?? {}).filter((m) => m.completed).length;
-                const totalCompleted = grammarCompleted + readingCompleted + spellingCompleted;
-                const stagePoints = Object.values(stageProgress.grammarModules)
-                  .concat(Object.values(stageProgress.readingModules))
-                  .concat(Object.values(stageProgress.spellingModules ?? {}))
+                const grammarMods  = Object.values(stageProgress.grammarModules);
+                const readingMods  = Object.values(stageProgress.readingModules);
+                const spellingMods = Object.values(stageProgress.spellingModules ?? {});
+                const totalCompleted = grammarMods.filter((m) => m.completed).length
+                  + readingMods.filter((m) => m.completed).length
+                  + spellingMods.filter((m) => m.completed).length;
+                const stagePoints = [...grammarMods, ...readingMods, ...spellingMods]
                   .reduce((sum, m) => sum + m.points, 0);
 
                 return (
@@ -203,7 +201,7 @@ export default function HomePage() {
                           )}
                         </div>
                         <div className="mt-2 text-xl opacity-80 tracking-widest">
-                          {sceneEmojis[stage.id]}
+                          {SCENE_EMOJIS[stage.id as StageId]}
                         </div>
                       </div>
 
@@ -229,9 +227,7 @@ export default function HomePage() {
                   </Link>
                 );
               })}
-            </div>
-          );
-        })()}
+        </div>
       </main>
     </div>
   );

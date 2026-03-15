@@ -41,7 +41,7 @@ export default function Header({ student, onLogout }: HeaderProps) {
 
   return (
     <header
-      className="bg-white/95 dark:bg-gray-900/90 backdrop-blur-md border-b border-orange-100 dark:border-gray-700 sticky top-0 z-50"
+      className="bg-white/95 dark:bg-gray-900/90 backdrop-blur-md border-b border-sv-100 dark:border-gray-700 sticky top-0 z-50"
       style={{
         boxShadow: "0 4px 0 0 rgba(249, 115, 22, 0.08), 0 6px 12px -4px rgba(249, 115, 22, 0.1)"
       }}

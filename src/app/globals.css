@@ -23,7 +23,7 @@
 @layer components {
   /* Claymorphism card – Swedish style */
   .card {
-    @apply bg-white rounded-3xl p-4 sm:p-6 border-3 border-orange-100;
+    @apply bg-white rounded-3xl p-4 sm:p-6 border-3 border-sv-100;
     box-shadow:
       0 4px 0 0 rgba(249, 115, 22, 0.12),
       0 8px 16px -4px rgba(249, 115, 22, 0.08),
@@ -109,7 +109,7 @@
   }
 
   .progress-bar-track {
-    @apply w-full h-4 bg-orange-100 rounded-full overflow-hidden border-2 border-orange-200/50;
+    @apply w-full h-4 bg-sv-100 rounded-full overflow-hidden border-2 border-sv-200/50;
     box-shadow: inset 0 2px 4px -1px rgba(249, 115, 22, 0.15);
   }
 
