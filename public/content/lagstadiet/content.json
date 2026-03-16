@@ -495,6 +495,153 @@
           "explanation": "'Skolväska' är ett sammansatt ord: skol + väska."
         }
       ]
+    },
+    {
+      "id": "vokaler-konsonanter-1",
+      "title": "Vokaler och konsonanter",
+      "description": "Lär dig skilja på vokaler och konsonanter",
+      "icon": "🔡",
+      "bonusPoints": 20,
+      "helpText": [
+        "Vokaler är: a, e, i, o, u, y, å, ä, ö – nio bokstäver.",
+        "Alla andra bokstäver är konsonanter, t.ex. b, d, f, g, k, l, m, n, p, r, s, t.",
+        "Tips: vokaler kan du sjunga länge – konsonanter stoppar luften i munnen!"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilken av dessa bokstäver är en vokal?",
+          "options": ["b", "k", "ä", "s"],
+          "correctIndex": 2,
+          "explanation": "'Ä' är en vokal. De svenska vokalerna är: a, e, i, o, u, y, å, ä, ö."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur många vokaler finns det i ordet 'katt'?",
+          "options": ["0", "1", "2", "3"],
+          "correctIndex": 1,
+          "explanation": "I 'katt' finns det en vokal: a. K och tt är konsonanter."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "I ordet 'sol' är s och l konsonanter. Vilket är vokalen? ___",
+          "answer": "o",
+          "hint": "Vokalerna är: a, e, i, o, u, y, å, ä, ö.",
+          "explanation": "I 'sol' är 'o' vokalen. S och l är konsonanter."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord börjar med en vokal?",
+          "options": ["blomma", "skola", "äpple", "drake"],
+          "correctIndex": 2,
+          "explanation": "'Äpple' börjar med vokalen ä. De andra orden börjar med konsonanter."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Ordna vokalerna i rätt bokstavsordning!",
+          "words": ["a", "e", "i", "o", "u"],
+          "correctOrder": [0, 1, 2, 3, 4],
+          "explanation": "De fem grundvokalerna i ordning: a, e, i, o, u. Plus y, å, ä, ö!"
+        }
+      ]
+    },
+    {
+      "id": "b-eller-d-1",
+      "title": "B eller D?",
+      "description": "Öva på ord med b och d som kan låta lika",
+      "icon": "🔤",
+      "bonusPoints": 20,
+      "helpText": [
+        "B och D kan vara svåra att skilja åt när man skriver.",
+        "B-ljudet: läpparna slutas och öppnas – som i 'boll' och 'bil'.",
+        "D-ljudet: tungan nuddar tänderna – som i 'dal' och 'dörr'."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas platsen där man badar och simmar?",
+          "options": ["dad", "bad", "bab", "dad"],
+          "correctIndex": 1,
+          "explanation": "'Bad' stavas med b i början och d i slutet."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord stavas rätt? (fordonet man cyklar på vägen med, har motor)",
+          "options": ["dil", "bil", "bil", "dill"],
+          "correctIndex": 1,
+          "explanation": "'Bil' stavas med b – b-i-l."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt bokstav: '__röd' (matbröd man äter till frukost)",
+          "answer": "b",
+          "hint": "Bröd eller dröd? Tänk på b-ljudet med läpparna.",
+          "explanation": "'Bröd' börjar med b. Man gör b-ljudet genom att sluta och öppna läpparna."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas platsen i naturen med träd och djur?",
+          "options": ["bog", "dog", "skog", "dkog"],
+          "correctIndex": 2,
+          "explanation": "'Skog' – s+k+o+g. Varken b eller d, men viktigt att inte blanda ihop!"
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med rätt b- och d-ord!",
+          "words": ["Hunden", "dricker", "vatten", "ur", "bäcken"],
+          "correctOrder": [0, 1, 2, 3, 4],
+          "explanation": "'Dricker' börjar med d och 'bäcken' börjar med b – två olika ljud!"
+        }
+      ]
+    },
+    {
+      "id": "e-eller-a-1",
+      "title": "E eller Ä?",
+      "description": "Öva på ord där e och ä kan förväxlas",
+      "icon": "✍️",
+      "bonusPoints": 20,
+      "helpText": [
+        "E och Ä låter nästan likadant men stavas olika.",
+        "Ä är ett av de svenska specialtecknen: ä, å, ö.",
+        "Tips: Lyssna noga – ä låter lite mer öppet och 'brett' än e."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas det du gör med ögonen när du tittar på en bok?",
+          "options": ["leser", "läser", "lesar", "läsir"],
+          "correctIndex": 1,
+          "explanation": "'Läser' stavas med ä – l-ä-s-e-r."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord stavas rätt? (kroppen längst fram i ansiktet)",
+          "options": ["nesa", "näsa", "nese", "nese"],
+          "correctIndex": 1,
+          "explanation": "'Näsa' stavas med ä – n-ä-s-a."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt bokstav: 'Jag s___r en fågel i trädet.' (använder ögonen)",
+          "answer": "e",
+          "hint": "Ser eller sär? Verbet 'se' böjs till 'ser' i nutid.",
+          "explanation": "'Ser' stavas med e – s-e-r. Det är nutidsformen av verbet 'se'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas aktiviteten man gör på is med skridskor?",
+          "options": ["åker", "åkir", "åkar", "åkär"],
+          "correctIndex": 0,
+          "explanation": "'Åker' stavas med e – å-k-e-r."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med rätt e- och ä-ord!",
+          "words": ["Läraren", "ser", "att", "eleven", "läser"],
+          "correctOrder": [0, 1, 2, 3, 4],
+          "explanation": "'Läraren' och 'läser' har ä, medan 'ser' och 'eleven' har e. Lyssna på skillnaden!"
+        }
+      ]
     }
   ],
   "wordsearch": [
