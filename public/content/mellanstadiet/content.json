@@ -15,14 +15,24 @@
         {
           "type": "multiple-choice",
           "question": "Vad är subjektet i meningen: 'Lisa läser en bok'?",
-          "options": ["läser", "bok", "Lisa", "en"],
+          "options": [
+            "läser",
+            "bok",
+            "Lisa",
+            "en"
+          ],
           "correctIndex": 2,
           "explanation": "'Lisa' är den som utför handlingen – det är subjektet."
         },
         {
           "type": "multiple-choice",
           "question": "Vad är predikatet i: 'Katten sover på soffan'?",
-          "options": ["katten", "soffan", "sover", "på"],
+          "options": [
+            "katten",
+            "soffan",
+            "sover",
+            "på"
+          ],
           "correctIndex": 2,
           "explanation": "'Sover' är verbet och predikatet i meningen."
         },
@@ -36,15 +46,30 @@
         {
           "type": "multiple-choice",
           "question": "Vilket är predikatet i: 'Solen skiner starkt idag'?",
-          "options": ["Solen", "skiner", "starkt", "idag"],
+          "options": [
+            "Solen",
+            "skiner",
+            "starkt",
+            "idag"
+          ],
           "correctIndex": 1,
           "explanation": "'Skiner' är verbet/predikatet."
         },
         {
           "type": "build-sentence",
           "instruction": "Bygg meningen: subjekt + predikat + objekt!",
-          "words": ["Maja", "åt", "ett", "äpple"],
-          "correctOrder": [0, 1, 2, 3],
+          "words": [
+            "Maja",
+            "åt",
+            "ett",
+            "äpple"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3
+          ],
           "explanation": "'Maja' är subjektet, 'åt' är predikatet, 'ett äpple' är objektet."
         }
       ]
@@ -64,7 +89,12 @@
         {
           "type": "multiple-choice",
           "question": "Vilket pronomen ersätter 'Erik och Maja'?",
-          "options": ["han", "hon", "de", "det"],
+          "options": [
+            "han",
+            "hon",
+            "de",
+            "det"
+          ],
           "correctIndex": 2,
           "explanation": "När det handlar om flera personer används 'de'."
         },
@@ -78,22 +108,44 @@
         {
           "type": "multiple-choice",
           "question": "Vilket pronomen passar? 'Boken är tjock. ___ har 500 sidor.'",
-          "options": ["Han", "Hon", "Den", "De"],
+          "options": [
+            "Han",
+            "Hon",
+            "Den",
+            "De"
+          ],
           "correctIndex": 2,
           "explanation": "En sak (boken) ersätts med 'den'."
         },
         {
           "type": "multiple-choice",
           "question": "Vilket pronomen används när man talar om sig själv?",
-          "options": ["du", "jag", "ni", "vi"],
+          "options": [
+            "du",
+            "jag",
+            "ni",
+            "vi"
+          ],
           "correctIndex": 1,
           "explanation": "'Jag' används när man talar om sig själv."
         },
         {
           "type": "build-sentence",
           "instruction": "Bygg meningen med rätt pronomen!",
-          "words": ["Hon", "och", "jag", "är", "kompisar"],
-          "correctOrder": [0, 1, 2, 3, 4],
+          "words": [
+            "Hon",
+            "och",
+            "jag",
+            "är",
+            "kompisar"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
           "explanation": "'Hon och jag' – man sätter alltid den andra personen före 'jag'."
         }
       ]
@@ -114,7 +166,12 @@
         {
           "type": "multiple-choice",
           "question": "Vilket tempus är: 'Igår spelade vi fotboll'?",
-          "options": ["Nutid", "Dåtid", "Framtid", "Ingen av dem"],
+          "options": [
+            "Nutid",
+            "Dåtid",
+            "Framtid",
+            "Ingen av dem"
+          ],
           "correctIndex": 1,
           "explanation": "'Igår' och 'spelade' visar att det hände i dåtid."
         },
@@ -128,22 +185,46 @@
         {
           "type": "multiple-choice",
           "question": "Vad är nutidsform av 'sprang'?",
-          "options": ["springer", "sprang", "springa", "sprungit"],
+          "options": [
+            "springer",
+            "sprang",
+            "springa",
+            "sprungit"
+          ],
           "correctIndex": 0,
           "explanation": "'Springer' är nutidsformen, 'sprang' är dåtid."
         },
         {
           "type": "multiple-choice",
           "question": "Vilket verb är i dåtid?",
-          "options": ["sjunger", "sjöng", "sjunga", "sjungit"],
+          "options": [
+            "sjunger",
+            "sjöng",
+            "sjunga",
+            "sjungit"
+          ],
           "correctIndex": 1,
           "explanation": "'Sjöng' är dåtidsformen av 'sjunga/sjunger'."
         },
         {
           "type": "build-sentence",
           "instruction": "Sätt ihop meningen i dåtid!",
-          "words": ["Förra", "veckan", "cyklade", "vi", "till", "sjön"],
-          "correctOrder": [0, 1, 2, 3, 4, 5],
+          "words": [
+            "Förra",
+            "veckan",
+            "cyklade",
+            "vi",
+            "till",
+            "sjön"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
           "explanation": "'Förra veckan' och 'cyklade' visar att det hände i dåtid."
         }
       ]
@@ -163,14 +244,24 @@
         {
           "type": "multiple-choice",
           "question": "Vilket ord är ett adjektiv i: 'Den snabba bilen körde förbi'?",
-          "options": ["snabba", "snabbt", "körde", "förbi"],
+          "options": [
+            "snabba",
+            "snabbt",
+            "körde",
+            "förbi"
+          ],
           "correctIndex": 0,
           "explanation": "'Snabba' är ett adjektiv – det beskriver substantivet 'bilen'."
         },
         {
           "type": "multiple-choice",
           "question": "Vilket ord är ett adverb i: 'Hon sjunger vackert'?",
-          "options": ["Hon", "sjunger", "vackert", "vacker"],
+          "options": [
+            "Hon",
+            "sjunger",
+            "vackert",
+            "vacker"
+          ],
           "correctIndex": 2,
           "explanation": "'Vackert' är ett adverb – det beskriver hur hon sjunger (verbet)."
         },
@@ -184,15 +275,32 @@
         {
           "type": "multiple-choice",
           "question": "Vad beskriver adverbet 'försiktigt' i: 'Hon gick försiktigt'?",
-          "options": ["Hon (subjektet)", "gick (verbet)", "en plats", "en tid"],
+          "options": [
+            "Hon (subjektet)",
+            "gick (verbet)",
+            "en plats",
+            "en tid"
+          ],
           "correctIndex": 1,
           "explanation": "Adverb beskriver verb – 'försiktigt' beskriver hur hon gick."
         },
         {
           "type": "build-sentence",
           "instruction": "Sätt adjektivet och adverbet på rätt plats!",
-          "words": ["Den", "stora", "hunden", "skällde", "högt"],
-          "correctOrder": [0, 1, 2, 3, 4],
+          "words": [
+            "Den",
+            "stora",
+            "hunden",
+            "skällde",
+            "högt"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
           "explanation": "'Stora' (adjektiv) beskriver hunden, 'högt' (adverb) beskriver skällde."
         }
       ]
@@ -211,14 +319,24 @@
         {
           "type": "multiple-choice",
           "question": "Vad är objektet i: 'Maja läser en bok'?",
-          "options": ["Maja", "läser", "en bok", "i skolan"],
+          "options": [
+            "Maja",
+            "läser",
+            "en bok",
+            "i skolan"
+          ],
           "correctIndex": 2,
           "explanation": "'En bok' är objektet – det är det Maja läser (vad läser hon?)."
         },
         {
           "type": "multiple-choice",
           "question": "Vad är adverbialet i: 'Vi spelar fotboll i parken'?",
-          "options": ["Vi", "spelar", "fotboll", "i parken"],
+          "options": [
+            "Vi",
+            "spelar",
+            "fotboll",
+            "i parken"
+          ],
           "correctIndex": 3,
           "explanation": "'I parken' är ett adverbial – det svarar på frågan 'var?'."
         },
@@ -232,265 +350,33 @@
         {
           "type": "multiple-choice",
           "question": "Vilket är objektet i: 'Kalle gav Lisa en blomma'?",
-          "options": ["Kalle", "gav", "Lisa", "en blomma"],
+          "options": [
+            "Kalle",
+            "gav",
+            "Lisa",
+            "en blomma"
+          ],
           "correctIndex": 3,
           "explanation": "'En blomma' är det direkta objektet – det Kalle gav."
         },
         {
           "type": "build-sentence",
           "instruction": "Bygg meningen: subjekt + predikat + objekt + adverbial!",
-          "words": ["Läraren", "undervisar", "eleverna", "varje", "dag"],
-          "correctOrder": [0, 1, 2, 3, 4],
+          "words": [
+            "Läraren",
+            "undervisar",
+            "eleverna",
+            "varje",
+            "dag"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
           "explanation": "'Läraren'=subj, 'undervisar'=pred, 'eleverna'=obj, 'varje dag'=adverbial (när?)."
-        }
-      ]
-    }
-  ],
-  "reading": [
-    {
-      "id": "novell-1",
-      "title": "Sommarstugan",
-      "description": "En berättelse om sommar och vänskap",
-      "icon": "🏡",
-      "bonusPoints": 30,
-      "helpText": [
-        "Läs texten noggrant och tänk på hur karaktärerna känner sig.",
-        "Lägg märke till detaljer – de kan vara viktiga för frågorna."
-      ],
-      "author": "Fri berättelse",
-      "text": "Varje sommar åkte Lina och hennes familj till en röd stuga vid en liten sjö. Lina älskade sommarstugan mer än något annat ställe i hela världen.\n\nMen det här sommaren var annorlunda. Linas bästa vän Emma hade flyttat till en annan stad. Lina kände sig ensam medan hon packade sin väska.\n\n'Det kommer att bli bra', sa mamman och klappade Lina på axeln. 'Du kanske träffar nya kompisar vid sjön.'\n\nLina trodde inte på det. Men när de anlände till stugan stod det ett nytt hus bredvid deras. Och utanför stod en flicka med röda flätor och ett leende.\n\n'Hej! Jag heter Saga. Vill du fiska med mig?' sa flickan.\n\nLina kände hur leendet spred sig på hennes egna läppar. Kanske skulle den här sommaren inte bli så ensam ändå.",
-      "questions": [
-        {
-          "type": "on-the-line",
-          "question": "Vad hette Linas bästa vän?",
-          "options": ["Saga", "Emma", "Maja", "Anna"],
-          "correctIndex": 1,
-          "explanation": "Linas bästa vän hette Emma."
-        },
-        {
-          "type": "on-the-line",
-          "question": "Vad hade hänt med Linas vän Emma?",
-          "options": ["Hon var sjuk", "Hon hade sommarjobb", "Hon hade flyttat till en annan stad", "Hon var på semester"],
-          "correctIndex": 2,
-          "explanation": "Emma hade flyttat till en annan stad."
-        },
-        {
-          "type": "between-the-lines",
-          "question": "Hur mådde Lina i början av berättelsen?",
-          "options": ["Hon var glad och förväntansfull", "Hon var ledsen och ensam", "Hon var arg på Emma", "Hon var trött"],
-          "correctIndex": 1,
-          "hint": "Tänk på varför hon packade väskan med tunga tankar.",
-          "explanation": "Lina kände sig ensam utan sin bästa vän Emma."
-        },
-        {
-          "type": "beyond-the-lines",
-          "question": "Vad tror du händer nästa sommar?",
-          "options": ["Lina slutar åka till sommarstugan", "Lina och Saga har blivit bästa vänner", "Lina träffar aldrig Saga igen", "Emma kommer tillbaka"],
-          "correctIndex": 1,
-          "hint": "Hur slutar berättelsen?",
-          "explanation": "Berättelsen slutar positivt – Saga och Lina verkar bli vänner."
-        },
-        {
-          "type": "between-the-lines",
-          "question": "Varför frågade Saga om Lina ville fiska?",
-          "options": ["Hon ville ha hjälp med fisket", "Hon ville bli kompis med Lina", "Hon ville visa var sjön låg", "Hon var uttråkad"],
-          "correctIndex": 1,
-          "explanation": "Saga var ny och ville lära känna sin granne Lina."
-        }
-      ]
-    }
-  ],
-  "spelling": [
-    {
-      "id": "dubbelkonsonant-1",
-      "title": "Dubbelkonsonanter",
-      "description": "När skriver man dubbla konsonanter?",
-      "icon": "✏️",
-      "bonusPoints": 25,
-      "helpText": [
-        "En kort vokal (betonad) följs oftast av dubbel konsonant.",
-        "Exempel: 'katt' (kort a), 'hatt' (kort a), 'gulle' (kort u).",
-        "Jämför: 'mat' (lång a) vs 'matt' (kort a)."
-      ],
-      "exercises": [
-        {
-          "type": "multiple-choice",
-          "question": "Vilket ord är rätt stavat?",
-          "options": ["katt", "kat", "kaat", "katt"],
-          "correctIndex": 0,
-          "explanation": "'Katt' stavas med dubbelt t – kort vokal kräver dubbel konsonant."
-        },
-        {
-          "type": "multiple-choice",
-          "question": "Vilken stavning är korrekt för djuret som skäller?",
-          "options": ["hund", "hundd", "hhund", "huund"],
-          "correctIndex": 0,
-          "explanation": "'Hund' – här är u-et långt, därför ingen dubbelkonsonant."
-        },
-        {
-          "type": "fill-in-blank",
-          "question": "Stavning: 'Han bär en ha_.' (något man har på huvudet)",
-          "answer": "tt",
-          "hint": "Hat eller hatt? Tänk på om vokalen är lång eller kort.",
-          "explanation": "'Hatt' – kort a-ljud kräver dubbelt t. 'Hat' (med långt a) betyder något annat!"
-        },
-        {
-          "type": "multiple-choice",
-          "question": "Vilket är rätt: 'brev' eller 'brevv'?",
-          "options": ["brev", "brevv", "breev", "bbrev"],
-          "correctIndex": 0,
-          "explanation": "'Brev' – e-et är långt, därför ingen dubbelkonsonant."
-        },
-        {
-          "type": "multiple-choice",
-          "question": "Hur stavas det lilla djuret som springer i hjulet?",
-          "options": ["mus", "muss", "muus", "mús"],
-          "correctIndex": 0,
-          "explanation": "'Mus' – u-et är långt, därför ingen dubbelkonsonant."
-        }
-      ]
-    },
-    {
-      "id": "sj-ljud-1",
-      "title": "Sj-ljudet",
-      "description": "De många sätten att skriva sj-ljud",
-      "icon": "🌊",
-      "bonusPoints": 25,
-      "helpText": [
-        "Sj-ljud kan skrivas: sj, sk (före e,i,y,ä,ö), skj, stj, sch, ch",
-        "Ex: sjunga, skjuta, stjärna, schema, chef"
-      ],
-      "exercises": [
-        {
-          "type": "multiple-choice",
-          "question": "Vilket ord har sj-ljud?",
-          "options": ["skola", "sjunga", "sova", "snö"],
-          "correctIndex": 1,
-          "explanation": "'Sjunga' börjar med sj-ljud, skrivet 'sj'."
-        },
-        {
-          "type": "multiple-choice",
-          "question": "Hur skrivs sj-ljudet i 'skämt'?",
-          "options": ["sj-", "sk- (före ä)", "sch-", "stj-"],
-          "correctIndex": 1,
-          "explanation": "Sk + ä/e/i/y/ö ger sj-ljud. 'Skämt' uttalas med sj-ljud."
-        },
-        {
-          "type": "fill-in-blank",
-          "question": "Fyll i rätt stavning: '___ärna lyser på natthimlen.' (himmelskroppar)",
-          "answer": "stj",
-          "hint": "Stjärna börjar med stj-.",
-          "explanation": "'Stjärna' – sj-ljudet skrivs 'stj' i det här ordet."
-        },
-        {
-          "type": "multiple-choice",
-          "question": "Vilket ord stavas rätt?",
-          "options": ["sjema", "schema", "scema", "skema"],
-          "correctIndex": 1,
-          "explanation": "'Schema' – sj-ljudet skrivs 'sch' i lånord från tyskan."
-        },
-        {
-          "type": "multiple-choice",
-          "question": "Hur stavas ledaren för ett företag?",
-          "options": ["sjef", "skef", "chef", "chäf"],
-          "correctIndex": 2,
-          "explanation": "'Chef' – sj-ljudet skrivs 'ch' i detta franska lånord."
-        }
-      ]
-    },
-    {
-      "id": "tj-ljud-1",
-      "title": "Tj-ljudet",
-      "description": "Lär dig skriva tj-ljud rätt",
-      "icon": "🧊",
-      "bonusPoints": 25,
-      "helpText": [
-        "Tj-ljud kan skrivas: tj, k (före e,i,y,ä,ö), kj",
-        "Ex: tjuv, kyckling, kyss, tjäna, kinda"
-      ],
-      "exercises": [
-        {
-          "type": "multiple-choice",
-          "question": "Vilket ord har tj-ljud?",
-          "options": ["kaka", "tjuv", "kopp", "tall"],
-          "correctIndex": 1,
-          "explanation": "'Tjuv' börjar med tj-ljud, skrivet 'tj'."
-        },
-        {
-          "type": "multiple-choice",
-          "question": "Hur skrivs tj-ljudet i 'kyckling'?",
-          "options": ["tj-", "k- (före y)", "kj-", "ch-"],
-          "correctIndex": 1,
-          "explanation": "K + y/e/i/ä/ö ger tj-ljud. 'Kyckling' uttalas med tj-ljud."
-        },
-        {
-          "type": "fill-in-blank",
-          "question": "Fyll i rätt stavning: '___ärlek är ett fint ord.' (känslor för någon)",
-          "answer": "k",
-          "hint": "Kärlek börjar med k- + ä = tj-ljud.",
-          "explanation": "'Kärlek' – k + ä ger tj-ljud. Alltså k-ä-r-l-e-k."
-        },
-        {
-          "type": "multiple-choice",
-          "question": "Vilket ord är rätt stavat? (det lilla fågeldjuret)",
-          "options": ["tjyckling", "kyckling", "kjyckling", "chyckling"],
-          "correctIndex": 1,
-          "explanation": "'Kyckling' – tj-ljudet skrivs k (före y)."
-        },
-        {
-          "type": "multiple-choice",
-          "question": "Hur stavas 'tjäna' (att arbeta och få lön)?",
-          "options": ["käna", "tjäna", "kjäna", "chäna"],
-          "correctIndex": 1,
-          "explanation": "'Tjäna' – tj-ljud skrivs med 'tj' i detta ord."
-        }
-      ]
-    },
-    {
-      "id": "ng-ljud-1",
-      "title": "Ng-ljudet",
-      "description": "Ng-ljud i slutet av ord",
-      "icon": "🔔",
-      "bonusPoints": 25,
-      "helpText": [
-        "Ng-ljud skrivs 'ng': sång, ring, lång",
-        "Observera: 'ngt' i ord som 'ingenting', 'något'"
-      ],
-      "exercises": [
-        {
-          "type": "multiple-choice",
-          "question": "Vilket ord innehåller ng-ljud?",
-          "options": ["sova", "sång", "sala", "som"],
-          "correctIndex": 1,
-          "explanation": "'Sång' – avslutas med ng-ljud, skrivet 'ng'."
-        },
-        {
-          "type": "multiple-choice",
-          "question": "Hur stavas smycket man bär på fingret?",
-          "options": ["rin", "ring", "rinng", "ryng"],
-          "correctIndex": 1,
-          "explanation": "'Ring' – avslutas med ng-ljud."
-        },
-        {
-          "type": "fill-in-blank",
-          "question": "Fyll i: 'Det finns ___ kvar i skåpet.' (inget alls)",
-          "answer": "ingenting",
-          "hint": "Tänk på: ing + en + ting.",
-          "explanation": "'Ingenting' – innehåller 'ng' + 't': ing-en-ting."
-        },
-        {
-          "type": "multiple-choice",
-          "question": "Välj rätt stavning: 'Han är väldigt lå___.'",
-          "options": ["ng", "ngg", "n", "nk"],
-          "correctIndex": 0,
-          "explanation": "'Lång' – avslutas med ng-ljud, skrivet 'ng'."
-        },
-        {
-          "type": "multiple-choice",
-          "question": "Hur stavas ordet för 'en viss mängd'?",
-          "options": ["något", "nåt", "nångot", "nåhot"],
-          "correctIndex": 0,
-          "explanation": "'Något' – innehåller ng-ljud: n-å-g-o-t."
         }
       ]
     },
@@ -509,14 +395,24 @@
         {
           "type": "multiple-choice",
           "question": "Hur stavas verktyget man äter soppa med?",
-          "options": ["sjed", "sked", "skjed", "sched"],
+          "options": [
+            "sjed",
+            "sked",
+            "skjed",
+            "sched"
+          ],
           "correctIndex": 1,
           "explanation": "'Sked' stavas sk + e – sk följt av e ger sj-ljud. s-k-e-d."
         },
         {
           "type": "multiple-choice",
           "question": "Vilket ord stavas rätt? (att sjunga med rösten)",
-          "options": ["skjunga", "sjunga", "skunga", "shunga"],
+          "options": [
+            "skjunga",
+            "sjunga",
+            "skunga",
+            "shunga"
+          ],
           "correctIndex": 1,
           "explanation": "'Sjunga' stavas med sj – s-j-u-n-g-a."
         },
@@ -530,15 +426,32 @@
         {
           "type": "multiple-choice",
           "question": "Hur stavas det omvända av att bry sig – att inte bry sig?",
-          "options": ["skita", "sjita", "skjita", "schita"],
+          "options": [
+            "skita",
+            "sjita",
+            "skjita",
+            "schita"
+          ],
           "correctIndex": 0,
           "explanation": "'Skita' stavas sk + i – sk följt av i ger sj-ljud. s-k-i-t-a."
         },
         {
           "type": "build-sentence",
           "instruction": "Bygg meningen med rätt sj-ord på rätt plats!",
-          "words": ["Hon", "sjunger", "och", "skjuter", "pil"],
-          "correctOrder": [0, 1, 2, 3, 4],
+          "words": [
+            "Hon",
+            "sjunger",
+            "och",
+            "skjuter",
+            "pil"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
           "explanation": "'Sjunger' har sj-stavning, 'skjuter' har skj-stavning – båda ger sj-ljud!"
         }
       ]
@@ -558,14 +471,24 @@
         {
           "type": "multiple-choice",
           "question": "Hur stavas plagg som flickor och kvinnor ofta bär på underkroppen?",
-          "options": ["tjol", "kjol", "kjål", "chjol"],
+          "options": [
+            "tjol",
+            "kjol",
+            "kjål",
+            "chjol"
+          ],
           "correctIndex": 1,
           "explanation": "'Kjol' stavas med kj – k-j-o-l. Sällsynt stavning men korrekt!"
         },
         {
           "type": "multiple-choice",
           "question": "Hur stavas siffran 20?",
-          "options": ["tjugo", "kjugo", "kugo", "chugo"],
+          "options": [
+            "tjugo",
+            "kjugo",
+            "kugo",
+            "chugo"
+          ],
           "correctIndex": 0,
           "explanation": "'Tjugo' stavas med tj – t-j-u-g-o."
         },
@@ -579,15 +502,34 @@
         {
           "type": "multiple-choice",
           "question": "Vilket ord är rätt stavat? (fågeln som pickar i trädstammar)",
-          "options": ["tjäder", "käder", "kjäder", "chäder"],
+          "options": [
+            "tjäder",
+            "käder",
+            "kjäder",
+            "chäder"
+          ],
           "correctIndex": 0,
           "explanation": "'Tjäder' stavas med tj – t-j-ä-d-e-r."
         },
         {
           "type": "build-sentence",
           "instruction": "Bygg meningen med tj-ljud-orden på rätt plats!",
-          "words": ["Tjugo", "kära", "vänner", "kom", "på", "fest"],
-          "correctOrder": [0, 1, 2, 3, 4, 5],
+          "words": [
+            "Tjugo",
+            "kära",
+            "vänner",
+            "kom",
+            "på",
+            "fest"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
           "explanation": "'Tjugo' (tj-stavning) och 'kära' (k + ä = tj-ljud) – samma ljud, olika stavning!"
         }
       ]
@@ -607,14 +549,24 @@
         {
           "type": "multiple-choice",
           "question": "Vilket ord är rätt stavat? (verktyget man slår spikar med)",
-          "options": ["hamer", "hammer", "hammar", "hamar"],
+          "options": [
+            "hamer",
+            "hammer",
+            "hammar",
+            "hamar"
+          ],
           "correctIndex": 1,
           "explanation": "'Hammer' – kort betonat a kräver dubbelt m: h-a-mm-e-r."
         },
         {
           "type": "multiple-choice",
           "question": "Vilket ord är rätt stavat? (fler än en vän)",
-          "options": ["väner", "vänner", "vännar", "vänar"],
+          "options": [
+            "väner",
+            "vänner",
+            "vännar",
+            "vänar"
+          ],
           "correctIndex": 1,
           "explanation": "'Vänner' – kort betonat ä kräver dubbelt n: v-ä-nn-e-r."
         },
@@ -628,15 +580,32 @@
         {
           "type": "multiple-choice",
           "question": "Vilket ord är rätt stavat? (ett glas för att dricka ur)",
-          "options": ["mugg", "mug", "muugg", "mugg"],
+          "options": [
+            "mugg",
+            "mug",
+            "muugg",
+            "mugg"
+          ],
           "correctIndex": 0,
           "explanation": "'Mugg' – kort betonat u kräver dubbelt g: m-u-gg."
         },
         {
           "type": "build-sentence",
           "instruction": "Bygg meningen – var uppmärksam på dubbelteckning!",
-          "words": ["Gubben", "hittade", "en", "gammal", "kanna"],
-          "correctOrder": [0, 1, 2, 3, 4],
+          "words": [
+            "Gubben",
+            "hittade",
+            "en",
+            "gammal",
+            "kanna"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
           "explanation": "'Gubben' (dubbelt b) och 'kanna' (dubbelt n) – båda har kort vokal och dubbelkonsonant."
         }
       ]
@@ -656,14 +625,24 @@
         {
           "type": "multiple-choice",
           "question": "Välj rätt: '___ cyklade till skolan.' (de/dem som cyklade)",
-          "options": ["Dem", "De", "Dom", "Di"],
+          "options": [
+            "Dem",
+            "De",
+            "Dom",
+            "Di"
+          ],
           "correctIndex": 1,
           "explanation": "'De cyklade' – de är subjekt (de som utför handlingen). Byt till 'vi': 'Vi cyklade' – stämmer!"
         },
         {
           "type": "multiple-choice",
           "question": "Välj rätt: 'Läraren berömde ___.' (eleverna som fick beröm)",
-          "options": ["de", "dem", "dom", "dei"],
+          "options": [
+            "de",
+            "dem",
+            "dom",
+            "dei"
+          ],
           "correctIndex": 1,
           "explanation": "'Läraren berömde dem' – dem är objekt. Byt till 'oss': 'Läraren berömde oss' – stämmer!"
         },
@@ -677,15 +656,32 @@
         {
           "type": "multiple-choice",
           "question": "Välj rätt: '___ brukar alltid hjälpa till.'",
-          "options": ["Dem", "De", "Dom", "Dei"],
+          "options": [
+            "Dem",
+            "De",
+            "Dom",
+            "Dei"
+          ],
           "correctIndex": 1,
           "explanation": "'De brukar' – de är subjekt. Byt till 'vi': 'Vi brukar alltid hjälpa till' – stämmer!"
         },
         {
           "type": "build-sentence",
           "instruction": "Bygg meningen med de eller dem på rätt plats!",
-          "words": ["De", "gav", "dem", "en", "present"],
-          "correctOrder": [0, 1, 2, 3, 4],
+          "words": [
+            "De",
+            "gav",
+            "dem",
+            "en",
+            "present"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
           "explanation": "'De' är subjekt (de som ger), 'dem' är objekt (de som tar emot presenten)."
         }
       ]
@@ -705,14 +701,24 @@
         {
           "type": "multiple-choice",
           "question": "Välj rätt: '___ bor du?' (fråga om plats)",
-          "options": ["Vart", "Var", "Vad", "Vem"],
+          "options": [
+            "Vart",
+            "Var",
+            "Vad",
+            "Vem"
+          ],
           "correctIndex": 1,
           "explanation": "'Var bor du?' – frågar om en plats. Svaret kan vara 'I Stockholm' (en plats)."
         },
         {
           "type": "multiple-choice",
           "question": "Välj rätt: '___ ska du gå?' (fråga om destination)",
-          "options": ["Var", "Vart", "Vad", "När"],
+          "options": [
+            "Var",
+            "Vart",
+            "Vad",
+            "När"
+          ],
           "correctIndex": 1,
           "explanation": "'Vart ska du gå?' – frågar om riktning/destination. Svaret kan vara 'Till affären'."
         },
@@ -726,15 +732,34 @@
         {
           "type": "multiple-choice",
           "question": "Välj rätt: 'Hunden sprang ___ som helst.' (i alla riktningar)",
-          "options": ["var", "vart", "vad", "när"],
+          "options": [
+            "var",
+            "vart",
+            "vad",
+            "när"
+          ],
           "correctIndex": 1,
           "explanation": "'Hunden sprang vart som helst' – handlar om riktning och rörelse."
         },
         {
           "type": "build-sentence",
           "instruction": "Bygg frågan med var eller vart på rätt ställe!",
-          "words": ["Vart", "ska", "vi", "åka", "i", "sommar"],
-          "correctOrder": [0, 1, 2, 3, 4, 5],
+          "words": [
+            "Vart",
+            "ska",
+            "vi",
+            "åka",
+            "i",
+            "sommar"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
           "explanation": "'Vart ska vi åka?' – frågar om destination (vi ska åka någonstans). Rätt ord är 'vart'."
         }
       ]
@@ -754,7 +779,12 @@
         {
           "type": "multiple-choice",
           "question": "Vilket skiljetecken passar bäst? 'Kom hit genast___'",
-          "options": [".", "?", "!", ","],
+          "options": [
+            ".",
+            "?",
+            "!",
+            ","
+          ],
           "correctIndex": 2,
           "explanation": "Utropstecken (!) används vid order och starka uppmaningar. 'Kom hit genast!'"
         },
@@ -792,8 +822,22 @@
         {
           "type": "build-sentence",
           "instruction": "Bygg meningen med skiljetecken på rätt ställe!",
-          "words": ["Hunden", "skäller", ",", "katten", "springer", "bort"],
-          "correctOrder": [0, 1, 2, 3, 4, 5],
+          "words": [
+            "Hunden",
+            "skäller",
+            ",",
+            "katten",
+            "springer",
+            "bort"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
           "explanation": "Kommat separerar de två satserna: 'Hunden skäller, katten springer bort.'"
         }
       ]
@@ -813,14 +857,24 @@
         {
           "type": "multiple-choice",
           "question": "Hur många vokaler finns i ordet 'bibliotek'?",
-          "options": ["2", "3", "4", "5"],
+          "options": [
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
           "correctIndex": 2,
           "explanation": "'Bibliotek' har 4 vokaler: i, i, o, e (b-I-b-l-I-O-t-E-k). Varje stavelse har en vokal."
         },
         {
           "type": "multiple-choice",
           "question": "Vilket ord innehåller ett konsonantkluster (flera konsonanter i rad)?",
-          "options": ["äpple", "strand", "öga", "åka"],
+          "options": [
+            "äpple",
+            "strand",
+            "öga",
+            "åka"
+          ],
           "correctIndex": 1,
           "explanation": "'Strand' börjar med konsonantklustret 'str' – tre konsonanter i rad. 'S', 't' och 'r' är alla konsonanter."
         },
@@ -846,8 +900,20 @@
         {
           "type": "build-sentence",
           "instruction": "Ordna orden så att varje ord har fler konsonanter än vokaler!",
-          "words": ["Strömmen", "brusade", "kraftfullt", "förbi", "stranden"],
-          "correctOrder": [0, 1, 2, 3, 4],
+          "words": [
+            "Strömmen",
+            "brusade",
+            "kraftfullt",
+            "förbi",
+            "stranden"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
           "explanation": "'Strömmen' (str+mm), 'kraftfullt' (kr+ftf+llt) och 'stranden' (str+nd) har alla konsonantkluster. Meningen visar hur konsonantrika ord kan staplas."
         }
       ]
@@ -867,14 +933,24 @@
         {
           "type": "multiple-choice",
           "question": "Välj rätt stavning: 'Han tog ett ___ i sjön.' (gick ner i vattnet)",
-          "options": ["dad", "bad", "bab", "dab"],
+          "options": [
+            "dad",
+            "bad",
+            "bab",
+            "dab"
+          ],
           "correctIndex": 1,
           "explanation": "'Bad' – b i början (läppljud), d i slutet (tungljud). b-a-d."
         },
         {
           "type": "multiple-choice",
           "question": "Hur stavas det hårda brödet med hål i mitten?",
-          "options": ["kneckedröd", "knäckebröd", "knäckedröd", "kneckebröd"],
+          "options": [
+            "kneckedröd",
+            "knäckebröd",
+            "knäckedröd",
+            "kneckebröd"
+          ],
           "correctIndex": 1,
           "explanation": "'Knäckebröd' – bröd stavas med b. Tänk på läppljudet: b-r-ö-d."
         },
@@ -888,15 +964,36 @@
         {
           "type": "multiple-choice",
           "question": "Vilket ord är rätt stavat? (att önska något om natten)",
-          "options": ["drömma", "brömma", "drömba", "brömba"],
+          "options": [
+            "drömma",
+            "brömma",
+            "drömba",
+            "brömba"
+          ],
           "correctIndex": 0,
           "explanation": "'Drömma' börjar med d – tungan nuddar tänderna för d-ljud. d-r-ö-m-m-a."
         },
         {
           "type": "build-sentence",
           "instruction": "Bygg meningen – var uppmärksam på b och d!",
-          "words": ["Björnen", "drack", "vatten", "vid", "bäcken", "i", "dalen"],
-          "correctOrder": [0, 1, 2, 3, 4, 5, 6],
+          "words": [
+            "Björnen",
+            "drack",
+            "vatten",
+            "vid",
+            "bäcken",
+            "i",
+            "dalen"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
           "explanation": "'Björnen' och 'bäcken' börjar med b (läppljud). 'Drack' och 'dalen' börjar med d (tungljud). Hör skillnaden!"
         }
       ]
@@ -916,14 +1013,24 @@
         {
           "type": "multiple-choice",
           "question": "Välj rätt stavning av verbet: 'Hon ___ alltid sanningen.' (talar)",
-          "options": ["seger", "säger", "seger", "sæger"],
+          "options": [
+            "seger",
+            "säger",
+            "seger",
+            "sæger"
+          ],
           "correctIndex": 1,
           "explanation": "'Säger' stavas med ä – verbet 'säga' böjs till 'säger' i nutid. s-ä-g-e-r."
         },
         {
           "type": "multiple-choice",
           "question": "Vilket ord betyder 'sol, regn och temperatur'?",
-          "options": ["veder", "väder", "vedder", "vädder"],
+          "options": [
+            "veder",
+            "väder",
+            "vedder",
+            "vädder"
+          ],
           "correctIndex": 1,
           "explanation": "'Väder' – ä i första stavelsen. v-ä-d-e-r. 'Veder' är ett gammalt ord som betyder något helt annat."
         },
@@ -937,16 +1044,389 @@
         {
           "type": "multiple-choice",
           "question": "Vilket adjektiv är rätt stavat? (om temperaturen är låg)",
-          "options": ["kelt", "käld", "kall", "käll"],
+          "options": [
+            "kelt",
+            "käld",
+            "kall",
+            "käll"
+          ],
           "correctIndex": 2,
           "explanation": "'Kall' stavas med a – k-a-l-l. Varken e eller ä. Kall → kallare → kallast."
         },
         {
           "type": "build-sentence",
           "instruction": "Bygg meningen och var noga med e och ä!",
-          "words": ["Läraren", "säger", "att", "vädret", "är", "vackert"],
-          "correctOrder": [0, 1, 2, 3, 4, 5],
+          "words": [
+            "Läraren",
+            "säger",
+            "att",
+            "vädret",
+            "är",
+            "vackert"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
           "explanation": "'Läraren' (ä), 'säger' (ä), 'vädret' (ä) – alla tre stavas med ä. 'Vackert' stavas med e: v-a-ck-e-r-t."
+        }
+      ]
+    }
+  ],
+  "reading": [
+    {
+      "id": "novell-1",
+      "title": "Sommarstugan",
+      "description": "En berättelse om sommar och vänskap",
+      "icon": "🏡",
+      "bonusPoints": 30,
+      "helpText": [
+        "Läs texten noggrant och tänk på hur karaktärerna känner sig.",
+        "Lägg märke till detaljer – de kan vara viktiga för frågorna."
+      ],
+      "author": "Fri berättelse",
+      "text": "Varje sommar åkte Lina och hennes familj till en röd stuga vid en liten sjö. Lina älskade sommarstugan mer än något annat ställe i hela världen.\n\nMen det här sommaren var annorlunda. Linas bästa vän Emma hade flyttat till en annan stad. Lina kände sig ensam medan hon packade sin väska.\n\n'Det kommer att bli bra', sa mamman och klappade Lina på axeln. 'Du kanske träffar nya kompisar vid sjön.'\n\nLina trodde inte på det. Men när de anlände till stugan stod det ett nytt hus bredvid deras. Och utanför stod en flicka med röda flätor och ett leende.\n\n'Hej! Jag heter Saga. Vill du fiska med mig?' sa flickan.\n\nLina kände hur leendet spred sig på hennes egna läppar. Kanske skulle den här sommaren inte bli så ensam ändå.",
+      "questions": [
+        {
+          "type": "on-the-line",
+          "question": "Vad hette Linas bästa vän?",
+          "options": [
+            "Saga",
+            "Emma",
+            "Maja",
+            "Anna"
+          ],
+          "correctIndex": 1,
+          "explanation": "Linas bästa vän hette Emma."
+        },
+        {
+          "type": "on-the-line",
+          "question": "Vad hade hänt med Linas vän Emma?",
+          "options": [
+            "Hon var sjuk",
+            "Hon hade sommarjobb",
+            "Hon hade flyttat till en annan stad",
+            "Hon var på semester"
+          ],
+          "correctIndex": 2,
+          "explanation": "Emma hade flyttat till en annan stad."
+        },
+        {
+          "type": "between-the-lines",
+          "question": "Hur mådde Lina i början av berättelsen?",
+          "options": [
+            "Hon var glad och förväntansfull",
+            "Hon var ledsen och ensam",
+            "Hon var arg på Emma",
+            "Hon var trött"
+          ],
+          "correctIndex": 1,
+          "hint": "Tänk på varför hon packade väskan med tunga tankar.",
+          "explanation": "Lina kände sig ensam utan sin bästa vän Emma."
+        },
+        {
+          "type": "beyond-the-lines",
+          "question": "Vad tror du händer nästa sommar?",
+          "options": [
+            "Lina slutar åka till sommarstugan",
+            "Lina och Saga har blivit bästa vänner",
+            "Lina träffar aldrig Saga igen",
+            "Emma kommer tillbaka"
+          ],
+          "correctIndex": 1,
+          "hint": "Hur slutar berättelsen?",
+          "explanation": "Berättelsen slutar positivt – Saga och Lina verkar bli vänner."
+        },
+        {
+          "type": "between-the-lines",
+          "question": "Varför frågade Saga om Lina ville fiska?",
+          "options": [
+            "Hon ville ha hjälp med fisket",
+            "Hon ville bli kompis med Lina",
+            "Hon ville visa var sjön låg",
+            "Hon var uttråkad"
+          ],
+          "correctIndex": 1,
+          "explanation": "Saga var ny och ville lära känna sin granne Lina."
+        }
+      ]
+    }
+  ],
+  "spelling": [
+    {
+      "id": "dubbelkonsonant-1",
+      "title": "Dubbelkonsonanter",
+      "description": "När skriver man dubbla konsonanter?",
+      "icon": "✏️",
+      "bonusPoints": 25,
+      "helpText": [
+        "En kort vokal (betonad) följs oftast av dubbel konsonant.",
+        "Exempel: 'katt' (kort a), 'hatt' (kort a), 'gulle' (kort u).",
+        "Jämför: 'mat' (lång a) vs 'matt' (kort a)."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är rätt stavat?",
+          "options": [
+            "katt",
+            "kat",
+            "kaat",
+            "katt"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Katt' stavas med dubbelt t – kort vokal kräver dubbel konsonant."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken stavning är korrekt för djuret som skäller?",
+          "options": [
+            "hund",
+            "hundd",
+            "hhund",
+            "huund"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Hund' – här är u-et långt, därför ingen dubbelkonsonant."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Stavning: 'Han bär en ha_.' (något man har på huvudet)",
+          "answer": "tt",
+          "hint": "Hat eller hatt? Tänk på om vokalen är lång eller kort.",
+          "explanation": "'Hatt' – kort a-ljud kräver dubbelt t. 'Hat' (med långt a) betyder något annat!"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket är rätt: 'brev' eller 'brevv'?",
+          "options": [
+            "brev",
+            "brevv",
+            "breev",
+            "bbrev"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Brev' – e-et är långt, därför ingen dubbelkonsonant."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas det lilla djuret som springer i hjulet?",
+          "options": [
+            "mus",
+            "muss",
+            "muus",
+            "mús"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Mus' – u-et är långt, därför ingen dubbelkonsonant."
+        }
+      ]
+    },
+    {
+      "id": "sj-ljud-1",
+      "title": "Sj-ljudet",
+      "description": "De många sätten att skriva sj-ljud",
+      "icon": "🌊",
+      "bonusPoints": 25,
+      "helpText": [
+        "Sj-ljud kan skrivas: sj, sk (före e,i,y,ä,ö), skj, stj, sch, ch",
+        "Ex: sjunga, skjuta, stjärna, schema, chef"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord har sj-ljud?",
+          "options": [
+            "skola",
+            "sjunga",
+            "sova",
+            "snö"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Sjunga' börjar med sj-ljud, skrivet 'sj'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur skrivs sj-ljudet i 'skämt'?",
+          "options": [
+            "sj-",
+            "sk- (före ä)",
+            "sch-",
+            "stj-"
+          ],
+          "correctIndex": 1,
+          "explanation": "Sk + ä/e/i/y/ö ger sj-ljud. 'Skämt' uttalas med sj-ljud."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt stavning: '___ärna lyser på natthimlen.' (himmelskroppar)",
+          "answer": "stj",
+          "hint": "Stjärna börjar med stj-.",
+          "explanation": "'Stjärna' – sj-ljudet skrivs 'stj' i det här ordet."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord stavas rätt?",
+          "options": [
+            "sjema",
+            "schema",
+            "scema",
+            "skema"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Schema' – sj-ljudet skrivs 'sch' i lånord från tyskan."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas ledaren för ett företag?",
+          "options": [
+            "sjef",
+            "skef",
+            "chef",
+            "chäf"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Chef' – sj-ljudet skrivs 'ch' i detta franska lånord."
+        }
+      ]
+    },
+    {
+      "id": "tj-ljud-1",
+      "title": "Tj-ljudet",
+      "description": "Lär dig skriva tj-ljud rätt",
+      "icon": "🧊",
+      "bonusPoints": 25,
+      "helpText": [
+        "Tj-ljud kan skrivas: tj, k (före e,i,y,ä,ö), kj",
+        "Ex: tjuv, kyckling, kyss, tjäna, kinda"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord har tj-ljud?",
+          "options": [
+            "kaka",
+            "tjuv",
+            "kopp",
+            "tall"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Tjuv' börjar med tj-ljud, skrivet 'tj'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur skrivs tj-ljudet i 'kyckling'?",
+          "options": [
+            "tj-",
+            "k- (före y)",
+            "kj-",
+            "ch-"
+          ],
+          "correctIndex": 1,
+          "explanation": "K + y/e/i/ä/ö ger tj-ljud. 'Kyckling' uttalas med tj-ljud."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt stavning: '___ärlek är ett fint ord.' (känslor för någon)",
+          "answer": "k",
+          "hint": "Kärlek börjar med k- + ä = tj-ljud.",
+          "explanation": "'Kärlek' – k + ä ger tj-ljud. Alltså k-ä-r-l-e-k."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är rätt stavat? (det lilla fågeldjuret)",
+          "options": [
+            "tjyckling",
+            "kyckling",
+            "kjyckling",
+            "chyckling"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Kyckling' – tj-ljudet skrivs k (före y)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas 'tjäna' (att arbeta och få lön)?",
+          "options": [
+            "käna",
+            "tjäna",
+            "kjäna",
+            "chäna"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Tjäna' – tj-ljud skrivs med 'tj' i detta ord."
+        }
+      ]
+    },
+    {
+      "id": "ng-ljud-1",
+      "title": "Ng-ljudet",
+      "description": "Ng-ljud i slutet av ord",
+      "icon": "🔔",
+      "bonusPoints": 25,
+      "helpText": [
+        "Ng-ljud skrivs 'ng': sång, ring, lång",
+        "Observera: 'ngt' i ord som 'ingenting', 'något'"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord innehåller ng-ljud?",
+          "options": [
+            "sova",
+            "sång",
+            "sala",
+            "som"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Sång' – avslutas med ng-ljud, skrivet 'ng'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas smycket man bär på fingret?",
+          "options": [
+            "rin",
+            "ring",
+            "rinng",
+            "ryng"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Ring' – avslutas med ng-ljud."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i: 'Det finns ___ kvar i skåpet.' (inget alls)",
+          "answer": "ingenting",
+          "hint": "Tänk på: ing + en + ting.",
+          "explanation": "'Ingenting' – innehåller 'ng' + 't': ing-en-ting."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt stavning: 'Han är väldigt lå___.'",
+          "options": [
+            "ng",
+            "ngg",
+            "n",
+            "nk"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Lång' – avslutas med ng-ljud, skrivet 'ng'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas ordet för 'en viss mängd'?",
+          "options": [
+            "något",
+            "nåt",
+            "nångot",
+            "nåhot"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Något' – innehåller ng-ljud: n-å-g-o-t."
         }
       ]
     }
@@ -959,15 +1439,42 @@
       "icon": "👷",
       "bonusPoints": 35,
       "words": [
-        {"word": "LÄKARE", "clue": "Jobbar på sjukhuset och botar sjuka"},
-        {"word": "PILOT", "clue": "Flyger flygplan"},
-        {"word": "LÄRARE", "clue": "Undervisar elever i skolan"},
-        {"word": "POLIS", "clue": "Skyddar ordningen i samhället"},
-        {"word": "BAGARE", "clue": "Bakar bröd och bullar"},
-        {"word": "MÅLARE", "clue": "Målar hus och väggar"},
-        {"word": "BONDE", "clue": "Odlar mat och håller djur"},
-        {"word": "FRISÖR", "clue": "Klipper och stylar hår"},
-        {"word": "KOCK", "clue": "Lagar mat på restaurang"}
+        {
+          "word": "LÄKARE",
+          "clue": "Jobbar på sjukhuset och botar sjuka"
+        },
+        {
+          "word": "PILOT",
+          "clue": "Flyger flygplan"
+        },
+        {
+          "word": "LÄRARE",
+          "clue": "Undervisar elever i skolan"
+        },
+        {
+          "word": "POLIS",
+          "clue": "Skyddar ordningen i samhället"
+        },
+        {
+          "word": "BAGARE",
+          "clue": "Bakar bröd och bullar"
+        },
+        {
+          "word": "MÅLARE",
+          "clue": "Målar hus och väggar"
+        },
+        {
+          "word": "BONDE",
+          "clue": "Odlar mat och håller djur"
+        },
+        {
+          "word": "FRISÖR",
+          "clue": "Klipper och stylar hår"
+        },
+        {
+          "word": "KOCK",
+          "clue": "Lagar mat på restaurang"
+        }
       ]
     },
     {
@@ -977,14 +1484,38 @@
       "icon": "⚽",
       "bonusPoints": 35,
       "words": [
-        {"word": "FOTBOLL", "clue": "Spelas med en rund boll och två mål"},
-        {"word": "TENNIS", "clue": "Spelas med racket på en tennisbana"},
-        {"word": "SIMNING", "clue": "Sport i vattnet"},
-        {"word": "HOCKEY", "clue": "Spelas med puck och klubba på is"},
-        {"word": "BASKET", "clue": "Kasta bollen i korgen"},
-        {"word": "GOLF", "clue": "Slå bollen i hålet med en klubba"},
-        {"word": "BOXING", "clue": "Slåss med handskar i en ring"},
-        {"word": "GYMPA", "clue": "Röra på kroppen i en gymnastikhall"}
+        {
+          "word": "FOTBOLL",
+          "clue": "Spelas med en rund boll och två mål"
+        },
+        {
+          "word": "TENNIS",
+          "clue": "Spelas med racket på en tennisbana"
+        },
+        {
+          "word": "SIMNING",
+          "clue": "Sport i vattnet"
+        },
+        {
+          "word": "HOCKEY",
+          "clue": "Spelas med puck och klubba på is"
+        },
+        {
+          "word": "BASKET",
+          "clue": "Kasta bollen i korgen"
+        },
+        {
+          "word": "GOLF",
+          "clue": "Slå bollen i hålet med en klubba"
+        },
+        {
+          "word": "BOXING",
+          "clue": "Slåss med handskar i en ring"
+        },
+        {
+          "word": "GYMPA",
+          "clue": "Röra på kroppen i en gymnastikhall"
+        }
       ]
     },
     {
@@ -994,14 +1525,38 @@
       "icon": "🏰",
       "bonusPoints": 35,
       "words": [
-        {"word": "KUNG", "clue": "Härskare över ett kungadöme"},
-        {"word": "RIDDARE", "clue": "Bepansrad krigare till häst"},
-        {"word": "SLOTT", "clue": "Stor borg där kungen bodde"},
-        {"word": "BONDE", "clue": "Vanlig person som odlade på medeltiden"},
-        {"word": "PRÄST", "clue": "Religiös ledare i kyrkan"},
-        {"word": "KYRKA", "clue": "Byggnaden där man bad till Gud"},
-        {"word": "VIKING", "clue": "Nordisk sjöfarare och krigare"},
-        {"word": "SVÄRD", "clue": "Vapnet riddaren bar vid sidan"}
+        {
+          "word": "KUNG",
+          "clue": "Härskare över ett kungadöme"
+        },
+        {
+          "word": "RIDDARE",
+          "clue": "Bepansrad krigare till häst"
+        },
+        {
+          "word": "SLOTT",
+          "clue": "Stor borg där kungen bodde"
+        },
+        {
+          "word": "BONDE",
+          "clue": "Vanlig person som odlade på medeltiden"
+        },
+        {
+          "word": "PRÄST",
+          "clue": "Religiös ledare i kyrkan"
+        },
+        {
+          "word": "KYRKA",
+          "clue": "Byggnaden där man bad till Gud"
+        },
+        {
+          "word": "VIKING",
+          "clue": "Nordisk sjöfarare och krigare"
+        },
+        {
+          "word": "SVÄRD",
+          "clue": "Vapnet riddaren bar vid sidan"
+        }
       ]
     },
     {
@@ -1011,14 +1566,38 @@
       "icon": "🦁",
       "bonusPoints": 35,
       "words": [
-        {"word": "ELEFANT", "clue": "Världens största landdjur med snabel"},
-        {"word": "LEJON", "clue": "Lejongårdens konung"},
-        {"word": "ZEBRA", "clue": "Svartvitrandig hästliknande djur"},
-        {"word": "GEPARD", "clue": "Världens snabbaste landdjur"},
-        {"word": "PINGVIN", "clue": "Fågel som inte flyger men simmar"},
-        {"word": "DELFIN", "clue": "Intelligent havsdäggdjur"},
-        {"word": "ÖRN", "clue": "Stort rovfågel som flyger högt"},
-        {"word": "GORILLA", "clue": "Stor apa från Afrika"}
+        {
+          "word": "ELEFANT",
+          "clue": "Världens största landdjur med snabel"
+        },
+        {
+          "word": "LEJON",
+          "clue": "Lejongårdens konung"
+        },
+        {
+          "word": "ZEBRA",
+          "clue": "Svartvitrandig hästliknande djur"
+        },
+        {
+          "word": "GEPARD",
+          "clue": "Världens snabbaste landdjur"
+        },
+        {
+          "word": "PINGVIN",
+          "clue": "Fågel som inte flyger men simmar"
+        },
+        {
+          "word": "DELFIN",
+          "clue": "Intelligent havsdäggdjur"
+        },
+        {
+          "word": "ÖRN",
+          "clue": "Stort rovfågel som flyger högt"
+        },
+        {
+          "word": "GORILLA",
+          "clue": "Stor apa från Afrika"
+        }
       ]
     }
   ]
