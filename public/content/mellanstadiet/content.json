@@ -797,6 +797,158 @@
           "explanation": "Kommat separerar de två satserna: 'Hunden skäller, katten springer bort.'"
         }
       ]
+    },
+    {
+      "id": "vokaler-konsonanter-mel-1",
+      "title": "Vokaler och konsonanter – fördjupning",
+      "description": "Utforska vokaler och konsonanter i mer komplexa sammanhang",
+      "icon": "🔡",
+      "bonusPoints": 25,
+      "helpText": [
+        "Vokaler: a, e, i, o, u, y, å, ä, ö. Alla andra bokstäver är konsonanter.",
+        "En stavelse innehåller alltid exakt en vokal – det hjälper dig dela upp ord rätt.",
+        "Konsonantkluster är flera konsonanter i rad, t.ex. 'str' i 'strand' eller 'spr' i 'springa'."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Hur många vokaler finns i ordet 'bibliotek'?",
+          "options": ["2", "3", "4", "5"],
+          "correctIndex": 2,
+          "explanation": "'Bibliotek' har 4 vokaler: i, i, o, e (b-I-b-l-I-O-t-E-k). Varje stavelse har en vokal."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord innehåller ett konsonantkluster (flera konsonanter i rad)?",
+          "options": ["äpple", "strand", "öga", "åka"],
+          "correctIndex": 1,
+          "explanation": "'Strand' börjar med konsonantklustret 'str' – tre konsonanter i rad. 'S', 't' och 'r' är alla konsonanter."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Ordet 'springa' börjar med konsonantklustret 'spr'. Hur många stavelser har ordet? ___",
+          "answer": "2",
+          "hint": "Räkna vokalerna: en vokal = en stavelse. Vilka vokaler finns i 'springa'?",
+          "explanation": "'Springa' har 2 stavelser: sprin-ga. Det finns 2 vokaler (i och a) = 2 stavelser."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Varför är det viktigt att veta var vokalerna sitter i ett ord?",
+          "options": [
+            "Det spelar ingen roll",
+            "Vokaler avgör hur många stavelser ett ord har och hur man delar upp det",
+            "Vokaler är alltid i slutet av ord",
+            "Konsonanter avgör stavelserna, inte vokaler"
+          ],
+          "correctIndex": 1,
+          "explanation": "Varje stavelse har exakt en vokal. Vet du var vokalerna sitter kan du dela upp ord rätt, t.ex. vid radbrytning: bib-li-o-tek."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Ordna orden så att varje ord har fler konsonanter än vokaler!",
+          "words": ["Strömmen", "brusade", "kraftfullt", "förbi", "stranden"],
+          "correctOrder": [0, 1, 2, 3, 4],
+          "explanation": "'Strömmen' (str+mm), 'kraftfullt' (kr+ftf+llt) och 'stranden' (str+nd) har alla konsonantkluster. Meningen visar hur konsonantrika ord kan staplas."
+        }
+      ]
+    },
+    {
+      "id": "b-eller-d-mel-1",
+      "title": "B eller D? – fördjupning",
+      "description": "Öva på svårare ord där b och d kan förväxlas",
+      "icon": "🔤",
+      "bonusPoints": 25,
+      "helpText": [
+        "B-ljud: läpparna sluter sig – som i 'bröd', 'berg', 'bad'.",
+        "D-ljud: tungan nuddar tänderna bakom framtänderna – som i 'dal', 'djup', 'drömma'.",
+        "Knep: Prova att säga bara konsonanten – känns den i läpparna (b) eller med tungan mot tänderna (d)?"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt stavning: 'Han tog ett ___ i sjön.' (gick ner i vattnet)",
+          "options": ["dad", "bad", "bab", "dab"],
+          "correctIndex": 1,
+          "explanation": "'Bad' – b i början (läppljud), d i slutet (tungljud). b-a-d."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas det hårda brödet med hål i mitten?",
+          "options": ["kneckedröd", "knäckebröd", "knäckedröd", "kneckebröd"],
+          "correctIndex": 1,
+          "explanation": "'Knäckebröd' – bröd stavas med b. Tänk på läppljudet: b-r-ö-d."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt bokstav: 'Vi klättrade upp på __erget.' (högt naturligt stenblock)",
+          "answer": "b",
+          "hint": "Berg eller derg? Känn om du sluter läpparna eller rör tungan mot tänderna.",
+          "explanation": "'Berget' börjar med b – man sluter läpparna för b-ljud. b-e-r-g."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är rätt stavat? (att önska något om natten)",
+          "options": ["drömma", "brömma", "drömba", "brömba"],
+          "correctIndex": 0,
+          "explanation": "'Drömma' börjar med d – tungan nuddar tänderna för d-ljud. d-r-ö-m-m-a."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen – var uppmärksam på b och d!",
+          "words": ["Björnen", "drack", "vatten", "vid", "bäcken", "i", "dalen"],
+          "correctOrder": [0, 1, 2, 3, 4, 5, 6],
+          "explanation": "'Björnen' och 'bäcken' börjar med b (läppljud). 'Drack' och 'dalen' börjar med d (tungljud). Hör skillnaden!"
+        }
+      ]
+    },
+    {
+      "id": "e-eller-a-mel-1",
+      "title": "E eller Ä? – fördjupning",
+      "description": "Öva på svårare fall med e och ä i verbformer och längre ord",
+      "icon": "✍️",
+      "bonusPoints": 25,
+      "helpText": [
+        "Ä låter öppnare och bredare i munnen än e.",
+        "Titta på verbformer: 'säger' (ä) men 'seger' (e) – olika ord, olika stavning!",
+        "Tips: Om du är osäker, tänk på grundordet – 'väder' kommer från 'vind och regn', inte 'veder'."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt stavning av verbet: 'Hon ___ alltid sanningen.' (talar)",
+          "options": ["seger", "säger", "seger", "sæger"],
+          "correctIndex": 1,
+          "explanation": "'Säger' stavas med ä – verbet 'säga' böjs till 'säger' i nutid. s-ä-g-e-r."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord betyder 'sol, regn och temperatur'?",
+          "options": ["veder", "väder", "vedder", "vädder"],
+          "correctIndex": 1,
+          "explanation": "'Väder' – ä i första stavelsen. v-ä-d-e-r. 'Veder' är ett gammalt ord som betyder något helt annat."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt bokstav: 'Hon är mycket snäll och v___nlig.' (trevlig mot andra)",
+          "answer": "ä",
+          "hint": "Vänlig eller venlig? Grundordet är 'vän' – med ä.",
+          "explanation": "'Vänlig' stavas med ä – det kommer från ordet 'vän'. v-ä-n-l-i-g."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket adjektiv är rätt stavat? (om temperaturen är låg)",
+          "options": ["kelt", "käld", "kall", "käll"],
+          "correctIndex": 2,
+          "explanation": "'Kall' stavas med a – k-a-l-l. Varken e eller ä. Kall → kallare → kallast."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen och var noga med e och ä!",
+          "words": ["Läraren", "säger", "att", "vädret", "är", "vackert"],
+          "correctOrder": [0, 1, 2, 3, 4, 5],
+          "explanation": "'Läraren' (ä), 'säger' (ä), 'vädret' (ä) – alla tre stavas med ä. 'Vackert' stavas med e: v-a-ck-e-r-t."
+        }
+      ]
     }
   ],
   "wordsearch": [

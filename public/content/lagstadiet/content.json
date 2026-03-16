@@ -642,6 +642,158 @@
           "explanation": "'Läraren' och 'läser' har ä, medan 'ser' och 'eleven' har e. Lyssna på skillnaden!"
         }
       ]
+    },
+    {
+      "id": "de-dem-lag-1",
+      "title": "De eller dem?",
+      "description": "Lär dig när man skriver de och när man skriver dem",
+      "icon": "👫",
+      "bonusPoints": 20,
+      "helpText": [
+        "Skriv 'de' när de GÖR något – De springer, de leker.",
+        "Skriv 'dem' när något händer MED dem – Jag ser dem, vi hjälper dem.",
+        "Enkelt knep: Byt ut mot 'vi' eller 'oss'. Vi → de, oss → dem."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt ord: '___ springer i parken.'",
+          "options": ["Dem", "De", "Dom", "Di"],
+          "correctIndex": 1,
+          "explanation": "'De springer' – de gör något (de springer). Byt till 'vi': 'Vi springer' – stämmer! Så det är 'de'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt ord: 'Jag ser ___ vid busshållplatsen.'",
+          "options": ["de", "dem", "dom", "dei"],
+          "correctIndex": 1,
+          "explanation": "'Jag ser dem' – något händer med dem (jag ser dem). Byt till 'oss': 'Jag ser oss' – stämmer! Så det är 'dem'."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt ord: 'Vi hjälper ___ med läxorna.' (de/dem)",
+          "answer": "dem",
+          "hint": "Vi hjälper – vem hjälper vi? Byt ut mot 'oss': Vi hjälper oss.",
+          "explanation": "'Vi hjälper dem' – 'dem' passar eftersom det är de som blir hjälpta. 'Vi hjälper oss' låter rätt → skriv 'dem'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: '___ leker med hunden.'",
+          "options": ["Dem", "De", "Dom", "Dei"],
+          "correctIndex": 1,
+          "explanation": "'De leker' – de är de som leker (de gör något). Byt till 'vi': 'Vi leker' – stämmer! Skriv 'de'."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen i rätt ordning!",
+          "words": ["De", "leker", "och", "jag", "ser", "dem"],
+          "correctOrder": [0, 1, 2, 3, 4, 5],
+          "explanation": "'De leker' – de gör något (skriv 'de'). 'Jag ser dem' – de blir sedda (skriv 'dem')."
+        }
+      ]
+    },
+    {
+      "id": "var-vart-lag-1",
+      "title": "Var eller vart?",
+      "description": "Lär dig skillnaden mellan var (plats) och vart (riktning)",
+      "icon": "🗺️",
+      "bonusPoints": 20,
+      "helpText": [
+        "'Var' frågar om en plats: Var är du? (Jag är hemma.)",
+        "'Vart' frågar om vart man går eller åker: Vart går du? (Till skolan.)",
+        "Tips: Rör sig något? → vart. Stannar något stilla? → var."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: '___ är din väska?' (väskan ligger still)",
+          "options": ["Vart", "Var", "Vad", "Hur"],
+          "correctIndex": 1,
+          "explanation": "'Var är din väska?' – vi frågar om en plats där väskan är. Väskan rör sig inte."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: '___ går du?' (du är på väg någonstans)",
+          "options": ["Var", "Vart", "Vad", "Vem"],
+          "correctIndex": 1,
+          "explanation": "'Vart går du?' – vi frågar om riktning. Du är på väg någonstans (till parken, hem)."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt ord: '___ bor du?' (var/vart)",
+          "answer": "Var",
+          "hint": "Bor man på en plats eller rör man sig?",
+          "explanation": "'Var bor du?' – bor är en plats, inte en rörelse. Svaret är en plats: 'I Stockholm'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: '___ ska vi cykla?' (ni ska cykla någonstans)",
+          "options": ["Var", "Vart", "Vad", "När"],
+          "correctIndex": 1,
+          "explanation": "'Vart ska vi cykla?' – ni ska cykla iväg någonstans. Det är en rörelse och riktning → vart."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg frågan i rätt ordning!",
+          "words": ["Var", "är", "katten", "nu"],
+          "correctOrder": [0, 1, 2, 3],
+          "explanation": "'Var är katten nu?' – vi frågar om en plats. Katten sitter eller ligger någonstans."
+        }
+      ]
+    },
+    {
+      "id": "skiljetecken-stav-1",
+      "title": "Skiljetecken",
+      "description": "Öva på punkt, frågetecken och utropstecken",
+      "icon": "❗",
+      "bonusPoints": 20,
+      "helpText": [
+        "Punkt (.) sätts efter påståenden: Jag heter Maja.",
+        "Frågetecken (?) sätts efter frågor: Vad heter du?",
+        "Utropstecken (!) sätts när man ropar eller känner starkt: Hurra!"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilket tecken hör hemst i slutet av: 'Hej vad heter du___'",
+          "options": [".", "!", "?", ","],
+          "correctIndex": 2,
+          "explanation": "'Hej, vad heter du?' är en fråga – den avslutas med frågetecken."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket tecken passar efter: 'Jag har en hund___'",
+          "options": ["?", "!", ".", ","],
+          "correctIndex": 2,
+          "explanation": "'Jag har en hund.' är ett påstående – det avslutas med punkt."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Vilket tecken fattas? 'Titta en regnbåge___'",
+          "answer": "!",
+          "hint": "Man ropar av glädje och förvåning när man ser en regnbåge.",
+          "explanation": "Utropstecken (!) används när man är förvånad, glad eller ropar: 'Titta, en regnbåge!'"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är rätt skriven?",
+          "options": [
+            "Hur gammal är du.",
+            "Hur gammal är du!",
+            "Hur gammal är du?",
+            "hur gammal är du?"
+          ],
+          "correctIndex": 2,
+          "explanation": "Det är en fråga som börjar med stor bokstav och avslutas med frågetecken: 'Hur gammal är du?'"
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen – vilket tecken ska sist?",
+          "words": ["Vi", "vann", "matchen", "!"],
+          "correctOrder": [0, 1, 2, 3],
+          "explanation": "'Vi vann matchen!' – man jublar och är glad, därför utropstecken i slutet."
+        }
+      ]
     }
   ],
   "wordsearch": [
