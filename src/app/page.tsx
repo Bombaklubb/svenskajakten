@@ -61,13 +61,12 @@ export default function HomePage() {
           {/* Title */}
           <div className="text-center mb-6">
             <div
-              className="inline-flex items-center justify-center w-24 h-24 rounded-3xl mb-4 text-5xl animate-float border-4 border-white/60"
+              className="inline-flex items-center justify-center w-24 h-24 rounded-3xl mb-4 animate-float border-4 border-white/60 overflow-hidden"
               style={{
-                background: "linear-gradient(135deg, #f97316, #ea6c0a)",
-                boxShadow: "0 8px 0 0 rgba(234,108,10,0.4), 0 12px 24px -4px rgba(249,115,22,0.3), inset 0 4px 8px 0 rgba(255,255,255,0.3)"
+                boxShadow: "0 8px 0 0 rgba(0,106,167,0.4), 0 12px 24px -4px rgba(0,106,167,0.3)"
               }}
             >
-              🇸🇪
+              <img src="/icon.svg" alt="Svensk flagga" className="w-full h-full" />
             </div>
             <h1 className="text-5xl font-black tracking-tight drop-shadow-sm" style={{ color: "#7c2d12" }}>
               Svenskajakten
