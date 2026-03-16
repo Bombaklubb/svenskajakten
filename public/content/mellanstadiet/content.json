@@ -493,6 +493,310 @@
           "explanation": "'Något' – innehåller ng-ljud: n-å-g-o-t."
         }
       ]
+    },
+    {
+      "id": "sj-eller-sk-1",
+      "title": "Sj- eller sk-ljud?",
+      "description": "Öva på att välja rätt stavning för sj-ljudet",
+      "icon": "🌊",
+      "bonusPoints": 25,
+      "helpText": [
+        "Sj-ljud kan stavas på flera sätt: sj, sk (före e/i/y/ä/ö), skj.",
+        "Exempel: sjunga (sj), skjuta (skj), sked (sk + e = sj-ljud).",
+        "Tips: sk + a/o/u/å ger vanligt sk-ljud. sk + e/i/y/ä/ö ger sj-ljud!"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas verktyget man äter soppa med?",
+          "options": ["sjed", "sked", "skjed", "sched"],
+          "correctIndex": 1,
+          "explanation": "'Sked' stavas sk + e – sk följt av e ger sj-ljud. s-k-e-d."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord stavas rätt? (att sjunga med rösten)",
+          "options": ["skjunga", "sjunga", "skunga", "shunga"],
+          "correctIndex": 1,
+          "explanation": "'Sjunga' stavas med sj – s-j-u-n-g-a."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt stavning: '___uta' (avfyra en pistol eller ett gevär)",
+          "answer": "skj",
+          "hint": "Skjuta eller sjuta? Det här ordet börjar med skj-.",
+          "explanation": "'Skjuta' stavas skj – s-k-j-u-t-a. Sj-ljudet skrivs skj i detta ord."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas det omvända av att bry sig – att inte bry sig?",
+          "options": ["skita", "sjita", "skjita", "schita"],
+          "correctIndex": 0,
+          "explanation": "'Skita' stavas sk + i – sk följt av i ger sj-ljud. s-k-i-t-a."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med rätt sj-ord på rätt plats!",
+          "words": ["Hon", "sjunger", "och", "skjuter", "pil"],
+          "correctOrder": [0, 1, 2, 3, 4],
+          "explanation": "'Sjunger' har sj-stavning, 'skjuter' har skj-stavning – båda ger sj-ljud!"
+        }
+      ]
+    },
+    {
+      "id": "tj-k-kj-1",
+      "title": "Tj-, k- eller kj-ljud?",
+      "description": "Öva på att välja rätt stavning för tj-ljudet",
+      "icon": "🧊",
+      "bonusPoints": 25,
+      "helpText": [
+        "Tj-ljud kan stavas: tj, k (före e/i/y/ä/ö), kj.",
+        "Exempel: tjugo (tj), kär (k + ä = tj-ljud), kjol (kj).",
+        "Tips: k + a/o/u/å ger vanligt k-ljud. k + e/i/y/ä/ö ger tj-ljud!"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas plagg som flickor och kvinnor ofta bär på underkroppen?",
+          "options": ["tjol", "kjol", "kjål", "chjol"],
+          "correctIndex": 1,
+          "explanation": "'Kjol' stavas med kj – k-j-o-l. Sällsynt stavning men korrekt!"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas siffran 20?",
+          "options": ["tjugo", "kjugo", "kugo", "chugo"],
+          "correctIndex": 0,
+          "explanation": "'Tjugo' stavas med tj – t-j-u-g-o."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt stavning: '___är' (ha starka känslor för någon, kärlek)",
+          "answer": "k",
+          "hint": "Kär eller tjär? Tänk: k + ä ger tj-ljud.",
+          "explanation": "'Kär' stavas k + ä – k följt av ä ger tj-ljud. k-ä-r."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är rätt stavat? (fågeln som pickar i trädstammar)",
+          "options": ["tjäder", "käder", "kjäder", "chäder"],
+          "correctIndex": 0,
+          "explanation": "'Tjäder' stavas med tj – t-j-ä-d-e-r."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med tj-ljud-orden på rätt plats!",
+          "words": ["Tjugo", "kära", "vänner", "kom", "på", "fest"],
+          "correctOrder": [0, 1, 2, 3, 4, 5],
+          "explanation": "'Tjugo' (tj-stavning) och 'kära' (k + ä = tj-ljud) – samma ljud, olika stavning!"
+        }
+      ]
+    },
+    {
+      "id": "dubbelteckning-mel-1",
+      "title": "Dubbelteckning – fortsättning",
+      "description": "Svårare övningar med dubbla konsonanter",
+      "icon": "🔤",
+      "bonusPoints": 25,
+      "helpText": [
+        "Kort betonad vokal följs av dubbel konsonant: hammer, vänner, gubbe.",
+        "Lång vokal ger enkel konsonant: hamer → fel! hammer → rätt.",
+        "Testtrick: säg ordet långsamt – är vokalen kort och tryckstark?"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är rätt stavat? (verktyget man slår spikar med)",
+          "options": ["hamer", "hammer", "hammar", "hamar"],
+          "correctIndex": 1,
+          "explanation": "'Hammer' – kort betonat a kräver dubbelt m: h-a-mm-e-r."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är rätt stavat? (fler än en vän)",
+          "options": ["väner", "vänner", "vännar", "vänar"],
+          "correctIndex": 1,
+          "explanation": "'Vänner' – kort betonat ä kräver dubbelt n: v-ä-nn-e-r."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Rätt stavning: 'Katten sitter på ta___et.' (tak, plural bestämd form)",
+          "answer": "k",
+          "hint": "Taket eller takket? Är a-et i 'tak' långt eller kort?",
+          "explanation": "'Taket' – a-et i 'tak' är långt, därför enkelt k: t-a-k-e-t. Ingen dubbelkonsonant."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är rätt stavat? (ett glas för att dricka ur)",
+          "options": ["mugg", "mug", "muugg", "mugg"],
+          "correctIndex": 0,
+          "explanation": "'Mugg' – kort betonat u kräver dubbelt g: m-u-gg."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen – var uppmärksam på dubbelteckning!",
+          "words": ["Gubben", "hittade", "en", "gammal", "kanna"],
+          "correctOrder": [0, 1, 2, 3, 4],
+          "explanation": "'Gubben' (dubbelt b) och 'kanna' (dubbelt n) – båda har kort vokal och dubbelkonsonant."
+        }
+      ]
+    },
+    {
+      "id": "de-dem-1",
+      "title": "De eller dem?",
+      "description": "Lär dig skillnaden mellan de och dem",
+      "icon": "👥",
+      "bonusPoints": 25,
+      "helpText": [
+        "'De' är subjektsform – de som gör något. Exempel: De springer.",
+        "'Dem' är objektsform – de som något görs mot. Exempel: Jag ser dem.",
+        "Knep: Byt ut 'de/dem' mot 'vi/oss' – om 'vi' passar, skriv 'de'. Om 'oss' passar, skriv 'dem'."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: '___ cyklade till skolan.' (de/dem som cyklade)",
+          "options": ["Dem", "De", "Dom", "Di"],
+          "correctIndex": 1,
+          "explanation": "'De cyklade' – de är subjekt (de som utför handlingen). Byt till 'vi': 'Vi cyklade' – stämmer!"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: 'Läraren berömde ___.' (eleverna som fick beröm)",
+          "options": ["de", "dem", "dom", "dei"],
+          "correctIndex": 1,
+          "explanation": "'Läraren berömde dem' – dem är objekt. Byt till 'oss': 'Läraren berömde oss' – stämmer!"
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt form: 'Jag känner ___ sedan länge.' (de/dem)",
+          "answer": "dem",
+          "hint": "Byt ut mot 'oss' eller 'vi' – vilket passar bäst?",
+          "explanation": "'Jag känner dem' – 'dem' är objekt. 'Jag känner oss' låter rätt, så det ska vara 'dem'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: '___ brukar alltid hjälpa till.'",
+          "options": ["Dem", "De", "Dom", "Dei"],
+          "correctIndex": 1,
+          "explanation": "'De brukar' – de är subjekt. Byt till 'vi': 'Vi brukar alltid hjälpa till' – stämmer!"
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med de eller dem på rätt plats!",
+          "words": ["De", "gav", "dem", "en", "present"],
+          "correctOrder": [0, 1, 2, 3, 4],
+          "explanation": "'De' är subjekt (de som ger), 'dem' är objekt (de som tar emot presenten)."
+        }
+      ]
+    },
+    {
+      "id": "var-vart-1",
+      "title": "Var eller vart?",
+      "description": "Lär dig skillnaden mellan var och vart",
+      "icon": "🗺️",
+      "bonusPoints": 25,
+      "helpText": [
+        "'Var' frågar om en plats – var befinner sig något? Exempel: Var är boken?",
+        "'Vart' frågar om en riktning – vart är något på väg? Exempel: Vart går du?",
+        "Knep: Om svaret är en plats (i köket, på borden) → var. Om svaret är ett mål (till skolan, hem) → vart."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: '___ bor du?' (fråga om plats)",
+          "options": ["Vart", "Var", "Vad", "Vem"],
+          "correctIndex": 1,
+          "explanation": "'Var bor du?' – frågar om en plats. Svaret kan vara 'I Stockholm' (en plats)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: '___ ska du gå?' (fråga om destination)",
+          "options": ["Var", "Vart", "Vad", "När"],
+          "correctIndex": 1,
+          "explanation": "'Vart ska du gå?' – frågar om riktning/destination. Svaret kan vara 'Till affären'."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt ord: '___ lade du nyckeln?' (var/vart)",
+          "answer": "Var",
+          "hint": "Frågar du om en plats där nyckeln ligger, eller om vart nyckeln är på väg?",
+          "explanation": "'Var lade du nyckeln?' – frågar om platsen. Nyckeln rör sig inte, den befinner sig någonstans."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: 'Hunden sprang ___ som helst.' (i alla riktningar)",
+          "options": ["var", "vart", "vad", "när"],
+          "correctIndex": 1,
+          "explanation": "'Hunden sprang vart som helst' – handlar om riktning och rörelse."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg frågan med var eller vart på rätt ställe!",
+          "words": ["Vart", "ska", "vi", "åka", "i", "sommar"],
+          "correctOrder": [0, 1, 2, 3, 4, 5],
+          "explanation": "'Vart ska vi åka?' – frågar om destination (vi ska åka någonstans). Rätt ord är 'vart'."
+        }
+      ]
+    },
+    {
+      "id": "skiljetecken-stav-1",
+      "title": "Skiljetecken",
+      "description": "Lär dig använda punkt, komma, frågetecken och utropstecken",
+      "icon": "❗",
+      "bonusPoints": 30,
+      "helpText": [
+        "Punkt (.) avslutar påståenden. Komma (,) pausar i meningen eller räknar upp.",
+        "Frågetecken (?) avslutar frågor. Utropstecken (!) visar känsla, order eller förvåning.",
+        "Komma används också innan 'men', 'och', 'eller' i sammansatta meningar."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilket skiljetecken passar bäst? 'Kom hit genast___'",
+          "options": [".", "?", "!", ","],
+          "correctIndex": 2,
+          "explanation": "Utropstecken (!) används vid order och starka uppmaningar. 'Kom hit genast!'"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening har rätt kommatering?",
+          "options": [
+            "Jag köpte äpplen päron och bananer.",
+            "Jag köpte äpplen, päron och bananer.",
+            "Jag köpte, äpplen päron, och bananer.",
+            "Jag köpte äpplen päron, och, bananer."
+          ],
+          "correctIndex": 1,
+          "explanation": "Komma används vid uppräkning: äpplen, päron och bananer. Sista elementet föregås av 'och', inte komma."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Vilket skiljetecken fattas? 'Vad heter din bästa vän___'",
+          "answer": "?",
+          "hint": "Meningen är en fråga.",
+          "explanation": "Frågor avslutas med frågetecken (?). 'Vad heter din bästa vän?'"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Var ska kommat sitta? 'Jag ville gå ut men det regnade.'",
+          "options": [
+            "Jag ville, gå ut men det regnade.",
+            "Jag ville gå ut, men det regnade.",
+            "Jag ville gå ut men, det regnade.",
+            "Inget komma behövs."
+          ],
+          "correctIndex": 1,
+          "explanation": "Komma sätts före 'men' när det förbinder två självständiga satser: 'Jag ville gå ut, men det regnade.'"
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med skiljetecken på rätt ställe!",
+          "words": ["Hunden", "skäller", ",", "katten", "springer", "bort"],
+          "correctOrder": [0, 1, 2, 3, 4, 5],
+          "explanation": "Kommat separerar de två satserna: 'Hunden skäller, katten springer bort.'"
+        }
+      ]
     }
   ],
   "wordsearch": [
