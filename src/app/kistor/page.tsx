@@ -19,8 +19,9 @@ import {
   openWoodChest,
   openSilverChest,
   openGoldChest,
+  checkMissedExerciseMilestones,
 } from "@/lib/gamification";
-import type { StudentData, GamificationData, Chest } from "@/lib/types";
+import type { StudentData, GamificationData, Chest, ChestType } from "@/lib/types";
 
 function ChestCard({ chest, onOpen }: { chest: Chest; onOpen: (id: string) => void }) {
   const meta = CHEST_META[chest.type];
@@ -116,17 +117,120 @@ function RewardPopup({ result, onClose }: { result: RewardResult; onClose: () =>
   );
 }
 
+const SHELF_STYLES: Record<ChestType, { bg: string; plank: string; count: string; label: string }> = {
+  gold: {
+    bg: "linear-gradient(135deg, rgba(253,224,71,0.15), rgba(245,158,11,0.1))",
+    plank: "linear-gradient(180deg, #92400e, #78350f)",
+    count: "bg-yellow-400 text-yellow-900",
+    label: "text-yellow-700 dark:text-yellow-400",
+  },
+  silver: {
+    bg: "linear-gradient(135deg, rgba(148,163,184,0.15), rgba(100,116,139,0.1))",
+    plank: "linear-gradient(180deg, #475569, #334155)",
+    count: "bg-slate-400 text-white",
+    label: "text-slate-600 dark:text-slate-300",
+  },
+  wood: {
+    bg: "linear-gradient(135deg, rgba(180,83,9,0.1), rgba(146,64,14,0.08))",
+    plank: "linear-gradient(180deg, #b45309, #92400e)",
+    count: "bg-amber-600 text-white",
+    label: "text-amber-800 dark:text-amber-400",
+  },
+};
+
+function TrophyShelf({ chests }: { chests: Chest[] }) {
+  const byType: Record<ChestType, Chest[]> = {
+    gold: chests.filter((c) => c.type === "gold"),
+    silver: chests.filter((c) => c.type === "silver"),
+    wood: chests.filter((c) => c.type === "wood"),
+  };
+
+  const order: ChestType[] = ["gold", "silver", "wood"];
+
+  return (
+    <div className="space-y-6">
+      {order.map((type) => {
+        const items = byType[type];
+        if (items.length === 0) return null;
+        const meta = CHEST_META[type];
+        const style = SHELF_STYLES[type];
+        return (
+          <div key={type}>
+            {/* Shelf label */}
+            <div className={`flex items-center gap-2 mb-2 font-bold text-sm ${style.label}`}>
+              <span>{meta.emoji}</span>
+              <span>{meta.label}</span>
+              <span className={`ml-1 px-2 py-0.5 text-xs rounded-full font-bold ${style.count}`}>
+                ×{items.length}
+              </span>
+            </div>
+
+            {/* Shelf surface */}
+            <div
+              className="rounded-t-2xl p-4 min-h-[80px]"
+              style={{ background: style.bg, border: "1px solid rgba(255,255,255,0.1)" }}
+            >
+              <div className="flex flex-wrap gap-4">
+                {items.map((chest) => (
+                  <div key={chest.id} className="flex flex-col items-center gap-1 w-14">
+                    <span className="text-3xl drop-shadow">{meta.emoji}</span>
+                    {chest.openedReward && (
+                      <span className="text-[10px] text-center text-gray-500 dark:text-gray-400 leading-tight line-clamp-2">
+                        {chest.openedReward}
+                      </span>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Wooden plank */}
+            <div
+              className="h-3 rounded-b-lg shadow-md"
+              style={{ background: style.plank, boxShadow: "0 4px 6px -1px rgba(0,0,0,0.3)" }}
+            />
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 export default function KistorPage() {
   const router = useRouter();
   const [student, setStudent] = useState<StudentData | null>(null);
   const [gam, setGam] = useState<GamificationData | null>(null);
   const [rewardResult, setRewardResult] = useState<RewardResult | null>(null);
+  const [missedChestsCount, setMissedChestsCount] = useState(0);
 
   useEffect(() => {
     const s = loadStudent();
     if (!s) { router.push("/"); return; }
     setStudent(s);
-    setGam(loadGamification());
+
+    const loaded = loadGamification();
+
+    // Award any exercise milestones the player has crossed but not yet received
+    // (happens when new milestones are added to the app after the player's data was created)
+    const missed = checkMissedExerciseMilestones(
+      loaded.exercisesCompleted,
+      loaded.exerciseMilestonesRewarded
+    );
+    if (missed.length > 0) {
+      const updated: GamificationData = {
+        ...loaded,
+        chests: [...loaded.chests, ...missed.map((m) => m.chest)],
+        exerciseMilestonesRewarded: [
+          ...loaded.exerciseMilestonesRewarded,
+          ...missed.map((m) => m.milestone),
+        ],
+      };
+      saveGamification(updated);
+      setGam(updated);
+      setMissedChestsCount(missed.length);
+    } else {
+      setGam(loaded);
+    }
   }, [router]);
 
   if (!student || !gam) return null;
@@ -185,8 +289,28 @@ export default function KistorPage() {
 
       <main className="max-w-4xl mx-auto px-4 py-6 space-y-8">
 
+        {/* Missed milestones notice */}
+        {missedChestsCount > 0 && (
+          <BlurFade delay={0}>
+            <div
+              className="rounded-3xl p-4 border-3 border-green-400 flex items-center gap-3"
+              style={{ background: "linear-gradient(135deg, #14532d, #15803d)" }}
+            >
+              <span className="text-3xl">🎁</span>
+              <div>
+                <p className="text-white font-bold text-sm">
+                  Nya kistor upplåsta!
+                </p>
+                <p className="text-white/80 text-xs">
+                  Du fick {missedChestsCount} ny{missedChestsCount !== 1 ? "a" : ""} kista{missedChestsCount !== 1 ? "r" : ""} för övningar du redan klarat – öppna dem nedan!
+                </p>
+              </div>
+            </div>
+          </BlurFade>
+        )}
+
         {/* Boss challenge */}
-        <BlurFade delay={0}>
+        <BlurFade delay={0.0}>
           <div
             className="rounded-3xl p-5 border-3"
             style={{
@@ -296,17 +420,24 @@ export default function KistorPage() {
           </BlurFade>
         )}
 
-        {/* Opened chests history */}
+        {/* Trophy shelf – opened chests */}
         {opened.length > 0 && (
           <BlurFade delay={0.15}>
             <section>
               <h2 className="text-lg font-black text-sv-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-                🔓 Öppnade kistor ({opened.length})
+                🏠 Trofehylla
+                <span className="px-2 py-0.5 text-xs font-bold bg-amber-600 text-white rounded-full">
+                  {opened.length} {opened.length === 1 ? "kista" : "kistor"}
+                </span>
               </h2>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                {opened.map((chest) => (
-                  <ChestCard key={chest.id} chest={chest} onOpen={() => {}} />
-                ))}
+              <div
+                className="rounded-3xl p-5 border-3 border-amber-200 dark:border-amber-900"
+                style={{
+                  background: "linear-gradient(160deg, #fef3c7 0%, #fde68a 100%)",
+                  boxShadow: "inset 0 2px 8px rgba(0,0,0,0.06)"
+                }}
+              >
+                <TrophyShelf chests={opened} />
               </div>
             </section>
           </BlurFade>
@@ -326,9 +457,9 @@ export default function KistorPage() {
             </ul>
             <p className="text-xs font-bold text-sv-500 dark:text-sv-300 uppercase tracking-wide mb-2">Övningsmilstolpar</p>
             <ul className="space-y-1.5 text-sm text-sv-800 dark:text-sv-100 mb-4">
-              <li className="flex items-start gap-2"><span>📦</span><span><strong>Trälåda:</strong> 5, 10 övningar</span></li>
-              <li className="flex items-start gap-2"><span>🪙</span><span><strong>Silverlåda:</strong> 15, 20, 40 övningar</span></li>
-              <li className="flex items-start gap-2"><span>🏆</span><span><strong>Guldlåda:</strong> 30, 60, 75, 100, 150 övningar</span></li>
+              <li className="flex items-start gap-2"><span>📦</span><span><strong>Trälåda:</strong> 5, 7, 10, 25, 45, 55 övningar</span></li>
+              <li className="flex items-start gap-2"><span>🪙</span><span><strong>Silverlåda:</strong> 12, 15, 20, 35, 40, 50, 70, 80, 90 övningar</span></li>
+              <li className="flex items-start gap-2"><span>🏆</span><span><strong>Guldlåda:</strong> 30, 60, 75, 100, 125, 150, 200 övningar</span></li>
             </ul>
             <div className="flex items-start gap-2 text-sm text-sv-800 dark:text-sv-100 pt-3 border-t border-sv-100 dark:border-gray-700">
               <span>🎁</span>

@@ -284,6 +284,23 @@ export function chestsEarnedFromPoints(
   return earned;
 }
 
+/**
+ * Returns chests for any exercise milestones the player has already passed
+ * but never received – used when new milestones are added after the fact.
+ */
+export function checkMissedExerciseMilestones(
+  currentCount: number,
+  alreadyRewarded: number[]
+): { chest: Chest; milestone: number }[] {
+  const earned: { chest: Chest; milestone: number }[] = [];
+  for (const m of EXERCISE_CHEST_MILESTONES) {
+    if (currentCount >= m.exercises && !alreadyRewarded.includes(m.exercises)) {
+      earned.push({ chest: makeChest(m.type), milestone: m.exercises });
+    }
+  }
+  return earned;
+}
+
 export function chestsEarnedFromExercises(
   prevCount: number,
   newCount: number,
