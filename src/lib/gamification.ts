@@ -11,6 +11,11 @@ export const BOSS_UNLOCK_THRESHOLD = 5;
 export const MYSTERY_BOX_CHANCE = 0.15;
 
 export const POINT_CHEST_MILESTONES: { points: number; type: ChestType }[] = [
+  { points: 10,    type: "wood" },
+  { points: 20,    type: "wood" },
+  { points: 30,    type: "wood" },
+  { points: 50,    type: "wood" },
+  { points: 75,    type: "wood" },
   { points: 100,   type: "wood" },
   { points: 200,   type: "wood" },
   { points: 300,   type: "silver" },
@@ -39,6 +44,10 @@ export const POINT_CHEST_MILESTONES: { points: number; type: ChestType }[] = [
 ];
 
 export const EXERCISE_CHEST_MILESTONES: { exercises: number; type: ChestType }[] = [
+  { exercises: 1,   type: "wood" },
+  { exercises: 2,   type: "wood" },
+  { exercises: 3,   type: "wood" },
+  { exercises: 4,   type: "wood" },
   { exercises: 5,   type: "wood" },
   { exercises: 7,   type: "wood" },
   { exercises: 10,  type: "wood" },

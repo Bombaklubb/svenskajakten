@@ -451,13 +451,13 @@ export default function KistorPage() {
             </h3>
             <p className="text-xs font-bold text-sv-500 dark:text-sv-300 uppercase tracking-wide mb-2">Poängmilstolpar</p>
             <ul className="space-y-1.5 text-sm text-sv-800 dark:text-sv-100 mb-4">
-              <li className="flex items-start gap-2"><span>📦</span><span><strong>Trälåda:</strong> 100, 200, 600 poäng</span></li>
+              <li className="flex items-start gap-2"><span>📦</span><span><strong>Trälåda:</strong> 10, 20, 30, 50, 75, 100, 200 poäng</span></li>
               <li className="flex items-start gap-2"><span>🪙</span><span><strong>Silverlåda:</strong> 300, 500, 750, 1 500, 2 000 poäng</span></li>
               <li className="flex items-start gap-2"><span>🏆</span><span><strong>Guldlåda:</strong> 1 000, 2 500, 3 500, 5 000, 7 000, 10 000, 15 000 poäng</span></li>
             </ul>
             <p className="text-xs font-bold text-sv-500 dark:text-sv-300 uppercase tracking-wide mb-2">Övningsmilstolpar</p>
             <ul className="space-y-1.5 text-sm text-sv-800 dark:text-sv-100 mb-4">
-              <li className="flex items-start gap-2"><span>📦</span><span><strong>Trälåda:</strong> 5, 7, 10, 25, 45, 55 övningar</span></li>
+              <li className="flex items-start gap-2"><span>📦</span><span><strong>Trälåda:</strong> 1, 2, 3, 4, 5, 7, 10, 25, 45, 55 övningar</span></li>
               <li className="flex items-start gap-2"><span>🪙</span><span><strong>Silverlåda:</strong> 12, 15, 20, 35, 40, 50, 70, 80, 90 övningar</span></li>
               <li className="flex items-start gap-2"><span>🏆</span><span><strong>Guldlåda:</strong> 30, 60, 75, 100, 125, 150, 200 övningar</span></li>
             </ul>
