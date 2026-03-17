@@ -816,6 +816,167 @@
           "explanation": "'Vi vann matchen!' – man jublar och är glad, därför utropstecken i slutet."
         }
       ]
+    },
+    {
+      "id": "synonymer-1",
+      "title": "Synonymer – ord med liknande betydelse",
+      "description": "Lär dig hitta ord som betyder ungefär samma sak",
+      "icon": "🔄",
+      "pointsRequired": 0,
+      "bonusPoints": 20,
+      "helpText": [
+        "Synonymer är ord som betyder ungefär samma sak.",
+        "Exempel: 'glad' och 'lycklig' är synonymer – båda betyder att man mår bra.",
+        "Det finns ofta flera sätt att säga samma sak på svenska!"
+      ],
+      "exercises": [
+        {
+          "id": "syn-lag-1",
+          "type": "multiple-choice",
+          "question": "Vilket ord är en synonym till 'glad'?",
+          "options": [
+            "ledsen",
+            "lycklig",
+            "trött",
+            "arg"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Lycklig' och 'glad' betyder ungefär samma sak – att man mår bra och är nöjd."
+        },
+        {
+          "id": "syn-lag-2",
+          "type": "multiple-choice",
+          "question": "Vilket ord har ungefär samma betydelse som 'stor'?",
+          "options": [
+            "liten",
+            "snabb",
+            "enorm",
+            "fin"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Enorm' betyder väldigt stor – det är en synonym till 'stor'."
+        },
+        {
+          "id": "syn-lag-3",
+          "type": "multiple-choice",
+          "question": "Välj synonymen till 'springer':",
+          "options": [
+            "sover",
+            "rusar",
+            "sitter",
+            "äter"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Rusar' betyder att man springer väldigt fort – en synonym till 'springer'."
+        },
+        {
+          "id": "syn-lag-4",
+          "type": "fill-in-blank",
+          "question": "En synonym till 'bil' är 'fordon'. En synonym till 'hund' är 'vov___'.",
+          "answer": "ve",
+          "hint": "Vad säger en hund? Vov-vov! Det finns ett ord som börjar på 'vov'.",
+          "explanation": "'Vovve' är ett annat ord för hund – en synonym som barn ofta använder."
+        },
+        {
+          "id": "syn-lag-5",
+          "type": "multiple-choice",
+          "question": "Vilket ord är INTE en synonym till 'snabb'?",
+          "options": [
+            "kvick",
+            "rask",
+            "långsam",
+            "flink"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Långsam' är motsatsen till 'snabb', inte en synonym. Kvick, rask och flink är alla synonymer."
+        }
+      ]
+    },
+    {
+      "id": "motsatsord-1",
+      "title": "Motsatsord – ord med motsatt betydelse",
+      "description": "Öva på att hitta ord som betyder tvärtom",
+      "icon": "↔️",
+      "pointsRequired": 0,
+      "bonusPoints": 20,
+      "helpText": [
+        "Motsatsord är ord som betyder tvärtom mot varandra.",
+        "Exempel: 'stor' och 'liten' är motsatsord.",
+        "Exempel: 'dag' och 'natt', 'varm' och 'kall'."
+      ],
+      "exercises": [
+        {
+          "id": "mot-lag-1",
+          "type": "multiple-choice",
+          "question": "Vad är motsatsordet till 'dag'?",
+          "options": [
+            "morgon",
+            "natt",
+            "kväll",
+            "lunch"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Natt' är motsatsen till 'dag' – när det är mörkt ute."
+        },
+        {
+          "id": "mot-lag-2",
+          "type": "multiple-choice",
+          "question": "Vad är motsatsordet till 'varm'?",
+          "options": [
+            "het",
+            "sval",
+            "kall",
+            "mild"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Kall' är den direkta motsatsen till 'varm'."
+        },
+        {
+          "id": "mot-lag-3",
+          "type": "fill-in-blank",
+          "question": "Motsatsen till 'glad' är '___'.",
+          "answer": "ledsen",
+          "hint": "Hur mår man om man inte är glad?",
+          "explanation": "'Ledsen' är motsatsen till 'glad' – när man inte mår bra."
+        },
+        {
+          "id": "mot-lag-4",
+          "type": "multiple-choice",
+          "question": "Vilket par är INTE ett par av motsatsord?",
+          "options": [
+            "stor – liten",
+            "snabb – långsam",
+            "glad – lycklig",
+            "gammal – ung"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Glad' och 'lycklig' är synonymer (betyder ungefär samma sak), inte motsatsord!"
+        },
+        {
+          "id": "mot-lag-5",
+          "type": "build-sentence",
+          "instruction": "Sätt ihop meningen med rätt motsatspar:",
+          "words": [
+            "Björnen",
+            "är",
+            "stor",
+            "men",
+            "musen",
+            "är",
+            "liten."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "explanation": "'Stor' och 'liten' är motsatsord – det stämmer bra att björnen är stor och musen liten."
+        }
+      ]
     }
   ],
   "reading": [
@@ -1169,6 +1330,149 @@
             3
           ],
           "explanation": "'Skolväska' är ett sammansatt ord: skol + väska."
+        }
+      ]
+    },
+    {
+      "id": "veckodagar-manader-1",
+      "title": "Veckodagar och månader",
+      "description": "Öva på att stava veckodagar och månader rätt",
+      "icon": "📅",
+      "pointsRequired": 0,
+      "bonusPoints": 20,
+      "helpText": [
+        "Veckodagarna skrivs med liten bokstav i svenska: måndag, tisdag, onsdag...",
+        "Månadsnamnen skrivs också med liten bokstav: januari, februari, mars...",
+        "Kom ihåg: svenska veckodagar slutar på '-dag'!"
+      ],
+      "exercises": [
+        {
+          "id": "veckdag-1",
+          "type": "multiple-choice",
+          "question": "Hur stavas den dag som kommer efter tisdag?",
+          "options": [
+            "ondsdag",
+            "onsdag",
+            "onsdag",
+            "Onsdag"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Onsdag' stavas med liten bokstav och utan extra 'd'."
+        },
+        {
+          "id": "veckdag-2",
+          "type": "fill-in-blank",
+          "question": "Stava rätt: Veckans sista dag heter 'sön___'.",
+          "answer": "dag",
+          "hint": "Alla veckodagar slutar på samma sätt.",
+          "explanation": "'Söndag' – alla veckodagar slutar på '-dag'."
+        },
+        {
+          "id": "veckdag-3",
+          "type": "multiple-choice",
+          "question": "Vilket månadsnamn är felstavat?",
+          "options": [
+            "januari",
+            "feburari",
+            "mars",
+            "april"
+          ],
+          "correctIndex": 1,
+          "explanation": "Det heter 'februari' (inte 'feburari') – kom ihåg r-u-a-r-i."
+        },
+        {
+          "id": "veckdag-4",
+          "type": "multiple-choice",
+          "question": "Välj rätt stavning:",
+          "options": [
+            "Lördag",
+            "lördag",
+            "lördag",
+            "lørdag"
+          ],
+          "correctIndex": 1,
+          "explanation": "'lördag' skrivs med liten bokstav på svenska (inte stor)."
+        },
+        {
+          "id": "veckdag-5",
+          "type": "fill-in-blank",
+          "question": "Den femte månaden heter 'maj'. Den sjätte månaden heter '___'.",
+          "answer": "juni",
+          "hint": "Tänk på sommarens börjad – j, u, n...",
+          "explanation": "'Juni' är den sjätte månaden – sommaren börjar!"
+        }
+      ]
+    },
+    {
+      "id": "hogfrekventa-ord-1",
+      "title": "Vanliga svenska ord",
+      "description": "Öva stavningen på de vanligaste orden i svenska",
+      "icon": "📝",
+      "pointsRequired": 0,
+      "bonusPoints": 20,
+      "helpText": [
+        "Vissa ord används väldigt ofta i svenska – det är bra att kunna stava dem rätt!",
+        "Exempel: 'eftersom', 'egentligen', 'självklart', 'naturligtvis'.",
+        "Läs orden högt för dig själv – det hjälper dig komma ihåg stavningen."
+      ],
+      "exercises": [
+        {
+          "id": "hogfreq-1",
+          "type": "multiple-choice",
+          "question": "Välj rätt stavning:",
+          "options": [
+            "efersom",
+            "eftersom",
+            "eftesom",
+            "effersom"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Eftersom' – e-f-t-e-r-s-o-m. Ett av de vanligaste orden i svenska!"
+        },
+        {
+          "id": "hogfreq-2",
+          "type": "fill-in-blank",
+          "question": "Rätt stavning: 'Jag vet inte ___' (man använder detta ord när man frågar om en plats).",
+          "answer": "var",
+          "hint": "Du letar efter ett ställe – 'Jag vet inte ___ det är.'",
+          "explanation": "'Var' frågar om plats (Var är bollen?). 'Vart' frågar om riktning (Vart går du?)."
+        },
+        {
+          "id": "hogfreq-3",
+          "type": "multiple-choice",
+          "question": "Vilket ord är rätt stavat?",
+          "options": [
+            "sjelf",
+            "själv",
+            "själv",
+            "sjelv"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Själv' stavas med 'sj' och 'ä' – en av de vanligaste svåra stavningarna."
+        },
+        {
+          "id": "hogfreq-4",
+          "type": "multiple-choice",
+          "question": "Välj rätt stavning av det ord som betyder 'en gång till':",
+          "options": [
+            "ännu en gång",
+            "igen",
+            "inga",
+            "igan"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Igen' stavas i-g-e-n. Det betyder 'en gång till' eller 'tillbaka'."
+        },
+        {
+          "id": "hogfreq-5",
+          "type": "fill-in-blank",
+          "question": "Stava rätt: 'Det är ___ kallt ute idag.' (ett ord som förstärker, börjar med 'j')",
+          "answer": "jättekallt",
+          "alternativeAnswers": [
+            "väldigt"
+          ],
+          "hint": "Barn säger ofta 'jätte-' framför adjektiv för att förstärka.",
+          "explanation": "'Jättekallt' – 'jätte-' skrivs ihop med adjektivet utan bindestreck."
         }
       ]
     }

@@ -14,33 +14,99 @@ export const POINT_CHEST_MILESTONES: { points: number; type: ChestType }[] = [
   { points: 100,   type: "wood" },
   { points: 200,   type: "wood" },
   { points: 300,   type: "silver" },
+  { points: 400,   type: "wood" },
   { points: 500,   type: "silver" },
   { points: 600,   type: "wood" },
+  { points: 700,   type: "silver" },
   { points: 750,   type: "silver" },
+  { points: 850,   type: "wood" },
   { points: 1000,  type: "gold" },
+  { points: 1250,  type: "silver" },
   { points: 1500,  type: "silver" },
+  { points: 1750,  type: "wood" },
   { points: 2000,  type: "silver" },
   { points: 2500,  type: "gold" },
+  { points: 3000,  type: "silver" },
   { points: 3500,  type: "gold" },
+  { points: 4000,  type: "silver" },
   { points: 5000,  type: "gold" },
+  { points: 6000,  type: "gold" },
   { points: 7000,  type: "gold" },
+  { points: 8000,  type: "gold" },
   { points: 10000, type: "gold" },
+  { points: 12000, type: "gold" },
   { points: 15000, type: "gold" },
 ];
 
 export const EXERCISE_CHEST_MILESTONES: { exercises: number; type: ChestType }[] = [
   { exercises: 5,   type: "wood" },
+  { exercises: 7,   type: "wood" },
   { exercises: 10,  type: "wood" },
+  { exercises: 12,  type: "silver" },
   { exercises: 15,  type: "silver" },
   { exercises: 20,  type: "silver" },
+  { exercises: 25,  type: "wood" },
   { exercises: 30,  type: "gold" },
+  { exercises: 35,  type: "silver" },
   { exercises: 40,  type: "silver" },
+  { exercises: 45,  type: "wood" },
   { exercises: 50,  type: "silver" },
+  { exercises: 55,  type: "wood" },
   { exercises: 60,  type: "gold" },
+  { exercises: 70,  type: "silver" },
   { exercises: 75,  type: "gold" },
+  { exercises: 80,  type: "silver" },
+  { exercises: 90,  type: "silver" },
   { exercises: 100, type: "gold" },
+  { exercises: 125, type: "gold" },
   { exercises: 150, type: "gold" },
+  { exercises: 200, type: "gold" },
 ];
+
+// ─── Achievement → chest rewards ─────────────────────────────────────────────
+
+export const ACHIEVEMENT_CHEST_REWARDS: Record<string, ChestType> = {
+  // Lagstadiet – Ordängen
+  "lag-5":  "wood",    // Ängsmästare (5 moduler)
+  "lag-9":  "silver",  // Ängshjälte  (10 moduler)
+  "lag-10": "gold",    // Ängskung    (18 moduler)
+  // Mellanstadiet – Berättelseskogen
+  "mel-5":  "wood",
+  "mel-9":  "silver",
+  "mel-10": "gold",
+  // Högstadiet – Texthavet
+  "hog-5":  "wood",
+  "hog-9":  "silver",
+  "hog-10": "gold",
+  // Gymnasiet – Skrivakademin
+  "gym-5":  "wood",
+  "gym-9":  "silver",
+  "gym-10": "gold",
+  // Globala
+  "global-2": "wood",    // Fleritdig        (2 stadier)
+  "global-3": "silver",  // Världserövrare   (4 stadier)
+  "global-5": "gold",    // Mästaren         (500 poäng)
+  "global-6": "silver",  // Fotbollsstjärnan (20 moduler)
+  "global-7": "gold",    // Svenskaexperten  (1000 poäng)
+};
+
+export function chestsEarnedFromAchievements(
+  prevUnlocked: string[],
+  nowUnlocked: string[],
+  alreadyRewarded: string[]
+): { chest: Chest; achievementId: string }[] {
+  const earned: { chest: Chest; achievementId: string }[] = [];
+  for (const id of nowUnlocked) {
+    if (
+      !prevUnlocked.includes(id) &&
+      !alreadyRewarded.includes(id) &&
+      ACHIEVEMENT_CHEST_REWARDS[id]
+    ) {
+      earned.push({ chest: makeChest(ACHIEVEMENT_CHEST_REWARDS[id]), achievementId: id });
+    }
+  }
+  return earned;
+}
 
 // ─── Chest reward tables ──────────────────────────────────────────────────────
 
@@ -338,6 +404,7 @@ export function defaultGamificationData(): GamificationData {
     bossWins: 0,
     pointsMilestonesRewarded: [],
     exerciseMilestonesRewarded: [],
+    achievementsRewarded: [],
   };
 }
 

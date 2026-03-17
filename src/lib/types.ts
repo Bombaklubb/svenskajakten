@@ -196,6 +196,7 @@ export interface GamificationData {
   bossWins: number;
   pointsMilestonesRewarded: number[];
   exerciseMilestonesRewarded: number[];
+  achievementsRewarded: string[];
 }
 
 // ─── Exercise session (in-memory, not persisted) ──────────────────────────────

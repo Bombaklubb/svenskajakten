@@ -1075,6 +1075,167 @@
           "explanation": "'Läraren' (ä), 'säger' (ä), 'vädret' (ä) – alla tre stavas med ä. 'Vackert' stavas med e: v-a-ck-e-r-t."
         }
       ]
+    },
+    {
+      "id": "synonymer-mel-1",
+      "title": "Synonymer – nyansera ditt språk",
+      "description": "Använd synonymer för att göra texten mer levande",
+      "icon": "🔄",
+      "pointsRequired": 0,
+      "bonusPoints": 25,
+      "helpText": [
+        "Synonymer är ord med liknande eller samma betydelse.",
+        "Att använda synonymer gör din text mer varierad och intressant.",
+        "Exempel: istället för att skriva 'sade' flera gånger kan du skriva 'viskade', 'utbrast', 'mumlade'."
+      ],
+      "exercises": [
+        {
+          "id": "syn-mel-1",
+          "type": "multiple-choice",
+          "question": "Vilket ord är en synonym till 'undersöka'?",
+          "options": [
+            "ignorera",
+            "granska",
+            "glömma",
+            "missa"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Granska' och 'undersöka' betyder ungefär samma sak – att titta noga på något."
+        },
+        {
+          "id": "syn-mel-2",
+          "type": "multiple-choice",
+          "question": "Välj den mest passande synonymen till 'sade' i meningen: 'Han ___ med arg röst.'",
+          "options": [
+            "viskade",
+            "fnissade",
+            "skrek",
+            "log"
+          ],
+          "correctIndex": 2,
+          "explanation": "Med 'arg röst' passar 'skrek' bäst – det är en synonym till 'sade' som visar känslan."
+        },
+        {
+          "id": "syn-mel-3",
+          "type": "fill-in-blank",
+          "question": "En synonym till 'berömd' är '___känd'.",
+          "answer": "väl",
+          "hint": "Tänk på hur man säger att någon är känd av många.",
+          "explanation": "'Välkänd' är en synonym till 'berömd' – båda betyder att många vet vem personen är."
+        },
+        {
+          "id": "syn-mel-4",
+          "type": "multiple-choice",
+          "question": "Vilket ord är en synonym till 'fantastisk'?",
+          "options": [
+            "medioker",
+            "genomsnittlig",
+            "enastående",
+            "tråkig"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Enastående' och 'fantastisk' betyder båda att något är mycket bra och imponerande."
+        },
+        {
+          "id": "syn-mel-5",
+          "type": "multiple-choice",
+          "question": "Välj synonymen till 'börja' som passar i en formell text:",
+          "options": [
+            "starta",
+            "påbörja",
+            "dra igång",
+            "kicka igång"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Påbörja' är den mest formella synonymen till 'börja' – passar bäst i skriftliga texter."
+        }
+      ]
+    },
+    {
+      "id": "motsatsord-mel-1",
+      "title": "Motsatsord – antonymer i text",
+      "description": "Förstå och använd motsatsord för att skapa kontraster",
+      "icon": "↔️",
+      "pointsRequired": 0,
+      "bonusPoints": 25,
+      "helpText": [
+        "Motsatsord (antonymer) är ord som har motsatt betydelse.",
+        "Motsatsord används ofta i texter för att skapa kontraster och göra berättelsen intressantare.",
+        "Exempel: 'Han var stark utanpå, men svag inuti.' – stark/svag är ett motsatspar."
+      ],
+      "exercises": [
+        {
+          "id": "mot-mel-1",
+          "type": "multiple-choice",
+          "question": "Vad är motsatsordet till 'frivillig'?",
+          "options": [
+            "valfri",
+            "tvingad",
+            "önskad",
+            "planerad"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Tvingad' är motsatsen till 'frivillig' – något man måste göra mot sin vilja."
+        },
+        {
+          "id": "mot-mel-2",
+          "type": "multiple-choice",
+          "question": "Vilket par är INTE ett par av motsatsord?",
+          "options": [
+            "inkludera – exkludera",
+            "konstruktiv – destruktiv",
+            "aktiv – passiv",
+            "snabb – kvick"
+          ],
+          "correctIndex": 3,
+          "explanation": "'Snabb' och 'kvick' är synonymer (lika bedeutelse), inte motsatsord!"
+        },
+        {
+          "id": "mot-mel-3",
+          "type": "fill-in-blank",
+          "question": "Motsatsen till 'abstrakt' är '___'.",
+          "answer": "konkret",
+          "hint": "Abstrakt betyder svårgreppbart. Konkret betyder...?",
+          "explanation": "'Konkret' är motsatsen till 'abstrakt' – något konkret är tydligt och verkligt."
+        },
+        {
+          "id": "mot-mel-4",
+          "type": "multiple-choice",
+          "question": "Välj rätt motsatsord till 'optimistisk':",
+          "options": [
+            "neutral",
+            "realistisk",
+            "pessimistisk",
+            "kritisk"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Pessimistisk' är motsatsen till 'optimistisk' – en pessimist tror på det sämsta."
+        },
+        {
+          "id": "mot-mel-5",
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med rätt ordning för kontrasten:",
+          "words": [
+            "Staden",
+            "var",
+            "livlig",
+            "men",
+            "byn",
+            "var",
+            "stillsam."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "explanation": "'Livlig' och 'stillsam' är motsatsord – de skapar en kontrast mellan stad och by."
+        }
+      ]
     }
   ],
   "reading": [
@@ -1427,6 +1588,159 @@
           ],
           "correctIndex": 0,
           "explanation": "'Något' – innehåller ng-ljud: n-å-g-o-t."
+        }
+      ]
+    },
+    {
+      "id": "engelska-lanord-1",
+      "title": "Engelska lånord i svenska",
+      "description": "Lär dig stava engelska ord som används i svenska",
+      "icon": "🌐",
+      "pointsRequired": 0,
+      "bonusPoints": 25,
+      "helpText": [
+        "Svenska har lånat in många ord från engelskan, t.ex. 'mejl', 'chatt', 'webb'.",
+        "Dessa ord stavas ofta annorlunda på svenska än på engelska.",
+        "Ibland kan man välja: 'e-post' eller 'mejl', 'webbplats' eller 'hemsida'."
+      ],
+      "exercises": [
+        {
+          "id": "lanord-1",
+          "type": "multiple-choice",
+          "question": "Hur stavas 'email' på svenska?",
+          "options": [
+            "email",
+            "mejl",
+            "mail",
+            "epost"
+          ],
+          "correctIndex": 1,
+          "explanation": "På svenska skriver vi 'mejl' – en försvenskad stavning av engelskans 'mail'."
+        },
+        {
+          "id": "lanord-2",
+          "type": "multiple-choice",
+          "question": "Vilket alternativ är INTE en godkänd svensk stavning?",
+          "options": [
+            "chatt",
+            "webb",
+            "blogg",
+            "computor"
+          ],
+          "correctIndex": 3,
+          "explanation": "'Computor' är fel – på svenska skriver vi 'dator' (eller 'komputer' i nödfall)."
+        },
+        {
+          "id": "lanord-3",
+          "type": "fill-in-blank",
+          "question": "Det engelska ordet 'check' stavas på svenska '___'.",
+          "answer": "check",
+          "alternativeAnswers": [
+            "schack"
+          ],
+          "hint": "I banken använder man en 'c...'",
+          "explanation": "'Check' (bankinstrument) behåller sin engelska stavning på svenska."
+        },
+        {
+          "id": "lanord-4",
+          "type": "multiple-choice",
+          "question": "Välj den korrekta svenska stavningen av det ord som betyder 'att skicka ett textmeddelande':",
+          "options": [
+            "texta",
+            "texxa",
+            "textsa",
+            "smsa"
+          ],
+          "correctIndex": 3,
+          "explanation": "'Smsa' är det vardagliga svenska ordet för att skicka SMS/textmeddelande."
+        },
+        {
+          "id": "lanord-5",
+          "type": "multiple-choice",
+          "question": "Vilket ord är korrekt stavat?",
+          "options": [
+            "shoppa",
+            "shopas",
+            "shopa",
+            "shoppas"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Shoppa' – dubbelt 'p' eftersom vokalen före är kort (som i svenska stavningsregler)."
+        }
+      ]
+    },
+    {
+      "id": "sammansattaord-mel-1",
+      "title": "Sammansatta ord – ihop eller isär?",
+      "description": "Lär dig när ord ska skrivas ihop eller isär på svenska",
+      "icon": "🔗",
+      "pointsRequired": 0,
+      "bonusPoints": 25,
+      "helpText": [
+        "På svenska skrivs sammansatta ord ihop: 'fotboll', 'dagbok', 'skolbuss'.",
+        "På engelska skrivs de ofta isär: 'foot ball', 'day book', 'school bus'.",
+        "Särsksrivning är ett vanligt fel: 'sol ljus' ska vara 'solljus'."
+      ],
+      "exercises": [
+        {
+          "id": "sammord-1",
+          "type": "multiple-choice",
+          "question": "Vilket alternativ är rätt skrivet?",
+          "options": [
+            "sol glasögon",
+            "solglasögon",
+            "Sol glasögon",
+            "sol-glasögon"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Solglasögon' – på svenska skrivs sammansatta substantiv alltid ihop."
+        },
+        {
+          "id": "sammord-2",
+          "type": "fill-in-blank",
+          "question": "Skriv ihop: 'katt' + 'mat' = '___'",
+          "answer": "kattmat",
+          "hint": "Sätt ihop de två orden utan mellanslag.",
+          "explanation": "'Kattmat' – mat till katten. Alltid ihop på svenska!"
+        },
+        {
+          "id": "sammord-3",
+          "type": "multiple-choice",
+          "question": "Hitta det korrekt skrivna alternativet:",
+          "options": [
+            "fotbolls plan",
+            "fotbollsplan",
+            "fotbolls-plan",
+            "Fotbollsplan"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Fotbollsplan' – ett sammansatt ord som skrivs ihop. Notera fuge-s: fotbolls-plan."
+        },
+        {
+          "id": "sammord-4",
+          "type": "multiple-choice",
+          "question": "Vilket ord behöver ett foge-s i mitten?",
+          "options": [
+            "hundhus",
+            "katthus",
+            "hundshus",
+            "kattshus"
+          ],
+          "correctIndex": 0,
+          "explanation": "Hmm – det heter faktiskt 'hundkoja' eller 'hundkur', men 'hundhus' är rätt. Foge-s används inte alltid."
+        },
+        {
+          "id": "sammord-5",
+          "type": "multiple-choice",
+          "question": "Välj rätt sammansättning: en person som skriver böcker =",
+          "options": [
+            "bok skrivare",
+            "bokskrivare",
+            "böckerskrivare",
+            "boks skrivare"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Bokskrivare' – sammansatta ord med 'bok' som förled skrivs alltid ihop."
         }
       ]
     }

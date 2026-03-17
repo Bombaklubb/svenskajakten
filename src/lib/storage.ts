@@ -119,7 +119,10 @@ export function loadGamification(): GamificationData {
   try {
     const raw = localStorage.getItem(GAMIFICATION_KEY);
     if (!raw) return defaultGamificationData();
-    return JSON.parse(raw) as GamificationData;
+    const data = JSON.parse(raw) as GamificationData;
+    // Migration: ensure new fields exist for existing users
+    if (!data.achievementsRewarded) data.achievementsRewarded = [];
+    return data;
   } catch {
     return defaultGamificationData();
   }
