@@ -88,6 +88,7 @@ export default function BossPage() {
             bossLastAttempt: new Date().toISOString(),
             pointsMilestonesRewarded: currentGam.pointsMilestonesRewarded,
             exerciseMilestonesRewarded: currentGam.exerciseMilestonesRewarded,
+            achievementsRewarded: currentGam.achievementsRewarded ?? [],
           };
           saveGamification(newGam);
           setGam(newGam);
@@ -105,6 +106,7 @@ export default function BossPage() {
             bossLastAttempt: new Date().toISOString(),
             pointsMilestonesRewarded: currentGam.pointsMilestonesRewarded,
             exerciseMilestonesRewarded: currentGam.exerciseMilestonesRewarded,
+            achievementsRewarded: currentGam.achievementsRewarded ?? [],
           };
           saveGamification(newGam);
           setGam(newGam);
