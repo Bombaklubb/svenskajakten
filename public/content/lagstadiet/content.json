@@ -821,7 +821,7 @@
             "dad",
             "bad",
             "bab",
-            "dad"
+            "ded"
           ],
           "correctIndex": 1,
           "explanation": "'Bad' stavas med b i början och d i slutet."
@@ -832,7 +832,7 @@
           "options": [
             "dil",
             "bil",
-            "bil",
+            "bild",
             "dill"
           ],
           "correctIndex": 1,
@@ -964,7 +964,7 @@
             "nesa",
             "näsa",
             "nese",
-            "nese"
+            "nöse"
           ],
           "correctIndex": 1,
           "explanation": "'Näsa' stavas med ä – n-ä-s-a."
@@ -1014,7 +1014,7 @@
             "eter",
             "äter",
             "ätar",
-            "eter"
+            "åter"
           ],
           "correctIndex": 1,
           "explanation": "'Äter' stavas med ä. Lyssna på hur det låter: Ä-TER. Det är ett ä-ljud!"
@@ -1960,7 +1960,7 @@
           "options": [
             "robin",
             "röbin",
-            "röbin",
+            "röddhake",
             "rödhake"
           ],
           "correctIndex": 3,
@@ -2035,7 +2035,7 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Fyll i: 'Jag ___ inte trött.' (negation)",
+          "question": "Fyll i: 'Jag ___ inte trött.' (verbet 'vara', presens)",
           "answer": "är",
           "hint": "Det är en form av verbet vara.",
           "explanation": "'Är' är presensformen av 'vara' – ett mycket vanligt ord."
@@ -2097,10 +2097,10 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Fyll i rätt ord: 'Det ___nar ute.' (om vädret, motsatsen till 'det regnar')",
+          "question": "Fyll i rätt ord: 'Idag skiner ___en starkt.' (himmelskroppen som lyser på dagen)",
           "answer": "sol",
-          "hint": "När solen skiner säger man att det...",
-          "explanation": "'Det solnar' eller 'det är sol' – sol är ett vanligt ord."
+          "hint": "Den lyser på himlen och ger oss värme.",
+          "explanation": "'Solen' – sol är ett vanligt ord. Idag skiner solen starkt."
         },
         {
           "type": "multiple-choice",
@@ -2121,7 +2121,7 @@
             "vilcken",
             "viken",
             "vilken",
-            "vilken"
+            "vilkken"
           ],
           "correctIndex": 2,
           "explanation": "'Vilken' stavas v-i-l-k-e-n. Det används för att fråga: Vilken färg?"
@@ -2189,7 +2189,7 @@
             "boll",
             "bol",
             "bool",
-            "boll"
+            "bowl"
           ],
           "correctIndex": 0,
           "explanation": "'Boll' – kort o-ljud kräver dubbelt l."
@@ -2208,11 +2208,11 @@
         },
         {
           "type": "multiple-choice",
-          "question": "Hur stavas det runda matföremålet med hål i mitten?",
+          "question": "Hur stavas det runda, mjuka bakverk man äter till fika?",
           "options": [
             "bulle",
             "bule",
-            "bulle",
+            "bullde",
             "bülle"
           ],
           "correctIndex": 0,
@@ -2232,7 +2232,7 @@
             "lärare",
             "lärrare",
             "lärarre",
-            "lärare"
+            "lärrarre"
           ],
           "correctIndex": 0,
           "explanation": "'Lärare' – långt ä-ljud, inget dubbelkonsonant behövs. LÄ-RA-RE."
@@ -2417,7 +2417,7 @@
           "options": [
             "ondsdag",
             "onsdag",
-            "onsdag",
+            "unsdag",
             "Onsdag"
           ],
           "correctIndex": 1,
@@ -2451,7 +2451,7 @@
           "options": [
             "Lördag",
             "lördag",
-            "lördag",
+            "lörrdag",
             "lørdag"
           ],
           "correctIndex": 1,
@@ -2467,15 +2467,15 @@
         },
         {
           "type": "multiple-choice",
-          "question": "Hur stavas veckans tredje dag (efter tisdag)?",
+          "question": "Hur stavas den dag som kommer efter torsdag?",
           "options": [
-            "onsdag",
-            "ondsdag",
-            "onsdag",
-            "Onsdag"
+            "freddag",
+            "Fredag",
+            "fredag",
+            "freidag"
           ],
-          "correctIndex": 0,
-          "explanation": "'Onsdag' stavas utan d efter n. ONS-DAG. Ons, inte onds!"
+          "correctIndex": 2,
+          "explanation": "'Fredag' stavas med liten bokstav och utan dubble d. FRE-DAG."
         },
         {
           "type": "fill-in-blank",
@@ -2491,7 +2491,7 @@
             "söndag",
             "söndåg",
             "sundag",
-            "söndag"
+            "sönndag"
           ],
           "correctIndex": 0,
           "explanation": "'Söndag' stavas s-ö-n-d-a-g. Med liten bokstav på svenska."
@@ -2514,7 +2514,7 @@
           "options": [
             "lördag",
             "lordag",
-            "lördag",
+            "lörrdag",
             "lårdag"
           ],
           "correctIndex": 0,
@@ -2563,7 +2563,7 @@
           "options": [
             "sjelf",
             "själv",
-            "själv",
+            "sjäv",
             "sjelv"
           ],
           "correctIndex": 1,
@@ -2599,7 +2599,7 @@
           "options": [
             "försto",
             "förstår",
-            "förstår",
+            "förstårr",
             "furstår"
           ],
           "correctIndex": 1,
@@ -2643,7 +2643,7 @@
             "tilsammans",
             "tillsamans",
             "tillsammans",
-            "tillsamans"
+            "tillsamnans"
           ],
           "correctIndex": 2,
           "explanation": "'Tillsammans' stavas t-i-l-l-s-a-m-m-a-n-s. Dubbelt l och dubbelt m!"
