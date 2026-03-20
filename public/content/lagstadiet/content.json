@@ -1744,6 +1744,666 @@
           "explanation": "'Fullt' är motsatsen till 'tomt' – ett glas kan vara tomt eller fullt."
         }
       ]
+    },
+    {
+      "id": "sarskrivningar-1",
+      "title": "Särskrivningar – skriv ihop!",
+      "description": "Lär dig att sammansatta ord ska skrivas ihop",
+      "icon": "🔗",
+      "bonusPoints": 20,
+      "helpText": [
+        "På svenska skrivs sammansatta ord IHOP – inte som två ord.",
+        "Fel: 'hund hus'  Rätt: 'hundhus'",
+        "Testa: om det är ett enda föremål/begrepp – skriv ihop det!"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilket alternativ är korrekt skrivet?",
+          "options": [
+            "hund hus",
+            "hundhus",
+            "hund-hus",
+            "Hundhus"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Hundhus' skrivs ihop – det är ett ord för ett hus till hunden."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket alternativ är rätt skrivet?",
+          "options": [
+            "skol buss",
+            "Skolbuss",
+            "skol-buss",
+            "skolbuss"
+          ],
+          "correctIndex": 3,
+          "explanation": "'skolbuss' skrivs ihop med liten bokstav – en buss till skolan."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Skriv rätt: 'Vi åker ___ till skolan.' (buss + skola ihop)",
+          "answer": "skolbuss",
+          "hint": "Sätt ihop 'skol' och 'buss' till ett ord.",
+          "explanation": "'Skolbuss' – ett ord, inte två. Bussen tar barnen till skolan."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hitta det felaktigt skrivna ordet i meningen: 'Jag har en röd cykel hjälm.'",
+          "options": [
+            "Jag",
+            "röd",
+            "cykel hjälm",
+            "har"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Cykelhjälm' ska skrivas ihop – det är ett sammansatt ord."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är FELAKTIGT skrivet?",
+          "options": [
+            "fotboll",
+            "sol ros",
+            "dagbok",
+            "skolväska"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Sol ros' är fel – det ska vara 'solros'. Sammansatta ord skrivs ihop!"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj den korrekta stavningen:",
+          "options": [
+            "is björn",
+            "isbjörn",
+            "is-björn",
+            "Isbjörn"
+          ],
+          "correctIndex": 1,
+          "explanation": "'isbjörn' skrivs ihop med liten bokstav – det är ett djur."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Rätta meningen: 'Jag dricker apelsin juice.' → Jag dricker ___.",
+          "answer": "apelsinjuice",
+          "hint": "Apelsin + juice = ett sammansatt ord.",
+          "explanation": "'Apelsinjuice' skrivs ihop – ett ord för drycken gjord på apelsiner."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket alternativ är korrekt?",
+          "options": [
+            "choklad kaka",
+            "choklad-kaka",
+            "chokladkaka",
+            "Chokladkaka"
+          ],
+          "correctIndex": 2,
+          "explanation": "'chokladkaka' skrivs ihop med liten bokstav."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hitta felet: 'Vi spelar boll på skol gården.'",
+          "options": [
+            "spelar",
+            "boll",
+            "skol gården",
+            "Vi"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Skolgården' ska skrivas ihop – det är gården vid skolan."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen rätt – ett av orden är ett sammansatt ord!",
+          "words": [
+            "Jag",
+            "läser",
+            "en",
+            "bok",
+            "i",
+            "klassrummet"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "explanation": "'Klassrummet' är ett sammansatt ord (klass + rum) skrivet ihop."
+        }
+      ]
+    },
+    {
+      "id": "sammansatta-ord-1",
+      "title": "Sammansatta ord",
+      "description": "Förstå hur man bildar och känner igen sammansatta ord",
+      "icon": "🧩",
+      "bonusPoints": 20,
+      "helpText": [
+        "Sammansatta ord bildas av två (eller fler) ord som sätts ihop.",
+        "Det sista ordet talar om VAD det är: 'skolBUSS' är en buss.",
+        "Det första ordet talar om VILKEN sorts: 'SKOLbuss' är en buss för skolan."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vad är 'fotboll' sammansatt av?",
+          "options": [
+            "fot + bol",
+            "fo + tboll",
+            "fot + boll",
+            "fotb + oll"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Fotboll' = fot + boll. En boll man sparkar med foten."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord berättar VAD en 'skolväska' är?",
+          "options": [
+            "skol",
+            "väska",
+            "skola",
+            "skolväsk"
+          ],
+          "correctIndex": 1,
+          "explanation": "Det sista ordet – 'väska' – berättar vad det är. 'Skol-' berättar vilken sorts."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Sätt ihop: 'sommar' + 'stuga' = ___",
+          "answer": "sommarsuga",
+          "hint": "En stuga man bor i på sommaren.",
+          "explanation": "'Sommarsuga' – sommar + stuga = en stuga för sommaren."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket av dessa ÄR ett sammansatt ord?",
+          "options": [
+            "springer",
+            "snäll",
+            "dagbok",
+            "under"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Dagbok' = dag + bok. Det är ett sammansatt ord. De andra är enkla ord."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad för slags föremål är en 'fågelbo'?",
+          "options": [
+            "en fågel",
+            "ett bo",
+            "ett träd",
+            "ett ägg"
+          ],
+          "correctIndex": 1,
+          "explanation": "Det sista ordet 'bo' talar om att det är ett bo – fåglarnas hem."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Sätt ihop: 'vinter' + 'lov' = ___",
+          "answer": "vinterlov",
+          "hint": "Ledigheten man har på vintern.",
+          "explanation": "'Vinterlov' = vinter + lov. Ledigheten på vintern."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur många ord är 'glasögon' sammansatt av?",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Glasögon' = glas + ögon. Två ord ihop – glaslinser framför ögonen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening använder ett sammansatt ord rätt?",
+          "options": [
+            "Jag har en ny cykel hjälm.",
+            "Jag har en ny cykelhjälm.",
+            "Jag har en ny cykel-hjälm.",
+            "Jag har en ny Cykelhjälm."
+          ],
+          "correctIndex": 1,
+          "explanation": "'cykelhjälm' skrivs ihop med liten bokstav."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder det sammansatta ordet 'barnbok'?",
+          "options": [
+            "ett barn",
+            "en bok för barn",
+            "en bok om böcker",
+            "ett bokhylla"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Barnbok' = barn + bok. En bok som är gjord för barn."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med rätt sammansatt ord!",
+          "words": [
+            "Min",
+            "favoritbok",
+            "handlar",
+            "om",
+            "en",
+            "isbjörn"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "explanation": "'Favoritbok' (favorit+bok) och 'isbjörn' (is+björn) är båda sammansatta ord."
+        }
+      ]
+    },
+    {
+      "id": "prepositioner-1",
+      "title": "Prepositioner – var och hur",
+      "description": "Lär dig ord som berättar var, när och hur saker händer",
+      "icon": "📍",
+      "bonusPoints": 20,
+      "helpText": [
+        "Prepositioner är korta ord som berättar VAR något är eller HUR något händer.",
+        "Vanliga prepositioner: i, på, under, över, vid, till, från, med, utan.",
+        "Exempel: Katten sitter PÅ bordet. Bollen är UNDER soffan."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt preposition: 'Katten sitter ___ bordet.'",
+          "options": [
+            "under",
+            "på",
+            "från",
+            "utan"
+          ],
+          "correctIndex": 1,
+          "explanation": "'På' – katten sitter på bordet (ovanpå)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt preposition: 'Bollen ligger ___ soffan.'",
+          "options": [
+            "på",
+            "över",
+            "under",
+            "till"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Under' – bollen ligger under soffan (nedan)."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt preposition: 'Jag går ___ skolan varje morgon.' (riktning mot)",
+          "answer": "till",
+          "hint": "Man är på väg – vilket ord visar riktningen dit?",
+          "explanation": "'Till' visar riktning: man går till skolan."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken preposition passar? 'Vi åker ___ Stockholm idag.'",
+          "options": [
+            "in",
+            "till",
+            "under",
+            "bakom"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Till' – vi åker till Stockholm. Till visar riktning/mål."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: 'Hunden sover ___ sängen.'",
+          "options": [
+            "till",
+            "från",
+            "i",
+            "utan"
+          ],
+          "correctIndex": 2,
+          "explanation": "'I' – hunden sover i sängen (inuti/inne i)."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt preposition: 'Fågeln flyger ___ trädet.' (ovanför)",
+          "answer": "över",
+          "hint": "Fågeln är högre upp än trädet.",
+          "explanation": "'Över' – fågeln flyger över trädet, alltså ovanför."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt preposition: 'Tavlan hänger ___ väggen.'",
+          "options": [
+            "under",
+            "på",
+            "från",
+            "mellan"
+          ],
+          "correctIndex": 1,
+          "explanation": "'På' – tavlan hänger på väggen (fast vid väggen)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är en preposition?",
+          "options": [
+            "springer",
+            "glad",
+            "bakom",
+            "äter"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Bakom' är en preposition – den berättar var något är (bakom något annat)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: 'Stolen står ___ bordet och fönstret.'",
+          "options": [
+            "bakom",
+            "framför",
+            "mellan",
+            "under"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Mellan' – stolen står mitt emellan bordet och fönstret."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med rätt preposition!",
+          "words": [
+            "Katten",
+            "sover",
+            "under",
+            "bordet"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "explanation": "'Under' är prepositionen – den berättar var katten sover."
+        }
+      ]
+    },
+    {
+      "id": "adjektiv-adverb-1",
+      "title": "Adjektiv och adverb",
+      "description": "Lär dig skillnaden mellan adjektiv och adverb",
+      "icon": "✨",
+      "bonusPoints": 20,
+      "helpText": [
+        "Adjektiv beskriver HUR något ÄR: den röda bilen, den snälla hunden.",
+        "Adverb beskriver HUR något GÖRS: springer snabbt, sjunger vackert.",
+        "Adverb svarar på frågan 'Hur?' om ett verb."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är ett adjektiv i meningen: 'Den lilla katten sover.'?",
+          "options": [
+            "Den",
+            "lilla",
+            "katten",
+            "sover"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Lilla' är ett adjektiv – det beskriver hur katten är (liten)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är ett adverb i meningen: 'Hunden springer snabbt.'?",
+          "options": [
+            "Hunden",
+            "springer",
+            "snabbt",
+            "Den"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Snabbt' är ett adverb – det berättar HUR hunden springer."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj adjektivet: 'Vi äter god mat på skolan.'",
+          "options": [
+            "Vi",
+            "äter",
+            "god",
+            "skolan"
+          ],
+          "correctIndex": 2,
+          "explanation": "'God' är ett adjektiv – det beskriver hur maten är."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Välj rätt ordform: 'Fågeln sjunger ___.' (vackert/vacker)",
+          "answer": "vackert",
+          "hint": "Fråga: Hur sjunger fågeln? Det svarar ett adverb på.",
+          "explanation": "'Vackert' är adverbformen – det berättar HUR fågeln sjunger."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket av dessa ord är ett adverb?",
+          "options": [
+            "röd",
+            "snäll",
+            "sakta",
+            "glad"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Sakta' är ett adverb – det beskriver hur något görs (t.ex. 'gå sakta')."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening innehåller ett adjektiv?",
+          "options": [
+            "Barnet springer fort.",
+            "Vi leker ute.",
+            "Den gamla hunden sover.",
+            "Klockan tickar tyst."
+          ],
+          "correctIndex": 2,
+          "explanation": "'Gamla' är adjektivet – det beskriver hur hunden är (gammal)."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i adjektivet: 'Jag har en ___ bil.' (om bilen är röd)",
+          "answer": "röd",
+          "hint": "Vilket ord beskriver bilens färg?",
+          "explanation": "'Röd' är ett adjektiv – det beskriver hur bilen ser ut."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: 'Pojken läser ___.' (om han läser med hög röst)",
+          "options": [
+            "högt",
+            "hög",
+            "höga",
+            "höger"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Högt' är adverbformen – det berättar HUR pojken läser."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är adjektiv i: 'Det är kallt ute idag.'?",
+          "options": [
+            "Det",
+            "är",
+            "kallt",
+            "ute"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Kallt' är ett adjektiv – det beskriver hur vädret är."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen – adjektivet ska komma före substantivet!",
+          "words": [
+            "Den",
+            "snälla",
+            "läraren",
+            "pratar",
+            "lugnt"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "explanation": "'Snälla' (adjektiv) beskriver läraren. 'Lugnt' (adverb) beskriver hur hon pratar."
+        }
+      ]
+    },
+    {
+      "id": "tempus-1",
+      "title": "Tempus – nu, förr och sen",
+      "description": "Lär dig hur verb ändrar form beroende på tid",
+      "icon": "⏰",
+      "bonusPoints": 20,
+      "helpText": [
+        "Tempus visar NÄR något händer – nu, förut eller sen.",
+        "Presens: det händer NU. 'Jag springer.'",
+        "Preteritum: det hände FÖRUT. 'Jag sprang.'",
+        "Futurum: det ska hända SEN. 'Jag ska springa.'"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilket tempus är verbet i: 'Jag äter frukost.'?",
+          "options": [
+            "Preteritum (dåtid)",
+            "Presens (nutid)",
+            "Futurum (framtid)",
+            "Inget tempus"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Äter' är presens – det händer just nu."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt dåtidsform av 'springer':",
+          "options": [
+            "springde",
+            "sprang",
+            "sprungit",
+            "springer"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Sprang' är preteritum (dåtid) av 'springer'. Jag springer nu – jag sprang igår."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt form: 'Igår ___ vi fotboll.' (verbet 'spela', dåtid)",
+          "answer": "spelade",
+          "hint": "Det hände igår – dåtid. Spelar → spe___de?",
+          "explanation": "'Spelade' är preteritum av 'spelar'. Igår spelade vi fotboll."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening handlar om FRAMTIDEN?",
+          "options": [
+            "Vi åt middag.",
+            "Vi äter middag.",
+            "Vi ska äta middag.",
+            "Vi åt och åt."
+          ],
+          "correctIndex": 2,
+          "explanation": "'Ska äta' visar framtid (futurum) – det har inte hänt än."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är presensformen av verbet 'sova'?",
+          "options": [
+            "sov",
+            "sover",
+            "ska sova",
+            "sovit"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Sover' är presens – det händer nu. Katten sover på soffan."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt form: 'Imorgon ___ vi till parken.' (verbet 'gå', framtid)",
+          "answer": "ska vi gå",
+          "hint": "Det händer imorgon – framtid. Använd 'ska' + verbet.",
+          "explanation": "'Ska gå' visar framtid. Imorgon ska vi gå till parken."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt dåtidsform av 'läser':",
+          "options": [
+            "läste",
+            "läsde",
+            "läsade",
+            "läsit"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Läste' är preteritum av 'läser'. Jag läser nu – jag läste igår."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord visar att något händer i FRAMTIDEN?",
+          "options": [
+            "igår",
+            "nu",
+            "nyss",
+            "imorgon"
+          ],
+          "correctIndex": 3,
+          "explanation": "'Imorgon' visar framtid. 'Igår' = dåtid, 'nu/nyss' = nutid."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är i DÅTID (preteritum)?",
+          "options": [
+            "Hunden springer i parken.",
+            "Hunden ska springa imorgon.",
+            "Hunden sprang igår.",
+            "Hunden springer alltid."
+          ],
+          "correctIndex": 2,
+          "explanation": "'Sprang' är preteritum – det hände igår (dåtid)."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen i rätt tidsform – igår hände det!",
+          "words": [
+            "Igår",
+            "spelade",
+            "vi",
+            "fotboll",
+            "i",
+            "parken"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "explanation": "'Spelade' är preteritum (dåtid) av 'spelar' – det hände igår."
+        }
+      ]
     }
   ],
   "reading": [
