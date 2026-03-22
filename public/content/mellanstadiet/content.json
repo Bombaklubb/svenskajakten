@@ -1236,6 +1236,376 @@
           "explanation": "'Livlig' och 'stillsam' är motsatsord – de skapar en kontrast mellan stad och by."
         }
       ]
+    },
+    {
+      "id": "sluttest",
+      "title": "Sluttest – Grammatik",
+      "description": "Testa allt du lärt dig! 30 blandade frågor om grammatik på mellanstadienivå.",
+      "icon": "🏆",
+      "bonusPoints": 100,
+      "helpText": [
+        "Det här är ditt stora sluttest! Du kommer att få frågor om allt du har övat på.",
+        "Tänk på satsdelar, pronomen, tempus, stavning och skiljetecken.",
+        "Du behöver svara rätt på 60% av frågorna för att klara testet och få bonuspoäng.",
+        "Lycka till – du klarar det! 🌟"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vad är subjektet i: 'Läraren förklarar matematiken'?",
+          "options": [
+            "Läraren",
+            "förklarar",
+            "matematiken",
+            "ingenting"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Läraren' är den som utför handlingen – det är subjektet."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är predikatet i: 'Solen skiner starkt'?",
+          "options": [
+            "Solen",
+            "skiner",
+            "starkt",
+            "inget predikat"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Skiner' är verbet och predikatet – det berättar vad solen gör."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är objektet i: 'Maja åt ett äpple'?",
+          "options": [
+            "Maja",
+            "åt",
+            "ett äpple",
+            "inget objekt"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Ett äpple' är objektet – det är det Maja åt."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket pronomen ersätter 'Erik och Maja'?",
+          "options": [
+            "han",
+            "hon",
+            "de",
+            "det"
+          ],
+          "correctIndex": 2,
+          "explanation": "'De' ersätter flera personer. Erik och Maja = de."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt pronomen: '___ gick till skolan.' (om en flicka)",
+          "options": [
+            "Han",
+            "Hon",
+            "Den",
+            "Det"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Hon' används för en flicka/kvinna."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt form av verbet 'skriva' i dåtid:",
+          "options": [
+            "skrivar",
+            "skrev",
+            "skriver",
+            "att skriva"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Skrev' är imperfekt (dåtid) av 'skriva'. Jag skrev ett brev."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är ett adverb?",
+          "options": [
+            "stor",
+            "glad",
+            "snabbt",
+            "rund"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Snabbt' är ett adverb – det berättar hur något görs."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt stavning av 'sjuk' (inte frisk):",
+          "options": [
+            "sjuk",
+            "skjuk",
+            "shjuk",
+            "skuk"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Sjuk' stavas med sj. Sj-ljudet kan stavas sj, skj eller sch."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt stavning av 'kyrka' (en byggnad):",
+          "options": [
+            "tjyrka",
+            "kjyrka",
+            "sjyrka",
+            "kyrka"
+          ],
+          "correctIndex": 3,
+          "explanation": "'Kyrka' stavas med k och y. K ger tj-liknande ljud framför mjuka vokaler (e, i, y, ä, ö)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt stavning av drycken:",
+          "options": [
+            "kafe",
+            "cafe",
+            "kaffe",
+            "kafffe"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Kaffe' stavas med dubbelt f. Dubbelteckning används efter kort vokal."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt ord: '___ träffades på leken.'",
+          "options": [
+            "De",
+            "Dem",
+            "Dom",
+            "Di"
+          ],
+          "correctIndex": 0,
+          "explanation": "'De' används som subjekt – det är de som träffades."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt ord: 'Jag vet inte ___ jag lade boken.'",
+          "options": [
+            "vart",
+            "var",
+            "vem",
+            "hur"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Var' används för plats (boken ligger VAR – på en plats)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad ska stå i slutet av uppmaningen: 'Sitt still___'",
+          "options": [
+            ".",
+            "!",
+            "?",
+            ","
+          ],
+          "correctIndex": 1,
+          "explanation": "Utropstecken (!) används för uppmaningar och starka känslor."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är adverbialet i: 'Hon sjunger vackert på scenen'? (adverbial som anger hur)",
+          "options": [
+            "Hon",
+            "sjunger",
+            "vackert",
+            "på scenen"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Vackert' är ett sättsadverbial – det berättar HUR hon sjunger."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt frågepronomen: '___ bok är det?'",
+          "options": [
+            "Vems",
+            "Vem",
+            "Vars",
+            "Vad"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Vems' är ett frågepronomen som visar tillhörighet."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt stavning av 'skönt' (behagligt):",
+          "options": [
+            "sjönt",
+            "skönt",
+            "sjkönt",
+            "skjönt"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Skönt' stavas med sk. Sk ger sj-liknande ljud framför mjuka vokaler."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är en synonym till 'tröttna'?",
+          "options": [
+            "somna",
+            "gäspa",
+            "tröttas",
+            "sova"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Tröttas' och 'tröttna' betyder ungefär samma sak."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är motsatsen till 'modig'?",
+          "options": [
+            "stark",
+            "feg",
+            "rädd",
+            "svag"
+          ],
+          "correctIndex": 1,
+          "explanation": "Motsatsen till 'modig' (brave) är 'feg' (cowardly)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt stavning av djuret: '___örn' (det stora skogsdjuret)",
+          "options": [
+            "Björn",
+            "Djörn",
+            "Bjorn",
+            "Björn"
+          ],
+          "correctIndex": 3,
+          "explanation": "'Björn' stavas med bj och ö. Det är ett stort djur i skogen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt ord: 'Det ___ en gång en kung.' (dåtid av 'vara')",
+          "options": [
+            "var",
+            "vär",
+            "vare",
+            "väre"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Var' är imperfekt av 'vara'. Det var en gång..."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket verb är i futurum (framtid)?",
+          "options": [
+            "åt",
+            "ska äta",
+            "äter",
+            "hade ätit"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Ska äta' är futurum – det handlar om framtiden."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Identifiera subjektet i: 'Under trädet sitter en groda.'",
+          "options": [
+            "Under",
+            "trädet",
+            "sitter",
+            "en groda"
+          ],
+          "correctIndex": 3,
+          "explanation": "'En groda' är subjektet – det är grodan som sitter. Verb före subjekt = omvänd ordföljd."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket är adjektivet i: 'En glad flicka leker i trädgården'?",
+          "options": [
+            "En",
+            "glad",
+            "flicka",
+            "leker"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Glad' är adjektivet – det beskriver hur flickan är."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur många stavelser har ordet 'blomma'?",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Blomma' har 2 stavelser: blom-ma."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt stavning:",
+          "options": [
+            "mugg",
+            "mug",
+            "muugg",
+            "muggg"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Mugg' stavas med dubbelt g. Dubbelteckning används efter kort vokal."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening har rätt skiljetecken?",
+          "options": [
+            "Hej, jag heter Anna.",
+            "Hej jag heter Anna.",
+            "hej, jag heter anna.",
+            "Hej jag heter, Anna."
+          ],
+          "correctIndex": 0,
+          "explanation": "Hej, jag heter Anna. – Komma efter hälsningsordet och stor bokstav i början."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Predikatet i 'Katten sov hela dagen' är ___.",
+          "answer": "sov",
+          "hint": "Vad gör/gjorde katten?",
+          "explanation": "'Sov' är verbet och predikatet i meningen."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt ord (de/dem): 'Vi hjälpte ___ att bygga huset.'",
+          "answer": "dem",
+          "hint": "Vem hjälpte vi? Det är objektet.",
+          "explanation": "Dem = objekt (vi hjälpte DEM). De = subjekt (DE byggde)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är ett adverbial?",
+          "options": [
+            "Den som gör handlingen",
+            "Verbet i meningen",
+            "Satsled som anger tid, plats, sätt eller orsak",
+            "Adjektiv som beskriver substantiv"
+          ],
+          "correctIndex": 2,
+          "explanation": "Adverbialet anger omständigheter: VAR, NÄR, HUR eller VARFÖR."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen: subjekt + predikat + objekt + adverbial!",
+          "words": [
+            "Maja",
+            "läste",
+            "boken",
+            "igår"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "explanation": "Maja (subjekt) läste (predikat) boken (objekt) igår (adverbial)."
+        }
+      ]
     }
   ],
   "reading": [

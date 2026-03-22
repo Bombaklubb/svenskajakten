@@ -5,6 +5,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/ui/Header";
 import ModuleCard from "@/components/ui/ModuleCard";
+import FinalTestCard from "@/components/ui/FinalTestCard";
 import { loadStudent } from "@/lib/storage";
 import { getStage } from "@/lib/stages";
 import { BlurFade } from "@/components/magicui/blur-fade";
@@ -209,20 +210,31 @@ export default function WorldPage({ params }: Props) {
               : activeTab === "reading" ? content.reading
               : activeTab === "spelling" ? (content.spelling ?? [])
               : (content.wordsearch ?? [])
-            ).map((mod, idx, arr) => (
-              <ModuleCard
-                key={mod.id}
-                id={mod.id}
-                title={mod.title}
-                description={mod.description}
-                icon={mod.icon}
-                kind={activeTab as "grammar" | "reading" | "spelling" | "wordsearch"}
-                stage={stage}
-                progress={getModuleProgress(activeTab as "grammar" | "reading" | "spelling" | "wordsearch", mod.id)}
-                locked={false}
-                prevModuleTitle={idx > 0 ? arr[idx - 1].title : null}
-              />
-            ))}
+            ).map((mod, idx, arr) => {
+              if (activeTab === "grammar" && mod.id === "sluttest") {
+                return (
+                  <FinalTestCard
+                    key={mod.id}
+                    stage={stage}
+                    progress={getModuleProgress("grammar", mod.id)}
+                  />
+                );
+              }
+              return (
+                <ModuleCard
+                  key={mod.id}
+                  id={mod.id}
+                  title={mod.title}
+                  description={mod.description}
+                  icon={mod.icon}
+                  kind={activeTab as "grammar" | "reading" | "spelling" | "wordsearch"}
+                  stage={stage}
+                  progress={getModuleProgress(activeTab as "grammar" | "reading" | "spelling" | "wordsearch", mod.id)}
+                  locked={false}
+                  prevModuleTitle={idx > 0 ? arr[idx - 1].title : null}
+                />
+              );
+            })}
             {activeTab === "wordsearch" && (content.wordsearch ?? []).length === 0 && (
               <div className="card text-center py-10 text-gray-400">
                 <div className="text-3xl mb-2">🔍</div>

@@ -16,14 +16,24 @@
         {
           "type": "multiple-choice",
           "question": "Vad är bisatsen i: 'Jag vet att hon kommer'?",
-          "options": ["Jag vet", "att hon kommer", "hon kommer", "Jag vet att"],
+          "options": [
+            "Jag vet",
+            "att hon kommer",
+            "hon kommer",
+            "Jag vet att"
+          ],
           "correctIndex": 1,
           "explanation": "'att hon kommer' är bisatsen – den inleds av bindeordet 'att' och kan inte stå ensam."
         },
         {
           "type": "multiple-choice",
           "question": "Vilket ord inleder bisatsen i: 'Vi stannade hemma eftersom det regnade'?",
-          "options": ["Vi", "stannade", "eftersom", "regnade"],
+          "options": [
+            "Vi",
+            "stannade",
+            "eftersom",
+            "regnade"
+          ],
           "correctIndex": 2,
           "explanation": "'Eftersom' är ett bindeord som inleder bisatsen."
         },
@@ -37,15 +47,34 @@
         {
           "type": "multiple-choice",
           "question": "Vilken mening innehåller en bisats?",
-          "options": ["Solen skiner.", "Katten sover på mattan.", "Jag tror att det blir regn.", "Vi åt frukost tidigt."],
+          "options": [
+            "Solen skiner.",
+            "Katten sover på mattan.",
+            "Jag tror att det blir regn.",
+            "Vi åt frukost tidigt."
+          ],
           "correctIndex": 2,
           "explanation": "'Jag tror att det blir regn' – 'att det blir regn' är bisatsen."
         },
         {
           "type": "build-sentence",
           "instruction": "Bygg meningen: huvudsats + bisats!",
-          "words": ["Jag", "vet", "att", "du", "har", "rätt"],
-          "correctOrder": [0, 1, 2, 3, 4, 5],
+          "words": [
+            "Jag",
+            "vet",
+            "att",
+            "du",
+            "har",
+            "rätt"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
           "explanation": "'Jag vet' är huvudsatsen, 'att du har rätt' är bisatsen."
         }
       ]
@@ -66,7 +95,12 @@
         {
           "type": "multiple-choice",
           "question": "Vilket ord är sammansatt av 'sol' och 'ros'?",
-          "options": ["solros", "rossol", "ros-sol", "sols"],
+          "options": [
+            "solros",
+            "rossol",
+            "ros-sol",
+            "sols"
+          ],
           "correctIndex": 0,
           "explanation": "'Solros' – en blomma som vänder sig mot solen."
         },
@@ -80,22 +114,42 @@
         {
           "type": "multiple-choice",
           "question": "Vad kallas det sista ledet i ett sammansatt ord?",
-          "options": ["Förled", "Efterled", "Fogevokal", "Stam"],
+          "options": [
+            "Förled",
+            "Efterled",
+            "Fogevokal",
+            "Stam"
+          ],
           "correctIndex": 1,
           "explanation": "Det sista ledet kallas efterled och anger vad ordet är."
         },
         {
           "type": "multiple-choice",
           "question": "Vilket av dessa är ett sammansatt ord?",
-          "options": ["springer", "snabb", "skolbuss", "läser"],
+          "options": [
+            "springer",
+            "snabb",
+            "skolbuss",
+            "läser"
+          ],
           "correctIndex": 2,
           "explanation": "'Skolbuss' = skola + buss – ett sammansatt ord."
         },
         {
           "type": "build-sentence",
           "instruction": "Bygg en mening med ett sammansatt ord!",
-          "words": ["Busschauffören", "körde", "till", "centralstationen"],
-          "correctOrder": [0, 1, 2, 3],
+          "words": [
+            "Busschauffören",
+            "körde",
+            "till",
+            "centralstationen"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3
+          ],
           "explanation": "'Busschauffören' och 'centralstationen' är sammansatta ord."
         }
       ]
@@ -117,14 +171,24 @@
         {
           "type": "multiple-choice",
           "question": "Vilket tecken passar bäst: 'Vad heter du___'",
-          "options": [".", ",", "?", "!"],
+          "options": [
+            ".",
+            ",",
+            "?",
+            "!"
+          ],
           "correctIndex": 2,
           "explanation": "En fråga avslutas med frågetecken."
         },
         {
           "type": "multiple-choice",
           "question": "Var behövs ett kommatecken? 'Jag köpte äpplen päron och bananer.'",
-          "options": ["Bara efter äpplen", "Efter äpplen och päron", "I slutet", "Det behövs inget komma"],
+          "options": [
+            "Bara efter äpplen",
+            "Efter äpplen och päron",
+            "I slutet",
+            "Det behövs inget komma"
+          ],
           "correctIndex": 1,
           "explanation": "Vid uppräkning används komma: 'äpplen, päron och bananer'."
         },
@@ -138,14 +202,24 @@
         {
           "type": "multiple-choice",
           "question": "Hur sätter man komma med bisats? 'Jag köpte bröd ___ eftersom jag var hungrig.'",
-          "options": ["Komma före 'eftersom'", "Komma efter 'eftersom'", "Inget komma behövs", "Komma i slutet"],
+          "options": [
+            "Komma före 'eftersom'",
+            "Komma efter 'eftersom'",
+            "Inget komma behövs",
+            "Komma i slutet"
+          ],
           "correctIndex": 0,
           "explanation": "Komma används ofta före bisatsen: 'Jag köpte bröd, eftersom jag var hungrig.'"
         },
         {
           "type": "multiple-choice",
           "question": "Vilket tecken inleder en lista? 'Vi behöver följande___'",
-          "options": [".", ",", ":", "?"],
+          "options": [
+            ".",
+            ",",
+            ":",
+            "?"
+          ],
           "correctIndex": 2,
           "explanation": "Kolon används för att inleda en lista eller förklaring."
         }
@@ -209,8 +283,20 @@
         {
           "type": "build-sentence",
           "instruction": "Bygg meningen med omvänd ordföljd – adverbialet är först!",
-          "words": ["Imorgon", "reser", "vi", "till", "Paris"],
-          "correctOrder": [0, 1, 2, 3, 4],
+          "words": [
+            "Imorgon",
+            "reser",
+            "vi",
+            "till",
+            "Paris"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
           "explanation": "'Imorgon' (adverbial) + 'reser' (predikat) + 'vi' (subjekt) = omvänd ordföljd."
         }
       ]
@@ -230,14 +316,24 @@
         {
           "type": "multiple-choice",
           "question": "Vilket adjektiv passar? '___ hus är gammalt.'",
-          "options": ["en", "ett", "Det", "Den"],
+          "options": [
+            "en",
+            "ett",
+            "Det",
+            "Den"
+          ],
           "correctIndex": 2,
           "explanation": "'Hus' är ett n-ord (neutrum) – artikeln 'ett' och pronomenet 'det' passar."
         },
         {
           "type": "multiple-choice",
           "question": "Välj rätt form: 'Jag ser en ___ bil.'",
-          "options": ["stort", "stora", "stor", "store"],
+          "options": [
+            "stort",
+            "stora",
+            "stor",
+            "store"
+          ],
           "correctIndex": 2,
           "explanation": "'En stor bil' – obestämd form singular av ett utrum-adjektiv."
         },
@@ -251,15 +347,32 @@
         {
           "type": "multiple-choice",
           "question": "Välj rätt form av adjektivet: 'De ___ bilarna parkerade fel.'",
-          "options": ["stor", "stort", "stora", "store"],
+          "options": [
+            "stor",
+            "stort",
+            "stora",
+            "store"
+          ],
           "correctIndex": 2,
           "explanation": "Plural form: 'stora bilar' – adjektiv i plural tar -a."
         },
         {
           "type": "build-sentence",
           "instruction": "Bygg meningen med kongruent adjektiv!",
-          "words": ["Det", "gamla", "huset", "är", "vackert"],
-          "correctOrder": [0, 1, 2, 3, 4],
+          "words": [
+            "Det",
+            "gamla",
+            "huset",
+            "är",
+            "vackert"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
           "explanation": "'Det gamla huset' – bestämd form + -a på adjektivet. 'Vackert' i predikativ ställning."
         }
       ]
@@ -278,14 +391,24 @@
         {
           "type": "multiple-choice",
           "question": "Vilket är attributet i: 'Den röda boken låg på bordet'?",
-          "options": ["Den", "röda", "låg", "bordet"],
+          "options": [
+            "Den",
+            "röda",
+            "låg",
+            "bordet"
+          ],
           "correctIndex": 1,
           "explanation": "'Röda' är ett attribut – det bestämmer substantivet 'boken'."
         },
         {
           "type": "multiple-choice",
           "question": "Vilket är predikativet i: 'Hunden är snäll'?",
-          "options": ["Hunden", "är", "snäll", "Finns inget"],
+          "options": [
+            "Hunden",
+            "är",
+            "snäll",
+            "Finns inget"
+          ],
           "correctIndex": 2,
           "explanation": "'Snäll' är predikativ – det hör till subjektet 'Hunden' via 'är'."
         },
@@ -311,9 +434,401 @@
         {
           "type": "build-sentence",
           "instruction": "Bygg meningen med ett predikativ!",
-          "words": ["Himlen", "är", "klarblå", "idag"],
-          "correctOrder": [0, 1, 2, 3],
+          "words": [
+            "Himlen",
+            "är",
+            "klarblå",
+            "idag"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3
+          ],
           "explanation": "'Klarblå' är predikativ – det hör till 'himlen' via 'är'."
+        }
+      ]
+    },
+    {
+      "id": "sluttest",
+      "title": "Sluttest – Grammatik",
+      "description": "Testa allt du lärt dig! 30 blandade frågor om grammatik på högstadienivå.",
+      "icon": "🏆",
+      "bonusPoints": 100,
+      "helpText": [
+        "Det här är ditt stora sluttest! Du kommer att få frågor om allt du har övat på.",
+        "Tänk på huvud- och bisatser, ordföljd, kongruens, satsdelar och ordbildning.",
+        "Du behöver svara rätt på 60% av frågorna för att klara testet och få bonuspoäng.",
+        "Lycka till – du klarar det! 🌟"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vad är bisatsen i: 'Jag vet att du har rätt'?",
+          "options": [
+            "Jag vet",
+            "att du har rätt",
+            "du har rätt",
+            "Jag vet att"
+          ],
+          "correctIndex": 1,
+          "explanation": "'att du har rätt' är bisatsen – inleds av bindeordet 'att' och kan inte stå ensam."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord inleder bisatsen i: 'Vi stannade hemma eftersom det regnade'?",
+          "options": [
+            "Vi",
+            "stannade",
+            "eftersom",
+            "regnade"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Eftersom' är ett bindeord (subjunktion) som inleder bisatsen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening innehåller en bisats?",
+          "options": [
+            "Solen skiner.",
+            "Katten sover på mattan.",
+            "Jag tror att det blir regn.",
+            "Vi åt frukost tidigt."
+          ],
+          "correctIndex": 2,
+          "explanation": "'Jag tror att det blir regn' – 'att det blir regn' är bisatsen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är sammansatt av 'arbets' och 'plats'?",
+          "options": [
+            "platsarbete",
+            "arbetsplats",
+            "arbetsplatsen",
+            "platsen"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Arbetsplats' = arbets + plats. Det sista ledet anger vad det är."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad kallas prefixet i ordet 'otrevlig'?",
+          "options": [
+            "trevlig",
+            "o-",
+            "-lig",
+            "otrev-"
+          ],
+          "correctIndex": 1,
+          "explanation": "'O-' är ett prefix (förled) som ger motsatt betydelse. Otrevlig = inte trevlig."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad används kolon (:) till?",
+          "options": [
+            "Att avsluta meningar",
+            "Att inleda en uppräkning eller förklaring",
+            "Att skilja ord åt i ett sammansatt ord",
+            "Att binda ihop två bisatser"
+          ],
+          "correctIndex": 1,
+          "explanation": "Kolon används för att inleda en uppräkning, ett citat eller en förklaring."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt mening med kolon:",
+          "options": [
+            "Han hade tre hobbies: fotboll, musik och film.",
+            "Han hade tre hobbies, fotboll musik och film.",
+            "Han hade tre hobbies. fotboll, musik och film.",
+            "Han hade, tre hobbies: fotboll musik och film."
+          ],
+          "correctIndex": 0,
+          "explanation": "Kolon sätts efter det inledande påståendet, sedan kommer uppräkningen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening har rak ordföljd?",
+          "options": [
+            "Igår spelade han fotboll.",
+            "Han spelade fotboll igår.",
+            "Fotboll spelade han igår.",
+            "Spelade han fotboll igår?"
+          ],
+          "correctIndex": 1,
+          "explanation": "Rak ordföljd: Subjekt + Predikat + ... Han (subj) spelade (pred) fotboll igår."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening har omvänd ordföljd (inversion)?",
+          "options": [
+            "Han åt pizza igår.",
+            "Igår åt han pizza.",
+            "Pizza åt igår han.",
+            "Han pizza åt igår."
+          ],
+          "correctIndex": 1,
+          "explanation": "Omvänd ordföljd: Adverbial + Verb + Subjekt. Igår (adv) åt (verb) han (subj) pizza."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt adjektivform: '___ hus är gammalt.' (hus = ett-ord)",
+          "options": [
+            "En",
+            "Ett",
+            "Det",
+            "Den"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Det' används med ett-ord. Hus är ett ett-ord: 'ett hus' → 'det huset'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt adjektivform för plural: 'De ___ barnen leker.' (glad)",
+          "options": [
+            "glad",
+            "glada",
+            "gladare",
+            "gladast"
+          ],
+          "correctIndex": 1,
+          "explanation": "Adjektiv i plural (och med bestämd form) böjs med -a: glada barn, de glada barnen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt form: 'En ___ hund sprang förbi.' (stor)",
+          "options": [
+            "stort",
+            "stora",
+            "stor",
+            "störst"
+          ],
+          "correctIndex": 2,
+          "explanation": "Med en-ord i obestämd singular: grundformen. En stor hund."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är objektet i: 'Läraren undervisar eleverna'?",
+          "options": [
+            "Läraren",
+            "undervisar",
+            "eleverna",
+            "ingenting"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Eleverna' är objektet – det är de som undervisas."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket adverbial anger 'hur' i: 'Hon sjunger vackert på scenen'?",
+          "options": [
+            "Hon",
+            "sjunger",
+            "vackert",
+            "på scenen"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Vackert' är ett sättsadverbial – det anger HUR hon sjunger."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord KAN inleda en bisats?",
+          "options": [
+            "och",
+            "men",
+            "utan",
+            "eftersom"
+          ],
+          "correctIndex": 3,
+          "explanation": "'Eftersom' är en subjunktion (bindeord) som inleder bisatser. 'Och', 'men', 'utan' är samordnande konjunktioner."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt form: '___ film var lång.' (en-ord)",
+          "options": [
+            "Den gamla",
+            "Det gamla",
+            "Den gammalt",
+            "Det gammalt"
+          ],
+          "correctIndex": 0,
+          "explanation": "Film är ett en-ord. Med bestämd form: den gamla filmen → Den gamla film(en)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad kallas ändelsen '-are' i ordet 'lärare'?",
+          "options": [
+            "prefix",
+            "suffix",
+            "stam",
+            "fogelement"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Suffix' kallas ändelser som läggs till i slutet av ord för att bilda nya ord."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket tecken används för att binda ihop delar av sammansatta ord eller visa att ord hör ihop?",
+          "options": [
+            "kolon",
+            "semikolon",
+            "bindestreck",
+            "parentes"
+          ],
+          "correctIndex": 2,
+          "explanation": "Bindestreck (-) används t.ex. i 'icke-verbal' eller för att tydliggöra sammansättningar."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är attributet i: 'Den gamla mannen sov'?",
+          "options": [
+            "Den",
+            "gamla",
+            "mannen",
+            "sov"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Gamla' är attributet – ett adjektiv som attributivt beskriver substantivet 'mannen'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är det predikativa i: 'Hunden verkar trött'?",
+          "options": [
+            "Hunden",
+            "verkar",
+            "trött",
+            "ingen"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Trött' är predikativet – ett adjektiv som via ett kopulaverb (verkar) beskriver subjektet."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur ser ordföljden ut i en bisats?",
+          "options": [
+            "Subjekt + Verb + Satsadverbial",
+            "Satsadverbial + Subjekt + Verb",
+            "Verb + Subjekt + Satsadverbial",
+            "Subjekt + Satsadverbial + Verb"
+          ],
+          "correctIndex": 3,
+          "explanation": "I en bisats: Subjekt + Satsadverbial + Verb. T.ex. 'om han inte vet' (inte kommer efter han, inte före verbet)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt form (predikativ): 'Boken är ___.' (intressant – en-ord)",
+          "options": [
+            "intressant",
+            "intressanta",
+            "intressants",
+            "intressante"
+          ],
+          "correctIndex": 0,
+          "explanation": "Predikativt adjektiv för en-ord i singular = grundformen: intressant."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken av dessa är en HUVUD-sats?",
+          "options": [
+            "när han kommer",
+            "att det regnar",
+            "eftersom vi tröttnade",
+            "vi stannade hemma"
+          ],
+          "correctIndex": 3,
+          "explanation": "'Vi stannade hemma' kan stå ensam som fullständig mening – det är en huvudsats."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening har rätt kommatering i en uppräkning?",
+          "options": [
+            "Jag köpte äpplen, päron och bananer.",
+            "Jag köpte äpplen päron, och bananer.",
+            "Jag köpte, äpplen, päron, och bananer.",
+            "Jag köpte äpplen päron och bananer."
+          ],
+          "correctIndex": 0,
+          "explanation": "I en uppräkning sätts komma mellan alla led utom det sista (före 'och')."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad kallas det satsled som anger orsak, tid, plats eller sätt?",
+          "options": [
+            "Subjekt",
+            "Predikat",
+            "Objekt",
+            "Adverbial"
+          ],
+          "correctIndex": 3,
+          "explanation": "Adverbialet anger omständigheter: VAR (plats), NÄR (tid), HUR (sätt) eller VARFÖR (orsak)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt mening med omvänd ordföljd:",
+          "options": [
+            "Igår, när det regnade, stannade vi inne.",
+            "Igår stannade vi inne, när det regnade.",
+            "Vi stannade inne igår när det regnade.",
+            "Stannade vi inne igår, när det regnade?"
+          ],
+          "correctIndex": 1,
+          "explanation": "Igår (adv) stannade (verb) vi (subj) inne – omvänd ordföljd. Bisatsen 'när det regnade' kommer efter."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i ett lämpligt bindeord: 'Vi väntade ___ bussen kom.'",
+          "answer": "tills",
+          "hint": "Vi väntade ända till dess att...",
+          "explanation": "'Tills' är ett bindeord som inleder en bisats om tid."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Välj rätt form (en/ett): 'Det är ett ___ land.' (stor)",
+          "answer": "stort",
+          "hint": "Land är ett ett-ord. Adjektiv med ett-ord i obestämd form får -t.",
+          "explanation": "Med ett-ord: ett stort land (adjektivet får -t i obestämd form)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad kallas det när man lägger till ett prefix för att bilda ett nytt ord?",
+          "options": [
+            "Suffix",
+            "Prefixering",
+            "Sammansättning",
+            "Böjning"
+          ],
+          "correctIndex": 1,
+          "explanation": "Prefixering = att lägga till ett prefix (förled) framför ett ord. T.ex. o- + lycklig = olycklig."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt form: 'De nya ___.' (bok – plural bestämd)",
+          "options": [
+            "bok",
+            "böcker",
+            "böckerna",
+            "boken"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Böckerna' är plural bestämd form. De nya böckerna."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med omvänd ordföljd (adverbial först)!",
+          "words": [
+            "Igår",
+            "spelade",
+            "han",
+            "fotboll"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "explanation": "Igår (adverbial) spelade (verb) han (subjekt) fotboll (objekt). Det är omvänd ordföljd."
         }
       ]
     }
@@ -336,21 +851,36 @@
         {
           "type": "on-the-line",
           "question": "Hur mycket har jordens medeltemperatur stigit sedan 1800-talet?",
-          "options": ["0,5 grader", "1,1 grader", "2 grader", "3 grader"],
+          "options": [
+            "0,5 grader",
+            "1,1 grader",
+            "2 grader",
+            "3 grader"
+          ],
           "correctIndex": 1,
           "explanation": "Texten säger att temperaturen har stigit med ungefär 1,1 grader."
         },
         {
           "type": "on-the-line",
           "question": "Vad kallas effekten när växthusgaser fångar värme i atmosfären?",
-          "options": ["Klimateffekten", "Koldioxideffekten", "Växthuseffekten", "Soleffekten"],
+          "options": [
+            "Klimateffekten",
+            "Koldioxideffekten",
+            "Växthuseffekten",
+            "Soleffekten"
+          ],
           "correctIndex": 2,
           "explanation": "Effekten kallas för växthuseffekten."
         },
         {
           "type": "between-the-lines",
           "question": "Varför jämförs växthusgaserna med 'ett stort täcke'?",
-          "options": ["För att de är varma", "För att de fångar värme och hindrar den från att stiga ut", "För att de skyddar mot regn", "För att de är tjocka"],
+          "options": [
+            "För att de är varma",
+            "För att de fångar värme och hindrar den från att stiga ut",
+            "För att de skyddar mot regn",
+            "För att de är tjocka"
+          ],
           "correctIndex": 1,
           "hint": "Tänk på vad ett täcke gör när du sover.",
           "explanation": "Precis som ett täcke håller värmen kvar, håller växthusgaserna solens värme kvar i atmosfären."
@@ -358,14 +888,24 @@
         {
           "type": "between-the-lines",
           "question": "Vilket av följande är INTE en konsekvens av klimatförändringarna enligt texten?",
-          "options": ["Smältande isar", "Stigande hav", "Fler jordbävningar", "Kraftigare orkaner"],
+          "options": [
+            "Smältande isar",
+            "Stigande hav",
+            "Fler jordbävningar",
+            "Kraftigare orkaner"
+          ],
           "correctIndex": 2,
           "explanation": "Texten nämner inte jordbävningar som en konsekvens av klimatförändringarna."
         },
         {
           "type": "beyond-the-lines",
           "question": "Vad är troligtvis syftet med texten?",
-          "options": ["Att skrämma läsaren", "Att informera och uppmuntra till handling", "Att underhålla", "Att sälja förnybar energi"],
+          "options": [
+            "Att skrämma läsaren",
+            "Att informera och uppmuntra till handling",
+            "Att underhålla",
+            "Att sälja förnybar energi"
+          ],
           "correctIndex": 1,
           "hint": "Vad gör texten – informerar, underhåller eller övertalar?",
           "explanation": "Texten informerar om klimatproblematiken och lyfter lösningar, vilket tyder på en uppmaning till handling."
@@ -389,14 +929,24 @@
         {
           "type": "multiple-choice",
           "question": "Vilket är rätt: 'Jag såg ___ på stan.' (syftande på flera personer)",
-          "options": ["de", "dem", "di", "dom"],
+          "options": [
+            "de",
+            "dem",
+            "di",
+            "dom"
+          ],
           "correctIndex": 1,
           "explanation": "Objekt i meningen = 'dem'. Jag såg VEM? Dem."
         },
         {
           "type": "multiple-choice",
           "question": "Vilket är rätt: '___ har rätt.' (subjekt = de personer vi talar om)",
-          "options": ["Dem", "De", "Dom", "Di"],
+          "options": [
+            "Dem",
+            "De",
+            "Dom",
+            "Di"
+          ],
           "correctIndex": 1,
           "explanation": "Subjekt i meningen = 'de'. De har rätt – vem har rätt? De."
         },
@@ -410,7 +960,12 @@
         {
           "type": "multiple-choice",
           "question": "Vilket är rätt i: 'Ge boken till ___.' (du ger boken till en pojke)",
-          "options": ["han", "honom", "hans", "sin"],
+          "options": [
+            "han",
+            "honom",
+            "hans",
+            "sin"
+          ],
           "correctIndex": 1,
           "explanation": "Object = 'honom'. Man ger till VEM? Honom."
         },
@@ -441,14 +996,24 @@
         {
           "type": "multiple-choice",
           "question": "Hur stavas årets andra månad?",
-          "options": ["febrari", "februari", "febuari", "februrari"],
+          "options": [
+            "febrari",
+            "februari",
+            "febuari",
+            "februrari"
+          ],
           "correctIndex": 1,
           "explanation": "'Februari' – fe-bru-a-ri. Tänk på 'febrer' (feber). Det är lätt att glömma det andra u."
         },
         {
           "type": "multiple-choice",
           "question": "Hur stavas platsen man köper medicin?",
-          "options": ["apotek", "apotäk", "appoteck", "apoteck"],
+          "options": [
+            "apotek",
+            "apotäk",
+            "appoteck",
+            "apoteck"
+          ],
           "correctIndex": 0,
           "explanation": "'Apotek' – a-p-o-t-e-k. Lånord från grekiskan."
         },
@@ -462,14 +1027,24 @@
         {
           "type": "multiple-choice",
           "question": "Hur stavas läkarens skriftliga instruktion om medicin?",
-          "options": ["recäpt", "resept", "recept", "resäpt"],
+          "options": [
+            "recäpt",
+            "resept",
+            "recept",
+            "resäpt"
+          ],
           "correctIndex": 2,
           "explanation": "'Recept' – re-c-e-p-t. Lånord från latinet."
         },
         {
           "type": "multiple-choice",
           "question": "Hur stavas det som mäter hur varmt det är?",
-          "options": ["temperatur", "tämperatur", "temperratyr", "temporatur"],
+          "options": [
+            "temperatur",
+            "tämperatur",
+            "temperratyr",
+            "temporatur"
+          ],
           "correctIndex": 0,
           "explanation": "'Temperatur' – tem-pe-ra-tur. Lånord med e i mitten."
         }
@@ -490,14 +1065,24 @@
         {
           "type": "multiple-choice",
           "question": "Hur stavas det engelska ordet för arbete (på svenska)?",
-          "options": ["job", "jobb", "djobb", "chobb"],
+          "options": [
+            "job",
+            "jobb",
+            "djobb",
+            "chobb"
+          ],
           "correctIndex": 1,
           "explanation": "'Jobb' – det engelska 'job' stavas med dubbelt b på svenska."
         },
         {
           "type": "multiple-choice",
           "question": "Hur stavas musikgenren från New Orleans?",
-          "options": ["jass", "jazz", "jas", "djazz"],
+          "options": [
+            "jass",
+            "jazz",
+            "jas",
+            "djazz"
+          ],
           "correctIndex": 1,
           "explanation": "'Jazz' – behåller den engelska stavningen i svenska."
         },
@@ -511,14 +1096,24 @@
         {
           "type": "multiple-choice",
           "question": "Hur stavas möjligheten/turen? (från franska 'chance')",
-          "options": ["sjans", "chans", "chanse", "sjanse"],
+          "options": [
+            "sjans",
+            "chans",
+            "chanse",
+            "sjanse"
+          ],
           "correctIndex": 1,
           "explanation": "'Chans' – franskt lånord. Ch uttalas sj. Chans = möjlighet."
         },
         {
           "type": "multiple-choice",
           "question": "Hur stavas arbetsgruppen? (från engelska 'team')",
-          "options": ["tim", "team", "tem", "tiim"],
+          "options": [
+            "tim",
+            "team",
+            "tem",
+            "tiim"
+          ],
           "correctIndex": 1,
           "explanation": "'Team' – engelskt lånord som behålls med ea-stavning i svenska."
         }
@@ -538,14 +1133,24 @@
         {
           "type": "multiple-choice",
           "question": "Vilket alternativ är korrekt?",
-          "options": ["skol buss", "skol-buss", "skolbuss", "Skolbuss"],
+          "options": [
+            "skol buss",
+            "skol-buss",
+            "skolbuss",
+            "Skolbuss"
+          ],
           "correctIndex": 2,
           "explanation": "'Skolbuss' – sammansatta ord skrivs ihop på svenska."
         },
         {
           "type": "multiple-choice",
           "question": "Vilket alternativ är korrekt för 'röd + vin'?",
-          "options": ["röd vin", "rödvin", "röd-vin", "RödVin"],
+          "options": [
+            "röd vin",
+            "rödvin",
+            "röd-vin",
+            "RödVin"
+          ],
           "correctIndex": 1,
           "explanation": "'Rödvin' – ett slags vin, sammansatt ord skrivs ihop."
         },
@@ -571,7 +1176,12 @@
         {
           "type": "multiple-choice",
           "question": "Vilket sammansatt ord är korrekt skrivet?",
-          "options": ["hand väska", "hand-väska", "handväska", "HandVäska"],
+          "options": [
+            "hand väska",
+            "hand-väska",
+            "handväska",
+            "HandVäska"
+          ],
           "correctIndex": 2,
           "explanation": "'Handväska' – sammansatta ord skrivs ihop: hand + väska."
         }
@@ -586,14 +1196,38 @@
       "icon": "🏛️",
       "bonusPoints": 40,
       "words": [
-        {"word": "RIKSDAG", "clue": "Sveriges parlament där lagar stiftas"},
-        {"word": "REGERING", "clue": "Den styrande makten i Sverige"},
-        {"word": "RÖSTA", "clue": "Välja politiker i val"},
-        {"word": "LAGAR", "clue": "Regler som alla måste följa"},
-        {"word": "MEDIA", "clue": "Tv, tidningar och internet"},
-        {"word": "DEBATT", "clue": "Diskussion där man argumenterar"},
-        {"word": "BUDGET", "clue": "Plan för pengar som ska spenderas"},
-        {"word": "REFORM", "clue": "En förändring i samhället"}
+        {
+          "word": "RIKSDAG",
+          "clue": "Sveriges parlament där lagar stiftas"
+        },
+        {
+          "word": "REGERING",
+          "clue": "Den styrande makten i Sverige"
+        },
+        {
+          "word": "RÖSTA",
+          "clue": "Välja politiker i val"
+        },
+        {
+          "word": "LAGAR",
+          "clue": "Regler som alla måste följa"
+        },
+        {
+          "word": "MEDIA",
+          "clue": "Tv, tidningar och internet"
+        },
+        {
+          "word": "DEBATT",
+          "clue": "Diskussion där man argumenterar"
+        },
+        {
+          "word": "BUDGET",
+          "clue": "Plan för pengar som ska spenderas"
+        },
+        {
+          "word": "REFORM",
+          "clue": "En förändring i samhället"
+        }
       ]
     },
     {
@@ -603,13 +1237,34 @@
       "icon": "🗳️",
       "bonusPoints": 40,
       "words": [
-        {"word": "PARTI", "clue": "Grupp av politiker med liknande åsikter"},
-        {"word": "VALET", "clue": "När medborgarna väljer politiker"},
-        {"word": "MOTION", "clue": "Förslag i riksdagen"},
-        {"word": "MANDAT", "clue": "En plats i riksdagen"},
-        {"word": "LEDARE", "clue": "Den som leder ett parti"},
-        {"word": "LIBERAL", "clue": "En som värnar om frihet"},
-        {"word": "MINISTER", "clue": "Regeringens departementschef"}
+        {
+          "word": "PARTI",
+          "clue": "Grupp av politiker med liknande åsikter"
+        },
+        {
+          "word": "VALET",
+          "clue": "När medborgarna väljer politiker"
+        },
+        {
+          "word": "MOTION",
+          "clue": "Förslag i riksdagen"
+        },
+        {
+          "word": "MANDAT",
+          "clue": "En plats i riksdagen"
+        },
+        {
+          "word": "LEDARE",
+          "clue": "Den som leder ett parti"
+        },
+        {
+          "word": "LIBERAL",
+          "clue": "En som värnar om frihet"
+        },
+        {
+          "word": "MINISTER",
+          "clue": "Regeringens departementschef"
+        }
       ]
     },
     {
@@ -619,13 +1274,34 @@
       "icon": "📜",
       "bonusPoints": 40,
       "words": [
-        {"word": "ANTIKEN", "clue": "Forntida Grekland och Rom"},
-        {"word": "INDUSTRI", "clue": "Fabriker och maskiner på 1800-talet"},
-        {"word": "KOLONI", "clue": "Land styrt av en annan nation"},
-        {"word": "MONARKI", "clue": "Statsskick med kung eller drottning"},
-        {"word": "FEODAL", "clue": "Medeltida system med herrar och bönder"},
-        {"word": "IMPERIUM", "clue": "Stor rike som kontrollerar många länder"},
-        {"word": "REPUBLIK", "clue": "Statsskick utan kung"}
+        {
+          "word": "ANTIKEN",
+          "clue": "Forntida Grekland och Rom"
+        },
+        {
+          "word": "INDUSTRI",
+          "clue": "Fabriker och maskiner på 1800-talet"
+        },
+        {
+          "word": "KOLONI",
+          "clue": "Land styrt av en annan nation"
+        },
+        {
+          "word": "MONARKI",
+          "clue": "Statsskick med kung eller drottning"
+        },
+        {
+          "word": "FEODAL",
+          "clue": "Medeltida system med herrar och bönder"
+        },
+        {
+          "word": "IMPERIUM",
+          "clue": "Stor rike som kontrollerar många länder"
+        },
+        {
+          "word": "REPUBLIK",
+          "clue": "Statsskick utan kung"
+        }
       ]
     },
     {
@@ -635,14 +1311,38 @@
       "icon": "🔬",
       "bonusPoints": 40,
       "words": [
-        {"word": "ATOM", "clue": "Ämnets minsta byggsten"},
-        {"word": "MOLEKYL", "clue": "Atomer bundna tillsammans"},
-        {"word": "KEMI", "clue": "Vetenskapen om ämnen och reaktioner"},
-        {"word": "FYSIK", "clue": "Vetenskapen om kraft och rörelse"},
-        {"word": "BIOLOGI", "clue": "Vetenskapen om levande organismer"},
-        {"word": "PLASMA", "clue": "Det fjärde aggregationstillståndet"},
-        {"word": "ENERGI", "clue": "Förmågan att utföra arbete"},
-        {"word": "EVOLUTION", "clue": "Arternas förändring över tid"}
+        {
+          "word": "ATOM",
+          "clue": "Ämnets minsta byggsten"
+        },
+        {
+          "word": "MOLEKYL",
+          "clue": "Atomer bundna tillsammans"
+        },
+        {
+          "word": "KEMI",
+          "clue": "Vetenskapen om ämnen och reaktioner"
+        },
+        {
+          "word": "FYSIK",
+          "clue": "Vetenskapen om kraft och rörelse"
+        },
+        {
+          "word": "BIOLOGI",
+          "clue": "Vetenskapen om levande organismer"
+        },
+        {
+          "word": "PLASMA",
+          "clue": "Det fjärde aggregationstillståndet"
+        },
+        {
+          "word": "ENERGI",
+          "clue": "Förmågan att utföra arbete"
+        },
+        {
+          "word": "EVOLUTION",
+          "clue": "Arternas förändring över tid"
+        }
       ]
     }
   ]

@@ -15,7 +15,12 @@
         {
           "type": "multiple-choice",
           "question": "Vad kallas det retoriska grepp där man vädjar till mottagarens känslor?",
-          "options": ["Logos", "Ethos", "Pathos", "Etos"],
+          "options": [
+            "Logos",
+            "Ethos",
+            "Pathos",
+            "Etos"
+          ],
           "correctIndex": 2,
           "explanation": "Pathos syftar till att väcka känslor hos lyssnaren/läsaren."
         },
@@ -34,7 +39,12 @@
         {
           "type": "multiple-choice",
           "question": "Vad kallas upprepning av ord i början av meningar? ('Vi ska vinna. Vi ska kämpa. Vi ska lyckas.')",
-          "options": ["Metafor", "Anafor", "Liknelse", "Alliteration"],
+          "options": [
+            "Metafor",
+            "Anafor",
+            "Liknelse",
+            "Alliteration"
+          ],
           "correctIndex": 1,
           "explanation": "Anafor = upprepning av ord/fraser i början av på varandra följande meningar."
         },
@@ -48,7 +58,12 @@
         {
           "type": "multiple-choice",
           "question": "Vilket retoriskt grepp används i: 'Livet är en resa med många korsvägar'?",
-          "options": ["Liknelse", "Metafor", "Anafor", "Klimax"],
+          "options": [
+            "Liknelse",
+            "Metafor",
+            "Anafor",
+            "Klimax"
+          ],
           "correctIndex": 1,
           "explanation": "Livet KALLAS en resa (inte 'som en resa') = metafor."
         }
@@ -69,7 +84,12 @@
         {
           "type": "multiple-choice",
           "question": "Vad kallas ett arguments centrala påstående som man vill bevisa?",
-          "options": ["Belägg", "Tes", "Slutledning", "Premiss"],
+          "options": [
+            "Belägg",
+            "Tes",
+            "Slutledning",
+            "Premiss"
+          ],
           "correctIndex": 1,
           "explanation": "Tesen är det centrala påståendet som argumentet syftar till att bevisa."
         },
@@ -107,7 +127,12 @@
         {
           "type": "multiple-choice",
           "question": "Vad kallas det när man angriper en person istället för deras argument?",
-          "options": ["Logik", "Ad hominem", "Tes", "Belägg"],
+          "options": [
+            "Logik",
+            "Ad hominem",
+            "Tes",
+            "Belägg"
+          ],
           "correctIndex": 1,
           "explanation": "Ad hominem = man angriper personen bakom argumentet snarare än argumentet självt."
         }
@@ -159,7 +184,12 @@
         {
           "type": "multiple-choice",
           "question": "Vilket ord signalerar formellt skriftspråk?",
-          "options": ["kolla", "kul", "följaktligen", "typ"],
+          "options": [
+            "kolla",
+            "kul",
+            "följaktligen",
+            "typ"
+          ],
           "correctIndex": 2,
           "explanation": "'Följaktligen' är en formell konjunktion som används i akademiska och formella texter."
         },
@@ -192,7 +222,12 @@
         {
           "type": "multiple-choice",
           "question": "Vilket substantiv är en nominalisering av verbet 'diskutera'?",
-          "options": ["diskutant", "diskussion", "diskuterande", "diskurs"],
+          "options": [
+            "diskutant",
+            "diskussion",
+            "diskuterande",
+            "diskurs"
+          ],
           "correctIndex": 1,
           "explanation": "'Diskussion' är nominaliseringen av 'diskutera' – verb → substantiv med -ion."
         },
@@ -206,7 +241,12 @@
         {
           "type": "multiple-choice",
           "question": "Vilket suffix bildar nominaliseringar av rörelseverb?",
-          "options": ["-ig", "-ning", "-lig", "-bar"],
+          "options": [
+            "-ig",
+            "-ning",
+            "-lig",
+            "-bar"
+          ],
           "correctIndex": 1,
           "explanation": "Suffixet -ning bildar nominaliseringar: springa→springning, röra→rörelse (obs -else)."
         },
@@ -225,8 +265,20 @@
         {
           "type": "build-sentence",
           "instruction": "Bygg den formella meningen med nominalisering!",
-          "words": ["En", "utredning", "av", "ärendet", "krävs"],
-          "correctOrder": [0, 1, 2, 3, 4],
+          "words": [
+            "En",
+            "utredning",
+            "av",
+            "ärendet",
+            "krävs"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
           "explanation": "'Utredning' är en nominalisering av 'utreda' – verb→substantiv med -ning."
         }
       ]
@@ -258,7 +310,12 @@
         {
           "type": "multiple-choice",
           "question": "Vilken konjunktion signalerar formellt akademiskt språk?",
-          "options": ["och sen", "plus att", "Följaktligen", "dessutom liksom"],
+          "options": [
+            "och sen",
+            "plus att",
+            "Följaktligen",
+            "dessutom liksom"
+          ],
           "correctIndex": 2,
           "explanation": "'Följaktligen' är en formell kausalkonjunktion som används i akademiska texter."
         },
@@ -284,9 +341,403 @@
         {
           "type": "build-sentence",
           "instruction": "Bygg en formell mening med rätt ordval!",
-          "words": ["Studien", "påvisar", "ett", "signifikant", "samband"],
-          "correctOrder": [0, 1, 2, 3, 4],
+          "words": [
+            "Studien",
+            "påvisar",
+            "ett",
+            "signifikant",
+            "samband"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
           "explanation": "'Påvisar' och 'signifikant' är formella akademiska ord som kännetecknar vetenskapligt skrivande."
+        }
+      ]
+    },
+    {
+      "id": "sluttest",
+      "title": "Sluttest – Grammatik",
+      "description": "Testa allt du lärt dig! 30 blandade frågor om grammatik på gymnasienivå.",
+      "icon": "🏆",
+      "bonusPoints": 100,
+      "helpText": [
+        "Det här är ditt stora sluttest! Du kommer att få frågor om allt du har övat på.",
+        "Tänk på retorik, argumentationsanalys, stilnivåer, nominalisering och formellt skriftspråk.",
+        "Du behöver svara rätt på 60% av frågorna för att klara testet och få bonuspoäng.",
+        "Lycka till – du klarar det! 🌟"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vad kallas det retoriska grepp där man vädjar till mottagarens känslor?",
+          "options": [
+            "Logos",
+            "Ethos",
+            "Pathos",
+            "Etos"
+          ],
+          "correctIndex": 2,
+          "explanation": "Pathos syftar till att väcka känslor hos lyssnaren/läsaren."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket av följande är en metafor?",
+          "options": [
+            "Hon springer som en vind.",
+            "Hennes leende var en sol som lyste upp rummet.",
+            "Livet är svårt.",
+            "Han är lång."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Hennes leende var en sol' – leendet KALLAS sol, inte jämförs med (det hade varit en liknelse)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad kallas upprepning av ord i början av på varandra följande meningar?",
+          "options": [
+            "Metafor",
+            "Anafor",
+            "Liknelse",
+            "Alliteration"
+          ],
+          "correctIndex": 1,
+          "explanation": "Anafor = upprepning av ord/fraser i början av meningar. T.ex. 'Vi ska vinna. Vi ska kämpa. Vi ska lyckas.'"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad kallas ett arguments centrala påstående som man vill bevisa?",
+          "options": [
+            "Belägg",
+            "Tes",
+            "Slutledning",
+            "Premiss"
+          ],
+          "correctIndex": 1,
+          "explanation": "Tesen är det centrala påståendet som argumentet syftar till att bevisa."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket av följande är ett felslut (övergeneralisering)?",
+          "options": [
+            "Forskning visar att motion förbättrar hälsan.",
+            "Min granne röker och lever länge, alltså är rökning ofarligt.",
+            "Motion rekommenderas av läkare.",
+            "Studier indikerar att kost påverkar hälsan."
+          ],
+          "correctIndex": 1,
+          "explanation": "Övergeneralisering: att dra en allmän slutsats från ett enstaka fall. En grannes erfarenhet är inte ett representativt underlag."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket alternativ är mest formellt?",
+          "options": [
+            "Hej! Kan du skicka dom papprena?",
+            "Hallå, jag undrar om du kan skicka pappren?",
+            "Härmed översänder jag de begärda handlingarna.",
+            "Skicka papprena snart, tack."
+          ],
+          "correctIndex": 2,
+          "explanation": "'Härmed översänder jag de begärda handlingarna' använder formell vokabulär och struktur."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket av dessa ord hör hemma i informell stil?",
+          "options": [
+            "erhålla",
+            "emedan",
+            "snacka",
+            "härigenom"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Snacka' är ett informellt ord. De övriga (erhålla, emedan, härigenom) är formella/skriftspråkliga."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är en nominalisering av verbet 'diskutera'?",
+          "options": [
+            "diskussion",
+            "diskuterande",
+            "diskuterat",
+            "diskuterbar"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Diskussion' är en nominalisering – ett substantiv bildat av verbet 'diskutera'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening innehåller en nominalisering?",
+          "options": [
+            "Vi diskuterade frågan länge.",
+            "Diskussionen av frågan pågick länge.",
+            "Frågan diskuterades av oss.",
+            "Vi hade en diskuterande stund."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Diskussionen' är en nominalisering av 'diskutera'. Nominaliseringar är vanliga i formell text."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj det mest formella alternativet för 'vi fick reda på':",
+          "options": [
+            "vi fick veta",
+            "det framgick",
+            "vi snappade upp",
+            "vi hörde"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Det framgick' är opersonlig och formell konstruktion, vanlig i akademisk text."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket retoriskt grepp används i: 'Livet är en resa med många korsvägar'?",
+          "options": [
+            "Liknelse",
+            "Metafor",
+            "Anafor",
+            "Klimax"
+          ],
+          "correctIndex": 1,
+          "explanation": "Livet KALLAS en resa (inte 'som en resa' vilket hade varit en liknelse) = metafor."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är en 'halvsanning' i argumentationsanalys?",
+          "options": [
+            "En lögn",
+            "Ett sant påstående som utelämnar viktig information",
+            "En retorisk fråga",
+            "En övergeneralisering"
+          ],
+          "correctIndex": 1,
+          "explanation": "En halvsanning är tekniskt sett sant men vilseledande eftersom det utelämnar viktig kontext."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket alternativ är korrekt i formell skriven text?",
+          "options": [
+            "Man bör ej använda negationer i formell text.",
+            "Negationer bör undvikas i formell text.",
+            "Man ska inte använda negationer i formell text.",
+            "Använd inte negationer i formell text."
+          ],
+          "correctIndex": 1,
+          "explanation": "Passiv konstruktion ('bör undvikas') och nominalisering ger en mer opersonlig, formell ton."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad kallas det när man omvandlar verb till substantiv i formell text?",
+          "options": [
+            "Verbalisering",
+            "Nominalisering",
+            "Adjektivering",
+            "Adverbisering"
+          ],
+          "correctIndex": 1,
+          "explanation": "Nominalisering = att göra ett substantiv av ett verb. Vanligt i formell och akademisk text."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Ethos i ett argument handlar om...",
+          "options": [
+            "att väcka känslor hos publiken",
+            "att använda fakta och logiska resonemang",
+            "talarens trovärdighet och auktoritet",
+            "att upprepa viktiga fraser"
+          ],
+          "correctIndex": 2,
+          "explanation": "Ethos handlar om talarens karaktär och trovärdighet – varför vi ska lita på den som argumenterar."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket av följande är ett 'falskt dilemma'?",
+          "options": [
+            "Antingen röstar du på oss, eller så vill du inte ha förbättring.",
+            "Forskning visar att X och Y hänger ihop.",
+            "Experter rekommenderar alternativ A.",
+            "Statistiken visar att B ökar med 20%."
+          ],
+          "correctIndex": 0,
+          "explanation": "Falskt dilemma: att framställa en fråga som om det bara finns två alternativ, när det finns fler."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt passiv konstruktion: 'Vi har genomfört studien.'",
+          "options": [
+            "Studien har genomfört av oss.",
+            "Studien har genomförts av oss.",
+            "Studien genomfördes oss.",
+            "Vi är studien genomförande."
+          ],
+          "correctIndex": 1,
+          "explanation": "Passiv konstruktion: 'Studien har genomförts' (s-passiv). 'Av oss' är agenten."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är en 'liknelse'?",
+          "options": [
+            "När A kallas B direkt (A är B)",
+            "När A jämförs med B med 'som' eller 'likt'",
+            "Upprepning av inledningsord i meningar",
+            "Ord som startar med samma ljud"
+          ],
+          "correctIndex": 1,
+          "explanation": "Liknelse: 'Hon är stark som ett lejon.' Jämförelse med 'som' eller 'likt'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad innebär 'ad hominem' i argumentation?",
+          "options": [
+            "Ett argument baserat på logik och fakta",
+            "En attack mot personens karaktär istället för deras argument",
+            "En retorisk fråga som engagerar publiken",
+            "En statistisk generalisering"
+          ],
+          "correctIndex": 1,
+          "explanation": "Ad hominem = angripa personen istället för argumentet. T.ex. 'Du är för ung för att förstå.'"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj den nominaliserade formen av 'att undersöka':",
+          "options": [
+            "undersökt",
+            "undersökning",
+            "undersökande",
+            "undersöker"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Undersökning' är en nominalisering – ett substantiv bildat av verbet 'undersöka'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket av dessa ord är MEST formellt?",
+          "options": [
+            "få",
+            "erhålla",
+            "skaffa",
+            "ta emot"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Erhålla' är det mest formella alternativet – det används i officiell och juridisk text."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad kallas retorisk uppbyggnad av meningar i stigande intensitet?",
+          "options": [
+            "Anafor",
+            "Metafor",
+            "Klimax",
+            "Antites"
+          ],
+          "correctIndex": 2,
+          "explanation": "Klimax = ord eller meningar ordnade i stigande styrka/intensitet. T.ex. 'Vi kom, vi såg, vi segrade.'"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket belägg är STARKAST för en akademisk text?",
+          "options": [
+            "'Alla vet att kaffe är farligt.'",
+            "'Min granne tycker att...'",
+            "'En studie vid Karolinska (2022) visar att...'",
+            "'Jag har alltid trott att...'"
+          ],
+          "correctIndex": 2,
+          "explanation": "Peer-reviewed forskning från erkända institutioner ger starkast belägg i akademisk text."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt formell konjunktion: '___ rapporten innehåller brister, måste den revideras.'",
+          "options": [
+            "Eftersom",
+            "Fast",
+            "Men",
+            "Dock"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Eftersom' anger orsak/anledning och är lämpligt i formell text. 'Fast' och 'men' är mer informella."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad innebär 'straw man' (halmgubbe) i argumentation?",
+          "options": [
+            "Man väljer det starkaste motståndarargumentet.",
+            "Man snedvrider motståndarens argument och bemöter den förvrängda versionen.",
+            "Man använder falsk statistik.",
+            "Man angriper personens karaktär."
+          ],
+          "correctIndex": 1,
+          "explanation": "Halmgubbe: att förvrida motståndarens argument till något svagare/absurdare och sedan vinna mot den versionen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Logos i ett argument innebär att man vädjar till...",
+          "options": [
+            "Känslor",
+            "Trovärdighet",
+            "Förnuft och fakta",
+            "Etik"
+          ],
+          "correctIndex": 2,
+          "explanation": "Logos = logik och förnuft. Man använder fakta, statistik och logiska resonemang."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är skriven i formell stil?",
+          "options": [
+            "Det var ju ganska oklart vad dom menade.",
+            "Det är svårt att förstå vad de avsåg.",
+            "Det var lite otydligt med vad de menade.",
+            "Dom var ganska otydliga med vad de ville."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Det är svårt att förstå vad de avsåg' – opersonlig, korrekt användning av 'de' (inte 'dom'), och formellt verb 'avsåg'."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Ändelsen ___ bildas ofta vid nominalisering av verb på '-era' (t.ex. diskutera → diskuss___)",
+          "answer": "ion",
+          "hint": "Diskussion, kommunikation, information...",
+          "explanation": "Verben på -era nominaliseras ofta med ändelsen -ion: diskutera → diskussion, kommunicera → kommunikation."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Vilket retoriskt begrepp beskriver en fråga som inte förväntar sig ett svar?",
+          "answer": "retorisk fråga",
+          "hint": "Talaren ställer den för att påverka, inte för att få ett faktiskt svar.",
+          "explanation": "En retorisk fråga är ett stilistiskt grepp för att övertala och engagera publiken."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket av dessa är ett exempel på antites (motsatspar i en mening)?",
+          "options": [
+            "Vi kämpade, vi vann, vi firade.",
+            "Det var det bästa av tider, det var det värsta av tider.",
+            "Hon är stark som ett lejon.",
+            "Vi ska vinna. Vi ska kämpa. Vi ska lyckas."
+          ],
+          "correctIndex": 1,
+          "explanation": "Antites = kontrast mellan mot varandra ställda påståenden. 'Det bästa' vs 'det värsta' i samma mening."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg den formella meningen med passiv konstruktion!",
+          "words": [
+            "Rapporten",
+            "har",
+            "granskats",
+            "noggrant"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "explanation": "Rapporten (subjekt) har granskats (passiv form av 'granska') noggrant (adverbial). Passiv ger formell, opersonlig ton."
         }
       ]
     }
@@ -387,7 +838,12 @@
         {
           "type": "multiple-choice",
           "question": "Vilket tecken passar bäst i: 'Hon log_och det förändrade allt.'",
-          "options": [".", ",", "–", "!"],
+          "options": [
+            ".",
+            ",",
+            "–",
+            "!"
+          ],
           "correctIndex": 2,
           "explanation": "Tankstreck kan markera en dramatisk paus eller ett inskott."
         },
@@ -413,14 +869,24 @@
         {
           "type": "multiple-choice",
           "question": "Hur skriver man korrekt genitiv av 'Jonas'?",
-          "options": ["Jonas's bok", "Jonas bok", "Jonas' bok", "Jonases bok"],
+          "options": [
+            "Jonas's bok",
+            "Jonas bok",
+            "Jonas' bok",
+            "Jonases bok"
+          ],
           "correctIndex": 2,
           "explanation": "När ett namn slutar på s, x eller z skrivs genitiv med bara apostrof: Jonas' bok."
         },
         {
           "type": "multiple-choice",
           "question": "Vad kallas utelämning av bokstäver i tal? Ex: 'dom' istället för 'de/dem'",
-          "options": ["Elision", "Apostrof", "Synkope", "Apokope"],
+          "options": [
+            "Elision",
+            "Apostrof",
+            "Synkope",
+            "Apokope"
+          ],
           "correctIndex": 0,
           "explanation": "Elision är utelämning av ljud, vanligt i talspråk."
         }
@@ -439,14 +905,24 @@
         {
           "type": "multiple-choice",
           "question": "Vilket akademiskt ord betyder ungefär 'bevis' eller 'underlag'?",
-          "options": ["diskurs", "evidens", "kontext", "syntes"],
+          "options": [
+            "diskurs",
+            "evidens",
+            "kontext",
+            "syntes"
+          ],
           "correctIndex": 1,
           "explanation": "'Evidens' = bevis, underlag. Används i akademiska och vetenskapliga texter."
         },
         {
           "type": "multiple-choice",
           "question": "Hur stavas ordet för 'sammansättning av idéer till en helhet'?",
-          "options": ["sinttes", "syntes", "syntäs", "synttes"],
+          "options": [
+            "sinttes",
+            "syntes",
+            "syntäs",
+            "synttes"
+          ],
           "correctIndex": 1,
           "explanation": "'Syntes' – s-y-n-t-e-s. Att syntetisera = sätta samman till en helhet."
         },
@@ -460,14 +936,24 @@
         {
           "type": "multiple-choice",
           "question": "Vilket ord beskriver ett samtal om idéer inom ett ämnesområde?",
-          "options": ["diskurs", "dialog", "debatt", "diskussion"],
+          "options": [
+            "diskurs",
+            "dialog",
+            "debatt",
+            "diskussion"
+          ],
           "correctIndex": 0,
           "explanation": "'Diskurs' – ett akademiskt begrepp för den samlade diskussionen/konversationen inom ett ämne."
         },
         {
           "type": "multiple-choice",
           "question": "Hur stavas konsekvenser eller slutsatser av något?",
-          "options": ["implikashon", "implikation", "implikasjon", "implikasion"],
+          "options": [
+            "implikashon",
+            "implikation",
+            "implikasjon",
+            "implikasion"
+          ],
           "correctIndex": 1,
           "explanation": "'Implikation' – im-pli-ka-tion. Vad något innebär eller medför."
         }
@@ -487,7 +973,12 @@
         {
           "type": "multiple-choice",
           "question": "Hur stavas systemet för samhällets välfärd?",
-          "options": ["välfärds system", "välfärdsystem", "välfärdssystem", "välfärd-system"],
+          "options": [
+            "välfärds system",
+            "välfärdsystem",
+            "välfärdssystem",
+            "välfärd-system"
+          ],
           "correctIndex": 2,
           "explanation": "'Välfärdssystem' – sammansatta ord skrivs ihop. Välfärd + s + system."
         },
@@ -513,7 +1004,12 @@
         {
           "type": "multiple-choice",
           "question": "Hur stavas politiken för miljön?",
-          "options": ["miljö politik", "miljö-politik", "miljöpolitik", "miljöpollitik"],
+          "options": [
+            "miljö politik",
+            "miljö-politik",
+            "miljöpolitik",
+            "miljöpollitik"
+          ],
           "correctIndex": 2,
           "explanation": "'Miljöpolitik' – sammansatt ord ihop: miljö + politik."
         },
@@ -540,14 +1036,38 @@
       "icon": "🤔",
       "bonusPoints": 45,
       "words": [
-        {"word": "ETIK", "clue": "Läran om rätt och fel"},
-        {"word": "MORAL", "clue": "Regler för rätt uppförande"},
-        {"word": "LOGIK", "clue": "Konsten att tänka korrekt"},
-        {"word": "DIALEKTIK", "clue": "Metod att nå sanning genom dialog"},
-        {"word": "UTOPI", "clue": "Idealsamhälle som inte finns"},
-        {"word": "EMPATI", "clue": "Förmågan att förstå andras känslor"},
-        {"word": "ONTOLOGI", "clue": "Läran om varats natur"},
-        {"word": "LIBERAL", "clue": "Frihetsinriktad politisk åskådning"}
+        {
+          "word": "ETIK",
+          "clue": "Läran om rätt och fel"
+        },
+        {
+          "word": "MORAL",
+          "clue": "Regler för rätt uppförande"
+        },
+        {
+          "word": "LOGIK",
+          "clue": "Konsten att tänka korrekt"
+        },
+        {
+          "word": "DIALEKTIK",
+          "clue": "Metod att nå sanning genom dialog"
+        },
+        {
+          "word": "UTOPI",
+          "clue": "Idealsamhälle som inte finns"
+        },
+        {
+          "word": "EMPATI",
+          "clue": "Förmågan att förstå andras känslor"
+        },
+        {
+          "word": "ONTOLOGI",
+          "clue": "Läran om varats natur"
+        },
+        {
+          "word": "LIBERAL",
+          "clue": "Frihetsinriktad politisk åskådning"
+        }
       ]
     },
     {
@@ -557,14 +1077,38 @@
       "icon": "🗳️",
       "bonusPoints": 45,
       "words": [
-        {"word": "NATION", "clue": "Folk med gemensam kultur och identitet"},
-        {"word": "STAT", "clue": "Politisk organisation med territorium"},
-        {"word": "DEMOKRATI", "clue": "Folkstyre – folket bestämmer"},
-        {"word": "REPUBLIK", "clue": "Statsskick utan ärftlig kung"},
-        {"word": "MONARKI", "clue": "Statsskick med kung eller drottning"},
-        {"word": "FRIHET", "clue": "Rätten att handla utan tvång"},
-        {"word": "RÄTTVISA", "clue": "Att behandla alla lika och rätt"},
-        {"word": "SUVERÄN", "clue": "Oberoende och självstyrande"}
+        {
+          "word": "NATION",
+          "clue": "Folk med gemensam kultur och identitet"
+        },
+        {
+          "word": "STAT",
+          "clue": "Politisk organisation med territorium"
+        },
+        {
+          "word": "DEMOKRATI",
+          "clue": "Folkstyre – folket bestämmer"
+        },
+        {
+          "word": "REPUBLIK",
+          "clue": "Statsskick utan ärftlig kung"
+        },
+        {
+          "word": "MONARKI",
+          "clue": "Statsskick med kung eller drottning"
+        },
+        {
+          "word": "FRIHET",
+          "clue": "Rätten att handla utan tvång"
+        },
+        {
+          "word": "RÄTTVISA",
+          "clue": "Att behandla alla lika och rätt"
+        },
+        {
+          "word": "SUVERÄN",
+          "clue": "Oberoende och självstyrande"
+        }
       ]
     },
     {
@@ -574,15 +1118,42 @@
       "icon": "🎨",
       "bonusPoints": 45,
       "words": [
-        {"word": "OPERA", "clue": "Musikdramatisk konstform med sång"},
-        {"word": "TEATER", "clue": "Skådespel framförda på scen"},
-        {"word": "MUSEUM", "clue": "Byggnad med samlingar av konst"},
-        {"word": "POESI", "clue": "Konstform med rytm och språklig skönhet"},
-        {"word": "ROMAN", "clue": "Långt litterärt berättarverk"},
-        {"word": "KONST", "clue": "Mänskligt skapande för estetiskt värde"},
-        {"word": "KULTUR", "clue": "Gemensamma värden och sedvänjor"},
-        {"word": "BALETT", "clue": "Klassisk danskonst med musik"},
-        {"word": "SYMFONI", "clue": "Stor komposition för orkester"}
+        {
+          "word": "OPERA",
+          "clue": "Musikdramatisk konstform med sång"
+        },
+        {
+          "word": "TEATER",
+          "clue": "Skådespel framförda på scen"
+        },
+        {
+          "word": "MUSEUM",
+          "clue": "Byggnad med samlingar av konst"
+        },
+        {
+          "word": "POESI",
+          "clue": "Konstform med rytm och språklig skönhet"
+        },
+        {
+          "word": "ROMAN",
+          "clue": "Långt litterärt berättarverk"
+        },
+        {
+          "word": "KONST",
+          "clue": "Mänskligt skapande för estetiskt värde"
+        },
+        {
+          "word": "KULTUR",
+          "clue": "Gemensamma värden och sedvänjor"
+        },
+        {
+          "word": "BALETT",
+          "clue": "Klassisk danskonst med musik"
+        },
+        {
+          "word": "SYMFONI",
+          "clue": "Stor komposition för orkester"
+        }
       ]
     }
   ]

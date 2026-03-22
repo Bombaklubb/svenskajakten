@@ -2404,6 +2404,400 @@
           "explanation": "'Spelade' är preteritum (dåtid) av 'spelar' – det hände igår."
         }
       ]
+    },
+    {
+      "id": "sluttest",
+      "title": "Sluttest – Grammatik",
+      "description": "Testa allt du lärt dig! 32 blandade frågor om grammatik på lågstadienivå.",
+      "icon": "🏆",
+      "bonusPoints": 100,
+      "helpText": [
+        "Det här är ditt stora sluttest! Du kommer att få frågor om allt du har övat på.",
+        "Ta det lugnt och läs varje fråga noga innan du svarar.",
+        "Du behöver svara rätt på 60% av frågorna för att klara testet och få bonuspoäng.",
+        "Lycka till – du klarar det! 🌟"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är ett substantiv?",
+          "options": [
+            "springer",
+            "katt",
+            "glad",
+            "snabbt"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Katt' är ett substantiv – det är ett djur."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är ett verb?",
+          "options": [
+            "boll",
+            "hund",
+            "hoppar",
+            "röd"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Hoppar' är ett verb – det är en handling."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är ett adjektiv?",
+          "options": [
+            "löper",
+            "hus",
+            "liten",
+            "fort"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Liten' är ett adjektiv – det beskriver hur något är."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är skriven rätt?",
+          "options": [
+            "Sverige är vackert.",
+            "sverige är vackert.",
+            "Sverige Är Vackert.",
+            "SVERIGE är vackert."
+          ],
+          "correctIndex": 0,
+          "explanation": "Stor bokstav används i början av meningen och för namn på länder som Sverige."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket tecken ska stå i slutet av en frågemening?",
+          "options": [
+            ".",
+            "!",
+            "?",
+            ","
+          ],
+          "correctIndex": 2,
+          "explanation": "Frågetecken (?) används i slutet av en fråga."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilka bokstäver är vokaler?",
+          "options": [
+            "b, d, f, g",
+            "a, e, i, o, u, y, å, ä, ö",
+            "m, n, p, r, s",
+            "k, l, t, v, x"
+          ],
+          "correctIndex": 1,
+          "explanation": "Vokalerna i alfabetet är: a, e, i, o, u, y, å, ä, ö. Alla andra bokstäver är konsonanter."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt ord: 'Katten ___ musen.'",
+          "options": [
+            "det",
+            "bet",
+            "dat",
+            "pet"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Bet' är rätt – det är dåtid av 'bita'. Katten bet (bitade på) musen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt stavning: 'Hon ___ trött.'",
+          "options": [
+            "er",
+            "är",
+            "ir",
+            "ur"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Är' stavas med ä – det är presens av verbet 'vara'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt ord: '___ cyklar till skolan.'",
+          "options": [
+            "Dem",
+            "De",
+            "Dom",
+            "Di"
+          ],
+          "correctIndex": 1,
+          "explanation": "'De' används som subjekt (den som gör handlingen). 'De cyklar' = de är de som cyklar."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt ord: 'Jag ser ___ borta vid trädet.'",
+          "options": [
+            "de",
+            "dem",
+            "dom",
+            "den"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Dem' används som objekt (den som handlingen riktas mot). Jag ser DEM."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt ord: '___ är min mössa?'",
+          "options": [
+            "Vart",
+            "Var",
+            "Vem",
+            "Hur"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Var' används för plats – du undrar VAR mössan befinner sig."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt ord: '___ ska du gå?'",
+          "options": [
+            "Var",
+            "Vart",
+            "Varifrån",
+            "Varför"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Vart' används för riktning/rörelse – du undrar VART (mot vilket håll) de ska gå."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är en synonym (betyder ungefär samma sak) till 'glad'?",
+          "options": [
+            "ledsen",
+            "trött",
+            "lycklig",
+            "arg"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Lycklig' och 'glad' betyder ungefär samma sak."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är motsatsen till 'stor'?",
+          "options": [
+            "tung",
+            "liten",
+            "hög",
+            "varm"
+          ],
+          "correctIndex": 1,
+          "explanation": "Motsatsen till 'stor' är 'liten'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är sammansatt av 'bil' och 'bälte'?",
+          "options": [
+            "bilbälte",
+            "bältebil",
+            "belbälte",
+            "bilbälta"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Bilbälte' = bil + bälte. De sätts ihop till ett ord."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt preposition: 'Katten sitter ___ stolen.'",
+          "options": [
+            "med",
+            "under",
+            "upp",
+            "och"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Under' är en preposition som visar plats. Katten sitter under stolen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är ett adverb i meningen: 'Hunden springer snabbt'?",
+          "options": [
+            "Hunden",
+            "springer",
+            "snabbt",
+            "Det finns inget adverb"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Snabbt' är ett adverb – det berättar HUR hunden springer."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt verb: 'Igår ___ jag till skolan.'",
+          "options": [
+            "går",
+            "ska gå",
+            "gick",
+            "gå"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Gick' är dåtid (imperfekt) av 'gå'. Igår = dåtid."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur många substantiv finns i: 'Pojken och flickan leker i parken'?",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "correctIndex": 2,
+          "explanation": "Pojken, flickan och parken är de tre substantiven."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket av dessa ord SKA ha stor bokstav?",
+          "options": [
+            "hund",
+            "springer",
+            "glad",
+            "stockholm"
+          ],
+          "correctIndex": 3,
+          "explanation": "Stockholm är en stad och ska ha stor bokstav. Namn på städer, länder och personer börjar alltid med stor bokstav."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad ska stå i slutet av meningen: 'Oj, vad vackert det var___'",
+          "options": [
+            ".",
+            "?",
+            "!",
+            ","
+          ],
+          "correctIndex": 2,
+          "explanation": "Utropstecken (!) används för att visa entusiasm eller förvåning."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är INTE ett sammansatt ord?",
+          "options": [
+            "fotboll",
+            "solros",
+            "leka",
+            "skolväska"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Leka' är ett verb och inte ett sammansatt ord. Fotboll = fot+boll, solros = sol+ros, skolväska = skol+väska."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är ett verb?",
+          "options": [
+            "glad",
+            "hund",
+            "skola",
+            "sjunger"
+          ],
+          "correctIndex": 3,
+          "explanation": "'Sjunger' är ett verb – det är en handling."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt stavning: 'Vi ___ frukost varje morgon.'",
+          "options": [
+            "eter",
+            "äter",
+            "iter",
+            "ater"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Äter' stavas med ä – det är presens av verbet 'äta'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord stavas rätt? (ett djur som börjar på 'bj')",
+          "options": [
+            "djörn",
+            "björn",
+            "kjörn",
+            "gjörn"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Björn' stavas med B och J. Det är ett stort djur i skogen."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Vad är motsatsen till 'dag'?",
+          "answer": "natt",
+          "hint": "Det är mörkt och man sover.",
+          "explanation": "Dag och natt är varandras motsatser."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt ord (de eller dem): 'Jag leker med ___.'",
+          "answer": "dem",
+          "hint": "Vem leker du MED? Det är objektet i meningen.",
+          "explanation": "'Dem' används som objekt – med dem, till dem, se dem."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt preposition: 'Fågeln flyger ___ himlen.'",
+          "options": [
+            "på",
+            "i",
+            "ner",
+            "om"
+          ],
+          "correctIndex": 1,
+          "explanation": "Man flyger 'i himlen' – prepositioner visar var något är eller sker."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket verb är i presens (nutid)?",
+          "options": [
+            "åt",
+            "sprang",
+            "springer",
+            "gick"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Springer' är presens (nutid). Åt, sprang och gick är imperfekt (dåtid)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilka av dessa bokstäver är konsonanter?",
+          "options": [
+            "a, e, i, o, u",
+            "b, c, d, f, g",
+            "å, ä, ö",
+            "Alla bokstäver är konsonanter"
+          ],
+          "correctIndex": 1,
+          "explanation": "Konsonanter är alla bokstäver som inte är vokaler. B, c, d, f, g är konsonanter."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med rätt ordföljd!",
+          "words": [
+            "Barnen",
+            "leker",
+            "ute",
+            "idag"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "explanation": "'Barnen' är substantivet/subjektet. 'Leker' är verbet. 'Ute idag' berättar var och när."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord beskriver substantivet i: 'Den röda bollen'?",
+          "options": [
+            "Den",
+            "röda",
+            "bollen",
+            "ingen"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Röda' är adjektivet – det beskriver hur bollen ser ut."
+        }
+      ]
     }
   ],
   "reading": [
