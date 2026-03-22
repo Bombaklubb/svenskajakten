@@ -4,7 +4,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Header from "@/components/ui/Header";
-import { loadStudent, createStudent, clearStudent } from "@/lib/storage";
+import { loadStudent, createStudent, clearStudent, studentExists } from "@/lib/storage";
 import { STAGES } from "@/lib/stages";
 import { AVATARS } from "@/lib/avatars";
 import { BlurFade } from "@/components/magicui/blur-fade";
@@ -23,11 +23,17 @@ export default function HomePage() {
   const [nameInput, setNameInput] = useState("");
   const [selectedAvatar, setSelectedAvatar] = useState("ninja");
   const [loading, setLoading] = useState(true);
+  const [isReturning, setIsReturning] = useState(false);
 
   useEffect(() => {
     setStudent(loadStudent());
     setLoading(false);
   }, []);
+
+  function handleNameChange(value: string) {
+    setNameInput(value);
+    setIsReturning(studentExists(value.trim()));
+  }
 
   function handleLogin(e: React.FormEvent) {
     e.preventDefault();
@@ -87,15 +93,22 @@ export default function HomePage() {
             </p>
 
             <form onSubmit={handleLogin} className="space-y-4">
-              <input
-                type="text"
-                value={nameInput}
-                onChange={(e) => setNameInput(e.target.value)}
-                placeholder="Ditt namn..."
-                className="input-field text-base"
-                autoFocus
-                maxLength={30}
-              />
+              <div className="relative">
+                <input
+                  type="text"
+                  value={nameInput}
+                  onChange={(e) => handleNameChange(e.target.value)}
+                  placeholder="Ditt namn..."
+                  className="input-field text-base w-full"
+                  autoFocus
+                  maxLength={30}
+                />
+                {isReturning && (
+                  <p className="mt-1.5 text-xs font-bold text-emerald-600 flex items-center gap-1">
+                    <span>✅</span> Välkommen tillbaka! Din data är sparad.
+                  </p>
+                )}
+              </div>
 
               {/* Avatar selection */}
               <div>
@@ -135,7 +148,7 @@ export default function HomePage() {
                 className="w-full btn-primary text-base py-3 rounded-xl border-3 border-sv-400 disabled:from-gray-200 disabled:to-gray-300 disabled:text-gray-400 disabled:border-gray-200"
                 style={{ background: nameInput.trim() ? "linear-gradient(135deg, #f97316, #ea6c0a)" : undefined }}
               >
-                Starta jakten! 🚀
+                {isReturning ? "Fortsätt jakten! 🏆" : "Starta jakten! 🚀"}
               </button>
             </form>
           </div>
