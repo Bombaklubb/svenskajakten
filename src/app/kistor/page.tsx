@@ -54,15 +54,19 @@ function ChestCard({ chest, onOpen }: { chest: Chest; onOpen: (id: string) => vo
         transition: "transform 0.15s ease-out, box-shadow 0.15s",
       }}
     >
-      <span
-        className="text-5xl mb-3"
+      <div
+        className="mb-3 w-16 h-16 flex items-center justify-center"
         style={{
           filter: chest.opened ? "grayscale(1)" : "none",
           animation: animating ? "shake 0.4s ease-in-out" : "none",
         }}
       >
-        {chest.opened ? "🔓" : meta.emoji}
-      </span>
+        {chest.opened ? (
+          <span className="text-5xl">🔓</span>
+        ) : (
+          <img src={meta.image} alt={meta.label} className="w-full h-full object-contain drop-shadow-lg" />
+        )}
+      </div>
       <span className={`text-sm font-bold mb-1 ${chest.opened ? "text-gray-400 dark:text-gray-500" : "text-white"}`}>
         {meta.label}
       </span>
@@ -100,7 +104,7 @@ function RewardPopup({ result, onClose }: { result: RewardResult; onClose: () =>
       >
         <div className="text-6xl mb-4 animate-bounce-slow">🎉</div>
         <h2 className="text-2xl font-black text-amber-700 dark:text-amber-300 mb-3">
-          Lådan är öppnad!
+          Kistan är öppnad!
         </h2>
         <p className="text-base font-semibold text-sv-800 dark:text-gray-100 mb-6 leading-relaxed">
           {result.description}
@@ -158,7 +162,7 @@ function TrophyShelf({ chests }: { chests: Chest[] }) {
           <div key={type}>
             {/* Shelf label */}
             <div className={`flex items-center gap-2 mb-2 font-bold text-sm ${style.label}`}>
-              <span>{meta.emoji}</span>
+              <img src={meta.image} alt={meta.label} className="w-5 h-5 object-contain" />
               <span>{meta.label}</span>
               <span className={`ml-1 px-2 py-0.5 text-xs rounded-full font-bold ${style.count}`}>
                 ×{items.length}
@@ -173,7 +177,7 @@ function TrophyShelf({ chests }: { chests: Chest[] }) {
               <div className="flex flex-wrap gap-4">
                 {items.map((chest) => (
                   <div key={chest.id} className="flex flex-col items-center gap-1 w-14">
-                    <span className="text-3xl drop-shadow">{meta.emoji}</span>
+                    <img src={meta.image} alt={meta.label} className="w-8 h-8 object-contain drop-shadow" />
                     {chest.openedReward && (
                       <span className="text-[10px] text-center text-gray-500 dark:text-gray-400 leading-tight line-clamp-2">
                         {chest.openedReward}
@@ -451,19 +455,19 @@ export default function KistorPage() {
             </h3>
             <p className="text-xs font-bold text-sv-500 dark:text-sv-300 uppercase tracking-wide mb-2">Poängmilstolpar</p>
             <ul className="space-y-1.5 text-sm text-sv-800 dark:text-sv-100 mb-4">
-              <li className="flex items-start gap-2"><span>📦</span><span><strong>Trälåda:</strong> 10, 20, 30, 50, 75, 100, 200 poäng</span></li>
-              <li className="flex items-start gap-2"><span>🪙</span><span><strong>Silverlåda:</strong> 300, 500, 750, 1 500, 2 000 poäng</span></li>
-              <li className="flex items-start gap-2"><span>🏆</span><span><strong>Guldlåda:</strong> 1 000, 2 500, 3 500, 5 000, 7 000, 10 000, 15 000 poäng</span></li>
+              <li className="flex items-start gap-2"><img src="/content/bronskista.png" alt="Bronskista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Bronskista:</strong> 10, 20, 30, 50, 75, 100, 200 poäng</span></li>
+              <li className="flex items-start gap-2"><img src="/content/silverkista.png" alt="Silverkista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Silverkista:</strong> 300, 500, 750, 1 500, 2 000 poäng</span></li>
+              <li className="flex items-start gap-2"><img src="/content/guldkista.png" alt="Guldkista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Guldkista:</strong> 1 000, 2 500, 3 500, 5 000, 7 000, 10 000, 15 000 poäng</span></li>
             </ul>
             <p className="text-xs font-bold text-sv-500 dark:text-sv-300 uppercase tracking-wide mb-2">Övningsmilstolpar</p>
             <ul className="space-y-1.5 text-sm text-sv-800 dark:text-sv-100 mb-4">
-              <li className="flex items-start gap-2"><span>📦</span><span><strong>Trälåda:</strong> 1, 2, 3, 4, 5, 7, 10, 25, 45, 55 övningar</span></li>
-              <li className="flex items-start gap-2"><span>🪙</span><span><strong>Silverlåda:</strong> 12, 15, 20, 35, 40, 50, 70, 80, 90 övningar</span></li>
-              <li className="flex items-start gap-2"><span>🏆</span><span><strong>Guldlåda:</strong> 30, 60, 75, 100, 125, 150, 200 övningar</span></li>
+              <li className="flex items-start gap-2"><img src="/content/bronskista.png" alt="Bronskista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Bronskista:</strong> 1, 2, 3, 4, 5, 7, 10, 25, 45, 55 övningar</span></li>
+              <li className="flex items-start gap-2"><img src="/content/silverkista.png" alt="Silverkista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Silverkista:</strong> 12, 15, 20, 35, 40, 50, 70, 80, 90 övningar</span></li>
+              <li className="flex items-start gap-2"><img src="/content/guldkista.png" alt="Guldkista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Guldkista:</strong> 30, 60, 75, 100, 125, 150, 200 övningar</span></li>
             </ul>
             <div className="flex items-start gap-2 text-sm text-sv-800 dark:text-sv-100 pt-3 border-t border-sv-100 dark:border-gray-700">
               <span>🎁</span>
-              <span><strong>Mysterylåda:</strong> Slumpmässig chans efter varje övning!</span>
+              <span><strong>Mysterykista:</strong> Slumpmässig chans efter varje övning!</span>
             </div>
           </section>
         </BlurFade>

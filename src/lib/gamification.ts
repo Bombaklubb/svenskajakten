@@ -121,31 +121,34 @@ export function chestsEarnedFromAchievements(
 
 export const CHEST_META: Record<
   ChestType,
-  { label: string; emoji: string; color: string; borderColor: string; shadowColor: string; description: string }
+  { label: string; emoji: string; image: string; color: string; borderColor: string; shadowColor: string; description: string }
 > = {
   wood: {
-    label: "Trälåda",
+    label: "Bronskista",
     emoji: "📦",
+    image: "/content/bronskista.png",
     color: "from-amber-600 to-amber-800",
     borderColor: "border-amber-700",
     shadowColor: "shadow-amber-900/40",
-    description: "En enkel trälåda med små belöningar.",
+    description: "En enkel bronskista med små belöningar.",
   },
   silver: {
-    label: "Silverlåda",
+    label: "Silverkista",
     emoji: "🪙",
+    image: "/content/silverkista.png",
     color: "from-slate-400 to-slate-600",
     borderColor: "border-slate-500",
     shadowColor: "shadow-slate-700/40",
-    description: "En glänsande silverlåda med bra belöningar.",
+    description: "En glänsande silverkista med bra belöningar.",
   },
   gold: {
-    label: "Guldlåda",
+    label: "Guldkista",
     emoji: "🏆",
+    image: "/content/guldkista.png",
     color: "from-yellow-400 to-amber-500",
     borderColor: "border-yellow-500",
     shadowColor: "shadow-yellow-600/40",
-    description: "En praktfull guldlåda med de bästa belöningarna!",
+    description: "En praktfull guldkista med de bästa belöningarna!",
   },
 };
 
@@ -343,7 +346,7 @@ export function rollMysteryBox(badges: string[]): MysteryBoxReward | null {
     return {
       type: "chest",
       chestType: "wood",
-      description: "En trälåda!",
+      description: "En bronskista!",
     };
   } else {
     const available = ALL_BADGES.filter(
@@ -392,7 +395,7 @@ export function openSilverChest(badges: string[]): {
   const desc = [
     `+${pts} poäng`,
     badge ? `Märke: ${badge.label} ${badge.emoji}` : null,
-    bonusChest ? "Bonus: Trälåda!" : null,
+    bonusChest ? "Bonus: Bronskista!" : null,
   ]
     .filter(Boolean)
     .join(" • ");
@@ -414,7 +417,7 @@ export function openGoldChest(badges: string[]): {
   const desc = [
     `+${pts} poäng`,
     badge ? `Märke: ${badge.label} ${badge.emoji}` : null,
-    bonusChest ? "Bonus: Silverlåda!" : null,
+    bonusChest ? "Bonus: Silverkista!" : null,
   ]
     .filter(Boolean)
     .join(" • ");
