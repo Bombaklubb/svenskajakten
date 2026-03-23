@@ -62,13 +62,15 @@
             "Maja",
             "åt",
             "ett",
-            "äpple"
+            "äpple",
+            "."
           ],
           "correctOrder": [
             0,
             1,
             2,
-            3
+            3,
+            4
           ],
           "explanation": "'Maja' är subjektet, 'åt' är predikatet, 'ett äpple' är objektet."
         }
@@ -137,14 +139,16 @@
             "och",
             "jag",
             "är",
-            "kompisar"
+            "kompisar",
+            "."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4
+            4,
+            5
           ],
           "explanation": "'Hon och jag' – man sätter alltid den andra personen före 'jag'."
         }
@@ -215,7 +219,8 @@
             "cyklade",
             "vi",
             "till",
-            "sjön"
+            "sjön",
+            "."
           ],
           "correctOrder": [
             0,
@@ -223,7 +228,8 @@
             2,
             3,
             4,
-            5
+            5,
+            6
           ],
           "explanation": "'Förra veckan' och 'cyklade' visar att det hände i dåtid."
         }
@@ -292,14 +298,16 @@
             "stora",
             "hunden",
             "skällde",
-            "högt"
+            "högt",
+            "."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4
+            4,
+            5
           ],
           "explanation": "'Stora' (adjektiv) beskriver hunden, 'högt' (adverb) beskriver skällde."
         }
@@ -367,14 +375,16 @@
             "undervisar",
             "eleverna",
             "varje",
-            "dag"
+            "dag",
+            "."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4
+            4,
+            5
           ],
           "explanation": "'Läraren'=subj, 'undervisar'=pred, 'eleverna'=obj, 'varje dag'=adverbial (när?)."
         }
@@ -443,14 +453,16 @@
             "sjunger",
             "och",
             "skjuter",
-            "pil"
+            "pil",
+            "."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4
+            4,
+            5
           ],
           "explanation": "'Sjunger' har sj-stavning, 'skjuter' har skj-stavning – båda ger sj-ljud!"
         }
@@ -520,7 +532,8 @@
             "vänner",
             "kom",
             "på",
-            "fest"
+            "fest",
+            "."
           ],
           "correctOrder": [
             0,
@@ -528,7 +541,8 @@
             2,
             3,
             4,
-            5
+            5,
+            6
           ],
           "explanation": "'Tjugo' (tj-stavning) och 'kära' (k + ä = tj-ljud) – samma ljud, olika stavning!"
         }
@@ -597,14 +611,16 @@
             "hittade",
             "en",
             "gammal",
-            "kanna"
+            "kanna",
+            "."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4
+            4,
+            5
           ],
           "explanation": "'Gubben' (dubbelt b) och 'kanna' (dubbelt n) – båda har kort vokal och dubbelkonsonant."
         }
@@ -673,14 +689,16 @@
             "gav",
             "dem",
             "en",
-            "present"
+            "present",
+            "."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4
+            4,
+            5
           ],
           "explanation": "'De' är subjekt (de som ger), 'dem' är objekt (de som tar emot presenten)."
         }
@@ -750,7 +768,8 @@
             "vi",
             "åka",
             "i",
-            "sommar"
+            "sommar",
+            "?"
           ],
           "correctOrder": [
             0,
@@ -758,7 +777,8 @@
             2,
             3,
             4,
-            5
+            5,
+            6
           ],
           "explanation": "'Vart ska vi åka?' – frågar om destination (vi ska åka någonstans). Rätt ord är 'vart'."
         }
@@ -828,7 +848,8 @@
             ",",
             "katten",
             "springer",
-            "bort"
+            "bort",
+            "."
           ],
           "correctOrder": [
             0,
@@ -836,7 +857,8 @@
             2,
             3,
             4,
-            5
+            5,
+            6
           ],
           "explanation": "Kommat separerar de två satserna: 'Hunden skäller, katten springer bort.'"
         }
@@ -905,14 +927,16 @@
             "brusade",
             "kraftfullt",
             "förbi",
-            "stranden"
+            "stranden",
+            "."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4
+            4,
+            5
           ],
           "explanation": "'Strömmen' (str+mm), 'kraftfullt' (kr+ftf+llt) och 'stranden' (str+nd) har alla konsonantkluster. Meningen visar hur konsonantrika ord kan staplas."
         }
@@ -983,7 +1007,8 @@
             "vid",
             "bäcken",
             "i",
-            "dalen"
+            "dalen",
+            "."
           ],
           "correctOrder": [
             0,
@@ -992,7 +1017,8 @@
             3,
             4,
             5,
-            6
+            6,
+            7
           ],
           "explanation": "'Björnen' och 'bäcken' börjar med b (läppljud). 'Drack' och 'dalen' börjar med d (tungljud). Hör skillnaden!"
         }
@@ -1062,7 +1088,8 @@
             "att",
             "vädret",
             "är",
-            "vackert"
+            "vackert",
+            "."
           ],
           "correctOrder": [
             0,
@@ -1070,7 +1097,8 @@
             2,
             3,
             4,
-            5
+            5,
+            6
           ],
           "explanation": "'Läraren' (ä), 'säger' (ä), 'vädret' (ä) – alla tre stavas med ä. 'Vackert' stavas med e: v-a-ck-e-r-t."
         }
@@ -1372,7 +1400,8 @@
             "läste",
             "vi",
             "en",
-            "bok"
+            "bok",
+            "."
           ],
           "correctOrder": [
             0,
@@ -1380,7 +1409,8 @@
             2,
             3,
             4,
-            5
+            5,
+            6
           ],
           "explanation": "'Förra veckan' och 'läste' visar att det hände i dåtid."
         }
@@ -1884,13 +1914,15 @@
             "Maja",
             "läste",
             "boken",
-            "igår"
+            "igår",
+            "."
           ],
           "correctOrder": [
             0,
             1,
             2,
-            3
+            3,
+            4
           ],
           "explanation": "Maja (subjekt) läste (predikat) boken (objekt) igår (adverbial)."
         }

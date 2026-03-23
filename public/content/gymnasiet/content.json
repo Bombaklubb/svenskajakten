@@ -270,14 +270,16 @@
             "utredning",
             "av",
             "ärendet",
-            "krävs"
+            "krävs",
+            "."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4
+            4,
+            5
           ],
           "explanation": "'Utredning' är en nominalisering av 'utreda' – verb→substantiv med -ning."
         }
@@ -346,14 +348,16 @@
             "påvisar",
             "ett",
             "signifikant",
-            "samband"
+            "samband",
+            "."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4
+            4,
+            5
           ],
           "explanation": "'Påvisar' och 'signifikant' är formella akademiska ord som kännetecknar vetenskapligt skrivande."
         }
@@ -494,7 +498,8 @@
             "läste",
             "vi",
             "en",
-            "bok"
+            "bok",
+            "."
           ],
           "correctOrder": [
             0,
@@ -502,7 +507,8 @@
             2,
             3,
             4,
-            5
+            5,
+            6
           ],
           "explanation": "'Förra veckan' och 'läste' visar att det hände i dåtid."
         }
@@ -1018,13 +1024,15 @@
             "Rapporten",
             "har",
             "granskats",
-            "noggrant"
+            "noggrant",
+            "."
           ],
           "correctOrder": [
             0,
             1,
             2,
-            3
+            3,
+            4
           ],
           "explanation": "Rapporten (subjekt) har granskats (passiv form av 'granska') noggrant (adverbial). Passiv ger formell, opersonlig ton."
         }

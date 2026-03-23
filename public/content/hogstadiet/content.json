@@ -65,7 +65,8 @@
             "att",
             "du",
             "har",
-            "rätt"
+            "rätt",
+            "."
           ],
           "correctOrder": [
             0,
@@ -73,7 +74,8 @@
             2,
             3,
             4,
-            5
+            5,
+            6
           ],
           "explanation": "'Jag vet' är huvudsatsen, 'att du har rätt' är bisatsen."
         }
@@ -142,13 +144,15 @@
             "Busschauffören",
             "körde",
             "till",
-            "centralstationen"
+            "centralstationen",
+            "."
           ],
           "correctOrder": [
             0,
             1,
             2,
-            3
+            3,
+            4
           ],
           "explanation": "'Busschauffören' och 'centralstationen' är sammansatta ord."
         }
@@ -288,14 +292,16 @@
             "reser",
             "vi",
             "till",
-            "Paris"
+            "Paris",
+            "."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4
+            4,
+            5
           ],
           "explanation": "'Imorgon' (adverbial) + 'reser' (predikat) + 'vi' (subjekt) = omvänd ordföljd."
         }
@@ -364,14 +370,16 @@
             "gamla",
             "huset",
             "är",
-            "vackert"
+            "vackert",
+            "."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4
+            4,
+            5
           ],
           "explanation": "'Det gamla huset' – bestämd form + -a på adjektivet. 'Vackert' i predikativ ställning."
         }
@@ -438,13 +446,15 @@
             "Himlen",
             "är",
             "klarblå",
-            "idag"
+            "idag",
+            "."
           ],
           "correctOrder": [
             0,
             1,
             2,
-            3
+            3,
+            4
           ],
           "explanation": "'Klarblå' är predikativ – det hör till 'himlen' via 'är'."
         }
@@ -585,7 +595,8 @@
             "läste",
             "vi",
             "en",
-            "bok"
+            "bok",
+            "."
           ],
           "correctOrder": [
             0,
@@ -593,7 +604,8 @@
             2,
             3,
             4,
-            5
+            5,
+            6
           ],
           "explanation": "'Förra veckan' och 'läste' visar att det hände i dåtid."
         }
@@ -1109,13 +1121,15 @@
             "Igår",
             "spelade",
             "han",
-            "fotboll"
+            "fotboll",
+            "."
           ],
           "correctOrder": [
             0,
             1,
             2,
-            3
+            3,
+            4
           ],
           "explanation": "Igår (adverbial) spelade (verb) han (subjekt) fotboll (objekt). Det är omvänd ordföljd."
         }
