@@ -1238,6 +1238,295 @@
       ]
     },
     {
+      "id": "grammatik-oversikt-1",
+      "title": "Grammatik – vad är det?",
+      "description": "Lär dig de viktigaste begreppen i grammatiken.",
+      "icon": "📚",
+      "bonusPoints": 25,
+      "helpText": [
+        "Grammatik handlar om hur vi bygger upp språket.",
+        "Substantiv = namn på saker, djur, personer (hus, hund, Lisa).",
+        "Verb = ord som beskriver handlingar (hoppa, läsa, äta).",
+        "Adjektiv = ord som beskriver hur något är (stor, glad, blå)."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vad är ett substantiv?",
+          "options": [
+            "Ett ord som beskriver en handling",
+            "Ett ord som namnger saker, djur eller personer",
+            "Ett ord som beskriver hur något är",
+            "Ett ord som kopplar ihop meningar"
+          ],
+          "correctIndex": 1,
+          "explanation": "Substantiv är namn på saker, djur och personer, t.ex. 'boll', 'katt', 'Lisa'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är ett verb?",
+          "options": [
+            "röd",
+            "stol",
+            "springer",
+            "snabbt"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Springer' är ett verb – det beskriver en handling."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är ett adjektiv?",
+          "options": [
+            "hoppa",
+            "blå",
+            "boken",
+            "och"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Blå' är ett adjektiv – det beskriver hur något ser ut."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "I meningen 'Den lilla hunden springer fort' är 'springer' ett ___.",
+          "answer": "verb",
+          "hint": "Det är ett handlingsord.",
+          "explanation": "'Springer' beskriver vad hunden gör – det är ett verb."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket alternativ innehåller tre SUBSTANTIV?",
+          "options": [
+            "springer, hoppar, simmar",
+            "stor, liten, glad",
+            "bok, boll, hund",
+            "fort, snabbt, sakta"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Bok', 'boll' och 'hund' är alla substantiv – de namnger saker och djur."
+        }
+      ]
+    },
+    {
+      "id": "tempus-tidsformer-1",
+      "title": "Tempus – tidsformer (nutid-dåtid)",
+      "description": "Öva på att skriva verb i rätt tid.",
+      "icon": "⏳",
+      "bonusPoints": 30,
+      "helpText": [
+        "Tempus visar när något händer.",
+        "Nutid (presens): Något händer NU. Exempel: 'Jag äter.'",
+        "Dåtid (preteritum): Något hände FÖRR. Exempel: 'Jag åt.'",
+        "Tips: dåtid slutar ofta på -ade, -de eller -te."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilken form är i NUTID?",
+          "options": [
+            "spelade",
+            "spelar",
+            "spelat",
+            "spelades"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Spelar' är nutidsform – det händer nu."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Skriv i dåtid: 'Varje dag leker hon' → 'Igår ___ hon.'",
+          "answer": "lekte",
+          "hint": "Leka → lekte i dåtid.",
+          "explanation": "'Leka' böjs till 'lekte' i dåtid (preteritum)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord visar att meningen är i dåtid?",
+          "options": [
+            "nu",
+            "idag",
+            "igår",
+            "snart"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Igår' pekar tillbaka i tiden och signalerar dåtid."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är dåtidsformen av 'skriver'?",
+          "options": [
+            "skriva",
+            "skrivit",
+            "skrev",
+            "skribent"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Skrev' är dåtidsform av 'skriver/skriva'."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Sätt ihop en mening i dåtid!",
+          "words": [
+            "Förra",
+            "veckan",
+            "läste",
+            "vi",
+            "en",
+            "bok"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "explanation": "'Förra veckan' och 'läste' visar att det hände i dåtid."
+        }
+      ]
+    },
+    {
+      "id": "dialoger-talstreck-1",
+      "title": "Skriva dialoger – använda talstreck",
+      "description": "Lär dig hur man skriver samtal med talstreck.",
+      "icon": "💬",
+      "bonusPoints": 30,
+      "helpText": [
+        "Talstreck (–) används när man skriver vad någon säger i en berättelse.",
+        "Talstrecket sätts i början av repliken: – Hej! sa Lisa.",
+        "Ny replik = ny rad med nytt talstreck.",
+        "Tankstreck (–) är längre än bindestreck (-)."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Hur ska en replik börja i en dialog?",
+          "options": [
+            "Med citattecken: \"Hej!\"",
+            "Med talstreck: – Hej!",
+            "Med kolon: Hej:",
+            "Med parentes: (Hej!)"
+          ],
+          "correctIndex": 1,
+          "explanation": "I svenska texter används talstreck (–) i stället för citattecken för att markera repliker."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket alternativ är RÄTT skrivet?",
+          "options": [
+            "\"Vad heter du?\" frågade hon.",
+            "– Vad heter du? frågade hon.",
+            "Vad heter du? frågade hon.",
+            "-Vad heter du? frågade hon."
+          ],
+          "correctIndex": 1,
+          "explanation": "I svenska berättelser inleds repliker med talstreck (–), inte med citattecken."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt tecken: '___ Kom hit!' ropade han.",
+          "answer": "–",
+          "hint": "Det är ett talstreck (ett långt streck).",
+          "explanation": "Talstrecket (–) markerar att någon pratar."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad gör man när en ny person börjar prata i en dialog?",
+          "options": [
+            "Fortsätter på samma rad",
+            "Börjar på en ny rad med talstreck",
+            "Sätter komma och fortsätter",
+            "Skriver personens namn med stora bokstäver"
+          ],
+          "correctIndex": 1,
+          "explanation": "Varje ny replik börjar på en ny rad med ett talstreck."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening visar ett korrekt användande av talstreck?",
+          "options": [
+            "– Jag är trött, sa Emma.",
+            "–Jag är trött sa Emma",
+            "- Jag är trött, sa Emma.",
+            "Jag är trött – sa Emma."
+          ],
+          "correctIndex": 0,
+          "explanation": "Talstrecket följs av ett mellanslag och repliken avslutas med komma före 'sa Emma'."
+        }
+      ]
+    },
+    {
+      "id": "styckesindelning-1",
+      "title": "Styckesindelning",
+      "description": "Lär dig att dela upp en text i stycken.",
+      "icon": "📄",
+      "bonusPoints": 25,
+      "helpText": [
+        "Ett stycke handlar om ETT ämne eller EN tanke.",
+        "Nytt stycke = ny rad + indragning eller blankrad.",
+        "Varje stycke börjar med en inledning och avslutas med en avslutning.",
+        "Bra styckeindelning gör texten lättare att läsa."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vad är ett stycke i en text?",
+          "options": [
+            "En enskild mening",
+            "En grupp meningar som handlar om samma sak",
+            "En rubrik",
+            "En hel berättelse"
+          ],
+          "correctIndex": 1,
+          "explanation": "Ett stycke består av meningar som hör ihop och handlar om samma ämne eller tanke."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "När ska man börja ett nytt stycke?",
+          "options": [
+            "Efter varje mening",
+            "När man byter ämne eller tanke",
+            "Bara i böcker",
+            "Aldrig – text ska flöda ihop"
+          ],
+          "correctIndex": 1,
+          "explanation": "Nytt stycke används när man övergår till ett nytt ämne, en ny tanke eller en ny händelse."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Varje stycke ska handla om ___ ämne.",
+          "answer": "ett",
+          "hint": "Ett stycke = en tanke eller ett ämne.",
+          "explanation": "Principen för styckeindelning är att hålla sig till ett ämne per stycke."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur markerar man ofta ett nytt stycke i handskriven text?",
+          "options": [
+            "Med en stor bokstav mitt i raden",
+            "Med indragning på första raden eller en blankrad",
+            "Med ett utropstecken",
+            "Med fet stil"
+          ],
+          "correctIndex": 1,
+          "explanation": "Nytt stycke markeras med indragning (indenterad första rad) eller en blankrad."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Varför är styckeindelning viktigt?",
+          "options": [
+            "Det gör texten längre",
+            "Det gör texten lättare att läsa och förstå",
+            "Det är ett krav i alla språk",
+            "Det minskar antalet meningar"
+          ],
+          "correctIndex": 1,
+          "explanation": "Styckeindelning hjälper läsaren att följa med i texten och förstå dess struktur."
+        }
+      ]
+    },
+    {
       "id": "sluttest",
       "title": "Sluttest – Grammatik",
       "description": "Testa allt du lärt dig! 30 blandade frågor om grammatik på mellanstadienivå.",

@@ -204,7 +204,7 @@ export default function WorldPage({ params }: Props) {
           </div>
 
         ) : (
-          <div className="space-y-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             {(
               activeTab === "grammar" ? content.grammar
               : activeTab === "reading" ? content.reading
@@ -213,11 +213,12 @@ export default function WorldPage({ params }: Props) {
             ).map((mod, idx, arr) => {
               if (activeTab === "grammar" && mod.id === "sluttest") {
                 return (
-                  <FinalTestCard
-                    key={mod.id}
-                    stage={stage}
-                    progress={getModuleProgress("grammar", mod.id)}
-                  />
+                  <div key={mod.id} className="col-span-1 sm:col-span-2">
+                    <FinalTestCard
+                      stage={stage}
+                      progress={getModuleProgress("grammar", mod.id)}
+                    />
+                  </div>
                 );
               }
               return (
@@ -236,7 +237,7 @@ export default function WorldPage({ params }: Props) {
               );
             })}
             {activeTab === "wordsearch" && (content.wordsearch ?? []).length === 0 && (
-              <div className="card text-center py-10 text-gray-400">
+              <div className="card text-center py-10 text-gray-400 col-span-1 sm:col-span-2">
                 <div className="text-3xl mb-2">🔍</div>
                 <p>Inga moduler tillgängliga ännu.</p>
               </div>
