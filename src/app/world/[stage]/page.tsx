@@ -170,21 +170,67 @@ export default function WorldPage({ params }: Props) {
               <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">Träna svenska och grammatik med roliga spel!</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <Link
-                href={`/world/${stageId}/spel/memory`}
-                className={`block rounded-3xl border-3 bg-white dark:bg-gray-800 transition-all duration-200 hover:-translate-y-1 ${stage.borderClass}`}
-                style={{ boxShadow: "0 4px 0 0 rgba(0,0,0,0.08)" }}
-              >
-                <div className="px-5 py-6 flex items-center gap-4">
-                  <div className={`w-16 h-16 rounded-2xl flex items-center justify-center text-3xl flex-shrink-0 border-3 ${stage.colorClass} border-white/30`}
-                    style={{ boxShadow: "0 3px 0 0 rgba(0,0,0,0.2)" }}>
-                    🃏
+              {/* Memory */}
+              <Link href={`/world/${stageId}/spel/memory`} className="block group rounded-3xl overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-xl"
+                style={{ background: "linear-gradient(135deg, #06b6d4, #0891b2)", boxShadow: "0 4px 0 0 rgba(6,182,212,0.4)" }}>
+                <div className="px-5 py-5">
+                  <div className="flex items-start gap-3 mb-3">
+                    <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center text-2xl flex-shrink-0">🃏</div>
+                    <div>
+                      <h3 className="font-black text-white text-lg leading-tight">Memory</h3>
+                      <p className="text-white/80 text-xs">Para ihop begrepp med förklaring!</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-black text-gray-900 dark:text-gray-100 text-lg">Memory</h3>
-                    <p className="text-gray-500 dark:text-gray-400 text-sm mt-0.5">Para ihop grammatikbegrepp med rätt förklaring</p>
-                    <span className="inline-block mt-2 text-xs font-bold text-gray-400 dark:text-gray-500">Spela nu →</span>
+                  <p className="text-white/90 text-sm font-medium">Lätt (8 kort) • Medel (12 kort) • Svår (18 kort). Hitta alla par!</p>
+                  <span className="inline-block mt-3 text-xs font-bold text-white/70 group-hover:text-white transition-colors">Spela nu →</span>
+                </div>
+              </Link>
+
+              {/* Hänga gubben */}
+              <Link href={`/world/${stageId}/spel/hangman`} className="block group rounded-3xl overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-xl"
+                style={{ background: "linear-gradient(135deg, #f43f5e, #e11d48)", boxShadow: "0 4px 0 0 rgba(244,63,94,0.4)" }}>
+                <div className="px-5 py-5">
+                  <div className="flex items-start gap-3 mb-3">
+                    <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center text-2xl flex-shrink-0">❤️</div>
+                    <div>
+                      <h3 className="font-black text-white text-lg leading-tight">Hänga gubben</h3>
+                      <p className="text-white/80 text-xs">6 liv – gissa rätt bokstav!</p>
+                    </div>
                   </div>
+                  <p className="text-white/90 text-sm font-medium">Gissa grammatikord bokstav för bokstav. Skolvänlig variant med hjärtan!</p>
+                  <span className="inline-block mt-3 text-xs font-bold text-white/70 group-hover:text-white transition-colors">Spela nu →</span>
+                </div>
+              </Link>
+
+              {/* Tidsattack */}
+              <Link href={`/world/${stageId}/spel/tidsattack`} className="block group rounded-3xl overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-xl"
+                style={{ background: "linear-gradient(135deg, #3b82f6, #1d4ed8)", boxShadow: "0 4px 0 0 rgba(59,130,246,0.4)" }}>
+                <div className="px-5 py-5">
+                  <div className="flex items-start gap-3 mb-3">
+                    <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center text-2xl flex-shrink-0">⏱️</div>
+                    <div>
+                      <h3 className="font-black text-white text-lg leading-tight">Tidsattack</h3>
+                      <p className="text-white/80 text-xs">60 sekunder – hur många hinner du?</p>
+                    </div>
+                  </div>
+                  <p className="text-white/90 text-sm font-medium">Grammatikfrågor i rask takt. Snabb som blixten!</p>
+                  <span className="inline-block mt-3 text-xs font-bold text-white/70 group-hover:text-white transition-colors">Spela nu →</span>
+                </div>
+              </Link>
+
+              {/* Samla mynt */}
+              <Link href={`/world/${stageId}/spel/samla-mynt`} className="block group rounded-3xl overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-xl"
+                style={{ background: "linear-gradient(135deg, #f59e0b, #d97706)", boxShadow: "0 4px 0 0 rgba(245,158,11,0.4)" }}>
+                <div className="px-5 py-5">
+                  <div className="flex items-start gap-3 mb-3">
+                    <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center text-2xl flex-shrink-0">🪙</div>
+                    <div>
+                      <h3 className="font-black text-white text-lg leading-tight">Samla mynt</h3>
+                      <p className="text-white/80 text-xs">Rätt svar = samla, fel = hinder!</p>
+                    </div>
+                  </div>
+                  <p className="text-white/90 text-sm font-medium">Spring och samla mynt genom att svara rätt på grammatikfrågor!</p>
+                  <span className="inline-block mt-3 text-xs font-bold text-white/70 group-hover:text-white transition-colors">Spela nu →</span>
                 </div>
               </Link>
             </div>
