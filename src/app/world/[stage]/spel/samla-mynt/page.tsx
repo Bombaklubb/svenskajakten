@@ -276,12 +276,12 @@ function SamlaMyntGame({ stageId, stage, student }: {
                 <div key={i} className="h-1 w-8 bg-white/50 rounded-full" />
               ))}
             </div>
-            {/* Character */}
+            {/* Character — runs right-to-left */}
             <div
               className="absolute bottom-4 text-3xl transition-all duration-150"
               style={{
-                left: `${(coins / TOTAL_COINS) * 75 + 5}%`,
-                transform: feedback === "obstacle" ? "rotate(-20deg)" : "none",
+                right: `${(coins / TOTAL_COINS) * 75 + 5}%`,
+                transform: feedback === "obstacle" ? "scaleX(-1) rotate(-20deg)" : "scaleX(-1)",
               }}
             >
               {char}
@@ -289,13 +289,13 @@ function SamlaMyntGame({ stageId, stage, student }: {
             {/* Feedback animation */}
             {feedback === "coin" && (
               <div className="absolute top-1 text-2xl animate-bounce"
-                style={{ left: `${(coins / TOTAL_COINS) * 75 + 5}%` }}>
+                style={{ right: `${(coins / TOTAL_COINS) * 75 + 5}%` }}>
                 🪙
               </div>
             )}
             {feedback === "obstacle" && (
               <div className="absolute top-1 text-2xl"
-                style={{ left: `${(coins / TOTAL_COINS) * 75 + 5}%` }}>
+                style={{ right: `${(coins / TOTAL_COINS) * 75 + 5}%` }}>
                 🚧
               </div>
             )}

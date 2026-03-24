@@ -97,16 +97,136 @@ interface Props {
   params: Promise<{ stage: string }>;
 }
 
-export default function HangmanPage({ params }: Props) {
+export default function SnogubbenPage({ params }: Props) {
   const { stage: stageId } = use(params);
   const stage = getStage(stageId);
   const [student, setStudent] = useState<StudentData | null>(null);
   useEffect(() => { setStudent(loadStudent()); }, []);
   if (!stage) return notFound();
-  return <HangmanGame stageId={stageId} stage={stage} student={student} />;
+  return <SnogubbenGame stageId={stageId} stage={stage} student={student} />;
 }
 
-function HangmanGame({ stageId, stage, student }: {
+// ── Snowman SVG ───────────────────────────────────────────────────────────────
+// wrongCount 0 = full snowman, 6 = melted puddle
+function Snowman({ wrongCount, isWon }: { wrongCount: number; isWon: boolean }) {
+  const showArms    = wrongCount < 1;
+  const showHat     = wrongCount < 2;
+  const showFace    = wrongCount < 3;
+  const showHead    = wrongCount < 4;
+  const showMiddle  = wrongCount < 5;
+  const showBottom  = wrongCount < 6;
+
+  // Melt factor: how much the bottom squashes
+  const meltY = wrongCount >= 6 ? 8 : 0;
+
+  return (
+    <svg width="160" height="145" viewBox="0 0 160 145" className="mx-auto">
+      {/* --- Puddle (appears at 6 wrong) --- */}
+      {!showBottom && (
+        <ellipse cx="80" cy="135" rx="45" ry="8" fill="#93c5fd" opacity="0.6" />
+      )}
+
+      {/* --- Bottom ball --- */}
+      {showBottom && (
+        <ellipse
+          cx="80" cy={115 + meltY} rx="28" ry={26 - meltY / 2}
+          fill="#e0f2fe" stroke="#7dd3fc" strokeWidth="2"
+        />
+      )}
+
+      {/* --- Middle ball --- */}
+      {showMiddle && (
+        <>
+          <circle cx="80" cy="80" r="19" fill="#e0f2fe" stroke="#7dd3fc" strokeWidth="2" />
+          {/* Buttons on middle */}
+          {showFace && (
+            <>
+              <circle cx="80" cy="74" r="2" fill="#64748b" />
+              <circle cx="80" cy="80" r="2" fill="#64748b" />
+              <circle cx="80" cy="86" r="2" fill="#64748b" />
+            </>
+          )}
+          {/* Scarf */}
+          {showHat && (
+            <path d="M 62 68 Q 80 72 98 68" stroke="#f87171" strokeWidth="5" fill="none" strokeLinecap="round" />
+          )}
+        </>
+      )}
+
+      {/* --- Arms --- */}
+      {showArms && showMiddle && (
+        <>
+          {/* Left arm */}
+          <line x1="61" y1="76" x2="40" y2="64" stroke="#a16207" strokeWidth="3" strokeLinecap="round" />
+          <line x1="40" y1="64" x2="34" y2="56" stroke="#a16207" strokeWidth="2" strokeLinecap="round" />
+          <line x1="40" y1="64" x2="36" y2="58" stroke="#a16207" strokeWidth="2" strokeLinecap="round" />
+          {/* Right arm */}
+          <line x1="99" y1="76" x2="120" y2="64" stroke="#a16207" strokeWidth="3" strokeLinecap="round" />
+          <line x1="120" y1="64" x2="126" y2="56" stroke="#a16207" strokeWidth="2" strokeLinecap="round" />
+          <line x1="120" y1="64" x2="124" y2="58" stroke="#a16207" strokeWidth="2" strokeLinecap="round" />
+        </>
+      )}
+
+      {/* --- Head --- */}
+      {showHead && (
+        <circle cx="80" cy="47" r="15" fill="#e0f2fe" stroke="#7dd3fc" strokeWidth="2" />
+      )}
+
+      {/* --- Face --- */}
+      {showFace && showHead && !isWon && (
+        <>
+          {/* Eyes */}
+          <circle cx="75" cy="44" r="2" fill="#1e293b" />
+          <circle cx="85" cy="44" r="2" fill="#1e293b" />
+          {/* Carrot nose */}
+          <polygon points="80,47 80,52 85,49" fill="#f97316" />
+          {/* Smile */}
+          <path d="M 74 52 Q 80 57 86 52" stroke="#1e293b" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+        </>
+      )}
+
+      {/* --- Happy face when won --- */}
+      {isWon && showHead && (
+        <>
+          <circle cx="75" cy="44" r="2" fill="#1e293b" />
+          <circle cx="85" cy="44" r="2" fill="#1e293b" />
+          <polygon points="80,47 80,52 85,49" fill="#f97316" />
+          <path d="M 73 52 Q 80 58 87 52" stroke="#1e293b" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+          {/* Rosy cheeks */}
+          <circle cx="72" cy="51" r="4" fill="#fca5a5" opacity="0.5" />
+          <circle cx="88" cy="51" r="4" fill="#fca5a5" opacity="0.5" />
+        </>
+      )}
+
+      {/* --- Hat --- */}
+      {showHat && showHead && (
+        <>
+          <rect x="68" y="29" width="24" height="14" rx="2" fill="#1e293b" />
+          <rect x="63" y="31" width="34" height="5" rx="2" fill="#1e293b" />
+          {/* Hat stripe */}
+          <rect x="68" y="36" width="24" height="3" rx="1" fill="#f87171" />
+        </>
+      )}
+
+      {/* --- Sad/melting face for lost state --- */}
+      {!showHead && wrongCount >= 4 && !showBottom && (
+        <text x="70" y="130" fontSize="14" opacity="0.6">😢</text>
+      )}
+
+      {/* --- Snow stars / sparkles --- */}
+      {isWon && (
+        <>
+          <text x="10"  y="30" fontSize="16">❄️</text>
+          <text x="130" y="25" fontSize="14">⭐</text>
+          <text x="15"  y="110" fontSize="12">✨</text>
+          <text x="128" y="100" fontSize="16">❄️</text>
+        </>
+      )}
+    </svg>
+  );
+}
+
+function SnogubbenGame({ stageId, stage, student }: {
   stageId: string;
   stage: ReturnType<typeof getStage> & object;
   student: StudentData | null;
@@ -114,7 +234,6 @@ function HangmanGame({ stageId, stage, student }: {
   const [wordList] = useState(() => shuffle(WORDS[stageId] ?? WORDS.lagstadiet));
   const [wordIndex, setWordIndex] = useState(0);
   const [guessed, setGuessed] = useState<Set<string>>(new Set());
-  const [lives, setLives] = useState(MAX_LIVES);
   const [phase, setPhase] = useState<"playing" | "won" | "lost">("playing");
   const [score, setScore] = useState(0);
   const [round, setRound] = useState(1);
@@ -132,8 +251,7 @@ function HangmanGame({ stageId, stage, student }: {
 
   useEffect(() => {
     if (isWon && phase === "playing") {
-      const bonus = livesLeft * 10;
-      setScore(s => s + 50 + bonus);
+      setScore(s => s + 50 + livesLeft * 10);
       setPhase("won");
     } else if (isLost && phase === "playing") {
       setPhase("lost");
@@ -148,7 +266,6 @@ function HangmanGame({ stageId, stage, student }: {
   const nextWord = useCallback(() => {
     setWordIndex(i => i + 1);
     setGuessed(new Set());
-    setLives(MAX_LIVES);
     setPhase("playing");
     setRound(r => r + 1);
     setShowHint(false);
@@ -157,7 +274,6 @@ function HangmanGame({ stageId, stage, student }: {
   const restart = useCallback(() => {
     setWordIndex(0);
     setGuessed(new Set());
-    setLives(MAX_LIVES);
     setPhase("playing");
     setScore(0);
     setRound(1);
@@ -167,6 +283,10 @@ function HangmanGame({ stageId, stage, student }: {
   const displayWord = current.word.split("").map(char =>
     char === " " ? " " : (guessed.has(char) ? char : "_")
   );
+
+  // Snowman: 0 wrong = fully built, 6 wrong = melted
+  // We build it up as we play correctly — or rather, we show decay with wrong guesses
+  const wrongCount = wrongGuesses.length;
 
   return (
     <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900">
@@ -183,61 +303,44 @@ function HangmanGame({ stageId, stage, student }: {
           </div>
         </div>
 
-        {/* Hearts */}
-        <div className="flex justify-center gap-1 mb-6">
+        {/* Lives as snowflakes */}
+        <div className="flex justify-center gap-1.5 mb-4">
           {Array.from({ length: MAX_LIVES }).map((_, i) => (
-            <span key={i} className={`text-2xl transition-all duration-300 ${i < livesLeft ? "opacity-100 scale-110" : "opacity-20 grayscale"}`}>
-              ❤️
+            <span key={i} className={`text-2xl transition-all duration-300 ${i < livesLeft ? "opacity-100" : "opacity-15 grayscale"}`}>
+              ❄️
             </span>
           ))}
         </div>
 
-        {/* Gallows SVG */}
-        <div className="flex justify-center mb-4">
-          <svg width="160" height="140" viewBox="0 0 160 140" className="text-gray-700 dark:text-gray-300">
-            {/* Base */}
-            <line x1="10" y1="135" x2="150" y2="135" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-            {/* Pole */}
-            <line x1="40" y1="135" x2="40" y2="10" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-            {/* Top beam */}
-            <line x1="40" y1="10" x2="110" y2="10" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-            {/* Rope */}
-            <line x1="110" y1="10" x2="110" y2="30" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-            {/* Head */}
-            {wrongGuesses.length >= 1 && <circle cx="110" cy="42" r="12" stroke="currentColor" strokeWidth="2.5" fill="none" />}
-            {/* Body */}
-            {wrongGuesses.length >= 2 && <line x1="110" y1="54" x2="110" y2="90" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />}
-            {/* Left arm */}
-            {wrongGuesses.length >= 3 && <line x1="110" y1="65" x2="88" y2="80" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />}
-            {/* Right arm */}
-            {wrongGuesses.length >= 4 && <line x1="110" y1="65" x2="132" y2="80" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />}
-            {/* Left leg */}
-            {wrongGuesses.length >= 5 && <line x1="110" y1="90" x2="88" y2="115" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />}
-            {/* Right leg */}
-            {wrongGuesses.length >= 6 && <line x1="110" y1="90" x2="132" y2="115" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />}
-            {/* Sad face when lost */}
-            {isLost && (
-              <>
-                <line x1="105" y1="40" x2="107" y2="42" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                <line x1="107" y1="40" x2="105" y2="42" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                <line x1="113" y1="40" x2="115" y2="42" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                <line x1="115" y1="40" x2="113" y2="42" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                <path d="M 105 49 Q 110 45 115 49" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-              </>
-            )}
-            {/* Happy face when won */}
-            {isWon && (
-              <>
-                <circle cx="106" cy="40" r="1.5" fill="currentColor" />
-                <circle cx="114" cy="40" r="1.5" fill="currentColor" />
-                <path d="M 105 46 Q 110 51 115 46" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-              </>
-            )}
-          </svg>
+        {/* Snowman */}
+        <div className="flex justify-center mb-3">
+          <div className={`rounded-2xl px-4 py-2 transition-colors duration-500 ${
+            isWon ? "bg-blue-50 dark:bg-blue-900/20"
+            : isLost ? "bg-orange-50 dark:bg-orange-900/20"
+            : wrongCount >= 4 ? "bg-amber-50 dark:bg-amber-900/10"
+            : "bg-sky-50 dark:bg-sky-900/10"
+          }`}>
+            <Snowman wrongCount={wrongCount} isWon={isWon} />
+            {/* Status text under snowman */}
+            <p className="text-center text-xs font-bold mt-1">
+              {isWon
+                ? <span className="text-green-600">Snögubben klarade sig! ⛄</span>
+                : isLost
+                  ? <span className="text-orange-500">Snögubben smälte... ☀️</span>
+                  : wrongCount === 0
+                    ? <span className="text-sky-500">Snögubben är hel! ❄️</span>
+                    : wrongCount <= 2
+                      ? <span className="text-blue-500">Snögubben tappar delar...</span>
+                      : wrongCount <= 4
+                        ? <span className="text-amber-500">Snögubben håller på att smälta! 🌡️</span>
+                        : <span className="text-orange-500">Snögubben smälter snabbt! 🔥</span>
+              }
+            </p>
+          </div>
         </div>
 
         {/* Word display */}
-        <div className="flex justify-center flex-wrap gap-2 mb-4">
+        <div className="flex justify-center flex-wrap gap-2 mb-3">
           {displayWord.map((char, i) => (
             char === " " ? (
               <div key={i} className="w-5" />
@@ -253,12 +356,9 @@ function HangmanGame({ stageId, stage, student }: {
         </div>
 
         {/* Hint */}
-        <div className="mb-4 text-center">
+        <div className="mb-3 text-center">
           {!showHint ? (
-            <button
-              onClick={() => setShowHint(true)}
-              className="text-xs text-amber-500 hover:text-amber-600 font-semibold underline"
-            >
+            <button onClick={() => setShowHint(true)} className="text-xs text-amber-500 hover:text-amber-600 font-semibold underline">
               💡 Visa ledtråd
             </button>
           ) : (
@@ -273,9 +373,9 @@ function HangmanGame({ stageId, stage, student }: {
           <div className={`rounded-2xl p-4 mb-4 text-center border-2 ${
             phase === "won"
               ? "bg-green-50 dark:bg-green-900/30 border-green-300 dark:border-green-700"
-              : "bg-red-50 dark:bg-red-900/30 border-red-300 dark:border-red-700"
+              : "bg-orange-50 dark:bg-orange-900/30 border-orange-300 dark:border-orange-700"
           }`}>
-            <div className="text-3xl mb-1">{phase === "won" ? "🎉" : "😢"}</div>
+            <div className="text-3xl mb-1">{phase === "won" ? "🎉" : "☀️"}</div>
             <p className="font-black text-gray-900 dark:text-gray-100 text-base">
               {phase === "won" ? `Rätt! +${50 + livesLeft * 10}p` : `Ordet var: ${current.word}`}
             </p>
@@ -313,7 +413,7 @@ function HangmanGame({ stageId, stage, student }: {
                     isCorrect
                       ? "bg-green-100 dark:bg-green-900/40 border-green-400 text-green-700 dark:text-green-300"
                       : isWrong
-                        ? "bg-red-100 dark:bg-red-900/40 border-red-300 text-red-400 dark:text-red-600 opacity-40"
+                        ? "bg-orange-100 dark:bg-orange-900/40 border-orange-300 text-orange-400 dark:text-orange-600 opacity-40"
                         : "bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-600 text-gray-800 dark:text-gray-200 hover:border-gray-400 active:scale-90"
                   }`}
                 >

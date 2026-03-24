@@ -186,18 +186,18 @@ export default function WorldPage({ params }: Props) {
                 </div>
               </Link>
 
-              {/* Hänga gubben */}
+              {/* Snögubben */}
               <Link href={`/world/${stageId}/spel/hangman`} className="block group rounded-3xl overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-xl"
-                style={{ background: "linear-gradient(135deg, #f43f5e, #e11d48)", boxShadow: "0 4px 0 0 rgba(244,63,94,0.4)" }}>
+                style={{ background: "linear-gradient(135deg, #38bdf8, #0ea5e9)", boxShadow: "0 4px 0 0 rgba(56,189,248,0.4)" }}>
                 <div className="px-5 py-5">
                   <div className="flex items-start gap-3 mb-3">
-                    <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center text-2xl flex-shrink-0">❤️</div>
+                    <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center text-2xl flex-shrink-0">⛄</div>
                     <div>
-                      <h3 className="font-black text-white text-lg leading-tight">Hänga gubben</h3>
-                      <p className="text-white/80 text-xs">6 liv – gissa rätt bokstav!</p>
+                      <h3 className="font-black text-white text-lg leading-tight">Snögubben</h3>
+                      <p className="text-white/80 text-xs">Rädda snögubben – gissa rätt!</p>
                     </div>
                   </div>
-                  <p className="text-white/90 text-sm font-medium">Gissa grammatikord bokstav för bokstav. Skolvänlig variant med hjärtan!</p>
+                  <p className="text-white/90 text-sm font-medium">Gissa grammatikord bokstav för bokstav. Fel svar smälter snögubben!</p>
                   <span className="inline-block mt-3 text-xs font-bold text-white/70 group-hover:text-white transition-colors">Spela nu →</span>
                 </div>
               </Link>
