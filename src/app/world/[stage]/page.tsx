@@ -28,7 +28,7 @@ interface Props {
   params: Promise<{ stage: string }>;
 }
 
-type Tab = "grammar" | "reading" | "spelling" | "wordsearch" | "regler";
+type Tab = "grammar" | "reading" | "spelling" | "wordsearch" | "regler" | "spel";
 
 export default function WorldPage({ params }: Props) {
   const { stage: stageId } = use(params);
@@ -82,6 +82,7 @@ export default function WorldPage({ params }: Props) {
     { id: "spelling",   label: "✏️ Stavning" },
     { id: "regler",     label: "📐 Språkregler" },
     { id: "wordsearch", label: "🔍 Ordsökning" },
+    { id: "spel",       label: "🎮 Spel" },
   ];
 
   return (
@@ -160,8 +161,37 @@ export default function WorldPage({ params }: Props) {
           </div>
         </BlurFade>
 
-        {/* Language rules tab */}
-        {activeTab === "regler" ? (
+        {/* Spel tab */}
+        {activeTab === "spel" ? (
+          <div>
+            <div className="mb-6 text-center">
+              <div className="text-4xl mb-2">🎮</div>
+              <h2 className="text-xl font-black text-gray-900 dark:text-gray-100">Spel</h2>
+              <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">Träna svenska och grammatik med roliga spel!</p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <Link
+                href={`/world/${stageId}/spel/memory`}
+                className={`block rounded-3xl border-3 bg-white dark:bg-gray-800 transition-all duration-200 hover:-translate-y-1 ${stage.borderClass}`}
+                style={{ boxShadow: "0 4px 0 0 rgba(0,0,0,0.08)" }}
+              >
+                <div className="px-5 py-6 flex items-center gap-4">
+                  <div className={`w-16 h-16 rounded-2xl flex items-center justify-center text-3xl flex-shrink-0 border-3 ${stage.colorClass} border-white/30`}
+                    style={{ boxShadow: "0 3px 0 0 rgba(0,0,0,0.2)" }}>
+                    🃏
+                  </div>
+                  <div>
+                    <h3 className="font-black text-gray-900 dark:text-gray-100 text-lg">Memory</h3>
+                    <p className="text-gray-500 dark:text-gray-400 text-sm mt-0.5">Para ihop grammatikbegrepp med rätt förklaring</p>
+                    <span className="inline-block mt-2 text-xs font-bold text-gray-400 dark:text-gray-500">Spela nu →</span>
+                  </div>
+                </div>
+              </Link>
+            </div>
+          </div>
+
+        ) : /* Language rules tab */
+        activeTab === "regler" ? (
           <div className="space-y-4">
             {rules.length === 0 ? (
               <div className="card text-center py-8 text-gray-400">Laddar regler...</div>
