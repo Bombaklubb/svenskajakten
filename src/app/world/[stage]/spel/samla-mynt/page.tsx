@@ -281,7 +281,7 @@ function SamlaMyntGame({ stageId, stage, student }: {
               className="absolute bottom-4 text-3xl transition-all duration-150"
               style={{
                 left: `${(coins / TOTAL_COINS) * 75 + 5}%`,
-                transform: feedback === "obstacle" ? "rotate(-20deg)" : "none",
+                transform: feedback === "obstacle" ? "scaleX(-1) rotate(-20deg)" : "scaleX(-1)",
               }}
             >
               {char}
