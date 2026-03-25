@@ -752,6 +752,257 @@
       ]
     },
     {
+      "id": "liknelser-hog-1",
+      "title": "Liknelser – analys och effekt",
+      "description": "Identifiera, tolka och analysera liknelsers funktion i text",
+      "icon": "🌊",
+      "bonusPoints": 30,
+      "helpText": [
+        "En liknelse jämför två företeelser med hjälp av 'som' (eller ibland 'såsom', 'likt').",
+        "Liknelsens två delar kallas: tenorn (det som beskrivs) och fordonet (det man jämför med).",
+        "Exempel: 'Hennes leende var som solsken' – tenorn är 'leendet', fordonet är 'solskenet'.",
+        "Fråga dig: Vilken egenskap lyfts fram? Vilken känsla skapar liknelsen hos läsaren?"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "I liknelsen 'Hennes ord föll som knivstick' – vad är tenorn (det som beskrivs)?",
+          "options": [
+            "Knivstick",
+            "Hennes ord",
+            "Fallet",
+            "Smärtan"
+          ],
+          "correctIndex": 1,
+          "explanation": "Tenorn är det som beskrivs: 'hennes ord'. Fordonet (jämförelseobjektet) är 'knivstick'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken effekt skapar liknelsen 'Tystnaden låg tung som ett täcke av bly'?",
+          "options": [
+            "Den visar att rummet var kallt.",
+            "Den förmedlar en känsla av tyngd, instängdhet och obehag.",
+            "Den beskriver ett täcke i rummet.",
+            "Den visar att täcket var av metall."
+          ],
+          "correctIndex": 1,
+          "explanation": "Bly är ett av de tyngsta metallerna. Liknelsen förmedlar att tystnaden upplevdes som överväldigande och tryckande."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad skiljer en liknelse från en metafor?",
+          "options": [
+            "Liknelsen är alltid mer poetisk.",
+            "Liknelsen använder ett jämförelseord (som/likt), metaforen identifierar direkt.",
+            "Metaforen används bara i prosa, liknelsen i poesi.",
+            "Det är ingen egentlig skillnad."
+          ],
+          "correctIndex": 1,
+          "explanation": "Liknelse: 'Livet är som en resa'. Metafor: 'Livet är en resa'. Liknelsen jämför, metaforen identifierar."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fordonet i liknelsen 'Hans skratt ekade som dunder' är: ___",
+          "answer": "dunder",
+          "explanation": "Fordonet (vehicle) är det man jämför med – det som ger egenskapen. Här är det 'dunder' som ger skrattet sin karaktär."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Varför är liknelsen mer explicit än metaforen?",
+          "options": [
+            "Liknelsen är längre.",
+            "Liknelsen signalerar att det handlar om en jämförelse med 'som', metaforen gör det inte.",
+            "Liknelsen är svårare att förstå.",
+            "Liknelsen används bara i faktatexter."
+          ],
+          "correctIndex": 1,
+          "explanation": "Med 'som' markerar man tydligt att det är en jämförelse. Metaforen kräver att läsaren själv tolkar den bildliga betydelsen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken liknelse skapar starkast känsla av ensamhet och kyla?",
+          "options": [
+            "Han stod ensam som en stjärna på himlen.",
+            "Han stod ensam som ett träd mitt i en öken.",
+            "Han stod ensam som en sten.",
+            "Han stod ensam som en fisk i havet."
+          ],
+          "correctIndex": 1,
+          "explanation": "Öknen förknippas med torka, isolering och obarmhärtighet. Trädet i öknen är en kraftfull bild av total ensamhet."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken stilistisk term beskriver en liknelse som blivit så vanlig att den förlorat sin ursprungliga kraft?",
+          "options": [
+            "Hyperbol",
+            "Kliché",
+            "Anafor",
+            "Eufemism"
+          ],
+          "correctIndex": 1,
+          "explanation": "En kliché är ett slitet uttryck. Liknelser som 'tyst som graven' och 'stark som en oxe' är klichéer – de överraskar inte längre."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Läs meningen: 'Minnena strömmade över honom som en flod under vårflod.' Vilket är fordonets viktigaste egenskap i sammanhanget?",
+          "options": [
+            "Att vatten är blött.",
+            "Att floden är bred.",
+            "Att floden är okontrollerbar och överväldigande.",
+            "Att floden rinner snabbt."
+          ],
+          "correctIndex": 2,
+          "explanation": "Poängen med jämförelsen är att minnena kommer okontrollerat och överväldigande – precis som en flod i vårflod."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Skapa en liknelse: 'Hennes ilska var ___ som ett vulkanutbrott.'",
+          "answer": "het",
+          "alternativeAnswers": ["våldsam", "explosiv", "kraftfull", "vild"],
+          "hint": "Tänk på en egenskap som vulkanutbrott och ilska delar.",
+          "explanation": "Flera svar fungerar – det viktiga är att egenskapen logiskt kopplar tenorn (ilskan) och fordonet (vulkanutbrott)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "I en litterär analys – vad bör man alltid ta upp när man analyserar en liknelse?",
+          "options": [
+            "Hur lång meningen är.",
+            "Vilken egenskap som lyfts fram och vilken känsla eller effekt liknelsen skapar.",
+            "Om orden rimmar med varandra.",
+            "Hur gammal liknelsen är."
+          ],
+          "correctIndex": 1,
+          "explanation": "En bra liknelseanalys identifierar tenorn, fordonet, den gemensamma egenskapen (ground) och effekten på läsaren."
+        }
+      ]
+    },
+    {
+      "id": "metaforer-hog-1",
+      "title": "Metaforer – analys och tolkning",
+      "description": "Fördjupning i metaforens funktion, typer och litterära effekt",
+      "icon": "🎭",
+      "bonusPoints": 30,
+      "helpText": [
+        "En metafor identifierar ett fenomen med ett annat utan 'som': 'Livet är en resa'.",
+        "Metaforer är centrala i både vardagsspråk och litteratur.",
+        "Döda metaforer: uttryck vi inte längre uppfattar som bildliga (bordsben, flaskhals).",
+        "Levande metaforer: skapar en ny, överraskande bild för läsaren."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vad är en 'utvidgad metafor' (extended metaphor)?",
+          "options": [
+            "En metafor med många ord.",
+            "En metafor som återkommer och utvecklas genom hela texten.",
+            "En metafor som är svår att förstå.",
+            "En metafor hämtad från en annan kultur."
+          ],
+          "correctIndex": 1,
+          "explanation": "En utvidgad metafor byggs ut successivt. T.ex. om en text genomgående liknar livet vid ett schackspel och återkommer till drag, regler och motspelare."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken effekt har metaforen 'Orden var vapen i hans mun'?",
+          "options": [
+            "Den visar att personen talar högt.",
+            "Den förmedlar att orden är destruktiva och används för att skada.",
+            "Den beskriver att personen är militär.",
+            "Den visar att han har en snygg röst."
+          ],
+          "correctIndex": 1,
+          "explanation": "Vapnet kopplas till skada och makt. Metaforen antyder att personen medvetet använder språket för att attackera eller skada."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är en 'död metafor'? Välj bästa exempel.",
+          "options": [
+            "Livet är en resa.",
+            "Bordsben.",
+            "Havet av sorg.",
+            "Nattens drottning."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Bordsben' är en död metafor – vi tänker inte på att bord har 'ben' som djur. Levande metaforer skapar fortfarande bilder."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Identifiera metaforen i meningen: 'Hennes karriär tog fart och hon nådde toppen.' Skriv metaforen: ___",
+          "answer": "tog fart",
+          "alternativeAnswers": ["nådde toppen", "toppen"],
+          "explanation": "Både 'tog fart' (rörelse/acceleration) och 'nådde toppen' (bergsklättring) är döda metaforer för karriärutveckling."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "I Shakespeares 'Hela världen är en scen' – vilken är metaforens viktigaste implikation?",
+          "options": [
+            "Att världen är ett teater­hus.",
+            "Att livet är ett spel med roller, manus och akter vi spelar upp.",
+            "Att skådespelare är viktigare än andra.",
+            "Att Shakespeare gillade teater."
+          ],
+          "correctIndex": 1,
+          "explanation": "Metaforen antyder att människor spelar roller, att livet har en dramaturgi och att vi alla är aktörer i ett spel vi inte helt kontrollerar."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Varför är metaforer mer kraftfulla än direkta beskrivningar?",
+          "options": [
+            "De är kortare.",
+            "De aktiverar läsarens fantasi och skapar starkare associationer.",
+            "De är lättare att förstå.",
+            "De kräver mindre kunskap av läsaren."
+          ],
+          "correctIndex": 1,
+          "explanation": "Metaforer aktiverar ett helt nätverk av associationer. 'Han är ett rovdjur' väcker mer än 'han är farlig' – vi ser, hör och känner rovdjuret."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad kallas det när man blandar ihop två inkompatibla metaforer, t.ex. 'Vi måste navigera dessa mörka vatten till fots'?",
+          "options": [
+            "Utvidgad metafor",
+            "Blandad metafor (mixed metaphor)",
+            "Kliché",
+            "Hyperbol"
+          ],
+          "correctIndex": 1,
+          "explanation": "En blandad metafor uppstår när man omedvetet blandar bilder från olika metaforiska domäner – det skapar en logisk orimlighet."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur skiljer man en konceptuell metafor från en litterär metafor?",
+          "options": [
+            "Konceptuella metaforer finns bara i böcker.",
+            "Konceptuella metaforer strukturerar vårt tänkande (t.ex. 'argument är krig'), litterära metaforer skapas medvetet i text.",
+            "Litterära metaforer är alltid vackrare.",
+            "Det är ingen skillnad."
+          ],
+          "correctIndex": 1,
+          "explanation": "Lakoff & Johnson visade att vi tänker i metaforer: vi 'angriper' argument, 'försvarar' ståndpunkter, 'vinner' debatter – allt krig-metaforer."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i fordonet i metaforen: 'Hoppet är det sista ___ mot förtvivlan.'",
+          "answer": "försvaret",
+          "alternativeAnswers": ["skyddet", "vapnet", "värnet", "bulvarket"],
+          "hint": "Tänk på något som skyddar mot något farligt.",
+          "explanation": "Metaforer med krig/försvar är vanliga för att beskriva inre psykologiska tillstånd."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "I en litterär analys – hur ska man presentera sin tolkning av en metafor?",
+          "options": [
+            "Säga att det är en metafor och gå vidare.",
+            "Identifiera metaforen, förklara vad den jämför och analysera vilken effekt den skapar i textens helhet.",
+            "Hitta alla metaforer i texten och lista dem.",
+            "Förklara om man tycker metaforen är bra eller dålig."
+          ],
+          "correctIndex": 1,
+          "explanation": "En fullständig analys: namn på figuren → vad som jämförs → vilken egenskap som lyfts → vilken effekt det ger i kontexten."
+        }
+      ]
+    },
+    {
       "id": "sluttest",
       "title": "Sluttest – Grammatik",
       "description": "Testa allt du lärt dig! 30 blandade frågor om grammatik på högstadienivå.",

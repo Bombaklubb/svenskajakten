@@ -655,6 +655,256 @@
       ]
     },
     {
+      "id": "liknelser-gym-1",
+      "title": "Liknelser – retorik och stilistik",
+      "description": "Retorisk analys av liknelsens funktion i argumenterande och litterär text",
+      "icon": "🌊",
+      "bonusPoints": 35,
+      "helpText": [
+        "Liknelsen (simile) jämför med 'som', 'likt' eller 'såsom' och synliggör jämförelsen explicit.",
+        "Tenorn = det som beskrivs. Fordonet = det man jämför med. Ground = den gemensamma egenskapen.",
+        "I retoriken kan liknelser fungera som bevis (logos), väcka känslor (pathos) eller stärka trovärdighet (ethos).",
+        "Analysera alltid: Vad jämförs? Vilken egenskap lyfts? Vilken effekt på mottagaren? Passar det i kontexten?"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilka tre termer används för att analysera en liknelses struktur?",
+          "options": [
+            "Tes, antites, syntes",
+            "Tenorn, fordonet och ground",
+            "Subjekt, predikat, objekt",
+            "Logos, pathos, ethos"
+          ],
+          "correctIndex": 1,
+          "explanation": "Tenorn = det beskrivna. Fordonet = det man jämför med. Ground = den gemensamma egenskapen som motiverar jämförelsen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "I Churchills tal: 'Vi ska kämpa på stränderna, vi ska kämpa … vi ska aldrig ge upp' – om man skulle lägga till 'som en kustfort som vägrar falla' – vilken retorisk funktion skulle liknelsen fylla?",
+          "options": [
+            "Logos – ge ett logiskt argument för kriget.",
+            "Pathos – förstärka känslan av uthållighet och beslutsamhet.",
+            "Ethos – visa att Churchill är pålitlig.",
+            "Ironi – distansera sig från budskapet."
+          ],
+          "correctIndex": 1,
+          "explanation": "Liknelsen förstärker det emotionella budskapet – uthålligheten och beslutsamheten – och skapar en stark bild av motstånd."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad skiljer en konventionell liknelse från en originell?",
+          "options": [
+            "Konventionella liknelser är alltid sämre.",
+            "Konventionella liknelser är välkända och förväntade (klichéer); originella skapar nya, oväntade kopplingar.",
+            "Originella liknelser används bara av professionella författare.",
+            "Det finns ingen skillnad."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Tyst som graven' är konventionell – den överraskar inte. En originell liknelse som 'Tystnaden lade sig som ett lager aska' skapar en ny, oväntad bild."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "I Kafkas Förvandlingen beskrivs Gregor som ett insekt. Om texten istället hade skrivit 'han kände sig lik ett insekt' hade det varit en ___ istället för metafor.",
+          "answer": "liknelse",
+          "explanation": "Kafka väljer medvetet metaforen (han ÄR ett insekt) snarare än liknelsen – det skapar en starkare känsla av faktisk förvandling."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Analysera: 'Hennes tålamod smälte bort likt snö i aprilsol.' Vad kommunicerar fordonet (aprilsol)?",
+          "options": [
+            "Att det var vår och hon var glad.",
+            "Att tålamodet försvann snabbt och oväntat, påskyndat av något externt.",
+            "Att hon befann sig utomhus.",
+            "Att hon hade tålamod med vädret."
+          ],
+          "correctIndex": 1,
+          "explanation": "Aprilsolen smälter snö hastigt och oundvikligt – fordonet kommunicerar både snabbheten och att en yttre faktor orsakade försvinnandet."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Varför kan en liknelse vara retoriskt effektivare än en metafor i ett argumenterande sammanhang?",
+          "options": [
+            "Liknelsen är alltid kortare.",
+            "Liknelsens explicita 'som' signalerar att det är en jämförelse, vilket gör att publiken lättare accepterar den utan att känna sig manipulerad.",
+            "Metaforer är förbjudna i retorik.",
+            "Liknelser är lättare att förstå än metaforer."
+          ],
+          "correctIndex": 1,
+          "explanation": "Metaforen identifierar direkt (mer manipulativ). Liknelsens 'som' signalerar: 'detta är en jämförelse, inte ett faktapåstående' – det kan uppfattas som mer ärligt."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad innebär begreppet 'tenor–vehicle tension' i stilistisk analys?",
+          "options": [
+            "Att liknelsen skapar en musikalisk spänning.",
+            "Den kreativa spänningen mellan de jämförda elementen – ju mer oväntad kopplingen, desto starkare bild.",
+            "Att tenorn alltid är viktigare än fordonet.",
+            "Att bra liknelser alltid är långa."
+          ],
+          "correctIndex": 1,
+          "explanation": "En stark liknelse har en viss semantisk avstånd mellan tenor och fordon. Om de är för lika tappar liknelsen kraft; om de är totalt orelaterade tappar den relevans."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "I Toni Morrisons prosa förekommer: 'Slavery was like a scar that never healed.' Vad tillför 'never healed' i analysen?",
+          "options": [
+            "Det visar att personen var sjuk.",
+            "Det utvidgar liknelsen till att inkludera det permanenta och långvariga traumat – inte bara den omedelbara smärtan.",
+            "Det visar att Morrison inte gillar kirurgi.",
+            "Det är ett retoriskt fel – liknelser ska vara korta."
+          ],
+          "correctIndex": 1,
+          "explanation": "Tillägget 'never healed' utvidgar liknelsen och betonar slaveriets bestående psykologiska och kulturella effekter – traumat läker aldrig helt."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "En liknelse där jämförelsen sträcker sig över flera meningar eller en hel text kallas en ___ liknelse.",
+          "answer": "utvidgad",
+          "alternativeAnswers": ["förlängd", "extended"],
+          "explanation": "En utvidgad (extended) liknelse utvecklar jämförelsen stegvis och skapar en sammanhängande bild genom texten."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "I en gymnasieuppsats – vad bör en komplett analys av en liknelse innehålla?",
+          "options": [
+            "Citera liknelsen och säga vad som jämförs.",
+            "Identifiera tenor/fordon/ground, analysera den retoriska eller estetiska effekten, och koppla till textens övergripande tema eller syfte.",
+            "Förklara om man tycker liknelsen är vacker.",
+            "Lista alla liknelser i texten."
+          ],
+          "correctIndex": 1,
+          "explanation": "En mogen analys går från identifiering till tolkning till funktion: vad jämförs → varför just detta fordon → vilken effekt i kontexten → hur det bidrar till textens helhet."
+        }
+      ]
+    },
+    {
+      "id": "metaforer-gym-1",
+      "title": "Metaforer – konceptuell och retorisk analys",
+      "description": "Djupanalys av metaforens kognitiva, litterära och retoriska dimensioner",
+      "icon": "🎭",
+      "bonusPoints": 35,
+      "helpText": [
+        "Metaforen identifierar A med B utan jämförelseord: 'Livet är en resa'.",
+        "Konceptuella metaforer (Lakoff & Johnson) strukturerar vårt tänkande, t.ex. 'ARGUMENT ÄR KRIG'.",
+        "Levande metaforer skapar nya bilder; döda metaforer har förlorat sin bildliga kraft.",
+        "I retorik kan metaforer rama in frågor (framing), väcka känslor och styra tolkningar."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vad hävdar Lakoff & Johnson i 'Metaphors We Live By' (1980)?",
+          "options": [
+            "Metaforer finns bara i poesi och skönlitteratur.",
+            "Metaforer är grundläggande för hur vi förstår och strukturerar verkligheten, inte bara ett stilistiskt ornament.",
+            "Alla metaforer är döda och bör undvikas.",
+            "Metaforer är universella och har samma innebörd i alla kulturer."
+          ],
+          "correctIndex": 1,
+          "explanation": "Lakoff & Johnson visade att konceptuella metaforer som 'TID ÄR PENGAR' (slösa tid, spara tid, investera i) styr hur vi tänker och handlar i vardagen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Ge ett exempel på en konceptuell metafor och dess lingvistiska uttryck.",
+          "options": [
+            "KÄRLEK ÄR ETT ÄVENTYR → 'Vi är vid ett vägskäl', 'Vi tar det steg för steg', 'Vi har kommit långt'.",
+            "KÄRLEK ÄR VACKER → 'Hon är vacker som en blomma'.",
+            "KÄRLEK ÄR VARMT → 'Han är varm som en pälskappa'.",
+            "KÄRLEK ÄR RÖD → 'Hennes kinder rodnade'."
+          ],
+          "correctIndex": 0,
+          "explanation": "KÄRLEK ÄR ETT ÄVENTYR/RESA är en konceptuell metafor som ger upphov till hela familjer av uttryck om att 'navigera', 'välja väg' och 'nå destinationer' i relationer."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad innebär 'framing' med metaforer i politisk retorik?",
+          "options": [
+            "Att sätta en bild i en ram.",
+            "Att använda metaforer för att styra hur en fråga uppfattas, t.ex. 'brottslighet som sjukdom' vs 'brottslighet som krig'.",
+            "Att citera andra politiker.",
+            "Att använda statistik i retoriken."
+          ],
+          "correctIndex": 1,
+          "explanation": "Forskning visar att om brottslighet framas som 'ett djur som härjar' föredrar folk krafttag; framas det som 'en sjukdom' föredrar folk rehabilitering."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Paul Ricœur menar att metaforens kreativa kraft uppstår i spänningen mellan den ___ och den bildliga betydelsen.",
+          "answer": "bokstavliga",
+          "alternativeAnswers": ["literala", "egentliga", "direkta"],
+          "explanation": "Det är just spänningen – att bokstavlig läsning ger absurditet men bildlig läsning ger mening – som skapar metaforens kreativa kraft."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur skiljer sig en ontologisk metafor från en strukturell metafor (Lakoff & Johnson)?",
+          "options": [
+            "Ontologiska metaforer ger abstrakta fenomen fysisk substans (sinnet är en behållare); strukturella låter ett begrepp förstås via ett annat.",
+            "Ontologiska metaforer används bara i filosofi.",
+            "Strukturella metaforer är alltid döda.",
+            "Det är ingen skillnad – de är synonyma."
+          ],
+          "correctIndex": 0,
+          "explanation": "Ontologisk: 'sinnet är en behållare' → idéer kan 'komma in', 'försvinna', 'rymmas'. Strukturell: 'ARGUMENT ÄR KRIG' → man 'angriper', 'försvarar', 'vinner'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Derrida menar att västerländsk filosofi präglas av 'vita metaforer'. Vad avses?",
+          "options": [
+            "Metaforer om vit färg.",
+            "Filosofiska begrepp som ursprungligen var metaforer men glömts bort som sådana, vilket döljer deras konstruerade karaktär.",
+            "Metaforer som är oskyldiga och neutrala.",
+            "Metaforer som används av vita filosofer."
+          ],
+          "correctIndex": 1,
+          "explanation": "Derrida: Begrepp som 'begreppet själv' (begrippa = ta med handen) är metaforer vars ursprung glömts. Filosofin tror sig tala rent, men talar alltid bildligt."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken effekt har en utvidgad metafor (extended metaphor) i en roman?",
+          "options": [
+            "Den gör texten längre.",
+            "Den skapar ett sammanhängande bildspråk som ger djup och tematisk koherens – läsaren bygger upp en komplex bild gradvis.",
+            "Den förvirrar läsaren.",
+            "Den används bara i poesi."
+          ],
+          "correctIndex": 1,
+          "explanation": "T.ex. Fitzgeralds 'Den store Gatsby' använder 'det gröna ljuset' genomgående som metafor för det omöjliga hoppet – det byggs upp och förstärks successivt."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad innebär begreppet 'aptness' (lämplighet) i metaforteori?",
+          "options": [
+            "Att metaforen är vacker.",
+            "Att metaforen är lätt att förstå.",
+            "Hur väl fordonets associationer matchar och berikar förståelsen av tenorn i kontexten.",
+            "Att metaforen är tillräckligt lång."
+          ],
+          "correctIndex": 2,
+          "explanation": "En apt metafor för en politiker: 'Han är en orm' – om kontexten handlar om svek och duplicitet. Samma metafor om en zoolog vore olämplig."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "I Aristoteles retorik anses metaforer vara ett tecken på ___.",
+          "answer": "genialitet",
+          "alternativeAnswers": ["intelligens", "vältalighet", "talang", "skicklighet"],
+          "hint": "Aristoteles ansåg att förmågan att se likheter kräver en speciell egenskap.",
+          "explanation": "Aristoteles: 'Det är av stor vikt att man behärskar metaforen – det är det enda som inte kan läras av en annan, det är ett tecken på genialitet.'"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "I en gymnasieanalys av metafor – vad ska man undvika?",
+          "options": [
+            "Att citera texten.",
+            "Att stanna vid identifiering ('här finns en metafor') utan att analysera funktion, effekt och koppling till tema.",
+            "Att använda begreppen tenor och fordon.",
+            "Att koppla metaforen till textens tema."
+          ],
+          "correctIndex": 1,
+          "explanation": "En ytlig analys stannar vid 'detta är en metafor'. En mogen analys frågar: Varför just detta? Vilken effekt? Hur bidrar det till textens helhet?"
+        }
+      ]
+    },
+    {
       "id": "sluttest",
       "title": "Sluttest – Grammatik",
       "description": "Testa allt du lärt dig! 30 blandade frågor om grammatik på gymnasienivå.",

@@ -1557,6 +1557,250 @@
       ]
     },
     {
+      "id": "liknelser-mel-1",
+      "title": "Liknelser",
+      "description": "Jämförelser med ordet 'som' som gör språket mer levande",
+      "icon": "🌊",
+      "bonusPoints": 25,
+      "helpText": [
+        "En liknelse är en jämförelse där man säger att något liknar något annat.",
+        "Man använder nästan alltid ordet 'som': 'Han sprang som vinden.'",
+        "Liknelser gör texten mer bildlig och levande.",
+        "Exempel: 'Hennes röst var mjuk som sammet', 'Tyst som en mus'."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening innehåller en liknelse?",
+          "options": [
+            "Hunden sover på mattan.",
+            "Han är stark som en björn.",
+            "Det regnar utomhus.",
+            "Boken låg på bordet."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Stark som en björn' är en liknelse – styrkan jämförs med en björns med hjälp av ordet 'som'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad jämförs i liknelsen: 'Hon sjunger som en fågel'?",
+          "options": [
+            "Hon jämförs med en fågel i utseende.",
+            "Hennes sång jämförs med en fågels sång.",
+            "Hon flyger som en fågel.",
+            "Hon äter som en fågel."
+          ],
+          "correctIndex": 1,
+          "explanation": "Liknelsen handlar om sången – hennes röst jämförs med en fågels vackra sång."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i ordet som saknas: 'Havet var lugnt ___ en spegel.'",
+          "answer": "som",
+          "explanation": "Liknelser bildas med ordet 'som'. Havets lugn jämförs med en spegels glatta yta."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening innehåller INTE en liknelse?",
+          "options": [
+            "Han sprang som en gepard.",
+            "Hon är tyst som natten.",
+            "Solen skiner starkt idag.",
+            "Barnet sov som en stock."
+          ],
+          "correctIndex": 2,
+          "explanation": "'Solen skiner starkt idag' är en vanlig beskrivning, inte en jämförelse."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder liknelsen 'snabb som en blixt'?",
+          "options": [
+            "Personen lyser i mörkret.",
+            "Personen är elektrisk.",
+            "Personen är extremt snabb.",
+            "Personen låter högt."
+          ],
+          "correctIndex": 2,
+          "explanation": "Blixten är känd för att vara otroligt snabb, så liknelsen betyder att någon är mycket snabb."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i: 'Han var modig ___ ett lejon.'",
+          "answer": "som",
+          "explanation": "Liknelsen skapas med 'som'. Modigheten jämförs med ett lejons mod."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken liknelse beskriver att någon är mycket lugn och trygg?",
+          "options": [
+            "Lugn som ett åskväder.",
+            "Lugn som en filbunke.",
+            "Lugn som en storm.",
+            "Lugn som en tornado."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Lugn som en filbunke' är ett vanligt uttryck för att beskriva total lugn och ro."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Varför använder man liknelser i en text?",
+          "options": [
+            "För att göra texten längre.",
+            "För att förvirra läsaren.",
+            "För att göra texten mer levande och målande.",
+            "För att visa att man kan grammatik."
+          ],
+          "correctIndex": 2,
+          "explanation": "Liknelser skapar bilder i läsarens huvud och gör texten mer intressant och levande."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg liknelsen i rätt ordning:",
+          "words": ["Hennes", "ögon", "glittrade", "som", "stjärnor", "."],
+          "correctOrder": [0, 1, 2, 3, 4, 5],
+          "explanation": "'Hennes ögon glittrade som stjärnor' är en liknelse – ögonen jämförs med stjärnors glitter."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket alternativ är en liknelse som beskriver att någon är mycket smal?",
+          "options": [
+            "Tunn som ett spöke.",
+            "Tunn som ett papper.",
+            "Tunn som ett berg.",
+            "Tunn som en elefant."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Tunn som ett papper' är en känd liknelse för att beskriva extrem tunnhet."
+        }
+      ]
+    },
+    {
+      "id": "metaforer-mel-1",
+      "title": "Metaforer",
+      "description": "Bildliga uttryck som säger att något ÄR något annat",
+      "icon": "🎭",
+      "bonusPoints": 25,
+      "helpText": [
+        "En metafor är ett bildligt uttryck där man säger att något ÄR något annat – utan 'som'.",
+        "Exempel: 'Han är ett lejon' (inte 'Han är stark som ett lejon').",
+        "Metaforer gör texten mer kraftfull och bildrik.",
+        "Skillnad: Liknelse = 'som', Metafor = inget 'som', man säger direkt att det ÄR något annat."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är en metafor (inte en liknelse)?",
+          "options": [
+            "Han springer som vinden.",
+            "Han ÄR en storm av energi.",
+            "Han är lika snabb som en gepard.",
+            "Han springer snabbt."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Han är en storm av energi' är en metafor – man säger direkt att han ÄR en storm, utan 'som'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är skillnaden mellan en liknelse och en metafor?",
+          "options": [
+            "Det är ingen skillnad, de betyder samma sak.",
+            "Liknelsen använder 'som', metaforen säger att något direkt ÄR något annat.",
+            "Metaforen använder 'som', liknelsen gör det inte.",
+            "Metaforer finns bara i poesi."
+          ],
+          "correctIndex": 1,
+          "explanation": "Liknelse: 'snabb som vinden'. Metafor: 'Han är vinden'. Metaforen är mer direkt och kraftfull."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder metaforen: 'Hon har ett hjärta av guld'?",
+          "options": [
+            "Hennes hjärta är gjort av äkta guld.",
+            "Hon är snäll, generös och omtänksam.",
+            "Hon älskar guldsaker.",
+            "Hon är dyr att umgås med."
+          ],
+          "correctIndex": 1,
+          "explanation": "Guld symboliserar något värdefullt och ädelt – metaforen betyder att hon är en mycket snäll och god person."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är en metafor?",
+          "options": [
+            "Tänder är som vita pärlor.",
+            "Tänderna är vita pärlor.",
+            "Tänderna är vita som pärlor.",
+            "Tänderna ser ut som pärlor."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Tänderna är vita pärlor' är en metafor – tänderna kallas direkt för pärlor, utan 'som'."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i så att det blir en metafor: 'Klassrummet var ett ___ av oljud.'",
+          "answer": "hav",
+          "alternativeAnswers": ["kaos", "inferno", "virrvarr"],
+          "hint": "Tänk på något stort och överväldigande.",
+          "explanation": "Metaforen 'ett hav av oljud' beskriver att det var oerhört mycket ljud – som att drunkna i det."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad kallas det när man säger 'Tiden flyger'?",
+          "options": [
+            "En liknelse",
+            "En metafor",
+            "En överdrift",
+            "En beskrivning"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Tiden flyger' är en metafor – man tillskriver tiden förmågan att flyga, som om den vore en fågel."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Varför använder författare metaforer?",
+          "options": [
+            "För att de inte kan hitta rätt ord.",
+            "För att göra texten kortare.",
+            "För att skapa starka bilder och väcka känslor hos läsaren.",
+            "För att visa att texten är svår."
+          ],
+          "correctIndex": 2,
+          "explanation": "Metaforer skapar kraftfulla bilder och förmedlar känslor på ett mer direkt sätt än vanliga beskrivningar."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg metaforen i rätt ordning:",
+          "words": ["Livet", "är", "en", "lång", "resa", "."],
+          "correctOrder": [0, 1, 2, 3, 4, 5],
+          "explanation": "'Livet är en lång resa' är en metafor – livet jämförs direkt med en resa utan 'som'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening innehåller en metafor?",
+          "options": [
+            "Ordena var vapen i debatten.",
+            "Ordena var skarpa som knivar.",
+            "Han använde många ord i debatten.",
+            "Debatten handlade om viktiga ämnen."
+          ],
+          "correctIndex": 0,
+          "explanation": "'Ordena var vapen' är en metafor – orden kallas direkt för vapen, vilket betonar deras skadliga kraft."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är en 'död metafor'?",
+          "options": [
+            "En metafor som handlar om döden.",
+            "En metafor som är så vanlig att vi inte längre tänker på den som bildlig.",
+            "En metafor som ingen förstår.",
+            "En gammal metafor från medeltiden."
+          ],
+          "correctIndex": 1,
+          "explanation": "Exempel på döda metaforer: 'bordsben', 'flaskhalsen', 'tidsfördriva'. Vi använder dem utan att tänka på att de är metaforer."
+        }
+      ]
+    },
+    {
       "id": "sluttest",
       "title": "Sluttest – Grammatik",
       "description": "Testa allt du lärt dig! 30 blandade frågor om grammatik på mellanstadienivå.",
