@@ -104,6 +104,24 @@ export interface SpellingModule {
   exercises: GrammarExercise[];
 }
 
+// ─── Timed Spelling Test ──────────────────────────────────────────────────────
+
+export interface SpellingTimedWord {
+  word: string;
+  clue: string;
+}
+
+export interface SpellingTimedModule {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+  pointsRequired: number;
+  bonusPoints: number;
+  timeLimit?: number; // seconds, default 60
+  words: SpellingTimedWord[];
+}
+
 // ─── Word Search ──────────────────────────────────────────────────────────────
 
 export interface WordSearchWord {
@@ -126,6 +144,7 @@ export interface StageContent {
   reading: ReadingModule[];
   spelling?: SpellingModule[];
   wordsearch?: WordSearchModule[];
+  stavningstest?: SpellingTimedModule[];
 }
 
 // ─── Student progress (stored in localStorage) ───────────────────────────────
@@ -144,6 +163,7 @@ export interface StageProgress {
   readingModules: Record<string, ModuleProgress>;
   spellingModules: Record<string, ModuleProgress>;
   wordsearchModules: Record<string, ModuleProgress>;
+  stavningstestModules: Record<string, ModuleProgress>;
 }
 
 export type SkinTone = "light" | "light_brown" | "dark";

@@ -23,6 +23,8 @@ interface ResultModalProps {
   bossUnlocked?: boolean;
   onContinue: () => void;
   onRetry: () => void;
+  passedOverride?: boolean;
+  subtitle?: string;
 }
 
 export default function ResultModal({
@@ -34,9 +36,11 @@ export default function ResultModal({
   bossUnlocked,
   onContinue,
   onRetry,
+  passedOverride,
+  subtitle,
 }: ResultModalProps) {
   const pct = Math.round((totalCorrect / totalQuestions) * 100);
-  const passed = pct >= 60;
+  const passed = passedOverride !== undefined ? passedOverride : pct >= 60;
 
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fade-in">
@@ -52,9 +56,9 @@ export default function ResultModal({
           {passed ? "Bra jobbat!" : "Försök igen!"}
         </h2>
         <p className="text-sv-400 dark:text-gray-400 mb-6 text-base font-medium">
-          {passed
+          {subtitle ?? (passed
             ? "Du klarade övningen med godkänt resultat."
-            : "Du är nästan framme – öva lite till!"}
+            : "Du är nästan framme – öva lite till!")}
         </p>
 
         {/* Score ring */}

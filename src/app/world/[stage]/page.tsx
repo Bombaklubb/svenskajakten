@@ -66,12 +66,13 @@ export default function WorldPage({ params }: Props) {
 
   const stageProgress = student?.stages[stage.id as keyof typeof student.stages];
 
-  function getModuleProgress(kind: "grammar" | "reading" | "spelling" | "wordsearch", moduleId: string) {
+  function getModuleProgress(kind: "grammar" | "reading" | "spelling" | "wordsearch" | "stavningstest", moduleId: string) {
     if (!stageProgress) return null;
     const map =
       kind === "grammar" ? stageProgress.grammarModules
       : kind === "reading" ? stageProgress.readingModules
       : kind === "spelling" ? (stageProgress.spellingModules ?? {})
+      : kind === "stavningstest" ? (stageProgress.stavningstestModules ?? {})
       : (stageProgress.wordsearchModules ?? {});
     return map[moduleId] ?? null;
   }
@@ -279,12 +280,70 @@ export default function WorldPage({ params }: Props) {
             <p>Kunde inte ladda innehåll.</p>
           </div>
 
+        ) : activeTab === "spelling" ? (
+          <div className="space-y-6">
+            {/* Regular spelling modules */}
+            {(content.spelling ?? []).length > 0 && (
+              <div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {(content.spelling ?? []).map((mod, idx, arr) => (
+                    <ModuleCard
+                      key={mod.id}
+                      id={mod.id}
+                      title={mod.title}
+                      description={mod.description}
+                      icon={mod.icon}
+                      kind="spelling"
+                      stage={stage}
+                      progress={getModuleProgress("spelling", mod.id)}
+                      locked={false}
+                      prevModuleTitle={idx > 0 ? arr[idx - 1].title : null}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Stavningstest på tid */}
+            {(content.stavningstest ?? []).length > 0 && (
+              <div>
+                <div className="flex items-center gap-2 mb-3 mt-2">
+                  <span className="text-xl">⏱️</span>
+                  <h3 className="font-black text-gray-800 dark:text-gray-100 text-base">Stavningstest på tid</h3>
+                  <span className="badge bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 border border-red-200 dark:border-red-700 text-xs">60 sek · Alla rätt krävs</span>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {(content.stavningstest ?? []).map((mod, idx, arr) => (
+                    <ModuleCard
+                      key={mod.id}
+                      id={mod.id}
+                      title={mod.title}
+                      description={mod.description}
+                      icon={mod.icon}
+                      kind="stavningstest"
+                      stage={stage}
+                      progress={getModuleProgress("stavningstest", mod.id)}
+                      locked={false}
+                      prevModuleTitle={idx > 0 ? arr[idx - 1].title : null}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {(content.spelling ?? []).length === 0 && (content.stavningstest ?? []).length === 0 && (
+              <div className="card text-center py-10 text-gray-400">
+                <div className="text-3xl mb-2">✏️</div>
+                <p>Inga stavningsövningar tillgängliga ännu.</p>
+              </div>
+            )}
+          </div>
+
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             {(
               activeTab === "grammar" ? content.grammar
               : activeTab === "reading" ? content.reading
-              : activeTab === "spelling" ? (content.spelling ?? [])
               : (content.wordsearch ?? [])
             ).map((mod, idx, arr) => {
               if (activeTab === "grammar" && mod.id === "sluttest") {
@@ -304,9 +363,9 @@ export default function WorldPage({ params }: Props) {
                   title={mod.title}
                   description={mod.description}
                   icon={mod.icon}
-                  kind={activeTab as "grammar" | "reading" | "spelling" | "wordsearch"}
+                  kind={activeTab as "grammar" | "reading" | "wordsearch"}
                   stage={stage}
-                  progress={getModuleProgress(activeTab as "grammar" | "reading" | "spelling" | "wordsearch", mod.id)}
+                  progress={getModuleProgress(activeTab as "grammar" | "reading" | "wordsearch", mod.id)}
                   locked={false}
                   prevModuleTitle={idx > 0 ? arr[idx - 1].title : null}
                 />
