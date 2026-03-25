@@ -905,6 +905,136 @@
       ]
     },
     {
+      "id": "idiom-gym-1",
+      "title": "Idiom och uttryck",
+      "description": "Idiomatik, fraseologi och lexikaliserade uttrycks funktion i text och tal",
+      "icon": "💬",
+      "bonusPoints": 35,
+      "helpText": [
+        "Idiom (fraseologismer) är lexikaliserade flerordskonstruktioner med icke-kompositionell betydelse.",
+        "Fraseologi studerar fasta ordförbindelser: idiom, kollokationer, proverbier och rutinformler.",
+        "Idiom kan analyseras utifrån grad av lexikalisering, transparens och frozenness.",
+        "I pragmatik och sociolingvistik är idiomval en markör för register, identitet och social tillhörighet."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vad menas med att ett idiom är 'icke-kompositionellt'?",
+          "options": [
+            "Att det inte kan delas upp i stavelser.",
+            "Att idiomets helhetsbetydelse inte kan beräknas från de enskilda ordens betydelse.",
+            "Att det saknar verb.",
+            "Att det inte följer svenska grammatikregler."
+          ],
+          "correctIndex": 1,
+          "explanation": "Kompositionell betydelse = summan av delarna. 'Kick the bucket' (dö) är icke-kompositionellt – man kan inte förstå det från 'kick' + 'the' + 'bucket'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad skiljer ett idiom från en kollokation?",
+          "options": [
+            "Kollokationer är längre än idiom.",
+            "Kollokationer är statistiskt frekventa ordpar med delvis förutsägbar betydelse (stark kaffe); idiom har fullständigt lexikaliserad, icke-kompositionell betydelse.",
+            "Idiom finns bara i tal, kollokationer bara i skrift.",
+            "Det är ingen skillnad – de är synonyma termer."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Stark kaffe' är en kollokation – stark är förutsägbart med kaffe. 'Kalla handen' är ett idiom – man kan inte förstå det från 'kall' + 'hand'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Begreppet 'frozenness' i fraseologin syftar på:",
+          "options": [
+            "Att idiom handlar om kyla och frost.",
+            "Graden av formell fixering – hur mycket man kan modifiera idiomets form utan att förlora dess idiomatiska betydelse.",
+            "Att idiom inte kan användas i moderna texter.",
+            "Att idiomets ursprung är okänt."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Bita ihop' är frostat – man kan inte säga 'bita samman' eller 'tugga ihop' och behålla idiomets innebörd. Hög frozenness = lite flexibilitet."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Ett idiom vars bildliga ursprung fortfarande är levande och upplevs som bildligt kallas ett ___ idiom.",
+          "answer": "levande",
+          "alternativeAnswers": ["transparent", "genomskinligt", "aktivt"],
+          "explanation": "Levande/transparenta idiom: 'ta tjuren vid hornen' – man kan fortfarande se bilden. Döda idiom: 'bordsben' – ursprungsmetaforen är osynlig."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad innebär 'idiom modification' som stilistiskt grepp?",
+          "options": [
+            "Att ersätta ett idiom med ett annat.",
+            "Att medvetet avvika från ett idioms förväntade form för att skapa humor, ironi eller ny mening.",
+            "Att undvika idiom i formell text.",
+            "Att förklara idiomets ursprung i texten."
+          ],
+          "correctIndex": 1,
+          "explanation": "Annons: 'Vi ger inte bara järnet – vi ger hela smedjan.' Frasen bryts och utvidgas för retorisk effekt. Det kräver att läsaren känner originalet."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur fungerar idiom som sociolingvistiska markörer?",
+          "options": [
+            "Idiom visar bara hur gammal en person är.",
+            "Val av idiom signalerar grupptillhörighet, register, regional identitet och social bakgrund.",
+            "Idiom används lika av alla talare oberoende av bakgrund.",
+            "Idiom är neutrala och utan sociolingvistisk funktion."
+          ],
+          "correctIndex": 1,
+          "explanation": "Ungdomsidiom, yrkesidiom (juridiska, medicinska), regionala uttryck – alla signalerar tillhörighet. En advokat som säger 'vi kör på det' i rätten bryter mot registerförväntningar."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad kallas fenomenet när ett idiom tolkas bokstavligt av en andraspråkstalare?",
+          "options": [
+            "Falsk vän.",
+            "Idiom-transfer-fel – man applicerar L1-kompositionell tolkningsstrategi på L2-idiom.",
+            "Interferens.",
+            "Malapropism."
+          ],
+          "correctIndex": 1,
+          "explanation": "En inlärare av svenska som hör 'sitta i knipan' och tolkar det bokstavligt gör ett idiom-transfer-fel – L1-strategin (bokstavlig tolkning) fungerar inte för L2-idiom."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Idiomen 'Det är ingen ko på isen' har ett konkret ursprung. Vilket?",
+          "options": [
+            "Bondelivets oro när kor faktiskt hamnade på is och riskerade att falla och skada sig.",
+            "En känd folksaga om en ko.",
+            "Ett latinskt ordspråk.",
+            "Ursprunget är okänt."
+          ],
+          "correctIndex": 0,
+          "explanation": "Idiomen kommer från bondelivets verklighet – en ko på hal is var en allvarlig risk. Ingen ko på isen = ingen fara, ingen risk."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur ska idiom behandlas i en stilanalys av skönlitteratur?",
+          "options": [
+            "Man noterar att de förekommer och går vidare.",
+            "Man analyserar idiomets konnotationer, dess register­markering, dess relation till karaktär och kontext, samt om det används bokstavligt, ironiskt eller subversivt.",
+            "Man förklarar idiomets bokstavliga betydelse.",
+            "Man bedömer om idiomen är vackra eller fula."
+          ],
+          "correctIndex": 1,
+          "explanation": "En mogen stilanalys frågar: Vem använder idiomen? Vilken social och emotionell effekt? Är det konventionellt eller subversivt använt? Vad säger det om karaktär och tema?"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är ett 'proverbium' och hur skiljer det sig från ett idiom?",
+          "options": [
+            "Proverbium är ett latinskt idiom.",
+            "Ett proverbium (ordspråk) är en hel sats med generell visdom ('Den som gapar efter mycket mister ofta hela stycket'); ett idiom är en fras som fungerar som satsled.",
+            "Proverbier är kortare än idiom.",
+            "Det är ingen skillnad – termerna är synonyma."
+          ],
+          "correctIndex": 1,
+          "explanation": "Proverbier är fullständiga satser med normativt eller deskriptivt innehåll. Idiom är fraser som fyller en grammatisk funktion i en sats (subjekt, predikat etc.)."
+        }
+      ]
+    },
+    {
       "id": "sluttest",
       "title": "Sluttest – Grammatik",
       "description": "Testa allt du lärt dig! 30 blandade frågor om grammatik på gymnasienivå.",

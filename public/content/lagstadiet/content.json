@@ -2737,6 +2737,136 @@
       ]
     },
     {
+      "id": "idiom-lag-1",
+      "title": "Idiom och uttryck",
+      "description": "Lär dig vad vanliga svenska uttryck egentligen betyder",
+      "icon": "💬",
+      "bonusPoints": 20,
+      "helpText": [
+        "Ett idiom är ett uttryck som betyder något annat än vad orden säger.",
+        "Exempel: 'Det är ingen ko på isen' betyder att det inte är någon fara – inte att det finns en ko!",
+        "Svenska har massor av roliga uttryck. Försök lista ut vad de betyder!",
+        "Tips: tänk på sammanhanget, inte på vad varje ord bokstavligen betyder."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder uttrycket 'Det är ingen ko på isen'?",
+          "options": [
+            "Det finns en ko som halkar på isen.",
+            "Det är ingen fara eller inget problem.",
+            "Det är kallt ute.",
+            "Det är en farlig situation."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Ingen ko på isen' betyder att det inte är någon fara – allt är lugnt och under kontroll."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder 'Ha is i magen'?",
+          "options": [
+            "Att man är sjuk och har ont i magen.",
+            "Att man har ätit glass.",
+            "Att man är lugn och inte stressar.",
+            "Att man är väldigt kall."
+          ],
+          "correctIndex": 2,
+          "explanation": "'Ha is i magen' betyder att vara lugn och tålmodig, inte låta sig stressa upp."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder 'Kostar skjortan'?",
+          "options": [
+            "Att man måste köpa en skjorta.",
+            "Att något är väldigt dyrt.",
+            "Att man förlorar sina kläder.",
+            "Att skjortor är dyra."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Kostar skjortan' är ett uttryck för att något är orimligt dyrt – det kostar mer än man vill betala."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Om man säger att någon 'har huvudet i molnen', vad menar man?",
+          "options": [
+            "Att personen är väldigt lång.",
+            "Att personen drömmer och inte tänker på verkligheten.",
+            "Att personen gillar att titta på moln.",
+            "Att personen är väldigt smart."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Ha huvudet i molnen' betyder att man dagdrömmer eller är orealistisk och inte har koll på vad som händer runt om."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder 'Hålla tummarna'?",
+          "options": [
+            "Att man håller i något med tummarna.",
+            "Att man är arg och trycker nävarna.",
+            "Att man önskar att något ska gå bra.",
+            "Att man håller på att tumma på reglerna."
+          ],
+          "correctIndex": 2,
+          "explanation": "'Hålla tummarna' betyder att man önskar lycka till och hoppas att något ska gå bra för någon."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder 'Det är inte mitt fel att haren skrek'? Välj det närmaste alternativet.",
+          "options": [
+            "En hare skriker verkligen.",
+            "Att man inte är ansvarig för något.",
+            "Att man är rädd för harar.",
+            "Att man jagade en hare."
+          ],
+          "correctIndex": 1,
+          "explanation": "Det är ett uttryck för att frånsäga sig ansvar – 'det är inte mitt fel'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder uttrycket 'Ha is i magen' om en elev som ska hålla tal inför klassen?",
+          "options": [
+            "Eleven ska äta glass innan talet.",
+            "Eleven ska vara lugn och inte vara nervös.",
+            "Eleven ska prata snabbt.",
+            "Eleven ska hålla sig tyst."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Ha is i magen' betyder att vara lugn. En nervös elev kan behöva 'ha is i magen' inför sitt tal."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i: 'Nu har du verkligen satt ___ i det!' betyder att du gjort något bra.",
+          "answer": "spiken",
+          "hint": "Tänk på att slå en spik rakt in i väggen – rätt på målet!",
+          "explanation": "'Sätta spiken i det' (eller 'slå huvudet på spiken') betyder att göra eller säga precis rätt sak."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder 'Skrika efter hjälp' i uttrycket 'Det skriker efter hjälp'?",
+          "options": [
+            "Att någon högt ber om hjälp.",
+            "Att något är i stort behov av hjälp eller förbättring.",
+            "Att man är rädd och skriker.",
+            "Att man behöver en läkare."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Det skriker efter hjälp' är ett idiom som betyder att något är i väldigt dåligt skick och verkligen behöver åtgärdas."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Om din kompis säger 'Jag har inga fem ören kvar', vad menar hen?",
+          "options": [
+            "Hen har tappat sina mynt.",
+            "Hen har inte tillräckligt med pengar.",
+            "Hen vill inte dela med sig.",
+            "Hen samlar på mynt."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Inga fem ören kvar' är ett uttryck för att man har slut på pengar. Fem ören är den minsta myntenheten – har man inte ens det, är man pank."
+        }
+      ]
+    },
+    {
       "id": "sluttest",
       "title": "Sluttest – Grammatik",
       "description": "Testa allt du lärt dig! 32 blandade frågor om grammatik på lågstadienivå.",

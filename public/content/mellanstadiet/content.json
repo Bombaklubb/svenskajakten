@@ -1801,6 +1801,136 @@
       ]
     },
     {
+      "id": "idiom-mel-1",
+      "title": "Idiom och uttryck",
+      "description": "Förstå och använd vanliga svenska idiom i rätt sammanhang",
+      "icon": "💬",
+      "bonusPoints": 25,
+      "helpText": [
+        "Idiom är fasta uttryck vars betydelse inte kan utläsas av de enskilda orden.",
+        "Exempel: 'Bita ihop' betyder inte att man bokstavligen biter – det betyder att man håller ut trots svårigheter.",
+        "Idiom används mycket i tal och skrift och ger språket liv och karaktär.",
+        "Tänk alltid på sammanhanget – samma ord kan ha helt olika innebörd beroende på hur de används."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder idiomen 'Bita ihop'?",
+          "options": [
+            "Att man biter på något hårt.",
+            "Att man håller ut och inte ger upp trots svårigheter.",
+            "Att man stänger munnen.",
+            "Att man är arg och biter."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Bita ihop' betyder att kämpa vidare och uthärda något svårt utan att klaga eller ge upp."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder 'Sitta i knipan'?",
+          "options": [
+            "Att sitta på en knippa.",
+            "Att vara i en svår eller besvärlig situation.",
+            "Att sitta stilla och vänta.",
+            "Att sitta och nypa sig."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Sitta i knipan' betyder att befinna sig i trubbel eller en besvärlig situation som är svår att ta sig ur."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad menas med att någon 'tar tjuren vid hornen'?",
+          "options": [
+            "Personen arbetar med boskap.",
+            "Personen tar itu med ett problem direkt och modigt.",
+            "Personen är arg som en tjur.",
+            "Personen springer fort."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Ta tjuren vid hornen' betyder att angripa ett svårt problem direkt och beslutsamhet, utan att tveka."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i: 'Nu är katten ___ om svansen' – det betyder att det blivit svårt att komma runt problemet.",
+          "answer": "ute",
+          "hint": "Katten är ute på ett smalt ställe och kan inte vända.",
+          "explanation": "'Katten är ute om svansen' betyder att situationen blivit komplicerad och svår att ta sig ur."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder 'Sätta p för något'?",
+          "options": [
+            "Att parkera något.",
+            "Att sätta ett P-tecken.",
+            "Att avsluta eller stoppa något.",
+            "Att börja med något nytt."
+          ],
+          "correctIndex": 2,
+          "explanation": "'Sätta p för något' (sätta stopp för) betyder att avsluta eller förbjuda något. P:et syftar ursprungligen på 'punkt' – sätta punkt."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Om läraren säger 'Nu drar vi i gång', vad menar hen?",
+          "options": [
+            "Att man ska dra i ett rep.",
+            "Att det är dags att börja.",
+            "Att man ska gå ut.",
+            "Att lektionen är slut."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Dra i gång' är ett idiom som betyder att starta eller börja något."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder 'Lägga korten på bordet'?",
+          "options": [
+            "Att spela kortspel.",
+            "Att vara öppen och ärlig om sina avsikter.",
+            "Att ge upp ett spel.",
+            "Att städa undan spelets kort."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Lägga korten på bordet' kommer från kortspel och betyder att vara helt öppen och ärlig – inte dölja något."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är ett idiom? Välj bästa definition.",
+          "options": [
+            "Ett ord med ovanlig stavning.",
+            "En grammatikregel.",
+            "Ett fast uttryck vars helhetsbetydelse inte framgår av de enskilda orden.",
+            "En sorts metafor utan bildspråk."
+          ],
+          "correctIndex": 2,
+          "explanation": "Idiom är fasta fraser vars betydelse är konventionell och inte kan härledas direkt från ordens bokstavliga innebörd."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder 'Gå som katten kring het gröt'?",
+          "options": [
+            "Att man går försiktigt.",
+            "Att man undviker att ta upp eller ta itu med något direkt.",
+            "Att man gillar gröt.",
+            "Att man rör sig i cirklar."
+          ],
+          "correctIndex": 1,
+          "explanation": "Katten lockas av grötens doft men undviker det heta. Idiomen beskriver någon som kretsar runt ett ämne utan att ta tag i det."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "I meningen 'Han satte ribban högt för sina elever' – vad betyder 'sätta ribban högt'?",
+          "options": [
+            "Att han hängde upp en ribba högt på väggen.",
+            "Att han ställde höga krav och förväntningar.",
+            "Att han tränade höjdhopp med eleverna.",
+            "Att han gav dem svåra läxor om sport."
+          ],
+          "correctIndex": 1,
+          "explanation": "Ribban från höjdhopp – ju högre ribba, desto svårare att ta sig över. 'Sätta ribban högt' betyder att ställa höga krav."
+        }
+      ]
+    },
+    {
       "id": "sluttest",
       "title": "Sluttest – Grammatik",
       "description": "Testa allt du lärt dig! 30 blandade frågor om grammatik på mellanstadienivå.",

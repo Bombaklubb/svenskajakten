@@ -1003,6 +1003,136 @@
       ]
     },
     {
+      "id": "idiom-hog-1",
+      "title": "Idiom och uttryck",
+      "description": "Idiomens ursprung, innebörd och funktion i svenska",
+      "icon": "💬",
+      "bonusPoints": 30,
+      "helpText": [
+        "Idiom är fasta fraser med en konventionell innebörd som avviker från ordens bokstavliga betydelse.",
+        "Många idiom har intressant ursprung – från sport, sjöfart, bondeliv eller historia.",
+        "Att förstå idiom är viktigt för att läsa och lyssna på autentisk svenska.",
+        "Skillnad: ett idiom är helt lexikaliserat ('sitta i knipan'); en metafor är mer produktiv ('ett hav av möjligheter')."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vad skiljer ett idiom från en metafor?",
+          "options": [
+            "Idiom är alltid roliga, metaforer är alltid seriösa.",
+            "Idiom är fasta, lexikaliserade fraser; metaforer är produktiva och kan skapas fritt.",
+            "Metaforer innehåller alltid 'som'.",
+            "Det är ingen skillnad."
+          ],
+          "correctIndex": 1,
+          "explanation": "Idiom är frusna i sin form och sin betydelse – man kan inte byta ut ord utan att förlora innebörden. Metaforer är mer kreativa och flexibla."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Uttrycket 'Bita i det sura äpplet' – vad betyder det?",
+          "options": [
+            "Att äta ett äpple man inte tycker om.",
+            "Att göra något obehagligt som ändå är nödvändigt.",
+            "Att ta en svår beslut om frukt.",
+            "Att vara sur och arg."
+          ],
+          "correctIndex": 1,
+          "explanation": "Man biter i äpplet trots att det är surt – man tar sig igenom det ändå. Idiomen betyder att genomföra något jobbigt men nödvändigt."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Idiomen 'Sätta dit någon' har hämtats från vilket sammanhang?",
+          "options": [
+            "Trädgårdsskötsel.",
+            "Rättsväsendet – att fälla och sätta någon i fängelse.",
+            "Matlagning.",
+            "Idrott."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Sätta dit' kommer från rättsväsendet och fängelset – man 'satte dit' en brottsling. Idag används det också om att avslöja eller lura någon."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i: 'Han är inte den som ___ i rosorna' – idiom för att inte vara konflikträdd.",
+          "answer": "sover",
+          "hint": "Det är ett uttryck för att vara vaksam och handlingskraftig.",
+          "explanation": "'Sova i rosorna' betyder att vara slarvig och inte ta tillvara på möjligheter eller vara vaksam."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är ett 'dödat idiom'?",
+          "options": [
+            "Ett idiom som handlar om döden.",
+            "Ett idiom som inte längre används och har fallit ur bruk.",
+            "Ett idiom vars ursprung är glömt.",
+            "Ett idiom som har fel grammatik."
+          ],
+          "correctIndex": 1,
+          "explanation": "Döda eller arkaiska idiom lever inte längre i aktivt bruk. Levande idiom används fortfarande naturligt i modern svenska."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder 'Ligga i lä'?",
+          "options": [
+            "Att sova på en speciell plats.",
+            "Att befinna sig i en skyddad position utan att behöva anstränga sig.",
+            "Att simma nära stranden.",
+            "Att ligga på en lädersoffa."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Lä' är sjöfartstermin för den sida av båten som är skyddad från vinden. 'Ligga i lä' betyder att ha det bekvämt och skyddat."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Uttrycket 'Ge järnet' har sitt ursprung i:",
+          "options": [
+            "Smideskonsten.",
+            "Järnvägen.",
+            "Motorer – att trycka ner gaspedalen (järnet) maximalt.",
+            "Boxning."
+          ],
+          "correctIndex": 2,
+          "explanation": "'Ge järnet' syftar på gaspedalen i fordon. Att ge järnet = köra eller prestera på maxfart, ge allt man har."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Varför är det svårt att översätta idiom ordagrant till ett annat språk?",
+          "options": [
+            "Idiom är alltid för långa.",
+            "Idiomens betydelse är kulturellt och historiskt betingad och kan inte härledas från ordens bokstavliga innebörd.",
+            "Andra språk har inga idiom.",
+            "Idiom använder ovanliga ord som saknar översättning."
+          ],
+          "correctIndex": 1,
+          "explanation": "En ordagrann översättning av 'det är ingen ko på isen' ger meningslöst resultat på engelska. Idiom är kulturspecifika och måste läras som hela enheter."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad kallas det när ett idiom används ironiskt eller medvetet felaktigt för retorisk effekt?",
+          "options": [
+            "Malapropism.",
+            "Subversion av idiom – man bryter mot förväntan för att skapa humor eller poäng.",
+            "Kliché.",
+            "Eufemism."
+          ],
+          "correctIndex": 1,
+          "explanation": "Att medvetet bryta ett idiom ('Jag tog inte tjuren vid hornen – jag tog den vid svansen') skapar humor genom att spela mot läsarens förväntan."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "I en analys av en skönlitterär text – hur kan idiom bidra till karaktärsskildring?",
+          "options": [
+            "Idiom visar bara att författaren kan grammatik.",
+            "En karaktärs idiomval avslöjar social bakgrund, ålder, ursprung och personlighet.",
+            "Idiom används bara i dialoger för att fylla ut text.",
+            "Idiom bidrar inte till karaktärsskildring."
+          ],
+          "correctIndex": 1,
+          "explanation": "En äldre bondkaraktär som säger 'nu är det dags att ta i med hårdhandskarna' avslöjar ursprung och världsbild. Idiomval är en viktig stilistisk markör."
+        }
+      ]
+    },
+    {
       "id": "sluttest",
       "title": "Sluttest – Grammatik",
       "description": "Testa allt du lärt dig! 30 blandade frågor om grammatik på högstadienivå.",
