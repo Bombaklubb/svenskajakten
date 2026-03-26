@@ -47,7 +47,7 @@ export default function ModuleCard({
 
   if (locked) {
     return (
-      <div className="rounded-2xl border-3 border-sv-100 dark:border-gray-700 bg-white dark:bg-gray-800 px-4 py-3 opacity-50 cursor-not-allowed select-none">
+      <div className="h-full rounded-2xl border-3 border-sv-100 dark:border-gray-700 bg-white dark:bg-gray-800 px-4 py-3 opacity-50 cursor-not-allowed select-none">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl bg-sv-50 dark:bg-gray-700 flex items-center justify-center text-lg flex-shrink-0 border-2 border-sv-100 dark:border-gray-600">
             🔒
@@ -66,9 +66,9 @@ export default function ModuleCard({
   }
 
   return (
-    <Link href={href} className="block group">
+    <Link href={href} className="block group h-full">
       <MagicCard
-        className={`rounded-3xl border-3 bg-white dark:bg-gray-800 transition-all duration-200 group-hover:-translate-y-1 ${
+        className={`h-full rounded-3xl border-3 bg-white dark:bg-gray-800 transition-all duration-200 group-hover:-translate-y-1 ${
           progress?.completed ? stage.borderClass : "border-sv-100 dark:border-gray-700 group-hover:border-sv-200"
         }`}
         gradientColor={
@@ -80,7 +80,7 @@ export default function ModuleCard({
         gradientOpacity={0.08}
       >
         <div
-          className="px-5 py-4"
+          className="px-5 py-4 h-full flex flex-col justify-between"
           style={{
             boxShadow: progress?.completed
               ? "0 5px 0 0 rgba(34,197,94,0.15), 0 8px 16px -4px rgba(34,197,94,0.1)"
@@ -107,19 +107,19 @@ export default function ModuleCard({
 
             {/* Content */}
             <div className="flex-1 min-w-0">
-              <div className="flex items-center gap-2 flex-wrap">
-                <h3 className="font-bold text-sv-900 dark:text-gray-100 text-base truncate">{title}</h3>
-                {progress?.completed && (
-                  <span className="badge bg-emerald-100 text-emerald-700 text-xs flex-shrink-0 border-2 border-emerald-200">
-                    ✓ Klar
-                  </span>
-                )}
-                <span className="badge bg-sv-50 dark:bg-gray-700 text-sv-400 dark:text-gray-400 text-xs ml-auto flex-shrink-0 border-2 border-sv-100 dark:border-gray-600">
+              <div className="flex items-start justify-between gap-2">
+                <h3 className="font-bold text-sv-900 dark:text-gray-100 text-base leading-snug">{title}</h3>
+                <span className="badge bg-sv-50 dark:bg-gray-700 text-sv-400 dark:text-gray-400 text-xs flex-shrink-0 border-2 border-sv-100 dark:border-gray-600">
                   {KIND_LABEL[kind]}
                 </span>
               </div>
+              {progress?.completed && (
+                <span className="badge bg-emerald-100 text-emerald-700 text-xs border-2 border-emerald-200 mt-1 inline-block">
+                  ✓ Klar
+                </span>
+              )}
 
-              <p className="text-sm text-sv-400 dark:text-gray-400 mt-1 truncate font-medium">{description}</p>
+              <p className="text-sm text-sv-400 dark:text-gray-400 mt-1 line-clamp-1 font-medium">{description}</p>
 
               <div className="mt-3 flex items-center gap-3">
                 <div className="flex-1">
