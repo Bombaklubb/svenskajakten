@@ -9,6 +9,7 @@
       "helpText": [
         "Substantiv är namn på saker, djur och personer.",
         "Exempel: hund, boll, flicka, hus.",
+        "Ord som du kan sätta 'ett', 'en' eller 'flera' framför är substantiv – t.ex. ett hus, en groda, flera bord.",
         "Fråga dig: Vad är det? Vem är det? – Svaret är oftast ett substantiv!"
       ],
       "exercises": [
@@ -283,9 +284,10 @@
       "icon": "🎨",
       "bonusPoints": 20,
       "helpText": [
-        "Adjektiv beskriver hur något ser ut eller känns.",
-        "Exempel: stor, liten, glad, söt, röd.",
-        "Fråga dig: Hur är det? – Svaret är ett adjektiv!"
+        "Adjektiv beskriver substantivet – hur något är eller ser ut.",
+        "Exempel: Martin är lång. Bollen är röd. Huset är stort.",
+        "Exempel på adjektiv: stor, liten, glad, söt, röd, snabb.",
+        "Fråga dig: Hur är det/hen/det? – Svaret är ett adjektiv!"
       ],
       "exercises": [
         {
@@ -2663,6 +2665,132 @@
           ],
           "correctIndex": 0,
           "explanation": "Talstrecket följs av ett mellanslag och repliken avslutas med komma före 'sa Emma'."
+        }
+      ]
+    },
+    {
+      "id": "dialoger-citattecken-1",
+      "title": "Skriva dialoger – citattecken",
+      "description": "Lär dig skriva samtal med citattecken",
+      "icon": "✍️",
+      "bonusPoints": 25,
+      "helpText": [
+        "Citattecken används för att visa vad någon säger: \"Hej!\", sa Lina.",
+        "Repliken börjar och slutar med citattecken: \"...\"",
+        "Skiljetecknet (punkt, frågetecken eller utropstecken) sitter INUTI citattecknen.",
+        "Efter citattecknen skriver man vem som sa det: sa, frågade, ropade, svarade."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är rätt skriven med citattecken?",
+          "options": [
+            "\"Jag vill ha glass\" sa Maja.",
+            "\"Jag vill ha glass,\" sa Maja.",
+            "Jag vill ha glass, \"sa Maja\".",
+            "\"Jag vill ha glass sa\" Maja."
+          ],
+          "correctIndex": 1,
+          "explanation": "Repliken avslutas med kommatecken inuti citattecknen, sedan skriver man vem som sa det: sa Maja."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Var ska utropstecknet sitta i meningen: Hjälp ropade Ella?",
+          "options": [
+            "\"Hjälp\"! ropade Ella.",
+            "\"Hjälp!\" ropade Ella.",
+            "\"Hjälp,\" ropade Ella.",
+            "Hjälp! \"ropade Ella\"."
+          ],
+          "correctIndex": 1,
+          "explanation": "Utropstecknet hör till repliken och ska sitta INUTI citattecknen: \"Hjälp!\" ropade Ella."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är skillnaden mellan citattecken och talstreck i en dialog?",
+          "options": [
+            "Ingen skillnad, de fungerar likadant.",
+            "Citattecken omger repliken: \"...\". Talstrecket (–) sätts i början av repliken på en ny rad.",
+            "Talstreck används bara i böcker.",
+            "Citattecken används bara i tidningar."
+          ],
+          "correctIndex": 1,
+          "explanation": "Båda visar att någon talar. Citattecken: \"Hej!\" sa Lena. Talstreck: – Hej! sa Lena. Båda är korrekta i svenska."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i: ___ God morgon! ___ sa mamma och log.",
+          "answer": "\"",
+          "alternativeAnswers": ["»", "«"],
+          "hint": "Repliken ska omslutas av citattecken – ett i början och ett i slutet.",
+          "explanation": "Korrekt: \"God morgon!\" sa mamma och log. Citattecknen omslutar hela repliken."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur skriver man en fråga med citattecken?",
+          "options": [
+            "\"Vad heter du\"? frågade hon.",
+            "\"Vad heter du?\" frågade hon.",
+            "\"Vad heter du,\" frågade hon?",
+            "Vad heter du? \"frågade hon\"."
+          ],
+          "correctIndex": 1,
+          "explanation": "Frågetecknet hör till repliken och sitter inuti citattecknen: \"Vad heter du?\" frågade hon."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Sätt orden i rätt ordning för en korrekt dialog med citattecken:",
+          "words": ["\"Kom", "hit!\"", "ropade", "pappa", "."],
+          "correctOrder": [0, 1, 2, 3, 4],
+          "explanation": "\"Kom hit!\" ropade pappa. Utropstecknet sitter inuti citattecknen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord kan INTE användas för att berätta vem som sa något?",
+          "options": [
+            "sa",
+            "frågade",
+            "ropade",
+            "sprang"
+          ],
+          "correctIndex": 3,
+          "explanation": "'Sprang' är ett rörelseverb, inte ett talverb. Man kan skriva sa, frågade, ropade, viskade, svarade – ord som handlar om att tala."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening har rätt citattecken?",
+          "options": [
+            "\"Jag är trött\", suckade han.",
+            "\"Jag är trött,\" suckade han.",
+            "Jag är trött, \"suckade han.\"",
+            "\"Jag är trött.\" suckade han."
+          ],
+          "correctIndex": 1,
+          "explanation": "Kommatecknet sitter inuti citattecknen och sedan skriver man vem som sa det med litet begynnelsebokstav: suckade han."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur börjar man nästa persons replik i en dialog?",
+          "options": [
+            "Man fortsätter på samma rad.",
+            "Man börjar på en ny rad med nya citattecken.",
+            "Man skriver ett kommatecken och fortsätter.",
+            "Man skriver 'och sedan sa'."
+          ],
+          "correctIndex": 1,
+          "explanation": "Varje ny persons replik börjar på en ny rad. Det gör dialogen lättläst och tydlig för läsaren."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är korrekt?",
+          "options": [
+            "\"Titta på månen!\" viskade Noa.",
+            "\"Titta på månen!, viskade Noa.\"",
+            "Titta på månen! \"viskade Noa.\"",
+            "\"Titta på månen\", viskade Noa!"
+          ],
+          "correctIndex": 0,
+          "explanation": "\"Titta på månen!\" viskade Noa. – Utropstecknet sitter inuti, sedan skriver man talverbet med liten bokstav."
         }
       ]
     },

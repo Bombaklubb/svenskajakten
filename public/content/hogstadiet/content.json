@@ -682,6 +682,137 @@
       ]
     },
     {
+      "id": "dialoger-citattecken-1",
+      "title": "Skriva dialoger – med citattecken",
+      "description": "Lär dig hur man skriver samtal med citattecken.",
+      "icon": "✍️",
+      "pointsRequired": 0,
+      "bonusPoints": 30,
+      "helpText": [
+        "Citattecken (\") används när man återger exakt vad någon sagt eller skrivit.",
+        "Repliken börjar med stor bokstav inuti citattecknen: \"Hej!\" sa Lisa.",
+        "Punkt, frågetecken och utropstecken sätts inuti citattecknen.",
+        "Kolon används innan citatet: Lisa sa: \"Jag är hungrig.\""
+      ],
+      "exercises": [
+        {
+          "id": "dc-hog-1",
+          "type": "multiple-choice",
+          "question": "Hur skriver man korrekt med citattecken när man återger vad någon sagt?",
+          "options": [
+            "Lisa sa \"jag är trött\".",
+            "Lisa sa: \"Jag är trött.\"",
+            "Lisa sa, jag är trött.",
+            "Lisa sa – Jag är trött."
+          ],
+          "correctIndex": 1,
+          "explanation": "Kolon används innan citattecknen och stor bokstav inleder repliken. Punkt sätts inuti."
+        },
+        {
+          "id": "dc-hog-2",
+          "type": "multiple-choice",
+          "question": "Var placeras frågetecknet i meningen: Han frågade ___ Vad heter du ___",
+          "options": [
+            "Han frågade \"Vad heter du\"?",
+            "Han frågade: \"Vad heter du?\"",
+            "Han frågade: \"Vad heter du\".",
+            "Han frågade, \"vad heter du?\""
+          ],
+          "correctIndex": 1,
+          "explanation": "Frågetecknet hör till den direkta frågan och placeras inuti citattecknen."
+        },
+        {
+          "id": "dc-hog-3",
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt tecken: Maria utropade___ \"Det är fantastiskt!\"",
+          "answer": ":",
+          "hint": "Vilket skiljetecken används direkt innan ett citat?",
+          "explanation": "Kolon (:) används för att introducera ett direkt citat."
+        },
+        {
+          "id": "dc-hog-4",
+          "type": "multiple-choice",
+          "question": "Vilket alternativ är RÄTT skrivet?",
+          "options": [
+            "\"Sluta!\" skrek han.",
+            "\"Sluta\" skrek han!",
+            "Sluta! skrek han.",
+            "\"sluta!\" Skrek han."
+          ],
+          "correctIndex": 0,
+          "explanation": "Utropstecknet hör till replikens innehåll och placeras inuti citattecknen. Talverbet 'skrek' börjar med liten bokstav."
+        },
+        {
+          "id": "dc-hog-5",
+          "type": "multiple-choice",
+          "question": "Vad är skillnaden mellan talstreck och citattecken i dialogskrivning?",
+          "options": [
+            "Det är ingen skillnad – de används på samma sätt",
+            "Talstreck används i svenska berättelser; citattecken vid direkta citat och i vissa texter",
+            "Citattecken är modernare och används alltid",
+            "Talstreck används bara i poesi"
+          ],
+          "correctIndex": 1,
+          "explanation": "I svenska skönlitterära texter är talstreck vanligast. Citattecken används vid direkta citat, i reportage och i vissa moderna texter."
+        },
+        {
+          "id": "dc-hog-6",
+          "type": "fill-in-blank",
+          "question": "Skriv rätt: Läraren sa: ___Nu börjar vi.___",
+          "answer": "\"",
+          "hint": "Vilket tecken omger det direkta citatet?",
+          "explanation": "Citattecken omger det direkta citatet på båda sidor."
+        },
+        {
+          "id": "dc-hog-7",
+          "type": "multiple-choice",
+          "question": "Hur skriver man korrekt när en person ställer en fråga i ett citat?",
+          "options": [
+            "\"Kommer du?\", frågade hon.",
+            "\"Kommer du?\" frågade hon.",
+            "\"Kommer du\"? frågade hon.",
+            "Kommer du? frågade hon."
+          ],
+          "correctIndex": 1,
+          "explanation": "Frågetecknet placeras inuti citattecknen. Inget komma behövs när repliken slutar med frågetecken eller utropstecken."
+        },
+        {
+          "id": "dc-hog-8",
+          "type": "multiple-choice",
+          "question": "Vilken mening har FEL användning av citattecken?",
+          "options": [
+            "Hon viskade: \"Var försiktig.\"",
+            "\"Det är klart\" sa han.",
+            "\"Titta!\" ropade flickan.",
+            "Han svarade: \"Nej, tack.\""
+          ],
+          "correctIndex": 1,
+          "explanation": "Punkt saknas inuti citattecknen: det ska vara \"Det är klart.\" sa han."
+        },
+        {
+          "id": "dc-hog-9",
+          "type": "fill-in-blank",
+          "question": "Komplettera: ___Hjälp!___ skrek hon.",
+          "answer": "\"",
+          "hint": "Citattecknet omger replikens innehåll.",
+          "explanation": "\"Hjälp!\" skrek hon. – citattecken runt repliken och utropstecken inuti."
+        },
+        {
+          "id": "dc-hog-10",
+          "type": "multiple-choice",
+          "question": "I vilken situation passar citattecken bäst?",
+          "options": [
+            "I en traditionell svensk roman",
+            "I ett reportage eller artikel där man citerar någon",
+            "I alla typer av texter alltid",
+            "Bara i engelskt material"
+          ],
+          "correctIndex": 1,
+          "explanation": "Citattecken är vanliga i journalistik och faktatexter vid direkta citat; i skönlitteratur används oftare talstreck."
+        }
+      ]
+    },
+    {
       "id": "styckesindelning-1",
       "title": "Styckesindelning",
       "description": "Lär dig att dela upp en text i stycken.",

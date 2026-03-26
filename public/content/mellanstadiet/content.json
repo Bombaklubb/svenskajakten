@@ -242,9 +242,10 @@
       "icon": "🌈",
       "bonusPoints": 25,
       "helpText": [
-        "Adjektiv beskriver substantiv: stor bil",
-        "Adverb beskriver verb: springer snabbt",
-        "Adverb slutar ofta på -t"
+        "Adjektiv beskriver substantivet – hur något eller någon är: Martin är lång. Den röda bilen.",
+        "Adjektiv svarar på frågan: Hur är det/hen?",
+        "Adverb beskriver verb och svarar på frågan: Hur görs det? – t.ex. springer snabbt.",
+        "Adverb slutar ofta på -t (snabbt, tyst, sakta)."
       ],
       "exercises": [
         {
@@ -1483,6 +1484,131 @@
           ],
           "correctIndex": 0,
           "explanation": "Talstrecket följs av ett mellanslag och repliken avslutas med komma före 'sa Emma'."
+        }
+      ]
+    },
+    {
+      "id": "dialoger-citattecken-1",
+      "title": "Skriva dialoger – citattecken",
+      "description": "Skriv korrekta dialoger med citattecken och talverb",
+      "icon": "✍️",
+      "bonusPoints": 30,
+      "helpText": [
+        "Citattecken (\"...\") omger exakt det talaren säger.",
+        "Komma, frågetecken och utropstecken sitter INUTI citattecknen.",
+        "Talverbet (sa, frågade, ropade, svarade) skrivs med liten bokstav efter citattecknen.",
+        "Varje ny talare börjar på en ny rad. Citattecken och talstreck kan båda användas – välj konsekvent."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är korrekt skriven?",
+          "options": [
+            "\"Det regnar,\" konstaterade Emma.",
+            "\"Det regnar\" konstaterade, Emma.",
+            "Det regnar, \"konstaterade Emma.\"",
+            "\"Det regnar.\" Konstaterade Emma."
+          ],
+          "correctIndex": 0,
+          "explanation": "Kommatecknet sitter inuti citattecknen, talverbet börjar med liten bokstav: \"Det regnar,\" konstaterade Emma."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur placeras frågetecknet i: Är du hemma frågade Leo?",
+          "options": [
+            "\"Är du hemma\"? frågade Leo.",
+            "\"Är du hemma?\" frågade Leo.",
+            "\"Är du hemma,\" frågade Leo?",
+            "Är du hemma? \"frågade Leo.\""
+          ],
+          "correctIndex": 1,
+          "explanation": "Frågetecknet hör till repliken och placeras inuti citattecknen: \"Är du hemma?\" frågade Leo."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket alternativ visar korrekt hur man anger att det är en ny talare?",
+          "options": [
+            "Man lägger till ett kommatecken och fortsätter på samma rad.",
+            "Man börjar en ny rad med nya citattecken runt den nya personens replik.",
+            "Man skriver 'nästa person sa' och fortsätter.",
+            "Man sätter ett semikolon och fortsätter."
+          ],
+          "correctIndex": 1,
+          "explanation": "Varje ny persons replik börjar på en ny rad. Det gör dialogen överskådlig och lätt att följa."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken replik är korrekt när repliken avbryts mitt i meningen?",
+          "options": [
+            "\"Jag tänkte att vi kunde\", sa Ali och tystnade.",
+            "\"Jag tänkte att vi kunde\" sa Ali, och tystnade.",
+            "\"Jag tänkte att vi kunde.\" Sa Ali och tystnade.",
+            "Jag tänkte att vi kunde, \"sa Ali och tystnade.\""
+          ],
+          "correctIndex": 0,
+          "explanation": "När repliken avbryts men meningsfragmentet är ofullständigt används komma inuti citattecknen: \"...,\" sa X."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Lägg till rätt interpunktion: ___ Hjälp mig! ___ skrek hon.",
+          "answer": "\"",
+          "hint": "Citattecken sätts runt det talaren säger.",
+          "explanation": "Korrekt: \"Hjälp mig!\" skrek hon. Utropstecknet sitter inuti citattecknen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilka talverb kan användas efter en replik med citattecken? Välj mest fullständigt svar.",
+          "options": [
+            "Bara 'sa'.",
+            "Sa, frågade, svarade, ropade, viskade, utbrast, mumlade m.fl.",
+            "Bara 'sa' och 'frågade'.",
+            "Alla verb fungerar, t.ex. sprang, åt, sov."
+          ],
+          "correctIndex": 1,
+          "explanation": "Alla talverb som beskriver hur något sägs fungerar: sa, frågade, svarade, ropade, viskade, muttrande, utbrast osv."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad gäller om talaren ger en lång replik som sträcker sig över flera meningar?",
+          "options": [
+            "Man öppnar citattecken igen för varje ny mening.",
+            "Alla meningar ryms inom ETT par citattecken – man stänger dem inte förrän talaren är klar.",
+            "Man måste dela upp repliken i separata rader.",
+            "Man byter till talstreck om repliken är lång."
+          ],
+          "correctIndex": 1,
+          "explanation": "En och samma talares replik, hur lång den än är, omges av ett enda par citattecken: \"Mening ett. Mening två. Mening tre,\" sa hon."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är FEL?",
+          "options": [
+            "\"Vi ses imorgon,\" lovade han.",
+            "\"Vi ses imorgon!\" ropade han.",
+            "\"Vi ses imorgon?\" undrade han.",
+            "\"Vi ses imorgon\". Sa han."
+          ],
+          "correctIndex": 3,
+          "explanation": "Fel: punkten ska sitta inuti citattecknen och 'sa' ska skrivas med liten bokstav: \"Vi ses imorgon.\" sa han – eller bättre: \"Vi ses imorgon,\" sa han."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg den korrekta dialogmeningen:",
+          "words": ["\"Titta,", "en", "regnbåge!\"", "utbrast", "Sofia", "."],
+          "correctOrder": [0, 1, 2, 3, 4, 5],
+          "explanation": "\"Titta, en regnbåge!\" utbrast Sofia. Hela repliken är inom citattecknen, utropstecknet inuti."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur inleds en replik med citattecken om talaren presenteras FÖRE repliken?",
+          "options": [
+            "Erik sa: \"Det är min bok.\"",
+            "Erik sa \"Det är min bok,\"",
+            "Erik, \"Det är min bok.\" sa.",
+            "\"Det är min bok\" Erik sa."
+          ],
+          "correctIndex": 0,
+          "explanation": "När talaren nämns först används kolon före citattecknen: Erik sa: \"Det är min bok.\" Punkten sitter inuti citattecknen."
         }
       ]
     },
