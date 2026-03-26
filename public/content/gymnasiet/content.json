@@ -1037,12 +1037,12 @@
     {
       "id": "sluttest",
       "title": "Sluttest – Grammatik",
-      "description": "Testa allt du lärt dig! 30 blandade frågor om grammatik på gymnasienivå.",
+      "description": "Testa allt du lärt dig! 36 blandade frågor om grammatik på gymnasienivå.",
       "icon": "🏆",
       "bonusPoints": 100,
       "helpText": [
         "Det här är ditt stora sluttest! Du kommer att få frågor om allt du har övat på.",
-        "Tänk på retorik, argumentationsanalys, stilnivåer, nominalisering och formellt skriftspråk.",
+        "Tänk på retorik, argumentationsanalys, stilnivåer, nominalisering, idiom och bildspråk.",
         "Du behöver svara rätt på 60% av frågorna för att klara testet och få bonuspoäng.",
         "Lycka till – du klarar det! 🌟"
       ],
@@ -1415,6 +1415,61 @@
             4
           ],
           "explanation": "Rapporten (subjekt) har granskats (passiv form av 'granska') noggrant (adverbial). Passiv ger formell, opersonlig ton."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är skillnaden mellan en metafor och ett idiom?",
+          "options": [
+            "De är identiska stilistiska grepp",
+            "Metafor skapar en bild (A är B); idiom är ett fast uttryck vars innebörd inte kan härledas från orden",
+            "Idiom använder 'som'; metafor gör det inte",
+            "Metafor används bara i poesi; idiom i tal"
+          ],
+          "correctIndex": 1,
+          "explanation": "Metafor: 'Livet är en resa' (skapar en bild). Idiom: 'bita i det sura äpplet' (fast uttryck, figurativ innebörd)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad kallas ett idiom vars bildliga ursprung förlorat sin kraft och upplevs som bokstavlig, t.ex. 'benet på stolen'?",
+          "options": [
+            "Levande metafor",
+            "Anafor",
+            "Dödmetafor (konventionaliserad metafor)",
+            "Antites"
+          ],
+          "correctIndex": 2,
+          "explanation": "En dödmetafor (konventionaliserad metafor) är en bild som blivit så vanlig att vi inte längre uppfattar den som bildspråk."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket idiom används för att beskriva att avslöja en hemlighet?",
+          "options": [
+            "Ta bladet från munnen",
+            "Släppa katten ur säcken",
+            "Bita ihop",
+            "Sitta i knipa"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Släppa katten ur säcken' = avslöja något som hållits hemligt. Idiom med bildlig innebörd."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Idiom: 'Ha is i ___.' (vara lugn och samlad under press)",
+          "answer": "magen",
+          "hint": "En kroppsdel.",
+          "explanation": "'Ha is i magen' = behålla lugnet i en svår situation. Ett idiom med bildlig, figurativ innebörd."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken av dessa liknelser är mest stilistiskt avancerad?",
+          "options": [
+            "Snabb som blixten",
+            "Glad som en lärka",
+            "Hans tystnad bredde ut sig likt en oändlig, töcknig höstdag utan konturer",
+            "Stark som en björn"
+          ],
+          "correctIndex": 2,
+          "explanation": "En utbyggd liknelse med flera adjektiv och specificerande detaljer skapar en rikare bild och är mer litterärt raffinerad."
         }
       ]
     }

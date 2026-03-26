@@ -1266,12 +1266,12 @@
     {
       "id": "sluttest",
       "title": "Sluttest – Grammatik",
-      "description": "Testa allt du lärt dig! 30 blandade frågor om grammatik på högstadienivå.",
+      "description": "Testa allt du lärt dig! 38 blandade frågor om grammatik på högstadienivå.",
       "icon": "🏆",
       "bonusPoints": 100,
       "helpText": [
         "Det här är ditt stora sluttest! Du kommer att få frågor om allt du har övat på.",
-        "Tänk på huvud- och bisatser, ordföljd, kongruens, satsdelar och ordbildning.",
+        "Tänk på huvud- och bisatser, ordföljd, kongruens, liknelser, metaforer, idiom och dialoger.",
         "Du behöver svara rätt på 60% av frågorna för att klara testet och få bonuspoäng.",
         "Lycka till – du klarar det! 🌟"
       ],
@@ -1644,6 +1644,85 @@
             4
           ],
           "explanation": "Igår (adverbial) spelade (verb) han (subjekt) fotboll (objekt). Det är omvänd ordföljd."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är skillnaden mellan liknelse och metafor?",
+          "options": [
+            "De är samma sak",
+            "Liknelse jämför med 'som/likt'; metafor säger att A ÄR B utan 'som'",
+            "Metafor jämför med 'som'; liknelse säger att A ÄR B",
+            "Liknelse används bara i poesi"
+          ],
+          "correctIndex": 1,
+          "explanation": "Liknelse: 'Han är stark som ett lejon.' Metafor: 'Han är ett lejon.' – direkt likställning utan 'som'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket av följande är en liknelse?",
+          "options": [
+            "Hennes röst var honung.",
+            "Tankarna var ett virrvarr.",
+            "Hon sjunger likt en ängel.",
+            "Framtiden är ett öppet hav."
+          ],
+          "correctIndex": 2,
+          "explanation": "'Likt en ängel' innehåller jämförelseordet 'likt' – det är en liknelse."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket av följande är en metafor?",
+          "options": [
+            "Han arbetar som en maskin.",
+            "Skolan är en fängelsecell för tanken.",
+            "Snabb likt ett jagande lejon.",
+            "Hon är lika tyst som natten."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Skolan ÄR en fängelsecell' – utan 'som', direkt likställning. Det är en metafor."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad innebär idiom som stilistiskt grepp?",
+          "options": [
+            "Ord som beskriver substantiv bildligt",
+            "Fasta uttryck med bildlig innebörd som inte ska tolkas bokstavligt",
+            "Upprepning av inledningsord",
+            "Jämförelse med 'som' eller 'likt'"
+          ],
+          "correctIndex": 1,
+          "explanation": "Idiom är fasta fraser där den sammanlagda betydelsen skiljer sig från ordens bokstavliga mening."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Idiom: 'Bita i det sura ___.' (göra något obehagligt men nödvändigt)",
+          "answer": "äpplet",
+          "hint": "En frukt som kan vara sur.",
+          "explanation": "'Bita i det sura äpplet' = acceptera något obehagligt som ändå måste göras."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad används kolon till i en dialogmening med citattecken?",
+          "options": [
+            "Det används inte alls",
+            "Det avslutar citatet",
+            "Det introducerar det direkta citatet: Hon sa: \"Hej!\"",
+            "Det ersätter talstrecket"
+          ],
+          "correctIndex": 2,
+          "explanation": "Kolon (:) introducerar ett direkt citat. Hon sa: \"Hej!\" – kolon efter talverbet, sedan citattecken."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Var placeras frågetecknet i: Hon frågade: \"Vad heter du___\"",
+          "options": [
+            "Utanför citattecknet: \"Vad heter du\"?",
+            "Inuti citattecknet: \"Vad heter du?\"",
+            "Ingen – punkt används alltid i citat",
+            "Före citattecknet"
+          ],
+          "correctIndex": 1,
+          "explanation": "Skiljetecken som hör till repliken – frågetecken, utropstecken, punkt – placeras INUTI citattecknen."
         }
       ]
     }

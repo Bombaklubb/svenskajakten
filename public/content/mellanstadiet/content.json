@@ -1981,12 +1981,12 @@
     {
       "id": "sluttest",
       "title": "Sluttest – Grammatik",
-      "description": "Testa allt du lärt dig! 30 blandade frågor om grammatik på mellanstadienivå.",
+      "description": "Testa allt du lärt dig! 38 blandade frågor om grammatik på mellanstadienivå.",
       "icon": "🏆",
       "bonusPoints": 100,
       "helpText": [
         "Det här är ditt stora sluttest! Du kommer att få frågor om allt du har övat på.",
-        "Tänk på satsdelar, pronomen, tempus, stavning och skiljetecken.",
+        "Tänk på satsdelar, pronomen, tempus, stavning, liknelser, metaforer och idiom.",
         "Du behöver svara rätt på 60% av frågorna för att klara testet och få bonuspoäng.",
         "Lycka till – du klarar det! 🌟"
       ],
@@ -2347,6 +2347,97 @@
             4
           ],
           "explanation": "Maja (subjekt) läste (predikat) boken (objekt) igår (adverbial)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är en liknelse?",
+          "options": [
+            "När A kallas B direkt, t.ex. 'Livet är en resa'",
+            "En jämförelse med 'som' eller 'likt', t.ex. 'stark som ett lejon'",
+            "Upprepning av ord i början av meningar",
+            "Ett ord med bildlig betydelse"
+          ],
+          "correctIndex": 1,
+          "explanation": "En liknelse jämför med 'som' eller 'likt'. T.ex. 'Han sprang som vinden.'"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket av dessa är en liknelse?",
+          "options": [
+            "Livet är en resa.",
+            "Hon är en sol.",
+            "Han är tyst som en mus.",
+            "Tiden flyger."
+          ],
+          "correctIndex": 2,
+          "explanation": "'Tyst som en mus' är en liknelse – en jämförelse med 'som'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är en metafor?",
+          "options": [
+            "En jämförelse med 'som' eller 'likt'",
+            "När något kallas något annat direkt utan 'som', t.ex. 'Hon är en sol'",
+            "Ett idiom med bildlig betydelse",
+            "Upprepning av samma ord"
+          ],
+          "correctIndex": 1,
+          "explanation": "En metafor säger att A ÄR B, utan att jämföra med 'som'. 'Hon är en sol' = metafor."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket av dessa är en metafor?",
+          "options": [
+            "Snabb som blixten",
+            "Han sprang fort",
+            "Hennes ord var knivar",
+            "Det regnar mycket"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Hennes ord var knivar' – orden kallas knivar direkt, utan 'som'. Det är en metafor."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är ett idiom?",
+          "options": [
+            "En liknelse med 'som'",
+            "Ett fast uttryck med bildlig betydelse som inte tolkas bokstavligt",
+            "En metafor med 'är'",
+            "Ett ord med motsatt betydelse"
+          ],
+          "correctIndex": 1,
+          "explanation": "Idiom är fasta uttryck, t.ex. 'ta bladet från munnen' = säga vad man tycker rakt ut."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Idiom: 'Kostar ___ och pantalonger.' (kostar väldigt mycket)",
+          "answer": "skjortan",
+          "hint": "Det handlar om ett klädesplagg.",
+          "explanation": "'Kosta skjortan' är ett idiom som betyder att något är väldigt dyrt."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur skriver man korrekt med citattecken när man återger vad någon sagt?",
+          "options": [
+            "Hon sa \"jag är trött\".",
+            "Hon sa: \"Jag är trött.\"",
+            "Hon sa, jag är trött.",
+            "Hon sa – Jag är trött."
+          ],
+          "correctIndex": 1,
+          "explanation": "Kolon efter talverbet, stor bokstav inuti citattecknen och punkt inuti citattecknet."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Var placeras frågetecknet i: Han frågade: \"Vad heter du___\"",
+          "options": [
+            "Utanför citattecknet: Han frågade: \"Vad heter du\"?",
+            "Inuti citattecknet: Han frågade: \"Vad heter du?\"",
+            "Ingen – punkt används alltid",
+            "Före citattecknet"
+          ],
+          "correctIndex": 1,
+          "explanation": "Frågetecken som hör till repliken placeras INUTI citattecknen."
         }
       ]
     }

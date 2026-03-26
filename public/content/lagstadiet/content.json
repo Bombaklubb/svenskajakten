@@ -2997,7 +2997,7 @@
     {
       "id": "sluttest",
       "title": "Sluttest – Grammatik",
-      "description": "Testa allt du lärt dig! 32 blandade frågor om grammatik på lågstadienivå.",
+      "description": "Testa allt du lärt dig! 38 blandade frågor om grammatik på lågstadienivå.",
       "icon": "🏆",
       "bonusPoints": 100,
       "helpText": [
@@ -3387,6 +3387,73 @@
           ],
           "correctIndex": 1,
           "explanation": "'Röda' är adjektivet – det beskriver hur bollen ser ut."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är ett idiom?",
+          "options": [
+            "Ett ord som stavas svårt",
+            "Ett fast uttryck med bildlig betydelse, t.ex. 'ta det lugnt'",
+            "En lång mening med många ord",
+            "Ett ord med samma betydelse som ett annat"
+          ],
+          "correctIndex": 1,
+          "explanation": "Idiom är fasta uttryck som inte ska tolkas bokstavligt. 'Ta det lugnt' = slappna av."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder uttrycket 'Det är ingen ko på isen'?",
+          "options": [
+            "Det är farligt",
+            "Det är inga problem, lugn",
+            "Det är kallt",
+            "Det går sakta"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Det är ingen ko på isen' är ett idiom som betyder att det inte är något att oroa sig för."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Idiom: 'Ta bladet från ___.' (säga rakt ut vad man tycker)",
+          "answer": "munnen",
+          "hint": "Uttrycket handlar om att prata öppet.",
+          "explanation": "'Ta bladet från munnen' = säga vad man tycker utan att hålla tillbaka."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur inleder man ett direkt citat med citattecken?",
+          "options": [
+            "Med talstreck: – Hej!",
+            "Med kolon och citattecken: Han sa: \"Hej!\"",
+            "Med komma och citattecken: Han sa, \"Hej!\"",
+            "Utan skiljetecken: Han sa \"Hej!\""
+          ],
+          "correctIndex": 1,
+          "explanation": "Kolon (:) används för att introducera ett direkt citat, sedan citattecken runt det sagda."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Var placeras punkten i meningen: Lisa sa: \"Jag är hungrig___\"",
+          "options": [
+            "Utanför citattecknet: Lisa sa: \"Jag är hungrig\".",
+            "Inuti citattecknet: Lisa sa: \"Jag är hungrig.\"",
+            "Ingen punkt behövs",
+            "Före citattecknet: Lisa sa: \"Jag är hungrig\".'"
+          ],
+          "correctIndex": 1,
+          "explanation": "Punkt, frågetecken och utropstecken som hör till repliken placeras INUTI citattecknen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket alternativ visar rätt användning av citattecken i en dialog?",
+          "options": [
+            "Maja sa \"jag vill leka\".",
+            "Maja sa: \"Jag vill leka.\"",
+            "Maja sa, Jag vill leka.",
+            "\"Maja sa: jag vill leka.\""
+          ],
+          "correctIndex": 1,
+          "explanation": "Kolon efter talverbet, stor bokstav inuti citattecknen och punkt inuti citattecknet."
         }
       ]
     }
