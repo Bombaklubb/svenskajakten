@@ -2077,7 +2077,7 @@
         },
         {
           "type": "multiple-choice",
-          "question": "Välj rätt stavning av 'sjuk' (inte frisk):",
+          "question": "Välj rätt stavning av ordet för 'inte frisk':",
           "options": [
             "sjuk",
             "skjuk",
@@ -2189,11 +2189,11 @@
           "options": [
             "somna",
             "gäspa",
-            "tröttas",
+            "ledsna",
             "sova"
           ],
           "correctIndex": 2,
-          "explanation": "'Tröttas' och 'tröttna' betyder ungefär samma sak."
+          "explanation": "'Ledsna' och 'tröttna' kan betyda ungefär samma sak – att bli less på något."
         },
         {
           "type": "multiple-choice",
@@ -2211,7 +2211,7 @@
           "type": "multiple-choice",
           "question": "Välj rätt stavning av djuret: '___örn' (det stora skogsdjuret)",
           "options": [
-            "Björn",
+            "Gjörn",
             "Djörn",
             "Bjorn",
             "Björn"
@@ -3027,7 +3027,7 @@
           "clue": "Slå bollen i hålet med en klubba"
         },
         {
-          "word": "BOXING",
+          "word": "BOXNING",
           "clue": "Slåss med handskar i en ring"
         },
         {
