@@ -315,83 +315,6 @@
       ]
     },
     {
-      "id": "satsdelar-2",
-      "title": "Satsdelar – objekt och adverbial",
-      "description": "Objekt och adverbial",
-      "icon": "🔍",
-      "bonusPoints": 30,
-      "helpText": [
-        "Objekt svarar på frågan: Vad/vem gör subjektet det till?",
-        "Adverbial svarar på: Var? När? Hur?"
-      ],
-      "exercises": [
-        {
-          "type": "multiple-choice",
-          "question": "Vad är objektet i: 'Maja läser en bok'?",
-          "options": [
-            "Maja",
-            "läser",
-            "en bok",
-            "i skolan"
-          ],
-          "correctIndex": 2,
-          "explanation": "'En bok' är objektet – det är det Maja läser (vad läser hon?)."
-        },
-        {
-          "type": "multiple-choice",
-          "question": "Vad är adverbialet i: 'Vi spelar fotboll i parken'?",
-          "options": [
-            "Vi",
-            "spelar",
-            "fotboll",
-            "i parken"
-          ],
-          "correctIndex": 3,
-          "explanation": "'I parken' är ett adverbial – det svarar på frågan 'var?'."
-        },
-        {
-          "type": "fill-in-blank",
-          "question": "I meningen 'Hon sjunger vackert' svarar 'vackert' på frågan ___?",
-          "answer": "hur",
-          "hint": "Adverbial svarar på var, när eller hur.",
-          "explanation": "'Vackert' svarar på hur hon sjunger – det är ett sättsadverbial."
-        },
-        {
-          "type": "multiple-choice",
-          "question": "Vilket är objektet i: 'Kalle gav Lisa en blomma'?",
-          "options": [
-            "Kalle",
-            "gav",
-            "Lisa",
-            "en blomma"
-          ],
-          "correctIndex": 3,
-          "explanation": "'En blomma' är det direkta objektet – det Kalle gav."
-        },
-        {
-          "type": "build-sentence",
-          "instruction": "Bygg meningen: subjekt + predikat + objekt + adverbial!",
-          "words": [
-            "Läraren",
-            "undervisar",
-            "eleverna",
-            "varje",
-            "dag",
-            "."
-          ],
-          "correctOrder": [
-            0,
-            1,
-            2,
-            3,
-            4,
-            5
-          ],
-          "explanation": "'Läraren'=subj, 'undervisar'=pred, 'eleverna'=obj, 'varje dag'=adverbial (när?)."
-        }
-      ]
-    },
-    {
       "id": "sj-eller-sk-1",
       "title": "Sj- eller sk-ljud?",
       "description": "Öva på att välja rätt stavning för sj-ljudet",
@@ -873,8 +796,7 @@
       "bonusPoints": 25,
       "helpText": [
         "Vokaler: a, e, i, o, u, y, å, ä, ö. Alla andra bokstäver är konsonanter.",
-        "En stavelse innehåller alltid exakt en vokal – det hjälper dig dela upp ord rätt.",
-        "Konsonantkluster är flera konsonanter i rad, t.ex. 'str' i 'strand' eller 'spr' i 'springa'."
+        "En stavelse innehåller alltid exakt en vokal – det hjälper dig dela upp ord rätt."
       ],
       "exercises": [
         {
