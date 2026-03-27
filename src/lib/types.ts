@@ -187,7 +187,7 @@ export interface StudentData {
 
 // ─── Gamification ─────────────────────────────────────────────────────────────
 
-export type ChestType = "wood" | "silver" | "gold";
+export type ChestType = "wood" | "silver" | "gold" | "emerald" | "ruby" | "diamond";
 
 export interface Chest {
   id: string;

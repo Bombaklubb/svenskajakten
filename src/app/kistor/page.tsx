@@ -19,6 +19,9 @@ import {
   openWoodChest,
   openSilverChest,
   openGoldChest,
+  openEmeraldChest,
+  openRubyChest,
+  openDiamondChest,
   checkMissedExerciseMilestones,
 } from "@/lib/gamification";
 import type { StudentData, GamificationData, Chest, ChestType } from "@/lib/types";
@@ -122,6 +125,24 @@ function RewardPopup({ result, onClose }: { result: RewardResult; onClose: () =>
 }
 
 const SHELF_STYLES: Record<ChestType, { bg: string; plank: string; count: string; label: string }> = {
+  diamond: {
+    bg: "linear-gradient(135deg, rgba(125,211,252,0.2), rgba(14,165,233,0.12))",
+    plank: "linear-gradient(180deg, #0369a1, #0c4a6e)",
+    count: "bg-sky-400 text-white",
+    label: "text-sky-600 dark:text-sky-300",
+  },
+  ruby: {
+    bg: "linear-gradient(135deg, rgba(252,165,165,0.2), rgba(220,38,38,0.1))",
+    plank: "linear-gradient(180deg, #b91c1c, #7f1d1d)",
+    count: "bg-red-500 text-white",
+    label: "text-red-700 dark:text-red-400",
+  },
+  emerald: {
+    bg: "linear-gradient(135deg, rgba(110,231,183,0.2), rgba(16,185,129,0.1))",
+    plank: "linear-gradient(180deg, #065f46, #064e3b)",
+    count: "bg-emerald-500 text-white",
+    label: "text-emerald-700 dark:text-emerald-400",
+  },
   gold: {
     bg: "linear-gradient(135deg, rgba(253,224,71,0.15), rgba(245,158,11,0.1))",
     plank: "linear-gradient(180deg, #92400e, #78350f)",
@@ -144,12 +165,15 @@ const SHELF_STYLES: Record<ChestType, { bg: string; plank: string; count: string
 
 function TrophyShelf({ chests }: { chests: Chest[] }) {
   const byType: Record<ChestType, Chest[]> = {
+    diamond: chests.filter((c) => c.type === "diamond"),
+    ruby: chests.filter((c) => c.type === "ruby"),
+    emerald: chests.filter((c) => c.type === "emerald"),
     gold: chests.filter((c) => c.type === "gold"),
     silver: chests.filter((c) => c.type === "silver"),
     wood: chests.filter((c) => c.type === "wood"),
   };
 
-  const order: ChestType[] = ["gold", "silver", "wood"];
+  const order: ChestType[] = ["diamond", "ruby", "emerald", "gold", "silver", "wood"];
 
   return (
     <div className="space-y-6">
@@ -251,7 +275,10 @@ export default function KistorPage() {
     let result: { points: number; badge?: string; bonusChest?: Chest; description: string };
     if (chest.type === "wood") result = { ...openWoodChest(), badge: undefined, bonusChest: undefined };
     else if (chest.type === "silver") result = openSilverChest(gam.badges);
-    else result = openGoldChest(gam.badges);
+    else if (chest.type === "gold") result = openGoldChest(gam.badges);
+    else if (chest.type === "emerald") result = openEmeraldChest(gam.badges);
+    else if (chest.type === "ruby") result = openRubyChest(gam.badges);
+    else result = openDiamondChest(gam.badges);
 
     const newChests = gam.chests.map((c) =>
       c.id === chestId ? { ...c, opened: true, openedReward: result.description } : c
@@ -455,15 +482,21 @@ export default function KistorPage() {
             </h3>
             <p className="text-xs font-bold text-sv-500 dark:text-sv-300 uppercase tracking-wide mb-2">Poängmilstolpar</p>
             <ul className="space-y-1.5 text-sm text-sv-800 dark:text-sv-100 mb-4">
-              <li className="flex items-start gap-2"><img src="/content/bronskista.png" alt="Bronskista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Bronskista:</strong> 10, 20, 30, 50, 75, 100, 200 poäng</span></li>
-              <li className="flex items-start gap-2"><img src="/content/silverkista.png" alt="Silverkista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Silverkista:</strong> 300, 500, 750, 1 500, 2 000 poäng</span></li>
-              <li className="flex items-start gap-2"><img src="/content/guldkista.png" alt="Guldkista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Guldkista:</strong> 1 000, 2 500, 3 500, 5 000, 7 000, 10 000, 15 000 poäng</span></li>
+              <li className="flex items-start gap-2"><img src="/content/bronskista.png" alt="Bronskista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Bronskista:</strong> 10 – 200 poäng</span></li>
+              <li className="flex items-start gap-2"><img src="/content/silverkista.png" alt="Silverkista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Silverkista:</strong> 300 – 4 000 poäng</span></li>
+              <li className="flex items-start gap-2"><img src="/content/guldkista.png" alt="Guldkista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Guldkista:</strong> 1 000 – 7 000 poäng</span></li>
+              <li className="flex items-start gap-2"><img src="/content/smaragdkista.png" alt="Smaragdkista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Smaragdkista:</strong> 8 000 – 12 000 poäng</span></li>
+              <li className="flex items-start gap-2"><img src="/content/rubinkista.png" alt="Rubinkista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Rubinkista:</strong> 15 000 – 20 000 poäng</span></li>
+              <li className="flex items-start gap-2"><img src="/content/diamantkista.png" alt="Diamantkista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Diamantkista:</strong> 25 000 – 40 000 poäng</span></li>
             </ul>
             <p className="text-xs font-bold text-sv-500 dark:text-sv-300 uppercase tracking-wide mb-2">Övningsmilstolpar</p>
             <ul className="space-y-1.5 text-sm text-sv-800 dark:text-sv-100 mb-4">
-              <li className="flex items-start gap-2"><img src="/content/bronskista.png" alt="Bronskista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Bronskista:</strong> 1, 2, 3, 4, 5, 7, 10, 25, 45, 55 övningar</span></li>
-              <li className="flex items-start gap-2"><img src="/content/silverkista.png" alt="Silverkista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Silverkista:</strong> 12, 15, 20, 35, 40, 50, 70, 80, 90 övningar</span></li>
-              <li className="flex items-start gap-2"><img src="/content/guldkista.png" alt="Guldkista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Guldkista:</strong> 30, 60, 75, 100, 125, 150, 200 övningar</span></li>
+              <li className="flex items-start gap-2"><img src="/content/bronskista.png" alt="Bronskista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Bronskista:</strong> 1 – 55 övningar</span></li>
+              <li className="flex items-start gap-2"><img src="/content/silverkista.png" alt="Silverkista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Silverkista:</strong> 12 – 90 övningar</span></li>
+              <li className="flex items-start gap-2"><img src="/content/guldkista.png" alt="Guldkista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Guldkista:</strong> 30 – 125 övningar</span></li>
+              <li className="flex items-start gap-2"><img src="/content/smaragdkista.png" alt="Smaragdkista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Smaragdkista:</strong> 150 – 200 övningar</span></li>
+              <li className="flex items-start gap-2"><img src="/content/rubinkista.png" alt="Rubinkista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Rubinkista:</strong> 250 – 300 övningar</span></li>
+              <li className="flex items-start gap-2"><img src="/content/diamantkista.png" alt="Diamantkista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Diamantkista:</strong> 400 – 500 övningar</span></li>
             </ul>
             <div className="flex items-start gap-2 text-sm text-sv-800 dark:text-sv-100 pt-3 border-t border-sv-100 dark:border-gray-700">
               <span>🎁</span>
