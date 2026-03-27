@@ -1,6 +1,6 @@
-// ─── Stage / World definitions ───────────────────────────────────────────────
+// ─── Stage / Language definitions ─────────────────────────────────────────────
 
-export type StageId = "lagstadiet" | "mellanstadiet" | "hogstadiet" | "gymnasiet";
+export type StageId = "franska" | "spanska" | "tyska";
 
 export interface Stage {
   id: StageId;

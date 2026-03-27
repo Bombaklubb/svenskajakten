@@ -7,7 +7,7 @@ interface ProgressBarProps {
 
 export default function ProgressBar({
   value,
-  colorClass = "bg-sv-500",
+  colorClass = "bg-sj-500",
   label,
   showPercent = false,
 }: ProgressBarProps) {

@@ -189,7 +189,7 @@ export default function ReadingModulePage({ params }: Props) {
                 ))}
               </ul>
             ) : (
-              <div className="bg-sv-50 dark:bg-sv-900/30 border border-sv-200 dark:border-sv-700 rounded-xl p-3 sm:p-4 text-sv-800 dark:text-sv-200 text-sm">
+              <div className="bg-sj-50 dark:bg-sj-900/30 border border-sj-200 dark:border-sj-700 rounded-xl p-3 sm:p-4 text-sj-800 dark:text-sj-200 text-sm">
                 <p>Läs texten noggrant. Frågorna visas bredvid texten – du kan läsa om när du vill!</p>
               </div>
             )}
@@ -273,7 +273,7 @@ export default function ReadingModulePage({ params }: Props) {
                     i < results.length
                       ? results[i] ? "bg-green-500 w-5" : "bg-red-400 w-5"
                       : i === currentIndex
-                      ? "bg-sv-500 w-5"
+                      ? "bg-sj-500 w-5"
                       : "bg-gray-200 dark:bg-gray-700 w-3"
                   }`}
                 />

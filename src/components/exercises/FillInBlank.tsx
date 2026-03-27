@@ -40,7 +40,7 @@ export default function FillInBlank({ exercise, onAnswer, isLast }: Props) {
       ? "border-green-400 bg-green-50 dark:bg-green-900/30"
       : state === "wrong"
       ? "border-red-400 bg-red-50 dark:bg-red-900/30"
-      : "border-sv-300 bg-white dark:bg-gray-700 dark:border-sv-600 focus-within:border-sv-500";
+      : "border-sj-300 bg-white dark:bg-gray-700 dark:border-sj-600 focus-within:border-sj-500";
 
   return (
     <div className="space-y-5 animate-fade-in">
@@ -52,7 +52,7 @@ export default function FillInBlank({ exercise, onAnswer, isLast }: Props) {
               ? "border-green-400 text-green-700"
               : state === "wrong"
               ? "border-red-400 text-red-700"
-              : "border-sv-400 text-sv-700"
+              : "border-sj-400 text-sj-700"
           }`}
         >
           {state !== "idle" ? (

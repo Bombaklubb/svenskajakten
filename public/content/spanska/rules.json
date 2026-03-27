@@ -1,0 +1,70 @@
+{
+  "sections": [
+    {
+      "id": "artiklar",
+      "title": "Artiklar (los artículos)",
+      "icon": "📝",
+      "content": [
+        {
+          "term": "Bestämd artikel – el, la, los, las",
+          "explanation": "Spanska har två genus: maskulinum (el) och femininum (la). Plural: los (m.) och las (f.).",
+          "examples": ["el gato (katten)", "la casa (huset)", "los libros (böckerna)", "las flores (blommorna)"]
+        },
+        {
+          "term": "Obestämd artikel – un, una, unos, unas",
+          "explanation": "Un för maskulina ord, una för feminina. Unos/unas i plural.",
+          "examples": ["un chico (en pojke)", "una chica (en flicka)", "unos amigos (några vänner)"]
+        },
+        {
+          "term": "Genus-regler",
+          "explanation": "Ord som slutar på -o är oftast maskulina, ord som slutar på -a är oftast feminina.",
+          "examples": ["el perro (hunden, -o = mask.)", "la mesa (bordet, -a = fem.)", "el problema (undantag! -a men mask.)"]
+        }
+      ]
+    },
+    {
+      "id": "verb",
+      "title": "Verb i presens",
+      "icon": "🔄",
+      "content": [
+        {
+          "term": "AR-verb",
+          "explanation": "De vanligaste spanska verben slutar på -ar. Ändelser: -o, -as, -a, -amos, -áis, -an.",
+          "examples": ["hablar → yo hablo (jag pratar)", "cantar → tú cantas (du sjunger)", "bailar → nosotros bailamos (vi dansar)"]
+        },
+        {
+          "term": "Ser (att vara – permanent)",
+          "explanation": "Ser används för permanenta egenskaper: yo soy, tú eres, él/ella es, nosotros somos, vosotros sois, ellos son.",
+          "examples": ["Yo soy sueco. (Jag är svensk.)", "Ella es alta. (Hon är lång.)", "Somos amigos. (Vi är vänner.)"]
+        },
+        {
+          "term": "Estar (att vara – tillfälligt)",
+          "explanation": "Estar används för tillfälliga tillstånd och plats: yo estoy, tú estás, él/ella está, nosotros estamos.",
+          "examples": ["Estoy bien. (Jag mår bra.)", "¿Dónde está el gato? (Var är katten?)", "Estamos en casa. (Vi är hemma.)"]
+        }
+      ]
+    },
+    {
+      "id": "vardagsfraser",
+      "title": "Vardagsfraser",
+      "icon": "💬",
+      "content": [
+        {
+          "term": "Hälsningar",
+          "explanation": "Vanliga hälsningar på spanska.",
+          "examples": ["¡Hola! (Hej!)", "Buenos días (God morgon)", "¡Buenas tardes! (God eftermiddag!)"]
+        },
+        {
+          "term": "Artighetsfraser",
+          "explanation": "Att vara artig på spanska.",
+          "examples": ["Por favor (Snälla/Tack)", "Muchas gracias (Tack så mycket)", "Lo siento (Förlåt)"]
+        },
+        {
+          "term": "Att presentera sig",
+          "explanation": "Så här presenterar du dig på spanska.",
+          "examples": ["Me llamo... (Jag heter...)", "Tengo ... años. (Jag är ... år.)", "Vivo en Suecia. (Jag bor i Sverige.)"]
+        }
+      ]
+    }
+  ]
+}

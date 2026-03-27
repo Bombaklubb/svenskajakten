@@ -8,96 +8,74 @@ import { loadStudent } from "@/lib/storage";
 import { getStage } from "@/lib/stages";
 import type { StudentData } from "@/lib/types";
 
-// ── Begrepp–förklaring-par per stadienivå ─────────────────────────────────────
+// ── Ord–översättning-par per språk ─────────────────────────────────────
 
 const CONCEPT_PAIRS: Record<string, { term: string; def: string }[]> = {
-  lagstadiet: [
-    { term: "substantiv",    def: "namn på saker, djur, personer" },
-    { term: "verb",          def: "ord som beskriver en handling" },
-    { term: "adjektiv",      def: "ord som beskriver hur något är" },
-    { term: "vokal",         def: "a, e, i, o, u, y, å, ä, ö" },
-    { term: "konsonant",     def: "bokstav som inte är vokal" },
-    { term: "punkt",         def: "sätts i slutet av en mening" },
-    { term: "frågetecken",   def: "sätts efter en fråga" },
-    { term: "stor bokstav",  def: "börjar varje ny mening" },
-    { term: "synonym",       def: "ord med liknande betydelse" },
-    { term: "motsatsord",    def: "ord med motsatt betydelse" },
-    { term: "rim",           def: "ord som slutar på samma ljud" },
-    { term: "stavelse",      def: "en del av ett ord med vokalljud" },
-    { term: "mening",        def: "ord som bildar en hel tanke" },
-    { term: "rubrik",        def: "titeln på en text" },
-    { term: "utropstecken",  def: "sätts efter ett utrop eller order" },
-    { term: "komma",         def: "skiljetecken för paus i meningen" },
-    { term: "alfabet",       def: "alla bokstäver i ordning" },
-    { term: "berättelse",    def: "text som beskriver händelser" },
-    { term: "dialog",        def: "samtal mellan personer i text" },
-    { term: "talstreck",     def: "markerar vad någon säger" },
+  franska: [
+    { term: "bonjour", def: "hej / god dag" },
+    { term: "merci", def: "tack" },
+    { term: "s'il vous plaît", def: "tack / snälla" },
+    { term: "oui", def: "ja" },
+    { term: "non", def: "nej" },
+    { term: "au revoir", def: "hejdå" },
+    { term: "la maison", def: "huset" },
+    { term: "le chat", def: "katten" },
+    { term: "le chien", def: "hunden" },
+    { term: "l'école", def: "skolan" },
+    { term: "manger", def: "äta" },
+    { term: "boire", def: "dricka" },
+    { term: "lire", def: "läsa" },
+    { term: "écrire", def: "skriva" },
+    { term: "parler", def: "prata" },
+    { term: "rouge", def: "röd" },
+    { term: "bleu", def: "blå" },
+    { term: "vert", def: "grön" },
+    { term: "le livre", def: "boken" },
+    { term: "l'ami", def: "vännen" },
   ],
-  mellanstadiet: [
-    { term: "subjekt",       def: "vem eller vad meningen handlar om" },
-    { term: "predikat",      def: "verbets funktion i meningen" },
-    { term: "objekt",        def: "det som påverkas av handlingen" },
-    { term: "adverbial",     def: "beskriver hur, när eller var" },
-    { term: "pronomen",      def: "ersätter substantiv (han, hon, det)" },
-    { term: "nutid",         def: "något händer just nu (presens)" },
-    { term: "dåtid",         def: "något hände förr (preteritum)" },
-    { term: "framtid",       def: "något kommer att hända" },
-    { term: "sammansatt ord",def: "två ord satta ihop till ett" },
-    { term: "särskrivning",  def: "felaktig uppdelning av sammansatt ord" },
-    { term: "adjektiv",      def: "beskriver substantivets egenskaper" },
-    { term: "adverb",        def: "beskriver hur ett verb utförs" },
-    { term: "tempus",        def: "verbets tidsform" },
-    { term: "stycke",        def: "grupp meningar om samma ämne" },
-    { term: "talstreck",     def: "markerar repliker i dialog" },
-    { term: "sj-ljud",       def: "ljud som stavas sj, sk, stj eller sch" },
-    { term: "dubbelteckning", def: "dubbel konsonant efter kort vokal" },
-    { term: "inledning",     def: "textens början som fångar läsaren" },
-    { term: "avslutning",    def: "textens slut som rundar av" },
-    { term: "källkritik",    def: "granskning av en källas trovärdighet" },
+  spanska: [
+    { term: "hola", def: "hej" },
+    { term: "gracias", def: "tack" },
+    { term: "por favor", def: "snälla / tack" },
+    { term: "sí", def: "ja" },
+    { term: "no", def: "nej" },
+    { term: "adiós", def: "hejdå" },
+    { term: "la casa", def: "huset" },
+    { term: "el gato", def: "katten" },
+    { term: "el perro", def: "hunden" },
+    { term: "la escuela", def: "skolan" },
+    { term: "comer", def: "äta" },
+    { term: "beber", def: "dricka" },
+    { term: "leer", def: "läsa" },
+    { term: "escribir", def: "skriva" },
+    { term: "hablar", def: "prata" },
+    { term: "rojo", def: "röd" },
+    { term: "azul", def: "blå" },
+    { term: "verde", def: "grön" },
+    { term: "el libro", def: "boken" },
+    { term: "el amigo", def: "vännen" },
   ],
-  hogstadiet: [
-    { term: "bisats",        def: "underordnad sats med subjunktion" },
-    { term: "huvudsats",     def: "självständig sats som kan stå ensam" },
-    { term: "subjunktion",   def: "ord som inleder bisats (att, om, när)" },
-    { term: "infinitiv",     def: "verbets grundform (att springa)" },
-    { term: "particip",      def: "verbform som fungerar som adjektiv" },
-    { term: "aktiv",         def: "subjektet utför handlingen" },
-    { term: "passiv",        def: "subjektet utsätts för handlingen" },
-    { term: "kongruens",     def: "böjningsöverensstämmelse i meningen" },
-    { term: "nominalfras",   def: "substantiv med bestämningar" },
-    { term: "preposition",   def: "anger relation i rum eller tid (på, i, av)" },
-    { term: "ordföljd",      def: "ordningens placering i meningen" },
-    { term: "inversion",     def: "subjektet kommer efter predikatet" },
-    { term: "syftningsfel",  def: "oklart vad ett pronomen syftar på" },
-    { term: "formellt språk",def: "officiellt och neutralt språkbruk" },
-    { term: "informellt språk", def: "vardagligt och personligt språkbruk" },
-    { term: "retorik",       def: "konsten att tala och skriva övertygande" },
-    { term: "argument",      def: "skäl som stödjer ett påstående" },
-    { term: "tes",           def: "det påstående man vill bevisa" },
-    { term: "motargument",   def: "invändning mot ett argument" },
-    { term: "genre",         def: "typ av text med gemensamma drag" },
-  ],
-  gymnasiet: [
-    { term: "logos",         def: "förnuftsbaserat argument" },
-    { term: "etos",          def: "talarens trovärdighet och karaktär" },
-    { term: "patos",         def: "känslobaserat argument" },
-    { term: "nominalisering",def: "verb omvandlat till substantiv" },
-    { term: "stilnivå",      def: "graden av formellt eller informellt språk" },
-    { term: "denotation",    def: "ords direkta, bokstavliga betydelse" },
-    { term: "konnotation",   def: "ords associativa bibetydelse" },
-    { term: "metafor",       def: "bildlig jämförelse utan 'som'" },
-    { term: "ironi",         def: "säga det motsatta av det man menar" },
-    { term: "hyperbol",      def: "medveten överdrift för effekt" },
-    { term: "anafor",        def: "upprepning av ord i meningsbörjan" },
-    { term: "allitteration", def: "upprepning av begynnelseljud" },
-    { term: "perspektiv",    def: "synvinkel som texten betraktas från" },
-    { term: "implicit",      def: "underförstått, inte direkt uttryckt" },
-    { term: "explicit",      def: "direkt och tydligt uttryckt" },
-    { term: "diskurs",       def: "mönster för hur vi talar om ett ämne" },
-    { term: "intertextualitet", def: "hänvisning till andra texter" },
-    { term: "polyfoni",      def: "många röster och perspektiv i en text" },
-    { term: "narrativ",      def: "en berättelse eller berättelsestruktur" },
-    { term: "kohesion",      def: "textens inre sammanhang och bindning" },
+  tyska: [
+    { term: "hallo", def: "hej" },
+    { term: "danke", def: "tack" },
+    { term: "bitte", def: "snälla / tack" },
+    { term: "ja", def: "ja" },
+    { term: "nein", def: "nej" },
+    { term: "tschüss", def: "hejdå" },
+    { term: "das Haus", def: "huset" },
+    { term: "die Katze", def: "katten" },
+    { term: "der Hund", def: "hunden" },
+    { term: "die Schule", def: "skolan" },
+    { term: "essen", def: "äta" },
+    { term: "trinken", def: "dricka" },
+    { term: "lesen", def: "läsa" },
+    { term: "schreiben", def: "skriva" },
+    { term: "sprechen", def: "prata" },
+    { term: "rot", def: "röd" },
+    { term: "blau", def: "blå" },
+    { term: "grün", def: "grön" },
+    { term: "das Buch", def: "boken" },
+    { term: "der Freund", def: "vännen" },
   ],
 };
 
@@ -132,7 +110,7 @@ function shuffle<T>(arr: T[]): T[] {
 
 function buildCards(stageId: string, difficulty: Difficulty): MemCard[] {
   const count = PAIR_COUNTS[difficulty];
-  const pairs = shuffle(CONCEPT_PAIRS[stageId] ?? CONCEPT_PAIRS.lagstadiet).slice(0, count);
+  const pairs = shuffle(CONCEPT_PAIRS[stageId] ?? CONCEPT_PAIRS.franska).slice(0, count);
   const cards: MemCard[] = [];
   pairs.forEach((pair, pairId) => {
     cards.push({ uid: pairId * 2,     pairId, side: "term", word: pair.term, flipped: false, matched: false });
@@ -263,7 +241,7 @@ function MemoryGame({ stageId, stage, student }: {
           <div className="text-center mb-8">
             <div className="text-6xl mb-3">🃏</div>
             <h1 className="text-3xl font-black text-gray-900 dark:text-gray-100 mb-1">Memory</h1>
-            <p className="text-gray-500 dark:text-gray-400 text-sm">Para ihop grammatikbegrepp med rätt förklaring!</p>
+            <p className="text-gray-500 dark:text-gray-400 text-sm">Para ihop ord med rätt översättning!</p>
           </div>
 
           <div className="space-y-3">
@@ -380,11 +358,11 @@ function MemoryGame({ stageId, stage, student }: {
         <div className="flex gap-4 mb-3 justify-center text-xs text-gray-400 dark:text-gray-500 font-semibold">
           <span className="flex items-center gap-1">
             <span className="w-3 h-3 rounded-sm bg-violet-200 dark:bg-violet-800 inline-block" />
-            📖 Begrepp
+            🗣️ Ord
           </span>
           <span className="flex items-center gap-1">
             <span className="w-3 h-3 rounded-sm bg-amber-200 dark:bg-amber-800 inline-block" />
-            💡 Förklaring
+            🇸🇪 Svenska
           </span>
           <span className="flex items-center gap-1">
             <span className="w-3 h-3 rounded-sm bg-green-200 dark:bg-green-800 inline-block" />
@@ -450,13 +428,13 @@ function CardTile({ card, stageEmoji, onClick }: {
     >
       {card.matched ? (
         <>
-          <span className="text-xs mb-0.5">{card.side === "term" ? "📖" : "💡"}</span>
+          <span className="text-xs mb-0.5">{card.side === "term" ? "🗣️" : "🇸🇪"}</span>
           <span className="text-center leading-tight text-[10px] text-green-700 dark:text-green-300 font-bold px-1">{card.word}</span>
           <span className="absolute top-0.5 right-1 text-green-500 text-xs font-black">✓</span>
         </>
       ) : card.flipped ? (
         <>
-          <span className="text-xs mb-0.5">{card.side === "term" ? "📖" : "💡"}</span>
+          <span className="text-xs mb-0.5">{card.side === "term" ? "🗣️" : "🇸🇪"}</span>
           <span className={`text-center leading-tight text-[10px] font-black px-1 ${textClass}`}>{card.word}</span>
         </>
       ) : (

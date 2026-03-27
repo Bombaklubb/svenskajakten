@@ -58,7 +58,7 @@ export default function WorldPage({ params }: Props) {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-amber-50">
+      <div className="min-h-screen flex items-center justify-center bg-emerald-50">
         <div className="text-4xl animate-bounce-slow">{stage.emoji}</div>
       </div>
     );
@@ -80,14 +80,14 @@ export default function WorldPage({ params }: Props) {
   const tabs: { id: Tab; label: string }[] = [
     { id: "grammar",    label: "📝 Grammatik" },
     { id: "reading",    label: "📖 Läsning" },
-    { id: "spelling",   label: "✏️ Stavning" },
+    { id: "spelling",   label: "📚 Ordförråd" },
     { id: "regler",     label: "📐 Språkregler" },
     { id: "wordsearch", label: "🔍 Ordsökning" },
     { id: "spel",       label: "🎮 Spel" },
   ];
 
   return (
-    <div className="min-h-screen bg-amber-50 dark:bg-gray-900">
+    <div className="min-h-screen bg-emerald-50 dark:bg-gray-900">
       <Header student={student} />
 
       {/* Hero */}
@@ -103,7 +103,7 @@ export default function WorldPage({ params }: Props) {
             <span className="text-6xl drop-shadow-lg">{stage.emoji}</span>
             <div>
               <h1 className="text-3xl font-black text-white text-shadow">{stage.name}</h1>
-              <p className="text-white/70 font-semibold mt-0.5">{stage.subtitle} · {stage.grades}</p>
+              <p className="text-white/70 font-semibold mt-0.5">{stage.grades}</p>
               <p className="text-white/60 text-sm mt-1">{stage.description}</p>
             </div>
           </div>
@@ -112,12 +112,12 @@ export default function WorldPage({ params }: Props) {
 
       {/* Stats bar */}
       {student && stageProgress && (
-        <div className="bg-white dark:bg-gray-800 border-b border-sv-100 dark:border-gray-700" style={{ boxShadow: "0 2px 8px -2px rgba(249,115,22,0.06)" }}>
+        <div className="bg-white dark:bg-gray-800 border-b border-sj-100 dark:border-gray-700" style={{ boxShadow: "0 2px 8px -2px rgba(22,163,74,0.06)" }}>
           <div className="max-w-5xl mx-auto px-4 py-3 flex gap-2 flex-wrap">
             {[
               { label: "Grammatik", icon: "📝", count: Object.values(stageProgress.grammarModules).filter((m) => m.completed).length, total: content?.grammar.length ?? 0 },
               { label: "Läsning",   icon: "📖", count: Object.values(stageProgress.readingModules).filter((m) => m.completed).length, total: content?.reading.length ?? 0 },
-              { label: "Stavning",  icon: "✏️", count: Object.values(stageProgress.spellingModules ?? {}).filter((m) => m.completed).length, total: content?.spelling?.length ?? 0 },
+              { label: "Ordförråd", icon: "📚", count: Object.values(stageProgress.spellingModules ?? {}).filter((m) => m.completed).length, total: content?.spelling?.length ?? 0 },
               { label: "Ordsök.",   icon: "🔍", count: Object.values(stageProgress.wordsearchModules ?? {}).filter((m) => m.completed).length, total: content?.wordsearch?.length ?? 0 },
             ].map(({ label, icon, count, total }) => {
               const done = total > 0 && count === total;
@@ -126,14 +126,14 @@ export default function WorldPage({ params }: Props) {
                   key={label}
                   className={`border-2 rounded-2xl px-3 py-2 text-center transition-all min-w-[60px] ${
                     done
-                      ? `${stage.borderClass} bg-gradient-to-b from-white to-sv-50/30 dark:from-gray-800 dark:to-gray-700`
-                      : "bg-sv-50 dark:bg-gray-700 border-sv-100 dark:border-gray-600"
+                      ? `${stage.borderClass} bg-gradient-to-b from-white to-sj-50/30 dark:from-gray-800 dark:to-gray-700`
+                      : "bg-sj-50 dark:bg-gray-700 border-sj-100 dark:border-gray-600"
                   }`}
-                  style={done ? { boxShadow: "0 2px 0 0 rgba(249,115,22,0.15)" } : {}}
+                  style={done ? { boxShadow: "0 2px 0 0 rgba(22,163,74,0.15)" } : {}}
                 >
                   <div className="text-base leading-none mb-0.5">{icon}</div>
-                  <div className={`text-base font-black leading-none ${done ? stage.textClass : "text-sv-700 dark:text-gray-100"}`}>{count}/{total}</div>
-                  <div className="text-xs text-sv-400 dark:text-gray-400 mt-0.5 font-medium">{label}</div>
+                  <div className={`text-base font-black leading-none ${done ? stage.textClass : "text-sj-700 dark:text-gray-100"}`}>{count}/{total}</div>
+                  <div className="text-xs text-sj-400 dark:text-gray-400 mt-0.5 font-medium">{label}</div>
                 </div>
               );
             })}
@@ -144,7 +144,7 @@ export default function WorldPage({ params }: Props) {
       <main className="max-w-5xl mx-auto px-4 py-8">
         {/* Tabs */}
         <BlurFade delay={0.05} className="overflow-x-auto pb-1 mb-6">
-          <div className="flex gap-1.5 bg-white dark:bg-gray-800 p-1.5 rounded-2xl w-max min-w-full border-2 border-sv-100 dark:border-gray-700" style={{ boxShadow: "0 2px 0 0 rgba(249,115,22,0.08), inset 0 1px 3px rgba(0,0,0,0.04)" }}>
+          <div className="flex gap-1.5 bg-white dark:bg-gray-800 p-1.5 rounded-2xl w-max min-w-full border-2 border-sj-100 dark:border-gray-700" style={{ boxShadow: "0 2px 0 0 rgba(22,163,74,0.08), inset 0 1px 3px rgba(0,0,0,0.04)" }}>
             {tabs.map((tab) => (
               <button
                 key={tab.id}
@@ -152,7 +152,7 @@ export default function WorldPage({ params }: Props) {
                 className={`px-4 py-2 rounded-xl font-bold text-xs sm:text-sm whitespace-nowrap transition-all duration-200 cursor-pointer ${
                   activeTab === tab.id
                     ? `${stage.colorClass} text-white shadow-md scale-[1.02]`
-                    : "text-sv-400 dark:text-gray-400 hover:text-sv-700 dark:hover:text-gray-200 hover:bg-sv-50 dark:hover:bg-gray-700"
+                    : "text-sj-400 dark:text-gray-400 hover:text-sj-700 dark:hover:text-gray-200 hover:bg-sj-50 dark:hover:bg-gray-700"
                 }`}
                 style={activeTab === tab.id ? { boxShadow: "0 2px 0 0 rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.2)" } : {}}
               >
@@ -168,7 +168,7 @@ export default function WorldPage({ params }: Props) {
             <div className="mb-6 text-center">
               <div className="text-4xl mb-2">🎮</div>
               <h2 className="text-xl font-black text-gray-900 dark:text-gray-100">Spel</h2>
-              <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">Träna svenska och grammatik med roliga spel!</p>
+              <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">Träna språket med roliga spel!</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Memory */}
@@ -179,10 +179,10 @@ export default function WorldPage({ params }: Props) {
                     <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center text-2xl flex-shrink-0">🃏</div>
                     <div>
                       <h3 className="font-black text-white text-lg leading-tight">Memory</h3>
-                      <p className="text-white/80 text-xs">Para ihop begrepp med förklaring!</p>
+                      <p className="text-white/80 text-xs">Para ihop ord med översättning!</p>
                     </div>
                   </div>
-                  <p className="text-white/90 text-sm font-medium">Lätt (8 kort) • Medel (12 kort) • Svår (18 kort). Hitta alla par!</p>
+                  <p className="text-white/90 text-sm font-medium">Lätt (8 kort) · Medel (12 kort) · Svår (18 kort). Hitta alla par!</p>
                   <span className="inline-block mt-3 text-xs font-bold text-white/70 group-hover:text-white transition-colors">Spela nu →</span>
                 </div>
               </Link>
@@ -198,7 +198,7 @@ export default function WorldPage({ params }: Props) {
                       <p className="text-white/80 text-xs">Rädda snögubben – gissa rätt!</p>
                     </div>
                   </div>
-                  <p className="text-white/90 text-sm font-medium">Gissa grammatikord bokstav för bokstav. Fel svar smälter snögubben!</p>
+                  <p className="text-white/90 text-sm font-medium">Gissa ord på målspråket bokstav för bokstav. Fel svar smälter snögubben!</p>
                   <span className="inline-block mt-3 text-xs font-bold text-white/70 group-hover:text-white transition-colors">Spela nu →</span>
                 </div>
               </Link>
@@ -214,7 +214,7 @@ export default function WorldPage({ params }: Props) {
                       <p className="text-white/80 text-xs">60 sekunder – hur många hinner du?</p>
                     </div>
                   </div>
-                  <p className="text-white/90 text-sm font-medium">Grammatikfrågor i rask takt. Snabb som blixten!</p>
+                  <p className="text-white/90 text-sm font-medium">Språkfrågor i rask takt. Snabb som blixten!</p>
                   <span className="inline-block mt-3 text-xs font-bold text-white/70 group-hover:text-white transition-colors">Spela nu →</span>
                 </div>
               </Link>
@@ -230,7 +230,7 @@ export default function WorldPage({ params }: Props) {
                       <p className="text-white/80 text-xs">Rätt svar = samla, fel = hinder!</p>
                     </div>
                   </div>
-                  <p className="text-white/90 text-sm font-medium">Spring och samla mynt genom att svara rätt på grammatikfrågor!</p>
+                  <p className="text-white/90 text-sm font-medium">Spring och samla mynt genom att svara rätt på språkfrågor!</p>
                   <span className="inline-block mt-3 text-xs font-bold text-white/70 group-hover:text-white transition-colors">Spela nu →</span>
                 </div>
               </Link>
@@ -260,7 +260,7 @@ export default function WorldPage({ params }: Props) {
                         {item.examples.length > 0 && (
                           <div className="mt-2 flex flex-wrap gap-1.5">
                             {item.examples.map((ex, j) => (
-                              <span key={j} className="bg-sv-50 dark:bg-sv-900/30 border border-sv-200 dark:border-sv-700 rounded-lg px-2.5 py-1 text-xs text-sv-800 dark:text-sv-200 font-mono">
+                              <span key={j} className="bg-sj-50 dark:bg-sj-900/30 border border-sj-200 dark:border-sj-700 rounded-lg px-2.5 py-1 text-xs text-sj-800 dark:text-sj-200 font-mono">
                                 {ex}
                               </span>
                             ))}
@@ -282,7 +282,7 @@ export default function WorldPage({ params }: Props) {
 
         ) : activeTab === "spelling" ? (
           <div className="space-y-6">
-            {/* Regular spelling modules */}
+            {/* Regular vocabulary modules */}
             {(content.spelling ?? []).length > 0 && (
               <div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -304,12 +304,12 @@ export default function WorldPage({ params }: Props) {
               </div>
             )}
 
-            {/* Stavningstest på tid */}
+            {/* Ordtest på tid */}
             {(content.stavningstest ?? []).length > 0 && (
               <div>
                 <div className="flex items-center gap-2 mb-3 mt-2">
                   <span className="text-xl">⏱️</span>
-                  <h3 className="font-black text-gray-800 dark:text-gray-100 text-base">Stavningstest på tid</h3>
+                  <h3 className="font-black text-gray-800 dark:text-gray-100 text-base">Ordtest på tid</h3>
                   <span className="badge bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 border border-red-200 dark:border-red-700 text-xs">60 sek · Alla rätt krävs</span>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -333,8 +333,8 @@ export default function WorldPage({ params }: Props) {
 
             {(content.spelling ?? []).length === 0 && (content.stavningstest ?? []).length === 0 && (
               <div className="card text-center py-10 text-gray-400">
-                <div className="text-3xl mb-2">✏️</div>
-                <p>Inga stavningsövningar tillgängliga ännu.</p>
+                <div className="text-3xl mb-2">📚</div>
+                <p>Inga ordförrådövningar tillgängliga ännu.</p>
               </div>
             )}
           </div>

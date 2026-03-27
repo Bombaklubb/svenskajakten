@@ -162,7 +162,7 @@ export default function WordSearch({ words, onAllFound, pointsPerWord = 5 }: Wor
               className={`px-3 py-1.5 rounded-xl text-sm font-bold border-2 transition-all ${
                 found
                   ? `${found.color.replace("/70","")} text-white border-transparent line-through opacity-70`
-                  : "bg-white dark:bg-gray-700 border-sv-200 dark:border-gray-600 text-sv-800 dark:text-gray-100"
+                  : "bg-white dark:bg-gray-700 border-sj-200 dark:border-gray-600 text-sj-800 dark:text-gray-100"
               }`}
             >
               {w.word}
@@ -173,26 +173,26 @@ export default function WordSearch({ words, onAllFound, pointsPerWord = 5 }: Wor
 
       {/* Progress */}
       <div className="flex items-center gap-2 mb-4">
-        <div className="flex-1 h-2 bg-sv-100 dark:bg-gray-700 rounded-full overflow-hidden">
+        <div className="flex-1 h-2 bg-sj-100 dark:bg-gray-700 rounded-full overflow-hidden">
           <div
             className="h-full bg-gradient-to-r from-emerald-400 to-emerald-500 rounded-full transition-all duration-500"
             style={{ width: `${(foundWords.length / placed.length) * 100}%` }}
           />
         </div>
-        <span className="text-sm font-bold text-sv-600 dark:text-gray-300 flex-shrink-0">
+        <span className="text-sm font-bold text-sj-600 dark:text-gray-300 flex-shrink-0">
           {foundWords.length}/{placed.length} hittade
         </span>
       </div>
 
       {/* Hint */}
-      <p className="text-xs text-sv-400 dark:text-gray-400 mb-3 font-medium">
+      <p className="text-xs text-sj-400 dark:text-gray-400 mb-3 font-medium">
         {start ? "🎯 Klicka på sista bokstaven i ordet!" : "👆 Klicka på en bokstav för att börja"}
       </p>
 
       {/* Grid */}
       <div
-        className={`inline-block rounded-2xl overflow-hidden border-3 border-sv-200 dark:border-gray-600 ${shakeCell ? "animate-shake" : ""}`}
-        style={{ boxShadow: "0 4px 0 0 rgba(249,115,22,0.1)" }}
+        className={`inline-block rounded-2xl overflow-hidden border-3 border-sj-200 dark:border-gray-600 ${shakeCell ? "animate-shake" : ""}`}
+        style={{ boxShadow: "0 4px 0 0 rgba(22,163,74,0.1)" }}
       >
         {grid.map((row, r) => (
           <div key={r} className="flex">
@@ -206,10 +206,10 @@ export default function WordSearch({ words, onAllFound, pointsPerWord = 5 }: Wor
                   onClick={() => handleCellClick(r, c)}
                   className={`flex items-center justify-center font-black cursor-pointer transition-all duration-100 select-none text-sm
                     ${foundColor ? foundColor + " text-white" : ""}
-                    ${inPreview && !foundColor ? "bg-sv-200 dark:bg-sv-700 text-sv-900 dark:text-white scale-105" : ""}
-                    ${isStart && !foundColor ? "bg-sv-400 text-white ring-2 ring-sv-600 scale-105" : ""}
-                    ${!foundColor && !inPreview && !isStart ? "bg-white dark:bg-gray-800 text-sv-700 dark:text-gray-200 hover:bg-sv-50 dark:hover:bg-gray-700" : ""}
-                    border border-sv-50 dark:border-gray-700`}
+                    ${inPreview && !foundColor ? "bg-sj-200 dark:bg-sj-700 text-sj-900 dark:text-white scale-105" : ""}
+                    ${isStart && !foundColor ? "bg-sj-400 text-white ring-2 ring-sj-600 scale-105" : ""}
+                    ${!foundColor && !inPreview && !isStart ? "bg-white dark:bg-gray-800 text-sj-700 dark:text-gray-200 hover:bg-sj-50 dark:hover:bg-gray-700" : ""}
+                    border border-sj-50 dark:border-gray-700`}
                   style={{ width: cellSize, height: cellSize, fontSize: Math.max(10, cellSize - 10) }}
                   onMouseEnter={() => start && setHover({ row: r, col: c })}
                 >

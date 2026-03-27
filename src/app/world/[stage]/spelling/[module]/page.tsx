@@ -226,9 +226,9 @@ export default function SpellingModulePage({ params }: Props) {
                 ))}
               </ul>
             ) : (
-              <div className="bg-sv-50 dark:bg-sv-900/30 border border-sv-200 dark:border-sv-700 rounded-xl p-3 sm:p-4 text-sv-800 dark:text-sv-200 text-sm">
+              <div className="bg-sj-50 dark:bg-sj-900/30 border border-sj-200 dark:border-sj-700 rounded-xl p-3 sm:p-4 text-sj-800 dark:text-sj-200 text-sm">
                 <p>{mod.description}</p>
-                <p className="mt-2 text-sv-600 dark:text-sv-300 text-xs">
+                <p className="mt-2 text-sj-600 dark:text-sj-300 text-xs">
                   Övningen innehåller {totalExercises} frågor. Läs varje fråga noga innan du svarar!
                 </p>
               </div>
@@ -284,7 +284,7 @@ export default function SpellingModulePage({ params }: Props) {
               {currentIndex + 1} / {totalExercises}
             </span>
             {currentExercise && (
-              <span className="badge bg-sv-100 dark:bg-sv-900/40 text-sv-700 dark:text-sv-300 text-xs">
+              <span className="badge bg-sj-100 dark:bg-sj-900/40 text-sj-700 dark:text-sj-300 text-xs">
                 {currentExercise.type === "multiple-choice"
                   ? "🔘 Flerval"
                   : currentExercise.type === "fill-in-blank"

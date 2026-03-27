@@ -41,9 +41,9 @@ export default function Header({ student, onLogout }: HeaderProps) {
 
   return (
     <header
-      className="bg-white/95 dark:bg-gray-900/90 backdrop-blur-md border-b border-sv-100 dark:border-gray-700 sticky top-0 z-50"
+      className="bg-white/95 dark:bg-gray-900/90 backdrop-blur-md border-b border-sj-100 dark:border-gray-700 sticky top-0 z-50"
       style={{
-        boxShadow: "0 4px 0 0 rgba(249, 115, 22, 0.08), 0 6px 12px -4px rgba(249, 115, 22, 0.1)"
+        boxShadow: "0 4px 0 0 rgba(22, 163, 74, 0.08), 0 6px 12px -4px rgba(22, 163, 74, 0.1)"
       }}
     >
       <div className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
@@ -52,20 +52,17 @@ export default function Header({ student, onLogout }: HeaderProps) {
           href="/"
           className="flex items-center gap-2 hover:scale-105 transition-transform min-w-0 flex-shrink-0"
         >
-          <svg
-            width="40"
-            height="40"
-            viewBox="0 0 40 40"
-            xmlns="http://www.w3.org/2000/svg"
-            className="flex-shrink-0"
-            style={{ filter: "drop-shadow(0 3px 0 rgba(0,60,100,0.35))" }}
+          <div
+            className="w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0"
+            style={{
+              background: "linear-gradient(135deg, #22c55e, #16a34a)",
+              boxShadow: "0 3px 0 0 rgba(21,128,61,0.35)",
+            }}
           >
-            <rect width="40" height="40" rx="10" fill="#006AA7" />
-            <rect y="15" width="40" height="10" fill="#FECC02" />
-            <rect x="13" y="0" width="10" height="40" fill="#FECC02" />
-          </svg>
-          <span className="font-black text-xl text-sv-800 dark:text-white hidden sm:block tracking-tight">
-            Svenskajakten
+            🌍
+          </div>
+          <span className="font-black text-xl text-sj-800 dark:text-white hidden sm:block tracking-tight">
+            Språkjakten
           </span>
         </Link>
 
@@ -102,15 +99,15 @@ export default function Header({ student, onLogout }: HeaderProps) {
               return (
                 <Link
                   href="/profile"
-                  className="hidden sm:flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-sv-50 dark:hover:bg-gray-800 transition-all cursor-pointer border-2 border-transparent hover:border-sv-200"
+                  className="hidden sm:flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-sj-50 dark:hover:bg-gray-800 transition-all cursor-pointer border-2 border-transparent hover:border-sj-200"
                 >
                   <div
-                    className="w-9 h-9 rounded-xl overflow-hidden bg-sv-50 dark:bg-gray-700 flex items-center justify-center flex-shrink-0 border-2 border-sv-200 dark:border-gray-600"
-                    style={{ boxShadow: "0 2px 0 0 rgba(0, 106, 167, 0.12)" }}
+                    className="w-9 h-9 rounded-xl overflow-hidden bg-sj-50 dark:bg-gray-700 flex items-center justify-center flex-shrink-0 border-2 border-sj-200 dark:border-gray-600"
+                    style={{ boxShadow: "0 2px 0 0 rgba(22,163,74,0.12)" }}
                   >
                     <AvatarImg av={av} />
                   </div>
-                  <span className="text-sm font-bold text-sv-700 dark:text-gray-200">{student.name}</span>
+                  <span className="text-sm font-bold text-sj-700 dark:text-gray-200">{student.name}</span>
                 </Link>
               );
             })()}
@@ -118,7 +115,7 @@ export default function Header({ student, onLogout }: HeaderProps) {
             {/* Dark mode */}
             <button
               onClick={toggle}
-              className="p-2.5 rounded-xl text-sv-400 dark:text-gray-400 hover:bg-sv-50 dark:hover:bg-gray-800 hover:text-sv-600 transition-all touch-manipulation cursor-pointer border-2 border-transparent hover:border-sv-200"
+              className="p-2.5 rounded-xl text-sj-400 dark:text-gray-400 hover:bg-sj-50 dark:hover:bg-gray-800 hover:text-sj-600 transition-all touch-manipulation cursor-pointer border-2 border-transparent hover:border-sj-200"
               aria-label={dark ? "Ljust läge" : "Mörkt läge"}
             >
               {dark ? "☀️" : "🌙"}
@@ -127,7 +124,7 @@ export default function Header({ student, onLogout }: HeaderProps) {
             {/* Logout */}
             <button
               onClick={handleLogout}
-              className="px-3 sm:px-4 py-2 rounded-xl text-sm font-bold text-sv-400 dark:text-gray-300 hover:bg-red-50 dark:hover:bg-red-900/20 hover:text-red-500 dark:hover:text-red-400 transition-all touch-manipulation cursor-pointer border-2 border-transparent hover:border-red-200"
+              className="px-3 sm:px-4 py-2 rounded-xl text-sm font-bold text-sj-400 dark:text-gray-300 hover:bg-red-50 dark:hover:bg-red-900/20 hover:text-red-500 dark:hover:text-red-400 transition-all touch-manipulation cursor-pointer border-2 border-transparent hover:border-red-200"
             >
               Logga ut
             </button>
@@ -137,7 +134,7 @@ export default function Header({ student, onLogout }: HeaderProps) {
         {!student && (
           <button
             onClick={toggle}
-            className="p-2.5 rounded-xl text-sv-400 dark:text-gray-400 hover:bg-sv-50 dark:hover:bg-gray-800 transition-all cursor-pointer"
+            className="p-2.5 rounded-xl text-sj-400 dark:text-gray-400 hover:bg-sj-50 dark:hover:bg-gray-800 transition-all cursor-pointer"
             aria-label={dark ? "Ljust läge" : "Mörkt läge"}
           >
             {dark ? "☀️" : "🌙"}

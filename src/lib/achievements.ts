@@ -31,74 +31,60 @@ function stageStats(student: StudentData, stageId: StageId) {
 }
 
 export const ACHIEVEMENTS: Achievement[] = [
-  // ── Ordängen ──────────────────────────────────────────────────────────────
-  { id: "lag-1",  stageId: "lagstadiet", icon: "🌱", title: "Ängsvandrare",      description: "Klara din första modul i Ordängen." },
-  { id: "lag-2",  stageId: "lagstadiet", icon: "📝", title: "Grammatiker",       description: "Klara en grammatikmodul i Ordängen." },
-  { id: "lag-3",  stageId: "lagstadiet", icon: "📖", title: "Läsaren",           description: "Klara en läsförståelsemodul i Ordängen." },
-  { id: "lag-4",  stageId: "lagstadiet", icon: "✏️", title: "Stavaren",          description: "Klara en stavningsmodul i Ordängen." },
-  { id: "lag-5",  stageId: "lagstadiet", icon: "🌾", title: "Ängsmästare",       description: "Klara 5 moduler i Ordängen. Belöning: 🪙 Bronskista!" },
-  { id: "lag-6",  stageId: "lagstadiet", icon: "🎯", title: "Tredubbel utmaning",description: "Klara minst en modul av varje typ i Ordängen." },
-  { id: "lag-7",  stageId: "lagstadiet", icon: "⭐", title: "Poängjägare I",     description: "Samla 50 poäng i Ordängen." },
-  { id: "lag-8",  stageId: "lagstadiet", icon: "💎", title: "Poängemästare I",   description: "Samla 150 poäng i Ordängen." },
-  { id: "lag-9",  stageId: "lagstadiet", icon: "🏆", title: "Ängshjälte",        description: "Klara 10 moduler i Ordängen. Belöning: 🥈 Silverkista!" },
-  { id: "lag-10", stageId: "lagstadiet", icon: "🌟", title: "Ängskung",          description: "Klara 18 moduler i Ordängen. Belöning: 🏆 Guldkista!" },
-  { id: "lag-11", stageId: "lagstadiet", icon: "🔍", title: "Ordjägaren I",      description: "Klara en ordsökningsmodul i Ordängen." },
-  { id: "lag-12", stageId: "lagstadiet", icon: "🔍", title: "Ordjägaren II",      description: "Klara 3 ordsökningsmoduler i Ordängen." },
+  // ── Franska ──────────────────────────────────────────────────────────────
+  { id: "fra-1",  stageId: "franska", icon: "🇫🇷", title: "Franskstartare",     description: "Klara din första modul i Franska." },
+  { id: "fra-2",  stageId: "franska", icon: "📝", title: "Franskgrammatiker",  description: "Klara en grammatikmodul i Franska." },
+  { id: "fra-3",  stageId: "franska", icon: "📖", title: "Franskläsaren",      description: "Klara en läsförståelsemodul i Franska." },
+  { id: "fra-4",  stageId: "franska", icon: "📚", title: "Franskordkunskap",   description: "Klara en ordförrådmodul i Franska." },
+  { id: "fra-5",  stageId: "franska", icon: "🥐", title: "Franskmästare",      description: "Klara 5 moduler i Franska. Belöning: Bronskista!" },
+  { id: "fra-6",  stageId: "franska", icon: "🎯", title: "Tredubbel utmaning", description: "Klara minst en modul av varje typ i Franska." },
+  { id: "fra-7",  stageId: "franska", icon: "⭐", title: "Poängjägare FR",     description: "Samla 50 poäng i Franska." },
+  { id: "fra-8",  stageId: "franska", icon: "💎", title: "Poängemästare FR",   description: "Samla 150 poäng i Franska." },
+  { id: "fra-9",  stageId: "franska", icon: "🏆", title: "Franskhjälte",       description: "Klara 10 moduler i Franska. Belöning: Silverkista!" },
+  { id: "fra-10", stageId: "franska", icon: "🌟", title: "Fransklegende",      description: "Klara 18 moduler i Franska. Belöning: Guldkista!" },
+  { id: "fra-11", stageId: "franska", icon: "🔍", title: "Ordjägaren FR",      description: "Klara en ordsökningsmodul i Franska." },
+  { id: "fra-12", stageId: "franska", icon: "🔍", title: "Ordjägaren FR II",   description: "Klara 3 ordsökningsmoduler i Franska." },
 
-  // ── Berättelseskogen ──────────────────────────────────────────────────────
-  { id: "mel-1",  stageId: "mellanstadiet", icon: "🌲", title: "Skogsvandrare",     description: "Klara din första modul i Berättelseskogen." },
-  { id: "mel-2",  stageId: "mellanstadiet", icon: "📝", title: "Skogsgrammatiker",  description: "Klara en grammatikmodul i Berättelseskogen." },
-  { id: "mel-3",  stageId: "mellanstadiet", icon: "📖", title: "Skogsläsaren",      description: "Klara en läsförståelsemodul i Berättelseskogen." },
-  { id: "mel-4",  stageId: "mellanstadiet", icon: "✏️", title: "Skogsstavar",       description: "Klara en stavningsmodul i Berättelseskogen." },
-  { id: "mel-5",  stageId: "mellanstadiet", icon: "🌳", title: "Skogsmästare",      description: "Klara 5 moduler i Berättelseskogen. Belöning: 🪙 Bronskista!" },
-  { id: "mel-6",  stageId: "mellanstadiet", icon: "🎯", title: "Skogsutmaningen",   description: "Klara minst en modul av varje typ i Berättelseskogen." },
-  { id: "mel-7",  stageId: "mellanstadiet", icon: "⭐", title: "Poängjägare II",    description: "Samla 50 poäng i Berättelseskogen." },
-  { id: "mel-8",  stageId: "mellanstadiet", icon: "💎", title: "Poängemästare II",  description: "Samla 150 poäng i Berättelseskogen." },
-  { id: "mel-9",  stageId: "mellanstadiet", icon: "🏆", title: "Skogshjälte",       description: "Klara 10 moduler i Berättelseskogen. Belöning: 🥈 Silverkista!" },
-  { id: "mel-10", stageId: "mellanstadiet", icon: "🌟", title: "Skogslegende",      description: "Klara 18 moduler i Berättelseskogen. Belöning: 🏆 Guldkista!" },
-  { id: "mel-11", stageId: "mellanstadiet", icon: "🔍", title: "Ordjägaren II",     description: "Klara en ordsökningsmodul i Berättelseskogen." },
-  { id: "mel-12", stageId: "mellanstadiet", icon: "🔍", title: "Ordjägaren III",    description: "Klara 3 ordsökningsmoduler i Berättelseskogen." },
+  // ── Spanska ──────────────────────────────────────────────────────────────
+  { id: "spa-1",  stageId: "spanska", icon: "🇪🇸", title: "Spanskstartare",     description: "Klara din första modul i Spanska." },
+  { id: "spa-2",  stageId: "spanska", icon: "📝", title: "Spanskgrammatiker",  description: "Klara en grammatikmodul i Spanska." },
+  { id: "spa-3",  stageId: "spanska", icon: "📖", title: "Spanskläsaren",      description: "Klara en läsförståelsemodul i Spanska." },
+  { id: "spa-4",  stageId: "spanska", icon: "📚", title: "Spanskordkunskap",   description: "Klara en ordförrådmodul i Spanska." },
+  { id: "spa-5",  stageId: "spanska", icon: "🌮", title: "Spanskmästare",      description: "Klara 5 moduler i Spanska. Belöning: Bronskista!" },
+  { id: "spa-6",  stageId: "spanska", icon: "🎯", title: "Tredubbel utmaning", description: "Klara minst en modul av varje typ i Spanska." },
+  { id: "spa-7",  stageId: "spanska", icon: "⭐", title: "Poängjägare ES",     description: "Samla 50 poäng i Spanska." },
+  { id: "spa-8",  stageId: "spanska", icon: "💎", title: "Poängemästare ES",   description: "Samla 150 poäng i Spanska." },
+  { id: "spa-9",  stageId: "spanska", icon: "🏆", title: "Spanskhjälte",       description: "Klara 10 moduler i Spanska. Belöning: Silverkista!" },
+  { id: "spa-10", stageId: "spanska", icon: "🌟", title: "Spansklegende",      description: "Klara 18 moduler i Spanska. Belöning: Guldkista!" },
+  { id: "spa-11", stageId: "spanska", icon: "🔍", title: "Ordjägaren ES",      description: "Klara en ordsökningsmodul i Spanska." },
+  { id: "spa-12", stageId: "spanska", icon: "🔍", title: "Ordjägaren ES II",   description: "Klara 3 ordsökningsmoduler i Spanska." },
 
-  // ── Texthavet ─────────────────────────────────────────────────────────────
-  { id: "hog-1",  stageId: "hogstadiet", icon: "🌊", title: "Havsfarare",        description: "Klara din första modul i Texthavet." },
-  { id: "hog-2",  stageId: "hogstadiet", icon: "📝", title: "Havsgrammatiker",   description: "Klara en grammatikmodul i Texthavet." },
-  { id: "hog-3",  stageId: "hogstadiet", icon: "📖", title: "Havsläsaren",       description: "Klara en läsförståelsemodul i Texthavet." },
-  { id: "hog-4",  stageId: "hogstadiet", icon: "✏️", title: "Havsstavar",        description: "Klara en stavningsmodul i Texthavet." },
-  { id: "hog-5",  stageId: "hogstadiet", icon: "🔥", title: "Havskämpe",         description: "Klara 5 moduler i Texthavet. Belöning: 🪙 Bronskista!" },
-  { id: "hog-6",  stageId: "hogstadiet", icon: "🎯", title: "Havstrippeln",      description: "Klara minst en modul av varje typ i Texthavet." },
-  { id: "hog-7",  stageId: "hogstadiet", icon: "⭐", title: "Poängjägare III",   description: "Samla 50 poäng i Texthavet." },
-  { id: "hog-8",  stageId: "hogstadiet", icon: "💎", title: "Poängemästare III", description: "Samla 150 poäng i Texthavet." },
-  { id: "hog-9",  stageId: "hogstadiet", icon: "🏆", title: "Havsmästare",       description: "Klara 10 moduler i Texthavet. Belöning: 🥈 Silverkista!" },
-  { id: "hog-10", stageId: "hogstadiet", icon: "🌟", title: "Havslegende",       description: "Klara 18 moduler i Texthavet. Belöning: 🏆 Guldkista!" },
-  { id: "hog-11", stageId: "hogstadiet", icon: "🔍", title: "Ordjägaren III",    description: "Klara en ordsökningsmodul i Texthavet." },
-  { id: "hog-12", stageId: "hogstadiet", icon: "🔍", title: "Ordjägaren IV",      description: "Klara 3 ordsökningsmoduler i Texthavet." },
-
-  // ── Skrivakademin ─────────────────────────────────────────────────────────
-  { id: "gym-1",  stageId: "gymnasiet", icon: "🏰", title: "Akademiklättrare",   description: "Klara din första modul i Skrivakademin." },
-  { id: "gym-2",  stageId: "gymnasiet", icon: "📝", title: "Akademigrammatiker", description: "Klara en grammatikmodul i Skrivakademin." },
-  { id: "gym-3",  stageId: "gymnasiet", icon: "📖", title: "Akademiläsaren",     description: "Klara en läsförståelsemodul i Skrivakademin." },
-  { id: "gym-4",  stageId: "gymnasiet", icon: "✏️", title: "Akademistavar",      description: "Klara en stavningsmodul i Skrivakademin." },
-  { id: "gym-5",  stageId: "gymnasiet", icon: "🔥", title: "Akademikämpe",       description: "Klara 5 moduler i Skrivakademin. Belöning: 🪙 Bronskista!" },
-  { id: "gym-6",  stageId: "gymnasiet", icon: "🎯", title: "Akademitrippeln",    description: "Klara minst en modul av varje typ i Skrivakademin." },
-  { id: "gym-7",  stageId: "gymnasiet", icon: "⭐", title: "Poängjägare IV",     description: "Samla 50 poäng i Skrivakademin." },
-  { id: "gym-8",  stageId: "gymnasiet", icon: "💎", title: "Poängemästare IV",   description: "Samla 150 poäng i Skrivakademin." },
-  { id: "gym-9",  stageId: "gymnasiet", icon: "🏆", title: "Akademimästare",     description: "Klara 10 moduler i Skrivakademin. Belöning: 🥈 Silverkista!" },
-  { id: "gym-10", stageId: "gymnasiet", icon: "🌟", title: "Akademilegende",     description: "Klara 18 moduler i Skrivakademin. Belöning: 🏆 Guldkista!" },
-  { id: "gym-11", stageId: "gymnasiet", icon: "🔍", title: "Ordjägaren IV",      description: "Klara en ordsökningsmodul i Skrivakademin." },
-  { id: "gym-12", stageId: "gymnasiet", icon: "🔍", title: "Ordjägaren V",       description: "Klara 3 ordsökningsmoduler i Skrivakademin." },
+  // ── Tyska ────────────────────────────────────────────────────────────────
+  { id: "tys-1",  stageId: "tyska", icon: "🇩🇪", title: "Tyskstartare",       description: "Klara din första modul i Tyska." },
+  { id: "tys-2",  stageId: "tyska", icon: "📝", title: "Tyskgrammatiker",    description: "Klara en grammatikmodul i Tyska." },
+  { id: "tys-3",  stageId: "tyska", icon: "📖", title: "Tyskläsaren",        description: "Klara en läsförståelsemodul i Tyska." },
+  { id: "tys-4",  stageId: "tyska", icon: "📚", title: "Tyskordkunskap",     description: "Klara en ordförrådmodul i Tyska." },
+  { id: "tys-5",  stageId: "tyska", icon: "🥨", title: "Tyskmästare",        description: "Klara 5 moduler i Tyska. Belöning: Bronskista!" },
+  { id: "tys-6",  stageId: "tyska", icon: "🎯", title: "Tredubbel utmaning", description: "Klara minst en modul av varje typ i Tyska." },
+  { id: "tys-7",  stageId: "tyska", icon: "⭐", title: "Poängjägare DE",     description: "Samla 50 poäng i Tyska." },
+  { id: "tys-8",  stageId: "tyska", icon: "💎", title: "Poängemästare DE",   description: "Samla 150 poäng i Tyska." },
+  { id: "tys-9",  stageId: "tyska", icon: "🏆", title: "Tyskhjälte",         description: "Klara 10 moduler i Tyska. Belöning: Silverkista!" },
+  { id: "tys-10", stageId: "tyska", icon: "🌟", title: "Tysklegende",        description: "Klara 18 moduler i Tyska. Belöning: Guldkista!" },
+  { id: "tys-11", stageId: "tyska", icon: "🔍", title: "Ordjägaren DE",      description: "Klara en ordsökningsmodul i Tyska." },
+  { id: "tys-12", stageId: "tyska", icon: "🔍", title: "Ordjägaren DE II",   description: "Klara 3 ordsökningsmoduler i Tyska." },
 
   // ── Globala ────────────────────────────────────────────────────────────────
   { id: "global-1", stageId: "global", icon: "🚀", title: "Första steget",       description: "Klara din allra första modul." },
-  { id: "global-2", stageId: "global", icon: "💪", title: "Fleritdig",           description: "Klara moduler i 2 olika stadier. Belöning: 🪙 Bronskista!" },
-  { id: "global-3", stageId: "global", icon: "🌍", title: "Världserövrare",      description: "Klara moduler i alla 4 stadier. Belöning: 🥈 Silverkista!" },
+  { id: "global-2", stageId: "global", icon: "💪", title: "Flerspråkig",         description: "Klara moduler i 2 olika språk. Belöning: Bronskista!" },
+  { id: "global-3", stageId: "global", icon: "🌍", title: "Världsmedborgare",    description: "Klara moduler i alla 3 språk. Belöning: Silverkista!" },
   { id: "global-4", stageId: "global", icon: "⭐", title: "100 poäng",           description: "Samla totalt 100 poäng." },
-  { id: "global-5", stageId: "global", icon: "👑", title: "Mästaren",            description: "Samla totalt 500 poäng. Belöning: 🏆 Guldkista!" },
-  { id: "global-6", stageId: "global", icon: "⚽", title: "Fotbollsstjärnan",    description: "Klara 20 moduler totalt. Belöning: 🥈 Silverkista!" },
-  { id: "global-7", stageId: "global", icon: "🎓", title: "Svenskaexperten",     description: "Samla totalt 1000 poäng. Belöning: 🏆 Guldkista!" },
+  { id: "global-5", stageId: "global", icon: "👑", title: "Mästaren",            description: "Samla totalt 500 poäng. Belöning: Guldkista!" },
+  { id: "global-6", stageId: "global", icon: "🏅", title: "Språkexperten",       description: "Klara 20 moduler totalt. Belöning: Silverkista!" },
+  { id: "global-7", stageId: "global", icon: "🎓", title: "Polyglott",           description: "Samla totalt 1000 poäng. Belöning: Guldkista!" },
 ];
 
 export function isUnlocked(a: Achievement, student: StudentData): boolean {
-  const stages: StageId[] = ["lagstadiet", "mellanstadiet", "hogstadiet", "gymnasiet"];
+  const stages: StageId[] = ["franska", "spanska", "tyska"];
 
   if (a.stageId === "global") {
     const totalCompleted = stages.reduce(
@@ -110,7 +96,7 @@ export function isUnlocked(a: Achievement, student: StudentData): boolean {
 
     if (a.id === "global-1") return totalCompleted >= 1;
     if (a.id === "global-2") return stagesWithProgress >= 2;
-    if (a.id === "global-3") return stagesWithProgress >= 4;
+    if (a.id === "global-3") return stagesWithProgress >= 3;
     if (a.id === "global-4") return student.totalPoints >= 100;
     if (a.id === "global-5") return student.totalPoints >= 500;
     if (a.id === "global-6") return totalCompleted >= 20;
@@ -121,10 +107,9 @@ export function isUnlocked(a: Achievement, student: StudentData): boolean {
   const sid = a.stageId as StageId;
   const { gram, read, spell, ws, total, points } = stageStats(student, sid);
 
-  const prefix = sid === "lagstadiet" ? "lag"
-    : sid === "mellanstadiet" ? "mel"
-    : sid === "hogstadiet"    ? "hog"
-    : "gym";
+  const prefix = sid === "franska" ? "fra"
+    : sid === "spanska" ? "spa"
+    : "tys";
 
   if (a.id === `${prefix}-1`)  return total >= 1;
   if (a.id === `${prefix}-2`)  return gram >= 1;
@@ -142,22 +127,18 @@ export function isUnlocked(a: Achievement, student: StudentData): boolean {
 }
 
 export const ACHIEVEMENT_ICONS: Record<string, IconType> = {
-  "lag-1":  GiSprout,        "lag-2":  GiScrollQuill,  "lag-3":  GiOpenBook,
-  "lag-4":  GiPencil,        "lag-5":  GiLeafSwirl,    "lag-6":  GiBullseye,
-  "lag-7":  GiStarMedal,     "lag-8":  GiDiamondTrophy,"lag-9":  GiTrophyCup,
-  "lag-10": GiLaurelCrown,   "lag-11": GiMagnifyingGlass, "lag-12": GiCrossedSwords,
-  "mel-1":  GiWorld,         "mel-2":  GiScrollQuill,  "mel-3":  GiOpenBook,
-  "mel-4":  GiPencil,        "mel-5":  GiStarKey,      "mel-6":  GiBullseye,
-  "mel-7":  GiStarMedal,     "mel-8":  GiDiamondTrophy,"mel-9":  GiTrophyCup,
-  "mel-10": GiLaurels,       "mel-11": GiMagnifyingGlass, "mel-12": GiCrossedSwords,
-  "hog-1":  GiEarthAmerica,  "hog-2":  GiScrollQuill,  "hog-3":  GiOpenBook,
-  "hog-4":  GiPencil,        "hog-5":  GiFireball,     "hog-6":  GiBullseye,
-  "hog-7":  GiStarMedal,     "hog-8":  GiDiamondTrophy,"hog-9":  GiSwordsEmblem,
-  "hog-10": GiImperialCrown, "hog-11": GiMagnifyingGlass, "hog-12": GiCrossedSwords,
-  "gym-1":  GiMountainClimbing,"gym-2": GiScrollQuill, "gym-3":  GiOpenBook,
-  "gym-4":  GiPencil,        "gym-5":  GiGems,         "gym-6":  GiBullseye,
-  "gym-7":  GiStarMedal,     "gym-8":  GiDiamondTrophy,"gym-9":  GiGraduateCap,
-  "gym-10": GiMountaintop,   "gym-11": GiMagnifyingGlass, "gym-12": GiCrossedSwords,
+  "fra-1":  GiSprout,        "fra-2":  GiScrollQuill,  "fra-3":  GiOpenBook,
+  "fra-4":  GiPencil,        "fra-5":  GiLeafSwirl,    "fra-6":  GiBullseye,
+  "fra-7":  GiStarMedal,     "fra-8":  GiDiamondTrophy,"fra-9":  GiTrophyCup,
+  "fra-10": GiLaurelCrown,   "fra-11": GiMagnifyingGlass, "fra-12": GiCrossedSwords,
+  "spa-1":  GiWorld,         "spa-2":  GiScrollQuill,  "spa-3":  GiOpenBook,
+  "spa-4":  GiPencil,        "spa-5":  GiStarKey,      "spa-6":  GiBullseye,
+  "spa-7":  GiStarMedal,     "spa-8":  GiDiamondTrophy,"spa-9":  GiTrophyCup,
+  "spa-10": GiLaurels,       "spa-11": GiMagnifyingGlass, "spa-12": GiCrossedSwords,
+  "tys-1":  GiEarthAmerica,  "tys-2":  GiScrollQuill,  "tys-3":  GiOpenBook,
+  "tys-4":  GiPencil,        "tys-5":  GiFireball,     "tys-6":  GiBullseye,
+  "tys-7":  GiStarMedal,     "tys-8":  GiDiamondTrophy,"tys-9":  GiSwordsEmblem,
+  "tys-10": GiImperialCrown, "tys-11": GiMagnifyingGlass, "tys-12": GiCrossedSwords,
   "global-1": GiRocketFlight, "global-2": GiStrong,    "global-3": GiEarthAmerica,
   "global-4": GiStarFormation,"global-5": GiCrown,     "global-6": GiSoccerBall,
   "global-7": GiGraduateCap,

@@ -109,7 +109,7 @@ export default function WordSearchModulePage({ params }: Props) {
   }
 
   return (
-    <div className="min-h-screen bg-amber-50 dark:bg-gray-900">
+    <div className="min-h-screen bg-emerald-50 dark:bg-gray-900">
       <Header student={student} />
 
       {/* Hero banner */}
@@ -131,15 +131,15 @@ export default function WordSearchModulePage({ params }: Props) {
           <BlurFade>
             <div
               className="card text-center"
-              style={{ boxShadow: "0 6px 0 0 rgba(249,115,22,0.1), 0 12px 24px -4px rgba(249,115,22,0.08)" }}
+              style={{ boxShadow: "0 6px 0 0 rgba(22,163,74,0.1), 0 12px 24px -4px rgba(22,163,74,0.08)" }}
             >
               <div className="text-6xl mb-4 animate-bounce-slow">{mod.icon}</div>
-              <h2 className="text-2xl font-black text-sv-900 dark:text-gray-100 mb-2">{mod.title}</h2>
-              <p className="text-sv-400 dark:text-gray-400 mb-6 font-medium">{mod.description}</p>
+              <h2 className="text-2xl font-black text-sj-900 dark:text-gray-100 mb-2">{mod.title}</h2>
+              <p className="text-sj-400 dark:text-gray-400 mb-6 font-medium">{mod.description}</p>
 
-              <div className="bg-sv-50 dark:bg-gray-700 rounded-2xl p-4 mb-6 text-left border-2 border-sv-100 dark:border-gray-600">
-                <p className="font-bold text-sv-800 dark:text-gray-100 mb-2 flex items-center gap-1.5">🔍 Hur man spelar</p>
-                <ul className="space-y-1.5 text-sm text-sv-600 dark:text-gray-300 font-medium">
+              <div className="bg-sj-50 dark:bg-gray-700 rounded-2xl p-4 mb-6 text-left border-2 border-sj-100 dark:border-gray-600">
+                <p className="font-bold text-sj-800 dark:text-gray-100 mb-2 flex items-center gap-1.5">🔍 Hur man spelar</p>
+                <ul className="space-y-1.5 text-sm text-sj-600 dark:text-gray-300 font-medium">
                   <li>• Hitta alla <strong>{mod.words.length} ord</strong> i bokstavsrutnätet</li>
                   <li>• Klicka på <strong>första bokstaven</strong>, sedan på <strong>sista bokstaven</strong></li>
                   <li>• Orden kan gå åt höger, ner eller diagonalt</li>
@@ -149,7 +149,7 @@ export default function WordSearchModulePage({ params }: Props) {
 
               <div className="flex flex-wrap justify-center gap-2 mb-6">
                 {mod.words.map((w) => (
-                  <div key={w.word} className="px-3 py-1.5 bg-white dark:bg-gray-700 border-2 border-sv-200 dark:border-gray-600 rounded-xl text-sm font-bold text-sv-700 dark:text-gray-200">
+                  <div key={w.word} className="px-3 py-1.5 bg-white dark:bg-gray-700 border-2 border-sj-200 dark:border-gray-600 rounded-xl text-sm font-bold text-sj-700 dark:text-gray-200">
                     {w.word}
                   </div>
                 ))}
@@ -157,7 +157,7 @@ export default function WordSearchModulePage({ params }: Props) {
 
               <button
                 onClick={() => setPhase("playing")}
-                className="btn-primary text-xl py-4 px-8 border-3 border-sv-400 w-full"
+                className="btn-primary text-xl py-4 px-8 border-3 border-sj-400 w-full"
                 style={{ background: "linear-gradient(135deg, #f97316, #ea6c0a)" }}
               >
                 Starta ordsökning! 🔍
@@ -182,11 +182,11 @@ export default function WordSearchModulePage({ params }: Props) {
           <BlurFade>
             <div
               className="card text-center"
-              style={{ boxShadow: "0 8px 0 0 rgba(249,115,22,0.12), 0 16px 32px -8px rgba(249,115,22,0.15)" }}
+              style={{ boxShadow: "0 8px 0 0 rgba(22,163,74,0.12), 0 16px 32px -8px rgba(22,163,74,0.15)" }}
             >
               <div className="text-7xl mb-4 animate-bounce-slow">🎉</div>
-              <h2 className="text-3xl font-black text-sv-900 dark:text-gray-100 mb-2">Alla ord hittade!</h2>
-              <p className="text-sv-400 dark:text-gray-400 mb-6 font-medium">Fantastiskt jobbat – du hittade alla {mod.words.length} ord!</p>
+              <h2 className="text-3xl font-black text-sj-900 dark:text-gray-100 mb-2">Alla ord hittade!</h2>
+              <p className="text-sj-400 dark:text-gray-400 mb-6 font-medium">Fantastiskt jobbat – du hittade alla {mod.words.length} ord!</p>
 
               <div
                 className="bg-gradient-to-b from-amber-50 to-amber-100 dark:bg-amber-900/30 border-3 border-amber-300 dark:border-amber-700 rounded-2xl p-5 mb-4"
@@ -205,7 +205,7 @@ export default function WordSearchModulePage({ params }: Props) {
               </div>
 
               {chestEarned && (
-                <div className="bg-amber-50 dark:bg-amber-900/30 border-2 border-amber-300 dark:border-amber-600 rounded-2xl p-3 mb-3 flex items-center gap-3 text-left">
+                <div className="bg-emerald-50 dark:bg-amber-900/30 border-2 border-amber-300 dark:border-amber-600 rounded-2xl p-3 mb-3 flex items-center gap-3 text-left">
                   <img src={chestEarned === "gold" ? "/content/guldkista.png" : chestEarned === "silver" ? "/content/silverkista.png" : "/content/bronskista.png"} alt="kista" className="w-10 h-10 object-contain" />
                   <div>
                     <p className="text-sm font-bold text-amber-800 dark:text-amber-300">Du fick en {chestEarned === "gold" ? "Guldkista" : chestEarned === "silver" ? "Silverkista" : "Bronskista"}!</p>
@@ -227,13 +227,13 @@ export default function WordSearchModulePage({ params }: Props) {
               <div className="flex gap-3 mt-6">
                 <Link
                   href={`/world/${stageId}`}
-                  className="flex-1 btn-secondary text-center border-3 border-sv-200 font-bold py-3 rounded-2xl"
+                  className="flex-1 btn-secondary text-center border-3 border-sj-200 font-bold py-3 rounded-2xl"
                 >
                   ← Tillbaka
                 </Link>
                 <button
                   onClick={() => { setPhase("playing"); setEarnedPoints(0); setChestEarned(undefined); setBossJustUnlocked(false); }}
-                  className="flex-1 btn-primary border-3 border-sv-400"
+                  className="flex-1 btn-primary border-3 border-sj-400"
                   style={{ background: "linear-gradient(135deg, #f97316, #ea6c0a)" }}
                 >
                   Spela igen 🔄

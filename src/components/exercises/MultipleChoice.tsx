@@ -24,7 +24,7 @@ export default function MultipleChoice({ exercise, onAnswer, isLast }: Props) {
     const base =
       "w-full text-left px-4 py-3.5 sm:px-5 sm:py-4 rounded-xl border-2 font-medium transition-all duration-200 text-sm sm:text-base touch-manipulation ";
     if (!revealed) {
-      return base + "border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 hover:border-sv-400 hover:bg-sv-50 dark:hover:bg-sv-900/30 active:scale-98 cursor-pointer";
+      return base + "border-gray-200 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 hover:border-sj-400 hover:bg-sj-50 dark:hover:bg-sj-900/30 active:scale-98 cursor-pointer";
     }
     if (idx === exercise.correctIndex) {
       return base + "border-green-400 bg-green-50 dark:bg-green-900/30 text-green-800 dark:text-green-300 animate-pop";
@@ -76,7 +76,7 @@ export default function MultipleChoice({ exercise, onAnswer, isLast }: Props) {
       </div>
 
       {revealed && exercise.explanation && (
-        <div className="bg-sv-50 dark:bg-sv-900/30 border border-sv-200 dark:border-sv-700 rounded-xl p-4 text-sm text-sv-800 dark:text-sv-200 animate-slide-up">
+        <div className="bg-sj-50 dark:bg-sj-900/30 border border-sj-200 dark:border-sj-700 rounded-xl p-4 text-sm text-sj-800 dark:text-sj-200 animate-slide-up">
           💡 {exercise.explanation}
         </div>
       )}

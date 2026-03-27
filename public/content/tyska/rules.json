@@ -1,0 +1,70 @@
+{
+  "sections": [
+    {
+      "id": "artiklar",
+      "title": "Artiklar (die Artikel)",
+      "icon": "📝",
+      "content": [
+        {
+          "term": "Bestämd artikel – der, die, das",
+          "explanation": "Tyska har tre genus: maskulinum (der), femininum (die) och neutrum (das). Plural är alltid die.",
+          "examples": ["der Hund (hunden)", "die Katze (katten)", "das Haus (huset)", "die Bücher (böckerna)"]
+        },
+        {
+          "term": "Obestämd artikel – ein, eine",
+          "explanation": "Ein för maskulina och neutrala ord, eine för feminina.",
+          "examples": ["ein Junge (en pojke)", "eine Schule (en skola)", "ein Buch (en bok)"]
+        },
+        {
+          "term": "Genus-tips",
+          "explanation": "Det finns inga enkla regler, men vissa ändelser ger ledtrådar.",
+          "examples": ["-ung → die (die Zeitung)", "-keit/-heit → die (die Freiheit)", "-chen/-lein → das (das Mädchen)"]
+        }
+      ]
+    },
+    {
+      "id": "verb",
+      "title": "Verb i presens",
+      "icon": "🔄",
+      "content": [
+        {
+          "term": "Regelbundna verb",
+          "explanation": "Ta bort -en och lägg till ändelser: -e, -st, -t, -en, -t, -en.",
+          "examples": ["machen → ich mache (jag gör)", "spielen → du spielst (du spelar)", "lernen → wir lernen (vi lär oss)"]
+        },
+        {
+          "term": "Sein (att vara)",
+          "explanation": "Sein är oregelbundet: ich bin, du bist, er/sie/es ist, wir sind, ihr seid, sie sind.",
+          "examples": ["Ich bin Schwede. (Jag är svensk.)", "Er ist groß. (Han är lång.)", "Wir sind Freunde. (Vi är vänner.)"]
+        },
+        {
+          "term": "Haben (att ha)",
+          "explanation": "Haben är oregelbundet: ich habe, du hast, er/sie/es hat, wir haben, ihr habt, sie haben.",
+          "examples": ["Ich habe eine Katze. (Jag har en katt.)", "Hast du Hunger? (Är du hungrig?)", "Sie haben zwei Kinder. (De har två barn.)"]
+        }
+      ]
+    },
+    {
+      "id": "vardagsfraser",
+      "title": "Vardagsfraser",
+      "icon": "💬",
+      "content": [
+        {
+          "term": "Hälsningar",
+          "explanation": "Vanliga hälsningar på tyska.",
+          "examples": ["Hallo! (Hej!)", "Guten Morgen! (God morgon!)", "Guten Tag! (God dag!)"]
+        },
+        {
+          "term": "Artighetsfraser",
+          "explanation": "Att vara artig på tyska.",
+          "examples": ["Bitte (Snälla/Varsågod)", "Vielen Dank (Tack så mycket)", "Entschuldigung (Ursäkta)"]
+        },
+        {
+          "term": "Att presentera sig",
+          "explanation": "Så här presenterar du dig på tyska.",
+          "examples": ["Ich heiße... (Jag heter...)", "Ich bin ... Jahre alt. (Jag är ... år.)", "Ich wohne in Schweden. (Jag bor i Sverige.)"]
+        }
+      ]
+    }
+  ]
+}

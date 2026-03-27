@@ -1,13 +1,10 @@
 import type { StudentData, StageId, ModuleProgress, StageProgress, HeroConfig, GamificationData } from "./types";
 import { defaultGamificationData } from "./gamification";
 
-// Legacy key (single student) – kept only for migration
-const LEGACY_KEY = "svenskajakten_student";
-const LEGACY_GAMIFICATION_KEY = "svenskajakten_gamification";
-
-// New keys
-const STUDENTS_KEY = "svenskajakten_students"; // Record<name, StudentData>
-const CURRENT_KEY = "svenskajakten_current";   // currently logged-in name
+// Storage keys
+const STUDENTS_KEY = "sprakjakten_students"; // Record<name, StudentData>
+const CURRENT_KEY = "sprakjakten_current";   // currently logged-in name
+const GAMIFICATION_KEY = "sprakjakten_gamification";
 
 function emptyStageProgress(stageId: StageId): StageProgress {
   return {
@@ -28,10 +25,9 @@ function defaultStudentData(name: string): StudentData {
     lastActive: now,
     totalPoints: 0,
     stages: {
-      lagstadiet: emptyStageProgress("lagstadiet"),
-      mellanstadiet: emptyStageProgress("mellanstadiet"),
-      hogstadiet: emptyStageProgress("hogstadiet"),
-      gymnasiet: emptyStageProgress("gymnasiet"),
+      franska: emptyStageProgress("franska"),
+      spanska: emptyStageProgress("spanska"),
+      tyska: emptyStageProgress("tyska"),
     },
   };
 }
@@ -59,37 +55,12 @@ function getCurrentName(): string | null {
 
 function getGamificationKey(): string {
   const name = getCurrentName();
-  if (name) return `${LEGACY_GAMIFICATION_KEY}_${name}`;
-  return LEGACY_GAMIFICATION_KEY;
-}
-
-/** Migrate old single-student data into the new per-student store */
-function migrateIfNeeded(): void {
-  if (typeof window === "undefined") return;
-  const legacy = localStorage.getItem(LEGACY_KEY);
-  if (!legacy) return;
-  try {
-    const data = JSON.parse(legacy) as StudentData;
-    if (!data.name) return;
-    const all = getAllStudents();
-    if (!all[data.name]) {
-      all[data.name] = data;
-      saveAllStudents(all);
-      // Migrate gamification too
-      const legacyGam = localStorage.getItem(LEGACY_GAMIFICATION_KEY);
-      if (legacyGam) {
-        localStorage.setItem(`${LEGACY_GAMIFICATION_KEY}_${data.name}`, legacyGam);
-      }
-    }
-    localStorage.removeItem(LEGACY_KEY);
-  } catch {
-    // ignore
-  }
+  if (name) return `${GAMIFICATION_KEY}_${name}`;
+  return GAMIFICATION_KEY;
 }
 
 export function loadStudent(): StudentData | null {
   if (typeof window === "undefined") return null;
-  migrateIfNeeded();
   const name = getCurrentName();
   if (!name) return null;
   const all = getAllStudents();
@@ -107,11 +78,9 @@ export function saveStudent(data: StudentData): void {
 
 export function createStudent(name: string, avatar?: string): StudentData {
   const trimmed = name.trim();
-  migrateIfNeeded();
   const all = getAllStudents();
   const existing = all[trimmed];
   if (existing) {
-    // Restore existing student; update avatar only if explicitly chosen
     if (avatar) existing.avatar = avatar;
     saveStudent(existing);
     return existing;
@@ -124,13 +93,11 @@ export function createStudent(name: string, avatar?: string): StudentData {
 
 export function clearStudent(): void {
   if (typeof window === "undefined") return;
-  // Only clear the session pointer – student data stays in STUDENTS_KEY
   localStorage.removeItem(CURRENT_KEY);
 }
 
 export function studentExists(name: string): boolean {
   if (typeof window === "undefined") return false;
-  migrateIfNeeded();
   const all = getAllStudents();
   return !!all[name.trim()];
 }
@@ -199,7 +166,6 @@ export function loadGamification(): GamificationData {
     const raw = localStorage.getItem(getGamificationKey());
     if (!raw) return defaultGamificationData();
     const data = JSON.parse(raw) as GamificationData;
-    // Migration: ensure new fields exist for existing users
     if (!data.achievementsRewarded) data.achievementsRewarded = [];
     return data;
   } catch {
@@ -223,7 +189,7 @@ export function exportProgress(data: StudentData): void {
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = `svenskajakten_${data.name.replace(/\s+/g, "_")}.json`;
+  a.download = `sprakjakten_${data.name.replace(/\s+/g, "_")}.json`;
   a.click();
   URL.revokeObjectURL(url);
 }

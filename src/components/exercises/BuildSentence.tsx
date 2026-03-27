@@ -81,7 +81,7 @@ export default function BuildSentence({ exercise, onAnswer, isLast }: Props) {
             ? "border-green-400 bg-green-50 dark:bg-green-900/30"
             : state === "wrong"
             ? "border-red-400 bg-red-50 dark:bg-red-900/30"
-            : "border-dashed border-sv-300 dark:border-sv-600 bg-sv-50/50 dark:bg-sv-900/20"
+            : "border-dashed border-sj-300 dark:border-sj-600 bg-sj-50/50 dark:bg-sj-900/20"
         }`}
       >
         {placed.length === 0 && state === "idle" && (
@@ -96,7 +96,7 @@ export default function BuildSentence({ exercise, onAnswer, isLast }: Props) {
             disabled={state !== "idle"}
             className={`px-3 py-1.5 rounded-lg text-sm font-medium border transition-all duration-150 ${
               state === "idle"
-                ? "bg-white dark:bg-gray-700 border-sv-300 dark:border-sv-600 text-sv-800 dark:text-sv-300 hover:bg-red-50 dark:hover:bg-red-900/30 hover:border-red-300 hover:text-red-700 active:scale-95"
+                ? "bg-white dark:bg-gray-700 border-sj-300 dark:border-sj-600 text-sj-800 dark:text-sj-300 hover:bg-red-50 dark:hover:bg-red-900/30 hover:border-red-300 hover:text-red-700 active:scale-95"
                 : state === "correct"
                 ? "bg-green-100 dark:bg-green-900/30 border-green-300 dark:border-green-600 text-green-800 dark:text-green-300"
                 : "bg-red-100 dark:bg-red-900/30 border-red-300 dark:border-red-600 text-red-800 dark:text-red-300"
@@ -114,7 +114,7 @@ export default function BuildSentence({ exercise, onAnswer, isLast }: Props) {
             <button
               key={idx}
               onClick={() => addWord(idx)}
-              className="px-3 py-2 sm:px-4 rounded-xl border-2 border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100 font-medium text-sm hover:border-sv-400 hover:bg-sv-50 dark:hover:bg-sv-900/30 active:scale-95 transition-all duration-150 touch-manipulation"
+              className="px-3 py-2 sm:px-4 rounded-xl border-2 border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100 font-medium text-sm hover:border-sj-400 hover:bg-sj-50 dark:hover:bg-sj-900/30 active:scale-95 transition-all duration-150 touch-manipulation"
             >
               {exercise.words[idx]}
             </button>

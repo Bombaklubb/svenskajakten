@@ -1,0 +1,70 @@
+{
+  "sections": [
+    {
+      "id": "artiklar",
+      "title": "Artiklar (les articles)",
+      "icon": "📝",
+      "content": [
+        {
+          "term": "Bestämd artikel – le, la, les",
+          "explanation": "Franska har två genus: maskulinum (le) och femininum (la). Plural är alltid les.",
+          "examples": ["le chat (katten)", "la maison (huset)", "les livres (böckerna)"]
+        },
+        {
+          "term": "Obestämd artikel – un, une, des",
+          "explanation": "Un används för maskulina ord, une för feminina. Des används i plural.",
+          "examples": ["un garçon (en pojke)", "une fille (en flicka)", "des amis (vänner)"]
+        },
+        {
+          "term": "Apostrof – l'",
+          "explanation": "Före ord som börjar med vokal eller stummt h kortas le/la till l'.",
+          "examples": ["l'école (skolan)", "l'ami (vännen)", "l'homme (mannen)"]
+        }
+      ]
+    },
+    {
+      "id": "verb",
+      "title": "Verb i presens",
+      "icon": "🔄",
+      "content": [
+        {
+          "term": "ER-verb",
+          "explanation": "De vanligaste franska verben slutar på -er. Ta bort -er och lägg till ändelser: -e, -es, -e, -ons, -ez, -ent.",
+          "examples": ["parler → je parle (jag pratar)", "manger → tu manges (du äter)", "regarder → nous regardons (vi tittar)"]
+        },
+        {
+          "term": "Être (att vara)",
+          "explanation": "Être är oregelbundet: je suis, tu es, il/elle est, nous sommes, vous êtes, ils/elles sont.",
+          "examples": ["Je suis suédois. (Jag är svensk.)", "Elle est grande. (Hon är lång.)", "Nous sommes amis. (Vi är vänner.)"]
+        },
+        {
+          "term": "Avoir (att ha)",
+          "explanation": "Avoir är oregelbundet: j'ai, tu as, il/elle a, nous avons, vous avez, ils/elles ont.",
+          "examples": ["J'ai un chat. (Jag har en katt.)", "Tu as faim? (Är du hungrig?)", "Ils ont deux enfants. (De har två barn.)"]
+        }
+      ]
+    },
+    {
+      "id": "vardagsfraser",
+      "title": "Vardagsfraser",
+      "icon": "💬",
+      "content": [
+        {
+          "term": "Hälsningar",
+          "explanation": "Vanliga hälsningar på franska.",
+          "examples": ["Bonjour! (Hej/God dag!)", "Salut! (Hej! – informellt)", "Bonsoir! (God kväll!)"]
+        },
+        {
+          "term": "Artighetsfraser",
+          "explanation": "Att vara artig är viktigt i franskan!",
+          "examples": ["S'il vous plaît (Snälla/Tack)", "Merci beaucoup (Tack så mycket)", "Excusez-moi (Ursäkta mig)"]
+        },
+        {
+          "term": "Att presentera sig",
+          "explanation": "Så här presenterar du dig på franska.",
+          "examples": ["Je m'appelle... (Jag heter...)", "J'ai ... ans. (Jag är ... år.)", "J'habite en Suède. (Jag bor i Sverige.)"]
+        }
+      ]
+    }
+  ]
+}

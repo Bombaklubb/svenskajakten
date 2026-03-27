@@ -75,28 +75,24 @@ export const EXERCISE_CHEST_MILESTONES: { exercises: number; type: ChestType }[]
 // ─── Achievement → chest rewards ─────────────────────────────────────────────
 
 export const ACHIEVEMENT_CHEST_REWARDS: Record<string, ChestType> = {
-  // Lagstadiet – Ordängen
-  "lag-5":  "wood",    // Ängsmästare (5 moduler)
-  "lag-9":  "silver",  // Ängshjälte  (10 moduler)
-  "lag-10": "gold",    // Ängskung    (18 moduler)
-  // Mellanstadiet – Berättelseskogen
-  "mel-5":  "wood",
-  "mel-9":  "silver",
-  "mel-10": "gold",
-  // Högstadiet – Texthavet
-  "hog-5":  "wood",
-  "hog-9":  "silver",
-  "hog-10": "gold",
-  // Gymnasiet – Skrivakademin
-  "gym-5":  "wood",
-  "gym-9":  "silver",
-  "gym-10": "gold",
+  // Franska
+  "fra-5":  "wood",
+  "fra-9":  "silver",
+  "fra-10": "gold",
+  // Spanska
+  "spa-5":  "wood",
+  "spa-9":  "silver",
+  "spa-10": "gold",
+  // Tyska
+  "tys-5":  "wood",
+  "tys-9":  "silver",
+  "tys-10": "gold",
   // Globala
-  "global-2": "wood",    // Fleritdig        (2 stadier)
-  "global-3": "silver",  // Världserövrare   (4 stadier)
-  "global-5": "gold",    // Mästaren         (500 poäng)
-  "global-6": "silver",  // Fotbollsstjärnan (20 moduler)
-  "global-7": "gold",    // Svenskaexperten  (1000 poäng)
+  "global-2": "wood",
+  "global-3": "silver",
+  "global-5": "gold",
+  "global-6": "silver",
+  "global-7": "gold",
 };
 
 export function chestsEarnedFromAchievements(
@@ -154,21 +150,21 @@ export const CHEST_META: Record<
 
 export const ALL_BADGES = [
   { id: "grammar_star",    label: "Grammatikstjärna",  emoji: "⭐" },
-  { id: "spelling_ace",   label: "Stavningsmästare",   emoji: "🔤" },
-  { id: "reading_pro",    label: "Läsproffs",          emoji: "📖" },
-  { id: "curious_learner",label: "Nyfiken lärare",     emoji: "🔍" },
-  { id: "word_wizard",    label: "Ordtrollkarl",       emoji: "🪄" },
-  { id: "svenska_hero",   label: "Svenskahjälte",      emoji: "🦸" },
-  { id: "boss_slayer",    label: "Bossbesegrare",      emoji: "⚔️" },
-  { id: "mystery_hunter", label: "Mysteriejägare",     emoji: "🎁" },
+  { id: "vocab_ace",       label: "Ordförrådsmästare", emoji: "📚" },
+  { id: "reading_pro",     label: "Läsproffs",         emoji: "📖" },
+  { id: "curious_learner", label: "Nyfiken lärare",    emoji: "🔍" },
+  { id: "word_wizard",     label: "Ordtrollkarl",      emoji: "🪄" },
+  { id: "language_hero",   label: "Språkhjälte",       emoji: "🦸" },
+  { id: "boss_slayer",     label: "Bossbesegrare",     emoji: "⚔️" },
+  { id: "mystery_hunter",  label: "Mysteriejägare",    emoji: "🎁" },
 ];
 
-// ─── Boss challenge questions (Swedish language) ─────────────────────────────
+// ─── Boss challenge questions (mixed language) ──────────────────────────────
 
 export interface BossQuestion {
   id: string;
   type: "multiple-choice";
-  category: "grammar" | "spelling" | "reading";
+  category: "grammar" | "vocabulary" | "reading";
   question: string;
   options: string[];
   correctIndex: number;
@@ -178,92 +174,87 @@ export const BOSS_QUESTIONS: BossQuestion[] = [
   {
     id: "bq1",
     type: "multiple-choice",
-    category: "grammar",
-    question: "Vilket alternativ är grammatiskt korrekt?",
-    options: [
-      "Jag och han gick till affären.",
-      "Han och jag gick till affären.",
-      "Mig och han gick till affären.",
-      "Han och mig gick till affären.",
-    ],
+    category: "vocabulary",
+    question: "Vad betyder det franska ordet 'bonjour'?",
+    options: ["Hej då", "God dag / Hej", "Tack", "Ursäkta"],
     correctIndex: 1,
   },
   {
     id: "bq2",
     type: "multiple-choice",
-    category: "spelling",
-    question: "Hur stavades djuret som säger 'mjau'?",
-    options: ["Katt", "Katt", "Kat", "Kkat"],
+    category: "grammar",
+    question: "Hur böjer man det spanska verbet 'hablar' (tala) i presens för 'yo' (jag)?",
+    options: ["hablo", "hablas", "habla", "hablamos"],
     correctIndex: 0,
   },
   {
     id: "bq3",
     type: "multiple-choice",
-    category: "grammar",
-    question: "Fyll i rätt ord: 'Igår ___ vi på bio.'",
-    options: ["är", "var", "hade", "blir"],
+    category: "vocabulary",
+    question: "Vad betyder det tyska ordet 'Schule'?",
+    options: ["Sko", "Skola", "Skuld", "Skylt"],
     correctIndex: 1,
   },
   {
     id: "bq4",
     type: "multiple-choice",
-    category: "reading",
-    question: "Vad betyder ordet 'häpnadsväckande'?",
-    options: ["Tråkig", "Förvånande och imponerande", "Liten", "Snabb"],
+    category: "grammar",
+    question: "Vilken artikel är korrekt på franska: '___ maison' (huset)?",
+    options: ["le", "la", "les", "un"],
     correctIndex: 1,
   },
   {
     id: "bq5",
     type: "multiple-choice",
-    category: "grammar",
-    question: "Vilket är plural av 'ett barn'?",
-    options: ["Barns", "Barnen", "Barn", "Barnerna"],
-    correctIndex: 2,
+    category: "vocabulary",
+    question: "Hur säger man 'vatten' på spanska?",
+    options: ["agua", "leche", "pan", "café"],
+    correctIndex: 0,
   },
   {
     id: "bq6",
     type: "multiple-choice",
-    category: "spelling",
-    question: "Vilket ord stavas rätt?",
-    options: ["Vänner", "Vännar", "Vänner", "Venner"],
-    correctIndex: 0,
+    category: "grammar",
+    question: "Vad är den tyska artikeln för 'Kind' (barn)?",
+    options: ["der", "die", "das", "den"],
+    correctIndex: 2,
   },
   {
     id: "bq7",
     type: "multiple-choice",
-    category: "grammar",
-    question: "Välj rätt ordform: 'Det ___ regna imorgon.'",
-    options: ["kan", "kanske", "möjlig", "trolig"],
-    correctIndex: 0,
+    category: "reading",
+    question: "Vad betyder den franska meningen 'Je m'appelle Pierre'?",
+    options: ["Jag bor i Paris", "Jag heter Pierre", "Jag gillar Pierre", "Jag ringer Pierre"],
+    correctIndex: 1,
   },
   {
     id: "bq8",
     type: "multiple-choice",
-    category: "reading",
-    question: "Om någon är 'förtjust', hur mår de?",
-    options: ["Mycket glada och nöjda", "Mycket arga", "Mycket trötta", "Mycket ledsna"],
-    correctIndex: 0,
+    category: "vocabulary",
+    question: "Hur säger man 'familj' på tyska?",
+    options: ["Freund", "Familie", "Freiheit", "Farbe"],
+    correctIndex: 1,
   },
   {
     id: "bq9",
     type: "multiple-choice",
-    category: "spelling",
-    question: "Vilket ord stavas rätt?",
-    options: ["Eftersom", "Efersom", "Eferson", "Eftersom"],
-    correctIndex: 0,
+    category: "grammar",
+    question: "Vilket spanskt verb betyder 'att vara' (permanent egenskap)?",
+    options: ["estar", "ser", "tener", "haber"],
+    correctIndex: 1,
   },
   {
     id: "bq10",
     type: "multiple-choice",
-    category: "grammar",
-    question: "Vilken mening är i preteritum (dåtid)?",
+    category: "reading",
+    question: "Vad betyder 'Ich bin zwölf Jahre alt' på tyska?",
     options: [
-      "Igår äter jag pizza.",
-      "Igår åt jag pizza.",
-      "Igår ätande jag pizza.",
-      "Igår ska jag äta pizza.",
+      "Jag bor i tolv hus",
+      "Jag har tolv år",
+      "Jag är tolv år gammal",
+      "Jag fyller tolv år",
     ],
-    correctIndex: 1,
+    correctIndex: 2,
   },
 ];
 
@@ -296,10 +287,6 @@ export function chestsEarnedFromPoints(
   return earned;
 }
 
-/**
- * Returns chests for any exercise milestones the player has already passed
- * but never received – used when new milestones are added after the fact.
- */
 export function checkMissedExerciseMilestones(
   currentCount: number,
   alreadyRewarded: number[]
@@ -398,7 +385,7 @@ export function openSilverChest(badges: string[]): {
     bonusChest ? "Bonus: Bronskista!" : null,
   ]
     .filter(Boolean)
-    .join(" • ");
+    .join(" \u2022 ");
   return { points: pts, badge: badge?.id, bonusChest, description: desc };
 }
 
@@ -420,7 +407,7 @@ export function openGoldChest(badges: string[]): {
     bonusChest ? "Bonus: Silverkista!" : null,
   ]
     .filter(Boolean)
-    .join(" • ");
+    .join(" \u2022 ");
   return { points: pts, badge: badge?.id, bonusChest, description: desc };
 }
 

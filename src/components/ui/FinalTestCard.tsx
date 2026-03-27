@@ -9,15 +9,14 @@ interface FinalTestCardProps {
 }
 
 const STAGE_COLORS: Record<string, { from: string; to: string; glow: string }> = {
-  lagstadiet:    { from: "#f59e0b", to: "#d97706", glow: "rgba(245,158,11,0.4)" },
-  mellanstadiet: { from: "#16a34a", to: "#15803d", glow: "rgba(22,163,74,0.4)" },
-  hogstadiet:    { from: "#2563eb", to: "#1d4ed8", glow: "rgba(37,99,235,0.4)" },
-  gymnasiet:     { from: "#7c3aed", to: "#6d28d9", glow: "rgba(124,58,237,0.4)" },
+  franska:  { from: "#2563eb", to: "#1d4ed8", glow: "rgba(37,99,235,0.4)" },
+  spanska:  { from: "#dc2626", to: "#b91c1c", glow: "rgba(220,38,38,0.4)" },
+  tyska:    { from: "#854d0e", to: "#713f12", glow: "rgba(133,77,14,0.4)" },
 };
 
 export default function FinalTestCard({ stage, progress }: FinalTestCardProps) {
   const href = `/world/${stage.id}/grammar/sluttest`;
-  const colors = STAGE_COLORS[stage.id] ?? STAGE_COLORS.lagstadiet;
+  const colors = STAGE_COLORS[stage.id] ?? STAGE_COLORS.franska;
   const completed = !!progress?.completed;
 
   return (
@@ -48,7 +47,6 @@ export default function FinalTestCard({ stage, progress }: FinalTestCardProps) {
           }}
         >
           <div className="flex items-center gap-4">
-            {/* Trophy icon */}
             <div
               className="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl flex-shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6 border-3"
               style={{
@@ -62,7 +60,6 @@ export default function FinalTestCard({ stage, progress }: FinalTestCardProps) {
               {completed ? "🥇" : "🏆"}
             </div>
 
-            {/* Text */}
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2 flex-wrap mb-1">
                 <span
@@ -99,7 +96,6 @@ export default function FinalTestCard({ stage, progress }: FinalTestCardProps) {
               </p>
             </div>
 
-            {/* Arrow / points */}
             <div className="flex-shrink-0">
               {progress ? (
                 <div
@@ -131,7 +127,6 @@ export default function FinalTestCard({ stage, progress }: FinalTestCardProps) {
             </div>
           </div>
 
-          {/* Stars row */}
           <div className="mt-3 flex items-center gap-1.5">
             {Array.from({ length: 5 }).map((_, i) => (
               <span

@@ -8,81 +8,64 @@ import { loadStudent } from "@/lib/storage";
 import { getStage } from "@/lib/stages";
 import type { StudentData } from "@/lib/types";
 
-// ── Ordlistor per stadienivå ──────────────────────────────────────────────────
+// ── Ordlistor per språk ──────────────────────────────────────────────────
 
 const WORDS: Record<string, { word: string; hint: string }[]> = {
-  lagstadiet: [
-    { word: "SUBSTANTIV",   hint: "Namn på saker, djur och personer" },
-    { word: "ADJEKTIV",     hint: "Beskriver hur något är" },
-    { word: "VERB",         hint: "Ord som beskriver en handling" },
-    { word: "MENING",       hint: "Ord som bildar en hel tanke" },
-    { word: "VOKAL",        hint: "A, E, I, O, U och fler" },
-    { word: "KONSONANT",    hint: "Bokstav som inte är vokal" },
-    { word: "ALFABET",      hint: "Alla bokstäver i ordning" },
-    { word: "PUNKT",        hint: "Sätts i slutet av en mening" },
-    { word: "STOR",         hint: "Varje mening börjar med ___ bokstav" },
-    { word: "STAVELSE",     hint: "En del av ett ord med vokalljud" },
-    { word: "RIM",          hint: "Ord som slutar med samma ljud" },
-    { word: "SYNONYM",      hint: "Ord med liknande betydelse" },
-    { word: "DIALOG",       hint: "Samtal mellan personer i en text" },
-    { word: "RUBRIK",       hint: "Textens titel" },
-    { word: "BERÄTTELSE",   hint: "Text som beskriver händelser" },
+  franska: [
+    { word: "BONJOUR", hint: "Hej / God dag" },
+    { word: "MERCI", hint: "Tack" },
+    { word: "MAISON", hint: "Hus" },
+    { word: "MANGER", hint: "Äta" },
+    { word: "ÉCOLE", hint: "Skola" },
+    { word: "FAMILLE", hint: "Familj" },
+    { word: "VOYAGE", hint: "Resa" },
+    { word: "JARDIN", hint: "Trädgård" },
+    { word: "ROUGE", hint: "Röd" },
+    { word: "CHIEN", hint: "Hund" },
+    { word: "LIVRE", hint: "Bok" },
+    { word: "PARLER", hint: "Prata" },
+    { word: "ÉCRIRE", hint: "Skriva" },
+    { word: "SOLEIL", hint: "Sol" },
+    { word: "FLEUR", hint: "Blomma" },
   ],
-  mellanstadiet: [
-    { word: "SUBJEKT",      hint: "Vem eller vad meningen handlar om" },
-    { word: "PREDIKAT",     hint: "Verbets funktion i meningen" },
-    { word: "OBJEKT",       hint: "Det som påverkas av handlingen" },
-    { word: "PRONOMEN",     hint: "Ersätter substantiv – han, hon, det" },
-    { word: "ADVERB",       hint: "Beskriver hur ett verb utförs" },
-    { word: "TEMPUS",       hint: "Verbets tidsform" },
-    { word: "NUTID",        hint: "Något händer just nu (presens)" },
-    { word: "DÅTID",        hint: "Något hände förr (preteritum)" },
-    { word: "STYCKE",       hint: "Grupp meningar om samma ämne" },
-    { word: "TALSTRECK",    hint: "Markerar repliker i dialog" },
-    { word: "INLEDNING",    hint: "Textens början som fångar läsaren" },
-    { word: "AVSLUTNING",   hint: "Textens slut som rundar av" },
-    { word: "KÄLLKRITIK",   hint: "Granskning av en källas trovärdighet" },
-    { word: "SAMMANSATT",   hint: "Två ord satta ihop till ett" },
-    { word: "PREPOSITION",  hint: "Anger relation – på, i, av, under" },
+  spanska: [
+    { word: "HOLA", hint: "Hej" },
+    { word: "GRACIAS", hint: "Tack" },
+    { word: "CASA", hint: "Hus" },
+    { word: "COMER", hint: "Äta" },
+    { word: "ESCUELA", hint: "Skola" },
+    { word: "FAMILIA", hint: "Familj" },
+    { word: "VIAJE", hint: "Resa" },
+    { word: "PLAYA", hint: "Strand" },
+    { word: "ROJO", hint: "Röd" },
+    { word: "PERRO", hint: "Hund" },
+    { word: "LIBRO", hint: "Bok" },
+    { word: "HABLAR", hint: "Prata" },
+    { word: "ESCRIBIR", hint: "Skriva" },
+    { word: "AMIGO", hint: "Vän" },
+    { word: "CIUDAD", hint: "Stad" },
   ],
-  hogstadiet: [
-    { word: "BISATS",       hint: "Underordnad sats med subjunktion" },
-    { word: "HUVUDSATS",    hint: "Självständig sats som kan stå ensam" },
-    { word: "INFINITIV",    hint: "Verbets grundform – att springa" },
-    { word: "PARTICIP",     hint: "Verbform som fungerar som adjektiv" },
-    { word: "KONGRUENS",    hint: "Böjningsöverensstämmelse i meningen" },
-    { word: "INVERSION",    hint: "Subjektet kommer efter predikatet" },
-    { word: "RETORIK",      hint: "Konsten att tala övertygande" },
-    { word: "ARGUMENT",     hint: "Skäl som stödjer ett påstående" },
-    { word: "SYFTNINGSFEL", hint: "Oklart vad ett pronomen syftar på" },
-    { word: "GENRE",        hint: "Typ av text med gemensamma drag" },
-    { word: "NOMINALFRAS",  hint: "Substantiv med bestämningar" },
-    { word: "PASSIV",       hint: "Subjektet utsätts för handlingen" },
-    { word: "AKTIV",        hint: "Subjektet utför handlingen" },
-    { word: "ORDFÖLJD",     hint: "Ordningens placering i meningen" },
-    { word: "SUBJUNKTION",  hint: "Ord som inleder bisats – att, om, när" },
-  ],
-  gymnasiet: [
-    { word: "LOGOS",        hint: "Förnuftsbaserat argument" },
-    { word: "ETOS",         hint: "Talarens trovärdighet" },
-    { word: "PATOS",        hint: "Känslobaserat argument" },
-    { word: "METAFOR",      hint: "Bildlig jämförelse utan som" },
-    { word: "IRONI",        hint: "Säga det motsatta av det man menar" },
-    { word: "HYPERBOL",     hint: "Medveten överdrift för effekt" },
-    { word: "ANAFOR",       hint: "Upprepning av ord i meningsbörjan" },
-    { word: "ALLITTERATION",hint: "Upprepning av begynnelseljud" },
-    { word: "DENOTATION",   hint: "Ords direkta, bokstavliga betydelse" },
-    { word: "KONNOTATION",  hint: "Ords associativa bibetydelse" },
-    { word: "INTERTEXTUALITET", hint: "Hänvisning till andra texter" },
-    { word: "DISKURS",      hint: "Mönster för hur vi talar om ett ämne" },
-    { word: "KOHESION",     hint: "Textens inre sammanhang och bindning" },
-    { word: "NARRATIV",     hint: "En berättelse eller berättelsestruktur" },
-    { word: "POLYFONI",     hint: "Många röster och perspektiv i en text" },
+  tyska: [
+    { word: "HALLO", hint: "Hej" },
+    { word: "DANKE", hint: "Tack" },
+    { word: "HAUS", hint: "Hus" },
+    { word: "ESSEN", hint: "Äta" },
+    { word: "SCHULE", hint: "Skola" },
+    { word: "FAMILIE", hint: "Familj" },
+    { word: "REISE", hint: "Resa" },
+    { word: "GARTEN", hint: "Trädgård" },
+    { word: "BLAU", hint: "Blå" },
+    { word: "HUND", hint: "Hund" },
+    { word: "BUCH", hint: "Bok" },
+    { word: "SPRECHEN", hint: "Prata" },
+    { word: "SCHREIBEN", hint: "Skriva" },
+    { word: "FREUND", hint: "Vän" },
+    { word: "STADT", hint: "Stad" },
   ],
 };
 
 const MAX_LIVES = 6;
-const SWEDISH_ALPHA = "ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ".split("");
+const GAME_ALPHA = "ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖÉÈÊËÀÂÙÛÇÑÜ".split("").filter((v, i, a) => a.indexOf(v) === i);
 
 function shuffle<T>(arr: T[]): T[] {
   const a = [...arr];
@@ -231,7 +214,7 @@ function SnogubbenGame({ stageId, stage, student }: {
   stage: ReturnType<typeof getStage> & object;
   student: StudentData | null;
 }) {
-  const [wordList] = useState(() => shuffle(WORDS[stageId] ?? WORDS.lagstadiet));
+  const [wordList] = useState(() => shuffle(WORDS[stageId] ?? WORDS.franska));
   const [wordIndex, setWordIndex] = useState(0);
   const [guessed, setGuessed] = useState<Set<string>>(new Set());
   const [phase, setPhase] = useState<"playing" | "won" | "lost">("playing");
@@ -400,7 +383,7 @@ function SnogubbenGame({ stageId, stage, student }: {
         {/* Keyboard */}
         {phase === "playing" && (
           <div className="flex flex-wrap justify-center gap-1.5">
-            {SWEDISH_ALPHA.map(letter => {
+            {GAME_ALPHA.map(letter => {
               const isGuessed = guessed.has(letter);
               const isCorrect = isGuessed && wordLetters.includes(letter);
               const isWrong = isGuessed && !wordLetters.includes(letter);

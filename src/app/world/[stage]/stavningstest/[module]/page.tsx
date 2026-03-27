@@ -412,7 +412,7 @@ export default function StavningstestPage({ params }: Props) {
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder="Skriv ordet här..."
-                className="w-full border-2 border-gray-200 dark:border-gray-600 rounded-xl px-4 py-3 text-base font-medium text-center text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-700 focus:outline-none focus:border-sv-400 dark:focus:border-sv-500 transition-colors"
+                className="w-full border-2 border-gray-200 dark:border-gray-600 rounded-xl px-4 py-3 text-base font-medium text-center text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-700 focus:outline-none focus:border-sj-400 dark:focus:border-sj-500 transition-colors"
                 autoComplete="off"
                 autoCapitalize="none"
                 spellCheck={false}

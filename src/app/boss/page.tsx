@@ -17,7 +17,7 @@ const CAT_LABELS: Record<string, string> = {
   reading: "Läsförståelse",
 };
 const CAT_COLORS: Record<string, string> = {
-  grammar: "bg-sv-100 dark:bg-sv-900/40 text-sv-700 dark:text-sv-300",
+  grammar: "bg-sj-100 dark:bg-sj-900/40 text-sj-700 dark:text-sj-300",
   spelling: "bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300",
   reading: "bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300",
 };
@@ -183,9 +183,9 @@ export default function BossPage() {
                 <p className="text-2xl font-black text-amber-600">+{BOSS_BONUS_POINTS}</p>
                 <p className="text-xs text-amber-500">bonuspoäng</p>
               </div>
-              <div className="bg-sv-50 rounded-2xl p-3 border border-sv-200">
-                <p className="text-2xl font-black text-sv-600">⚔️</p>
-                <p className="text-xs text-sv-500">märke</p>
+              <div className="bg-sj-50 rounded-2xl p-3 border border-sj-200">
+                <p className="text-2xl font-black text-sj-600">⚔️</p>
+                <p className="text-xs text-sj-500">märke</p>
               </div>
             </div>
 

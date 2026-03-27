@@ -8,56 +8,44 @@ import { loadStudent } from "@/lib/storage";
 import { getStage } from "@/lib/stages";
 import type { StudentData } from "@/lib/types";
 
-// ── Frågor per stadienivå (återanvänds från Tidsattack, men med annan layout) ─
+// ── Frågor per språk (återanvänds från Tidsattack, men med annan layout) ─
 
 const QUESTIONS: Record<string, { q: string; options: string[]; correct: number }[]> = {
-  lagstadiet: [
-    { q: "Vad är ett SUBSTANTIV?", options: ["Handlingsord", "Namn på saker, djur, personer", "Beskrivningsord", "Kopplings-ord"], correct: 1 },
-    { q: "Vad är ett VERB?", options: ["Namn på saker", "Beskriver hur något är", "Handlingsord", "Kopplar meningar"], correct: 2 },
-    { q: "Vad är ett ADJEKTIV?", options: ["Handlingsord", "Namn på saker", "Anger tid", "Beskriver hur något är"], correct: 3 },
-    { q: "Vad sätts efter en FRÅGA?", options: ["Punkt", "Komma", "Frågetecken", "Utropstecken"], correct: 2 },
-    { q: "Vad börjar varje mening med?", options: ["Liten bokstav", "Siffra", "Stor bokstav", "Punkt"], correct: 2 },
-    { q: "Vad är en VOKAL?", options: ["B, C, D, F", "A, E, I, O, U, Å, Ä, Ö", "Bara A och E", "Alla bokstäver"], correct: 1 },
-    { q: "Vad är ett SYNONYM?", options: ["Motsatsord", "Ord med liknande betydelse", "Felstavat ord", "Frågeord"], correct: 1 },
-    { q: "Vad är en MENING?", options: ["En bok", "En bokstav", "Ord som bildar en hel tanke", "En rubrik"], correct: 2 },
-    { q: "Vad kallas textens TITEL?", options: ["Stycke", "Rubrik", "Dialog", "Paragraf"], correct: 1 },
-    { q: "Vad markerar TALSTRECK?", options: ["En paus", "Vad någon säger", "Frågans slut", "En lista"], correct: 1 },
+  franska: [
+    { q: "Vad betyder 'bonjour'?", options: ["Hejdå", "Hej", "Tack", "Snälla"], correct: 1 },
+    { q: "Vad betyder 'le chien'?", options: ["Katten", "Hunden", "Fisken", "Hästen"], correct: 1 },
+    { q: "Hur säger man 'äta' på franska?", options: ["boire", "manger", "lire", "parler"], correct: 1 },
+    { q: "Vad betyder 'bleu'?", options: ["Röd", "Grön", "Blå", "Gul"], correct: 2 },
+    { q: "Vad betyder 'la famille'?", options: ["Familjen", "Skolan", "Huset", "Boken"], correct: 0 },
+    { q: "Hur säger man 'nej' på franska?", options: ["oui", "non", "merci", "bonjour"], correct: 1 },
+    { q: "Vad betyder 'lire'?", options: ["Skriva", "Prata", "Läsa", "Springa"], correct: 2 },
+    { q: "Vad betyder 'le soleil'?", options: ["Månen", "Solen", "Stjärnan", "Molnet"], correct: 1 },
+    { q: "Hur säger man 'tack' på franska?", options: ["bonjour", "au revoir", "merci", "oui"], correct: 2 },
+    { q: "Vad betyder 'vert'?", options: ["Röd", "Blå", "Gul", "Grön"], correct: 3 },
   ],
-  mellanstadiet: [
-    { q: "Vad är ett SUBJEKT?", options: ["Verbets tidsform", "Vem/vad meningen handlar om", "Det verbet gör", "En tidsangivelse"], correct: 1 },
-    { q: "Vad är PREDIKAT?", options: ["Subjektets funktion", "Verbets funktion i meningen", "En bisats", "Tidsangivelse"], correct: 1 },
-    { q: "Vad är TEMPUS?", options: ["Verbets tidsform", "Meningens längd", "Ordets stavning", "En adjektivform"], correct: 0 },
-    { q: "Vad är NUTID?", options: ["Något hände förr", "Något ska hända", "Något händer just nu", "Något händer ibland"], correct: 2 },
-    { q: "Vad är ett PRONOMEN?", options: ["Ersätter substantiv", "Ersätter verb", "Ersätter adjektiv", "Anger tid"], correct: 0 },
-    { q: "Vad är ADVERB?", options: ["Namn på saker", "Beskriver hur ett verb utförs", "Ersätter substantiv", "Anger relation"], correct: 1 },
-    { q: "Vad är SAMMANSATT ORD?", options: ["Två ord ihopsatta", "Ord med många bokstäver", "Ord med förled", "Lånat ord"], correct: 0 },
-    { q: "Vad är KÄLLKRITIK?", options: ["Att skriva snabbt", "Att granska källors trovärdighet", "Att kopiera text", "Att hitta synonymer"], correct: 1 },
-    { q: "Vad är en PREPOSITION?", options: ["Handlingsord", "Anger relation – på, i, av", "Ersätter substantiv", "Tidsform"], correct: 1 },
-    { q: "Vad är DÅTID?", options: ["Något händer nu", "Något hände förr", "Något ska hända", "Något händer ofta"], correct: 1 },
+  spanska: [
+    { q: "Vad betyder 'hola'?", options: ["Hejdå", "Tack", "Hej", "Snälla"], correct: 2 },
+    { q: "Vad betyder 'el perro'?", options: ["Katten", "Hästen", "Hunden", "Fisken"], correct: 2 },
+    { q: "Hur säger man 'äta' på spanska?", options: ["beber", "comer", "leer", "hablar"], correct: 1 },
+    { q: "Vad betyder 'azul'?", options: ["Röd", "Blå", "Grön", "Gul"], correct: 1 },
+    { q: "Vad betyder 'la familia'?", options: ["Skolan", "Familjen", "Huset", "Boken"], correct: 1 },
+    { q: "Hur säger man 'nej' på spanska?", options: ["sí", "no", "gracias", "hola"], correct: 1 },
+    { q: "Vad betyder 'leer'?", options: ["Skriva", "Läsa", "Prata", "Springa"], correct: 1 },
+    { q: "Vad betyder 'el sol'?", options: ["Månen", "Stjärnan", "Solen", "Molnet"], correct: 2 },
+    { q: "Hur säger man 'tack' på spanska?", options: ["hola", "adiós", "gracias", "sí"], correct: 2 },
+    { q: "Vad betyder 'verde'?", options: ["Röd", "Blå", "Grön", "Gul"], correct: 2 },
   ],
-  hogstadiet: [
-    { q: "Vad är en BISATS?", options: ["Självständig sats", "Underordnad sats med subjunktion", "En frågesats", "En huvudsats"], correct: 1 },
-    { q: "Vad är INFINITIV?", options: ["Dåtidsformen", "Nutidsformen", "Verbets grundform – att springa", "Particip"], correct: 2 },
-    { q: "Vad är PASSIV form?", options: ["Subjektet utför handlingen", "Subjektet utsätts för handlingen", "Meningen har inget subjekt", "Verbet i infinitiv"], correct: 1 },
-    { q: "Vad är KONGRUENS?", options: ["Skillnad i böjning", "Böjningsöverensstämmelse", "En typ av subjunktion", "Verbets tidsform"], correct: 1 },
-    { q: "Vad är RETORIK?", options: ["Att läsa snabbt", "Att tala och skriva övertygande", "En textgenre", "Att analysera litteratur"], correct: 1 },
-    { q: "Vad är ett ARGUMENT?", options: ["En fråga", "En berättelse", "Skäl som stödjer ett påstående", "En slutsats"], correct: 2 },
-    { q: "Vad är INVERSION?", options: ["Att skriva baklänges", "Subjektet kommer efter predikatet", "En bisats", "Passiv form"], correct: 1 },
-    { q: "Vad är en NOMINALFRAS?", options: ["En verbfras", "Substantiv med bestämningar", "En adverbfras", "En prepositionsfras"], correct: 1 },
-    { q: "Vad är GENRE?", options: ["Stil", "Ton", "Typ av text med gemensamma drag", "Register"], correct: 2 },
-    { q: "Vad är PARTICIP?", options: ["Verbets grundform", "Verbform som fungerar som adjektiv", "Dåtidsformen", "En bisats"], correct: 1 },
-  ],
-  gymnasiet: [
-    { q: "Vad är LOGOS?", options: ["Känsloargument", "Förnuftsbaserat argument", "Talarens trovärdighet", "Bildspråk"], correct: 1 },
-    { q: "Vad är ETOS?", options: ["Logiska argument", "Känsloargument", "Talarens trovärdighet", "En stilfigur"], correct: 2 },
-    { q: "Vad är PATOS?", options: ["Förnuftsargument", "Känslobaserat argument", "Talarens karaktär", "Logisk struktur"], correct: 1 },
-    { q: "Vad är en METAFOR?", options: ["Jämförelse med 'som'", "Bildlig jämförelse utan 'som'", "Upprepning av ord", "Överdrift"], correct: 1 },
-    { q: "Vad är IRONI?", options: ["Att skratta", "Att säga det motsatta av det man menar", "Att överdriva", "Att upprepa"], correct: 1 },
-    { q: "Vad är HYPERBOL?", options: ["Understrykning", "Medveten överdrift för effekt", "Upprepning av ljud", "Bildlig jämförelse"], correct: 1 },
-    { q: "Vad är ALLITTERATION?", options: ["Upprepning av slutljud", "Upprepning av begynnelseljud", "Upprepning av ord", "En metafor"], correct: 1 },
-    { q: "Vad är KOHESION?", options: ["Textens yttre form", "Textens inre sammanhang", "Textens syfte", "Textens genre"], correct: 1 },
-    { q: "Vad är DENOTATION?", options: ["Ords associativa betydelse", "Ords direkta, bokstavliga betydelse", "En bildlig jämförelse", "Ordets ursprung"], correct: 1 },
-    { q: "Vad är INTERTEXTUALITET?", options: ["Svårläst text", "Hänvisning till andra texter", "Text inom text", "Flerspråkig text"], correct: 1 },
+  tyska: [
+    { q: "Vad betyder 'hallo'?", options: ["Hejdå", "Hej", "Tack", "Snälla"], correct: 1 },
+    { q: "Vad betyder 'der Hund'?", options: ["Katten", "Hunden", "Hästen", "Fisken"], correct: 1 },
+    { q: "Hur säger man 'äta' på tyska?", options: ["trinken", "essen", "lesen", "sprechen"], correct: 1 },
+    { q: "Vad betyder 'blau'?", options: ["Röd", "Grön", "Blå", "Gul"], correct: 2 },
+    { q: "Vad betyder 'die Familie'?", options: ["Skolan", "Huset", "Familjen", "Boken"], correct: 2 },
+    { q: "Hur säger man 'nej' på tyska?", options: ["ja", "nein", "danke", "hallo"], correct: 1 },
+    { q: "Vad betyder 'lesen'?", options: ["Skriva", "Prata", "Springa", "Läsa"], correct: 3 },
+    { q: "Vad betyder 'die Sonne'?", options: ["Månen", "Solen", "Stjärnan", "Molnet"], correct: 1 },
+    { q: "Hur säger man 'tack' på tyska?", options: ["hallo", "tschüss", "danke", "ja"], correct: 2 },
+    { q: "Vad betyder 'grün'?", options: ["Röd", "Blå", "Gul", "Grön"], correct: 3 },
   ],
 };
 
@@ -94,7 +82,7 @@ function SamlaMyntGame({ stageId, stage, student }: {
   student: StudentData | null;
 }) {
   const [phase, setPhase] = useState<"ready" | "playing" | "done">("ready");
-  const [questions] = useState(() => shuffle(QUESTIONS[stageId] ?? QUESTIONS.lagstadiet));
+  const [questions] = useState(() => shuffle(QUESTIONS[stageId] ?? QUESTIONS.franska));
   const [qIndex, setQIndex] = useState(0);
   const [coins, setCoins] = useState(0);
   const [obstacles, setObstacles] = useState(0);

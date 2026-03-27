@@ -45,17 +45,17 @@ export default function ResultModal({
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fade-in">
       <div
-        className="bg-white dark:bg-gray-800 rounded-4xl p-8 max-w-md w-full text-center animate-slide-up border-3 border-sv-100 dark:border-gray-700"
+        className="bg-white dark:bg-gray-800 rounded-4xl p-8 max-w-md w-full text-center animate-slide-up border-3 border-sj-100 dark:border-gray-700"
         style={{
-          boxShadow: "0 10px 0 0 rgba(249,115,22,0.12), 0 20px 40px -8px rgba(249,115,22,0.2), inset 0 4px 8px 0 rgba(255,255,255,0.8)"
+          boxShadow: "0 10px 0 0 rgba(22,163,74,0.12), 0 20px 40px -8px rgba(22,163,74,0.2), inset 0 4px 8px 0 rgba(255,255,255,0.8)"
         }}
       >
         <div className="text-7xl mb-4 animate-bounce-slow">{passed ? "🎉" : "💪"}</div>
 
-        <h2 className="text-3xl font-black text-sv-900 dark:text-gray-100 mb-2">
+        <h2 className="text-3xl font-black text-sj-900 dark:text-gray-100 mb-2">
           {passed ? "Bra jobbat!" : "Försök igen!"}
         </h2>
-        <p className="text-sv-400 dark:text-gray-400 mb-6 text-base font-medium">
+        <p className="text-sj-400 dark:text-gray-400 mb-6 text-base font-medium">
           {subtitle ?? (passed
             ? "Du klarade övningen med godkänt resultat."
             : "Du är nästan framme – öva lite till!")}
@@ -67,18 +67,18 @@ export default function ResultModal({
             className={`w-32 h-32 rounded-full flex flex-col items-center justify-center border-4 ${
               passed
                 ? "border-emerald-400 bg-emerald-50 dark:bg-emerald-900/30"
-                : "border-sv-300 bg-sv-50 dark:bg-sv-900/30"
+                : "border-sj-300 bg-sj-50 dark:bg-sj-900/30"
             }`}
             style={{
               boxShadow: passed
                 ? "0 6px 0 0 rgba(16,185,129,0.3), inset 0 4px 8px 0 rgba(255,255,255,0.8)"
-                : "0 6px 0 0 rgba(249,115,22,0.2), inset 0 4px 8px 0 rgba(255,255,255,0.8)"
+                : "0 6px 0 0 rgba(22,163,74,0.2), inset 0 4px 8px 0 rgba(255,255,255,0.8)"
             }}
           >
-            <span className={`text-4xl font-black ${passed ? "text-emerald-600 dark:text-emerald-400" : "text-sv-500"}`}>
+            <span className={`text-4xl font-black ${passed ? "text-emerald-600 dark:text-emerald-400" : "text-sj-500"}`}>
               {pct}%
             </span>
-            <span className="text-sm text-sv-400 dark:text-gray-400 mt-1 font-bold">
+            <span className="text-sm text-sj-400 dark:text-gray-400 mt-1 font-bold">
               {totalCorrect}/{totalQuestions}
             </span>
           </div>
@@ -128,12 +128,12 @@ export default function ResultModal({
         )}
 
         <div className="flex gap-3 mt-6">
-          <Button variant="outline" onClick={onRetry} className="flex-1 border-sv-200 text-sv-600">
+          <Button variant="outline" onClick={onRetry} className="flex-1 border-sj-200 text-sj-600">
             🔄 Försök igen
           </Button>
           <button
             onClick={onContinue}
-            className="flex-1 btn-primary border-3 border-sv-400 text-lg"
+            className="flex-1 btn-primary border-3 border-sj-400 text-lg"
             style={{ background: "linear-gradient(135deg, #f97316, #ea6c0a)" }}
           >
             Fortsätt →

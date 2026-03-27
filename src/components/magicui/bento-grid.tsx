@@ -42,21 +42,21 @@ export function BentoCard({
     <div
       className={cn(
         "group relative flex flex-col justify-between overflow-hidden rounded-3xl",
-        "border-3 border-sv-100 bg-white",
-        "shadow-[0_4px_0_0_rgba(249,115,22,0.12),0_8px_16px_-4px_rgba(249,115,22,0.08)]",
+        "border-3 border-sj-100 bg-white",
+        "shadow-[0_4px_0_0_rgba(22,163,74,0.12),0_8px_16px_-4px_rgba(22,163,74,0.08)]",
         "dark:bg-gray-800 dark:border-gray-700",
         className,
       )}
     >
       <div>{background}</div>
       <div className="pointer-events-none z-10 flex flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-10">
-        <Icon className="h-8 w-8 text-sv-500 transition-all duration-300 group-hover:scale-75" />
-        <h3 className="text-xl font-black text-sv-800 dark:text-white">{name}</h3>
-        <p className="text-sm text-sv-500 dark:text-gray-400">{description}</p>
+        <Icon className="h-8 w-8 text-sj-500 transition-all duration-300 group-hover:scale-75" />
+        <h3 className="text-xl font-black text-sj-800 dark:text-white">{name}</h3>
+        <p className="text-sm text-sj-500 dark:text-gray-400">{description}</p>
       </div>
       {href && (
         <div className="pointer-events-none absolute bottom-0 flex w-full translate-y-10 flex-row items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-          <a href={href} className="pointer-events-auto text-sm font-bold text-sv-600 hover:underline">
+          <a href={href} className="pointer-events-auto text-sm font-bold text-sj-600 hover:underline">
             {cta ?? "Öppna →"}
           </a>
         </div>

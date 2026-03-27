@@ -19,7 +19,7 @@ export function PulsatingButton({
   return (
     <button
       className={cn(
-        "relative flex cursor-pointer items-center justify-center rounded-xl bg-sv-500 px-6 py-3 font-bold text-white",
+        "relative flex cursor-pointer items-center justify-center rounded-xl bg-sj-500 px-6 py-3 font-bold text-white",
         "hover:-translate-y-0.5 active:translate-y-0.5 transition-transform",
         className,
       )}

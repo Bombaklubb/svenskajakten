@@ -106,7 +106,7 @@ function RewardPopup({ result, onClose }: { result: RewardResult; onClose: () =>
         <h2 className="text-2xl font-black text-amber-700 dark:text-amber-300 mb-3">
           Kistan är öppnad!
         </h2>
-        <p className="text-base font-semibold text-sv-800 dark:text-gray-100 mb-6 leading-relaxed">
+        <p className="text-base font-semibold text-sj-800 dark:text-gray-100 mb-6 leading-relaxed">
           {result.description}
         </p>
         <button
@@ -272,7 +272,7 @@ export default function KistorPage() {
   }
 
   return (
-    <div className="min-h-screen bg-amber-50 dark:bg-gray-900">
+    <div className="min-h-screen bg-emerald-50 dark:bg-gray-900">
       <Header student={student} />
 
       {/* Hero */}
@@ -367,18 +367,18 @@ export default function KistorPage() {
         {/* Unopened chests */}
         <BlurFade delay={0.05}>
           <section>
-            <h2 className="text-lg font-black text-sv-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+            <h2 className="text-lg font-black text-sj-900 dark:text-gray-100 mb-4 flex items-center gap-2">
               🎁 Oöppnade kistor
               {unopened.length > 0 && (
-                <span className="px-2 py-0.5 text-xs font-bold bg-sv-500 text-white rounded-full">
+                <span className="px-2 py-0.5 text-xs font-bold bg-sj-500 text-white rounded-full">
                   {unopened.length}
                 </span>
               )}
             </h2>
             {unopened.length === 0 ? (
-              <div className="rounded-3xl p-8 text-center border-2 border-dashed border-sv-200 dark:border-gray-600 bg-white dark:bg-gray-800">
+              <div className="rounded-3xl p-8 text-center border-2 border-dashed border-sj-200 dark:border-gray-600 bg-white dark:bg-gray-800">
                 <p className="text-4xl mb-3">🏅</p>
-                <p className="text-sv-500 dark:text-gray-300 text-sm font-medium">
+                <p className="text-sj-500 dark:text-gray-300 text-sm font-medium">
                   Inga kistor just nu. Slutför övningar för att tjäna kistor!
                 </p>
               </div>
@@ -396,7 +396,7 @@ export default function KistorPage() {
         {gam.badges.length > 0 && (
           <BlurFade delay={0.1}>
             <section>
-              <h2 className="text-lg font-black text-sv-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+              <h2 className="text-lg font-black text-sj-900 dark:text-gray-100 mb-4 flex items-center gap-2">
                 🎖️ Dina märken ({gam.badges.length})
               </h2>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
@@ -406,10 +406,10 @@ export default function KistorPage() {
                   return (
                     <div
                       key={badgeId}
-                      className="flex flex-col items-center p-4 rounded-3xl border-3 border-sv-300"
+                      className="flex flex-col items-center p-4 rounded-3xl border-3 border-sj-300"
                       style={{
                         background: "linear-gradient(135deg, #7c2d12, #c2570a, #f97316)",
-                        boxShadow: "0 4px 0 0 rgba(249,115,22,0.3), inset 0 1px 0 rgba(255,255,255,0.2)"
+                        boxShadow: "0 4px 0 0 rgba(22,163,74,0.3), inset 0 1px 0 rgba(255,255,255,0.2)"
                       }}
                     >
                       <span className="text-3xl mb-2">{badge.emoji}</span>
@@ -428,7 +428,7 @@ export default function KistorPage() {
         {opened.length > 0 && (
           <BlurFade delay={0.15}>
             <section>
-              <h2 className="text-lg font-black text-sv-900 dark:text-gray-100 mb-4 flex items-center gap-2">
+              <h2 className="text-lg font-black text-sj-900 dark:text-gray-100 mb-4 flex items-center gap-2">
                 🏠 Trofehylla
                 <span className="px-2 py-0.5 text-xs font-bold bg-amber-600 text-white rounded-full">
                   {opened.length} {opened.length === 1 ? "kista" : "kistor"}
@@ -449,23 +449,23 @@ export default function KistorPage() {
 
         {/* How to earn */}
         <BlurFade delay={0.2}>
-          <section className="card border-sv-200">
-            <h3 className="font-bold text-sv-900 dark:text-sv-100 mb-3 flex items-center gap-2">
+          <section className="card border-sj-200">
+            <h3 className="font-bold text-sj-900 dark:text-sj-100 mb-3 flex items-center gap-2">
               💡 Hur tjänar man kistor?
             </h3>
-            <p className="text-xs font-bold text-sv-500 dark:text-sv-300 uppercase tracking-wide mb-2">Poängmilstolpar</p>
-            <ul className="space-y-1.5 text-sm text-sv-800 dark:text-sv-100 mb-4">
+            <p className="text-xs font-bold text-sj-500 dark:text-sj-300 uppercase tracking-wide mb-2">Poängmilstolpar</p>
+            <ul className="space-y-1.5 text-sm text-sj-800 dark:text-sj-100 mb-4">
               <li className="flex items-start gap-2"><img src="/content/bronskista.png" alt="Bronskista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Bronskista:</strong> 10, 20, 30, 50, 75, 100, 200 poäng</span></li>
               <li className="flex items-start gap-2"><img src="/content/silverkista.png" alt="Silverkista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Silverkista:</strong> 300, 500, 750, 1 500, 2 000 poäng</span></li>
               <li className="flex items-start gap-2"><img src="/content/guldkista.png" alt="Guldkista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Guldkista:</strong> 1 000, 2 500, 3 500, 5 000, 7 000, 10 000, 15 000 poäng</span></li>
             </ul>
-            <p className="text-xs font-bold text-sv-500 dark:text-sv-300 uppercase tracking-wide mb-2">Övningsmilstolpar</p>
-            <ul className="space-y-1.5 text-sm text-sv-800 dark:text-sv-100 mb-4">
+            <p className="text-xs font-bold text-sj-500 dark:text-sj-300 uppercase tracking-wide mb-2">Övningsmilstolpar</p>
+            <ul className="space-y-1.5 text-sm text-sj-800 dark:text-sj-100 mb-4">
               <li className="flex items-start gap-2"><img src="/content/bronskista.png" alt="Bronskista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Bronskista:</strong> 1, 2, 3, 4, 5, 7, 10, 25, 45, 55 övningar</span></li>
               <li className="flex items-start gap-2"><img src="/content/silverkista.png" alt="Silverkista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Silverkista:</strong> 12, 15, 20, 35, 40, 50, 70, 80, 90 övningar</span></li>
               <li className="flex items-start gap-2"><img src="/content/guldkista.png" alt="Guldkista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Guldkista:</strong> 30, 60, 75, 100, 125, 150, 200 övningar</span></li>
             </ul>
-            <div className="flex items-start gap-2 text-sm text-sv-800 dark:text-sv-100 pt-3 border-t border-sv-100 dark:border-gray-700">
+            <div className="flex items-start gap-2 text-sm text-sj-800 dark:text-sj-100 pt-3 border-t border-sj-100 dark:border-gray-700">
               <span>🎁</span>
               <span><strong>Mysterykista:</strong> Slumpmässig chans efter varje övning!</span>
             </div>
