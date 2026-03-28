@@ -1,0 +1,444 @@
+{
+  "vocabulary": [
+    {
+      "id": "deu-vocab-1",
+      "title": "Hälsningar & artigheter",
+      "description": "Lär dig de vanligaste hälsningarna och artighetsfraserna",
+      "icon": "👋",
+      "pointsRequired": 0,
+      "bonusPoints": 25,
+      "helpText": ["Hallo/Guten Tag används på dagen", "Danke schön = tack så mycket"],
+      "exercises": [
+        {
+          "id": "deu-v1-1",
+          "type": "multiple-choice",
+          "question": "Vad betyder 'Hallo' på svenska?",
+          "options": ["Hej då", "Hej!", "Tack", "Förlåt"],
+          "correctIndex": 1,
+          "explanation": "Hallo = Hej! Det är den informella hälsningen. Guten Tag är mer formellt."
+        },
+        {
+          "id": "deu-v1-2",
+          "type": "multiple-choice",
+          "question": "Hur säger man 'tack' på tyska?",
+          "options": ["Bitte", "Entschuldigung", "Danke", "Auf Wiedersehen"],
+          "correctIndex": 2,
+          "explanation": "Danke = tack. Danke schön / Vielen Dank = tack så mycket."
+        },
+        {
+          "id": "deu-v1-3",
+          "type": "fill-in-blank",
+          "question": "Ein Wasser, ___ (ett vatten, tack/snälla)",
+          "answer": "bitte",
+          "hint": "Betyder både 'snälla', 'varsågod' och svar på tack",
+          "explanation": "Bitte = snälla / varsågod / tack (svar). Väldigt mångsidigt ord!"
+        },
+        {
+          "id": "deu-v1-4",
+          "type": "multiple-choice",
+          "question": "Vad betyder 'Auf Wiedersehen'?",
+          "options": ["God morgon", "Hej", "Hej då", "Välkommen"],
+          "correctIndex": 2,
+          "explanation": "Auf Wiedersehen = hej då (formellt). Tschüss = hej då (informellt)."
+        },
+        {
+          "id": "deu-v1-5",
+          "type": "multiple-choice",
+          "question": "Hur säger man 'god morgon' på tyska?",
+          "options": ["Guten Abend", "Gute Nacht", "Guten Morgen", "Guten Tag"],
+          "correctIndex": 2,
+          "explanation": "Guten Morgen = god morgon. Guten Tag = god dag. Guten Abend = god kväll."
+        },
+        {
+          "id": "deu-v1-6",
+          "type": "fill-in-blank",
+          "question": "Ich ___ Anna. (Jag heter Anna)",
+          "answer": "heiße",
+          "alternativeAnswers": ["heisse"],
+          "hint": "Verbet heißen = att heta",
+          "explanation": "Ich heiße = jag heter. Heißen är ett oregelbundet verb."
+        },
+        {
+          "id": "deu-v1-7",
+          "type": "multiple-choice",
+          "question": "Vad betyder 'Wie geht es dir?'",
+          "options": ["Hur gammal är du?", "Hur mår du?", "Vad heter du?", "Var bor du?"],
+          "correctIndex": 1,
+          "explanation": "Wie geht es dir? = Hur mår du? (informellt). Wie geht es Ihnen? = formellt."
+        },
+        {
+          "id": "deu-v1-8",
+          "type": "multiple-choice",
+          "question": "Hur svarar man 'Bra tack!' på tyska?",
+          "options": ["Sehr gut, danke!", "Gute Nacht!", "Bitte!", "Entschuldigung!"],
+          "correctIndex": 0,
+          "explanation": "Sehr gut, danke! = Mycket bra, tack! Sehr = mycket/väldigt."
+        }
+      ]
+    },
+    {
+      "id": "deu-vocab-2",
+      "title": "Siffror 1–20",
+      "description": "Räkna till tjugo på tyska",
+      "icon": "🔢",
+      "pointsRequired": 0,
+      "bonusPoints": 25,
+      "exercises": [
+        {
+          "id": "deu-v2-1",
+          "type": "multiple-choice",
+          "question": "Vad heter siffran 1 på tyska?",
+          "options": ["zwei", "eins", "drei", "vier"],
+          "correctIndex": 1,
+          "explanation": "Eins = ett. Framför substantiv: ein (mask./neutr.) / eine (fem.)."
+        },
+        {
+          "id": "deu-v2-2",
+          "type": "fill-in-blank",
+          "question": "Hur skriver man 5 på tyska? ___",
+          "answer": "fünf",
+          "hint": "Börjar med 'f', innehåller ett omljud (ü)",
+          "explanation": "Fünf = fem. Eins, zwei, drei, vier, fünf."
+        },
+        {
+          "id": "deu-v2-3",
+          "type": "multiple-choice",
+          "question": "Vad betyder 'zehn'?",
+          "options": ["Sex", "Sju", "Åtta", "Tio"],
+          "correctIndex": 3,
+          "explanation": "Zehn = tio. Det uttalas 'tseen'."
+        },
+        {
+          "id": "deu-v2-4",
+          "type": "multiple-choice",
+          "question": "Hur heter 15 på tyska?",
+          "options": ["vierzehn", "fünfzehn", "sechzehn", "dreizehn"],
+          "correctIndex": 1,
+          "explanation": "Fünfzehn = 15. Vierzehn=14, sechzehn=16, dreizehn=13."
+        },
+        {
+          "id": "deu-v2-5",
+          "type": "fill-in-blank",
+          "question": "Ich bin ___ Jahre alt. (Jag är tolv år)",
+          "answer": "zwölf",
+          "alternativeAnswers": ["zwolf"],
+          "hint": "Tio = zehn, tolv = zwölf",
+          "explanation": "Zwölf = 12. Elf=11, zwölf=12, dreizehn=13, vierzehn=14."
+        },
+        {
+          "id": "deu-v2-6",
+          "type": "multiple-choice",
+          "question": "Vad heter 20 på tyska?",
+          "options": ["neunzehn", "zwanzig", "fünfzehn", "sechzehn"],
+          "correctIndex": 1,
+          "explanation": "Zwanzig = 20."
+        }
+      ]
+    },
+    {
+      "id": "deu-vocab-3",
+      "title": "Skolan",
+      "description": "Lär dig ord som hör till skolan",
+      "icon": "🏫",
+      "pointsRequired": 0,
+      "bonusPoints": 30,
+      "exercises": [
+        {
+          "id": "deu-v3-1",
+          "type": "multiple-choice",
+          "question": "Hur heter 'skolan' på tyska?",
+          "options": ["das Krankenhaus", "die Schule", "das Büro", "der Bahnhof"],
+          "correctIndex": 1,
+          "explanation": "Die Schule = skolan. Schule är feminint (die)."
+        },
+        {
+          "id": "deu-v3-2",
+          "type": "fill-in-blank",
+          "question": "Ich lese ein ___. (Jag läser en bok)",
+          "answer": "Buch",
+          "hint": "Boken på tyska",
+          "explanation": "Das Buch = boken (neutrum). Bücher = böcker (plural)."
+        },
+        {
+          "id": "deu-v3-3",
+          "type": "multiple-choice",
+          "question": "Vad heter 'pennans' på tyska?",
+          "options": ["das Heft", "das Lineal", "der Stift", "die Tafel"],
+          "correctIndex": 2,
+          "explanation": "Der Stift = pennan (mask.). Die Tafel = tavlan. Das Heft = häftet."
+        },
+        {
+          "id": "deu-v3-4",
+          "type": "multiple-choice",
+          "question": "Vad betyder 'der Lehrer / die Lehrerin'?",
+          "options": ["Eleven", "Läraren", "Rektorn", "Vaktmästaren"],
+          "correctIndex": 1,
+          "explanation": "Der Lehrer = läraren (man). Die Lehrerin = läraren (kvinna)."
+        },
+        {
+          "id": "deu-v3-5",
+          "type": "fill-in-blank",
+          "question": "Wir haben heute ___ Mathematik. (Vi har matte idag)",
+          "answer": "Mathematik",
+          "alternativeAnswers": ["Mathe", "mathematik", "mathe"],
+          "hint": "Ämnet matematik",
+          "explanation": "Mathematik / Mathe = matematik. Tyskan kapitaliserar alla substantiv."
+        },
+        {
+          "id": "deu-v3-6",
+          "type": "multiple-choice",
+          "question": "Vad heter 'klassrummet' på tyska?",
+          "options": ["der Schulhof", "die Bibliothek", "das Klassenzimmer", "die Turnhalle"],
+          "correctIndex": 2,
+          "explanation": "Das Klassenzimmer = klassrummet. Klassen = klassen + Zimmer = rummet."
+        }
+      ]
+    },
+    {
+      "id": "deu-vocab-4",
+      "title": "Färger",
+      "description": "Lär dig färgernas namn på tyska",
+      "icon": "🌈",
+      "pointsRequired": 0,
+      "bonusPoints": 25,
+      "exercises": [
+        {
+          "id": "deu-v4-1",
+          "type": "multiple-choice",
+          "question": "Vad heter 'röd' på tyska?",
+          "options": ["blau", "grün", "rot", "gelb"],
+          "correctIndex": 2,
+          "explanation": "Rot = röd. Tänk på 'Rotkäppchen' (Rödluvan)!"
+        },
+        {
+          "id": "deu-v4-2",
+          "type": "fill-in-blank",
+          "question": "Der Himmel ist ___. (Himlen är blå)",
+          "answer": "blau",
+          "hint": "Liknar det engelska ordet",
+          "explanation": "Blau = blå. Det liknar engelskans 'blue'."
+        },
+        {
+          "id": "deu-v4-3",
+          "type": "multiple-choice",
+          "question": "Vad betyder 'grün'?",
+          "options": ["Grön", "Gul", "Grå", "Orange"],
+          "correctIndex": 0,
+          "explanation": "Grün = grön. Tänk på 'grön' på svenska!"
+        },
+        {
+          "id": "deu-v4-4",
+          "type": "multiple-choice",
+          "question": "Hur heter 'svart' på tyska?",
+          "options": ["weiß", "grau", "schwarz", "braun"],
+          "correctIndex": 2,
+          "explanation": "Schwarz = svart. Weiß = vit, grau = grå, braun = brun."
+        },
+        {
+          "id": "deu-v4-5",
+          "type": "fill-in-blank",
+          "question": "Der Schnee ist ___. (Snön är vit)",
+          "answer": "weiß",
+          "alternativeAnswers": ["weiss"],
+          "hint": "Vit på tyska (med ß)",
+          "explanation": "Weiß = vit. Bokstaven ß (Eszett) uttalas som 'ss'."
+        }
+      ]
+    }
+  ],
+  "grammar": [
+    {
+      "id": "deu-gram-1",
+      "title": "Artiklar: der, die, das",
+      "description": "Lär dig de tre tyska bestämda artiklarna",
+      "icon": "📖",
+      "pointsRequired": 0,
+      "bonusPoints": 30,
+      "helpText": [
+        "Tyska har tre genus: maskulinum (der), femininum (die), neutrum (das)",
+        "der = mask. bestämd artikel",
+        "die = fem. bestämd artikel (och plural!)",
+        "das = neutr. bestämd artikel",
+        "ein = obestämd artikel mask./neutr., eine = fem.",
+        "Man måste lära sig varje ords genus utantill"
+      ],
+      "exercises": [
+        {
+          "id": "deu-g1-1",
+          "type": "multiple-choice",
+          "question": "Välj rätt artikel: ___ Hund (hunden)",
+          "options": ["die", "der", "das", "den"],
+          "correctIndex": 1,
+          "explanation": "Der Hund = hunden. Hund är maskulint."
+        },
+        {
+          "id": "deu-g1-2",
+          "type": "fill-in-blank",
+          "question": "___ Katze schläft. (Katten sover)",
+          "answer": "die",
+          "hint": "Katze (katt) är feminint",
+          "explanation": "Die Katze = katten. Katze är feminint."
+        },
+        {
+          "id": "deu-g1-3",
+          "type": "multiple-choice",
+          "question": "Vilket genus har 'Kind' (barn)?",
+          "options": ["der Kind", "die Kind", "das Kind", "den Kind"],
+          "correctIndex": 2,
+          "explanation": "Das Kind = barnet. Barn är neutrum på tyska."
+        },
+        {
+          "id": "deu-g1-4",
+          "type": "fill-in-blank",
+          "question": "Ich habe ___ Bruder. (Jag har en bror)",
+          "answer": "einen",
+          "alternativeAnswers": ["ein"],
+          "hint": "Obestämd artikel mask. i ackusativ",
+          "explanation": "Einen Bruder (ackusativ mask.). Ein → einen vid direkt objekt (mask.)."
+        },
+        {
+          "id": "deu-g1-5",
+          "type": "multiple-choice",
+          "question": "Hur heter 'barnen' (plural) på tyska?",
+          "options": ["der Kinder", "das Kinder", "die Kinder", "den Kinder"],
+          "correctIndex": 2,
+          "explanation": "Die Kinder = barnen. Alla pluralformer får artikeln 'die'."
+        },
+        {
+          "id": "deu-g1-6",
+          "type": "multiple-choice",
+          "question": "Vilket alternativ är korrekt? (en bok)",
+          "options": ["der Buch", "die Buch", "ein Buch", "eine Buch"],
+          "correctIndex": 2,
+          "explanation": "Ein Buch = en bok. Buch är neutrum, obestämd artikel = ein."
+        }
+      ]
+    },
+    {
+      "id": "deu-gram-2",
+      "title": "Verbet sein (att vara)",
+      "description": "Konjugera 'sein' – det viktigaste tyska verbet",
+      "icon": "🔤",
+      "pointsRequired": 0,
+      "bonusPoints": 35,
+      "helpText": [
+        "Sein = att vara",
+        "ich bin = jag är",
+        "du bist = du är",
+        "er/sie/es ist = han/hon/det är",
+        "wir sind = vi är",
+        "ihr seid = ni är",
+        "sie/Sie sind = de är / Ni är (formellt)"
+      ],
+      "exercises": [
+        {
+          "id": "deu-g2-1",
+          "type": "multiple-choice",
+          "question": "Jag är svensk. Välj rätt form av sein:",
+          "options": ["Ich bist Schwede", "Ich bin Schwede", "Ich sind Schwede", "Ich seid Schwede"],
+          "correctIndex": 1,
+          "explanation": "Ich bin = jag är. Sein är ett oregelbundet verb."
+        },
+        {
+          "id": "deu-g2-2",
+          "type": "fill-in-blank",
+          "question": "Du ___ sehr klug. (Du är väldigt klug)",
+          "answer": "bist",
+          "hint": "Du-formen av sein",
+          "explanation": "Du bist = du är."
+        },
+        {
+          "id": "deu-g2-3",
+          "type": "multiple-choice",
+          "question": "Sie ___ Lehrerin. (Hon är lärare)",
+          "options": ["bin", "bist", "ist", "sind"],
+          "correctIndex": 2,
+          "explanation": "Er/sie/es ist = han/hon/det är."
+        },
+        {
+          "id": "deu-g2-4",
+          "type": "fill-in-blank",
+          "question": "Wir ___ Freunde. (Vi är vänner)",
+          "answer": "sind",
+          "hint": "Vi-formen av sein",
+          "explanation": "Wir sind = vi är."
+        },
+        {
+          "id": "deu-g2-5",
+          "type": "multiple-choice",
+          "question": "Sie (de) ___ müde. (De är trötta)",
+          "options": ["ist", "bist", "seid", "sind"],
+          "correctIndex": 3,
+          "explanation": "Sie sind (de är) / Sie sind (Ni är formellt). Samma form, olika betydelse beroende på kontext."
+        },
+        {
+          "id": "deu-g2-6",
+          "type": "fill-in-blank",
+          "question": "Ihr ___ bereit? (Är ni redo?)",
+          "answer": "seid",
+          "hint": "Ni-formen av sein (informell plural)",
+          "explanation": "Ihr seid = ni är (informell plural, dvs en grupp man känner)."
+        }
+      ]
+    },
+    {
+      "id": "deu-gram-3",
+      "title": "Verbet haben (att ha)",
+      "description": "Lär dig konjugera 'haben'",
+      "icon": "✏️",
+      "pointsRequired": 0,
+      "bonusPoints": 35,
+      "helpText": [
+        "Haben = att ha",
+        "ich habe = jag har",
+        "du hast = du har",
+        "er/sie/es hat = han/hon/det har",
+        "wir haben = vi har",
+        "ihr habt = ni har",
+        "sie/Sie haben = de har"
+      ],
+      "exercises": [
+        {
+          "id": "deu-g3-1",
+          "type": "multiple-choice",
+          "question": "Ich ___ einen Bruder. (Jag har en bror)",
+          "options": ["hast", "hat", "habe", "haben"],
+          "correctIndex": 2,
+          "explanation": "Ich habe = jag har."
+        },
+        {
+          "id": "deu-g3-2",
+          "type": "fill-in-blank",
+          "question": "Du ___ Hunger. (Du är hungrig – lit. du har hunger)",
+          "answer": "hast",
+          "hint": "Du-formen av haben",
+          "explanation": "Du hast = du har. Hunger haben = att vara hungrig."
+        },
+        {
+          "id": "deu-g3-3",
+          "type": "multiple-choice",
+          "question": "Er ___ zwei Schwestern. (Han har två systrar)",
+          "options": ["habe", "hast", "hat", "haben"],
+          "correctIndex": 2,
+          "explanation": "Er/sie/es hat = han/hon/det har."
+        },
+        {
+          "id": "deu-g3-4",
+          "type": "fill-in-blank",
+          "question": "Wir ___ ein großes Haus. (Vi har ett stort hus)",
+          "answer": "haben",
+          "hint": "Vi-formen av haben",
+          "explanation": "Wir haben = vi har."
+        },
+        {
+          "id": "deu-g3-5",
+          "type": "multiple-choice",
+          "question": "Sie (de) ___ viel Zeit. (De har mycket tid)",
+          "options": ["habt", "hat", "hast", "haben"],
+          "correctIndex": 3,
+          "explanation": "Sie haben (de har). Viel = mycket."
+        }
+      ]
+    }
+  ]
+}

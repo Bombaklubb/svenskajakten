@@ -1,0 +1,438 @@
+{
+  "vocabulary": [
+    {
+      "id": "fra-vocab-1",
+      "title": "Hälsningar & artigheter",
+      "description": "Lär dig de vanligaste hälsningarna och artighetsfraserna",
+      "icon": "👋",
+      "pointsRequired": 0,
+      "bonusPoints": 25,
+      "helpText": ["Bonjour används på dagen, bonsoir på kvällen", "Merci beaucoup = tack så mycket"],
+      "exercises": [
+        {
+          "id": "fra-v1-1",
+          "type": "multiple-choice",
+          "question": "Vad betyder 'bonjour' på svenska?",
+          "options": ["Hej då", "Hej / God dag", "Tack", "Förlåt"],
+          "correctIndex": 1,
+          "explanation": "Bonjour är den vanligaste hälsningen på franska och betyder 'hej' eller 'god dag'."
+        },
+        {
+          "id": "fra-v1-2",
+          "type": "multiple-choice",
+          "question": "Hur säger man 'tack' på franska?",
+          "options": ["S'il vous plaît", "Pardon", "Merci", "Au revoir"],
+          "correctIndex": 2,
+          "explanation": "Merci betyder tack. Merci beaucoup = tack så mycket."
+        },
+        {
+          "id": "fra-v1-3",
+          "type": "fill-in-blank",
+          "question": "Fyll i: ___ vous plaît (var snäll)",
+          "answer": "s'il",
+          "hint": "Frasen betyder 'om det behagar er'",
+          "explanation": "S'il vous plaît är den formella formen. S'il te plaît används till vänner."
+        },
+        {
+          "id": "fra-v1-4",
+          "type": "multiple-choice",
+          "question": "Vad betyder 'au revoir'?",
+          "options": ["God morgon", "Hej", "Hej då", "Välkommen"],
+          "correctIndex": 2,
+          "explanation": "Au revoir = hej då / adjö. Det används när man skiljs åt."
+        },
+        {
+          "id": "fra-v1-5",
+          "type": "multiple-choice",
+          "question": "Hur säger man 'god kväll' på franska?",
+          "options": ["Bonjour", "Bonsoir", "Bonne nuit", "Salut"],
+          "correctIndex": 1,
+          "explanation": "Bonsoir = god kväll. Bonne nuit = god natt (när man ska sova)."
+        },
+        {
+          "id": "fra-v1-6",
+          "type": "fill-in-blank",
+          "question": "Fyll i: Je m'___ Marie. (Jag heter Marie)",
+          "answer": "appelle",
+          "hint": "Verbet appeler = att heta/kalla",
+          "explanation": "Je m'appelle = jag heter. Det är ett reflexivt verb."
+        },
+        {
+          "id": "fra-v1-7",
+          "type": "multiple-choice",
+          "question": "Vad betyder 'Comment ça va?'",
+          "options": ["Hur gammal är du?", "Hur mår du?", "Vad heter du?", "Var bor du?"],
+          "correctIndex": 1,
+          "explanation": "Comment ça va? = Hur mår du? / Hur går det? Svar: Ça va bien = Det går bra."
+        },
+        {
+          "id": "fra-v1-8",
+          "type": "multiple-choice",
+          "question": "Hur svarar man 'Bra tack!' på franska?",
+          "options": ["Très bien, merci!", "Bonne nuit!", "S'il vous plaît!", "Pardon!"],
+          "correctIndex": 0,
+          "explanation": "Très bien, merci = Mycket bra, tack! Très = mycket/väldigt."
+        }
+      ]
+    },
+    {
+      "id": "fra-vocab-2",
+      "title": "Siffror 1–20",
+      "description": "Räkna till tjugo på franska",
+      "icon": "🔢",
+      "pointsRequired": 0,
+      "bonusPoints": 25,
+      "exercises": [
+        {
+          "id": "fra-v2-1",
+          "type": "multiple-choice",
+          "question": "Vad heter siffran 1 på franska?",
+          "options": ["deux", "un", "trois", "quatre"],
+          "correctIndex": 1,
+          "explanation": "Un (mask.) / une (fem.) = ett/en."
+        },
+        {
+          "id": "fra-v2-2",
+          "type": "fill-in-blank",
+          "question": "Hur skriver man 5 på franska? ___",
+          "answer": "cinq",
+          "hint": "Det uttalas ungefär 'sänk'",
+          "explanation": "Cinq = fem. Kom ihåg: un, deux, trois, quatre, cinq."
+        },
+        {
+          "id": "fra-v2-3",
+          "type": "multiple-choice",
+          "question": "Vad betyder 'dix'?",
+          "options": ["Sex", "Sju", "Åtta", "Tio"],
+          "correctIndex": 3,
+          "explanation": "Dix = tio. Det uttalas 'dis'."
+        },
+        {
+          "id": "fra-v2-4",
+          "type": "multiple-choice",
+          "question": "Hur heter 15 på franska?",
+          "options": ["quatorze", "quinze", "seize", "treize"],
+          "correctIndex": 1,
+          "explanation": "Quinze = 15. Quatorze=14, seize=16, treize=13."
+        },
+        {
+          "id": "fra-v2-5",
+          "type": "fill-in-blank",
+          "question": "J'ai ___ ans. (Jag är tolv år)",
+          "answer": "douze",
+          "hint": "Tio = dix, tolv = dix + deux",
+          "explanation": "Douze = 12. Onze=11, douze=12, treize=13, quatorze=14."
+        },
+        {
+          "id": "fra-v2-6",
+          "type": "multiple-choice",
+          "question": "Vad heter 20 på franska?",
+          "options": ["dix-neuf", "vingt", "quinze", "seize"],
+          "correctIndex": 1,
+          "explanation": "Vingt = 20. Det uttalas 'väng'."
+        }
+      ]
+    },
+    {
+      "id": "fra-vocab-3",
+      "title": "Familjen",
+      "description": "Lär dig ord för familjemedlemmar",
+      "icon": "👨‍👩‍👧‍👦",
+      "pointsRequired": 0,
+      "bonusPoints": 30,
+      "exercises": [
+        {
+          "id": "fra-v3-1",
+          "type": "multiple-choice",
+          "question": "Hur heter 'mamma' på franska?",
+          "options": ["le père", "la mère", "la sœur", "le frère"],
+          "correctIndex": 1,
+          "explanation": "La mère = mamman. Le père = pappan."
+        },
+        {
+          "id": "fra-v3-2",
+          "type": "fill-in-blank",
+          "question": "Mon ___ s'appelle Lucas. (Min bror heter Lucas)",
+          "answer": "frère",
+          "hint": "Börjar på 'fr'",
+          "explanation": "Le frère = brodern. La sœur = systern."
+        },
+        {
+          "id": "fra-v3-3",
+          "type": "multiple-choice",
+          "question": "Vad heter 'farmor/mormor' på franska?",
+          "options": ["la tante", "la cousine", "la grand-mère", "la fille"],
+          "correctIndex": 2,
+          "explanation": "La grand-mère = farmor/mormor. Le grand-père = farfar/morfar."
+        },
+        {
+          "id": "fra-v3-4",
+          "type": "multiple-choice",
+          "question": "Vad betyder 'les enfants'?",
+          "options": ["Föräldrarna", "Syskonen", "Barnen", "Kusinerna"],
+          "correctIndex": 2,
+          "explanation": "Les enfants = barnen. Un enfant = ett barn."
+        },
+        {
+          "id": "fra-v3-5",
+          "type": "fill-in-blank",
+          "question": "J'ai une ___. (Jag har en syster)",
+          "answer": "sœur",
+          "hint": "Det franska ordet för 'syster'",
+          "explanation": "La sœur = systern. Le frère = brodern."
+        },
+        {
+          "id": "fra-v3-6",
+          "type": "multiple-choice",
+          "question": "Hur heter 'farbror/morbror' på franska?",
+          "options": ["le cousin", "le neveu", "l'oncle", "le fils"],
+          "correctIndex": 2,
+          "explanation": "L'oncle = farbror/morbror. La tante = faster/moster."
+        }
+      ]
+    },
+    {
+      "id": "fra-vocab-4",
+      "title": "Färger",
+      "description": "Lär dig färgernas namn på franska",
+      "icon": "🌈",
+      "pointsRequired": 0,
+      "bonusPoints": 25,
+      "exercises": [
+        {
+          "id": "fra-v4-1",
+          "type": "multiple-choice",
+          "question": "Vad heter 'röd' på franska?",
+          "options": ["bleu", "vert", "rouge", "jaune"],
+          "correctIndex": 2,
+          "explanation": "Rouge = röd. Tänk på 'rouge' läppstift!"
+        },
+        {
+          "id": "fra-v4-2",
+          "type": "fill-in-blank",
+          "question": "Le ciel est ___. (Himlen är blå)",
+          "answer": "bleu",
+          "hint": "Börjar på 'bl'",
+          "explanation": "Bleu = blå. Observera att adjektiv böjs efter kön: bleu (mask.) / bleue (fem.)."
+        },
+        {
+          "id": "fra-v4-3",
+          "type": "multiple-choice",
+          "question": "Vad betyder 'vert'?",
+          "options": ["Grön", "Gul", "Lila", "Orange"],
+          "correctIndex": 0,
+          "explanation": "Vert = grön. Tänk på 'vert' = vegetation!"
+        },
+        {
+          "id": "fra-v4-4",
+          "type": "multiple-choice",
+          "question": "Hur heter 'svart' på franska?",
+          "options": ["blanc", "gris", "noir", "marron"],
+          "correctIndex": 2,
+          "explanation": "Noir = svart. Blanc = vit, gris = grå."
+        },
+        {
+          "id": "fra-v4-5",
+          "type": "fill-in-blank",
+          "question": "La neige est ___. (Snön är vit)",
+          "answer": "blanche",
+          "alternativeAnswers": ["blanc"],
+          "hint": "Feminin form av 'blanc'",
+          "explanation": "Blanc (mask.) / blanche (fem.) = vit."
+        }
+      ]
+    }
+  ],
+  "grammar": [
+    {
+      "id": "fra-gram-1",
+      "title": "Artiklar: le, la, les",
+      "description": "Lär dig hur franska artiklar fungerar",
+      "icon": "📖",
+      "pointsRequired": 0,
+      "bonusPoints": 30,
+      "helpText": [
+        "Alla franska substantiv är antingen maskulina eller feminina",
+        "le = bestämd artikel mask., la = bestämd artikel fem.",
+        "les = bestämd artikel plural (oavsett kön)",
+        "un = obestämd artikel mask., une = obestämd artikel fem."
+      ],
+      "exercises": [
+        {
+          "id": "fra-g1-1",
+          "type": "multiple-choice",
+          "question": "Vilket ord är feminint? Le/la ___",
+          "options": ["le garçon", "le livre", "la fille", "le chat"],
+          "correctIndex": 2,
+          "explanation": "La fille (flickan) är feminint. Garçon, livre och chat är alla maskulina."
+        },
+        {
+          "id": "fra-g1-2",
+          "type": "fill-in-blank",
+          "question": "___ maison est grande. (Huset är stort)",
+          "answer": "la",
+          "hint": "Maison (hus) är feminint",
+          "explanation": "La maison = huset. Maison är feminint, så vi använder 'la'."
+        },
+        {
+          "id": "fra-g1-3",
+          "type": "multiple-choice",
+          "question": "Hur heter 'barnen' (plural bestämd)?",
+          "options": ["le enfant", "la enfant", "les enfants", "un enfant"],
+          "correctIndex": 2,
+          "explanation": "Les enfants = barnen. Les används för alla plural substantiv oavsett kön."
+        },
+        {
+          "id": "fra-g1-4",
+          "type": "fill-in-blank",
+          "question": "J'ai ___ chien. (Jag har en hund)",
+          "answer": "un",
+          "hint": "Chien (hund) är maskulint, obestämd artikel",
+          "explanation": "Un chien = en hund (mask.). Une chatte = en katt (fem.)."
+        },
+        {
+          "id": "fra-g1-5",
+          "type": "multiple-choice",
+          "question": "Vilket alternativ är korrekt?",
+          "options": ["le école", "la école", "l'école", "les école"],
+          "correctIndex": 2,
+          "explanation": "Innan vokal förkortas le/la till l'. L'école = skolan."
+        },
+        {
+          "id": "fra-g1-6",
+          "type": "multiple-choice",
+          "question": "Vad heter 'en bok' (obestämd) på franska?",
+          "options": ["le livre", "la livre", "un livre", "une livre"],
+          "correctIndex": 2,
+          "explanation": "Un livre = en bok. Livre är maskulint, så vi använder 'un'."
+        }
+      ]
+    },
+    {
+      "id": "fra-gram-2",
+      "title": "Verbet être (att vara)",
+      "description": "Konjugera det viktigaste franska verbet",
+      "icon": "🔤",
+      "pointsRequired": 0,
+      "bonusPoints": 35,
+      "helpText": [
+        "Être = att vara",
+        "je suis = jag är",
+        "tu es = du är",
+        "il/elle est = han/hon är",
+        "nous sommes = vi är",
+        "vous êtes = ni är (eller formellt du)",
+        "ils/elles sont = de är"
+      ],
+      "exercises": [
+        {
+          "id": "fra-g2-1",
+          "type": "multiple-choice",
+          "question": "Jag är fransk. Välj rätt form av être:",
+          "options": ["Je es français", "Je suis français", "Je sommes français", "Je sont français"],
+          "correctIndex": 1,
+          "explanation": "Je suis = jag är. Être är ett oregelbundet verb."
+        },
+        {
+          "id": "fra-g2-2",
+          "type": "fill-in-blank",
+          "question": "Tu ___ étudiant. (Du är student)",
+          "answer": "es",
+          "hint": "Tu-formen av être",
+          "explanation": "Tu es = du är. Observera: es (utan accent) för tu."
+        },
+        {
+          "id": "fra-g2-3",
+          "type": "multiple-choice",
+          "question": "Elle ___ professeure. (Hon är lärare)",
+          "options": ["est", "es", "suis", "sommes"],
+          "correctIndex": 0,
+          "explanation": "Il/elle est = han/hon är."
+        },
+        {
+          "id": "fra-g2-4",
+          "type": "fill-in-blank",
+          "question": "Nous ___ amis. (Vi är vänner)",
+          "answer": "sommes",
+          "hint": "Vi-formen av être",
+          "explanation": "Nous sommes = vi är."
+        },
+        {
+          "id": "fra-g2-5",
+          "type": "multiple-choice",
+          "question": "Ils ___ contents. (De är glada)",
+          "options": ["est", "es", "êtes", "sont"],
+          "correctIndex": 3,
+          "explanation": "Ils/elles sont = de är."
+        },
+        {
+          "id": "fra-g2-6",
+          "type": "fill-in-blank",
+          "question": "Vous ___ prêts? (Är ni redo?)",
+          "answer": "êtes",
+          "hint": "Ni-formen av être (med accent)",
+          "explanation": "Vous êtes = ni är / er är (formellt)."
+        }
+      ]
+    },
+    {
+      "id": "fra-gram-3",
+      "title": "Verbet avoir (att ha)",
+      "description": "Lär dig konjugera 'avoir' – ett nyckelverb",
+      "icon": "✏️",
+      "pointsRequired": 0,
+      "bonusPoints": 35,
+      "helpText": [
+        "Avoir = att ha",
+        "j'ai = jag har",
+        "tu as = du har",
+        "il/elle a = han/hon har",
+        "nous avons = vi har",
+        "vous avez = ni har",
+        "ils/elles ont = de har"
+      ],
+      "exercises": [
+        {
+          "id": "fra-g3-1",
+          "type": "multiple-choice",
+          "question": "J'___ un chat. (Jag har en katt)",
+          "options": ["as", "avons", "ai", "ont"],
+          "correctIndex": 2,
+          "explanation": "J'ai = jag har. Innan vokal skrivs 'je' som 'j''."
+        },
+        {
+          "id": "fra-g3-2",
+          "type": "fill-in-blank",
+          "question": "Tu ___ quel âge? (Hur gammal är du?)",
+          "answer": "as",
+          "hint": "Du-formen av avoir",
+          "explanation": "Tu as = du har. 'Avoir' används för att ange ålder på franska."
+        },
+        {
+          "id": "fra-g3-3",
+          "type": "multiple-choice",
+          "question": "Il ___ deux sœurs. (Han har två systrar)",
+          "options": ["ai", "as", "a", "avez"],
+          "correctIndex": 2,
+          "explanation": "Il/elle a = han/hon har."
+        },
+        {
+          "id": "fra-g3-4",
+          "type": "fill-in-blank",
+          "question": "Nous ___ un grand appartement. (Vi har en stor lägenhet)",
+          "answer": "avons",
+          "hint": "Vi-formen av avoir",
+          "explanation": "Nous avons = vi har."
+        },
+        {
+          "id": "fra-g3-5",
+          "type": "multiple-choice",
+          "question": "Ils ___ faim. (De är hungriga – lit. de har hunger)",
+          "options": ["avez", "avons", "ont", "a"],
+          "correctIndex": 2,
+          "explanation": "Ils/elles ont = de har. Notera: på franska 'har' man hunger, törst, etc."
+        }
+      ]
+    }
+  ]
+}
