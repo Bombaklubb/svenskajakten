@@ -1,331 +1,242 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
-import Header from "@/components/ui/Header";
-import { loadStudent, createStudent, clearStudent, studentExists } from "@/lib/storage";
-import { LANGUAGES } from "@/lib/languages";
-import { AVATARS } from "@/lib/avatars";
-import { BlurFade } from "@/components/magicui/blur-fade";
-import { NumberTicker } from "@/components/magicui/number-ticker";
-import type { StudentData, LanguageId } from "@/lib/types";
+import { useRouter } from "next/navigation";
+import { useForm } from "react-hook-form";
+import { motion, AnimatePresence } from "framer-motion";
+import { loadStudent, createStudent, studentExists } from "@/lib/storage";
+import type { LanguageId } from "@/lib/types";
 
-const LANGUAGE_SCENE_EMOJIS: Record<LanguageId, string> = {
-  franska: "🗼 🥐 🎨",
-  spanska: "💃 🌞 🎸",
-  tyska:   "🏰 🍺 🎶",
-};
+// ─── Emoji-style avatars matching the design image ────────────────────────────
+const EMOJI_AVATARS = [
+  { id: "boy1",    emoji: "👦🏽", label: "Pojke" },
+  { id: "girl1",   emoji: "👧🏼", label: "Flicka" },
+  { id: "boy2",    emoji: "👦🏿", label: "Pojke" },
+  { id: "man1",    emoji: "🧑🏻", label: "Elev" },
+  { id: "girl2",   emoji: "👧🏻", label: "Flicka" },
+  { id: "grad",    emoji: "🧑🎓", label: "Student" },
+  { id: "boy3",    emoji: "👦🏻", label: "Pojke" },
+  { id: "girl3",   emoji: "👧🏾", label: "Flicka" },
+];
 
-export default function HomePage() {
-  const [student, setStudent] = useState<StudentData | null>(null);
-  const [nameInput, setNameInput] = useState("");
-  const [selectedAvatar, setSelectedAvatar] = useState("ninja");
-  const [selectedLanguage, setSelectedLanguage] = useState<LanguageId>("franska");
-  const [loading, setLoading] = useState(true);
+const LANGUAGES: { id: LanguageId; label: string; color: string; hover: string; shadow: string }[] = [
+  { id: "franska", label: "Franska", color: "#1d4ed8", hover: "#1e40af", shadow: "rgba(29,78,216,0.4)" },
+  { id: "spanska", label: "Spanska", color: "#dc2626", hover: "#b91c1c", shadow: "rgba(220,38,38,0.4)" },
+  { id: "tyska",   label: "Tyska",   color: "#374151", hover: "#1f2937", shadow: "rgba(55,65,81,0.4)" },
+];
+
+interface FormValues {
+  name: string;
+}
+
+export default function LoginPage() {
+  const router = useRouter();
+  const [selectedLang, setSelectedLang] = useState<LanguageId>("franska");
+  const [selectedAvatar, setSelectedAvatar] = useState("boy1");
   const [isReturning, setIsReturning] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+
+  const { register, handleSubmit, watch, formState: { errors } } = useForm<FormValues>({
+    defaultValues: { name: "" },
+  });
+
+  const nameValue = watch("name");
 
   useEffect(() => {
-    setStudent(loadStudent());
-    setLoading(false);
-  }, []);
+    setIsReturning(studentExists(nameValue.trim()));
+  }, [nameValue]);
 
-  function handleNameChange(value: string) {
-    setNameInput(value);
-    setIsReturning(studentExists(value.trim()));
+  // If already logged in, redirect to their language
+  useEffect(() => {
+    const s = loadStudent();
+    if (s) {
+      router.replace(`/world/${s.selectedLanguage ?? "franska"}`);
+    }
+  }, [router]);
+
+  function onSubmit({ name }: FormValues) {
+    if (!name.trim()) return;
+    setSubmitting(true);
+    createStudent(name.trim(), selectedAvatar, selectedLang);
+    router.push(`/world/${selectedLang}`);
   }
 
-  function handleLogin(e: React.FormEvent) {
-    e.preventDefault();
-    if (!nameInput.trim()) return;
-    const data = createStudent(nameInput.trim(), selectedAvatar, selectedLanguage);
-    setStudent(data);
-  }
-
-  function handleLogout() {
-    clearStudent();
-    setStudent(null);
-    setNameInput("");
-  }
-
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-4xl animate-bounce-slow">🔍</div>
-      </div>
-    );
-  }
-
-  // ─── Login screen ───────────────────────────────────────────────────────────
-  if (!student) {
-    return (
-      <div
-        className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden"
-        style={{
-          background: "linear-gradient(180deg, #7dd3fc 0%, #38bdf8 20%, #bae6fd 50%, #86efac 75%, #4ade80 100%)"
-        }}
-      >
-        {/* Background decorations */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          {/* Hot air balloon */}
-          <div className="absolute top-8 right-6 text-5xl animate-float opacity-90">🎈</div>
-          {/* Eiffel Tower */}
-          <div className="absolute bottom-0 left-4 text-7xl opacity-20 select-none">🗼</div>
-          {/* Castle */}
-          <div className="absolute bottom-0 right-8 text-6xl opacity-20 select-none">🏰</div>
-          {/* Clouds */}
-          <div className="absolute top-6 left-1/4 text-4xl opacity-60 animate-float" style={{ animationDelay: "1s" }}>☁️</div>
-          <div className="absolute top-12 right-1/3 text-3xl opacity-50 animate-float" style={{ animationDelay: "2s" }}>☁️</div>
-          {/* Coins */}
-          <div className="absolute bottom-8 left-8 text-3xl opacity-70 animate-bounce-slow">⭐</div>
-          <div className="absolute bottom-6 left-16 text-2xl opacity-60 animate-bounce-slow" style={{ animationDelay: "0.5s" }}>⭐</div>
-          {/* Magnifying glass top right */}
-          <div className="absolute top-10 right-16 text-4xl opacity-80 animate-float" style={{ animationDelay: "0.5s" }}>🔍</div>
-        </div>
-
-        <BlurFade className="w-full max-w-sm flex-shrink-0 relative z-10">
-          {/* Title banner */}
-          <div className="text-center mb-4">
-            <div
-              className="inline-block mb-2 px-6 py-2 rounded-2xl"
-              style={{ background: "linear-gradient(135deg, #1d4ed8, #2563eb)", boxShadow: "0 4px 0 0 rgba(29,78,216,0.5), 0 8px 20px -4px rgba(29,78,216,0.4)" }}
-            >
-              <h1 className="text-4xl font-black tracking-tight text-white drop-shadow-sm">
-                <span style={{ color: "#fde68a" }}>Spr</span>
-                <span className="text-white">å</span>
-                <span style={{ color: "#fde68a" }}>k</span>
-                <span className="text-white">jakten</span>
-              </h1>
-            </div>
-            {/* Välkommen banner */}
-            <div
-              className="inline-block px-8 py-2 rounded-xl"
-              style={{ background: "linear-gradient(135deg, #16a34a, #22c55e)", boxShadow: "0 3px 0 0 rgba(22,163,74,0.5)" }}
-            >
-              <p className="text-white font-black text-lg tracking-wide">Välkommen!</p>
-            </div>
-          </div>
-
-          {/* Login card */}
-          <div
-            className="bg-white rounded-3xl p-5 border-3 border-gray-100"
-            style={{ boxShadow: "0 8px 0 0 rgba(0,0,0,0.08), 0 16px 32px -8px rgba(0,0,0,0.15), inset 0 4px 8px 0 rgba(255,255,255,0.8)" }}
-          >
-            <h2 className="text-xl font-black mb-0.5 text-gray-800">Välkommen!</h2>
-            <p className="text-orange-400 text-sm mb-4 font-medium">
-              Skriv ditt namn för att börja:
-            </p>
-
-            <form onSubmit={handleLogin} className="space-y-4">
-              {/* Name input */}
-              <div className="relative">
-                <input
-                  type="text"
-                  value={nameInput}
-                  onChange={(e) => handleNameChange(e.target.value)}
-                  placeholder="Ditt namn..."
-                  className="input-field-orange text-base w-full"
-                  autoFocus
-                  maxLength={30}
-                />
-                {isReturning && (
-                  <p className="mt-1.5 text-xs font-bold text-emerald-600 flex items-center gap-1">
-                    <span>✅</span> Välkommen tillbaka! Din data är sparad.
-                  </p>
-                )}
-              </div>
-
-              {/* Language selection */}
-              <div>
-                <p className="text-sm font-bold mb-2 text-gray-700">Välj språk:</p>
-                <div className="grid grid-cols-3 gap-2">
-                  {LANGUAGES.map((lang) => (
-                    <button
-                      key={lang.id}
-                      type="button"
-                      onClick={() => setSelectedLanguage(lang.id)}
-                      className={`relative flex flex-col items-center justify-center gap-1 py-3 rounded-xl border-3 font-bold text-sm transition-all duration-200 cursor-pointer overflow-hidden ${
-                        selectedLanguage === lang.id
-                          ? "scale-105 border-white"
-                          : "border-transparent opacity-80 hover:opacity-100 hover:scale-102"
-                      }`}
-                      style={{
-                        background:
-                          lang.id === "franska"
-                            ? selectedLanguage === "franska"
-                              ? "linear-gradient(135deg, #002395, #1d4ed8)"
-                              : "linear-gradient(135deg, #1e40af, #1d4ed8)"
-                            : lang.id === "spanska"
-                            ? selectedLanguage === "spanska"
-                              ? "linear-gradient(135deg, #c8102e, #e11d48)"
-                              : "linear-gradient(135deg, #9f1239, #be123c)"
-                            : selectedLanguage === "tyska"
-                            ? "linear-gradient(135deg, #1c1c1c, #374151)"
-                            : "linear-gradient(135deg, #1f2937, #374151)",
-                        boxShadow: selectedLanguage === lang.id
-                          ? "0 5px 0 0 rgba(0,0,0,0.3), 0 8px 16px -4px rgba(0,0,0,0.25)"
-                          : "0 3px 0 0 rgba(0,0,0,0.2)",
-                      }}
-                    >
-                      {/* Flag stripe for Spanish */}
-                      {lang.id === "spanska" && (
-                        <div className="absolute top-0 left-0 right-0 h-[6px]" style={{ background: "#c8102e" }} />
-                      )}
-                      {lang.id === "spanska" && (
-                        <div className="absolute bottom-0 left-0 right-0 h-[6px]" style={{ background: "#c8102e" }} />
-                      )}
-                      {/* German flag stripes */}
-                      {lang.id === "tyska" && (
-                        <>
-                          <div className="absolute top-0 left-0 right-0 h-[5px]" style={{ background: "#000" }} />
-                          <div className="absolute top-[5px] left-0 right-0 h-[5px]" style={{ background: "#DD0000" }} />
-                          <div className="absolute top-[10px] left-0 right-0 h-[5px]" style={{ background: "#FFCE00" }} />
-                        </>
-                      )}
-                      <span className="text-2xl mt-1">{lang.flag}</span>
-                      <span className="text-white font-black text-xs tracking-wide">{lang.name}</span>
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Avatar selection */}
-              <div>
-                <p className="text-sm font-bold mb-2 text-gray-700">Välj din karaktär:</p>
-                <div className="grid grid-cols-5 gap-2">
-                  {AVATARS.slice(0, 10).map((avatar) => (
-                    <button
-                      key={avatar.id}
-                      type="button"
-                      onClick={() => setSelectedAvatar(avatar.id)}
-                      title={avatar.name}
-                      className={`aspect-square rounded-xl flex items-center justify-center transition-all duration-200 overflow-hidden text-xl cursor-pointer border-3 ${
-                        selectedAvatar === avatar.id
-                          ? "border-sj-400 scale-110 bg-sj-50"
-                          : "border-gray-200 bg-gray-50 hover:border-sj-300 hover:scale-105"
-                      }`}
-                      style={{
-                        boxShadow: selectedAvatar === avatar.id
-                          ? "0 4px 0 0 rgba(34,197,94,0.3), 0 6px 12px -2px rgba(34,197,94,0.2), inset 0 2px 4px 0 rgba(255,255,255,0.8)"
-                          : "0 3px 0 0 rgba(0,0,0,0.08), inset 0 2px 4px 0 rgba(255,255,255,0.8)"
-                      }}
-                    >
-                      {avatar.image
-                        ? <img src={avatar.image} alt={avatar.name} className="w-full h-full object-contain p-0.5" />
-                        : avatar.emoji}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Start button */}
-              <button
-                type="submit"
-                disabled={!nameInput.trim()}
-                className="w-full font-black text-lg py-4 rounded-2xl text-white transition-all duration-200 border-3 border-transparent disabled:opacity-50 disabled:cursor-not-allowed"
-                style={{
-                  background: nameInput.trim()
-                    ? "linear-gradient(135deg, #22c55e, #16a34a)"
-                    : "linear-gradient(135deg, #d1d5db, #9ca3af)",
-                  boxShadow: nameInput.trim()
-                    ? "0 5px 0 0 rgba(22,163,74,0.5), 0 8px 20px -4px rgba(22,163,74,0.4), inset 0 2px 4px 0 rgba(255,255,255,0.3)"
-                    : "0 3px 0 0 rgba(0,0,0,0.1)",
-                }}
-              >
-                {isReturning ? "Fortsätt jakten! 🏆" : "✅ Börja!"}
-              </button>
-            </form>
-          </div>
-        </BlurFade>
-      </div>
-    );
-  }
-
-  // ─── Logged in – language selection ─────────────────────────────────────────
   return (
-    <div className="min-h-screen bg-sky-50 dark:bg-gray-900">
-      <Header student={student} onLogout={handleLogout} />
+    <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden select-none"
+         style={{ background: "#f0f4f8" }}>
 
-      <main className="max-w-5xl mx-auto px-4 py-4">
-        <BlurFade delay={0} className="mb-4">
-          <h2 className="text-2xl font-black text-sj-800 dark:text-gray-100">Välj ditt språk</h2>
-          <p className="text-sj-500 dark:text-gray-400 font-semibold mt-0.5">
-            Välkommen, <span className="text-sj-600 font-black">{student.name}</span>! Totalt{" "}
-            <span className="text-amber-600 font-black">⭐ <NumberTicker value={student.totalPoints} className="text-amber-600" /></span> poäng.
-          </p>
-        </BlurFade>
+      {/* ── Flag-stripe background ───────────────────────────────────────── */}
+      {/* Top blue band */}
+      <div className="absolute top-0 left-0 right-0 h-24 z-0"
+           style={{ background: "#1d4ed8" }} />
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {LANGUAGES.map((lang, i) => {
-            const langProgress = student.languages[lang.id];
-            const vocabMods  = Object.values(langProgress?.vocabularyModules ?? {});
-            const grammarMods = Object.values(langProgress?.grammarModules ?? {});
-            const totalCompleted = vocabMods.filter((m) => m.completed).length
-              + grammarMods.filter((m) => m.completed).length;
-            const langPoints = [...vocabMods, ...grammarMods]
-              .reduce((sum, m) => sum + m.points, 0);
+      {/* French flag – left side */}
+      <div className="absolute left-0 top-0 bottom-0 w-14 flex flex-col z-0">
+        <div className="flex-1" style={{ background: "#1d4ed8" }} />
+        <div className="flex-1" style={{ background: "#ffffff" }} />
+        <div className="flex-1" style={{ background: "#dc2626" }} />
+      </div>
 
-            return (
-              <BlurFade key={lang.id} delay={0.05 + i * 0.06}>
-                <Link href={`/world/${lang.id}`} className="block group">
-                  <div
-                    className={`rounded-3xl overflow-hidden border-3 transition-all duration-200 group-hover:-translate-y-1.5 group-hover:shadow-xl cursor-pointer ${lang.borderClass}`}
-                    style={{ boxShadow: "0 4px 0 0 rgba(0,0,0,0.1), 0 8px 20px -4px rgba(0,0,0,0.12)" }}
-                  >
-                    {/* Gradient header */}
-                    <div className={`${lang.bgClass} px-5 py-6`}>
-                      <div className="flex items-start justify-between">
-                        <div className="flex items-center gap-3">
-                          <span className="text-5xl drop-shadow-lg">{lang.flag}</span>
-                          <div>
-                            <div className="text-xs font-bold text-white bg-black/30 rounded-full px-2.5 py-0.5 inline-block mb-1.5">
-                              {lang.nativeName}
-                            </div>
-                            <h3
-                              className="text-2xl font-black text-white leading-tight"
-                              style={{ textShadow: "0 1px 3px rgba(0,0,0,0.6), 0 2px 8px rgba(0,0,0,0.4)" }}
-                            >
-                              {lang.name}
-                            </h3>
-                          </div>
-                        </div>
-                        {langPoints > 0 && (
-                          <div className="bg-black/25 rounded-xl px-2.5 py-1.5 flex items-center gap-1 flex-shrink-0">
-                            <span className="text-yellow-300 text-sm">⭐</span>
-                            <span className="text-white font-black text-sm">{langPoints}</span>
-                          </div>
-                        )}
-                      </div>
-                      <div className="mt-2.5 text-2xl opacity-75 tracking-widest">
-                        {LANGUAGE_SCENE_EMOJIS[lang.id]}
-                      </div>
-                    </div>
+      {/* German flag – right side */}
+      <div className="absolute right-0 top-0 bottom-0 w-14 flex flex-col z-0">
+        <div className="flex-1" style={{ background: "#1c1c1c" }} />
+        <div className="flex-1" style={{ background: "#dc2626" }} />
+        <div className="flex-1" style={{ background: "#FFCE00" }} />
+      </div>
 
-                    {/* Footer */}
-                    <div className="bg-white dark:bg-gray-800 px-5 py-3.5 flex items-center justify-between">
-                      {totalCompleted > 0 ? (
-                        <span className="text-sm font-bold text-sj-600 dark:text-gray-300 flex items-center gap-1.5">
-                          <span className="w-2 h-2 rounded-full bg-emerald-400 inline-block" />
-                          {totalCompleted} modul{totalCompleted !== 1 ? "er" : ""} klarade
-                        </span>
-                      ) : (
-                        <span className="text-sm font-semibold text-gray-400 dark:text-gray-500">
-                          Inte börjat än
-                        </span>
-                      )}
-                      <span
-                        className="text-sm font-black px-4 py-1.5 rounded-xl text-white transition-all group-hover:scale-105 group-hover:shadow-md"
-                        style={{ background: "linear-gradient(135deg, #22c55e, #16a34a)", boxShadow: "0 2px 0 0 rgba(22,163,74,0.4)" }}
-                      >
-                        Öppna →
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              </BlurFade>
-            );
-          })}
+      {/* ── Card ────────────────────────────────────────────────────────── */}
+      <motion.div
+        initial={{ opacity: 0, y: 24, scale: 0.97 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: 0.45, ease: "easeOut" }}
+        className="relative z-10 bg-white rounded-3xl px-8 py-8 w-full max-w-sm mx-6"
+        style={{ boxShadow: "0 8px 40px -8px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.08)" }}
+      >
+        {/* Compass icon */}
+        <div className="flex justify-center mb-3">
+          <div
+            className="w-16 h-16 rounded-full flex items-center justify-center"
+            style={{
+              background: "radial-gradient(circle at 35% 35%, #60a5fa, #1d4ed8)",
+              boxShadow: "0 4px 12px rgba(29,78,216,0.35)"
+            }}
+          >
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+              <circle cx="18" cy="18" r="14" fill="white" fillOpacity="0.15"/>
+              {/* North arrow – red */}
+              <polygon points="18,6 21,18 18,16 15,18" fill="#ef4444"/>
+              {/* South arrow – white */}
+              <polygon points="18,30 21,18 18,20 15,18" fill="white"/>
+              {/* Center dot */}
+              <circle cx="18" cy="18" r="2" fill="white"/>
+            </svg>
+          </div>
         </div>
-      </main>
+
+        {/* Title */}
+        <h1 className="text-center text-3xl font-black tracking-tight mb-1"
+            style={{ color: "#1e293b" }}>
+          Språkjakten
+        </h1>
+        <p className="text-center text-base mb-5" style={{ color: "#64748b" }}>
+          Välkommen!
+        </p>
+
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+
+          {/* Name input */}
+          <div>
+            <input
+              {...register("name", { required: true, minLength: 1 })}
+              type="text"
+              placeholder="Ditt namn..."
+              autoComplete="off"
+              maxLength={30}
+              className="w-full px-4 py-3.5 rounded-xl text-base font-medium outline-none transition-all"
+              style={{
+                border: "2px solid #f97316",
+                color: "#1e293b",
+              }}
+              onFocus={e => e.target.style.boxShadow = "0 0 0 3px rgba(249,115,22,0.15)"}
+              onBlur={e => e.target.style.boxShadow = "none"}
+            />
+            <AnimatePresence>
+              {isReturning && nameValue.trim() && (
+                <motion.p
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  className="text-xs font-bold text-emerald-600 mt-1.5 flex items-center gap-1"
+                >
+                  ✅ Välkommen tillbaka! Din data är sparad.
+                </motion.p>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Language selection */}
+          <div>
+            <div className="flex items-center gap-2 mb-3">
+              <div className="flex-1 h-px bg-gray-200"/>
+              <span className="text-xs font-semibold text-gray-400 flex-shrink-0">Välj språk</span>
+              <div className="flex-1 h-px bg-gray-200"/>
+            </div>
+            <div className="grid grid-cols-3 gap-2">
+              {LANGUAGES.map((lang) => (
+                <motion.button
+                  key={lang.id}
+                  type="button"
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => setSelectedLang(lang.id)}
+                  className="py-3 rounded-xl font-black text-sm text-white transition-all relative overflow-hidden"
+                  style={{
+                    background: lang.color,
+                    boxShadow: selectedLang === lang.id
+                      ? `0 4px 0 0 ${lang.shadow}, 0 6px 16px -4px ${lang.shadow}`
+                      : `0 2px 0 0 ${lang.shadow}`,
+                    transform: selectedLang === lang.id ? "translateY(-2px)" : "none",
+                    outline: selectedLang === lang.id ? `3px solid white` : "none",
+                    outlineOffset: "2px",
+                  }}
+                >
+                  {lang.label}
+                  {selectedLang === lang.id && (
+                    <motion.div
+                      layoutId="langIndicator"
+                      className="absolute inset-0 rounded-xl"
+                      style={{ border: "2px solid rgba(255,255,255,0.4)" }}
+                    />
+                  )}
+                </motion.button>
+              ))}
+            </div>
+          </div>
+
+          {/* Avatar selection */}
+          <div>
+            <div className="flex justify-center gap-2 flex-wrap">
+              {EMOJI_AVATARS.map((av) => (
+                <motion.button
+                  key={av.id}
+                  type="button"
+                  whileTap={{ scale: 0.9 }}
+                  onClick={() => setSelectedAvatar(av.id)}
+                  className="w-12 h-12 rounded-full flex items-center justify-center text-2xl transition-all cursor-pointer"
+                  style={{
+                    background: selectedAvatar === av.id ? "#e0f2fe" : "#f8fafc",
+                    border: selectedAvatar === av.id ? "3px solid #38bdf8" : "3px solid #e2e8f0",
+                    boxShadow: selectedAvatar === av.id
+                      ? "0 3px 0 0 rgba(56,189,248,0.35)"
+                      : "0 2px 0 0 rgba(0,0,0,0.06)",
+                    transform: selectedAvatar === av.id ? "scale(1.15)" : "scale(1)",
+                  }}
+                  title={av.label}
+                >
+                  {av.emoji}
+                </motion.button>
+              ))}
+            </div>
+          </div>
+
+          {/* Submit button */}
+          <motion.button
+            type="submit"
+            disabled={!nameValue.trim() || submitting}
+            whileTap={{ scale: 0.97 }}
+            className="w-full py-4 rounded-xl font-black text-lg text-white transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+            style={{
+              background: nameValue.trim()
+                ? "linear-gradient(135deg, #22c55e, #16a34a)"
+                : "linear-gradient(135deg, #94a3b8, #64748b)",
+              boxShadow: nameValue.trim()
+                ? "0 5px 0 0 rgba(22,163,74,0.45), 0 8px 20px -4px rgba(22,163,74,0.3)"
+                : "none",
+            }}
+          >
+            {submitting ? "Laddar..." : isReturning ? "Fortsätt! 🏆" : "Börja!"}
+          </motion.button>
+        </form>
+      </motion.div>
     </div>
   );
 }
