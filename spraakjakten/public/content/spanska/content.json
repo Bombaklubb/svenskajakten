@@ -1,0 +1,433 @@
+{
+  "vocabulary": [
+    {
+      "id": "esp-vocab-1",
+      "title": "Hälsningar & artigheter",
+      "description": "Lär dig de vanligaste hälsningarna och artighetsfraserna",
+      "icon": "👋",
+      "pointsRequired": 0,
+      "bonusPoints": 25,
+      "helpText": ["¡Hola! används hela dagen", "¡Muchas gracias! = tack så mycket"],
+      "exercises": [
+        {
+          "id": "esp-v1-1",
+          "type": "multiple-choice",
+          "question": "Vad betyder '¡Hola!' på svenska?",
+          "options": ["Hej då", "Hej!", "Tack", "Förlåt"],
+          "correctIndex": 1,
+          "explanation": "¡Hola! = Hej! Det används hela dagen, formellt och informellt."
+        },
+        {
+          "id": "esp-v1-2",
+          "type": "multiple-choice",
+          "question": "Hur säger man 'tack' på spanska?",
+          "options": ["Por favor", "Perdón", "Gracias", "De nada"],
+          "correctIndex": 2,
+          "explanation": "Gracias = tack. Muchas gracias = tack så mycket."
+        },
+        {
+          "id": "esp-v1-3",
+          "type": "fill-in-blank",
+          "question": "___ favor (var snäll / snälla)",
+          "answer": "por",
+          "hint": "Frasen por ___ favor",
+          "explanation": "Por favor = var snäll / tack. Används för att be om något artigt."
+        },
+        {
+          "id": "esp-v1-4",
+          "type": "multiple-choice",
+          "question": "Vad betyder '¡Adiós!'?",
+          "options": ["God morgon", "Hej", "Hej då", "Välkommen"],
+          "correctIndex": 2,
+          "explanation": "¡Adiós! = hej då. Hasta luego = vi ses / hej då (informellt)."
+        },
+        {
+          "id": "esp-v1-5",
+          "type": "multiple-choice",
+          "question": "Hur säger man 'god morgon' på spanska?",
+          "options": ["Buenas tardes", "Buenas noches", "Buenos días", "Buenas"],
+          "correctIndex": 2,
+          "explanation": "Buenos días = god morgon. Buenas tardes = god eftermiddag/kväll. Buenas noches = god natt."
+        },
+        {
+          "id": "esp-v1-6",
+          "type": "fill-in-blank",
+          "question": "Me ___ Carlos. (Jag heter Carlos)",
+          "answer": "llamo",
+          "hint": "Verbet llamarse = att heta",
+          "explanation": "Me llamo = jag heter. Llamarse är ett reflexivt verb."
+        },
+        {
+          "id": "esp-v1-7",
+          "type": "multiple-choice",
+          "question": "Vad betyder '¿Cómo estás?'",
+          "options": ["Hur gammal är du?", "Hur mår du?", "Vad heter du?", "Var bor du?"],
+          "correctIndex": 1,
+          "explanation": "¿Cómo estás? = Hur mår du? (informellt). ¿Cómo está usted? = formellt."
+        },
+        {
+          "id": "esp-v1-8",
+          "type": "multiple-choice",
+          "question": "Hur svarar man 'Bra tack!' på spanska?",
+          "options": ["¡Muy bien, gracias!", "¡Buenas noches!", "¡Por favor!", "¡Perdón!"],
+          "correctIndex": 0,
+          "explanation": "¡Muy bien, gracias! = Mycket bra, tack! Muy = mycket."
+        }
+      ]
+    },
+    {
+      "id": "esp-vocab-2",
+      "title": "Siffror 1–20",
+      "description": "Räkna till tjugo på spanska",
+      "icon": "🔢",
+      "pointsRequired": 0,
+      "bonusPoints": 25,
+      "exercises": [
+        {
+          "id": "esp-v2-1",
+          "type": "multiple-choice",
+          "question": "Vad heter siffran 1 på spanska?",
+          "options": ["dos", "uno", "tres", "cuatro"],
+          "correctIndex": 1,
+          "explanation": "Uno = ett. Uno används ofta som 'un' (mask.) / una (fem.) framför substantiv."
+        },
+        {
+          "id": "esp-v2-2",
+          "type": "fill-in-blank",
+          "question": "Hur skriver man 5 på spanska? ___",
+          "answer": "cinco",
+          "hint": "Det uttalas 'sinko'",
+          "explanation": "Cinco = fem. Uno, dos, tres, cuatro, cinco."
+        },
+        {
+          "id": "esp-v2-3",
+          "type": "multiple-choice",
+          "question": "Vad betyder 'diez'?",
+          "options": ["Sex", "Sju", "Åtta", "Tio"],
+          "correctIndex": 3,
+          "explanation": "Diez = tio. Det uttalas 'djes'."
+        },
+        {
+          "id": "esp-v2-4",
+          "type": "multiple-choice",
+          "question": "Hur heter 15 på spanska?",
+          "options": ["catorce", "quince", "dieciséis", "trece"],
+          "correctIndex": 1,
+          "explanation": "Quince = 15. Catorce=14, dieciséis=16, trece=13."
+        },
+        {
+          "id": "esp-v2-5",
+          "type": "fill-in-blank",
+          "question": "Tengo ___ años. (Jag är tolv år)",
+          "answer": "doce",
+          "hint": "Tio = diez, tolv = doce",
+          "explanation": "Doce = 12. Once=11, doce=12, trece=13, catorce=14."
+        },
+        {
+          "id": "esp-v2-6",
+          "type": "multiple-choice",
+          "question": "Vad heter 20 på spanska?",
+          "options": ["diecinueve", "veinte", "quince", "dieciséis"],
+          "correctIndex": 1,
+          "explanation": "Veinte = 20."
+        }
+      ]
+    },
+    {
+      "id": "esp-vocab-3",
+      "title": "Mat & dryck",
+      "description": "Lär dig vanliga ord för mat och dryck",
+      "icon": "🍽️",
+      "pointsRequired": 0,
+      "bonusPoints": 30,
+      "exercises": [
+        {
+          "id": "esp-v3-1",
+          "type": "multiple-choice",
+          "question": "Vad heter 'vatten' på spanska?",
+          "options": ["la leche", "el zumo", "el agua", "el vino"],
+          "correctIndex": 2,
+          "explanation": "El agua = vattnet. Trots att agua är feminint, används el (inte la) framför det för att undvika ljudet 'la a'."
+        },
+        {
+          "id": "esp-v3-2",
+          "type": "fill-in-blank",
+          "question": "Me gusta el ___. (Jag gillar brödet)",
+          "answer": "pan",
+          "hint": "Bröd på spanska",
+          "explanation": "El pan = brödet. Me gusta = jag gillar."
+        },
+        {
+          "id": "esp-v3-3",
+          "type": "multiple-choice",
+          "question": "Vad betyder 'la manzana'?",
+          "options": ["Bananen", "Apelsinen", "Äpplet", "Druvan"],
+          "correctIndex": 2,
+          "explanation": "La manzana = äpplet. La naranja = apelsinen."
+        },
+        {
+          "id": "esp-v3-4",
+          "type": "multiple-choice",
+          "question": "Hur heter 'köttet' på spanska?",
+          "options": ["el pescado", "la carne", "el pollo", "el cerdo"],
+          "correctIndex": 1,
+          "explanation": "La carne = köttet. El pescado = fisken, el pollo = kycklingen."
+        },
+        {
+          "id": "esp-v3-5",
+          "type": "fill-in-blank",
+          "question": "¿Quieres ___ café? (Vill du ha kaffe?)",
+          "answer": "un",
+          "alternativeAnswers": ["el"],
+          "hint": "Obestämd artikel maskulinum",
+          "explanation": "Un café = en kopp kaffe. El café = kaffet."
+        },
+        {
+          "id": "esp-v3-6",
+          "type": "multiple-choice",
+          "question": "Vad heter 'mjölken' på spanska?",
+          "options": ["el agua", "el zumo", "la leche", "el té"],
+          "correctIndex": 2,
+          "explanation": "La leche = mjölken. El zumo = juicen. El té = teen."
+        }
+      ]
+    },
+    {
+      "id": "esp-vocab-4",
+      "title": "Djur",
+      "description": "Lär dig djurnamn på spanska",
+      "icon": "🐾",
+      "pointsRequired": 0,
+      "bonusPoints": 25,
+      "exercises": [
+        {
+          "id": "esp-v4-1",
+          "type": "multiple-choice",
+          "question": "Hur heter 'katten' på spanska?",
+          "options": ["el perro", "el gato", "el pájaro", "el caballo"],
+          "correctIndex": 1,
+          "explanation": "El gato = katten (mask.). La gata = katten (fem.)."
+        },
+        {
+          "id": "esp-v4-2",
+          "type": "fill-in-blank",
+          "question": "Mi ___ se llama Rex. (Min hund heter Rex)",
+          "answer": "perro",
+          "hint": "Hund på spanska",
+          "explanation": "El perro = hunden. La perra = honhunden."
+        },
+        {
+          "id": "esp-v4-3",
+          "type": "multiple-choice",
+          "question": "Vad heter 'hästen' på spanska?",
+          "options": ["el gato", "el pez", "el caballo", "el ratón"],
+          "correctIndex": 2,
+          "explanation": "El caballo = hästen."
+        },
+        {
+          "id": "esp-v4-4",
+          "type": "multiple-choice",
+          "question": "Vad betyder 'el pájaro'?",
+          "options": ["Fisken", "Fågeln", "Ormen", "Musen"],
+          "correctIndex": 1,
+          "explanation": "El pájaro = fågeln. El pez = fisken."
+        },
+        {
+          "id": "esp-v4-5",
+          "type": "fill-in-blank",
+          "question": "El ___ es muy rápido. (Lejonet är väldigt snabbt)",
+          "answer": "león",
+          "hint": "Kung av djuren",
+          "explanation": "El león = lejonet. Muy = mycket/väldigt. Rápido = snabb."
+        }
+      ]
+    }
+  ],
+  "grammar": [
+    {
+      "id": "esp-gram-1",
+      "title": "Artiklar: el, la, los, las",
+      "description": "Lär dig hur spanska artiklar fungerar",
+      "icon": "📖",
+      "pointsRequired": 0,
+      "bonusPoints": 30,
+      "helpText": [
+        "Alla spanska substantiv är antingen maskulina eller feminina",
+        "el = bestämd artikel mask. singular",
+        "la = bestämd artikel fem. singular",
+        "los = bestämd artikel mask. plural",
+        "las = bestämd artikel fem. plural",
+        "un = obestämd artikel mask., una = obestämd artikel fem."
+      ],
+      "exercises": [
+        {
+          "id": "esp-g1-1",
+          "type": "multiple-choice",
+          "question": "Välj rätt artikel: ___ libro (boken)",
+          "options": ["la", "el", "los", "las"],
+          "correctIndex": 1,
+          "explanation": "El libro = boken. Libro är maskulint."
+        },
+        {
+          "id": "esp-g1-2",
+          "type": "fill-in-blank",
+          "question": "___ casa es grande. (Huset är stort)",
+          "answer": "la",
+          "hint": "Casa (hus) är feminint",
+          "explanation": "La casa = huset. Casa är feminint, så vi använder 'la'."
+        },
+        {
+          "id": "esp-g1-3",
+          "type": "multiple-choice",
+          "question": "Hur heter 'böckerna' (plural) på spanska?",
+          "options": ["el libro", "la libro", "los libros", "las libros"],
+          "correctIndex": 2,
+          "explanation": "Los libros = böckerna. Maskulint plural: los + substantiv + s."
+        },
+        {
+          "id": "esp-g1-4",
+          "type": "fill-in-blank",
+          "question": "Tengo ___ perro. (Jag har en hund)",
+          "answer": "un",
+          "hint": "Perro är maskulint, obestämd artikel",
+          "explanation": "Un perro = en hund (mask.). Una gata = en katt (fem.)."
+        },
+        {
+          "id": "esp-g1-5",
+          "type": "multiple-choice",
+          "question": "Välj rätt artikel: ___ chicas (flickorna)",
+          "options": ["el", "la", "los", "las"],
+          "correctIndex": 3,
+          "explanation": "Las chicas = flickorna. Feminint plural: las."
+        },
+        {
+          "id": "esp-g1-6",
+          "type": "multiple-choice",
+          "question": "Vad heter 'en skola' (obestämd) på spanska?",
+          "options": ["el escuela", "la escuela", "un escuela", "una escuela"],
+          "correctIndex": 3,
+          "explanation": "Una escuela = en skola. Escuela är feminint, så vi använder 'una'."
+        }
+      ]
+    },
+    {
+      "id": "esp-gram-2",
+      "title": "Verbet ser (att vara)",
+      "description": "Konjugera 'ser' – ett av de viktigaste spanska verben",
+      "icon": "🔤",
+      "pointsRequired": 0,
+      "bonusPoints": 35,
+      "helpText": [
+        "Ser = att vara (permanent/identitet)",
+        "yo soy = jag är",
+        "tú eres = du är",
+        "él/ella es = han/hon är",
+        "nosotros somos = vi är",
+        "vosotros sois = ni är (Spanien)",
+        "ellos/ellas son = de är",
+        "Obs: estar används för tillfälliga tillstånd (Cómo estás?)"
+      ],
+      "exercises": [
+        {
+          "id": "esp-g2-1",
+          "type": "multiple-choice",
+          "question": "Jag är svensk. Välj rätt form av ser:",
+          "options": ["Yo eres sueco", "Yo soy sueco", "Yo somos sueco", "Yo son sueco"],
+          "correctIndex": 1,
+          "explanation": "Yo soy = jag är. Ser är ett oregelbundet verb."
+        },
+        {
+          "id": "esp-g2-2",
+          "type": "fill-in-blank",
+          "question": "Tú ___ muy inteligente. (Du är väldigt intelligent)",
+          "answer": "eres",
+          "hint": "Tú-formen av ser",
+          "explanation": "Tú eres = du är."
+        },
+        {
+          "id": "esp-g2-3",
+          "type": "multiple-choice",
+          "question": "Ella ___ profesora. (Hon är lärare)",
+          "options": ["soy", "eres", "es", "somos"],
+          "correctIndex": 2,
+          "explanation": "Él/ella es = han/hon är."
+        },
+        {
+          "id": "esp-g2-4",
+          "type": "fill-in-blank",
+          "question": "Nosotros ___ amigos. (Vi är vänner)",
+          "answer": "somos",
+          "hint": "Vi-formen av ser",
+          "explanation": "Nosotros somos = vi är."
+        },
+        {
+          "id": "esp-g2-5",
+          "type": "multiple-choice",
+          "question": "Ellos ___ estudiantes. (De är studenter)",
+          "options": ["es", "eres", "sois", "son"],
+          "correctIndex": 3,
+          "explanation": "Ellos/ellas son = de är."
+        }
+      ]
+    },
+    {
+      "id": "esp-gram-3",
+      "title": "Verbet tener (att ha)",
+      "description": "Lär dig konjugera 'tener' – ett nyckelverb",
+      "icon": "✏️",
+      "pointsRequired": 0,
+      "bonusPoints": 35,
+      "helpText": [
+        "Tener = att ha",
+        "yo tengo = jag har",
+        "tú tienes = du har",
+        "él/ella tiene = han/hon har",
+        "nosotros tenemos = vi har",
+        "ellos/ellas tienen = de har",
+        "Tener används också för ålder: ¿Cuántos años tienes?"
+      ],
+      "exercises": [
+        {
+          "id": "esp-g3-1",
+          "type": "multiple-choice",
+          "question": "Yo ___ un hermano. (Jag har en bror)",
+          "options": ["tienes", "tiene", "tengo", "tienen"],
+          "correctIndex": 2,
+          "explanation": "Yo tengo = jag har."
+        },
+        {
+          "id": "esp-g3-2",
+          "type": "fill-in-blank",
+          "question": "Tú ___ doce años. (Du är tolv år)",
+          "answer": "tienes",
+          "hint": "Du-formen av tener",
+          "explanation": "Tú tienes = du har. På spanska 'har' man sin ålder."
+        },
+        {
+          "id": "esp-g3-3",
+          "type": "multiple-choice",
+          "question": "Ella ___ dos perros. (Hon har två hundar)",
+          "options": ["tengo", "tienes", "tiene", "tenemos"],
+          "correctIndex": 2,
+          "explanation": "Él/ella tiene = han/hon har."
+        },
+        {
+          "id": "esp-g3-4",
+          "type": "fill-in-blank",
+          "question": "Nosotros ___ una casa bonita. (Vi har ett fint hus)",
+          "answer": "tenemos",
+          "hint": "Vi-formen av tener",
+          "explanation": "Nosotros tenemos = vi har."
+        },
+        {
+          "id": "esp-g3-5",
+          "type": "multiple-choice",
+          "question": "Ellos ___ hambre. (De är hungriga – lit. de har hunger)",
+          "options": ["tiene", "tenemos", "tienen", "tengo"],
+          "correctIndex": 2,
+          "explanation": "Ellos/ellas tienen = de har. Precis som franska 'har' man hunger på spanska."
+        }
+      ]
+    }
+  ]
+}
