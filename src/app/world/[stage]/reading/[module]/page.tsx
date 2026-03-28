@@ -8,7 +8,8 @@ import Header from "@/components/ui/Header";
 import ResultModal from "@/components/ui/ResultModal";
 import ReadingQuestionComponent from "@/components/exercises/ReadingQuestion";
 import { loadStudent, saveModuleProgress, loadGamification, saveGamification } from "@/lib/storage";
-import { chestsEarnedFromPoints, chestsEarnedFromExercises, rollMysteryBox, BOSS_UNLOCK_THRESHOLD } from "@/lib/gamification";
+import { chestsEarnedFromPoints, chestsEarnedFromExercises, chestsEarnedFromAchievements, rollMysteryBox, BOSS_UNLOCK_THRESHOLD } from "@/lib/gamification";
+import { ACHIEVEMENTS, isUnlocked } from "@/lib/achievements";
 import MysteryBoxPopup from "@/components/ui/MysteryBoxPopup";
 import { getStage } from "@/lib/stages";
 import type { StudentData, StageContent, ReadingModule, ChestType, MysteryBoxReward } from "@/lib/types";
@@ -86,7 +87,10 @@ export default function ReadingModulePage({ params }: Props) {
         const newEx = prevEx + 1;
         const pointChests = chestsEarnedFromPoints(prevPoints, newPoints, gam.pointsMilestonesRewarded);
         const exChests = chestsEarnedFromExercises(prevEx, newEx, gam.exerciseMilestonesRewarded);
-        const allNewChests = [...pointChests.map((c) => c.chest), ...exChests.map((c) => c.chest)];
+        const prevUnlocked = ACHIEVEMENTS.filter((a) => isUnlocked(a, student)).map((a) => a.id);
+        const nowUnlocked = ACHIEVEMENTS.filter((a) => isUnlocked(a, updated)).map((a) => a.id);
+        const achChests = chestsEarnedFromAchievements(prevUnlocked, nowUnlocked, gam.achievementsRewarded ?? []);
+        const allNewChests = [...pointChests.map((c) => c.chest), ...exChests.map((c) => c.chest), ...achChests.map((c) => c.chest)];
         const firstChest = allNewChests[0];
         const wasBossUnlocked = gam.bossUnlocked;
         const nowBossUnlocked = wasBossUnlocked || newEx >= BOSS_UNLOCK_THRESHOLD;
@@ -104,6 +108,7 @@ export default function ReadingModulePage({ params }: Props) {
           bossUnlocked: nowBossUnlocked,
           pointsMilestonesRewarded: [...gam.pointsMilestonesRewarded, ...pointChests.map((c) => c.milestone)],
           exerciseMilestonesRewarded: [...gam.exerciseMilestonesRewarded, ...exChests.map((c) => c.milestone)],
+          achievementsRewarded: [...(gam.achievementsRewarded ?? []), ...achChests.map((c) => c.achievementId)],
         });
         if (mysteryPoints > 0) setStudent({ ...updated, totalPoints: updated.totalPoints + mysteryPoints });
         if (firstChest) setChestEarned(firstChest.type as ChestType);

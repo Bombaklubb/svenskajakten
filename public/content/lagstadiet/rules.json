@@ -23,28 +23,6 @@
       ]
     },
     {
-      "id": "specialbokstaver",
-      "title": "Svenska specialbokstäver",
-      "icon": "🇸🇪",
-      "content": [
-        {
-          "term": "Å (å)",
-          "explanation": "Används i ord som 'år', 'åka', 'hål'.",
-          "examples": ["år", "åka", "hål", "gå", "stå"]
-        },
-        {
-          "term": "Ä (ä)",
-          "explanation": "Används i ord som 'äta', 'äpple', 'bär'.",
-          "examples": ["äta", "äpple", "bär", "läsa", "häst"]
-        },
-        {
-          "term": "Ö (ö)",
-          "explanation": "Används i ord som 'öga', 'öra', 'böcker'.",
-          "examples": ["öga", "öra", "böcker", "söt", "grön"]
-        }
-      ]
-    },
-    {
       "id": "meningsbyggnad",
       "title": "Hur man bygger en mening",
       "icon": "🏗️",

@@ -15,14 +15,24 @@
         {
           "type": "multiple-choice",
           "question": "Vad är subjektet i meningen: 'Lisa läser en bok'?",
-          "options": ["läser", "bok", "Lisa", "en"],
+          "options": [
+            "läser",
+            "bok",
+            "Lisa",
+            "en"
+          ],
           "correctIndex": 2,
           "explanation": "'Lisa' är den som utför handlingen – det är subjektet."
         },
         {
           "type": "multiple-choice",
           "question": "Vad är predikatet i: 'Katten sover på soffan'?",
-          "options": ["katten", "soffan", "sover", "på"],
+          "options": [
+            "katten",
+            "soffan",
+            "sover",
+            "på"
+          ],
           "correctIndex": 2,
           "explanation": "'Sover' är verbet och predikatet i meningen."
         },
@@ -36,15 +46,32 @@
         {
           "type": "multiple-choice",
           "question": "Vilket är predikatet i: 'Solen skiner starkt idag'?",
-          "options": ["Solen", "skiner", "starkt", "idag"],
+          "options": [
+            "Solen",
+            "skiner",
+            "starkt",
+            "idag"
+          ],
           "correctIndex": 1,
           "explanation": "'Skiner' är verbet/predikatet."
         },
         {
           "type": "build-sentence",
           "instruction": "Bygg meningen: subjekt + predikat + objekt!",
-          "words": ["Maja", "åt", "ett", "äpple"],
-          "correctOrder": [0, 1, 2, 3],
+          "words": [
+            "Maja",
+            "åt",
+            "ett",
+            "äpple",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
           "explanation": "'Maja' är subjektet, 'åt' är predikatet, 'ett äpple' är objektet."
         }
       ]
@@ -64,7 +91,12 @@
         {
           "type": "multiple-choice",
           "question": "Vilket pronomen ersätter 'Erik och Maja'?",
-          "options": ["han", "hon", "de", "det"],
+          "options": [
+            "han",
+            "hon",
+            "de",
+            "det"
+          ],
           "correctIndex": 2,
           "explanation": "När det handlar om flera personer används 'de'."
         },
@@ -78,22 +110,46 @@
         {
           "type": "multiple-choice",
           "question": "Vilket pronomen passar? 'Boken är tjock. ___ har 500 sidor.'",
-          "options": ["Han", "Hon", "Den", "De"],
+          "options": [
+            "Han",
+            "Hon",
+            "Den",
+            "De"
+          ],
           "correctIndex": 2,
           "explanation": "En sak (boken) ersätts med 'den'."
         },
         {
           "type": "multiple-choice",
           "question": "Vilket pronomen används när man talar om sig själv?",
-          "options": ["du", "jag", "ni", "vi"],
+          "options": [
+            "du",
+            "jag",
+            "ni",
+            "vi"
+          ],
           "correctIndex": 1,
           "explanation": "'Jag' används när man talar om sig själv."
         },
         {
           "type": "build-sentence",
           "instruction": "Bygg meningen med rätt pronomen!",
-          "words": ["Hon", "och", "jag", "är", "kompisar"],
-          "correctOrder": [0, 1, 2, 3, 4],
+          "words": [
+            "Hon",
+            "och",
+            "jag",
+            "är",
+            "kompisar",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
           "explanation": "'Hon och jag' – man sätter alltid den andra personen före 'jag'."
         }
       ]
@@ -114,7 +170,12 @@
         {
           "type": "multiple-choice",
           "question": "Vilket tempus är: 'Igår spelade vi fotboll'?",
-          "options": ["Nutid", "Dåtid", "Framtid", "Ingen av dem"],
+          "options": [
+            "Nutid",
+            "Dåtid",
+            "Framtid",
+            "Ingen av dem"
+          ],
           "correctIndex": 1,
           "explanation": "'Igår' och 'spelade' visar att det hände i dåtid."
         },
@@ -128,22 +189,48 @@
         {
           "type": "multiple-choice",
           "question": "Vad är nutidsform av 'sprang'?",
-          "options": ["springer", "sprang", "springa", "sprungit"],
+          "options": [
+            "springer",
+            "sprang",
+            "springa",
+            "sprungit"
+          ],
           "correctIndex": 0,
           "explanation": "'Springer' är nutidsformen, 'sprang' är dåtid."
         },
         {
           "type": "multiple-choice",
           "question": "Vilket verb är i dåtid?",
-          "options": ["sjunger", "sjöng", "sjunga", "sjungit"],
+          "options": [
+            "sjunger",
+            "sjöng",
+            "sjunga",
+            "sjungit"
+          ],
           "correctIndex": 1,
           "explanation": "'Sjöng' är dåtidsformen av 'sjunga/sjunger'."
         },
         {
           "type": "build-sentence",
           "instruction": "Sätt ihop meningen i dåtid!",
-          "words": ["Förra", "veckan", "cyklade", "vi", "till", "sjön"],
-          "correctOrder": [0, 1, 2, 3, 4, 5],
+          "words": [
+            "Förra",
+            "veckan",
+            "cyklade",
+            "vi",
+            "till",
+            "sjön",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
           "explanation": "'Förra veckan' och 'cyklade' visar att det hände i dåtid."
         }
       ]
@@ -155,22 +242,33 @@
       "icon": "🌈",
       "bonusPoints": 25,
       "helpText": [
-        "Adjektiv beskriver substantiv: stor bil",
-        "Adverb beskriver verb: springer snabbt",
-        "Adverb slutar ofta på -t"
+        "Adjektiv beskriver substantivet – hur något eller någon är: Martin är lång. Den röda bilen.",
+        "Adjektiv svarar på frågan: Hur är det/hen?",
+        "Adverb beskriver verb och svarar på frågan: Hur görs det? – t.ex. springer snabbt.",
+        "Adverb slutar ofta på -t (snabbt, tyst, sakta)."
       ],
       "exercises": [
         {
           "type": "multiple-choice",
           "question": "Vilket ord är ett adjektiv i: 'Den snabba bilen körde förbi'?",
-          "options": ["snabba", "snabbt", "körde", "förbi"],
+          "options": [
+            "snabba",
+            "snabbt",
+            "körde",
+            "förbi"
+          ],
           "correctIndex": 0,
           "explanation": "'Snabba' är ett adjektiv – det beskriver substantivet 'bilen'."
         },
         {
           "type": "multiple-choice",
           "question": "Vilket ord är ett adverb i: 'Hon sjunger vackert'?",
-          "options": ["Hon", "sjunger", "vackert", "vacker"],
+          "options": [
+            "Hon",
+            "sjunger",
+            "vackert",
+            "vacker"
+          ],
           "correctIndex": 2,
           "explanation": "'Vackert' är ett adverb – det beskriver hur hon sjunger (verbet)."
         },
@@ -184,64 +282,2162 @@
         {
           "type": "multiple-choice",
           "question": "Vad beskriver adverbet 'försiktigt' i: 'Hon gick försiktigt'?",
-          "options": ["Hon (subjektet)", "gick (verbet)", "en plats", "en tid"],
+          "options": [
+            "Hon (subjektet)",
+            "gick (verbet)",
+            "en plats",
+            "en tid"
+          ],
           "correctIndex": 1,
           "explanation": "Adverb beskriver verb – 'försiktigt' beskriver hur hon gick."
         },
         {
           "type": "build-sentence",
           "instruction": "Sätt adjektivet och adverbet på rätt plats!",
-          "words": ["Den", "stora", "hunden", "skällde", "högt"],
-          "correctOrder": [0, 1, 2, 3, 4],
+          "words": [
+            "Den",
+            "stora",
+            "hunden",
+            "skällde",
+            "högt",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
           "explanation": "'Stora' (adjektiv) beskriver hunden, 'högt' (adverb) beskriver skällde."
         }
       ]
     },
     {
-      "id": "satsdelar-2",
-      "title": "Satsdelar – objekt och adverbial",
-      "description": "Objekt och adverbial",
-      "icon": "🔍",
-      "bonusPoints": 30,
+      "id": "sj-eller-sk-1",
+      "title": "Sj- eller sk-ljud?",
+      "description": "Öva på att välja rätt stavning för sj-ljudet",
+      "icon": "🌊",
+      "bonusPoints": 25,
       "helpText": [
-        "Objekt svarar på frågan: Vad/vem gör subjektet det till?",
-        "Adverbial svarar på: Var? När? Hur?"
+        "Sj-ljud kan stavas på flera sätt: sj, sk (före e/i/y/ä/ö), skj.",
+        "Exempel: sjunga (sj), skjuta (skj), sked (sk + e = sj-ljud).",
+        "Tips: sk + a/o/u/å ger vanligt sk-ljud. sk + e/i/y/ä/ö ger sj-ljud!"
       ],
       "exercises": [
         {
           "type": "multiple-choice",
-          "question": "Vad är objektet i: 'Maja läser en bok'?",
-          "options": ["Maja", "läser", "en bok", "i skolan"],
-          "correctIndex": 2,
-          "explanation": "'En bok' är objektet – det är det Maja läser (vad läser hon?)."
+          "question": "Hur stavas verktyget man äter soppa med?",
+          "options": [
+            "sjed",
+            "sked",
+            "skjed",
+            "sched"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Sked' stavas sk + e – sk följt av e ger sj-ljud. s-k-e-d."
         },
         {
           "type": "multiple-choice",
-          "question": "Vad är adverbialet i: 'Vi spelar fotboll i parken'?",
-          "options": ["Vi", "spelar", "fotboll", "i parken"],
-          "correctIndex": 3,
-          "explanation": "'I parken' är ett adverbial – det svarar på frågan 'var?'."
+          "question": "Vilket ord stavas rätt? (att sjunga med rösten)",
+          "options": [
+            "skjunga",
+            "sjunga",
+            "skunga",
+            "shunga"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Sjunga' stavas med sj – s-j-u-n-g-a."
         },
         {
           "type": "fill-in-blank",
-          "question": "I meningen 'Hon sjunger vackert' svarar 'vackert' på frågan ___?",
-          "answer": "hur",
-          "hint": "Adverbial svarar på var, när eller hur.",
-          "explanation": "'Vackert' svarar på hur hon sjunger – det är ett sättsadverbial."
+          "question": "Fyll i rätt stavning: '___uta' (avfyra en pistol eller ett gevär)",
+          "answer": "skj",
+          "hint": "Skjuta eller sjuta? Det här ordet börjar med skj-.",
+          "explanation": "'Skjuta' stavas skj – s-k-j-u-t-a. Sj-ljudet skrivs skj i detta ord."
         },
         {
           "type": "multiple-choice",
-          "question": "Vilket är objektet i: 'Kalle gav Lisa en blomma'?",
-          "options": ["Kalle", "gav", "Lisa", "en blomma"],
+          "question": "Hur stavas det omvända av att bry sig – att inte bry sig?",
+          "options": [
+            "skita",
+            "sjita",
+            "skjita",
+            "schita"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Skita' stavas sk + i – sk följt av i ger sj-ljud. s-k-i-t-a."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med rätt sj-ord på rätt plats!",
+          "words": [
+            "Hon",
+            "sjunger",
+            "och",
+            "skjuter",
+            "pil",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "explanation": "'Sjunger' har sj-stavning, 'skjuter' har skj-stavning – båda ger sj-ljud!"
+        }
+      ]
+    },
+    {
+      "id": "tj-k-kj-1",
+      "title": "Tj-, k- eller kj-ljud?",
+      "description": "Öva på att välja rätt stavning för tj-ljudet",
+      "icon": "🧊",
+      "bonusPoints": 25,
+      "helpText": [
+        "Tj-ljud kan stavas: tj, k (före e/i/y/ä/ö), kj.",
+        "Exempel: tjugo (tj), kär (k + ä = tj-ljud), kjol (kj).",
+        "Tips: k + a/o/u/å ger vanligt k-ljud. k + e/i/y/ä/ö ger tj-ljud!"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas plagg som flickor och kvinnor ofta bär på underkroppen?",
+          "options": [
+            "tjol",
+            "kjol",
+            "kjål",
+            "chjol"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Kjol' stavas med kj – k-j-o-l. Sällsynt stavning men korrekt!"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas siffran 20?",
+          "options": [
+            "tjugo",
+            "kjugo",
+            "kugo",
+            "chugo"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Tjugo' stavas med tj – t-j-u-g-o."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt stavning: '___är' (ha starka känslor för någon, kärlek)",
+          "answer": "k",
+          "hint": "Kär eller tjär? Tänk: k + ä ger tj-ljud.",
+          "explanation": "'Kär' stavas k + ä – k följt av ä ger tj-ljud. k-ä-r."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är rätt stavat? (fågeln som pickar i trädstammar)",
+          "options": [
+            "tjäder",
+            "käder",
+            "kjäder",
+            "chäder"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Tjäder' stavas med tj – t-j-ä-d-e-r."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med tj-ljud-orden på rätt plats!",
+          "words": [
+            "Tjugo",
+            "kära",
+            "vänner",
+            "kom",
+            "på",
+            "fest",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "explanation": "'Tjugo' (tj-stavning) och 'kära' (k + ä = tj-ljud) – samma ljud, olika stavning!"
+        }
+      ]
+    },
+    {
+      "id": "dubbelteckning-mel-1",
+      "title": "Dubbelteckning – fortsättning",
+      "description": "Svårare övningar med dubbla konsonanter",
+      "icon": "🔤",
+      "bonusPoints": 25,
+      "helpText": [
+        "Kort betonad vokal följs av dubbel konsonant: hammer, vänner, gubbe.",
+        "Lång vokal ger enkel konsonant: hamer → fel! hammer → rätt.",
+        "Testtrick: säg ordet långsamt – är vokalen kort och tryckstark?"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är rätt stavat? (verktyget man slår spikar med)",
+          "options": [
+            "hamer",
+            "hammer",
+            "hammar",
+            "hamar"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Hammer' – kort betonat a kräver dubbelt m: h-a-mm-e-r."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är rätt stavat? (fler än en vän)",
+          "options": [
+            "väner",
+            "vänner",
+            "vännar",
+            "vänar"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Vänner' – kort betonat ä kräver dubbelt n: v-ä-nn-e-r."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Rätt stavning: 'Katten sitter på ta___et.' (tak, plural bestämd form)",
+          "answer": "k",
+          "hint": "Taket eller takket? Är a-et i 'tak' långt eller kort?",
+          "explanation": "'Taket' – a-et i 'tak' är långt, därför enkelt k: t-a-k-e-t. Ingen dubbelkonsonant."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är rätt stavat? (ett glas för att dricka ur)",
+          "options": [
+            "mugg",
+            "mug",
+            "muugg",
+            "mugg"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Mugg' – kort betonat u kräver dubbelt g: m-u-gg."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen – var uppmärksam på dubbelteckning!",
+          "words": [
+            "Gubben",
+            "hittade",
+            "en",
+            "gammal",
+            "kanna",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "explanation": "'Gubben' (dubbelt b) och 'kanna' (dubbelt n) – båda har kort vokal och dubbelkonsonant."
+        }
+      ]
+    },
+    {
+      "id": "de-dem-1",
+      "title": "De eller dem?",
+      "description": "Lär dig skillnaden mellan de och dem",
+      "icon": "👥",
+      "bonusPoints": 25,
+      "helpText": [
+        "'De' är subjektsform – de som gör något. Exempel: De springer.",
+        "'Dem' är objektsform – de som något görs mot. Exempel: Jag ser dem.",
+        "Knep: Byt ut 'de/dem' mot 'vi/oss' – om 'vi' passar, skriv 'de'. Om 'oss' passar, skriv 'dem'."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: '___ cyklade till skolan.' (de/dem som cyklade)",
+          "options": [
+            "Dem",
+            "De",
+            "Dom",
+            "Di"
+          ],
+          "correctIndex": 1,
+          "explanation": "'De cyklade' – de är subjekt (de som utför handlingen). Byt till 'vi': 'Vi cyklade' – stämmer!"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: 'Läraren berömde ___.' (eleverna som fick beröm)",
+          "options": [
+            "de",
+            "dem",
+            "dom",
+            "dei"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Läraren berömde dem' – dem är objekt. Byt till 'oss': 'Läraren berömde oss' – stämmer!"
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt form: 'Jag känner ___ sedan länge.' (de/dem)",
+          "answer": "dem",
+          "hint": "Byt ut mot 'oss' eller 'vi' – vilket passar bäst?",
+          "explanation": "'Jag känner dem' – 'dem' är objekt. 'Jag känner oss' låter rätt, så det ska vara 'dem'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: '___ brukar alltid hjälpa till.'",
+          "options": [
+            "Dem",
+            "De",
+            "Dom",
+            "Dei"
+          ],
+          "correctIndex": 1,
+          "explanation": "'De brukar' – de är subjekt. Byt till 'vi': 'Vi brukar alltid hjälpa till' – stämmer!"
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med de eller dem på rätt plats!",
+          "words": [
+            "De",
+            "gav",
+            "dem",
+            "en",
+            "present",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "explanation": "'De' är subjekt (de som ger), 'dem' är objekt (de som tar emot presenten)."
+        }
+      ]
+    },
+    {
+      "id": "var-vart-1",
+      "title": "Var eller vart?",
+      "description": "Lär dig skillnaden mellan var och vart",
+      "icon": "🗺️",
+      "bonusPoints": 25,
+      "helpText": [
+        "'Var' frågar om en plats – var befinner sig något? Exempel: Var är boken?",
+        "'Vart' frågar om en riktning – vart är något på väg? Exempel: Vart går du?",
+        "Knep: Om svaret är en plats (i köket, på borden) → var. Om svaret är ett mål (till skolan, hem) → vart."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: '___ bor du?' (fråga om plats)",
+          "options": [
+            "Vart",
+            "Var",
+            "Vad",
+            "Vem"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Var bor du?' – frågar om en plats. Svaret kan vara 'I Stockholm' (en plats)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: '___ ska du gå?' (fråga om destination)",
+          "options": [
+            "Var",
+            "Vart",
+            "Vad",
+            "När"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Vart ska du gå?' – frågar om riktning/destination. Svaret kan vara 'Till affären'."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt ord: '___ lade du nyckeln?' (var/vart)",
+          "answer": "Var",
+          "hint": "Frågar du om en plats där nyckeln ligger, eller om vart nyckeln är på väg?",
+          "explanation": "'Var lade du nyckeln?' – frågar om platsen. Nyckeln rör sig inte, den befinner sig någonstans."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: 'Hunden sprang ___ som helst.' (i alla riktningar)",
+          "options": [
+            "var",
+            "vart",
+            "vad",
+            "när"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Hunden sprang vart som helst' – handlar om riktning och rörelse."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg frågan med var eller vart på rätt ställe!",
+          "words": [
+            "Vart",
+            "ska",
+            "vi",
+            "åka",
+            "i",
+            "sommar",
+            "?"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "explanation": "'Vart ska vi åka?' – frågar om destination (vi ska åka någonstans). Rätt ord är 'vart'."
+        }
+      ]
+    },
+    {
+      "id": "skiljetecken-stav-1",
+      "title": "Skiljetecken",
+      "description": "Lär dig använda punkt, komma, frågetecken och utropstecken",
+      "icon": "❗",
+      "bonusPoints": 30,
+      "helpText": [
+        "Punkt (.) avslutar påståenden. Komma (,) pausar i meningen eller räknar upp.",
+        "Frågetecken (?) avslutar frågor. Utropstecken (!) visar känsla, order eller förvåning.",
+        "Komma används också innan 'men', 'och', 'eller' i sammansatta meningar."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilket skiljetecken passar bäst? 'Kom hit genast___'",
+          "options": [
+            ".",
+            "?",
+            "!",
+            ","
+          ],
+          "correctIndex": 2,
+          "explanation": "Utropstecken (!) används vid order och starka uppmaningar. 'Kom hit genast!'"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening har rätt kommatering?",
+          "options": [
+            "Jag köpte äpplen päron och bananer.",
+            "Jag köpte äpplen, päron och bananer.",
+            "Jag köpte, äpplen päron, och bananer.",
+            "Jag köpte äpplen päron, och, bananer."
+          ],
+          "correctIndex": 1,
+          "explanation": "Komma används vid uppräkning: äpplen, päron och bananer. Sista elementet föregås av 'och', inte komma."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Vilket skiljetecken fattas? 'Vad heter din bästa vän___'",
+          "answer": "?",
+          "hint": "Meningen är en fråga.",
+          "explanation": "Frågor avslutas med frågetecken (?). 'Vad heter din bästa vän?'"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Var ska kommat sitta? 'Jag ville gå ut men det regnade.'",
+          "options": [
+            "Jag ville, gå ut men det regnade.",
+            "Jag ville gå ut, men det regnade.",
+            "Jag ville gå ut men, det regnade.",
+            "Inget komma behövs."
+          ],
+          "correctIndex": 1,
+          "explanation": "Komma sätts före 'men' när det förbinder två självständiga satser: 'Jag ville gå ut, men det regnade.'"
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med skiljetecken på rätt ställe!",
+          "words": [
+            "Hunden",
+            "skäller",
+            ",",
+            "katten",
+            "springer",
+            "bort",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "explanation": "Kommat separerar de två satserna: 'Hunden skäller, katten springer bort.'"
+        }
+      ]
+    },
+    {
+      "id": "vokaler-konsonanter-mel-1",
+      "title": "Vokaler och konsonanter – fördjupning",
+      "description": "Utforska vokaler och konsonanter i mer komplexa sammanhang",
+      "icon": "🔡",
+      "bonusPoints": 25,
+      "helpText": [
+        "Vokaler: a, e, i, o, u, y, å, ä, ö. Alla andra bokstäver är konsonanter.",
+        "En stavelse innehåller alltid exakt en vokal – det hjälper dig dela upp ord rätt."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Hur många vokaler finns i ordet 'bibliotek'?",
+          "options": [
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Bibliotek' har 4 vokaler: i, i, o, e (b-I-b-l-I-O-t-E-k). Varje stavelse har en vokal."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord innehåller ett konsonantkluster (flera konsonanter i rad)?",
+          "options": [
+            "äpple",
+            "strand",
+            "öga",
+            "åka"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Strand' börjar med konsonantklustret 'str' – tre konsonanter i rad. 'S', 't' och 'r' är alla konsonanter."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Ordet 'springa' börjar med konsonantklustret 'spr'. Hur många stavelser har ordet? ___",
+          "answer": "2",
+          "hint": "Räkna vokalerna: en vokal = en stavelse. Vilka vokaler finns i 'springa'?",
+          "explanation": "'Springa' har 2 stavelser: sprin-ga. Det finns 2 vokaler (i och a) = 2 stavelser."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Varför är det viktigt att veta var vokalerna sitter i ett ord?",
+          "options": [
+            "Det spelar ingen roll",
+            "Vokaler avgör hur många stavelser ett ord har och hur man delar upp det",
+            "Vokaler är alltid i slutet av ord",
+            "Konsonanter avgör stavelserna, inte vokaler"
+          ],
+          "correctIndex": 1,
+          "explanation": "Varje stavelse har exakt en vokal. Vet du var vokalerna sitter kan du dela upp ord rätt, t.ex. vid radbrytning: bib-li-o-tek."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Ordna orden så att varje ord har fler konsonanter än vokaler!",
+          "words": [
+            "Strömmen",
+            "brusade",
+            "kraftfullt",
+            "förbi",
+            "stranden",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "explanation": "'Strömmen' (str+mm), 'kraftfullt' (kr+ftf+llt) och 'stranden' (str+nd) har alla konsonantkluster. Meningen visar hur konsonantrika ord kan staplas."
+        }
+      ]
+    },
+    {
+      "id": "b-eller-d-mel-1",
+      "title": "B eller D? – fördjupning",
+      "description": "Öva på svårare ord där b och d kan förväxlas",
+      "icon": "🔤",
+      "bonusPoints": 25,
+      "helpText": [
+        "B-ljud: läpparna sluter sig – som i 'bröd', 'berg', 'bad'.",
+        "D-ljud: tungan nuddar tänderna bakom framtänderna – som i 'dal', 'djup', 'drömma'.",
+        "Knep: Prova att säga bara konsonanten – känns den i läpparna (b) eller med tungan mot tänderna (d)?"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt stavning: 'Han tog ett ___ i sjön.' (gick ner i vattnet)",
+          "options": [
+            "dad",
+            "bad",
+            "bab",
+            "dab"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Bad' – b i början (läppljud), d i slutet (tungljud). b-a-d."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas det hårda brödet med hål i mitten?",
+          "options": [
+            "kneckedröd",
+            "knäckebröd",
+            "knäckedröd",
+            "kneckebröd"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Knäckebröd' – bröd stavas med b. Tänk på läppljudet: b-r-ö-d."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt bokstav: 'Vi klättrade upp på __erget.' (högt naturligt stenblock)",
+          "answer": "b",
+          "hint": "Berg eller derg? Känn om du sluter läpparna eller rör tungan mot tänderna.",
+          "explanation": "'Berget' börjar med b – man sluter läpparna för b-ljud. b-e-r-g."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är rätt stavat? (att önska något om natten)",
+          "options": [
+            "drömma",
+            "brömma",
+            "drömba",
+            "brömba"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Drömma' börjar med d – tungan nuddar tänderna för d-ljud. d-r-ö-m-m-a."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen – var uppmärksam på b och d!",
+          "words": [
+            "Björnen",
+            "drack",
+            "vatten",
+            "vid",
+            "bäcken",
+            "i",
+            "dalen",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "explanation": "'Björnen' och 'bäcken' börjar med b (läppljud). 'Drack' och 'dalen' börjar med d (tungljud). Hör skillnaden!"
+        }
+      ]
+    },
+    {
+      "id": "e-eller-a-mel-1",
+      "title": "E eller Ä? – fördjupning",
+      "description": "Öva på svårare fall med e och ä i verbformer och längre ord",
+      "icon": "✍️",
+      "bonusPoints": 25,
+      "helpText": [
+        "Ä låter öppnare och bredare i munnen än e.",
+        "Titta på verbformer: 'säger' (ä) men 'seger' (e) – olika ord, olika stavning!",
+        "Tips: Om du är osäker, tänk på grundordet – 'väder' kommer från 'vind och regn', inte 'veder'."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt stavning av verbet: 'Hon ___ alltid sanningen.' (talar)",
+          "options": [
+            "seger",
+            "säger",
+            "seger",
+            "sæger"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Säger' stavas med ä – verbet 'säga' böjs till 'säger' i nutid. s-ä-g-e-r."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord betyder 'sol, regn och temperatur'?",
+          "options": [
+            "veder",
+            "väder",
+            "vedder",
+            "vädder"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Väder' – ä i första stavelsen. v-ä-d-e-r. 'Veder' är ett gammalt ord som betyder något helt annat."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt bokstav: 'Hon är mycket snäll och v___nlig.' (trevlig mot andra)",
+          "answer": "ä",
+          "hint": "Vänlig eller venlig? Grundordet är 'vän' – med ä.",
+          "explanation": "'Vänlig' stavas med ä – det kommer från ordet 'vän'. v-ä-n-l-i-g."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket adjektiv är rätt stavat? (om temperaturen är låg)",
+          "options": [
+            "kelt",
+            "käld",
+            "kall",
+            "käll"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Kall' stavas med a – k-a-l-l. Varken e eller ä. Kall → kallare → kallast."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen och var noga med e och ä!",
+          "words": [
+            "Läraren",
+            "säger",
+            "att",
+            "vädret",
+            "är",
+            "vackert",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "explanation": "'Läraren' (ä), 'säger' (ä), 'vädret' (ä) – alla tre stavas med ä. 'Vackert' stavas med e: v-a-ck-e-r-t."
+        }
+      ]
+    },
+    {
+      "id": "synonymer-mel-1",
+      "title": "Synonymer – nyansera ditt språk",
+      "description": "Använd synonymer för att göra texten mer levande",
+      "icon": "🔄",
+      "pointsRequired": 0,
+      "bonusPoints": 25,
+      "helpText": [
+        "Synonymer är ord med liknande eller samma betydelse.",
+        "Att använda synonymer gör din text mer varierad och intressant.",
+        "Exempel: istället för att skriva 'sade' flera gånger kan du skriva 'viskade', 'utbrast', 'mumlade'."
+      ],
+      "exercises": [
+        {
+          "id": "syn-mel-1",
+          "type": "multiple-choice",
+          "question": "Vilket ord är en synonym till 'undersöka'?",
+          "options": [
+            "ignorera",
+            "granska",
+            "glömma",
+            "missa"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Granska' och 'undersöka' betyder ungefär samma sak – att titta noga på något."
+        },
+        {
+          "id": "syn-mel-2",
+          "type": "multiple-choice",
+          "question": "Välj den mest passande synonymen till 'sade' i meningen: 'Han ___ med arg röst.'",
+          "options": [
+            "viskade",
+            "fnissade",
+            "skrek",
+            "log"
+          ],
+          "correctIndex": 2,
+          "explanation": "Med 'arg röst' passar 'skrek' bäst – det är en synonym till 'sade' som visar känslan."
+        },
+        {
+          "id": "syn-mel-3",
+          "type": "fill-in-blank",
+          "question": "En synonym till 'berömd' är '___känd'.",
+          "answer": "väl",
+          "hint": "Tänk på hur man säger att någon är känd av många.",
+          "explanation": "'Välkänd' är en synonym till 'berömd' – båda betyder att många vet vem personen är."
+        },
+        {
+          "id": "syn-mel-4",
+          "type": "multiple-choice",
+          "question": "Vilket ord är en synonym till 'fantastisk'?",
+          "options": [
+            "medioker",
+            "genomsnittlig",
+            "enastående",
+            "tråkig"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Enastående' och 'fantastisk' betyder båda att något är mycket bra och imponerande."
+        },
+        {
+          "id": "syn-mel-5",
+          "type": "multiple-choice",
+          "question": "Välj synonymen till 'börja' som passar i en formell text:",
+          "options": [
+            "starta",
+            "påbörja",
+            "dra igång",
+            "kicka igång"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Påbörja' är den mest formella synonymen till 'börja' – passar bäst i skriftliga texter."
+        }
+      ]
+    },
+    {
+      "id": "motsatsord-mel-1",
+      "title": "Motsatsord – antonymer i text",
+      "description": "Förstå och använd motsatsord för att skapa kontraster",
+      "icon": "↔️",
+      "pointsRequired": 0,
+      "bonusPoints": 25,
+      "helpText": [
+        "Motsatsord (antonymer) är ord som har motsatt betydelse.",
+        "Motsatsord används ofta i texter för att skapa kontraster och göra berättelsen intressantare.",
+        "Exempel: 'Han var stark utanpå, men svag inuti.' – stark/svag är ett motsatspar."
+      ],
+      "exercises": [
+        {
+          "id": "mot-mel-1",
+          "type": "multiple-choice",
+          "question": "Vad är motsatsordet till 'frivillig'?",
+          "options": [
+            "valfri",
+            "tvingad",
+            "önskad",
+            "planerad"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Tvingad' är motsatsen till 'frivillig' – något man måste göra mot sin vilja."
+        },
+        {
+          "id": "mot-mel-2",
+          "type": "multiple-choice",
+          "question": "Vilket par är INTE ett par av motsatsord?",
+          "options": [
+            "inkludera – exkludera",
+            "konstruktiv – destruktiv",
+            "aktiv – passiv",
+            "snabb – kvick"
+          ],
           "correctIndex": 3,
-          "explanation": "'En blomma' är det direkta objektet – det Kalle gav."
+          "explanation": "'Snabb' och 'kvick' är synonymer (lika bedeutelse), inte motsatsord!"
+        },
+        {
+          "id": "mot-mel-3",
+          "type": "fill-in-blank",
+          "question": "Motsatsen till 'abstrakt' är '___'.",
+          "answer": "konkret",
+          "hint": "Abstrakt betyder svårgreppbart. Konkret betyder...?",
+          "explanation": "'Konkret' är motsatsen till 'abstrakt' – något konkret är tydligt och verkligt."
+        },
+        {
+          "id": "mot-mel-4",
+          "type": "multiple-choice",
+          "question": "Välj rätt motsatsord till 'optimistisk':",
+          "options": [
+            "neutral",
+            "realistisk",
+            "pessimistisk",
+            "kritisk"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Pessimistisk' är motsatsen till 'optimistisk' – en pessimist tror på det sämsta."
+        },
+        {
+          "id": "mot-mel-5",
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med rätt ordning för kontrasten:",
+          "words": [
+            "Staden",
+            "var",
+            "livlig",
+            "men",
+            "byn",
+            "var",
+            "stillsam."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "explanation": "'Livlig' och 'stillsam' är motsatsord – de skapar en kontrast mellan stad och by."
+        }
+      ]
+    },
+    {
+      "id": "grammatik-oversikt-1",
+      "title": "Grammatik – vad är det?",
+      "description": "Lär dig de viktigaste begreppen i grammatiken.",
+      "icon": "📚",
+      "bonusPoints": 25,
+      "helpText": [
+        "Grammatik handlar om hur vi bygger upp språket.",
+        "Substantiv = namn på saker, djur, personer (hus, hund, Lisa).",
+        "Verb = ord som beskriver handlingar (hoppa, läsa, äta).",
+        "Adjektiv = ord som beskriver hur något är (stor, glad, blå)."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vad är ett substantiv?",
+          "options": [
+            "Ett ord som beskriver en handling",
+            "Ett ord som namnger saker, djur eller personer",
+            "Ett ord som beskriver hur något är",
+            "Ett ord som kopplar ihop meningar"
+          ],
+          "correctIndex": 1,
+          "explanation": "Substantiv är namn på saker, djur och personer, t.ex. 'boll', 'katt', 'Lisa'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är ett verb?",
+          "options": [
+            "röd",
+            "stol",
+            "springer",
+            "snabbt"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Springer' är ett verb – det beskriver en handling."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är ett adjektiv?",
+          "options": [
+            "hoppa",
+            "blå",
+            "boken",
+            "och"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Blå' är ett adjektiv – det beskriver hur något ser ut."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "I meningen 'Den lilla hunden springer fort' är 'springer' ett ___.",
+          "answer": "verb",
+          "hint": "Det är ett handlingsord.",
+          "explanation": "'Springer' beskriver vad hunden gör – det är ett verb."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket alternativ innehåller tre SUBSTANTIV?",
+          "options": [
+            "springer, hoppar, simmar",
+            "stor, liten, glad",
+            "bok, boll, hund",
+            "fort, snabbt, sakta"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Bok', 'boll' och 'hund' är alla substantiv – de namnger saker och djur."
+        }
+      ]
+    },
+    {
+      "id": "tempus-tidsformer-1",
+      "title": "Tempus – tidsformer (nutid-dåtid)",
+      "description": "Öva på att skriva verb i rätt tid.",
+      "icon": "⏳",
+      "bonusPoints": 30,
+      "helpText": [
+        "Tempus visar när något händer.",
+        "Nutid (presens): Något händer NU. Exempel: 'Jag äter.'",
+        "Dåtid (preteritum): Något hände FÖRR. Exempel: 'Jag åt.'",
+        "Tips: dåtid slutar ofta på -ade, -de eller -te."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilken form är i NUTID?",
+          "options": [
+            "spelade",
+            "spelar",
+            "spelat",
+            "spelades"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Spelar' är nutidsform – det händer nu."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Skriv i dåtid: 'Varje dag leker hon' → 'Igår ___ hon.'",
+          "answer": "lekte",
+          "hint": "Leka → lekte i dåtid.",
+          "explanation": "'Leka' böjs till 'lekte' i dåtid (preteritum)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord visar att meningen är i dåtid?",
+          "options": [
+            "nu",
+            "idag",
+            "igår",
+            "snart"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Igår' pekar tillbaka i tiden och signalerar dåtid."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är dåtidsformen av 'skriver'?",
+          "options": [
+            "skriva",
+            "skrivit",
+            "skrev",
+            "skribent"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Skrev' är dåtidsform av 'skriver/skriva'."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Sätt ihop en mening i dåtid!",
+          "words": [
+            "Förra",
+            "veckan",
+            "läste",
+            "vi",
+            "en",
+            "bok",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "explanation": "'Förra veckan' och 'läste' visar att det hände i dåtid."
+        }
+      ]
+    },
+    {
+      "id": "dialoger-talstreck-1",
+      "title": "Skriva dialoger – använda talstreck",
+      "description": "Lär dig hur man skriver samtal med talstreck.",
+      "icon": "💬",
+      "bonusPoints": 30,
+      "helpText": [
+        "Talstreck (–) används när man skriver vad någon säger i en berättelse.",
+        "Talstrecket sätts i början av repliken: – Hej! sa Lisa.",
+        "Ny replik = ny rad med nytt talstreck.",
+        "Tankstreck (–) är längre än bindestreck (-)."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Hur ska en replik börja i en dialog?",
+          "options": [
+            "Med citattecken: \"Hej!\"",
+            "Med talstreck: – Hej!",
+            "Med kolon: Hej:",
+            "Med parentes: (Hej!)"
+          ],
+          "correctIndex": 1,
+          "explanation": "I svenska texter används talstreck (–) i stället för citattecken för att markera repliker."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket alternativ är RÄTT skrivet?",
+          "options": [
+            "\"Vad heter du?\" frågade hon.",
+            "– Vad heter du? frågade hon.",
+            "Vad heter du? frågade hon.",
+            "-Vad heter du? frågade hon."
+          ],
+          "correctIndex": 1,
+          "explanation": "I svenska berättelser inleds repliker med talstreck (–), inte med citattecken."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt tecken: '___ Kom hit!' ropade han.",
+          "answer": "–",
+          "hint": "Det är ett talstreck (ett långt streck).",
+          "explanation": "Talstrecket (–) markerar att någon pratar."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad gör man när en ny person börjar prata i en dialog?",
+          "options": [
+            "Fortsätter på samma rad",
+            "Börjar på en ny rad med talstreck",
+            "Sätter komma och fortsätter",
+            "Skriver personens namn med stora bokstäver"
+          ],
+          "correctIndex": 1,
+          "explanation": "Varje ny replik börjar på en ny rad med ett talstreck."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening visar ett korrekt användande av talstreck?",
+          "options": [
+            "– Jag är trött, sa Emma.",
+            "–Jag är trött sa Emma",
+            "- Jag är trött, sa Emma.",
+            "Jag är trött – sa Emma."
+          ],
+          "correctIndex": 0,
+          "explanation": "Talstrecket följs av ett mellanslag och repliken avslutas med komma före 'sa Emma'."
+        }
+      ]
+    },
+    {
+      "id": "dialoger-citattecken-1",
+      "title": "Skriva dialoger – citattecken",
+      "description": "Skriv korrekta dialoger med citattecken och talverb",
+      "icon": "✍️",
+      "bonusPoints": 30,
+      "helpText": [
+        "Citattecken (\"...\") omger exakt det talaren säger.",
+        "Komma, frågetecken och utropstecken sitter INUTI citattecknen.",
+        "Talverbet (sa, frågade, ropade, svarade) skrivs med liten bokstav efter citattecknen.",
+        "Varje ny talare börjar på en ny rad. Citattecken och talstreck kan båda användas – välj konsekvent."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är korrekt skriven?",
+          "options": [
+            "\"Det regnar,\" konstaterade Emma.",
+            "\"Det regnar\" konstaterade, Emma.",
+            "Det regnar, \"konstaterade Emma.\"",
+            "\"Det regnar.\" Konstaterade Emma."
+          ],
+          "correctIndex": 0,
+          "explanation": "Kommatecknet sitter inuti citattecknen, talverbet börjar med liten bokstav: \"Det regnar,\" konstaterade Emma."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur placeras frågetecknet i: Är du hemma frågade Leo?",
+          "options": [
+            "\"Är du hemma\"? frågade Leo.",
+            "\"Är du hemma?\" frågade Leo.",
+            "\"Är du hemma,\" frågade Leo?",
+            "Är du hemma? \"frågade Leo.\""
+          ],
+          "correctIndex": 1,
+          "explanation": "Frågetecknet hör till repliken och placeras inuti citattecknen: \"Är du hemma?\" frågade Leo."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket alternativ visar korrekt hur man anger att det är en ny talare?",
+          "options": [
+            "Man lägger till ett kommatecken och fortsätter på samma rad.",
+            "Man börjar en ny rad med nya citattecken runt den nya personens replik.",
+            "Man skriver 'nästa person sa' och fortsätter.",
+            "Man sätter ett semikolon och fortsätter."
+          ],
+          "correctIndex": 1,
+          "explanation": "Varje ny persons replik börjar på en ny rad. Det gör dialogen överskådlig och lätt att följa."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken replik är korrekt när repliken avbryts mitt i meningen?",
+          "options": [
+            "\"Jag tänkte att vi kunde\", sa Ali och tystnade.",
+            "\"Jag tänkte att vi kunde\" sa Ali, och tystnade.",
+            "\"Jag tänkte att vi kunde.\" Sa Ali och tystnade.",
+            "Jag tänkte att vi kunde, \"sa Ali och tystnade.\""
+          ],
+          "correctIndex": 0,
+          "explanation": "När repliken avbryts men meningsfragmentet är ofullständigt används komma inuti citattecknen: \"...,\" sa X."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Lägg till rätt interpunktion: ___ Hjälp mig! ___ skrek hon.",
+          "answer": "\"",
+          "hint": "Citattecken sätts runt det talaren säger.",
+          "explanation": "Korrekt: \"Hjälp mig!\" skrek hon. Utropstecknet sitter inuti citattecknen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilka talverb kan användas efter en replik med citattecken? Välj mest fullständigt svar.",
+          "options": [
+            "Bara 'sa'.",
+            "Sa, frågade, svarade, ropade, viskade, utbrast, mumlade m.fl.",
+            "Bara 'sa' och 'frågade'.",
+            "Alla verb fungerar, t.ex. sprang, åt, sov."
+          ],
+          "correctIndex": 1,
+          "explanation": "Alla talverb som beskriver hur något sägs fungerar: sa, frågade, svarade, ropade, viskade, muttrande, utbrast osv."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad gäller om talaren ger en lång replik som sträcker sig över flera meningar?",
+          "options": [
+            "Man öppnar citattecken igen för varje ny mening.",
+            "Alla meningar ryms inom ETT par citattecken – man stänger dem inte förrän talaren är klar.",
+            "Man måste dela upp repliken i separata rader.",
+            "Man byter till talstreck om repliken är lång."
+          ],
+          "correctIndex": 1,
+          "explanation": "En och samma talares replik, hur lång den än är, omges av ett enda par citattecken: \"Mening ett. Mening två. Mening tre,\" sa hon."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är FEL?",
+          "options": [
+            "\"Vi ses imorgon,\" lovade han.",
+            "\"Vi ses imorgon!\" ropade han.",
+            "\"Vi ses imorgon?\" undrade han.",
+            "\"Vi ses imorgon\". Sa han."
+          ],
+          "correctIndex": 3,
+          "explanation": "Fel: punkten ska sitta inuti citattecknen och 'sa' ska skrivas med liten bokstav: \"Vi ses imorgon.\" sa han – eller bättre: \"Vi ses imorgon,\" sa han."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg den korrekta dialogmeningen:",
+          "words": ["\"Titta,", "en", "regnbåge!\"", "utbrast", "Sofia", "."],
+          "correctOrder": [0, 1, 2, 3, 4, 5],
+          "explanation": "\"Titta, en regnbåge!\" utbrast Sofia. Hela repliken är inom citattecknen, utropstecknet inuti."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur inleds en replik med citattecken om talaren presenteras FÖRE repliken?",
+          "options": [
+            "Erik sa: \"Det är min bok.\"",
+            "Erik sa \"Det är min bok,\"",
+            "Erik, \"Det är min bok.\" sa.",
+            "\"Det är min bok\" Erik sa."
+          ],
+          "correctIndex": 0,
+          "explanation": "När talaren nämns först används kolon före citattecknen: Erik sa: \"Det är min bok.\" Punkten sitter inuti citattecknen."
+        }
+      ]
+    },
+    {
+      "id": "styckesindelning-1",
+      "title": "Styckesindelning",
+      "description": "Lär dig att dela upp en text i stycken.",
+      "icon": "📄",
+      "bonusPoints": 25,
+      "helpText": [
+        "Ett stycke handlar om ETT ämne eller EN tanke.",
+        "Nytt stycke = ny rad + indragning eller blankrad.",
+        "Varje stycke börjar med en inledning och avslutas med en avslutning.",
+        "Bra styckeindelning gör texten lättare att läsa."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vad är ett stycke i en text?",
+          "options": [
+            "En enskild mening",
+            "En grupp meningar som handlar om samma sak",
+            "En rubrik",
+            "En hel berättelse"
+          ],
+          "correctIndex": 1,
+          "explanation": "Ett stycke består av meningar som hör ihop och handlar om samma ämne eller tanke."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "När ska man börja ett nytt stycke?",
+          "options": [
+            "Efter varje mening",
+            "När man byter ämne eller tanke",
+            "Bara i böcker",
+            "Aldrig – text ska flöda ihop"
+          ],
+          "correctIndex": 1,
+          "explanation": "Nytt stycke används när man övergår till ett nytt ämne, en ny tanke eller en ny händelse."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Varje stycke ska handla om ___ ämne.",
+          "answer": "ett",
+          "hint": "Ett stycke = en tanke eller ett ämne.",
+          "explanation": "Principen för styckeindelning är att hålla sig till ett ämne per stycke."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur markerar man ofta ett nytt stycke i handskriven text?",
+          "options": [
+            "Med en stor bokstav mitt i raden",
+            "Med indragning på första raden eller en blankrad",
+            "Med ett utropstecken",
+            "Med fet stil"
+          ],
+          "correctIndex": 1,
+          "explanation": "Nytt stycke markeras med indragning (indenterad första rad) eller en blankrad."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Varför är styckeindelning viktigt?",
+          "options": [
+            "Det gör texten längre",
+            "Det gör texten lättare att läsa och förstå",
+            "Det är ett krav i alla språk",
+            "Det minskar antalet meningar"
+          ],
+          "correctIndex": 1,
+          "explanation": "Styckeindelning hjälper läsaren att följa med i texten och förstå dess struktur."
+        }
+      ]
+    },
+    {
+      "id": "liknelser-mel-1",
+      "title": "Liknelser",
+      "description": "Jämförelser med ordet 'som' som gör språket mer levande",
+      "icon": "🌊",
+      "bonusPoints": 25,
+      "helpText": [
+        "En liknelse är en jämförelse där man säger att något liknar något annat.",
+        "Man använder nästan alltid ordet 'som': 'Han sprang som vinden.'",
+        "Liknelser gör texten mer bildlig och levande.",
+        "Exempel: 'Hennes röst var mjuk som sammet', 'Tyst som en mus'."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening innehåller en liknelse?",
+          "options": [
+            "Hunden sover på mattan.",
+            "Han är stark som en björn.",
+            "Det regnar utomhus.",
+            "Boken låg på bordet."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Stark som en björn' är en liknelse – styrkan jämförs med en björns med hjälp av ordet 'som'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad jämförs i liknelsen: 'Hon sjunger som en fågel'?",
+          "options": [
+            "Hon jämförs med en fågel i utseende.",
+            "Hennes sång jämförs med en fågels sång.",
+            "Hon flyger som en fågel.",
+            "Hon äter som en fågel."
+          ],
+          "correctIndex": 1,
+          "explanation": "Liknelsen handlar om sången – hennes röst jämförs med en fågels vackra sång."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i ordet som saknas: 'Havet var lugnt ___ en spegel.'",
+          "answer": "som",
+          "explanation": "Liknelser bildas med ordet 'som'. Havets lugn jämförs med en spegels glatta yta."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening innehåller INTE en liknelse?",
+          "options": [
+            "Han sprang som en gepard.",
+            "Hon är tyst som natten.",
+            "Solen skiner starkt idag.",
+            "Barnet sov som en stock."
+          ],
+          "correctIndex": 2,
+          "explanation": "'Solen skiner starkt idag' är en vanlig beskrivning, inte en jämförelse."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder liknelsen 'snabb som en blixt'?",
+          "options": [
+            "Personen lyser i mörkret.",
+            "Personen är elektrisk.",
+            "Personen är extremt snabb.",
+            "Personen låter högt."
+          ],
+          "correctIndex": 2,
+          "explanation": "Blixten är känd för att vara otroligt snabb, så liknelsen betyder att någon är mycket snabb."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i: 'Han var modig ___ ett lejon.'",
+          "answer": "som",
+          "explanation": "Liknelsen skapas med 'som'. Modigheten jämförs med ett lejons mod."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken liknelse beskriver att någon är mycket lugn och trygg?",
+          "options": [
+            "Lugn som ett åskväder.",
+            "Lugn som en filbunke.",
+            "Lugn som en storm.",
+            "Lugn som en tornado."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Lugn som en filbunke' är ett vanligt uttryck för att beskriva total lugn och ro."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Varför använder man liknelser i en text?",
+          "options": [
+            "För att göra texten längre.",
+            "För att förvirra läsaren.",
+            "För att göra texten mer levande och målande.",
+            "För att visa att man kan grammatik."
+          ],
+          "correctIndex": 2,
+          "explanation": "Liknelser skapar bilder i läsarens huvud och gör texten mer intressant och levande."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg liknelsen i rätt ordning:",
+          "words": ["Hennes", "ögon", "glittrade", "som", "stjärnor", "."],
+          "correctOrder": [0, 1, 2, 3, 4, 5],
+          "explanation": "'Hennes ögon glittrade som stjärnor' är en liknelse – ögonen jämförs med stjärnors glitter."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket alternativ är en liknelse som beskriver att någon är mycket smal?",
+          "options": [
+            "Tunn som ett spöke.",
+            "Tunn som ett papper.",
+            "Tunn som ett berg.",
+            "Tunn som en elefant."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Tunn som ett papper' är en känd liknelse för att beskriva extrem tunnhet."
+        }
+      ]
+    },
+    {
+      "id": "metaforer-mel-1",
+      "title": "Metaforer",
+      "description": "Bildliga uttryck som säger att något ÄR något annat",
+      "icon": "🎭",
+      "bonusPoints": 25,
+      "helpText": [
+        "En metafor är ett bildligt uttryck där man säger att något ÄR något annat – utan 'som'.",
+        "Exempel: 'Han är ett lejon' (inte 'Han är stark som ett lejon').",
+        "Metaforer gör texten mer kraftfull och bildrik.",
+        "Skillnad: Liknelse = 'som', Metafor = inget 'som', man säger direkt att det ÄR något annat."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är en metafor (inte en liknelse)?",
+          "options": [
+            "Han springer som vinden.",
+            "Han ÄR en storm av energi.",
+            "Han är lika snabb som en gepard.",
+            "Han springer snabbt."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Han är en storm av energi' är en metafor – man säger direkt att han ÄR en storm, utan 'som'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är skillnaden mellan en liknelse och en metafor?",
+          "options": [
+            "Det är ingen skillnad, de betyder samma sak.",
+            "Liknelsen använder 'som', metaforen säger att något direkt ÄR något annat.",
+            "Metaforen använder 'som', liknelsen gör det inte.",
+            "Metaforer finns bara i poesi."
+          ],
+          "correctIndex": 1,
+          "explanation": "Liknelse: 'snabb som vinden'. Metafor: 'Han är vinden'. Metaforen är mer direkt och kraftfull."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder metaforen: 'Hon har ett hjärta av guld'?",
+          "options": [
+            "Hennes hjärta är gjort av äkta guld.",
+            "Hon är snäll, generös och omtänksam.",
+            "Hon älskar guldsaker.",
+            "Hon är dyr att umgås med."
+          ],
+          "correctIndex": 1,
+          "explanation": "Guld symboliserar något värdefullt och ädelt – metaforen betyder att hon är en mycket snäll och god person."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är en metafor?",
+          "options": [
+            "Tänder är som vita pärlor.",
+            "Tänderna är vita pärlor.",
+            "Tänderna är vita som pärlor.",
+            "Tänderna ser ut som pärlor."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Tänderna är vita pärlor' är en metafor – tänderna kallas direkt för pärlor, utan 'som'."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i så att det blir en metafor: 'Klassrummet var ett ___ av oljud.'",
+          "answer": "hav",
+          "alternativeAnswers": ["kaos", "inferno", "virrvarr"],
+          "hint": "Tänk på något stort och överväldigande.",
+          "explanation": "Metaforen 'ett hav av oljud' beskriver att det var oerhört mycket ljud – som att drunkna i det."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad kallas det när man säger 'Tiden flyger'?",
+          "options": [
+            "En liknelse",
+            "En metafor",
+            "En överdrift",
+            "En beskrivning"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Tiden flyger' är en metafor – man tillskriver tiden förmågan att flyga, som om den vore en fågel."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Varför använder författare metaforer?",
+          "options": [
+            "För att de inte kan hitta rätt ord.",
+            "För att göra texten kortare.",
+            "För att skapa starka bilder och väcka känslor hos läsaren.",
+            "För att visa att texten är svår."
+          ],
+          "correctIndex": 2,
+          "explanation": "Metaforer skapar kraftfulla bilder och förmedlar känslor på ett mer direkt sätt än vanliga beskrivningar."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg metaforen i rätt ordning:",
+          "words": ["Livet", "är", "en", "lång", "resa", "."],
+          "correctOrder": [0, 1, 2, 3, 4, 5],
+          "explanation": "'Livet är en lång resa' är en metafor – livet jämförs direkt med en resa utan 'som'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening innehåller en metafor?",
+          "options": [
+            "Ordena var vapen i debatten.",
+            "Ordena var skarpa som knivar.",
+            "Han använde många ord i debatten.",
+            "Debatten handlade om viktiga ämnen."
+          ],
+          "correctIndex": 0,
+          "explanation": "'Ordena var vapen' är en metafor – orden kallas direkt för vapen, vilket betonar deras skadliga kraft."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är en 'död metafor'?",
+          "options": [
+            "En metafor som handlar om döden.",
+            "En metafor som är så vanlig att vi inte längre tänker på den som bildlig.",
+            "En metafor som ingen förstår.",
+            "En gammal metafor från medeltiden."
+          ],
+          "correctIndex": 1,
+          "explanation": "Exempel på döda metaforer: 'bordsben', 'flaskhalsen', 'tidsfördriva'. Vi använder dem utan att tänka på att de är metaforer."
+        }
+      ]
+    },
+    {
+      "id": "idiom-mel-1",
+      "title": "Idiom och uttryck",
+      "description": "Förstå och använd vanliga svenska idiom i rätt sammanhang",
+      "icon": "💬",
+      "bonusPoints": 25,
+      "helpText": [
+        "Idiom är fasta uttryck vars betydelse inte kan utläsas av de enskilda orden.",
+        "Exempel: 'Bita ihop' betyder inte att man bokstavligen biter – det betyder att man håller ut trots svårigheter.",
+        "Idiom används mycket i tal och skrift och ger språket liv och karaktär.",
+        "Tänk alltid på sammanhanget – samma ord kan ha helt olika innebörd beroende på hur de används."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder idiomen 'Bita ihop'?",
+          "options": [
+            "Att man biter på något hårt.",
+            "Att man håller ut och inte ger upp trots svårigheter.",
+            "Att man stänger munnen.",
+            "Att man är arg och biter."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Bita ihop' betyder att kämpa vidare och uthärda något svårt utan att klaga eller ge upp."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder 'Sitta i knipan'?",
+          "options": [
+            "Att sitta på en knippa.",
+            "Att vara i en svår eller besvärlig situation.",
+            "Att sitta stilla och vänta.",
+            "Att sitta och nypa sig."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Sitta i knipan' betyder att befinna sig i trubbel eller en besvärlig situation som är svår att ta sig ur."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad menas med att någon 'tar tjuren vid hornen'?",
+          "options": [
+            "Personen arbetar med boskap.",
+            "Personen tar itu med ett problem direkt och modigt.",
+            "Personen är arg som en tjur.",
+            "Personen springer fort."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Ta tjuren vid hornen' betyder att angripa ett svårt problem direkt och beslutsamhet, utan att tveka."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i: 'Nu är katten ___ om svansen' – det betyder att det blivit svårt att komma runt problemet.",
+          "answer": "ute",
+          "hint": "Katten är ute på ett smalt ställe och kan inte vända.",
+          "explanation": "'Katten är ute om svansen' betyder att situationen blivit komplicerad och svår att ta sig ur."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder 'Sätta p för något'?",
+          "options": [
+            "Att parkera något.",
+            "Att sätta ett P-tecken.",
+            "Att avsluta eller stoppa något.",
+            "Att börja med något nytt."
+          ],
+          "correctIndex": 2,
+          "explanation": "'Sätta p för något' (sätta stopp för) betyder att avsluta eller förbjuda något. P:et syftar ursprungligen på 'punkt' – sätta punkt."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Om läraren säger 'Nu drar vi i gång', vad menar hen?",
+          "options": [
+            "Att man ska dra i ett rep.",
+            "Att det är dags att börja.",
+            "Att man ska gå ut.",
+            "Att lektionen är slut."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Dra i gång' är ett idiom som betyder att starta eller börja något."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder 'Lägga korten på bordet'?",
+          "options": [
+            "Att spela kortspel.",
+            "Att vara öppen och ärlig om sina avsikter.",
+            "Att ge upp ett spel.",
+            "Att städa undan spelets kort."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Lägga korten på bordet' kommer från kortspel och betyder att vara helt öppen och ärlig – inte dölja något."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är ett idiom? Välj bästa definition.",
+          "options": [
+            "Ett ord med ovanlig stavning.",
+            "En grammatikregel.",
+            "Ett fast uttryck vars helhetsbetydelse inte framgår av de enskilda orden.",
+            "En sorts metafor utan bildspråk."
+          ],
+          "correctIndex": 2,
+          "explanation": "Idiom är fasta fraser vars betydelse är konventionell och inte kan härledas direkt från ordens bokstavliga innebörd."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder 'Gå som katten kring het gröt'?",
+          "options": [
+            "Att man går försiktigt.",
+            "Att man undviker att ta upp eller ta itu med något direkt.",
+            "Att man gillar gröt.",
+            "Att man rör sig i cirklar."
+          ],
+          "correctIndex": 1,
+          "explanation": "Katten lockas av grötens doft men undviker det heta. Idiomen beskriver någon som kretsar runt ett ämne utan att ta tag i det."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "I meningen 'Han satte ribban högt för sina elever' – vad betyder 'sätta ribban högt'?",
+          "options": [
+            "Att han hängde upp en ribba högt på väggen.",
+            "Att han ställde höga krav och förväntningar.",
+            "Att han tränade höjdhopp med eleverna.",
+            "Att han gav dem svåra läxor om sport."
+          ],
+          "correctIndex": 1,
+          "explanation": "Ribban från höjdhopp – ju högre ribba, desto svårare att ta sig över. 'Sätta ribban högt' betyder att ställa höga krav."
+        }
+      ]
+    },
+    {
+      "id": "sluttest",
+      "title": "Sluttest – Grammatik",
+      "description": "Testa allt du lärt dig! 38 blandade frågor om grammatik på mellanstadienivå.",
+      "icon": "🏆",
+      "bonusPoints": 100,
+      "helpText": [
+        "Det här är ditt stora sluttest! Du kommer att få frågor om allt du har övat på.",
+        "Tänk på satsdelar, pronomen, tempus, stavning, liknelser, metaforer och idiom.",
+        "Du behöver svara rätt på 60% av frågorna för att klara testet och få bonuspoäng.",
+        "Lycka till – du klarar det! 🌟"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vad är subjektet i: 'Läraren förklarar matematiken'?",
+          "options": [
+            "Läraren",
+            "förklarar",
+            "matematiken",
+            "ingenting"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Läraren' är den som utför handlingen – det är subjektet."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är predikatet i: 'Solen skiner starkt'?",
+          "options": [
+            "Solen",
+            "skiner",
+            "starkt",
+            "inget predikat"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Skiner' är verbet och predikatet – det berättar vad solen gör."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är objektet i: 'Maja åt ett äpple'?",
+          "options": [
+            "Maja",
+            "åt",
+            "ett äpple",
+            "inget objekt"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Ett äpple' är objektet – det är det Maja åt."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket pronomen ersätter 'Erik och Maja'?",
+          "options": [
+            "han",
+            "hon",
+            "de",
+            "det"
+          ],
+          "correctIndex": 2,
+          "explanation": "'De' ersätter flera personer. Erik och Maja = de."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt pronomen: '___ gick till skolan.' (om en flicka)",
+          "options": [
+            "Han",
+            "Hon",
+            "Den",
+            "Det"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Hon' används för en flicka/kvinna."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt form av verbet 'skriva' i dåtid:",
+          "options": [
+            "skrivar",
+            "skrev",
+            "skriver",
+            "att skriva"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Skrev' är imperfekt (dåtid) av 'skriva'. Jag skrev ett brev."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är ett adverb?",
+          "options": [
+            "stor",
+            "glad",
+            "snabbt",
+            "rund"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Snabbt' är ett adverb – det berättar hur något görs."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt stavning av ordet för 'inte frisk':",
+          "options": [
+            "sjuk",
+            "skjuk",
+            "shjuk",
+            "skuk"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Sjuk' stavas med sj. Sj-ljudet kan stavas sj, skj eller sch."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt stavning av 'kyrka' (en byggnad):",
+          "options": [
+            "tjyrka",
+            "kjyrka",
+            "sjyrka",
+            "kyrka"
+          ],
+          "correctIndex": 3,
+          "explanation": "'Kyrka' stavas med k och y. K ger tj-liknande ljud framför mjuka vokaler (e, i, y, ä, ö)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt stavning av drycken:",
+          "options": [
+            "kafe",
+            "cafe",
+            "kaffe",
+            "kafffe"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Kaffe' stavas med dubbelt f. Dubbelteckning används efter kort vokal."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt ord: '___ träffades på leken.'",
+          "options": [
+            "De",
+            "Dem",
+            "Dom",
+            "Di"
+          ],
+          "correctIndex": 0,
+          "explanation": "'De' används som subjekt – det är de som träffades."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt ord: 'Jag vet inte ___ jag lade boken.'",
+          "options": [
+            "vart",
+            "var",
+            "vem",
+            "hur"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Var' används för plats (boken ligger VAR – på en plats)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad ska stå i slutet av uppmaningen: 'Sitt still___'",
+          "options": [
+            ".",
+            "!",
+            "?",
+            ","
+          ],
+          "correctIndex": 1,
+          "explanation": "Utropstecken (!) används för uppmaningar och starka känslor."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är adverbialet i: 'Hon sjunger vackert på scenen'? (adverbial som anger hur)",
+          "options": [
+            "Hon",
+            "sjunger",
+            "vackert",
+            "på scenen"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Vackert' är ett sättsadverbial – det berättar HUR hon sjunger."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt frågepronomen: '___ bok är det?'",
+          "options": [
+            "Vems",
+            "Vem",
+            "Vars",
+            "Vad"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Vems' är ett frågepronomen som visar tillhörighet."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt stavning av 'skönt' (behagligt):",
+          "options": [
+            "sjönt",
+            "skönt",
+            "sjkönt",
+            "skjönt"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Skönt' stavas med sk. Sk ger sj-liknande ljud framför mjuka vokaler."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är en synonym till 'tröttna'?",
+          "options": [
+            "somna",
+            "gäspa",
+            "ledsna",
+            "sova"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Ledsna' och 'tröttna' kan betyda ungefär samma sak – att bli less på något."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är motsatsen till 'modig'?",
+          "options": [
+            "stark",
+            "feg",
+            "rädd",
+            "svag"
+          ],
+          "correctIndex": 1,
+          "explanation": "Motsatsen till 'modig' (brave) är 'feg' (cowardly)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt stavning av djuret: '___örn' (det stora skogsdjuret)",
+          "options": [
+            "Gjörn",
+            "Djörn",
+            "Bjorn",
+            "Björn"
+          ],
+          "correctIndex": 3,
+          "explanation": "'Björn' stavas med bj och ö. Det är ett stort djur i skogen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt ord: 'Det ___ en gång en kung.' (dåtid av 'vara')",
+          "options": [
+            "var",
+            "vär",
+            "vare",
+            "väre"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Var' är imperfekt av 'vara'. Det var en gång..."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket verb är i futurum (framtid)?",
+          "options": [
+            "åt",
+            "ska äta",
+            "äter",
+            "hade ätit"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Ska äta' är futurum – det handlar om framtiden."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Identifiera subjektet i: 'Under trädet sitter en groda.'",
+          "options": [
+            "Under",
+            "trädet",
+            "sitter",
+            "en groda"
+          ],
+          "correctIndex": 3,
+          "explanation": "'En groda' är subjektet – det är grodan som sitter. Verb före subjekt = omvänd ordföljd."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket är adjektivet i: 'En glad flicka leker i trädgården'?",
+          "options": [
+            "En",
+            "glad",
+            "flicka",
+            "leker"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Glad' är adjektivet – det beskriver hur flickan är."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur många stavelser har ordet 'blomma'?",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Blomma' har 2 stavelser: blom-ma."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt stavning:",
+          "options": [
+            "mugg",
+            "mug",
+            "muugg",
+            "muggg"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Mugg' stavas med dubbelt g. Dubbelteckning används efter kort vokal."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening har rätt skiljetecken?",
+          "options": [
+            "Hej, jag heter Anna.",
+            "Hej jag heter Anna.",
+            "hej, jag heter anna.",
+            "Hej jag heter, Anna."
+          ],
+          "correctIndex": 0,
+          "explanation": "Hej, jag heter Anna. – Komma efter hälsningsordet och stor bokstav i början."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Predikatet i 'Katten sov hela dagen' är ___.",
+          "answer": "sov",
+          "hint": "Vad gör/gjorde katten?",
+          "explanation": "'Sov' är verbet och predikatet i meningen."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt ord (de/dem): 'Vi hjälpte ___ att bygga huset.'",
+          "answer": "dem",
+          "hint": "Vem hjälpte vi? Det är objektet.",
+          "explanation": "Dem = objekt (vi hjälpte DEM). De = subjekt (DE byggde)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är ett adverbial?",
+          "options": [
+            "Den som gör handlingen",
+            "Verbet i meningen",
+            "Satsled som anger tid, plats, sätt eller orsak",
+            "Adjektiv som beskriver substantiv"
+          ],
+          "correctIndex": 2,
+          "explanation": "Adverbialet anger omständigheter: VAR, NÄR, HUR eller VARFÖR."
         },
         {
           "type": "build-sentence",
           "instruction": "Bygg meningen: subjekt + predikat + objekt + adverbial!",
-          "words": ["Läraren", "undervisar", "eleverna", "varje", "dag"],
-          "correctOrder": [0, 1, 2, 3, 4],
-          "explanation": "'Läraren'=subj, 'undervisar'=pred, 'eleverna'=obj, 'varje dag'=adverbial (när?)."
+          "words": [
+            "Maja",
+            "läste",
+            "boken",
+            "igår",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "explanation": "Maja (subjekt) läste (predikat) boken (objekt) igår (adverbial)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är en liknelse?",
+          "options": [
+            "När A kallas B direkt, t.ex. 'Livet är en resa'",
+            "En jämförelse med 'som' eller 'likt', t.ex. 'stark som ett lejon'",
+            "Upprepning av ord i början av meningar",
+            "Ett ord med bildlig betydelse"
+          ],
+          "correctIndex": 1,
+          "explanation": "En liknelse jämför med 'som' eller 'likt'. T.ex. 'Han sprang som vinden.'"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket av dessa är en liknelse?",
+          "options": [
+            "Livet är en resa.",
+            "Hon är en sol.",
+            "Han är tyst som en mus.",
+            "Tiden flyger."
+          ],
+          "correctIndex": 2,
+          "explanation": "'Tyst som en mus' är en liknelse – en jämförelse med 'som'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är en metafor?",
+          "options": [
+            "En jämförelse med 'som' eller 'likt'",
+            "När något kallas något annat direkt utan 'som', t.ex. 'Hon är en sol'",
+            "Ett idiom med bildlig betydelse",
+            "Upprepning av samma ord"
+          ],
+          "correctIndex": 1,
+          "explanation": "En metafor säger att A ÄR B, utan att jämföra med 'som'. 'Hon är en sol' = metafor."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket av dessa är en metafor?",
+          "options": [
+            "Snabb som blixten",
+            "Han sprang fort",
+            "Hennes ord var knivar",
+            "Det regnar mycket"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Hennes ord var knivar' – orden kallas knivar direkt, utan 'som'. Det är en metafor."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är ett idiom?",
+          "options": [
+            "En liknelse med 'som'",
+            "Ett fast uttryck med bildlig betydelse som inte tolkas bokstavligt",
+            "En metafor med 'är'",
+            "Ett ord med motsatt betydelse"
+          ],
+          "correctIndex": 1,
+          "explanation": "Idiom är fasta uttryck, t.ex. 'ta bladet från munnen' = säga vad man tycker rakt ut."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Idiom: 'Kostar ___ och pantalonger.' (kostar väldigt mycket)",
+          "answer": "skjortan",
+          "hint": "Det handlar om ett klädesplagg.",
+          "explanation": "'Kosta skjortan' är ett idiom som betyder att något är väldigt dyrt."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur skriver man korrekt med citattecken när man återger vad någon sagt?",
+          "options": [
+            "Hon sa \"jag är trött\".",
+            "Hon sa: \"Jag är trött.\"",
+            "Hon sa, jag är trött.",
+            "Hon sa – Jag är trött."
+          ],
+          "correctIndex": 1,
+          "explanation": "Kolon efter talverbet, stor bokstav inuti citattecknen och punkt inuti citattecknet."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Var placeras frågetecknet i: Han frågade: \"Vad heter du___\"",
+          "options": [
+            "Utanför citattecknet: Han frågade: \"Vad heter du\"?",
+            "Inuti citattecknet: Han frågade: \"Vad heter du?\"",
+            "Ingen – punkt används alltid",
+            "Före citattecknet"
+          ],
+          "correctIndex": 1,
+          "explanation": "Frågetecken som hör till repliken placeras INUTI citattecknen."
         }
       ]
     }
@@ -263,21 +2459,36 @@
         {
           "type": "on-the-line",
           "question": "Vad hette Linas bästa vän?",
-          "options": ["Saga", "Emma", "Maja", "Anna"],
+          "options": [
+            "Saga",
+            "Emma",
+            "Maja",
+            "Anna"
+          ],
           "correctIndex": 1,
           "explanation": "Linas bästa vän hette Emma."
         },
         {
           "type": "on-the-line",
           "question": "Vad hade hänt med Linas vän Emma?",
-          "options": ["Hon var sjuk", "Hon hade sommarjobb", "Hon hade flyttat till en annan stad", "Hon var på semester"],
+          "options": [
+            "Hon var sjuk",
+            "Hon hade sommarjobb",
+            "Hon hade flyttat till en annan stad",
+            "Hon var på semester"
+          ],
           "correctIndex": 2,
           "explanation": "Emma hade flyttat till en annan stad."
         },
         {
           "type": "between-the-lines",
           "question": "Hur mådde Lina i början av berättelsen?",
-          "options": ["Hon var glad och förväntansfull", "Hon var ledsen och ensam", "Hon var arg på Emma", "Hon var trött"],
+          "options": [
+            "Hon var glad och förväntansfull",
+            "Hon var ledsen och ensam",
+            "Hon var arg på Emma",
+            "Hon var trött"
+          ],
           "correctIndex": 1,
           "hint": "Tänk på varför hon packade väskan med tunga tankar.",
           "explanation": "Lina kände sig ensam utan sin bästa vän Emma."
@@ -285,7 +2496,12 @@
         {
           "type": "beyond-the-lines",
           "question": "Vad tror du händer nästa sommar?",
-          "options": ["Lina slutar åka till sommarstugan", "Lina och Saga har blivit bästa vänner", "Lina träffar aldrig Saga igen", "Emma kommer tillbaka"],
+          "options": [
+            "Lina slutar åka till sommarstugan",
+            "Lina och Saga har blivit bästa vänner",
+            "Lina träffar aldrig Saga igen",
+            "Emma kommer tillbaka"
+          ],
           "correctIndex": 1,
           "hint": "Hur slutar berättelsen?",
           "explanation": "Berättelsen slutar positivt – Saga och Lina verkar bli vänner."
@@ -293,7 +2509,12 @@
         {
           "type": "between-the-lines",
           "question": "Varför frågade Saga om Lina ville fiska?",
-          "options": ["Hon ville ha hjälp med fisket", "Hon ville bli kompis med Lina", "Hon ville visa var sjön låg", "Hon var uttråkad"],
+          "options": [
+            "Hon ville ha hjälp med fisket",
+            "Hon ville bli kompis med Lina",
+            "Hon ville visa var sjön låg",
+            "Hon var uttråkad"
+          ],
           "correctIndex": 1,
           "explanation": "Saga var ny och ville lära känna sin granne Lina."
         }
@@ -316,14 +2537,24 @@
         {
           "type": "multiple-choice",
           "question": "Vilket ord är rätt stavat?",
-          "options": ["katt", "kat", "kaat", "katt"],
+          "options": [
+            "katt",
+            "kat",
+            "kaat",
+            "katt"
+          ],
           "correctIndex": 0,
           "explanation": "'Katt' stavas med dubbelt t – kort vokal kräver dubbel konsonant."
         },
         {
           "type": "multiple-choice",
           "question": "Vilken stavning är korrekt för djuret som skäller?",
-          "options": ["hund", "hundd", "hhund", "huund"],
+          "options": [
+            "hund",
+            "hundd",
+            "hhund",
+            "huund"
+          ],
           "correctIndex": 0,
           "explanation": "'Hund' – här är u-et långt, därför ingen dubbelkonsonant."
         },
@@ -337,14 +2568,24 @@
         {
           "type": "multiple-choice",
           "question": "Vilket är rätt: 'brev' eller 'brevv'?",
-          "options": ["brev", "brevv", "breev", "bbrev"],
+          "options": [
+            "brev",
+            "brevv",
+            "breev",
+            "bbrev"
+          ],
           "correctIndex": 0,
           "explanation": "'Brev' – e-et är långt, därför ingen dubbelkonsonant."
         },
         {
           "type": "multiple-choice",
           "question": "Hur stavas det lilla djuret som springer i hjulet?",
-          "options": ["mus", "muss", "muus", "mús"],
+          "options": [
+            "mus",
+            "muss",
+            "muus",
+            "mús"
+          ],
           "correctIndex": 0,
           "explanation": "'Mus' – u-et är långt, därför ingen dubbelkonsonant."
         }
@@ -364,14 +2605,24 @@
         {
           "type": "multiple-choice",
           "question": "Vilket ord har sj-ljud?",
-          "options": ["skola", "sjunga", "sova", "snö"],
+          "options": [
+            "skola",
+            "sjunga",
+            "sova",
+            "snö"
+          ],
           "correctIndex": 1,
           "explanation": "'Sjunga' börjar med sj-ljud, skrivet 'sj'."
         },
         {
           "type": "multiple-choice",
           "question": "Hur skrivs sj-ljudet i 'skämt'?",
-          "options": ["sj-", "sk- (före ä)", "sch-", "stj-"],
+          "options": [
+            "sj-",
+            "sk- (före ä)",
+            "sch-",
+            "stj-"
+          ],
           "correctIndex": 1,
           "explanation": "Sk + ä/e/i/y/ö ger sj-ljud. 'Skämt' uttalas med sj-ljud."
         },
@@ -385,14 +2636,24 @@
         {
           "type": "multiple-choice",
           "question": "Vilket ord stavas rätt?",
-          "options": ["sjema", "schema", "scema", "skema"],
+          "options": [
+            "sjema",
+            "schema",
+            "scema",
+            "skema"
+          ],
           "correctIndex": 1,
           "explanation": "'Schema' – sj-ljudet skrivs 'sch' i lånord från tyskan."
         },
         {
           "type": "multiple-choice",
           "question": "Hur stavas ledaren för ett företag?",
-          "options": ["sjef", "skef", "chef", "chäf"],
+          "options": [
+            "sjef",
+            "skef",
+            "chef",
+            "chäf"
+          ],
           "correctIndex": 2,
           "explanation": "'Chef' – sj-ljudet skrivs 'ch' i detta franska lånord."
         }
@@ -412,14 +2673,24 @@
         {
           "type": "multiple-choice",
           "question": "Vilket ord har tj-ljud?",
-          "options": ["kaka", "tjuv", "kopp", "tall"],
+          "options": [
+            "kaka",
+            "tjuv",
+            "kopp",
+            "tall"
+          ],
           "correctIndex": 1,
           "explanation": "'Tjuv' börjar med tj-ljud, skrivet 'tj'."
         },
         {
           "type": "multiple-choice",
           "question": "Hur skrivs tj-ljudet i 'kyckling'?",
-          "options": ["tj-", "k- (före y)", "kj-", "ch-"],
+          "options": [
+            "tj-",
+            "k- (före y)",
+            "kj-",
+            "ch-"
+          ],
           "correctIndex": 1,
           "explanation": "K + y/e/i/ä/ö ger tj-ljud. 'Kyckling' uttalas med tj-ljud."
         },
@@ -433,14 +2704,24 @@
         {
           "type": "multiple-choice",
           "question": "Vilket ord är rätt stavat? (det lilla fågeldjuret)",
-          "options": ["tjyckling", "kyckling", "kjyckling", "chyckling"],
+          "options": [
+            "tjyckling",
+            "kyckling",
+            "kjyckling",
+            "chyckling"
+          ],
           "correctIndex": 1,
           "explanation": "'Kyckling' – tj-ljudet skrivs k (före y)."
         },
         {
           "type": "multiple-choice",
           "question": "Hur stavas 'tjäna' (att arbeta och få lön)?",
-          "options": ["käna", "tjäna", "kjäna", "chäna"],
+          "options": [
+            "käna",
+            "tjäna",
+            "kjäna",
+            "chäna"
+          ],
           "correctIndex": 1,
           "explanation": "'Tjäna' – tj-ljud skrivs med 'tj' i detta ord."
         }
@@ -460,14 +2741,24 @@
         {
           "type": "multiple-choice",
           "question": "Vilket ord innehåller ng-ljud?",
-          "options": ["sova", "sång", "sala", "som"],
+          "options": [
+            "sova",
+            "sång",
+            "sala",
+            "som"
+          ],
           "correctIndex": 1,
           "explanation": "'Sång' – avslutas med ng-ljud, skrivet 'ng'."
         },
         {
           "type": "multiple-choice",
           "question": "Hur stavas smycket man bär på fingret?",
-          "options": ["rin", "ring", "rinng", "ryng"],
+          "options": [
+            "rin",
+            "ring",
+            "rinng",
+            "ryng"
+          ],
           "correctIndex": 1,
           "explanation": "'Ring' – avslutas med ng-ljud."
         },
@@ -481,16 +2772,179 @@
         {
           "type": "multiple-choice",
           "question": "Välj rätt stavning: 'Han är väldigt lå___.'",
-          "options": ["ng", "ngg", "n", "nk"],
+          "options": [
+            "ng",
+            "ngg",
+            "n",
+            "nk"
+          ],
           "correctIndex": 0,
           "explanation": "'Lång' – avslutas med ng-ljud, skrivet 'ng'."
         },
         {
           "type": "multiple-choice",
           "question": "Hur stavas ordet för 'en viss mängd'?",
-          "options": ["något", "nåt", "nångot", "nåhot"],
+          "options": [
+            "något",
+            "nåt",
+            "nångot",
+            "nåhot"
+          ],
           "correctIndex": 0,
           "explanation": "'Något' – innehåller ng-ljud: n-å-g-o-t."
+        }
+      ]
+    },
+    {
+      "id": "engelska-lanord-1",
+      "title": "Engelska lånord i svenska",
+      "description": "Lär dig stava engelska ord som används i svenska",
+      "icon": "🌐",
+      "pointsRequired": 0,
+      "bonusPoints": 25,
+      "helpText": [
+        "Svenska har lånat in många ord från engelskan, t.ex. 'mejl', 'chatt', 'webb'.",
+        "Dessa ord stavas ofta annorlunda på svenska än på engelska.",
+        "Ibland kan man välja: 'e-post' eller 'mejl', 'webbplats' eller 'hemsida'."
+      ],
+      "exercises": [
+        {
+          "id": "lanord-1",
+          "type": "multiple-choice",
+          "question": "Hur stavas 'email' på svenska?",
+          "options": [
+            "email",
+            "mejl",
+            "mail",
+            "epost"
+          ],
+          "correctIndex": 1,
+          "explanation": "På svenska skriver vi 'mejl' – en försvenskad stavning av engelskans 'mail'."
+        },
+        {
+          "id": "lanord-2",
+          "type": "multiple-choice",
+          "question": "Vilket alternativ är INTE en godkänd svensk stavning?",
+          "options": [
+            "chatt",
+            "webb",
+            "blogg",
+            "computor"
+          ],
+          "correctIndex": 3,
+          "explanation": "'Computor' är fel – på svenska skriver vi 'dator' (eller 'komputer' i nödfall)."
+        },
+        {
+          "id": "lanord-3",
+          "type": "fill-in-blank",
+          "question": "Det engelska ordet 'check' stavas på svenska '___'.",
+          "answer": "check",
+          "alternativeAnswers": [
+            "schack"
+          ],
+          "hint": "I banken använder man en 'c...'",
+          "explanation": "'Check' (bankinstrument) behåller sin engelska stavning på svenska."
+        },
+        {
+          "id": "lanord-4",
+          "type": "multiple-choice",
+          "question": "Välj den korrekta svenska stavningen av det ord som betyder 'att skicka ett textmeddelande':",
+          "options": [
+            "texta",
+            "texxa",
+            "textsa",
+            "smsa"
+          ],
+          "correctIndex": 3,
+          "explanation": "'Smsa' är det vardagliga svenska ordet för att skicka SMS/textmeddelande."
+        },
+        {
+          "id": "lanord-5",
+          "type": "multiple-choice",
+          "question": "Vilket ord är korrekt stavat?",
+          "options": [
+            "shoppa",
+            "shopas",
+            "shopa",
+            "shoppas"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Shoppa' – dubbelt 'p' eftersom vokalen före är kort (som i svenska stavningsregler)."
+        }
+      ]
+    },
+    {
+      "id": "sammansattaord-mel-1",
+      "title": "Sammansatta ord – ihop eller isär?",
+      "description": "Lär dig när ord ska skrivas ihop eller isär på svenska",
+      "icon": "🔗",
+      "pointsRequired": 0,
+      "bonusPoints": 25,
+      "helpText": [
+        "På svenska skrivs sammansatta ord ihop: 'fotboll', 'dagbok', 'skolbuss'.",
+        "På engelska skrivs de ofta isär: 'foot ball', 'day book', 'school bus'.",
+        "Särsksrivning är ett vanligt fel: 'sol ljus' ska vara 'solljus'."
+      ],
+      "exercises": [
+        {
+          "id": "sammord-1",
+          "type": "multiple-choice",
+          "question": "Vilket alternativ är rätt skrivet?",
+          "options": [
+            "sol glasögon",
+            "solglasögon",
+            "Sol glasögon",
+            "sol-glasögon"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Solglasögon' – på svenska skrivs sammansatta substantiv alltid ihop."
+        },
+        {
+          "id": "sammord-2",
+          "type": "fill-in-blank",
+          "question": "Skriv ihop: 'katt' + 'mat' = '___'",
+          "answer": "kattmat",
+          "hint": "Sätt ihop de två orden utan mellanslag.",
+          "explanation": "'Kattmat' – mat till katten. Alltid ihop på svenska!"
+        },
+        {
+          "id": "sammord-3",
+          "type": "multiple-choice",
+          "question": "Hitta det korrekt skrivna alternativet:",
+          "options": [
+            "fotbolls plan",
+            "fotbollsplan",
+            "fotbolls-plan",
+            "Fotbollsplan"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Fotbollsplan' – ett sammansatt ord som skrivs ihop. Notera fuge-s: fotbolls-plan."
+        },
+        {
+          "id": "sammord-4",
+          "type": "multiple-choice",
+          "question": "Vilket ord behöver ett foge-s i mitten?",
+          "options": [
+            "hundhus",
+            "katthus",
+            "hundshus",
+            "kattshus"
+          ],
+          "correctIndex": 0,
+          "explanation": "Hmm – det heter faktiskt 'hundkoja' eller 'hundkur', men 'hundhus' är rätt. Foge-s används inte alltid."
+        },
+        {
+          "id": "sammord-5",
+          "type": "multiple-choice",
+          "question": "Välj rätt sammansättning: en person som skriver böcker =",
+          "options": [
+            "bok skrivare",
+            "bokskrivare",
+            "böckerskrivare",
+            "boks skrivare"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Bokskrivare' – sammansatta ord med 'bok' som förled skrivs alltid ihop."
         }
       ]
     }
@@ -503,15 +2957,42 @@
       "icon": "👷",
       "bonusPoints": 35,
       "words": [
-        {"word": "LÄKARE", "clue": "Jobbar på sjukhuset och botar sjuka"},
-        {"word": "PILOT", "clue": "Flyger flygplan"},
-        {"word": "LÄRARE", "clue": "Undervisar elever i skolan"},
-        {"word": "POLIS", "clue": "Skyddar ordningen i samhället"},
-        {"word": "BAGARE", "clue": "Bakar bröd och bullar"},
-        {"word": "MÅLARE", "clue": "Målar hus och väggar"},
-        {"word": "BONDE", "clue": "Odlar mat och håller djur"},
-        {"word": "FRISÖR", "clue": "Klipper och stylar hår"},
-        {"word": "KOCK", "clue": "Lagar mat på restaurang"}
+        {
+          "word": "LÄKARE",
+          "clue": "Jobbar på sjukhuset och botar sjuka"
+        },
+        {
+          "word": "PILOT",
+          "clue": "Flyger flygplan"
+        },
+        {
+          "word": "LÄRARE",
+          "clue": "Undervisar elever i skolan"
+        },
+        {
+          "word": "POLIS",
+          "clue": "Skyddar ordningen i samhället"
+        },
+        {
+          "word": "BAGARE",
+          "clue": "Bakar bröd och bullar"
+        },
+        {
+          "word": "MÅLARE",
+          "clue": "Målar hus och väggar"
+        },
+        {
+          "word": "BONDE",
+          "clue": "Odlar mat och håller djur"
+        },
+        {
+          "word": "FRISÖR",
+          "clue": "Klipper och stylar hår"
+        },
+        {
+          "word": "KOCK",
+          "clue": "Lagar mat på restaurang"
+        }
       ]
     },
     {
@@ -521,14 +3002,38 @@
       "icon": "⚽",
       "bonusPoints": 35,
       "words": [
-        {"word": "FOTBOLL", "clue": "Spelas med en rund boll och två mål"},
-        {"word": "TENNIS", "clue": "Spelas med racket på en tennisbana"},
-        {"word": "SIMNING", "clue": "Sport i vattnet"},
-        {"word": "HOCKEY", "clue": "Spelas med puck och klubba på is"},
-        {"word": "BASKET", "clue": "Kasta bollen i korgen"},
-        {"word": "GOLF", "clue": "Slå bollen i hålet med en klubba"},
-        {"word": "BOXING", "clue": "Slåss med handskar i en ring"},
-        {"word": "GYMPA", "clue": "Röra på kroppen i en gymnastikhall"}
+        {
+          "word": "FOTBOLL",
+          "clue": "Spelas med en rund boll och två mål"
+        },
+        {
+          "word": "TENNIS",
+          "clue": "Spelas med racket på en tennisbana"
+        },
+        {
+          "word": "SIMNING",
+          "clue": "Sport i vattnet"
+        },
+        {
+          "word": "HOCKEY",
+          "clue": "Spelas med puck och klubba på is"
+        },
+        {
+          "word": "BASKET",
+          "clue": "Kasta bollen i korgen"
+        },
+        {
+          "word": "GOLF",
+          "clue": "Slå bollen i hålet med en klubba"
+        },
+        {
+          "word": "BOXNING",
+          "clue": "Slåss med handskar i en ring"
+        },
+        {
+          "word": "GYMPA",
+          "clue": "Röra på kroppen i en gymnastikhall"
+        }
       ]
     },
     {
@@ -538,14 +3043,38 @@
       "icon": "🏰",
       "bonusPoints": 35,
       "words": [
-        {"word": "KUNG", "clue": "Härskare över ett kungadöme"},
-        {"word": "RIDDARE", "clue": "Bepansrad krigare till häst"},
-        {"word": "SLOTT", "clue": "Stor borg där kungen bodde"},
-        {"word": "BONDE", "clue": "Vanlig person som odlade på medeltiden"},
-        {"word": "PRÄST", "clue": "Religiös ledare i kyrkan"},
-        {"word": "KYRKA", "clue": "Byggnaden där man bad till Gud"},
-        {"word": "VIKING", "clue": "Nordisk sjöfarare och krigare"},
-        {"word": "SVÄRD", "clue": "Vapnet riddaren bar vid sidan"}
+        {
+          "word": "KUNG",
+          "clue": "Härskare över ett kungadöme"
+        },
+        {
+          "word": "RIDDARE",
+          "clue": "Bepansrad krigare till häst"
+        },
+        {
+          "word": "SLOTT",
+          "clue": "Stor borg där kungen bodde"
+        },
+        {
+          "word": "BONDE",
+          "clue": "Vanlig person som odlade på medeltiden"
+        },
+        {
+          "word": "PRÄST",
+          "clue": "Religiös ledare i kyrkan"
+        },
+        {
+          "word": "KYRKA",
+          "clue": "Byggnaden där man bad till Gud"
+        },
+        {
+          "word": "VIKING",
+          "clue": "Nordisk sjöfarare och krigare"
+        },
+        {
+          "word": "SVÄRD",
+          "clue": "Vapnet riddaren bar vid sidan"
+        }
       ]
     },
     {
@@ -555,14 +3084,195 @@
       "icon": "🦁",
       "bonusPoints": 35,
       "words": [
-        {"word": "ELEFANT", "clue": "Världens största landdjur med snabel"},
-        {"word": "LEJON", "clue": "Lejongårdens konung"},
-        {"word": "ZEBRA", "clue": "Svartvitrandig hästliknande djur"},
-        {"word": "GEPARD", "clue": "Världens snabbaste landdjur"},
-        {"word": "PINGVIN", "clue": "Fågel som inte flyger men simmar"},
-        {"word": "DELFIN", "clue": "Intelligent havsdäggdjur"},
-        {"word": "ÖRN", "clue": "Stort rovfågel som flyger högt"},
-        {"word": "GORILLA", "clue": "Stor apa från Afrika"}
+        {
+          "word": "ELEFANT",
+          "clue": "Världens största landdjur med snabel"
+        },
+        {
+          "word": "LEJON",
+          "clue": "Lejongårdens konung"
+        },
+        {
+          "word": "ZEBRA",
+          "clue": "Svartvitrandig hästliknande djur"
+        },
+        {
+          "word": "GEPARD",
+          "clue": "Världens snabbaste landdjur"
+        },
+        {
+          "word": "PINGVIN",
+          "clue": "Fågel som inte flyger men simmar"
+        },
+        {
+          "word": "DELFIN",
+          "clue": "Intelligent havsdäggdjur"
+        },
+        {
+          "word": "ÖRN",
+          "clue": "Stort rovfågel som flyger högt"
+        },
+        {
+          "word": "GORILLA",
+          "clue": "Stor apa från Afrika"
+        }
+      ]
+    }
+  ],
+  "stavningstest": [
+    {
+      "id": "stavningstest-1",
+      "title": "Stavningstest 1 – Grundord",
+      "description": "Vanliga ord för åk 4 (Nivå 1)",
+      "icon": "⭐",
+      "pointsRequired": 0,
+      "bonusPoints": 30,
+      "timeLimit": 60,
+      "words": [
+        { "word": "berätta", "clue": "Att säga vad som hände – att ___ en historia" },
+        { "word": "förklara", "clue": "Göra något svårt lättare att förstå" },
+        { "word": "förstå", "clue": "Att fatta och begripa" },
+        { "word": "bestämma", "clue": "Att fatta ett beslut" },
+        { "word": "beroende", "clue": "Inte klara sig utan något – ___ av hjälp" },
+        { "word": "viktig", "clue": "Har stor betydelse" },
+        { "word": "rättvis", "clue": "Behandlar alla lika och hederligt" },
+        { "word": "demokrati", "clue": "Styresätt där folket röstar" },
+        { "word": "miljö", "clue": "Naturen och vår omgivning" },
+        { "word": "energi", "clue": "Kraft som behövs för att göra saker" },
+        { "word": "klimat", "clue": "Väder och temperaturmönster under lång tid" },
+        { "word": "ekosystem", "clue": "Djur, växter och miljö som lever ihop" },
+        { "word": "befolkning", "clue": "Alla människor som bor i ett land" },
+        { "word": "rättigheter", "clue": "Saker man har rätt att göra och få" },
+        { "word": "skyldigheter", "clue": "Saker man är tvungen att göra" },
+        { "word": "medborgare", "clue": "Person som tillhör ett land juridiskt" },
+        { "word": "samhälle", "clue": "Alla människor och institutioner i ett land" },
+        { "word": "myndighet", "clue": "Statlig organisation med bestämd uppgift" },
+        { "word": "regering", "clue": "Grupp av ministrar som styr landet" },
+        { "word": "riksdag", "clue": "Sveriges folkvalda parlament" }
+      ]
+    },
+    {
+      "id": "stavningstest-2",
+      "title": "Stavningstest 2 – NO-ord",
+      "description": "Naturvetenskap och teknik (Nivå 2)",
+      "icon": "⭐⭐",
+      "pointsRequired": 0,
+      "bonusPoints": 35,
+      "timeLimit": 60,
+      "words": [
+        { "word": "experiment", "clue": "Vetenskapligt försök för att testa en idé" },
+        { "word": "observation", "clue": "Att noga titta och lägga märke till" },
+        { "word": "hypotes", "clue": "En gissning man ska testa" },
+        { "word": "slutsats", "clue": "Det man kommer fram till efter ett experiment" },
+        { "word": "temperatur", "clue": "Hur varmt eller kallt något är" },
+        { "word": "rörelse", "clue": "Förflyttning i rymden" },
+        { "word": "hastighet", "clue": "Hur snabbt något rör sig" },
+        { "word": "magnetism", "clue": "Kraften som drar till sig järn" },
+        { "word": "elektricitet", "clue": "Ström som driver lampor och apparater" },
+        { "word": "friktion", "clue": "Motståndskraft när ytor gnids mot varandra" },
+        { "word": "gravitation", "clue": "Kraftens som drar saker mot jordens centrum" },
+        { "word": "reaktion", "clue": "Vad som händer när ämnen blandas" },
+        { "word": "fotosyntesen", "clue": "Hur växter gör mat av ljus och koldioxid" },
+        { "word": "metabolism", "clue": "Kroppens kemiska processer för att leva" },
+        { "word": "organism", "clue": "Levande varelse – djur, växt eller svamp" },
+        { "word": "evolution", "clue": "Hur arter förändras och anpassas över tid" },
+        { "word": "genetik", "clue": "Läran om arv och DNA" },
+        { "word": "mineral", "clue": "Naturligt fast ämne i berggrunden" },
+        { "word": "kristall", "clue": "Regelbunden struktur av atomer eller molekyler" },
+        { "word": "vulkan", "clue": "Berg som spyr ut lava och aska" }
+      ]
+    },
+    {
+      "id": "stavningstest-3",
+      "title": "Stavningstest 3 – SO-ord",
+      "description": "Historia, geografi och samhälle (Nivå 3)",
+      "icon": "⭐⭐⭐",
+      "pointsRequired": 0,
+      "bonusPoints": 40,
+      "timeLimit": 60,
+      "words": [
+        { "word": "kontinent", "clue": "En av jordens sju stora landmassor" },
+        { "word": "halvö", "clue": "Landstycke omgivet av vatten på tre sidor" },
+        { "word": "ekvatorn", "clue": "Den imaginära linjen mitt runt jordklotet" },
+        { "word": "longitud", "clue": "Koordinat som mäter läge öst–väst" },
+        { "word": "latitud", "clue": "Koordinat som mäter läge nord–syd" },
+        { "word": "migration", "clue": "Att flytta från ett land till ett annat" },
+        { "word": "revolution", "clue": "Snabb och genomgripande samhällsförändring" },
+        { "word": "reformation", "clue": "1500-talets religionsreform av kyrkan" },
+        { "word": "kolonisering", "clue": "Att ett land tar kontroll över ett annat" },
+        { "word": "nationalism", "clue": "Starkt kärlekskänsla för sitt eget land" },
+        { "word": "industrialism", "clue": "Samhällsepoken med fabriker och maskiner" },
+        { "word": "parlamentarism", "clue": "Styrelsesätt där parlamentet har makten" },
+        { "word": "absolutism", "clue": "Styrelsesätt där kungen hade all makt" },
+        { "word": "monarki", "clue": "Land som styrs av en kung eller drottning" },
+        { "word": "republik", "clue": "Land utan kung, med vald president" },
+        { "word": "diktatur", "clue": "Land styrt av en person med total makt" },
+        { "word": "imperialism", "clue": "Stormakts strävan att kontrollera andra länder" },
+        { "word": "globalisering", "clue": "Världen knyts allt mer samman ekonomiskt" },
+        { "word": "hållbarhet", "clue": "Att använda resurser utan att skada framtiden" },
+        { "word": "bistånd", "clue": "Hjälp och stöd till fattiga länder" }
+      ]
+    },
+    {
+      "id": "stavningstest-4",
+      "title": "Stavningstest 4 – Språkord",
+      "description": "Grammatik och litteratur (Nivå 4)",
+      "icon": "⭐⭐⭐⭐",
+      "pointsRequired": 0,
+      "bonusPoints": 45,
+      "timeLimit": 60,
+      "words": [
+        { "word": "grammatik", "clue": "Reglerna för hur ett språk är uppbyggt" },
+        { "word": "interpunktion", "clue": "Skiljeteckens samlade användning i text" },
+        { "word": "meningsbyggnad", "clue": "Hur ord sätts ihop till meningar" },
+        { "word": "intonation", "clue": "Hur tonhöjden varierar i talet" },
+        { "word": "synonym", "clue": "Ord med samma eller liknande betydelse" },
+        { "word": "antonym", "clue": "Ord med motsatt betydelse" },
+        { "word": "metafor", "clue": "Bildligt uttryck, t.ex. 'livet är en resa'" },
+        { "word": "liknelse", "clue": "Jämförelse med 'som', t.ex. 'snabb som vinden'" },
+        { "word": "allitteration", "clue": "Upprepning av samma begynnelseljud" },
+        { "word": "personifikation", "clue": "Ge ting mänskliga egenskaper" },
+        { "word": "berättarperspektiv", "clue": "Vem som berättar historien – jagperson eller han/hon" },
+        { "word": "klimax", "clue": "Berättelsens spänningshöjdpunkt" },
+        { "word": "konflikt", "clue": "Motsättning eller problem i en berättelse" },
+        { "word": "protagonist", "clue": "Huvudpersonen i en berättelse" },
+        { "word": "antagonist", "clue": "Motståndaren till huvudpersonen" },
+        { "word": "detaljer", "clue": "Små specifika delar av en beskrivning" },
+        { "word": "citat", "clue": "Exakta ord hämtade från en källa" },
+        { "word": "referens", "clue": "Hänvisning till en källa" },
+        { "word": "parafrasera", "clue": "Återberätta med egna ord" },
+        { "word": "sammanfatta", "clue": "Kortfattat återge det viktigaste" }
+      ]
+    },
+    {
+      "id": "stavningstest-5",
+      "title": "Stavningstest 5 – Avancerade ord",
+      "description": "De svåraste orden för åk 6 (Nivå 5)",
+      "icon": "⭐⭐⭐⭐⭐",
+      "pointsRequired": 0,
+      "bonusPoints": 50,
+      "timeLimit": 60,
+      "words": [
+        { "word": "analysera", "clue": "Bryta ner och undersöka noggrant" },
+        { "word": "argumentera", "clue": "Ge skäl och motiveringar för en ståndpunkt" },
+        { "word": "kategorisera", "clue": "Dela in i grupper eller kategorier" },
+        { "word": "problematisera", "clue": "Lyfta fram komplexiteten i en fråga" },
+        { "word": "generalisera", "clue": "Dra brett gällande slutsatser" },
+        { "word": "konkretisera", "clue": "Göra abstrakt mer tydligt och gripbart" },
+        { "word": "systematisera", "clue": "Ordna på ett ordnat och planerat sätt" },
+        { "word": "källkritik", "clue": "Granska hur trovärdiga källorna är" },
+        { "word": "primärkälla", "clue": "Originalkälla t.ex. brev eller dagbok" },
+        { "word": "sekundärkälla", "clue": "Källa som tolkar eller refererar primärkällor" },
+        { "word": "reliabilitet", "clue": "Hur tillförlitliga mätresultaten är" },
+        { "word": "validitet", "clue": "Om man verkligen mäter det man vill mäta" },
+        { "word": "representativ", "clue": "Speglar helheten rättvist" },
+        { "word": "objektivitet", "clue": "Att vara saklig och opartisk" },
+        { "word": "subjektivitet", "clue": "Påverkas av egna åsikter och känslor" },
+        { "word": "perspektiv", "clue": "Synsätt eller infallsvinkel" },
+        { "word": "konsekvens", "clue": "Följd eller resultat av en handling" },
+        { "word": "proportioner", "clue": "Förhållanden mellan delar och helhet" },
+        { "word": "kompromiss", "clue": "Lösning där båda parter ger efter lite" },
+        { "word": "förhandling", "clue": "Diskussion för att nå en överenskommelse" }
       ]
     }
   ]

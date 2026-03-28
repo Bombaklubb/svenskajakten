@@ -7,7 +7,8 @@ import { notFound } from "next/navigation";
 import Header from "@/components/ui/Header";
 import WordSearch from "@/components/exercises/WordSearch";
 import { loadStudent, saveModuleProgress, loadGamification, saveGamification } from "@/lib/storage";
-import { chestsEarnedFromPoints, chestsEarnedFromExercises, rollMysteryBox, BOSS_UNLOCK_THRESHOLD } from "@/lib/gamification";
+import { chestsEarnedFromPoints, chestsEarnedFromExercises, chestsEarnedFromAchievements, rollMysteryBox, BOSS_UNLOCK_THRESHOLD } from "@/lib/gamification";
+import { ACHIEVEMENTS, isUnlocked } from "@/lib/achievements";
 import MysteryBoxPopup from "@/components/ui/MysteryBoxPopup";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { getStage } from "@/lib/stages";
@@ -74,7 +75,10 @@ export default function WordSearchModulePage({ params }: Props) {
 
     const ptChests = chestsEarnedFromPoints(oldPoints, updatedStudent.totalPoints, gam.pointsMilestonesRewarded);
     const exChests = chestsEarnedFromExercises(prevExercises, newExercises, gam.exerciseMilestonesRewarded);
-    const allNewChests = [...ptChests.map(c => c.chest), ...exChests.map(c => c.chest)];
+    const prevUnlocked = ACHIEVEMENTS.filter((a) => isUnlocked(a, student)).map((a) => a.id);
+    const nowUnlocked = ACHIEVEMENTS.filter((a) => isUnlocked(a, updatedStudent)).map((a) => a.id);
+    const achChests = chestsEarnedFromAchievements(prevUnlocked, nowUnlocked, gam.achievementsRewarded ?? []);
+    const allNewChests = [...ptChests.map(c => c.chest), ...exChests.map(c => c.chest), ...achChests.map(c => c.chest)];
     const firstChest = allNewChests[0];
 
     const mystery = rollMysteryBox(gam.badges);
@@ -98,6 +102,7 @@ export default function WordSearchModulePage({ params }: Props) {
       bossUnlocked: bossNowUnlocked || gam.bossUnlocked,
       pointsMilestonesRewarded: [...gam.pointsMilestonesRewarded, ...ptChests.map(c => c.milestone)],
       exerciseMilestonesRewarded: [...gam.exerciseMilestonesRewarded, ...exChests.map(c => c.milestone)],
+      achievementsRewarded: [...(gam.achievementsRewarded ?? []), ...achChests.map(c => c.achievementId)],
     });
     if (mystery) setMysteryBox(mystery);
     setPhase("done");
@@ -201,9 +206,9 @@ export default function WordSearchModulePage({ params }: Props) {
 
               {chestEarned && (
                 <div className="bg-amber-50 dark:bg-amber-900/30 border-2 border-amber-300 dark:border-amber-600 rounded-2xl p-3 mb-3 flex items-center gap-3 text-left">
-                  <span className="text-3xl">{chestEarned === "gold" ? "🏆" : chestEarned === "silver" ? "🪙" : "📦"}</span>
+                  <img src={chestEarned === "gold" ? "/content/guldkista.png" : chestEarned === "silver" ? "/content/silverkista.png" : "/content/bronskista.png"} alt="kista" className="w-10 h-10 object-contain" />
                   <div>
-                    <p className="text-sm font-bold text-amber-800 dark:text-amber-300">Du fick en {chestEarned === "gold" ? "Guldlåda" : chestEarned === "silver" ? "Silverlåda" : "Trälåda"}!</p>
+                    <p className="text-sm font-bold text-amber-800 dark:text-amber-300">Du fick en {chestEarned === "gold" ? "Guldkista" : chestEarned === "silver" ? "Silverkista" : "Bronskista"}!</p>
                     <p className="text-xs text-amber-600 dark:text-amber-400">Öppna den på Hemliga kistor-sidan.</p>
                   </div>
                 </div>

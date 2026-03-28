@@ -5,6 +5,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/ui/Header";
 import ModuleCard from "@/components/ui/ModuleCard";
+import FinalTestCard from "@/components/ui/FinalTestCard";
 import { loadStudent } from "@/lib/storage";
 import { getStage } from "@/lib/stages";
 import { BlurFade } from "@/components/magicui/blur-fade";
@@ -27,7 +28,7 @@ interface Props {
   params: Promise<{ stage: string }>;
 }
 
-type Tab = "grammar" | "reading" | "spelling" | "wordsearch" | "regler";
+type Tab = "grammar" | "reading" | "spelling" | "wordsearch" | "regler" | "spel";
 
 export default function WorldPage({ params }: Props) {
   const { stage: stageId } = use(params);
@@ -65,12 +66,13 @@ export default function WorldPage({ params }: Props) {
 
   const stageProgress = student?.stages[stage.id as keyof typeof student.stages];
 
-  function getModuleProgress(kind: "grammar" | "reading" | "spelling" | "wordsearch", moduleId: string) {
+  function getModuleProgress(kind: "grammar" | "reading" | "spelling" | "wordsearch" | "stavningstest", moduleId: string) {
     if (!stageProgress) return null;
     const map =
       kind === "grammar" ? stageProgress.grammarModules
       : kind === "reading" ? stageProgress.readingModules
       : kind === "spelling" ? (stageProgress.spellingModules ?? {})
+      : kind === "stavningstest" ? (stageProgress.stavningstestModules ?? {})
       : (stageProgress.wordsearchModules ?? {});
     return map[moduleId] ?? null;
   }
@@ -81,6 +83,7 @@ export default function WorldPage({ params }: Props) {
     { id: "spelling",   label: "✏️ Stavning" },
     { id: "regler",     label: "📐 Språkregler" },
     { id: "wordsearch", label: "🔍 Ordsökning" },
+    { id: "spel",       label: "🎮 Spel" },
   ];
 
   return (
@@ -159,8 +162,83 @@ export default function WorldPage({ params }: Props) {
           </div>
         </BlurFade>
 
-        {/* Language rules tab */}
-        {activeTab === "regler" ? (
+        {/* Spel tab */}
+        {activeTab === "spel" ? (
+          <div>
+            <div className="mb-6 text-center">
+              <div className="text-4xl mb-2">🎮</div>
+              <h2 className="text-xl font-black text-gray-900 dark:text-gray-100">Spel</h2>
+              <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">Träna svenska och grammatik med roliga spel!</p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {/* Memory */}
+              <Link href={`/world/${stageId}/spel/memory`} className="block group rounded-3xl overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-xl"
+                style={{ background: "linear-gradient(135deg, #06b6d4, #0891b2)", boxShadow: "0 4px 0 0 rgba(6,182,212,0.4)" }}>
+                <div className="px-5 py-5">
+                  <div className="flex items-start gap-3 mb-3">
+                    <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center text-2xl flex-shrink-0">🃏</div>
+                    <div>
+                      <h3 className="font-black text-white text-lg leading-tight">Memory</h3>
+                      <p className="text-white/80 text-xs">Para ihop begrepp med förklaring!</p>
+                    </div>
+                  </div>
+                  <p className="text-white/90 text-sm font-medium">Lätt (8 kort) • Medel (12 kort) • Svår (18 kort). Hitta alla par!</p>
+                  <span className="inline-block mt-3 text-xs font-bold text-white/70 group-hover:text-white transition-colors">Spela nu →</span>
+                </div>
+              </Link>
+
+              {/* Snögubben */}
+              <Link href={`/world/${stageId}/spel/hangman`} className="block group rounded-3xl overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-xl"
+                style={{ background: "linear-gradient(135deg, #38bdf8, #0ea5e9)", boxShadow: "0 4px 0 0 rgba(56,189,248,0.4)" }}>
+                <div className="px-5 py-5">
+                  <div className="flex items-start gap-3 mb-3">
+                    <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center text-2xl flex-shrink-0">⛄</div>
+                    <div>
+                      <h3 className="font-black text-white text-lg leading-tight">Snögubben</h3>
+                      <p className="text-white/80 text-xs">Rädda snögubben – gissa rätt!</p>
+                    </div>
+                  </div>
+                  <p className="text-white/90 text-sm font-medium">Gissa grammatikord bokstav för bokstav. Fel svar smälter snögubben!</p>
+                  <span className="inline-block mt-3 text-xs font-bold text-white/70 group-hover:text-white transition-colors">Spela nu →</span>
+                </div>
+              </Link>
+
+              {/* Tidsattack */}
+              <Link href={`/world/${stageId}/spel/tidsattack`} className="block group rounded-3xl overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-xl"
+                style={{ background: "linear-gradient(135deg, #3b82f6, #1d4ed8)", boxShadow: "0 4px 0 0 rgba(59,130,246,0.4)" }}>
+                <div className="px-5 py-5">
+                  <div className="flex items-start gap-3 mb-3">
+                    <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center text-2xl flex-shrink-0">⏱️</div>
+                    <div>
+                      <h3 className="font-black text-white text-lg leading-tight">Tidsattack</h3>
+                      <p className="text-white/80 text-xs">60 sekunder – hur många hinner du?</p>
+                    </div>
+                  </div>
+                  <p className="text-white/90 text-sm font-medium">Grammatikfrågor i rask takt. Snabb som blixten!</p>
+                  <span className="inline-block mt-3 text-xs font-bold text-white/70 group-hover:text-white transition-colors">Spela nu →</span>
+                </div>
+              </Link>
+
+              {/* Samla mynt */}
+              <Link href={`/world/${stageId}/spel/samla-mynt`} className="block group rounded-3xl overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-xl"
+                style={{ background: "linear-gradient(135deg, #f59e0b, #d97706)", boxShadow: "0 4px 0 0 rgba(245,158,11,0.4)" }}>
+                <div className="px-5 py-5">
+                  <div className="flex items-start gap-3 mb-3">
+                    <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center text-2xl flex-shrink-0">🪙</div>
+                    <div>
+                      <h3 className="font-black text-white text-lg leading-tight">Samla mynt</h3>
+                      <p className="text-white/80 text-xs">Rätt svar = samla, fel = hinder!</p>
+                    </div>
+                  </div>
+                  <p className="text-white/90 text-sm font-medium">Spring och samla mynt genom att svara rätt på grammatikfrågor!</p>
+                  <span className="inline-block mt-3 text-xs font-bold text-white/70 group-hover:text-white transition-colors">Spela nu →</span>
+                </div>
+              </Link>
+            </div>
+          </div>
+
+        ) : /* Language rules tab */
+        activeTab === "regler" ? (
           <div className="space-y-4">
             {rules.length === 0 ? (
               <div className="card text-center py-8 text-gray-400">Laddar regler...</div>
@@ -202,29 +280,99 @@ export default function WorldPage({ params }: Props) {
             <p>Kunde inte ladda innehåll.</p>
           </div>
 
+        ) : activeTab === "spelling" ? (
+          <div className="space-y-6">
+            {/* Regular spelling modules */}
+            {(content.spelling ?? []).length > 0 && (
+              <div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {(content.spelling ?? []).map((mod, idx, arr) => (
+                    <ModuleCard
+                      key={mod.id}
+                      id={mod.id}
+                      title={mod.title}
+                      description={mod.description}
+                      icon={mod.icon}
+                      kind="spelling"
+                      stage={stage}
+                      progress={getModuleProgress("spelling", mod.id)}
+                      locked={false}
+                      prevModuleTitle={idx > 0 ? arr[idx - 1].title : null}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Stavningstest på tid */}
+            {(content.stavningstest ?? []).length > 0 && (
+              <div>
+                <div className="flex items-center gap-2 mb-3 mt-2">
+                  <span className="text-xl">⏱️</span>
+                  <h3 className="font-black text-gray-800 dark:text-gray-100 text-base">Stavningstest på tid</h3>
+                  <span className="badge bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 border border-red-200 dark:border-red-700 text-xs">60 sek · Alla rätt krävs</span>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {(content.stavningstest ?? []).map((mod, idx, arr) => (
+                    <ModuleCard
+                      key={mod.id}
+                      id={mod.id}
+                      title={mod.title}
+                      description={mod.description}
+                      icon={mod.icon}
+                      kind="stavningstest"
+                      stage={stage}
+                      progress={getModuleProgress("stavningstest", mod.id)}
+                      locked={false}
+                      prevModuleTitle={idx > 0 ? arr[idx - 1].title : null}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {(content.spelling ?? []).length === 0 && (content.stavningstest ?? []).length === 0 && (
+              <div className="card text-center py-10 text-gray-400">
+                <div className="text-3xl mb-2">✏️</div>
+                <p>Inga stavningsövningar tillgängliga ännu.</p>
+              </div>
+            )}
+          </div>
+
         ) : (
-          <div className="space-y-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             {(
               activeTab === "grammar" ? content.grammar
               : activeTab === "reading" ? content.reading
-              : activeTab === "spelling" ? (content.spelling ?? [])
               : (content.wordsearch ?? [])
-            ).map((mod, idx, arr) => (
-              <ModuleCard
-                key={mod.id}
-                id={mod.id}
-                title={mod.title}
-                description={mod.description}
-                icon={mod.icon}
-                kind={activeTab as "grammar" | "reading" | "spelling" | "wordsearch"}
-                stage={stage}
-                progress={getModuleProgress(activeTab as "grammar" | "reading" | "spelling" | "wordsearch", mod.id)}
-                locked={false}
-                prevModuleTitle={idx > 0 ? arr[idx - 1].title : null}
-              />
-            ))}
+            ).map((mod, idx, arr) => {
+              if (activeTab === "grammar" && mod.id === "sluttest") {
+                return (
+                  <div key={mod.id} className="col-span-1 sm:col-span-2">
+                    <FinalTestCard
+                      stage={stage}
+                      progress={getModuleProgress("grammar", mod.id)}
+                    />
+                  </div>
+                );
+              }
+              return (
+                <ModuleCard
+                  key={mod.id}
+                  id={mod.id}
+                  title={mod.title}
+                  description={mod.description}
+                  icon={mod.icon}
+                  kind={activeTab as "grammar" | "reading" | "wordsearch"}
+                  stage={stage}
+                  progress={getModuleProgress(activeTab as "grammar" | "reading" | "wordsearch", mod.id)}
+                  locked={false}
+                  prevModuleTitle={idx > 0 ? arr[idx - 1].title : null}
+                />
+              );
+            })}
             {activeTab === "wordsearch" && (content.wordsearch ?? []).length === 0 && (
-              <div className="card text-center py-10 text-gray-400">
+              <div className="card text-center py-10 text-gray-400 col-span-1 sm:col-span-2">
                 <div className="text-3xl mb-2">🔍</div>
                 <p>Inga moduler tillgängliga ännu.</p>
               </div>

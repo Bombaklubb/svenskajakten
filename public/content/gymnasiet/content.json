@@ -15,7 +15,12 @@
         {
           "type": "multiple-choice",
           "question": "Vad kallas det retoriska grepp där man vädjar till mottagarens känslor?",
-          "options": ["Logos", "Ethos", "Pathos", "Etos"],
+          "options": [
+            "Logos",
+            "Ethos",
+            "Pathos",
+            "Etos"
+          ],
           "correctIndex": 2,
           "explanation": "Pathos syftar till att väcka känslor hos lyssnaren/läsaren."
         },
@@ -34,7 +39,12 @@
         {
           "type": "multiple-choice",
           "question": "Vad kallas upprepning av ord i början av meningar? ('Vi ska vinna. Vi ska kämpa. Vi ska lyckas.')",
-          "options": ["Metafor", "Anafor", "Liknelse", "Alliteration"],
+          "options": [
+            "Metafor",
+            "Anafor",
+            "Liknelse",
+            "Alliteration"
+          ],
           "correctIndex": 1,
           "explanation": "Anafor = upprepning av ord/fraser i början av på varandra följande meningar."
         },
@@ -48,7 +58,12 @@
         {
           "type": "multiple-choice",
           "question": "Vilket retoriskt grepp används i: 'Livet är en resa med många korsvägar'?",
-          "options": ["Liknelse", "Metafor", "Anafor", "Klimax"],
+          "options": [
+            "Liknelse",
+            "Metafor",
+            "Anafor",
+            "Klimax"
+          ],
           "correctIndex": 1,
           "explanation": "Livet KALLAS en resa (inte 'som en resa') = metafor."
         }
@@ -69,7 +84,12 @@
         {
           "type": "multiple-choice",
           "question": "Vad kallas ett arguments centrala påstående som man vill bevisa?",
-          "options": ["Belägg", "Tes", "Slutledning", "Premiss"],
+          "options": [
+            "Belägg",
+            "Tes",
+            "Slutledning",
+            "Premiss"
+          ],
           "correctIndex": 1,
           "explanation": "Tesen är det centrala påståendet som argumentet syftar till att bevisa."
         },
@@ -107,7 +127,12 @@
         {
           "type": "multiple-choice",
           "question": "Vad kallas det när man angriper en person istället för deras argument?",
-          "options": ["Logik", "Ad hominem", "Tes", "Belägg"],
+          "options": [
+            "Logik",
+            "Ad hominem",
+            "Tes",
+            "Belägg"
+          ],
           "correctIndex": 1,
           "explanation": "Ad hominem = man angriper personen bakom argumentet snarare än argumentet självt."
         }
@@ -159,7 +184,12 @@
         {
           "type": "multiple-choice",
           "question": "Vilket ord signalerar formellt skriftspråk?",
-          "options": ["kolla", "kul", "följaktligen", "typ"],
+          "options": [
+            "kolla",
+            "kul",
+            "följaktligen",
+            "typ"
+          ],
           "correctIndex": 2,
           "explanation": "'Följaktligen' är en formell konjunktion som används i akademiska och formella texter."
         },
@@ -192,7 +222,12 @@
         {
           "type": "multiple-choice",
           "question": "Vilket substantiv är en nominalisering av verbet 'diskutera'?",
-          "options": ["diskutant", "diskussion", "diskuterande", "diskurs"],
+          "options": [
+            "diskutant",
+            "diskussion",
+            "diskuterande",
+            "diskurs"
+          ],
           "correctIndex": 1,
           "explanation": "'Diskussion' är nominaliseringen av 'diskutera' – verb → substantiv med -ion."
         },
@@ -206,7 +241,12 @@
         {
           "type": "multiple-choice",
           "question": "Vilket suffix bildar nominaliseringar av rörelseverb?",
-          "options": ["-ig", "-ning", "-lig", "-bar"],
+          "options": [
+            "-ig",
+            "-ning",
+            "-lig",
+            "-bar"
+          ],
           "correctIndex": 1,
           "explanation": "Suffixet -ning bildar nominaliseringar: springa→springning, röra→rörelse (obs -else)."
         },
@@ -225,8 +265,22 @@
         {
           "type": "build-sentence",
           "instruction": "Bygg den formella meningen med nominalisering!",
-          "words": ["En", "utredning", "av", "ärendet", "krävs"],
-          "correctOrder": [0, 1, 2, 3, 4],
+          "words": [
+            "En",
+            "utredning",
+            "av",
+            "ärendet",
+            "krävs",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
           "explanation": "'Utredning' är en nominalisering av 'utreda' – verb→substantiv med -ning."
         }
       ]
@@ -258,7 +312,12 @@
         {
           "type": "multiple-choice",
           "question": "Vilken konjunktion signalerar formellt akademiskt språk?",
-          "options": ["och sen", "plus att", "Följaktligen", "dessutom liksom"],
+          "options": [
+            "och sen",
+            "plus att",
+            "Följaktligen",
+            "dessutom liksom"
+          ],
           "correctIndex": 2,
           "explanation": "'Följaktligen' är en formell kausalkonjunktion som används i akademiska texter."
         },
@@ -284,9 +343,1133 @@
         {
           "type": "build-sentence",
           "instruction": "Bygg en formell mening med rätt ordval!",
-          "words": ["Studien", "påvisar", "ett", "signifikant", "samband"],
-          "correctOrder": [0, 1, 2, 3, 4],
+          "words": [
+            "Studien",
+            "påvisar",
+            "ett",
+            "signifikant",
+            "samband",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
           "explanation": "'Påvisar' och 'signifikant' är formella akademiska ord som kännetecknar vetenskapligt skrivande."
+        }
+      ]
+    },
+    {
+      "id": "grammatik-oversikt-1",
+      "title": "Grammatik – vad är det?",
+      "description": "Lär dig de viktigaste begreppen i grammatiken.",
+      "icon": "📚",
+      "bonusPoints": 25,
+      "helpText": [
+        "Grammatik handlar om hur vi bygger upp språket.",
+        "Substantiv = namn på saker, djur, personer (hus, hund, Lisa).",
+        "Verb = ord som beskriver handlingar (hoppa, läsa, äta).",
+        "Adjektiv = ord som beskriver hur något är (stor, glad, blå)."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vad är ett substantiv?",
+          "options": [
+            "Ett ord som beskriver en handling",
+            "Ett ord som namnger saker, djur eller personer",
+            "Ett ord som beskriver hur något är",
+            "Ett ord som kopplar ihop meningar"
+          ],
+          "correctIndex": 1,
+          "explanation": "Substantiv är namn på saker, djur och personer, t.ex. 'boll', 'katt', 'Lisa'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är ett verb?",
+          "options": [
+            "röd",
+            "stol",
+            "springer",
+            "snabbt"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Springer' är ett verb – det beskriver en handling."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är ett adjektiv?",
+          "options": [
+            "hoppa",
+            "blå",
+            "boken",
+            "och"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Blå' är ett adjektiv – det beskriver hur något ser ut."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "I meningen 'Den lilla hunden springer fort' är 'springer' ett ___.",
+          "answer": "verb",
+          "hint": "Det är ett handlingsord.",
+          "explanation": "'Springer' beskriver vad hunden gör – det är ett verb."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket alternativ innehåller tre SUBSTANTIV?",
+          "options": [
+            "springer, hoppar, simmar",
+            "stor, liten, glad",
+            "bok, boll, hund",
+            "fort, snabbt, sakta"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Bok', 'boll' och 'hund' är alla substantiv – de namnger saker och djur."
+        }
+      ]
+    },
+    {
+      "id": "tempus-tidsformer-1",
+      "title": "Tempus – tidsformer (nutid-dåtid)",
+      "description": "Öva på att skriva verb i rätt tid.",
+      "icon": "⏳",
+      "bonusPoints": 30,
+      "helpText": [
+        "Tempus visar när något händer.",
+        "Nutid (presens): Något händer NU. Exempel: 'Jag äter.'",
+        "Dåtid (preteritum): Något hände FÖRR. Exempel: 'Jag åt.'",
+        "Tips: dåtid slutar ofta på -ade, -de eller -te."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilken form är i NUTID?",
+          "options": [
+            "spelade",
+            "spelar",
+            "spelat",
+            "spelades"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Spelar' är nutidsform – det händer nu."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Skriv i dåtid: 'Varje dag leker hon' → 'Igår ___ hon.'",
+          "answer": "lekte",
+          "hint": "Leka → lekte i dåtid.",
+          "explanation": "'Leka' böjs till 'lekte' i dåtid (preteritum)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord visar att meningen är i dåtid?",
+          "options": [
+            "nu",
+            "idag",
+            "igår",
+            "snart"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Igår' pekar tillbaka i tiden och signalerar dåtid."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är dåtidsformen av 'skriver'?",
+          "options": [
+            "skriva",
+            "skrivit",
+            "skrev",
+            "skribent"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Skrev' är dåtidsform av 'skriver/skriva'."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Sätt ihop en mening i dåtid!",
+          "words": [
+            "Förra",
+            "veckan",
+            "läste",
+            "vi",
+            "en",
+            "bok",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "explanation": "'Förra veckan' och 'läste' visar att det hände i dåtid."
+        }
+      ]
+    },
+    {
+      "id": "dialoger-talstreck-1",
+      "title": "Skriva dialoger – använda talstreck",
+      "description": "Lär dig hur man skriver samtal med talstreck.",
+      "icon": "💬",
+      "bonusPoints": 30,
+      "helpText": [
+        "Talstreck (–) används när man skriver vad någon säger i en berättelse.",
+        "Talstrecket sätts i början av repliken: – Hej! sa Lisa.",
+        "Ny replik = ny rad med nytt talstreck.",
+        "Tankstreck (–) är längre än bindestreck (-)."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Hur ska en replik börja i en dialog?",
+          "options": [
+            "Med citattecken: \"Hej!\"",
+            "Med talstreck: – Hej!",
+            "Med kolon: Hej:",
+            "Med parentes: (Hej!)"
+          ],
+          "correctIndex": 1,
+          "explanation": "I svenska texter används talstreck (–) i stället för citattecken för att markera repliker."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket alternativ är RÄTT skrivet?",
+          "options": [
+            "\"Vad heter du?\" frågade hon.",
+            "– Vad heter du? frågade hon.",
+            "Vad heter du? frågade hon.",
+            "-Vad heter du? frågade hon."
+          ],
+          "correctIndex": 1,
+          "explanation": "I svenska berättelser inleds repliker med talstreck (–), inte med citattecken."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt tecken: '___ Kom hit!' ropade han.",
+          "answer": "–",
+          "hint": "Det är ett talstreck (ett långt streck).",
+          "explanation": "Talstrecket (–) markerar att någon pratar."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad gör man när en ny person börjar prata i en dialog?",
+          "options": [
+            "Fortsätter på samma rad",
+            "Börjar på en ny rad med talstreck",
+            "Sätter komma och fortsätter",
+            "Skriver personens namn med stora bokstäver"
+          ],
+          "correctIndex": 1,
+          "explanation": "Varje ny replik börjar på en ny rad med ett talstreck."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening visar ett korrekt användande av talstreck?",
+          "options": [
+            "– Jag är trött, sa Emma.",
+            "–Jag är trött sa Emma",
+            "- Jag är trött, sa Emma.",
+            "Jag är trött – sa Emma."
+          ],
+          "correctIndex": 0,
+          "explanation": "Talstrecket följs av ett mellanslag och repliken avslutas med komma före 'sa Emma'."
+        }
+      ]
+    },
+    {
+      "id": "styckesindelning-1",
+      "title": "Styckesindelning",
+      "description": "Lär dig att dela upp en text i stycken.",
+      "icon": "📄",
+      "bonusPoints": 25,
+      "helpText": [
+        "Ett stycke handlar om ETT ämne eller EN tanke.",
+        "Nytt stycke = ny rad + indragning eller blankrad.",
+        "Varje stycke börjar med en inledning och avslutas med en avslutning.",
+        "Bra styckeindelning gör texten lättare att läsa."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vad är ett stycke i en text?",
+          "options": [
+            "En enskild mening",
+            "En grupp meningar som handlar om samma sak",
+            "En rubrik",
+            "En hel berättelse"
+          ],
+          "correctIndex": 1,
+          "explanation": "Ett stycke består av meningar som hör ihop och handlar om samma ämne eller tanke."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "När ska man börja ett nytt stycke?",
+          "options": [
+            "Efter varje mening",
+            "När man byter ämne eller tanke",
+            "Bara i böcker",
+            "Aldrig – text ska flöda ihop"
+          ],
+          "correctIndex": 1,
+          "explanation": "Nytt stycke används när man övergår till ett nytt ämne, en ny tanke eller en ny händelse."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Varje stycke ska handla om ___ ämne.",
+          "answer": "ett",
+          "hint": "Ett stycke = en tanke eller ett ämne.",
+          "explanation": "Principen för styckeindelning är att hålla sig till ett ämne per stycke."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur markerar man ofta ett nytt stycke i handskriven text?",
+          "options": [
+            "Med en stor bokstav mitt i raden",
+            "Med indragning på första raden eller en blankrad",
+            "Med ett utropstecken",
+            "Med fet stil"
+          ],
+          "correctIndex": 1,
+          "explanation": "Nytt stycke markeras med indragning (indenterad första rad) eller en blankrad."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Varför är styckeindelning viktigt?",
+          "options": [
+            "Det gör texten längre",
+            "Det gör texten lättare att läsa och förstå",
+            "Det är ett krav i alla språk",
+            "Det minskar antalet meningar"
+          ],
+          "correctIndex": 1,
+          "explanation": "Styckeindelning hjälper läsaren att följa med i texten och förstå dess struktur."
+        }
+      ]
+    },
+    {
+      "id": "liknelser-gym-1",
+      "title": "Liknelser – retorik och stilistik",
+      "description": "Retorisk analys av liknelsens funktion i argumenterande och litterär text",
+      "icon": "🌊",
+      "bonusPoints": 35,
+      "helpText": [
+        "Liknelsen (simile) jämför med 'som', 'likt' eller 'såsom' och synliggör jämförelsen explicit.",
+        "Tenorn = det som beskrivs. Fordonet = det man jämför med. Ground = den gemensamma egenskapen.",
+        "I retoriken kan liknelser fungera som bevis (logos), väcka känslor (pathos) eller stärka trovärdighet (ethos).",
+        "Analysera alltid: Vad jämförs? Vilken egenskap lyfts? Vilken effekt på mottagaren? Passar det i kontexten?"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilka tre termer används för att analysera en liknelses struktur?",
+          "options": [
+            "Tes, antites, syntes",
+            "Tenorn, fordonet och ground",
+            "Subjekt, predikat, objekt",
+            "Logos, pathos, ethos"
+          ],
+          "correctIndex": 1,
+          "explanation": "Tenorn = det beskrivna. Fordonet = det man jämför med. Ground = den gemensamma egenskapen som motiverar jämförelsen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "I Churchills tal: 'Vi ska kämpa på stränderna, vi ska kämpa … vi ska aldrig ge upp' – om man skulle lägga till 'som en kustfort som vägrar falla' – vilken retorisk funktion skulle liknelsen fylla?",
+          "options": [
+            "Logos – ge ett logiskt argument för kriget.",
+            "Pathos – förstärka känslan av uthållighet och beslutsamhet.",
+            "Ethos – visa att Churchill är pålitlig.",
+            "Ironi – distansera sig från budskapet."
+          ],
+          "correctIndex": 1,
+          "explanation": "Liknelsen förstärker det emotionella budskapet – uthålligheten och beslutsamheten – och skapar en stark bild av motstånd."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad skiljer en konventionell liknelse från en originell?",
+          "options": [
+            "Konventionella liknelser är alltid sämre.",
+            "Konventionella liknelser är välkända och förväntade (klichéer); originella skapar nya, oväntade kopplingar.",
+            "Originella liknelser används bara av professionella författare.",
+            "Det finns ingen skillnad."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Tyst som graven' är konventionell – den överraskar inte. En originell liknelse som 'Tystnaden lade sig som ett lager aska' skapar en ny, oväntad bild."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "I Kafkas Förvandlingen beskrivs Gregor som ett insekt. Om texten istället hade skrivit 'han kände sig lik ett insekt' hade det varit en ___ istället för metafor.",
+          "answer": "liknelse",
+          "explanation": "Kafka väljer medvetet metaforen (han ÄR ett insekt) snarare än liknelsen – det skapar en starkare känsla av faktisk förvandling."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Analysera: 'Hennes tålamod smälte bort likt snö i aprilsol.' Vad kommunicerar fordonet (aprilsol)?",
+          "options": [
+            "Att det var vår och hon var glad.",
+            "Att tålamodet försvann snabbt och oväntat, påskyndat av något externt.",
+            "Att hon befann sig utomhus.",
+            "Att hon hade tålamod med vädret."
+          ],
+          "correctIndex": 1,
+          "explanation": "Aprilsolen smälter snö hastigt och oundvikligt – fordonet kommunicerar både snabbheten och att en yttre faktor orsakade försvinnandet."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Varför kan en liknelse vara retoriskt effektivare än en metafor i ett argumenterande sammanhang?",
+          "options": [
+            "Liknelsen är alltid kortare.",
+            "Liknelsens explicita 'som' signalerar att det är en jämförelse, vilket gör att publiken lättare accepterar den utan att känna sig manipulerad.",
+            "Metaforer är förbjudna i retorik.",
+            "Liknelser är lättare att förstå än metaforer."
+          ],
+          "correctIndex": 1,
+          "explanation": "Metaforen identifierar direkt (mer manipulativ). Liknelsens 'som' signalerar: 'detta är en jämförelse, inte ett faktapåstående' – det kan uppfattas som mer ärligt."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad innebär begreppet 'tenor–vehicle tension' i stilistisk analys?",
+          "options": [
+            "Att liknelsen skapar en musikalisk spänning.",
+            "Den kreativa spänningen mellan de jämförda elementen – ju mer oväntad kopplingen, desto starkare bild.",
+            "Att tenorn alltid är viktigare än fordonet.",
+            "Att bra liknelser alltid är långa."
+          ],
+          "correctIndex": 1,
+          "explanation": "En stark liknelse har en viss semantisk avstånd mellan tenor och fordon. Om de är för lika tappar liknelsen kraft; om de är totalt orelaterade tappar den relevans."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "I Toni Morrisons prosa förekommer: 'Slavery was like a scar that never healed.' Vad tillför 'never healed' i analysen?",
+          "options": [
+            "Det visar att personen var sjuk.",
+            "Det utvidgar liknelsen till att inkludera det permanenta och långvariga traumat – inte bara den omedelbara smärtan.",
+            "Det visar att Morrison inte gillar kirurgi.",
+            "Det är ett retoriskt fel – liknelser ska vara korta."
+          ],
+          "correctIndex": 1,
+          "explanation": "Tillägget 'never healed' utvidgar liknelsen och betonar slaveriets bestående psykologiska och kulturella effekter – traumat läker aldrig helt."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "En liknelse där jämförelsen sträcker sig över flera meningar eller en hel text kallas en ___ liknelse.",
+          "answer": "utvidgad",
+          "alternativeAnswers": ["förlängd", "extended"],
+          "explanation": "En utvidgad (extended) liknelse utvecklar jämförelsen stegvis och skapar en sammanhängande bild genom texten."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "I en gymnasieuppsats – vad bör en komplett analys av en liknelse innehålla?",
+          "options": [
+            "Citera liknelsen och säga vad som jämförs.",
+            "Identifiera tenor/fordon/ground, analysera den retoriska eller estetiska effekten, och koppla till textens övergripande tema eller syfte.",
+            "Förklara om man tycker liknelsen är vacker.",
+            "Lista alla liknelser i texten."
+          ],
+          "correctIndex": 1,
+          "explanation": "En mogen analys går från identifiering till tolkning till funktion: vad jämförs → varför just detta fordon → vilken effekt i kontexten → hur det bidrar till textens helhet."
+        }
+      ]
+    },
+    {
+      "id": "metaforer-gym-1",
+      "title": "Metaforer – konceptuell och retorisk analys",
+      "description": "Djupanalys av metaforens kognitiva, litterära och retoriska dimensioner",
+      "icon": "🎭",
+      "bonusPoints": 35,
+      "helpText": [
+        "Metaforen identifierar A med B utan jämförelseord: 'Livet är en resa'.",
+        "Konceptuella metaforer (Lakoff & Johnson) strukturerar vårt tänkande, t.ex. 'ARGUMENT ÄR KRIG'.",
+        "Levande metaforer skapar nya bilder; döda metaforer har förlorat sin bildliga kraft.",
+        "I retorik kan metaforer rama in frågor (framing), väcka känslor och styra tolkningar."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vad hävdar Lakoff & Johnson i 'Metaphors We Live By' (1980)?",
+          "options": [
+            "Metaforer finns bara i poesi och skönlitteratur.",
+            "Metaforer är grundläggande för hur vi förstår och strukturerar verkligheten, inte bara ett stilistiskt ornament.",
+            "Alla metaforer är döda och bör undvikas.",
+            "Metaforer är universella och har samma innebörd i alla kulturer."
+          ],
+          "correctIndex": 1,
+          "explanation": "Lakoff & Johnson visade att konceptuella metaforer som 'TID ÄR PENGAR' (slösa tid, spara tid, investera i) styr hur vi tänker och handlar i vardagen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Ge ett exempel på en konceptuell metafor och dess lingvistiska uttryck.",
+          "options": [
+            "KÄRLEK ÄR ETT ÄVENTYR → 'Vi är vid ett vägskäl', 'Vi tar det steg för steg', 'Vi har kommit långt'.",
+            "KÄRLEK ÄR VACKER → 'Hon är vacker som en blomma'.",
+            "KÄRLEK ÄR VARMT → 'Han är varm som en pälskappa'.",
+            "KÄRLEK ÄR RÖD → 'Hennes kinder rodnade'."
+          ],
+          "correctIndex": 0,
+          "explanation": "KÄRLEK ÄR ETT ÄVENTYR/RESA är en konceptuell metafor som ger upphov till hela familjer av uttryck om att 'navigera', 'välja väg' och 'nå destinationer' i relationer."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad innebär 'framing' med metaforer i politisk retorik?",
+          "options": [
+            "Att sätta en bild i en ram.",
+            "Att använda metaforer för att styra hur en fråga uppfattas, t.ex. 'brottslighet som sjukdom' vs 'brottslighet som krig'.",
+            "Att citera andra politiker.",
+            "Att använda statistik i retoriken."
+          ],
+          "correctIndex": 1,
+          "explanation": "Forskning visar att om brottslighet framas som 'ett djur som härjar' föredrar folk krafttag; framas det som 'en sjukdom' föredrar folk rehabilitering."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Paul Ricœur menar att metaforens kreativa kraft uppstår i spänningen mellan den ___ och den bildliga betydelsen.",
+          "answer": "bokstavliga",
+          "alternativeAnswers": ["literala", "egentliga", "direkta"],
+          "explanation": "Det är just spänningen – att bokstavlig läsning ger absurditet men bildlig läsning ger mening – som skapar metaforens kreativa kraft."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur skiljer sig en ontologisk metafor från en strukturell metafor (Lakoff & Johnson)?",
+          "options": [
+            "Ontologiska metaforer ger abstrakta fenomen fysisk substans (sinnet är en behållare); strukturella låter ett begrepp förstås via ett annat.",
+            "Ontologiska metaforer används bara i filosofi.",
+            "Strukturella metaforer är alltid döda.",
+            "Det är ingen skillnad – de är synonyma."
+          ],
+          "correctIndex": 0,
+          "explanation": "Ontologisk: 'sinnet är en behållare' → idéer kan 'komma in', 'försvinna', 'rymmas'. Strukturell: 'ARGUMENT ÄR KRIG' → man 'angriper', 'försvarar', 'vinner'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Derrida menar att västerländsk filosofi präglas av 'vita metaforer'. Vad avses?",
+          "options": [
+            "Metaforer om vit färg.",
+            "Filosofiska begrepp som ursprungligen var metaforer men glömts bort som sådana, vilket döljer deras konstruerade karaktär.",
+            "Metaforer som är oskyldiga och neutrala.",
+            "Metaforer som används av vita filosofer."
+          ],
+          "correctIndex": 1,
+          "explanation": "Derrida: Begrepp som 'begreppet själv' (begrippa = ta med handen) är metaforer vars ursprung glömts. Filosofin tror sig tala rent, men talar alltid bildligt."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken effekt har en utvidgad metafor (extended metaphor) i en roman?",
+          "options": [
+            "Den gör texten längre.",
+            "Den skapar ett sammanhängande bildspråk som ger djup och tematisk koherens – läsaren bygger upp en komplex bild gradvis.",
+            "Den förvirrar läsaren.",
+            "Den används bara i poesi."
+          ],
+          "correctIndex": 1,
+          "explanation": "T.ex. Fitzgeralds 'Den store Gatsby' använder 'det gröna ljuset' genomgående som metafor för det omöjliga hoppet – det byggs upp och förstärks successivt."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad innebär begreppet 'aptness' (lämplighet) i metaforteori?",
+          "options": [
+            "Att metaforen är vacker.",
+            "Att metaforen är lätt att förstå.",
+            "Hur väl fordonets associationer matchar och berikar förståelsen av tenorn i kontexten.",
+            "Att metaforen är tillräckligt lång."
+          ],
+          "correctIndex": 2,
+          "explanation": "En apt metafor för en politiker: 'Han är en orm' – om kontexten handlar om svek och duplicitet. Samma metafor om en zoolog vore olämplig."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "I Aristoteles retorik anses metaforer vara ett tecken på ___.",
+          "answer": "genialitet",
+          "alternativeAnswers": ["intelligens", "vältalighet", "talang", "skicklighet"],
+          "hint": "Aristoteles ansåg att förmågan att se likheter kräver en speciell egenskap.",
+          "explanation": "Aristoteles: 'Det är av stor vikt att man behärskar metaforen – det är det enda som inte kan läras av en annan, det är ett tecken på genialitet.'"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "I en gymnasieanalys av metafor – vad ska man undvika?",
+          "options": [
+            "Att citera texten.",
+            "Att stanna vid identifiering ('här finns en metafor') utan att analysera funktion, effekt och koppling till tema.",
+            "Att använda begreppen tenor och fordon.",
+            "Att koppla metaforen till textens tema."
+          ],
+          "correctIndex": 1,
+          "explanation": "En ytlig analys stannar vid 'detta är en metafor'. En mogen analys frågar: Varför just detta? Vilken effekt? Hur bidrar det till textens helhet?"
+        }
+      ]
+    },
+    {
+      "id": "idiom-gym-1",
+      "title": "Idiom och uttryck",
+      "description": "Idiomatik, fraseologi och lexikaliserade uttrycks funktion i text och tal",
+      "icon": "💬",
+      "bonusPoints": 35,
+      "helpText": [
+        "Idiom (fraseologismer) är lexikaliserade flerordskonstruktioner med icke-kompositionell betydelse.",
+        "Fraseologi studerar fasta ordförbindelser: idiom, kollokationer, proverbier och rutinformler.",
+        "Idiom kan analyseras utifrån grad av lexikalisering, transparens och frozenness.",
+        "I pragmatik och sociolingvistik är idiomval en markör för register, identitet och social tillhörighet."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vad menas med att ett idiom är 'icke-kompositionellt'?",
+          "options": [
+            "Att det inte kan delas upp i stavelser.",
+            "Att idiomets helhetsbetydelse inte kan beräknas från de enskilda ordens betydelse.",
+            "Att det saknar verb.",
+            "Att det inte följer svenska grammatikregler."
+          ],
+          "correctIndex": 1,
+          "explanation": "Kompositionell betydelse = summan av delarna. 'Kick the bucket' (dö) är icke-kompositionellt – man kan inte förstå det från 'kick' + 'the' + 'bucket'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad skiljer ett idiom från en kollokation?",
+          "options": [
+            "Kollokationer är längre än idiom.",
+            "Kollokationer är statistiskt frekventa ordpar med delvis förutsägbar betydelse (stark kaffe); idiom har fullständigt lexikaliserad, icke-kompositionell betydelse.",
+            "Idiom finns bara i tal, kollokationer bara i skrift.",
+            "Det är ingen skillnad – de är synonyma termer."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Stark kaffe' är en kollokation – stark är förutsägbart med kaffe. 'Kalla handen' är ett idiom – man kan inte förstå det från 'kall' + 'hand'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Begreppet 'frozenness' i fraseologin syftar på:",
+          "options": [
+            "Att idiom handlar om kyla och frost.",
+            "Graden av formell fixering – hur mycket man kan modifiera idiomets form utan att förlora dess idiomatiska betydelse.",
+            "Att idiom inte kan användas i moderna texter.",
+            "Att idiomets ursprung är okänt."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Bita ihop' är frostat – man kan inte säga 'bita samman' eller 'tugga ihop' och behålla idiomets innebörd. Hög frozenness = lite flexibilitet."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Ett idiom vars bildliga ursprung fortfarande är levande och upplevs som bildligt kallas ett ___ idiom.",
+          "answer": "levande",
+          "alternativeAnswers": ["transparent", "genomskinligt", "aktivt"],
+          "explanation": "Levande/transparenta idiom: 'ta tjuren vid hornen' – man kan fortfarande se bilden. Döda idiom: 'bordsben' – ursprungsmetaforen är osynlig."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad innebär 'idiom modification' som stilistiskt grepp?",
+          "options": [
+            "Att ersätta ett idiom med ett annat.",
+            "Att medvetet avvika från ett idioms förväntade form för att skapa humor, ironi eller ny mening.",
+            "Att undvika idiom i formell text.",
+            "Att förklara idiomets ursprung i texten."
+          ],
+          "correctIndex": 1,
+          "explanation": "Annons: 'Vi ger inte bara järnet – vi ger hela smedjan.' Frasen bryts och utvidgas för retorisk effekt. Det kräver att läsaren känner originalet."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur fungerar idiom som sociolingvistiska markörer?",
+          "options": [
+            "Idiom visar bara hur gammal en person är.",
+            "Val av idiom signalerar grupptillhörighet, register, regional identitet och social bakgrund.",
+            "Idiom används lika av alla talare oberoende av bakgrund.",
+            "Idiom är neutrala och utan sociolingvistisk funktion."
+          ],
+          "correctIndex": 1,
+          "explanation": "Ungdomsidiom, yrkesidiom (juridiska, medicinska), regionala uttryck – alla signalerar tillhörighet. En advokat som säger 'vi kör på det' i rätten bryter mot registerförväntningar."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad kallas fenomenet när ett idiom tolkas bokstavligt av en andraspråkstalare?",
+          "options": [
+            "Falsk vän.",
+            "Idiom-transfer-fel – man applicerar L1-kompositionell tolkningsstrategi på L2-idiom.",
+            "Interferens.",
+            "Malapropism."
+          ],
+          "correctIndex": 1,
+          "explanation": "En inlärare av svenska som hör 'sitta i knipan' och tolkar det bokstavligt gör ett idiom-transfer-fel – L1-strategin (bokstavlig tolkning) fungerar inte för L2-idiom."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Idiomen 'Det är ingen ko på isen' har ett konkret ursprung. Vilket?",
+          "options": [
+            "Bondelivets oro när kor faktiskt hamnade på is och riskerade att falla och skada sig.",
+            "En känd folksaga om en ko.",
+            "Ett latinskt ordspråk.",
+            "Ursprunget är okänt."
+          ],
+          "correctIndex": 0,
+          "explanation": "Idiomen kommer från bondelivets verklighet – en ko på hal is var en allvarlig risk. Ingen ko på isen = ingen fara, ingen risk."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur ska idiom behandlas i en stilanalys av skönlitteratur?",
+          "options": [
+            "Man noterar att de förekommer och går vidare.",
+            "Man analyserar idiomets konnotationer, dess register­markering, dess relation till karaktär och kontext, samt om det används bokstavligt, ironiskt eller subversivt.",
+            "Man förklarar idiomets bokstavliga betydelse.",
+            "Man bedömer om idiomen är vackra eller fula."
+          ],
+          "correctIndex": 1,
+          "explanation": "En mogen stilanalys frågar: Vem använder idiomen? Vilken social och emotionell effekt? Är det konventionellt eller subversivt använt? Vad säger det om karaktär och tema?"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är ett 'proverbium' och hur skiljer det sig från ett idiom?",
+          "options": [
+            "Proverbium är ett latinskt idiom.",
+            "Ett proverbium (ordspråk) är en hel sats med generell visdom ('Den som gapar efter mycket mister ofta hela stycket'); ett idiom är en fras som fungerar som satsled.",
+            "Proverbier är kortare än idiom.",
+            "Det är ingen skillnad – termerna är synonyma."
+          ],
+          "correctIndex": 1,
+          "explanation": "Proverbier är fullständiga satser med normativt eller deskriptivt innehåll. Idiom är fraser som fyller en grammatisk funktion i en sats (subjekt, predikat etc.)."
+        }
+      ]
+    },
+    {
+      "id": "sluttest",
+      "title": "Sluttest – Grammatik",
+      "description": "Testa allt du lärt dig! 36 blandade frågor om grammatik på gymnasienivå.",
+      "icon": "🏆",
+      "bonusPoints": 100,
+      "helpText": [
+        "Det här är ditt stora sluttest! Du kommer att få frågor om allt du har övat på.",
+        "Tänk på retorik, argumentationsanalys, stilnivåer, nominalisering, idiom och bildspråk.",
+        "Du behöver svara rätt på 60% av frågorna för att klara testet och få bonuspoäng.",
+        "Lycka till – du klarar det! 🌟"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vad kallas det retoriska grepp där man vädjar till mottagarens känslor?",
+          "options": [
+            "Logos",
+            "Ethos",
+            "Pathos",
+            "Etos"
+          ],
+          "correctIndex": 2,
+          "explanation": "Pathos syftar till att väcka känslor hos lyssnaren/läsaren."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket av följande är en metafor?",
+          "options": [
+            "Hon springer som en vind.",
+            "Hennes leende var en sol som lyste upp rummet.",
+            "Livet är svårt.",
+            "Han är lång."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Hennes leende var en sol' – leendet KALLAS sol, inte jämförs med (det hade varit en liknelse)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad kallas upprepning av ord i början av på varandra följande meningar?",
+          "options": [
+            "Metafor",
+            "Anafor",
+            "Liknelse",
+            "Alliteration"
+          ],
+          "correctIndex": 1,
+          "explanation": "Anafor = upprepning av ord/fraser i början av meningar. T.ex. 'Vi ska vinna. Vi ska kämpa. Vi ska lyckas.'"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad kallas ett arguments centrala påstående som man vill bevisa?",
+          "options": [
+            "Belägg",
+            "Tes",
+            "Slutledning",
+            "Premiss"
+          ],
+          "correctIndex": 1,
+          "explanation": "Tesen är det centrala påståendet som argumentet syftar till att bevisa."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket av följande är ett felslut (övergeneralisering)?",
+          "options": [
+            "Forskning visar att motion förbättrar hälsan.",
+            "Min granne röker och lever länge, alltså är rökning ofarligt.",
+            "Motion rekommenderas av läkare.",
+            "Studier indikerar att kost påverkar hälsan."
+          ],
+          "correctIndex": 1,
+          "explanation": "Övergeneralisering: att dra en allmän slutsats från ett enstaka fall. En grannes erfarenhet är inte ett representativt underlag."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket alternativ är mest formellt?",
+          "options": [
+            "Hej! Kan du skicka dom papprena?",
+            "Hallå, jag undrar om du kan skicka pappren?",
+            "Härmed översänder jag de begärda handlingarna.",
+            "Skicka papprena snart, tack."
+          ],
+          "correctIndex": 2,
+          "explanation": "'Härmed översänder jag de begärda handlingarna' använder formell vokabulär och struktur."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket av dessa ord hör hemma i informell stil?",
+          "options": [
+            "erhålla",
+            "emedan",
+            "snacka",
+            "härigenom"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Snacka' är ett informellt ord. De övriga (erhålla, emedan, härigenom) är formella/skriftspråkliga."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är en nominalisering av verbet 'diskutera'?",
+          "options": [
+            "diskussion",
+            "diskuterande",
+            "diskuterat",
+            "diskuterbar"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Diskussion' är en nominalisering – ett substantiv bildat av verbet 'diskutera'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening innehåller en nominalisering?",
+          "options": [
+            "Vi diskuterade frågan länge.",
+            "Diskussionen av frågan pågick länge.",
+            "Frågan diskuterades av oss.",
+            "Vi hade en diskuterande stund."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Diskussionen' är en nominalisering av 'diskutera'. Nominaliseringar är vanliga i formell text."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj det mest formella alternativet för 'vi fick reda på':",
+          "options": [
+            "vi fick veta",
+            "det framgick",
+            "vi snappade upp",
+            "vi hörde"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Det framgick' är opersonlig och formell konstruktion, vanlig i akademisk text."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket retoriskt grepp används i: 'Livet är en resa med många korsvägar'?",
+          "options": [
+            "Liknelse",
+            "Metafor",
+            "Anafor",
+            "Klimax"
+          ],
+          "correctIndex": 1,
+          "explanation": "Livet KALLAS en resa (inte 'som en resa' vilket hade varit en liknelse) = metafor."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är en 'halvsanning' i argumentationsanalys?",
+          "options": [
+            "En lögn",
+            "Ett sant påstående som utelämnar viktig information",
+            "En retorisk fråga",
+            "En övergeneralisering"
+          ],
+          "correctIndex": 1,
+          "explanation": "En halvsanning är tekniskt sett sant men vilseledande eftersom det utelämnar viktig kontext."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket alternativ är korrekt i formell skriven text?",
+          "options": [
+            "Man bör ej använda negationer i formell text.",
+            "Negationer bör undvikas i formell text.",
+            "Man ska inte använda negationer i formell text.",
+            "Använd inte negationer i formell text."
+          ],
+          "correctIndex": 1,
+          "explanation": "Passiv konstruktion ('bör undvikas') och nominalisering ger en mer opersonlig, formell ton."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad kallas det när man omvandlar verb till substantiv i formell text?",
+          "options": [
+            "Verbalisering",
+            "Nominalisering",
+            "Adjektivering",
+            "Adverbisering"
+          ],
+          "correctIndex": 1,
+          "explanation": "Nominalisering = att göra ett substantiv av ett verb. Vanligt i formell och akademisk text."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Ethos i ett argument handlar om...",
+          "options": [
+            "att väcka känslor hos publiken",
+            "att använda fakta och logiska resonemang",
+            "talarens trovärdighet och auktoritet",
+            "att upprepa viktiga fraser"
+          ],
+          "correctIndex": 2,
+          "explanation": "Ethos handlar om talarens karaktär och trovärdighet – varför vi ska lita på den som argumenterar."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket av följande är ett 'falskt dilemma'?",
+          "options": [
+            "Antingen röstar du på oss, eller så vill du inte ha förbättring.",
+            "Forskning visar att X och Y hänger ihop.",
+            "Experter rekommenderar alternativ A.",
+            "Statistiken visar att B ökar med 20%."
+          ],
+          "correctIndex": 0,
+          "explanation": "Falskt dilemma: att framställa en fråga som om det bara finns två alternativ, när det finns fler."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt passiv konstruktion: 'Vi har genomfört studien.'",
+          "options": [
+            "Studien har genomfört av oss.",
+            "Studien har genomförts av oss.",
+            "Studien genomfördes oss.",
+            "Vi är studien genomförande."
+          ],
+          "correctIndex": 1,
+          "explanation": "Passiv konstruktion: 'Studien har genomförts' (s-passiv). 'Av oss' är agenten."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är en 'liknelse'?",
+          "options": [
+            "När A kallas B direkt (A är B)",
+            "När A jämförs med B med 'som' eller 'likt'",
+            "Upprepning av inledningsord i meningar",
+            "Ord som startar med samma ljud"
+          ],
+          "correctIndex": 1,
+          "explanation": "Liknelse: 'Hon är stark som ett lejon.' Jämförelse med 'som' eller 'likt'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad innebär 'ad hominem' i argumentation?",
+          "options": [
+            "Ett argument baserat på logik och fakta",
+            "En attack mot personens karaktär istället för deras argument",
+            "En retorisk fråga som engagerar publiken",
+            "En statistisk generalisering"
+          ],
+          "correctIndex": 1,
+          "explanation": "Ad hominem = angripa personen istället för argumentet. T.ex. 'Du är för ung för att förstå.'"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj den nominaliserade formen av 'att undersöka':",
+          "options": [
+            "undersökt",
+            "undersökning",
+            "undersökande",
+            "undersöker"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Undersökning' är en nominalisering – ett substantiv bildat av verbet 'undersöka'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket av dessa ord är MEST formellt?",
+          "options": [
+            "få",
+            "erhålla",
+            "skaffa",
+            "ta emot"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Erhålla' är det mest formella alternativet – det används i officiell och juridisk text."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad kallas retorisk uppbyggnad av meningar i stigande intensitet?",
+          "options": [
+            "Anafor",
+            "Metafor",
+            "Klimax",
+            "Antites"
+          ],
+          "correctIndex": 2,
+          "explanation": "Klimax = ord eller meningar ordnade i stigande styrka/intensitet. T.ex. 'Vi kom, vi såg, vi segrade.'"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket belägg är STARKAST för en akademisk text?",
+          "options": [
+            "'Alla vet att kaffe är farligt.'",
+            "'Min granne tycker att...'",
+            "'En studie vid Karolinska (2022) visar att...'",
+            "'Jag har alltid trott att...'"
+          ],
+          "correctIndex": 2,
+          "explanation": "Peer-reviewed forskning från erkända institutioner ger starkast belägg i akademisk text."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt formell konjunktion: '___ rapporten innehåller brister, måste den revideras.'",
+          "options": [
+            "Eftersom",
+            "Fast",
+            "Men",
+            "Dock"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Eftersom' anger orsak/anledning och är lämpligt i formell text. 'Fast' och 'men' är mer informella."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad innebär 'straw man' (halmgubbe) i argumentation?",
+          "options": [
+            "Man väljer det starkaste motståndarargumentet.",
+            "Man snedvrider motståndarens argument och bemöter den förvrängda versionen.",
+            "Man använder falsk statistik.",
+            "Man angriper personens karaktär."
+          ],
+          "correctIndex": 1,
+          "explanation": "Halmgubbe: att förvrida motståndarens argument till något svagare/absurdare och sedan vinna mot den versionen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Logos i ett argument innebär att man vädjar till...",
+          "options": [
+            "Känslor",
+            "Trovärdighet",
+            "Förnuft och fakta",
+            "Etik"
+          ],
+          "correctIndex": 2,
+          "explanation": "Logos = logik och förnuft. Man använder fakta, statistik och logiska resonemang."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är skriven i formell stil?",
+          "options": [
+            "Det var ju ganska oklart vad dom menade.",
+            "Det är svårt att förstå vad de avsåg.",
+            "Det var lite otydligt med vad de menade.",
+            "Dom var ganska otydliga med vad de ville."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Det är svårt att förstå vad de avsåg' – opersonlig, korrekt användning av 'de' (inte 'dom'), och formellt verb 'avsåg'."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Ändelsen ___ bildas ofta vid nominalisering av verb på '-era' (t.ex. diskutera → diskuss___)",
+          "answer": "ion",
+          "hint": "Diskussion, kommunikation, information...",
+          "explanation": "Verben på -era nominaliseras ofta med ändelsen -ion: diskutera → diskussion, kommunicera → kommunikation."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Vilket retoriskt begrepp beskriver en fråga som inte förväntar sig ett svar?",
+          "answer": "retorisk fråga",
+          "hint": "Talaren ställer den för att påverka, inte för att få ett faktiskt svar.",
+          "explanation": "En retorisk fråga är ett stilistiskt grepp för att övertala och engagera publiken."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket av dessa är ett exempel på antites (motsatspar i en mening)?",
+          "options": [
+            "Vi kämpade, vi vann, vi firade.",
+            "Det var det bästa av tider, det var det värsta av tider.",
+            "Hon är stark som ett lejon.",
+            "Vi ska vinna. Vi ska kämpa. Vi ska lyckas."
+          ],
+          "correctIndex": 1,
+          "explanation": "Antites = kontrast mellan mot varandra ställda påståenden. 'Det bästa' vs 'det värsta' i samma mening."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg den formella meningen med passiv konstruktion!",
+          "words": [
+            "Rapporten",
+            "har",
+            "granskats",
+            "noggrant",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "explanation": "Rapporten (subjekt) har granskats (passiv form av 'granska') noggrant (adverbial). Passiv ger formell, opersonlig ton."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är skillnaden mellan en metafor och ett idiom?",
+          "options": [
+            "De är identiska stilistiska grepp",
+            "Metafor skapar en bild (A är B); idiom är ett fast uttryck vars innebörd inte kan härledas från orden",
+            "Idiom använder 'som'; metafor gör det inte",
+            "Metafor används bara i poesi; idiom i tal"
+          ],
+          "correctIndex": 1,
+          "explanation": "Metafor: 'Livet är en resa' (skapar en bild). Idiom: 'bita i det sura äpplet' (fast uttryck, figurativ innebörd)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad kallas ett idiom vars bildliga ursprung förlorat sin kraft och upplevs som bokstavlig, t.ex. 'benet på stolen'?",
+          "options": [
+            "Levande metafor",
+            "Anafor",
+            "Dödmetafor (konventionaliserad metafor)",
+            "Antites"
+          ],
+          "correctIndex": 2,
+          "explanation": "En dödmetafor (konventionaliserad metafor) är en bild som blivit så vanlig att vi inte längre uppfattar den som bildspråk."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket idiom används för att beskriva att avslöja en hemlighet?",
+          "options": [
+            "Ta bladet från munnen",
+            "Släppa katten ur säcken",
+            "Bita ihop",
+            "Sitta i knipa"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Släppa katten ur säcken' = avslöja något som hållits hemligt. Idiom med bildlig innebörd."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Idiom: 'Ha is i ___.' (vara lugn och samlad under press)",
+          "answer": "magen",
+          "hint": "En kroppsdel.",
+          "explanation": "'Ha is i magen' = behålla lugnet i en svår situation. Ett idiom med bildlig, figurativ innebörd."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken av dessa liknelser är mest stilistiskt avancerad?",
+          "options": [
+            "Snabb som blixten",
+            "Glad som en lärka",
+            "Hans tystnad bredde ut sig likt en oändlig, töcknig höstdag utan konturer",
+            "Stark som en björn"
+          ],
+          "correctIndex": 2,
+          "explanation": "En utbyggd liknelse med flera adjektiv och specificerande detaljer skapar en rikare bild och är mer litterärt raffinerad."
         }
       ]
     }
@@ -387,7 +1570,12 @@
         {
           "type": "multiple-choice",
           "question": "Vilket tecken passar bäst i: 'Hon log_och det förändrade allt.'",
-          "options": [".", ",", "–", "!"],
+          "options": [
+            ".",
+            ",",
+            "–",
+            "!"
+          ],
           "correctIndex": 2,
           "explanation": "Tankstreck kan markera en dramatisk paus eller ett inskott."
         },
@@ -413,14 +1601,24 @@
         {
           "type": "multiple-choice",
           "question": "Hur skriver man korrekt genitiv av 'Jonas'?",
-          "options": ["Jonas's bok", "Jonas bok", "Jonas' bok", "Jonases bok"],
+          "options": [
+            "Jonas's bok",
+            "Jonas bok",
+            "Jonas' bok",
+            "Jonases bok"
+          ],
           "correctIndex": 2,
           "explanation": "När ett namn slutar på s, x eller z skrivs genitiv med bara apostrof: Jonas' bok."
         },
         {
           "type": "multiple-choice",
           "question": "Vad kallas utelämning av bokstäver i tal? Ex: 'dom' istället för 'de/dem'",
-          "options": ["Elision", "Apostrof", "Synkope", "Apokope"],
+          "options": [
+            "Elision",
+            "Apostrof",
+            "Synkope",
+            "Apokope"
+          ],
           "correctIndex": 0,
           "explanation": "Elision är utelämning av ljud, vanligt i talspråk."
         }
@@ -439,14 +1637,24 @@
         {
           "type": "multiple-choice",
           "question": "Vilket akademiskt ord betyder ungefär 'bevis' eller 'underlag'?",
-          "options": ["diskurs", "evidens", "kontext", "syntes"],
+          "options": [
+            "diskurs",
+            "evidens",
+            "kontext",
+            "syntes"
+          ],
           "correctIndex": 1,
           "explanation": "'Evidens' = bevis, underlag. Används i akademiska och vetenskapliga texter."
         },
         {
           "type": "multiple-choice",
           "question": "Hur stavas ordet för 'sammansättning av idéer till en helhet'?",
-          "options": ["sinttes", "syntes", "syntäs", "synttes"],
+          "options": [
+            "sinttes",
+            "syntes",
+            "syntäs",
+            "synttes"
+          ],
           "correctIndex": 1,
           "explanation": "'Syntes' – s-y-n-t-e-s. Att syntetisera = sätta samman till en helhet."
         },
@@ -460,14 +1668,24 @@
         {
           "type": "multiple-choice",
           "question": "Vilket ord beskriver ett samtal om idéer inom ett ämnesområde?",
-          "options": ["diskurs", "dialog", "debatt", "diskussion"],
+          "options": [
+            "diskurs",
+            "dialog",
+            "debatt",
+            "diskussion"
+          ],
           "correctIndex": 0,
           "explanation": "'Diskurs' – ett akademiskt begrepp för den samlade diskussionen/konversationen inom ett ämne."
         },
         {
           "type": "multiple-choice",
           "question": "Hur stavas konsekvenser eller slutsatser av något?",
-          "options": ["implikashon", "implikation", "implikasjon", "implikasion"],
+          "options": [
+            "implikashon",
+            "implikation",
+            "implikasjon",
+            "implikasion"
+          ],
           "correctIndex": 1,
           "explanation": "'Implikation' – im-pli-ka-tion. Vad något innebär eller medför."
         }
@@ -487,7 +1705,12 @@
         {
           "type": "multiple-choice",
           "question": "Hur stavas systemet för samhällets välfärd?",
-          "options": ["välfärds system", "välfärdsystem", "välfärdssystem", "välfärd-system"],
+          "options": [
+            "välfärds system",
+            "välfärdsystem",
+            "välfärdssystem",
+            "välfärd-system"
+          ],
           "correctIndex": 2,
           "explanation": "'Välfärdssystem' – sammansatta ord skrivs ihop. Välfärd + s + system."
         },
@@ -513,7 +1736,12 @@
         {
           "type": "multiple-choice",
           "question": "Hur stavas politiken för miljön?",
-          "options": ["miljö politik", "miljö-politik", "miljöpolitik", "miljöpollitik"],
+          "options": [
+            "miljö politik",
+            "miljö-politik",
+            "miljöpolitik",
+            "miljöpollitik"
+          ],
           "correctIndex": 2,
           "explanation": "'Miljöpolitik' – sammansatt ord ihop: miljö + politik."
         },
@@ -540,14 +1768,38 @@
       "icon": "🤔",
       "bonusPoints": 45,
       "words": [
-        {"word": "ETIK", "clue": "Läran om rätt och fel"},
-        {"word": "MORAL", "clue": "Regler för rätt uppförande"},
-        {"word": "LOGIK", "clue": "Konsten att tänka korrekt"},
-        {"word": "DIALEKTIK", "clue": "Metod att nå sanning genom dialog"},
-        {"word": "UTOPI", "clue": "Idealsamhälle som inte finns"},
-        {"word": "EMPATI", "clue": "Förmågan att förstå andras känslor"},
-        {"word": "ONTOLOGI", "clue": "Läran om varats natur"},
-        {"word": "LIBERAL", "clue": "Frihetsinriktad politisk åskådning"}
+        {
+          "word": "ETIK",
+          "clue": "Läran om rätt och fel"
+        },
+        {
+          "word": "MORAL",
+          "clue": "Regler för rätt uppförande"
+        },
+        {
+          "word": "LOGIK",
+          "clue": "Konsten att tänka korrekt"
+        },
+        {
+          "word": "DIALEKTIK",
+          "clue": "Metod att nå sanning genom dialog"
+        },
+        {
+          "word": "UTOPI",
+          "clue": "Idealsamhälle som inte finns"
+        },
+        {
+          "word": "EMPATI",
+          "clue": "Förmågan att förstå andras känslor"
+        },
+        {
+          "word": "ONTOLOGI",
+          "clue": "Läran om varats natur"
+        },
+        {
+          "word": "LIBERAL",
+          "clue": "Frihetsinriktad politisk åskådning"
+        }
       ]
     },
     {
@@ -557,14 +1809,38 @@
       "icon": "🗳️",
       "bonusPoints": 45,
       "words": [
-        {"word": "NATION", "clue": "Folk med gemensam kultur och identitet"},
-        {"word": "STAT", "clue": "Politisk organisation med territorium"},
-        {"word": "DEMOKRATI", "clue": "Folkstyre – folket bestämmer"},
-        {"word": "REPUBLIK", "clue": "Statsskick utan ärftlig kung"},
-        {"word": "MONARKI", "clue": "Statsskick med kung eller drottning"},
-        {"word": "FRIHET", "clue": "Rätten att handla utan tvång"},
-        {"word": "RÄTTVISA", "clue": "Att behandla alla lika och rätt"},
-        {"word": "SUVERÄN", "clue": "Oberoende och självstyrande"}
+        {
+          "word": "NATION",
+          "clue": "Folk med gemensam kultur och identitet"
+        },
+        {
+          "word": "STAT",
+          "clue": "Politisk organisation med territorium"
+        },
+        {
+          "word": "DEMOKRATI",
+          "clue": "Folkstyre – folket bestämmer"
+        },
+        {
+          "word": "REPUBLIK",
+          "clue": "Statsskick utan ärftlig kung"
+        },
+        {
+          "word": "MONARKI",
+          "clue": "Statsskick med kung eller drottning"
+        },
+        {
+          "word": "FRIHET",
+          "clue": "Rätten att handla utan tvång"
+        },
+        {
+          "word": "RÄTTVISA",
+          "clue": "Att behandla alla lika och rätt"
+        },
+        {
+          "word": "SUVERÄN",
+          "clue": "Oberoende och självstyrande"
+        }
       ]
     },
     {
@@ -574,15 +1850,199 @@
       "icon": "🎨",
       "bonusPoints": 45,
       "words": [
-        {"word": "OPERA", "clue": "Musikdramatisk konstform med sång"},
-        {"word": "TEATER", "clue": "Skådespel framförda på scen"},
-        {"word": "MUSEUM", "clue": "Byggnad med samlingar av konst"},
-        {"word": "POESI", "clue": "Konstform med rytm och språklig skönhet"},
-        {"word": "ROMAN", "clue": "Långt litterärt berättarverk"},
-        {"word": "KONST", "clue": "Mänskligt skapande för estetiskt värde"},
-        {"word": "KULTUR", "clue": "Gemensamma värden och sedvänjor"},
-        {"word": "BALETT", "clue": "Klassisk danskonst med musik"},
-        {"word": "SYMFONI", "clue": "Stor komposition för orkester"}
+        {
+          "word": "OPERA",
+          "clue": "Musikdramatisk konstform med sång"
+        },
+        {
+          "word": "TEATER",
+          "clue": "Skådespel framförda på scen"
+        },
+        {
+          "word": "MUSEUM",
+          "clue": "Byggnad med samlingar av konst"
+        },
+        {
+          "word": "POESI",
+          "clue": "Konstform med rytm och språklig skönhet"
+        },
+        {
+          "word": "ROMAN",
+          "clue": "Långt litterärt berättarverk"
+        },
+        {
+          "word": "KONST",
+          "clue": "Mänskligt skapande för estetiskt värde"
+        },
+        {
+          "word": "KULTUR",
+          "clue": "Gemensamma värden och sedvänjor"
+        },
+        {
+          "word": "BALETT",
+          "clue": "Klassisk danskonst med musik"
+        },
+        {
+          "word": "SYMFONI",
+          "clue": "Stor komposition för orkester"
+        }
+      ]
+    }
+  ],
+  "stavningstest": [
+    {
+      "id": "stavningstest-1",
+      "title": "Stavningstest 1 – Akademisk svenska",
+      "description": "Grundläggande akademiska begrepp (Nivå 1)",
+      "icon": "⭐",
+      "pointsRequired": 0,
+      "bonusPoints": 30,
+      "timeLimit": 60,
+      "words": [
+        { "word": "argumentation", "clue": "Systematisk framläggning av skäl för en tes" },
+        { "word": "disposition", "clue": "Textens planerade uppbyggnad och struktur" },
+        { "word": "inledning", "clue": "Textens inledande del som introducerar ämnet" },
+        { "word": "avslutning", "clue": "Textens avslutande del med slutsatser" },
+        { "word": "parafrasera", "clue": "Återge innehåll med egna ord" },
+        { "word": "källförteckning", "clue": "Lista över använda källor i en text" },
+        { "word": "plagiat", "clue": "Att använda andras verk utan tillstånd" },
+        { "word": "kohesion", "clue": "Textbindning med pronomen och konnektiver" },
+        { "word": "koherens", "clue": "Logisk och tematisk sammanhållning i text" },
+        { "word": "register", "clue": "Språklig stilnivå anpassad till situation" },
+        { "word": "formellt", "clue": "Officiellt och högtidligt språkbruk" },
+        { "word": "vetenskapligt", "clue": "Baserat på systematisk och beprövad kunskap" },
+        { "word": "akademisk", "clue": "Högskolans och forskningens sfär" },
+        { "word": "normativt", "clue": "Föreskriver hur något bör vara" },
+        { "word": "deskriptivt", "clue": "Beskriver hur något faktiskt är" },
+        { "word": "deduktiv", "clue": "Slutledning från allmänt till specifikt" },
+        { "word": "induktiv", "clue": "Slutledning från specifikt till allmänt" },
+        { "word": "abduktiv", "clue": "Slutledning till bästa förklaring" },
+        { "word": "triangulering", "clue": "Flera metoder används för att bekräfta resultat" },
+        { "word": "falsifierbarhet", "clue": "Möjligheten att motbevisa en teori" }
+      ]
+    },
+    {
+      "id": "stavningstest-2",
+      "title": "Stavningstest 2 – Filosofi och idéhistoria",
+      "description": "Filosofiska begrepp och ismer (Nivå 2)",
+      "icon": "⭐⭐",
+      "pointsRequired": 0,
+      "bonusPoints": 35,
+      "timeLimit": 60,
+      "words": [
+        { "word": "epistemologi", "clue": "Kunskapsteori – vad vi kan veta och hur" },
+        { "word": "ontologi", "clue": "Läran om verkligheten och varats natur" },
+        { "word": "metafysik", "clue": "Filosofi bortom det fysiskt iakttagbara" },
+        { "word": "etik", "clue": "Läran om rätt och fel handlande" },
+        { "word": "estetik", "clue": "Läran om skönhet och konstupplevelse" },
+        { "word": "logik", "clue": "Läran om korrekt slutledning" },
+        { "word": "utilitarism", "clue": "Etik baserad på störst möjliga lycka" },
+        { "word": "deontologi", "clue": "Pliktetik – handlingens inneboende värde" },
+        { "word": "dygdetik", "clue": "Fokus på karaktär och dygder" },
+        { "word": "kontraktualism", "clue": "Moralens grund är ett tänkt kontrakt" },
+        { "word": "nihilism", "clue": "Avfärdar alla värden och mening" },
+        { "word": "existentialism", "clue": "Tillvaron föregår essensen – individen skapar sig" },
+        { "word": "absurdism", "clue": "Camus syn på livets meningslöshet och revolt" },
+        { "word": "pragmatism", "clue": "Sanningen prövas av praktiska konsekvenser" },
+        { "word": "marxism", "clue": "Materialistisk historiesyn och klasskamp" },
+        { "word": "liberalism", "clue": "Ideologi som betonar individens frihet" },
+        { "word": "konservatism", "clue": "Ideologi som värnar tradition och stabilitet" },
+        { "word": "feminism", "clue": "Rörelse för jämlikhet mellan könen" },
+        { "word": "postmodernism", "clue": "Ifrågasätter stora berättelser och sanning" },
+        { "word": "konstruktivism", "clue": "Verkligheten konstrueras socialt" }
+      ]
+    },
+    {
+      "id": "stavningstest-3",
+      "title": "Stavningstest 3 – Litteraturvetenskap",
+      "description": "Avancerad litteraturanalys (Nivå 3)",
+      "icon": "⭐⭐⭐",
+      "pointsRequired": 0,
+      "bonusPoints": 40,
+      "timeLimit": 60,
+      "words": [
+        { "word": "intertextualitet", "clue": "Texters relation till och dialog med varandra" },
+        { "word": "narratologi", "clue": "Vetenskaplig studie av berättarstrukturer" },
+        { "word": "fokalisering", "clue": "Gérard Genettes begrepp för vem som ser" },
+        { "word": "metalepsis", "clue": "Berättaren bryter gränsen mellan nivåerna" },
+        { "word": "intradiegetisk", "clue": "Berättare som är del av sin berättelses värld" },
+        { "word": "extradiegetisk", "clue": "Berättare utanför berättelsenivån" },
+        { "word": "homodiegetisk", "clue": "Berättare som är karaktär i egna historia" },
+        { "word": "heterodiegetisk", "clue": "Berättare som inte är del av handlingen" },
+        { "word": "polyfonisk", "clue": "Roman med flera likvärdiga röster – Bachtin" },
+        { "word": "dialogism", "clue": "Bachtins teori om ord i ständig dialog" },
+        { "word": "karnevalisering", "clue": "Bachtins begrepp för subversiv humor" },
+        { "word": "dekonstruktion", "clue": "Derridas analys av textens inre spänningar" },
+        { "word": "logocentrism", "clue": "Privilegiering av tal framför skrift" },
+        { "word": "apori", "clue": "Oupplöslig logisk svårighet i texten" },
+        { "word": "palimpsest", "clue": "Text skriven ovan en annan, nu synlig äldre" },
+        { "word": "intertextuell", "clue": "Som hänvisar till eller beror på andra texter" },
+        { "word": "paratext", "clue": "Titel, omslag och noter runt en text" },
+        { "word": "hyperdiegesis", "clue": "Detaljrik världsskapande i en berättelse" },
+        { "word": "postkolonialt", "clue": "Perspektiv som granskar kolonialt arv" },
+        { "word": "subaltern", "clue": "Spivaks begrepp för den marginaliserades röst" }
+      ]
+    },
+    {
+      "id": "stavningstest-4",
+      "title": "Stavningstest 4 – Samhällsvetenskap",
+      "description": "Sociologi, statsvetenskap och ekonomi (Nivå 4)",
+      "icon": "⭐⭐⭐⭐",
+      "pointsRequired": 0,
+      "bonusPoints": 45,
+      "timeLimit": 60,
+      "words": [
+        { "word": "socialisering", "clue": "Processen att lära sig samhällets normer" },
+        { "word": "habitus", "clue": "Bourdieus begrepp för inbyggda dispositioner" },
+        { "word": "kulturellt kapital", "clue": "Bourdieu – kunskap och bildning som resurs" },
+        { "word": "intersektionalitet", "clue": "Samverkan mellan kön, klass, etnicitet m.m." },
+        { "word": "performativitet", "clue": "Butlers teori – kön som upprepade handlingar" },
+        { "word": "hegemoni", "clue": "Gramscis begrepp för kulturell dominans" },
+        { "word": "diskurs", "clue": "Foucaults begrepp för maktladdade utsagor" },
+        { "word": "governmentalitet", "clue": "Foucaults begrepp om styrning av beteenden" },
+        { "word": "biopolitik", "clue": "Statlig makt utövad över befolkningens liv" },
+        { "word": "normalisering", "clue": "Processen att göra avvikande till normalt" },
+        { "word": "stigmatisering", "clue": "Märkning av grupp som socialt avvikande" },
+        { "word": "marginalisering", "clue": "Utestängning från samhällets maktcentrum" },
+        { "word": "segregation", "clue": "Separation av grupper i samhället" },
+        { "word": "inkludering", "clue": "Aktiv integration av alla i samhällslivet" },
+        { "word": "xenofobi", "clue": "Rädsla och hat mot utlänningar" },
+        { "word": "etnocentrism", "clue": "Värdering av andra kulturer utifrån sin egen" },
+        { "word": "relativism", "clue": "Kulturers värden bedöms på egna villkor" },
+        { "word": "multikulturalism", "clue": "Erkännande och respekt för kulturell mångfald" },
+        { "word": "transnationell", "clue": "Sträcker sig över nationella gränser" },
+        { "word": "diaspora", "clue": "Spridning av ett folk utanför ursprungslandet" }
+      ]
+    },
+    {
+      "id": "stavningstest-5",
+      "title": "Stavningstest 5 – Svåraste ord",
+      "description": "De mest avancerade gymnasieorden (Nivå 5)",
+      "icon": "⭐⭐⭐⭐⭐",
+      "pointsRequired": 0,
+      "bonusPoints": 50,
+      "timeLimit": 60,
+      "words": [
+        { "word": "epistemologisk", "clue": "Rör frågorna om kunskapens möjlighet" },
+        { "word": "ontologisk", "clue": "Rör frågorna om varats och existensens natur" },
+        { "word": "axiologisk", "clue": "Rör frågorna om värden och värderingar" },
+        { "word": "teleologisk", "clue": "Inriktad på mål och ändamål" },
+        { "word": "deontologisk", "clue": "Rör plikt och regler oberoende av konsekvens" },
+        { "word": "hermeneutisk", "clue": "Tolkningsrelaterad, cirkulär förståelseprocess" },
+        { "word": "fenomenologisk", "clue": "Rör den direkta upplevelsen av fenomen" },
+        { "word": "dialektisk", "clue": "Rör motsatsernas rörelse mot syntes" },
+        { "word": "metanarration", "clue": "Berättelse om berättandets villkor" },
+        { "word": "autoreflektion", "clue": "Text som reflekterar över sin egen status" },
+        { "word": "interdisciplinär", "clue": "Rör flera akademiska discipliner" },
+        { "word": "komparativ", "clue": "Jämförande – ställer fenomen mot varandra" },
+        { "word": "longitudinell", "clue": "Studie som följer samma objekt över tid" },
+        { "word": "kvantitativ", "clue": "Mätbar och sifferbaserad metod" },
+        { "word": "kvalitativ", "clue": "Tolkande och djupgående metod" },
+        { "word": "representativitet", "clue": "Urvalets förmåga att spegla helheten" },
+        { "word": "generaliserbarhet", "clue": "Resultatens giltighet för bredare grupp" },
+        { "word": "signifikans", "clue": "Statistisk säkerhet på ett resultat" },
+        { "word": "paradigm", "clue": "Kuhns begrepp för vetenskapens normalfas" },
+        { "word": "falsifikation", "clue": "Poppers princip om teoriers motbevisbarhet" }
       ]
     }
   ]

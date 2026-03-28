@@ -4,7 +4,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Header from "@/components/ui/Header";
-import { loadStudent, createStudent, clearStudent } from "@/lib/storage";
+import { loadStudent, createStudent, clearStudent, studentExists } from "@/lib/storage";
 import { STAGES } from "@/lib/stages";
 import { AVATARS } from "@/lib/avatars";
 import { BlurFade } from "@/components/magicui/blur-fade";
@@ -23,11 +23,17 @@ export default function HomePage() {
   const [nameInput, setNameInput] = useState("");
   const [selectedAvatar, setSelectedAvatar] = useState("ninja");
   const [loading, setLoading] = useState(true);
+  const [isReturning, setIsReturning] = useState(false);
 
   useEffect(() => {
     setStudent(loadStudent());
     setLoading(false);
   }, []);
+
+  function handleNameChange(value: string) {
+    setNameInput(value);
+    setIsReturning(studentExists(value.trim()));
+  }
 
   function handleLogin(e: React.FormEvent) {
     e.preventDefault();
@@ -57,58 +63,64 @@ export default function HomePage() {
         className="min-h-screen flex items-center justify-center p-4"
         style={{ background: "linear-gradient(135deg, #fed7aa 0%, #fef3c7 30%, #fde68a 60%, #d9f99d 100%)" }}
       >
-        <BlurFade className="w-full max-w-md flex-shrink-0">
+        <BlurFade className="w-full max-w-sm flex-shrink-0">
           {/* Title */}
-          <div className="text-center mb-6">
+          <div className="text-center mb-4">
             <div
-              className="inline-flex items-center justify-center w-24 h-24 rounded-3xl mb-4 text-5xl animate-float border-4 border-white/60"
+              className="inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-3 animate-float border-4 border-white/60 overflow-hidden"
               style={{
-                background: "linear-gradient(135deg, #f97316, #ea6c0a)",
-                boxShadow: "0 8px 0 0 rgba(234,108,10,0.4), 0 12px 24px -4px rgba(249,115,22,0.3), inset 0 4px 8px 0 rgba(255,255,255,0.3)"
+                boxShadow: "0 6px 0 0 rgba(0,106,167,0.4), 0 10px 20px -4px rgba(0,106,167,0.3)"
               }}
             >
-              🇸🇪
+              <img src="/icon.svg" alt="Svensk flagga" className="w-full h-full" />
             </div>
-            <h1 className="text-5xl font-black tracking-tight drop-shadow-sm" style={{ color: "#7c2d12" }}>
+            <h1 className="text-3xl font-black tracking-tight drop-shadow-sm" style={{ color: "#7c2d12" }}>
               Svenskajakten
             </h1>
-            <p className="mt-2 text-lg font-bold" style={{ color: "#f97316" }}>
+            <p className="mt-1 text-sm font-bold" style={{ color: "#f97316" }}>
               Lär dig svenska på ett roligt sätt!
             </p>
           </div>
 
           {/* Login card */}
           <div
-            className="bg-white rounded-4xl p-8 border-3 border-sv-100"
+            className="bg-white rounded-3xl p-5 border-3 border-sv-100"
             style={{ boxShadow: "0 8px 0 0 rgba(249,115,22,0.12), 0 16px 32px -8px rgba(249,115,22,0.18), inset 0 4px 8px 0 rgba(255,255,255,0.8)" }}
           >
-            <h2 className="text-2xl font-black mb-1" style={{ color: "#7c2d12" }}>Välkommen!</h2>
-            <p className="text-sv-400 text-base mb-6 font-medium">
+            <h2 className="text-xl font-black mb-0.5" style={{ color: "#7c2d12" }}>Välkommen!</h2>
+            <p className="text-sv-400 text-sm mb-4 font-medium">
               Skriv ditt namn för att börja eller fortsätta.
             </p>
 
-            <form onSubmit={handleLogin} className="space-y-5">
-              <input
-                type="text"
-                value={nameInput}
-                onChange={(e) => setNameInput(e.target.value)}
-                placeholder="Ditt namn..."
-                className="input-field text-xl"
-                autoFocus
-                maxLength={30}
-              />
+            <form onSubmit={handleLogin} className="space-y-4">
+              <div className="relative">
+                <input
+                  type="text"
+                  value={nameInput}
+                  onChange={(e) => handleNameChange(e.target.value)}
+                  placeholder="Ditt namn..."
+                  className="input-field text-base w-full"
+                  autoFocus
+                  maxLength={30}
+                />
+                {isReturning && (
+                  <p className="mt-1.5 text-xs font-bold text-emerald-600 flex items-center gap-1">
+                    <span>✅</span> Välkommen tillbaka! Din data är sparad.
+                  </p>
+                )}
+              </div>
 
               {/* Avatar selection */}
               <div>
-                <p className="text-base font-bold mb-3" style={{ color: "#c2570a" }}>Välj din karaktär</p>
-                <div className="grid grid-cols-5 gap-3">
+                <p className="text-sm font-bold mb-2" style={{ color: "#c2570a" }}>Välj din karaktär</p>
+                <div className="grid grid-cols-5 gap-2">
                   {AVATARS.map((avatar) => (
                     <button
                       key={avatar.id}
                       type="button"
                       onClick={() => setSelectedAvatar(avatar.id)}
                       title={avatar.name}
-                      className={`aspect-square rounded-2xl flex items-center justify-center transition-all duration-200 overflow-hidden text-2xl cursor-pointer border-3 ${
+                      className={`aspect-square rounded-xl flex items-center justify-center transition-all duration-200 overflow-hidden text-xl cursor-pointer border-3 ${
                         selectedAvatar === avatar.id
                           ? "border-sang-400 scale-110 bg-sang-50"
                           : "border-sv-100 bg-sv-50 hover:border-sv-300 hover:scale-105"
@@ -125,7 +137,7 @@ export default function HomePage() {
                     </button>
                   ))}
                 </div>
-                <p className="text-sm font-bold mt-3 text-center" style={{ color: "#f97316" }}>
+                <p className="text-xs font-bold mt-2 text-center" style={{ color: "#f97316" }}>
                   {AVATARS.find((a) => a.id === selectedAvatar)?.name}
                 </p>
               </div>
@@ -133,10 +145,10 @@ export default function HomePage() {
               <button
                 type="submit"
                 disabled={!nameInput.trim()}
-                className="w-full btn-primary text-xl py-4 rounded-2xl border-3 border-sv-400 disabled:from-gray-200 disabled:to-gray-300 disabled:text-gray-400 disabled:border-gray-200"
+                className="w-full btn-primary text-base py-3 rounded-xl border-3 border-sv-400 disabled:from-gray-200 disabled:to-gray-300 disabled:text-gray-400 disabled:border-gray-200"
                 style={{ background: nameInput.trim() ? "linear-gradient(135deg, #f97316, #ea6c0a)" : undefined }}
               >
-                Starta jakten! 🚀
+                {isReturning ? "Fortsätt jakten! 🏆" : "Starta jakten! 🚀"}
               </button>
             </form>
           </div>

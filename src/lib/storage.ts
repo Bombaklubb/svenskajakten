@@ -1,8 +1,13 @@
 import type { StudentData, StageId, ModuleProgress, StageProgress, HeroConfig, GamificationData } from "./types";
 import { defaultGamificationData } from "./gamification";
 
-const GAMIFICATION_KEY = "svenskajakten_gamification";
-const STORAGE_KEY = "svenskajakten_student";
+// Legacy key (single student) – kept only for migration
+const LEGACY_KEY = "svenskajakten_student";
+const LEGACY_GAMIFICATION_KEY = "svenskajakten_gamification";
+
+// New keys
+const STUDENTS_KEY = "svenskajakten_students"; // Record<name, StudentData>
+const CURRENT_KEY = "svenskajakten_current";   // currently logged-in name
 
 function emptyStageProgress(stageId: StageId): StageProgress {
   return {
@@ -11,6 +16,7 @@ function emptyStageProgress(stageId: StageId): StageProgress {
     readingModules: {},
     spellingModules: {},
     wordsearchModules: {},
+    stavningstestModules: {},
   };
 }
 
@@ -30,25 +36,87 @@ function defaultStudentData(name: string): StudentData {
   };
 }
 
+function getAllStudents(): Record<string, StudentData> {
+  if (typeof window === "undefined") return {};
+  try {
+    const raw = localStorage.getItem(STUDENTS_KEY);
+    if (!raw) return {};
+    return JSON.parse(raw) as Record<string, StudentData>;
+  } catch {
+    return {};
+  }
+}
+
+function saveAllStudents(all: Record<string, StudentData>): void {
+  if (typeof window === "undefined") return;
+  localStorage.setItem(STUDENTS_KEY, JSON.stringify(all));
+}
+
+function getCurrentName(): string | null {
+  if (typeof window === "undefined") return null;
+  return localStorage.getItem(CURRENT_KEY);
+}
+
+function getGamificationKey(): string {
+  const name = getCurrentName();
+  if (name) return `${LEGACY_GAMIFICATION_KEY}_${name}`;
+  return LEGACY_GAMIFICATION_KEY;
+}
+
+/** Migrate old single-student data into the new per-student store */
+function migrateIfNeeded(): void {
+  if (typeof window === "undefined") return;
+  const legacy = localStorage.getItem(LEGACY_KEY);
+  if (!legacy) return;
+  try {
+    const data = JSON.parse(legacy) as StudentData;
+    if (!data.name) return;
+    const all = getAllStudents();
+    if (!all[data.name]) {
+      all[data.name] = data;
+      saveAllStudents(all);
+      // Migrate gamification too
+      const legacyGam = localStorage.getItem(LEGACY_GAMIFICATION_KEY);
+      if (legacyGam) {
+        localStorage.setItem(`${LEGACY_GAMIFICATION_KEY}_${data.name}`, legacyGam);
+      }
+    }
+    localStorage.removeItem(LEGACY_KEY);
+  } catch {
+    // ignore
+  }
+}
+
 export function loadStudent(): StudentData | null {
   if (typeof window === "undefined") return null;
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return null;
-    return JSON.parse(raw) as StudentData;
-  } catch {
-    return null;
-  }
+  migrateIfNeeded();
+  const name = getCurrentName();
+  if (!name) return null;
+  const all = getAllStudents();
+  return all[name] ?? null;
 }
 
 export function saveStudent(data: StudentData): void {
   if (typeof window === "undefined") return;
   data.lastActive = new Date().toISOString();
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+  const all = getAllStudents();
+  all[data.name] = data;
+  saveAllStudents(all);
+  localStorage.setItem(CURRENT_KEY, data.name);
 }
 
 export function createStudent(name: string, avatar?: string): StudentData {
-  const data = defaultStudentData(name.trim());
+  const trimmed = name.trim();
+  migrateIfNeeded();
+  const all = getAllStudents();
+  const existing = all[trimmed];
+  if (existing) {
+    // Restore existing student; update avatar only if explicitly chosen
+    if (avatar) existing.avatar = avatar;
+    saveStudent(existing);
+    return existing;
+  }
+  const data = defaultStudentData(trimmed);
   if (avatar) data.avatar = avatar;
   saveStudent(data);
   return data;
@@ -56,7 +124,15 @@ export function createStudent(name: string, avatar?: string): StudentData {
 
 export function clearStudent(): void {
   if (typeof window === "undefined") return;
-  localStorage.removeItem(STORAGE_KEY);
+  // Only clear the session pointer – student data stays in STUDENTS_KEY
+  localStorage.removeItem(CURRENT_KEY);
+}
+
+export function studentExists(name: string): boolean {
+  if (typeof window === "undefined") return false;
+  migrateIfNeeded();
+  const all = getAllStudents();
+  return !!all[name.trim()];
 }
 
 export function saveHero(hero: HeroConfig): void {
@@ -69,7 +145,7 @@ export function saveHero(hero: HeroConfig): void {
 export function getModuleProgress(
   data: StudentData,
   stageId: StageId,
-  kind: "grammar" | "reading" | "spelling" | "wordsearch",
+  kind: "grammar" | "reading" | "spelling" | "wordsearch" | "stavningstest",
   moduleId: string
 ): ModuleProgress | null {
   const stage = data.stages[stageId];
@@ -77,6 +153,7 @@ export function getModuleProgress(
     kind === "grammar" ? stage.grammarModules
     : kind === "reading" ? stage.readingModules
     : kind === "spelling" ? (stage.spellingModules ?? {})
+    : kind === "stavningstest" ? (stage.stavningstestModules ?? {})
     : (stage.wordsearchModules ?? {});
   return map[moduleId] ?? null;
 }
@@ -84,7 +161,7 @@ export function getModuleProgress(
 export function saveModuleProgress(
   data: StudentData,
   stageId: StageId,
-  kind: "grammar" | "reading" | "spelling" | "wordsearch",
+  kind: "grammar" | "reading" | "spelling" | "wordsearch" | "stavningstest",
   moduleId: string,
   points: number,
   completed: boolean
@@ -92,10 +169,12 @@ export function saveModuleProgress(
   const stage = data.stages[stageId];
   if (!stage.spellingModules) stage.spellingModules = {};
   if (!stage.wordsearchModules) stage.wordsearchModules = {};
+  if (!stage.stavningstestModules) stage.stavningstestModules = {};
   const map =
     kind === "grammar" ? stage.grammarModules
     : kind === "reading" ? stage.readingModules
     : kind === "spelling" ? stage.spellingModules
+    : kind === "stavningstest" ? stage.stavningstestModules
     : stage.wordsearchModules;
   const existing = map[moduleId];
   const prevPoints = existing?.points ?? 0;
@@ -117,9 +196,12 @@ export function saveModuleProgress(
 export function loadGamification(): GamificationData {
   if (typeof window === "undefined") return defaultGamificationData();
   try {
-    const raw = localStorage.getItem(GAMIFICATION_KEY);
+    const raw = localStorage.getItem(getGamificationKey());
     if (!raw) return defaultGamificationData();
-    return JSON.parse(raw) as GamificationData;
+    const data = JSON.parse(raw) as GamificationData;
+    // Migration: ensure new fields exist for existing users
+    if (!data.achievementsRewarded) data.achievementsRewarded = [];
+    return data;
   } catch {
     return defaultGamificationData();
   }
@@ -127,12 +209,12 @@ export function loadGamification(): GamificationData {
 
 export function saveGamification(data: GamificationData): void {
   if (typeof window === "undefined") return;
-  localStorage.setItem(GAMIFICATION_KEY, JSON.stringify(data));
+  localStorage.setItem(getGamificationKey(), JSON.stringify(data));
 }
 
 export function clearGamification(): void {
   if (typeof window === "undefined") return;
-  localStorage.removeItem(GAMIFICATION_KEY);
+  localStorage.removeItem(getGamificationKey());
 }
 
 export function exportProgress(data: StudentData): void {

@@ -88,6 +88,7 @@ export default function BossPage() {
             bossLastAttempt: new Date().toISOString(),
             pointsMilestonesRewarded: currentGam.pointsMilestonesRewarded,
             exerciseMilestonesRewarded: currentGam.exerciseMilestonesRewarded,
+            achievementsRewarded: currentGam.achievementsRewarded ?? [],
           };
           saveGamification(newGam);
           setGam(newGam);
@@ -105,6 +106,7 @@ export default function BossPage() {
             bossLastAttempt: new Date().toISOString(),
             pointsMilestonesRewarded: currentGam.pointsMilestonesRewarded,
             exerciseMilestonesRewarded: currentGam.exerciseMilestonesRewarded,
+            achievementsRewarded: currentGam.achievementsRewarded ?? [],
           };
           saveGamification(newGam);
           setGam(newGam);
@@ -190,7 +192,7 @@ export default function BossPage() {
             <ul className="space-y-2 text-sm text-gray-600">
               <li className="flex items-start gap-2">
                 <span className="text-green-500 mt-0.5 flex-shrink-0">✓</span>
-                Vinn: Bonuspoäng + märket "Bossbesegrare" + trälåda!
+                Vinn: Bonuspoäng + märket "Bossbesegrare" + bronskista!
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-orange-500 mt-0.5 flex-shrink-0">↺</span>
@@ -378,7 +380,7 @@ export default function BossPage() {
               </div>
               <div className="bg-white rounded-2xl p-3 border border-green-200">
                 <p className="text-2xl">📦</p>
-                <p className="text-xs text-green-500">Trälåda!</p>
+                <p className="text-xs text-green-500">Bronskista!</p>
               </div>
             </div>
 

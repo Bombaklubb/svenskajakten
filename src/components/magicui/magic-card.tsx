@@ -56,7 +56,7 @@ export function MagicCard({
         ref={gradientRef}
         className="pointer-events-none absolute inset-0 z-0 opacity-0 transition-opacity duration-300"
       />
-      <div className="relative z-10">{children}</div>
+      <div className="relative z-10 h-full">{children}</div>
     </div>
   );
 }

@@ -4,14 +4,20 @@ import type { ChestType } from "@/lib/types";
 import { Button } from "@/components/ui/button";
 
 const CHEST_LABELS: Record<ChestType, string> = {
-  wood: "Trälåda",
-  silver: "Silverlåda",
-  gold: "Guldlåda",
+  wood: "Bronskista",
+  silver: "Silverkista",
+  gold: "Guldkista",
+  emerald: "Smaragdkista",
+  ruby: "Rubinkista",
+  diamond: "Diamantkista",
 };
-const CHEST_EMOJIS: Record<ChestType, string> = {
-  wood: "📦",
-  silver: "🪙",
-  gold: "🏆",
+const CHEST_IMAGES: Record<ChestType, string> = {
+  wood: "/content/bronskista.png",
+  silver: "/content/silverkista.png",
+  gold: "/content/guldkista.png",
+  emerald: "/content/smaragdkista.png",
+  ruby: "/content/rubinkista.png",
+  diamond: "/content/diamantkista.png",
 };
 
 interface ResultModalProps {
@@ -23,6 +29,8 @@ interface ResultModalProps {
   bossUnlocked?: boolean;
   onContinue: () => void;
   onRetry: () => void;
+  passedOverride?: boolean;
+  subtitle?: string;
 }
 
 export default function ResultModal({
@@ -34,9 +42,11 @@ export default function ResultModal({
   bossUnlocked,
   onContinue,
   onRetry,
+  passedOverride,
+  subtitle,
 }: ResultModalProps) {
   const pct = Math.round((totalCorrect / totalQuestions) * 100);
-  const passed = pct >= 60;
+  const passed = passedOverride !== undefined ? passedOverride : pct >= 60;
 
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fade-in">
@@ -52,9 +62,9 @@ export default function ResultModal({
           {passed ? "Bra jobbat!" : "Försök igen!"}
         </h2>
         <p className="text-sv-400 dark:text-gray-400 mb-6 text-base font-medium">
-          {passed
+          {subtitle ?? (passed
             ? "Du klarade övningen med godkänt resultat."
-            : "Du är nästan framme – öva lite till!"}
+            : "Du är nästan framme – öva lite till!")}
         </p>
 
         {/* Score ring */}
@@ -101,7 +111,7 @@ export default function ResultModal({
 
         {chestEarned && (
           <div className="bg-amber-50 dark:bg-amber-900/30 border-2 border-amber-300 dark:border-amber-600 rounded-2xl p-3 mb-3 flex items-center gap-3">
-            <span className="text-3xl">{CHEST_EMOJIS[chestEarned]}</span>
+            <img src={CHEST_IMAGES[chestEarned]} alt={CHEST_LABELS[chestEarned]} className="w-10 h-10 object-contain" />
             <div className="text-left">
               <p className="text-sm font-bold text-amber-800 dark:text-amber-300">
                 Du fick en {CHEST_LABELS[chestEarned]}!

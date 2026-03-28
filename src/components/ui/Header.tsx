@@ -52,15 +52,18 @@ export default function Header({ student, onLogout }: HeaderProps) {
           href="/"
           className="flex items-center gap-2 hover:scale-105 transition-transform min-w-0 flex-shrink-0"
         >
-          <div
-            className="w-10 h-10 rounded-xl flex items-center justify-center text-2xl"
-            style={{
-              background: "linear-gradient(135deg, #f97316, #ea6c0a)",
-              boxShadow: "0 3px 0 0 rgba(234,108,10,0.4), inset 0 1px 0 rgba(255,255,255,0.2)"
-            }}
+          <svg
+            width="40"
+            height="40"
+            viewBox="0 0 40 40"
+            xmlns="http://www.w3.org/2000/svg"
+            className="flex-shrink-0"
+            style={{ filter: "drop-shadow(0 3px 0 rgba(0,60,100,0.35))" }}
           >
-            🇸🇪
-          </div>
+            <rect width="40" height="40" rx="10" fill="#006AA7" />
+            <rect y="15" width="40" height="10" fill="#FECC02" />
+            <rect x="13" y="0" width="10" height="40" fill="#FECC02" />
+          </svg>
           <span className="font-black text-xl text-sv-800 dark:text-white hidden sm:block tracking-tight">
             Svenskajakten
           </span>

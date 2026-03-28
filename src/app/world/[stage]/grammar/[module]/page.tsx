@@ -14,9 +14,11 @@ import { loadStudent, saveModuleProgress, loadGamification, saveGamification } f
 import {
   chestsEarnedFromPoints,
   chestsEarnedFromExercises,
+  chestsEarnedFromAchievements,
   rollMysteryBox,
   BOSS_UNLOCK_THRESHOLD,
 } from "@/lib/gamification";
+import { ACHIEVEMENTS, isUnlocked } from "@/lib/achievements";
 import MysteryBoxPopup from "@/components/ui/MysteryBoxPopup";
 import type { ChestType, MysteryBoxReward } from "@/lib/types";
 import { getStage } from "@/lib/stages";
@@ -110,9 +112,14 @@ export default function GrammarModulePage({ params }: Props) {
         const pointChests = chestsEarnedFromPoints(prevPoints, newPoints, gam.pointsMilestonesRewarded);
         const exChests = chestsEarnedFromExercises(prevExercises, newExercises, gam.exerciseMilestonesRewarded);
 
+        const prevUnlocked = ACHIEVEMENTS.filter((a) => isUnlocked(a, student)).map((a) => a.id);
+        const nowUnlocked = ACHIEVEMENTS.filter((a) => isUnlocked(a, updated)).map((a) => a.id);
+        const achChests = chestsEarnedFromAchievements(prevUnlocked, nowUnlocked, gam.achievementsRewarded ?? []);
+
         const allNewChests = [
           ...pointChests.map((c) => c.chest),
           ...exChests.map((c) => c.chest),
+          ...achChests.map((c) => c.chest),
         ];
         const firstChest = allNewChests[0];
 
@@ -136,6 +143,7 @@ export default function GrammarModulePage({ params }: Props) {
           bossUnlocked: nowBossUnlocked,
           pointsMilestonesRewarded: [...gam.pointsMilestonesRewarded, ...pointChests.map((c) => c.milestone)],
           exerciseMilestonesRewarded: [...gam.exerciseMilestonesRewarded, ...exChests.map((c) => c.milestone)],
+          achievementsRewarded: [...(gam.achievementsRewarded ?? []), ...achChests.map((c) => c.achievementId)],
         };
         saveGamification(newGam);
 

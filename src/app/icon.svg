@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <clipPath id="rounded">
+      <rect width="100" height="100" rx="18"/>
+    </clipPath>
+  </defs>
+  <!-- Blue background -->
+  <rect width="100" height="100" rx="18" fill="#006AA7"/>
+  <!-- Yellow horizontal stripe -->
+  <rect y="39" width="100" height="22" fill="#FECC02" clip-path="url(#rounded)"/>
+  <!-- Yellow vertical stripe (slightly left of center, classic Swedish flag) -->
+  <rect x="27" width="22" height="100" fill="#FECC02" clip-path="url(#rounded)"/>
+  <!-- White bold "S" in lower-right blue field -->
+  <text
+    x="69"
+    y="88"
+    font-family="Georgia, serif"
+    font-weight="900"
+    font-size="52"
+    fill="white"
+    text-anchor="middle"
+    opacity="0.95"
+  >S</text>
+</svg>

@@ -14,18 +14,19 @@ const REWARD_ICONS: Record<string, string> = {
   badge: "🎖️",
 };
 
-const CHEST_ICONS: Record<string, string> = {
-  wood: "📦",
-  silver: "🪙",
-  gold: "🏆",
+const CHEST_IMAGES: Record<string, string> = {
+  wood: "/content/bronskista.png",
+  silver: "/content/silverkista.png",
+  gold: "/content/guldkista.png",
 };
 
 export default function MysteryBoxPopup({ reward, onClose }: MysteryBoxPopupProps) {
   const [opened, setOpened] = useState(false);
 
-  const icon = reward.type === "chest" && reward.chestType
-    ? CHEST_ICONS[reward.chestType]
-    : REWARD_ICONS[reward.type];
+  const chestImage = reward.type === "chest" && reward.chestType
+    ? CHEST_IMAGES[reward.chestType]
+    : null;
+  const icon = chestImage ? null : REWARD_ICONS[reward.type];
 
   return (
     <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[60] p-4 animate-fade-in">
@@ -42,10 +43,10 @@ export default function MysteryBoxPopup({ reward, onClose }: MysteryBoxPopupProp
               🎁
             </div>
             <h2 className="text-2xl font-black mb-2" style={{ color: "#006AA7" }}>
-              Mysterylåda!
+              Mysterykista!
             </h2>
             <p className="text-gray-500 dark:text-gray-400 mb-6 text-sm">
-              Du hittade en mysterylåda! Klicka för att öppna den.
+              Du hittade en mysterykista! Klicka för att öppna den.
             </p>
             <button
               onClick={() => setOpened(true)}
@@ -56,16 +57,20 @@ export default function MysteryBoxPopup({ reward, onClose }: MysteryBoxPopupProp
                 boxShadow: "0 4px 12px rgba(0,74,117,0.4), inset 0 1px 0 rgba(255,255,255,0.2)",
               }}
             >
-              Öppna lådan!
+              Öppna kistan!
             </button>
           </>
         ) : (
           <>
             <div
-              className="text-7xl mb-4 select-none"
+              className="mb-4 flex items-center justify-center select-none"
               style={{ animation: "pop 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97)" }}
             >
-              {icon}
+              {chestImage ? (
+                <img src={chestImage} alt="kista" className="w-24 h-24 object-contain drop-shadow-lg" />
+              ) : (
+                <span className="text-7xl">{icon}</span>
+              )}
             </div>
             <h2 className="text-2xl font-black mb-2" style={{ color: "#006AA7" }}>
               Du vann!
