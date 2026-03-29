@@ -126,10 +126,10 @@ export default function GrammarModulePage({ params }: Props) {
             </div>
 
             {currentExercise.type === "multiple-choice" && (
-              <MultipleChoice exercise={currentExercise} onAnswer={handleAnswer} isLast={currentIdx + 1 === exercises.length} />
+              <MultipleChoice key={currentIdx} exercise={currentExercise} onAnswer={handleAnswer} isLast={currentIdx + 1 === exercises.length} />
             )}
             {currentExercise.type === "fill-in-blank" && (
-              <FillInBlank exercise={currentExercise} onAnswer={handleAnswer} isLast={currentIdx + 1 === exercises.length} />
+              <FillInBlank key={currentIdx} exercise={currentExercise} onAnswer={handleAnswer} isLast={currentIdx + 1 === exercises.length} />
             )}
           </div>
         )}

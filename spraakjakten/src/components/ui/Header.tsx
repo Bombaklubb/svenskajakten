@@ -48,9 +48,9 @@ export default function Header({ student, onLogout }: HeaderProps) {
     >
       <div className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link
-          href="/"
-          className="flex items-center gap-2 hover:scale-105 transition-transform min-w-0 flex-shrink-0"
+        <button
+          onClick={() => { clearStudent(); router.push("/"); }}
+          className="flex items-center gap-2 hover:scale-105 transition-transform min-w-0 flex-shrink-0 cursor-pointer"
         >
           <div className="w-10 h-10 flex items-center justify-center text-2xl animate-float flex-shrink-0">
             🔍
@@ -58,7 +58,7 @@ export default function Header({ student, onLogout }: HeaderProps) {
           <span className="font-black text-xl text-sj-800 dark:text-white hidden sm:block tracking-tight">
             Språkjakten
           </span>
-        </Link>
+        </button>
 
         {/* Nav */}
         {student && (

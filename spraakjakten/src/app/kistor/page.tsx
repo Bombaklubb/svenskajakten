@@ -1,12 +1,22 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/ui/Header";
 import { loadStudent, loadGamification, saveGamification } from "@/lib/storage";
-import { CHEST_LABELS, CHEST_EMOJIS, CHEST_COLORS } from "@/lib/gamification";
+import { CHEST_LABELS, CHEST_COLORS } from "@/lib/gamification";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import type { StudentData, GamificationData, Chest } from "@/lib/types";
+
+const CHEST_IMAGES: Record<string, string> = {
+  wood:    "/bronskista.png",
+  silver:  "/silverkista.png",
+  gold:    "/guldkista.png",
+  emerald: "/smaragdkista.png",
+  ruby:    "/rubinkista.png",
+  diamond: "/diamantkista.png",
+};
 
 const CHEST_REWARDS: Record<string, string[]> = {
   wood:    ["🌟 +15 bonuspoäng", "📚 Ordförrådstips", "💡 Gratis ledtråd"],
@@ -98,8 +108,19 @@ export default function KistorPage() {
                     }`}
                     style={{ boxShadow: "0 4px 0 0 rgba(245,158,11,0.3)" }}
                   >
-                    <div className={`bg-gradient-to-br ${CHEST_COLORS[chest.type]} px-4 py-5 flex flex-col items-center gap-2`}>
-                      <span className="text-4xl">{openingId === chest.id ? "✨" : CHEST_EMOJIS[chest.type]}</span>
+                    <div className={`bg-gradient-to-br ${CHEST_COLORS[chest.type]} px-4 py-4 flex flex-col items-center gap-1`}>
+                      <div className="relative w-20 h-20">
+                        {openingId === chest.id ? (
+                          <span className="absolute inset-0 flex items-center justify-center text-4xl">✨</span>
+                        ) : (
+                          <Image
+                            src={CHEST_IMAGES[chest.type]}
+                            alt={CHEST_LABELS[chest.type]}
+                            fill
+                            className="object-contain drop-shadow-lg"
+                          />
+                        )}
+                      </div>
                       <span className="text-white font-black text-xs">{CHEST_LABELS[chest.type]}</span>
                     </div>
                     <div className="bg-white dark:bg-gray-800 py-2 text-center text-xs font-bold text-sj-600">
@@ -129,27 +150,62 @@ export default function KistorPage() {
           </BlurFade>
         )}
 
-        {/* Opened chests */}
+        {/* Trophy shelf */}
         {opened.length > 0 && (
           <BlurFade delay={0.08}>
             <div className="card">
-              <h2 className="text-lg font-black text-gray-800 dark:text-gray-100 mb-4">
-                Öppnade ({opened.length})
+              <h2 className="text-lg font-black text-gray-800 dark:text-gray-100 mb-1">
+                🏆 Troféhylla ({opened.length})
               </h2>
-              <div className="space-y-2">
-                {opened.slice().reverse().map((chest) => (
+              <p className="text-xs text-gray-400 dark:text-gray-500 mb-4">Dina öppnade kistor</p>
+
+              {/* Shelf display */}
+              <div
+                className="relative rounded-2xl px-4 pt-4 pb-0 overflow-hidden"
+                style={{ background: "linear-gradient(180deg, #fef3c7 0%, #fde68a 100%)" }}
+              >
+                {/* Wood shelf plank */}
+                <div
+                  className="absolute bottom-0 left-0 right-0 h-5 rounded-b-2xl"
+                  style={{ background: "linear-gradient(180deg, #92400e, #78350f)" }}
+                />
+                <div className="flex flex-wrap gap-4 justify-center pb-6">
+                  {opened.slice().reverse().map((chest) => (
+                    <div key={chest.id} className="flex flex-col items-center gap-1">
+                      <div className="relative w-16 h-16 opacity-75">
+                        <Image
+                          src={CHEST_IMAGES[chest.type]}
+                          alt={CHEST_LABELS[chest.type]}
+                          fill
+                          className="object-contain drop-shadow-md"
+                        />
+                      </div>
+                      <span className="text-[10px] font-bold text-amber-800">{CHEST_LABELS[chest.type]}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Rewards list */}
+              <div className="mt-4 space-y-2">
+                {opened.slice().reverse().map((chest) => chest.openedReward && (
                   <div
                     key={chest.id}
-                    className="flex items-center gap-3 p-3 rounded-xl bg-gray-50 dark:bg-gray-700/50"
+                    className="flex items-center gap-3 px-3 py-2 rounded-xl bg-gray-50 dark:bg-gray-700/50"
                   >
-                    <span className="text-2xl opacity-50">{CHEST_EMOJIS[chest.type]}</span>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-sm font-bold text-gray-500 dark:text-gray-400">{CHEST_LABELS[chest.type]}</p>
-                      {chest.openedReward && (
-                        <p className="text-xs text-sj-600 dark:text-sj-400">{chest.openedReward}</p>
-                      )}
+                    <div className="relative w-8 h-8 flex-shrink-0">
+                      <Image
+                        src={CHEST_IMAGES[chest.type]}
+                        alt={CHEST_LABELS[chest.type]}
+                        fill
+                        className="object-contain opacity-60"
+                      />
                     </div>
-                    <span className="text-xs text-gray-400">✓ Öppnad</span>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-xs font-bold text-gray-400 dark:text-gray-500">{CHEST_LABELS[chest.type]}</p>
+                      <p className="text-sm text-sj-600 dark:text-sj-400 font-medium">{chest.openedReward}</p>
+                    </div>
+                    <span className="text-xs text-gray-400">✓</span>
                   </div>
                 ))}
               </div>
