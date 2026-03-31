@@ -60,15 +60,14 @@ function ChestCard({ chest, onOpen }: { chest: Chest; onOpen: (id: string) => vo
       <div
         className="mb-3 w-16 h-16 flex items-center justify-center"
         style={{
-          filter: chest.opened ? "grayscale(1)" : "none",
           animation: animating ? "shake 0.4s ease-in-out" : "none",
         }}
       >
-        {chest.opened ? (
-          <span className="text-5xl">🔓</span>
-        ) : (
-          <img src={meta.image} alt={meta.label} className="w-full h-full object-contain drop-shadow-lg" />
-        )}
+        <img
+          src={chest.opened ? meta.openImage : meta.image}
+          alt={meta.label}
+          className="w-full h-full object-contain drop-shadow-lg"
+        />
       </div>
       <span className={`text-sm font-bold mb-1 ${chest.opened ? "text-gray-400 dark:text-gray-500" : "text-white"}`}>
         {meta.label}
@@ -201,7 +200,7 @@ function TrophyShelf({ chests }: { chests: Chest[] }) {
               <div className="flex flex-wrap gap-4">
                 {items.map((chest) => (
                   <div key={chest.id} className="flex flex-col items-center gap-1 w-14">
-                    <img src={meta.image} alt={meta.label} className="w-8 h-8 object-contain drop-shadow" />
+                    <img src={meta.openImage} alt={meta.label} className="w-8 h-8 object-contain drop-shadow" />
                     {chest.openedReward && (
                       <span className="text-[10px] text-center text-gray-500 dark:text-gray-400 leading-tight line-clamp-2">
                         {chest.openedReward}
