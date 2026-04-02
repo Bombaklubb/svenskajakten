@@ -42,9 +42,9 @@ function ChestCard({ chest, onOpen }: { chest: Chest; onOpen: (id: string) => vo
   return (
     <div
       onClick={handleClick}
-      className={`relative flex flex-col items-center p-5 rounded-3xl transition-all cursor-pointer select-none ${
+      className={`relative flex items-center gap-4 px-5 py-4 rounded-3xl transition-all cursor-pointer select-none ${
         !chest.opened
-          ? `bg-gradient-to-br ${meta.color} hover:scale-105 active:scale-95`
+          ? `bg-gradient-to-br ${meta.color} hover:scale-[1.02] active:scale-[0.98]`
           : "bg-gray-100 dark:bg-gray-700 cursor-default opacity-60"
       }`}
       style={{
@@ -53,15 +53,14 @@ function ChestCard({ chest, onOpen }: { chest: Chest; onOpen: (id: string) => vo
         boxShadow: chest.opened
           ? "none"
           : "0 6px 20px rgba(0,0,0,0.15), 0 2px 6px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.3)",
-        transform: animating ? "scale(1.08) rotate(-3deg)" : "scale(1)",
+        transform: animating ? "scale(1.04) rotate(-1deg)" : "scale(1)",
         transition: "transform 0.15s ease-out, box-shadow 0.15s",
       }}
     >
+      {/* Chest image */}
       <div
-        className="mb-3 w-16 h-16 flex items-center justify-center"
-        style={{
-          animation: animating ? "shake 0.4s ease-in-out" : "none",
-        }}
+        className="w-16 h-16 flex-shrink-0 flex items-center justify-center"
+        style={{ animation: animating ? "shake 0.4s ease-in-out" : "none" }}
       >
         <img
           src={chest.opened ? meta.openImage : meta.image}
@@ -69,18 +68,25 @@ function ChestCard({ chest, onOpen }: { chest: Chest; onOpen: (id: string) => vo
           className="w-full h-full object-contain drop-shadow-lg"
         />
       </div>
-      <span className={`text-sm font-bold mb-1 ${chest.opened ? "text-gray-400 dark:text-gray-500" : "text-white"}`}>
-        {meta.label}
-      </span>
-      {chest.opened ? (
-        <span className="text-xs text-gray-400 dark:text-gray-500">Öppnad</span>
-      ) : (
-        <span className="text-xs text-white/80 mt-1">Tryck för att öppna</span>
-      )}
-      {chest.opened && chest.openedReward && (
-        <p className="mt-2 text-xs text-center text-gray-500 dark:text-gray-400 leading-snug">
-          {chest.openedReward}
+
+      {/* Text */}
+      <div className="flex-1 min-w-0">
+        <p className={`font-bold text-base ${chest.opened ? "text-gray-400 dark:text-gray-500" : "text-white"}`}>
+          {meta.label}
         </p>
+        {chest.opened ? (
+          <p className="text-xs text-gray-400 dark:text-gray-500">Öppnad</p>
+        ) : (
+          <p className="text-sm text-white/80">{meta.description}</p>
+        )}
+        {chest.opened && chest.openedReward && (
+          <p className="text-xs text-gray-500 dark:text-gray-400 leading-snug mt-0.5">{chest.openedReward}</p>
+        )}
+      </div>
+
+      {/* Open arrow */}
+      {!chest.opened && (
+        <span className="text-white/70 text-xl flex-shrink-0">→</span>
       )}
       <style jsx>{`
         @keyframes shake {
@@ -409,7 +415,7 @@ export default function KistorPage() {
                 </p>
               </div>
             ) : (
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+              <div className="flex flex-col gap-4">
                 {unopened.map((chest) => (
                   <ChestCard key={chest.id} chest={chest} onOpen={handleOpenChest} />
                 ))}
