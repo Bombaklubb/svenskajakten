@@ -142,7 +142,7 @@ export const BOSS_QUESTIONS = [
 // ─── Chest helpers ────────────────────────────────────────────────────────────
 
 export const CHEST_LABELS: Record<ChestType, string> = {
-  wood:    "Träkista",
+  wood:    "Bronskista",
   silver:  "Silverkista",
   gold:    "Guldkista",
   emerald: "Smaragdkista",
@@ -251,7 +251,7 @@ export function rollMysteryBox(gamData: GamificationData): {
     const chest = createChest("wood");
     updated.chests = [...updated.chests, chest];
     return {
-      reward: { type: "chest", chestType: "wood", description: "En träkista!" },
+      reward: { type: "chest", chestType: "wood", description: "En bronskista!" },
       updatedGam: updated,
     };
   } else {
