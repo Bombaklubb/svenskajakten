@@ -18,6 +18,15 @@ const CHEST_IMAGES: Record<string, string> = {
   diamond: "/diamantkista.png",
 };
 
+const OPENED_CHEST_IMAGES: Record<string, string> = {
+  wood:    "/oppen-kista-brons.png",
+  silver:  "/oppen-kista-silver.png",
+  gold:    "/oppen-kista-guld.png",
+  emerald: "/oppen-kista-smaragd.png",
+  ruby:    "/oppen-kista-rubin.png",
+  diamond: "/oppen-kista-diamant.png",
+};
+
 const CHEST_REWARDS: Record<string, string[]> = {
   wood:    ["🌟 +15 bonuspoäng", "📚 Ordförrådstips", "💡 Gratis ledtråd"],
   silver:  ["⭐ +30 bonuspoäng", "🎯 Bonusövning upplåst", "🏅 Framstegsmärke"],
@@ -172,9 +181,9 @@ export default function KistorPage() {
                 <div className="flex flex-wrap gap-4 justify-center pb-6">
                   {opened.slice().reverse().map((chest) => (
                     <div key={chest.id} className="flex flex-col items-center gap-1">
-                      <div className="relative w-16 h-16 opacity-75">
+                      <div className="relative w-16 h-16">
                         <Image
-                          src={CHEST_IMAGES[chest.type]}
+                          src={OPENED_CHEST_IMAGES[chest.type]}
                           alt={CHEST_LABELS[chest.type]}
                           fill
                           className="object-contain drop-shadow-md"
@@ -195,10 +204,10 @@ export default function KistorPage() {
                   >
                     <div className="relative w-8 h-8 flex-shrink-0">
                       <Image
-                        src={CHEST_IMAGES[chest.type]}
+                        src={OPENED_CHEST_IMAGES[chest.type]}
                         alt={CHEST_LABELS[chest.type]}
                         fill
-                        className="object-contain opacity-60"
+                        className="object-contain"
                       />
                     </div>
                     <div className="flex-1 min-w-0">
