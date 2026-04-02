@@ -1,0 +1,42 @@
+const SEGMENTS = [
+  // French: blue | white | red
+  { d: "M 32,4 A 28,28 0 0,1 50,10.6 L 41,21.3 A 14,14 0 0,0 32,18 Z",          fill: "#2563eb" },
+  { d: "M 50,10.6 A 28,28 0 0,1 59.6,27.1 L 45.8,29.6 A 14,14 0 0,0 41,21.3 Z", fill: "#e8e8e8" },
+  { d: "M 59.6,27.1 A 28,28 0 0,1 56.2,46 L 44.1,39 A 14,14 0 0,0 45.8,29.6 Z", fill: "#dc2626" },
+  // Spanish: red | gold | red
+  { d: "M 56.2,46 A 28,28 0 0,1 41.6,58.3 L 36.8,45.2 A 14,14 0 0,0 44.1,39 Z",    fill: "#c60b1e" },
+  { d: "M 41.6,58.3 A 28,28 0 0,1 22.4,58.3 L 27.2,45.2 A 14,14 0 0,0 36.8,45.2 Z", fill: "#ffc400" },
+  { d: "M 22.4,58.3 A 28,28 0 0,1 7.8,46 L 19.9,39 A 14,14 0 0,0 27.2,45.2 Z",    fill: "#c60b1e" },
+  // German: black | red | gold
+  { d: "M 7.8,46 A 28,28 0 0,1 4.4,27.1 L 18.2,29.6 A 14,14 0 0,0 19.9,39 Z",    fill: "#111827" },
+  { d: "M 4.4,27.1 A 28,28 0 0,1 14,10.6 L 23,21.3 A 14,14 0 0,0 18.2,29.6 Z",   fill: "#dc2626" },
+  { d: "M 14,10.6 A 28,28 0 0,1 32,4 L 32,18 A 14,14 0 0,0 23,21.3 Z",            fill: "#FFCE00" },
+];
+
+interface Props {
+  size?: number;
+  className?: string;
+}
+
+export default function FlagWheelIcon({ size = 40, className }: Props) {
+  return (
+    <svg
+      viewBox="0 0 64 64"
+      width={size}
+      height={size}
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      {SEGMENTS.map((seg, i) => (
+        <path key={i} d={seg.d} fill={seg.fill} stroke="white" strokeWidth="1.2" />
+      ))}
+      {/* White center disk */}
+      <circle cx="32" cy="32" r="13" fill="white" />
+      {/* Amber star */}
+      <polygon
+        points="32,22.5 33.9,28.4 40.1,28.4 35.1,31.9 37,37.8 32,34.3 27,37.8 28.9,31.9 23.9,28.4 30.1,28.4"
+        fill="#f59e0b"
+      />
+    </svg>
+  );
+}
