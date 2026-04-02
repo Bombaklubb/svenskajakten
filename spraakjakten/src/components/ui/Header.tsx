@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { useDarkMode } from "@/lib/useDarkMode";
 import { clearStudent, loadGamification } from "@/lib/storage";
 import { getAvatar, type Avatar } from "@/lib/avatars";
+import FlagWheelIcon from "@/components/ui/FlagWheelIcon";
 import type { StudentData } from "@/lib/types";
 
 function AvatarImg({ av }: { av: Avatar }) {
@@ -52,8 +53,8 @@ export default function Header({ student, onLogout }: HeaderProps) {
           onClick={() => { clearStudent(); router.push("/"); }}
           className="flex items-center gap-2 hover:scale-105 transition-transform min-w-0 flex-shrink-0 cursor-pointer"
         >
-          <div className="w-10 h-10 flex items-center justify-center text-2xl animate-float flex-shrink-0">
-            🔍
+          <div className="w-10 h-10 flex items-center justify-center animate-float flex-shrink-0">
+            <FlagWheelIcon size={36} />
           </div>
           <span className="font-black text-xl text-sj-800 dark:text-white hidden sm:block tracking-tight">
             Språkjakten
