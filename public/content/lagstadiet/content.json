@@ -2995,6 +2995,160 @@
       ]
     },
     {
+      "id": "rim-ovningar-1",
+      "title": "Rim – ord som rimmar",
+      "description": "Lär dig känna igen och skapa rim.",
+      "icon": "🎵",
+      "bonusPoints": 20,
+      "helpText": [
+        "Rim är när två ord slutar på samma ljud.",
+        "Exempel: katt – hatt, sol – bol, hus – mus.",
+        "Lyssna på slutljudet i ordet – vilket annat ord låter likadant?"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord rimmar med 'katt'?",
+          "options": ["hund", "hatt", "blomma", "träd"],
+          "correctIndex": 1,
+          "explanation": "'Hatt' rimmar med 'katt' – båda slutar på '-att'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord rimmar med 'sol'?",
+          "options": ["bil", "sal", "bol", "ful"],
+          "correctIndex": 2,
+          "explanation": "'Bol' rimmar med 'sol' – båda slutar på '-ol'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord rimmar med 'hus'?",
+          "options": ["hatt", "bok", "dag", "mus"],
+          "correctIndex": 3,
+          "explanation": "'Mus' rimmar med 'hus' – båda slutar på '-us'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord rimmar INTE med 'dag'?",
+          "options": ["lag", "bag", "bil", "vag"],
+          "correctIndex": 2,
+          "explanation": "'Bil' rimmar inte med 'dag'. Lag, bag och vag slutar alla på '-ag' precis som dag."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord rimmar med 'häst'?",
+          "options": ["bil", "sol", "fest", "katt"],
+          "correctIndex": 2,
+          "explanation": "'Fest' rimmar med 'häst' – båda slutar på '-est'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord rimmar med 'boll'?",
+          "options": ["dag", "doll", "hus", "katt"],
+          "correctIndex": 1,
+          "explanation": "'Doll' rimmar med 'boll' – båda slutar på '-oll'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord rimmar med 'snö'?",
+          "options": ["skog", "berg", "sjö", "sol"],
+          "correctIndex": 2,
+          "explanation": "'Sjö' rimmar med 'snö' – båda slutar på '-ö'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket par rimmar?",
+          "options": ["bil och katt", "sol och bol", "dag och hus", "orm och bok"],
+          "correctIndex": 1,
+          "explanation": "'Sol och bol' rimmar – båda slutar på '-ol'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord rimmar med 'land'?",
+          "options": ["hus", "sand", "katt", "bok"],
+          "correctIndex": 1,
+          "explanation": "'Sand' rimmar med 'land' – båda slutar på '-and'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord rimmar med 'fin'?",
+          "options": ["dag", "min", "bok", "hus"],
+          "correctIndex": 1,
+          "explanation": "'Min' rimmar med 'fin' – båda slutar på '-in'."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Katt och ___ rimmar. (något man har på huvudet)",
+          "answer": "hatt",
+          "hint": "Det är ett plagg du bär på huvudet.",
+          "explanation": "'Hatt' rimmar med 'katt' – båda slutar på '-att'."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Hus och ___ rimmar. (ett litet djur)",
+          "answer": "mus",
+          "hint": "Det är ett litet gnagande djur.",
+          "explanation": "'Mus' rimmar med 'hus' – båda slutar på '-us'."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Sol och ___ rimmar. (ett lekobjekt du kan studsa)",
+          "answer": "bol",
+          "hint": "Det är runt och man kan studsa med det.",
+          "explanation": "'Bol' rimmar med 'sol' – båda slutar på '-ol'."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Häst och ___ rimmar. (ett festligt tillfälle)",
+          "answer": "fest",
+          "hint": "Det är när man firar något kul.",
+          "explanation": "'Fest' rimmar med 'häst' – båda slutar på '-est'."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Dag och ___ rimmar. (ett ord för grupp eller regler)",
+          "answer": "lag",
+          "hint": "Det kan vara ett sportlag eller regler man följer.",
+          "explanation": "'Lag' rimmar med 'dag' – båda slutar på '-ag'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord rimmar med 'grön'?",
+          "options": ["röd", "bön", "blå", "vit"],
+          "correctIndex": 1,
+          "explanation": "'Bön' rimmar med 'grön' – båda slutar på '-ön'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord rimmar med 'fisk'?",
+          "options": ["bok", "katt", "disk", "hund"],
+          "correctIndex": 2,
+          "explanation": "'Disk' rimmar med 'fisk' – båda slutar på '-isk'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord rimmar INTE med 'sång'?",
+          "options": ["lång", "dag", "gång", "tång"],
+          "correctIndex": 1,
+          "explanation": "'Dag' rimmar inte med 'sång'. Lång, gång och tång slutar på '-ång' precis som sång."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Boll och ___ rimmar. (en leksak som liknar en docka)",
+          "answer": "doll",
+          "hint": "Det är en leksak som ser ut som en liten människa.",
+          "explanation": "'Doll' rimmar med 'boll' – båda slutar på '-oll'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord rimmar med 'glad'?",
+          "options": ["ledsen", "bad", "arg", "trött"],
+          "correctIndex": 1,
+          "explanation": "'Bad' rimmar med 'glad' – båda slutar på '-ad'."
+        }
+      ]
+    },
+    {
       "id": "sluttest",
       "title": "Sluttest – Grammatik",
       "description": "Testa allt du lärt dig! 38 blandade frågor om grammatik på lågstadienivå.",
