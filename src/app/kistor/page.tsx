@@ -486,24 +486,24 @@ export default function KistorPage() {
               💡 Hur tjänar man kistor?
             </h3>
             <p className="text-xs font-bold text-sv-500 dark:text-sv-300 uppercase tracking-wide mb-2">Poängmilstolpar</p>
-            <ul className="space-y-1.5 text-sm text-sv-800 dark:text-sv-100 mb-4">
-              <li className="flex items-start gap-2"><img src="/content/bronskista.png" alt="Bronskista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Bronskista:</strong> 10 – 200 poäng</span></li>
-              <li className="flex items-start gap-2"><img src="/content/silverkista.png" alt="Silverkista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Silverkista:</strong> 300 – 4 000 poäng</span></li>
-              <li className="flex items-start gap-2"><img src="/content/guldkista.png" alt="Guldkista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Guldkista:</strong> 1 000 – 7 000 poäng</span></li>
-              <li className="flex items-start gap-2"><img src="/content/smaragdkista.png" alt="Smaragdkista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Smaragdkista:</strong> 8 000 – 12 000 poäng</span></li>
-              <li className="flex items-start gap-2"><img src="/content/rubinkista.png" alt="Rubinkista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Rubinkista:</strong> 15 000 – 20 000 poäng</span></li>
-              <li className="flex items-start gap-2"><img src="/content/diamantkista.png" alt="Diamantkista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Diamantkista:</strong> 25 000 – 40 000 poäng</span></li>
+            <ul className="space-y-2 text-sm text-sv-800 dark:text-sv-100 mb-4">
+              <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/bronskista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Bronskista:</strong> 10 – 200 poäng</span></li>
+              <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/silverkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Silverkista:</strong> 300 – 4 000 poäng</span></li>
+              <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/guldkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Guldkista:</strong> 1 000 – 7 000 poäng</span></li>
+              <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/smaragdkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Smaragdkista:</strong> 8 000 – 12 000 poäng</span></li>
+              <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/rubinkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Rubinkista:</strong> 15 000 – 20 000 poäng</span></li>
+              <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/diamantkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Diamantkista:</strong> 25 000 – 40 000 poäng</span></li>
             </ul>
             <p className="text-xs font-bold text-sv-500 dark:text-sv-300 uppercase tracking-wide mb-2">Övningsmilstolpar</p>
-            <ul className="space-y-1.5 text-sm text-sv-800 dark:text-sv-100 mb-4">
-              <li className="flex items-start gap-2"><img src="/content/bronskista.png" alt="Bronskista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Bronskista:</strong> 1 – 55 övningar</span></li>
-              <li className="flex items-start gap-2"><img src="/content/silverkista.png" alt="Silverkista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Silverkista:</strong> 12 – 90 övningar</span></li>
-              <li className="flex items-start gap-2"><img src="/content/guldkista.png" alt="Guldkista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Guldkista:</strong> 30 – 125 övningar</span></li>
-              <li className="flex items-start gap-2"><img src="/content/smaragdkista.png" alt="Smaragdkista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Smaragdkista:</strong> 150 – 200 övningar</span></li>
-              <li className="flex items-start gap-2"><img src="/content/rubinkista.png" alt="Rubinkista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Rubinkista:</strong> 250 – 300 övningar</span></li>
-              <li className="flex items-start gap-2"><img src="/content/diamantkista.png" alt="Diamantkista" className="w-5 h-5 object-contain mt-0.5" /><span><strong>Diamantkista:</strong> 400 – 500 övningar</span></li>
+            <ul className="space-y-2 text-sm text-sv-800 dark:text-sv-100 mb-4">
+              <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/bronskista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Bronskista:</strong> 1 – 55 övningar</span></li>
+              <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/silverkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Silverkista:</strong> 12 – 90 övningar</span></li>
+              <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/guldkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Guldkista:</strong> 30 – 125 övningar</span></li>
+              <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/smaragdkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Smaragdkista:</strong> 150 – 200 övningar</span></li>
+              <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/rubinkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Rubinkista:</strong> 250 – 300 övningar</span></li>
+              <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/diamantkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Diamantkista:</strong> 400 – 500 övningar</span></li>
             </ul>
-            <div className="flex items-start gap-2 text-sm text-sv-800 dark:text-sv-100 pt-3 border-t border-sv-100 dark:border-gray-700">
+            <div className="flex items-center gap-3 text-sm text-sv-800 dark:text-sv-100 pt-3 border-t border-sv-100 dark:border-gray-700">
               <span>🎁</span>
               <span><strong>Mysterykista:</strong> Slumpmässig chans efter varje övning!</span>
             </div>
