@@ -4418,6 +4418,125 @@
             6
           ],
           "explanation": "'Spelade' är preteritum (dåtid) av 'spelar' – det hände igår."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket tempus är verbet i: 'Igår regnade det.'?",
+          "options": [
+            "Nutid",
+            "Dåtid",
+            "Framtid",
+            "Inget tempus"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Regnade' är dåtid (preteritum) – det hände igår."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt dåtidsform av 'hoppar':",
+          "options": [
+            "hoppade",
+            "hoppar",
+            "ska hoppa",
+            "hoppat"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Hoppade' är dåtid av 'hoppar'. Igår hoppade barnen."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt form: 'Imorgon ___ vi baka bullar.' (framtid)",
+          "answer": "ska",
+          "hint": "Framtid bildas med 'ska' + verb.",
+          "explanation": "'Ska baka' visar framtid. Imorgon ska vi baka bullar."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord visar att meningen är i NUTID?",
+          "options": [
+            "igår",
+            "förra veckan",
+            "just nu",
+            "imorgon"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Just nu' pekar på det som händer just i detta ögonblick – nutid."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt dåtidsform av 'simmar':",
+          "options": [
+            "simmade",
+            "simmar",
+            "ska simma",
+            "simmat"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Simmade' är dåtid av 'simmar'. Förra sommaren simmade vi i sjön."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt form: 'Förra veckan ___ vi till stranden.' (verbet 'åka', dåtid)",
+          "answer": "åkte",
+          "hint": "Det hände förra veckan – dåtid. Åker → å___te?",
+          "explanation": "'Åkte' är dåtid av 'åker'. Förra veckan åkte vi till stranden."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är i FRAMTID?",
+          "options": [
+            "Vi cyklar till skolan.",
+            "Vi cyklade igår.",
+            "Vi ska cykla till parken.",
+            "Vi cyklade förra veckan."
+          ],
+          "correctIndex": 2,
+          "explanation": "'Ska cykla' visar framtid – det har inte hänt än."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord visar DÅTID?",
+          "options": [
+            "snart",
+            "nu",
+            "sedan",
+            "förra veckan"
+          ],
+          "correctIndex": 3,
+          "explanation": "'Förra veckan' pekar bakåt i tiden – det är ett dåtidssignal."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen i FRAMTID!",
+          "words": [
+            "Imorgon",
+            "ska",
+            "vi",
+            "äta",
+            "pizza",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "explanation": "'Imorgon' och 'ska' visar framtid – det händer inte än."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt nutidsform: 'Katten ___ på mattan varje dag.'",
+          "options": [
+            "sov",
+            "sover",
+            "ska sova",
+            "sovit"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Sover' är presens (nutid) – det händer varje dag, alltså nu och regelbundet."
         }
       ]
     },
@@ -4569,6 +4688,120 @@
             6
           ],
           "explanation": "'Förra veckan' och 'läste' visar att det hände i dåtid."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är NUTIDSFORMEN av verbet 'sjunga'?",
+          "options": [
+            "sjöng",
+            "sjunger",
+            "ska sjunga",
+            "sjungit"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Sjunger' är nutidsform (presens) – fågeln sjunger nu."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Skriv i dåtid: 'Hon dansar varje dag.' → 'Igår ___ hon.'",
+          "answer": "dansade",
+          "hint": "Dansa → dansade i dåtid.",
+          "explanation": "'Dansade' är dåtidsform (preteritum) av 'dansar/dansa'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt DÅTIDSFORM av 'springer':",
+          "options": [
+            "springer",
+            "sprang",
+            "springde",
+            "sprungit"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Sprang' är dåtidsform av 'springer'. Oregelbundet verb!"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är i NUTID?",
+          "options": [
+            "simmade",
+            "sjöng",
+            "cyklar",
+            "åkte"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Cyklar' är nutidsform (presens) – det händer nu."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Skriv i dåtid: 'Vi äter frukost.' → 'Igår ___ vi frukost.'",
+          "answer": "åt",
+          "hint": "Äter → åt i dåtid. Oregelbundet verb!",
+          "explanation": "'Åt' är dåtidsform av 'äter'. Igår åt vi frukost."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är DÅTIDSFORMEN av 'sover'?",
+          "options": [
+            "sovde",
+            "sov",
+            "soverlt",
+            "sovade"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Sov' är dåtidsform av 'sover'. Igår sov katten länge."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Skriv i nutid: 'Igår sjöng hon.' → 'Nu ___ hon.'",
+          "answer": "sjunger",
+          "hint": "Sjöng → sjunger i nutid.",
+          "explanation": "'Sjunger' är nutidsformen av 'sjöng/sjunga'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt DÅTIDSFORM av 'hoppar':",
+          "options": [
+            "hoppat",
+            "hoppade",
+            "hoppar",
+            "hoppdes"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Hoppade' är dåtidsform av 'hoppar'. Igår hoppade vi hopprep."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen i NUTID!",
+          "words": [
+            "Barnen",
+            "leker",
+            "i",
+            "trädgården",
+            "nu",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "explanation": "'Leker' är nutidsform och 'nu' visar att det händer just nu."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är NUTIDSFORMEN av 'skriva'?",
+          "options": [
+            "skrev",
+            "skrivit",
+            "skriver",
+            "skrives"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Skriver' är nutidsform (presens) av 'skriva'. Nu skriver jag en berättelse."
         }
       ]
     },
@@ -4639,6 +4872,120 @@
           ],
           "correctIndex": 0,
           "explanation": "Talstrecket följs av ett mellanslag och repliken avslutas med komma före 'sa Emma'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket alternativ är RÄTT skrivet?",
+          "options": [
+            "-Hej! sa Lena.",
+            "– Hej! sa Lena.",
+            "\"Hej!\" sa Lena.",
+            "(Hej!) sa Lena."
+          ],
+          "correctIndex": 1,
+          "explanation": "Talstreck (–) är ett långt streck med mellanslag efter. Det är inte ett bindestreck (-)."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Vilket tecken ska stå i början av repliken? '___ Vad ska vi leka?' frågade Erik.",
+          "answer": "–",
+          "hint": "Det är ett långt streck – talstreck.",
+          "explanation": "Talstreck (–) markerar att Erik pratar. Det är ett långt streck, inte ett bindestreck."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur vet man att en ny person pratar i en dialog?",
+          "options": [
+            "Texten blir fet.",
+            "Man börjar ny rad med talstreck.",
+            "Man sätter en punkt.",
+            "Man skriver namnet med stora bokstäver."
+          ],
+          "correctIndex": 1,
+          "explanation": "Varje gång en ny person börjar prata startar man en ny rad med ett talstreck (–)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket alternativ visar en KORREKT dialog?",
+          "options": [
+            "– Hur mår du? frågade hon. – Bra tack! svarade han.",
+            "– Hur mår du? frågade hon. – Bra tack! svarade han.",
+            "– Hur mår du? frågade hon. –Bra tack! svarade han.",
+            "Hur mår du? frågade hon. Bra tack! svarade han."
+          ],
+          "correctIndex": 0,
+          "explanation": "Varje replik börjar med – (talstreck + mellanslag) på en ny rad."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Vilken sats avslutar repliken rätt? '– Jag är hungrig___ sa Maja.'",
+          "answer": ",",
+          "hint": "Vad sätter man direkt efter repliken, innan man skriver vem som sa det?",
+          "explanation": "Kommatecken (,) används direkt efter repliken när man skriver vem som sa det: '– Jag är hungrig, sa Maja.'"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj den korrekt skrivna repliken:",
+          "options": [
+            "–Skynda dig! ropade pappa.",
+            "– Skynda dig! ropade pappa.",
+            "- Skynda dig! ropade pappa.",
+            "– skynda dig! ropade pappa."
+          ],
+          "correctIndex": 1,
+          "explanation": "Talstreck + mellanslag + stor bokstav i början av repliken: '– Skynda dig!'"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är ett 'talstreck'?",
+          "options": [
+            "Ett kort streck (-) som i 'fotboll'",
+            "Ett långt streck (–) som markerar att någon talar",
+            "Ett kommatecken (,)",
+            "Ett frågetecken (?)"
+          ],
+          "correctIndex": 1,
+          "explanation": "Talstreck (–) är ett långt streck. Det är INTE ett bindestreck (-) som används i sammansatta ord."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg dialogen i rätt ordning!",
+          "words": [
+            "–",
+            "God",
+            "morgon!",
+            "sa",
+            "läraren",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "explanation": "'– God morgon! sa läraren.' – talstreck + replik + talverb med liten bokstav."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i talverbet: '– Titta, det snöar! ___ Lina glatt.'",
+          "answer": "ropade",
+          "hint": "Hon ropar av glädje – vilket ord passar?",
+          "explanation": "'Ropade' är ett talverb som visar att Lina ropade ut det med glädje."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är rätt skriven?",
+          "options": [
+            "– Var är min mössa? frågade Noa.",
+            "– Var är min mössa? Frågade Noa.",
+            "– var är min mössa? frågade Noa.",
+            "–Var är min mössa? frågade Noa."
+          ],
+          "correctIndex": 0,
+          "explanation": "Talstreck + mellanslag + stor bokstav i repliken + liten bokstav på 'frågade' efter repliken."
         }
       ]
     },
