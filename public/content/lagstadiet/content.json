@@ -2156,6 +2156,122 @@
             4
           ],
           "explanation": "'De skrattar' – de gör något (subjekt). 'Åt dem' – de tar emot skrattet (objekt)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt ord: '___ åt lunch tillsammans.'",
+          "options": [
+            "Dem",
+            "De",
+            "Dom",
+            "Di"
+          ],
+          "correctIndex": 1,
+          "explanation": "'De åt' – de gör något (äter). Byt till 'vi': 'Vi åt' – stämmer! Skriv 'de'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: 'Kan du se ___ där borta?'",
+          "options": [
+            "de",
+            "dem",
+            "dom",
+            "di"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Se dem' – de blir sedda. Byt till 'oss': 'Kan du se oss?' – stämmer! Skriv 'dem'."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt ord: 'Jag gav ___ en present.' (de/dem)",
+          "answer": "dem",
+          "hint": "Jag gav – vem fick presenten? Byt ut mot 'oss': Jag gav oss.",
+          "explanation": "'Dem' – de fick presenten. 'Jag gav oss en present' låter rätt → skriv 'dem'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: '___ spelar fotboll varje fredag.'",
+          "options": [
+            "Dem",
+            "De",
+            "Dom",
+            "Dei"
+          ],
+          "correctIndex": 1,
+          "explanation": "'De spelar' – de utför handlingen (spelar). Byt till 'vi': 'Vi spelar' – stämmer! Skriv 'de'."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt ord: 'Läraren frågade ___.' (de/dem)",
+          "answer": "dem",
+          "hint": "Läraren frågade – vem frågades? Byt till 'oss': Läraren frågade oss.",
+          "explanation": "'Dem' – de blev frågade. 'Läraren frågade oss' låter rätt → skriv 'dem'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: '___ träffades på lekplatsen.'",
+          "options": [
+            "dem",
+            "de",
+            "dom",
+            "di"
+          ],
+          "correctIndex": 1,
+          "explanation": "'De träffades' – de gör något. Byt till 'vi': 'Vi träffades' – stämmer! Skriv 'de'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: 'Jag skickade ett brev till ___.'",
+          "options": [
+            "de",
+            "dem",
+            "dom",
+            "dej"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Till dem' – brevet gick till dem. Byt till 'oss': 'till oss' – stämmer! Skriv 'dem'."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med rätt de/dem!",
+          "words": [
+            "De",
+            "vinkade",
+            "när",
+            "jag",
+            "såg",
+            "dem",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "explanation": "'De vinkade' – de gör något (subjekt → 'de'). 'Jag såg dem' – de blir sedda (objekt → 'dem')."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: '___ städar klassrummet.'",
+          "options": [
+            "dem",
+            "de",
+            "dom",
+            "di"
+          ],
+          "correctIndex": 1,
+          "explanation": "'De städar' – de utför handlingen. Byt till 'vi': 'Vi städar' – stämmer! Skriv 'de'."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt ord: 'Vi väntade på ___.' (de/dem)",
+          "answer": "dem",
+          "hint": "Vi väntade på – vem väntade vi på? Byt till 'oss': Vi väntade på oss.",
+          "explanation": "'Dem' – de väntades på. 'Vi väntade på oss' låter rätt → skriv 'dem'."
         }
       ]
     },
@@ -2287,6 +2403,118 @@
           ],
           "correctIndex": 1,
           "explanation": "'Var är boken?' – boken ligger still. Var = plats. 'Vart går du?' = rörelse."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: '___ ska vi äta middag?'",
+          "options": [
+            "Var",
+            "Vart",
+            "Vad",
+            "Hur"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Var ska vi äta?' – vi frågar om en plats (hemma, på restaurang). Ingen rörelse mot ny plats."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: '___ springer barnen?'",
+          "options": [
+            "Var",
+            "Vart",
+            "Vem",
+            "När"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Vart springer barnen?' – de springer iväg någonstans. Det är en rörelse med riktning → vart."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt ord: '___ är ditt pennfodral?' (var/vart)",
+          "answer": "Var",
+          "hint": "Pennfodralet ligger stilla – är det var eller vart?",
+          "explanation": "'Var' – pennfodralet ligger stilla på ett ställe. Var = plats/läge."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: '___ åker ni på semester?'",
+          "options": [
+            "Var",
+            "Vart",
+            "Vad",
+            "Vem"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Vart åker ni?' – ni är på väg till ett mål (till Spanien, till stranden). Rörelse → vart."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt ord: '___ sitter katten?' (var/vart)",
+          "answer": "Var",
+          "hint": "Katten sitter stilla – var eller vart?",
+          "explanation": "'Var sitter katten?' – katten sitter stilla. Var = plats (på soffan, i fönstret)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: '___ ska du gå?' (du är på väg ut)",
+          "options": [
+            "var",
+            "vart",
+            "vad",
+            "vem"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Vart ska du gå?' – du ska gå iväg. Det är en rörelse mot ett mål → vart."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är RÄTT?",
+          "options": [
+            "Vart är min tröja?",
+            "Var är min tröja?",
+            "Vart är tröjan stilla?",
+            "Var löper du dit?"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Var är min tröja?' – tröjan ligger stilla. Var = plats. 'Vart' används vid rörelse."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt ord: '___ flög fåglarna?' (de flög iväg) (var/vart)",
+          "answer": "Vart",
+          "hint": "Fåglarna flög iväg – det är en rörelse med riktning.",
+          "explanation": "'Vart flög fåglarna?' – de flög mot ett mål. Rörelse → vart."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg frågan om en plats (var)!",
+          "words": [
+            "Var",
+            "är",
+            "min",
+            "cykel",
+            "?"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "explanation": "'Var är min cykel?' – cykeln står stilla. Var = plats/läge."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: '___ simmade fiskarna?' (de simmade iväg)",
+          "options": [
+            "Var",
+            "Vart",
+            "Vad",
+            "Hur"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Vart simmade fiskarna?' – de simmade iväg mot ett mål. Rörelse med riktning → vart."
         }
       ]
     },
@@ -2423,6 +2651,118 @@
             4
           ],
           "explanation": "'Vad heter din hund?' – det är en fråga, så frågetecken i slutet."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt tecken: 'Vilken fin dag det är idag___'",
+          "options": [
+            "?",
+            ".",
+            "!",
+            ","
+          ],
+          "correctIndex": 2,
+          "explanation": "'Vilken fin dag!' – man utropar något med glädje. Utropstecken (!) passar."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Vilket tecken fattas? 'Vad heter din lärare___'",
+          "answer": "?",
+          "hint": "Meningen börjar med 'Vad' – det är en fråga.",
+          "explanation": "Frågor avslutas alltid med frågetecken (?). 'Vad heter din lärare?'"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är rätt skriven?",
+          "options": [
+            "kom hit sa mamma.",
+            "Kom hit sa mamma.",
+            "Kom hit! sa mamma.",
+            "Kom hit, sa mamma."
+          ],
+          "correctIndex": 2,
+          "explanation": "'Kom hit!' är ett utrop/kommando – det avslutas med utropstecken."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Vilket tecken fattas? 'Hunden heter Max___'",
+          "answer": ".",
+          "hint": "Det är ett påstående – vad sätter man efter ett påstående?",
+          "explanation": "Punkt (.) sätts efter påståenden. 'Hunden heter Max.'"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt tecken sist: 'Varför gråter du___'",
+          "options": [
+            ".",
+            "!",
+            "?",
+            ","
+          ],
+          "correctIndex": 2,
+          "explanation": "'Varför gråter du?' – det är en fråga. Frågetecken (?) i slutet."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket tecken passar bäst? 'Nej___ Det vill jag inte!'",
+          "options": [
+            ".",
+            "!",
+            "?",
+            ","
+          ],
+          "correctIndex": 1,
+          "explanation": "'Nej!' – ett kraftfullt nej är ett utrop med stark känsla. Utropstecken (!) passar."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg frågan i rätt ordning med rätt skiljetecken!",
+          "words": [
+            "Hur",
+            "gammal",
+            "är",
+            "du",
+            "?"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "explanation": "'Hur gammal är du?' – det är en fråga, så frågetecken i slutet."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening har FEL skiljetecken?",
+          "options": [
+            "Jag gillar att läsa.",
+            "Var bor du?",
+            "God morgon!",
+            "Vi åker till stranden?"
+          ],
+          "correctIndex": 3,
+          "explanation": "'Vi åker till stranden' är ett påstående – det ska avslutas med punkt, inte frågetecken."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Vilket tecken fattas? 'Oj, vad kallt det är___'",
+          "answer": "!",
+          "hint": "Man utropar förvåning när man känner kylan.",
+          "explanation": "Utropstecken (!) används för starka känslor och utrop. 'Oj, vad kallt det är!'"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: 'Vi ska baka kakor idag___'",
+          "options": [
+            "?",
+            "!",
+            ".",
+            ","
+          ],
+          "correctIndex": 2,
+          "explanation": "'Vi ska baka kakor idag.' – det är ett påstående. Punkt (.) i slutet."
         }
       ]
     },
