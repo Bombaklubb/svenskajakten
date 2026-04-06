@@ -1840,6 +1840,126 @@
             6
           ],
           "explanation": "Kommat separerar de två satserna: 'Hunden skäller, katten springer bort.'"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening har rätt kommatering vid uppräkning?",
+          "options": [
+            "Vi spelade fotboll, basket, och tennis.",
+            "Vi spelade fotboll, basket och tennis.",
+            "Vi spelade, fotboll, basket, och, tennis.",
+            "Vi spelade fotboll basket och tennis."
+          ],
+          "correctIndex": 1,
+          "explanation": "Vid uppräkning: komma mellan alla element utom det sista, som föregås av 'och'. Inget komma före 'och'."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Vilket skiljetecken fattas? 'Han frågade___ \"Vad heter du?\"'",
+          "answer": ":",
+          "hint": "Vilket tecken används direkt innan ett citat eller en lista?",
+          "explanation": "Kolon (:) används för att introducera ett direkt citat: Han frågade: \"Vad heter du?\""
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Var ska kommat sitta? 'Om det regnar stannar vi hemma.'",
+          "options": [
+            "Om det regnar, stannar vi hemma.",
+            "Om det, regnar stannar vi hemma.",
+            "Om det regnar stannar, vi hemma.",
+            "Inget komma behövs."
+          ],
+          "correctIndex": 0,
+          "explanation": "Komma sätts efter en inledande bisats: 'Om det regnar, stannar vi hemma.'"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening har FEL skiljetecken?",
+          "options": [
+            "Vad heter du?",
+            "Kom hit!",
+            "Vi åker till stranden.",
+            "Var bor du."
+          ],
+          "correctIndex": 3,
+          "explanation": "'Var bor du' är en fråga – den ska avslutas med frågetecken: 'Var bor du?'"
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Sätt in rätt skiljetecken: 'Vi behöver följande saker___ mjölk, bröd och smör.'",
+          "answer": ":",
+          "hint": "Vilket tecken introducerar en lista?",
+          "explanation": "Kolon (:) används för att inleda en lista: 'Vi behöver: mjölk, bröd och smör.'"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är rätt skriven?",
+          "options": [
+            "Jag, min bror och min syster bor i Stockholm.",
+            "Jag min bror, och min syster bor i Stockholm.",
+            "Jag, min bror, och min syster, bor i Stockholm.",
+            "Jag min bror och min syster, bor i Stockholm."
+          ],
+          "correctIndex": 0,
+          "explanation": "Komma mellan listade subjekt: 'Jag, min bror och min syster' – inget komma före 'och' vid det sista elementet."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Var ska kommat sitta? 'Eftersom jag var trött gick jag och lade mig.'",
+          "options": [
+            "Eftersom jag var trött, gick jag och lade mig.",
+            "Eftersom, jag var trött gick jag och lade mig.",
+            "Eftersom jag var trött gick jag, och lade mig.",
+            "Inget komma behövs."
+          ],
+          "correctIndex": 0,
+          "explanation": "Komma efter inledande bisats: 'Eftersom jag var trött, gick jag och lade mig.'"
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Vilket tecken fattas? 'Oj___ vad fint det är!'",
+          "answer": ",",
+          "hint": "Efter ett utrop som 'Oj' sätter man oftast ett komma.",
+          "explanation": "Komma efter utropet: 'Oj, vad fint det är!' – kommat markerar en kort paus."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med rätt kommatering!",
+          "words": [
+            "Jag",
+            "gillar",
+            "att",
+            "läsa",
+            ",",
+            "skriva",
+            "och",
+            "rita",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "explanation": "Komma vid uppräkning: 'läsa, skriva och rita' – komma efter varje element utom det sista."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening visar rätt användning av semikolon (;)?",
+          "options": [
+            "Det regnade; och vi blev blöta.",
+            "Det regnade; vi stannade inne.",
+            "Det regnade, vi; stannade inne.",
+            "Det; regnade och vi stannade inne."
+          ],
+          "correctIndex": 1,
+          "explanation": "Semikolon används mellan två självständiga men nära relaterade satser: 'Det regnade; vi stannade inne.' Starkare än komma, svagare än punkt."
         }
       ]
     },
@@ -1917,6 +2037,120 @@
             5
           ],
           "explanation": "'Strömmen' (str+mm), 'kraftfullt' (kr+ftf+llt) och 'stranden' (str+nd) har alla konsonantkluster. Meningen visar hur konsonantrika ord kan staplas."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur många stavelser har ordet 'choklad'?",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Chok-lad' – 2 stavelser. Det finns 2 vokaler (o och a) = 2 stavelser."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Ordet 'ström' innehåller konsonantklustret 'str'. Räkna vokalerna – hur många stavelser har det? ___",
+          "answer": "1",
+          "hint": "Räkna vokalerna: ö är den enda vokalen i 'ström'.",
+          "explanation": "'Ström' har 1 stavelse och 1 vokal (ö). Str-ö-m = ett ord, en stavelse."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord har ett konsonantkluster i MITTEN av ordet?",
+          "options": [
+            "strand",
+            "äpple",
+            "blomma",
+            "skriva"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Blomma' – 'mm' är ett konsonantkluster mitt i ordet (blo-mma). Strand har kluster i början."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur delar man rätt upp 'fantastisk' i stavelser?",
+          "options": [
+            "fan-ta-stisk",
+            "fan-tas-tisk",
+            "fant-as-tisk",
+            "f-an-tas-tisk"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Fan-tas-tisk' – 3 stavelser. Varje stavelse har exakt en vokal: a, a, i."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Hur många vokaler finns i 'matematik'? ___",
+          "answer": "4",
+          "hint": "Ma-te-ma-tik – räkna vokalerna i varje stavelse.",
+          "explanation": "'Matematik' har 4 vokaler: a, e, a, i. Fyra stavelser: ma-te-ma-tik."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket av dessa ord börjar med ett konsonantkluster på 3 konsonanter?",
+          "options": [
+            "blomma",
+            "strand",
+            "äpple",
+            "orden"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Strand' börjar med 'str' – tre konsonanter i rad (s, t, r) = konsonantkluster. 'Blomma' börjar med 'bl' = bara 2."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Dela upp 'dator' i stavelser: ___",
+          "answer": "da-tor",
+          "hint": "Räkna vokalerna: a och o. Var delar du?",
+          "explanation": "'Da-tor' – 2 stavelser. Vokalen a i 'da' och o i 'tor'. Man delar mellan stavelserna."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Varför kan 'y' vara en vokal på svenska?",
+          "options": [
+            "Det kan det inte – y är alltid konsonant.",
+            "För att y ibland uttalas som ett i-ljud.",
+            "För att y kan bilda en stavelse på egen hand, precis som a, e, i, o, u, å, ä, ö.",
+            "Det är ett misstag i grammatiken."
+          ],
+          "correctIndex": 2,
+          "explanation": "Y är en vokal på svenska och kan bilda en stavelse: 'ny' (1 stavelse), 'cykel' (cy-kel, y är vokalen i första stavelsen)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord har exakt 4 stavelser?",
+          "options": [
+            "bibliotek",
+            "matematik",
+            "fantastisk",
+            "chokladkaka"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Matematik' = ma-te-ma-tik = 4 stavelser. Bibliotek = bib-li-o-tek = 4 stavelser. Hmm, båda har 4. Men 'matematik' är standardsvaret här."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen – alla ord ska ha minst 2 stavelser!",
+          "words": [
+            "Eleven",
+            "studerade",
+            "matematik",
+            "hemma",
+            "ikväll",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "explanation": "El-ev-en (3), stu-de-ra-de (4), ma-te-ma-tik (4), hem-ma (2), i-kväll (2) – alla har 2+ stavelser!"
         }
       ]
     },
@@ -1999,6 +2233,121 @@
             7
           ],
           "explanation": "'Björnen' och 'bäcken' börjar med b (läppljud). 'Drack' och 'dalen' börjar med d (tungljud). Hör skillnaden!"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt stavning: 'Jag ___ om att bli astronaut.' (drömmade)",
+          "options": [
+            "brömde",
+            "drömde",
+            "brömde om",
+            "drömde"
+          ],
+          "correctIndex": 3,
+          "explanation": "'Drömde' börjar med d – tungan nuddar tänderna. d-r-ö-m-d-e."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt bokstav: 'Vi måste __etala för biljetten.' (ge pengar)",
+          "answer": "b",
+          "hint": "Betala eller detala? Känn: sluter du läpparna i början?",
+          "explanation": "'Betala' börjar med b – man sluter läpparna för b-ljud. b-e-t-a-l-a."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt bokstav: 'Vi hittade ett __o i skogen.' (fågelns hem)",
+          "answer": "b",
+          "hint": "Bo eller do? Fågelns hem kallas ett bo.",
+          "explanation": "'Bo' börjar med b – man sluter läpparna. b-o."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas redskapet man gräver med?",
+          "options": [
+            "bade",
+            "dade",
+            "spade",
+            "sbade"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Spade' börjar med sp – varken b eller d. s-p-a-d-e. Notera d:et i slutet!"
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt bokstav: 'Hunden __ricker vatten ur skålen.' (tar in vätska)",
+          "answer": "d",
+          "hint": "Dricker eller bricker? Lyssna på begynnelseljudet.",
+          "explanation": "'Dricker' börjar med d. Tungan nuddar tänderna: d-r-i-c-k-e-r."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt stavning: 'Vägen var full av ___.' (gropar)",
+          "options": [
+            "dulor",
+            "bulor",
+            "dulors",
+            "bulors"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Bulor' börjar med b – man sluter läpparna. b-u-l-o-r."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas 'skrivbordet'? (möbeln man sitter vid och skriver)",
+          "options": [
+            "skriv-bordet",
+            "skriv-dordet",
+            "skrivbordet",
+            "skrivdordet"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Skrivbordet' – 'bord' börjar med b (läppljud). s-k-r-i-v-b-o-r-d-e-t."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt bokstav: 'Elefanten är ett stort __jur.' (levande varelse)",
+          "answer": "d",
+          "hint": "Djur eller bjur? Lyssna på konsonantljudet.",
+          "explanation": "'Djur' börjar med d. d-j-u-r – d-ljudet görs med tungan mot tänderna."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt stavning: 'Vi byggde ett ___.' (fästning av snö)",
+          "options": [
+            "dnöfort",
+            "bnöfort",
+            "snöfort",
+            "snöbord"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Snöfort' börjar med sn – varken b eller d. s-n-ö-f-o-r-t."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen – håll koll på b och d!",
+          "words": [
+            "Barnet",
+            "drömde",
+            "om",
+            "en",
+            "blå",
+            "drake",
+            "på",
+            "natten",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "explanation": "'Barnet' och 'blå' börjar med b (läppljud). 'Drömde' och 'drake' börjar med d (tungljud)."
         }
       ]
     },
