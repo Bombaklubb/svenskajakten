@@ -66,6 +66,168 @@
           ],
           "correctIndex": 1,
           "explanation": "Livet KALLAS en resa (inte 'som en resa') = metafor."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad kallas stilfiguren där motsatta begrepp ställs mot varandra i samma mening? T.ex. 'Det var det bästa av tider, det var det värsta av tider.'",
+          "options": [
+            "Anafor",
+            "Antites",
+            "Klimax",
+            "Synekdoke"
+          ],
+          "correctIndex": 1,
+          "explanation": "Antites = kontrast mellan mot varandra ställda påståenden i samma mening eller fras."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad innebär 'allitteration' som stilfigur?",
+          "options": [
+            "Upprepning av ord i slutet av meningar",
+            "Upprepning av vokaler i mitten av ord",
+            "Upprepning av samma inledande konsonantljud i flera ord",
+            "Användning av metaforer i rad"
+          ],
+          "correctIndex": 2,
+          "explanation": "Allitteration = ljud- eller bokstavsrim i inledningen: 'Starka staters styrka'. Vanligt i reklam och poesi."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket av följande är ett exempel på epifor?",
+          "options": [
+            "Vi kämpade. Vi offrade. Vi segrade.",
+            "Jag drömmer om frihet, du drömmer om frihet, vi alla drömmer om frihet.",
+            "Frihet, jämlikhet, broderskap.",
+            "Nu ringer klockan. Nu slår timmen. Nu är det dags."
+          ],
+          "correctIndex": 1,
+          "explanation": "Epifor = upprepning av ord i SLUTET av på varandra följande satser (till skillnad från anafor, som upprepar i BÖRJAN)."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Stilfiguren som bygger på en överdrift för att skapa effekt kallas ___.",
+          "answer": "hyperbol",
+          "explanation": "Hyperbol = medveten överdrift, t.ex. 'Jag har väntat i en evighet.' Används för att förstärka en känsla eller ett argument."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "I vilket syfte används klimax i ett politiskt tal?",
+          "options": [
+            "För att minska spänningen hos publiken.",
+            "För att bygga upp känslomässig intensitet och leda publiken mot ett höjdpunkt.",
+            "För att citera forskning.",
+            "För att visa talarens ödmjukhet."
+          ],
+          "correctIndex": 1,
+          "explanation": "Klimax ordnar argument eller påståenden i stigande styrka – varje steg är starkare än det förra, vilket bygger upp emotionell och retorisk intensitet."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad kallas det retoriska greppet när talaren på förhand bemöter invändningar mot sin tes?",
+          "options": [
+            "Anafor",
+            "Prokatalepsis (förebyggande)",
+            "Pathos",
+            "Syntes"
+          ],
+          "correctIndex": 1,
+          "explanation": "Prokatalepsis innebär att talaren tar upp och bemöter möjliga invändningar innan motparten hinner framföra dem – det stärker argumentets trovärdighet."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken av dessa meningar innehåller en ironi?",
+          "options": [
+            "Det regnar idag.",
+            "Vilken strålande väderlek – i november på Grönland.",
+            "Solen skiner på sommaren.",
+            "Det är kallt på vintern."
+          ],
+          "correctIndex": 1,
+          "explanation": "Ironi = man säger motsatsen till vad man menar. 'Strålande väderlek' i en kontext där det uppenbarligen är hemskt väder."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad innebär den retoriska dispositionen i ett tal eller en text?",
+          "options": [
+            "Val av ord och språklig stil.",
+            "Talarens sinnesstämning.",
+            "Den planerade strukturen och ordningen av argumenten.",
+            "Användning av kroppsspråk."
+          ],
+          "correctIndex": 2,
+          "explanation": "Dispositionen handlar om hur man strukturerar sitt tal eller sin text: inledning, argumentation, motargument, avslutning."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "En stilfigur där en del används för att representera helheten – t.ex. 'hundra segel' för 'hundra skepp' – kallas ___.",
+          "answer": "synekdoke",
+          "explanation": "Synekdoke: en del (segel) representerar helheten (skepp). Vanlig i litteratur och vardagsspråk ('Sverige vann' = det svenska landslaget vann)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken klassisk retorisk modell bygger på inledning (exordium), bakgrund (narratio), argumentation (argumentatio) och avslutning (peroratio)?",
+          "options": [
+            "Aristoteles poetik",
+            "Den klassiska dispositionsmodellen",
+            "Toulmins argumentationsmodell",
+            "Platons dialogmodell"
+          ],
+          "correctIndex": 1,
+          "explanation": "Den klassiska retoriska dispositionen med fem delar (ibland: exordium, narratio, partitio, argumentatio, peroratio) härstammar från antikens retorik."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad kallas det när en talare använder tre argument i rad för att stärka sin tes (treenighetsstrukturen)?",
+          "options": [
+            "Trikolon",
+            "Anafor",
+            "Antites",
+            "Apofas"
+          ],
+          "correctIndex": 0,
+          "explanation": "Trikolon = tre parallella led, t.ex. 'veni, vidi, vici' (jag kom, jag såg, jag segrade). Ger rytm och eftertryck."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad innebär begreppet 'kairos' i retoriken?",
+          "options": [
+            "Talarens trovärdighet.",
+            "Det rätta ögonblicket eller det passande tillfället för ett tal.",
+            "Logiska argument baserade på fakta.",
+            "Användning av metaforer."
+          ],
+          "correctIndex": 1,
+          "explanation": "Kairos = det rätta tillfället. En skicklig talare vet när och i vilket sammanhang ett argument är som mest effektivt."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Aristoteles identifierade tre bevismedel: logos, ethos och ___.",
+          "answer": "pathos",
+          "explanation": "Logos (förnuft/fakta), ethos (trovärdighet) och pathos (känslor) är Aristoteles tre grundläggande retoriska övertygningsmedel."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad kallas stilfiguren när man upprepade gånger ställer retoriska frågor för att driva sin tes framåt?",
+          "options": [
+            "Anafora",
+            "Erotema",
+            "Synekdoke",
+            "Litotes"
+          ],
+          "correctIndex": 1,
+          "explanation": "Erotema = retorisk fråga (eller serie av sådana) som inte förväntar sig ett svar utan syftar till att engagera och övertala."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken funktion fyller en stark inledning (exordium) i ett retoriskt tal?",
+          "options": [
+            "Att sammanfatta argumenten.",
+            "Att vinna publikens välvilja, uppmärksamhet och intresse.",
+            "Att presentera motargument.",
+            "Att avsluta med en uppmaning."
+          ],
+          "correctIndex": 1,
+          "explanation": "Exordium syftar till att skapa kontakt med publiken (captatio benevolentiae) – man vinner deras förtroende och uppmärksamhet redan från start."
         }
       ]
     },

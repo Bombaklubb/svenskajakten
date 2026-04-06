@@ -78,6 +78,184 @@
             6
           ],
           "explanation": "'Jag vet' är huvudsatsen, 'att du har rätt' är bisatsen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är ett bindeord (subjunktion) som inleder bisatser?",
+          "options": [
+            "och",
+            "men",
+            "när",
+            "eller"
+          ],
+          "correctIndex": 2,
+          "explanation": "'När' är en subjunktion som inleder bisatser. 'Och', 'men' och 'eller' är samordnande konjunktioner."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening har en bisats i BÖRJAN?",
+          "options": [
+            "Jag kom för sent.",
+            "Det regnar ute.",
+            "Om du vill, kan du följa med.",
+            "Katten satt på taket."
+          ],
+          "correctIndex": 2,
+          "explanation": "'Om du vill' är bisatsen – den inleds med 'om' och är placerad i början av meningen."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i ett bindeord: 'Vi åkte hem ___ vi var trötta.'",
+          "answer": "eftersom",
+          "hint": "Bisatsen anger orsaken.",
+          "explanation": "'Eftersom' inleder en bisats som anger orsak."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad kallas 'när', 'om', 'att', 'eftersom' grammatiskt?",
+          "options": [
+            "Konjunktioner",
+            "Subjunktioner (bindeord)",
+            "Prepositioner",
+            "Adverb"
+          ],
+          "correctIndex": 1,
+          "explanation": "Dessa ord kallas subjunktioner eller bindeord – de inleder bisatser."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Kan bisatsen 'fast det regnar' stå ensam som en fullständig mening?",
+          "options": [
+            "Ja, det är en fullständig mening.",
+            "Nej, den är beroende av en huvudsats.",
+            "Ja, om man sätter punkt efter.",
+            "Det beror på sammanhanget."
+          ],
+          "correctIndex": 1,
+          "explanation": "En bisats kan inte stå ensam – den är beroende av en huvudsats för att bilda en fullständig mening."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket bindeord passar i: 'Hon vet ___ han är sjuk'?",
+          "options": [
+            "fast",
+            "att",
+            "tills",
+            "men"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Att' är subjunktionen som inleder en objektsbisats här."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i ett bindeord: 'Ring mig ___ du kommer fram.'",
+          "answer": "när",
+          "hint": "Bisatsen anger en tidpunkt.",
+          "explanation": "'När' inleder en tidsbisats och är rätt bindeord här."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad heter det när en bisats fungerar som objekt i meningen?",
+          "options": [
+            "Adverbialbisats",
+            "Relativbisats",
+            "Objektsbisats",
+            "Subjektsbisats"
+          ],
+          "correctIndex": 2,
+          "explanation": "En bisats som fungerar som objekt kallas objektsbisats. T.ex. 'Jag hoppas att du mår bra' – 'att du mår bra' är objektsbisats."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är grammatiskt FELAKTIG?",
+          "options": [
+            "Jag tror att det snöar imorgon.",
+            "Att det snöar imorgon tror jag.",
+            "Att det snöar imorgon.",
+            "Jag vet inte om det snöar imorgon."
+          ],
+          "correctIndex": 2,
+          "explanation": "'Att det snöar imorgon' är bara en bisats – den saknar en huvudsats och är inte en fullständig mening."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med bisats i början!",
+          "words": [
+            "Eftersom",
+            "det",
+            "regnade",
+            ",",
+            "stannade",
+            "vi",
+            "hemma",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "explanation": "'Eftersom det regnade' är bisatsen i början. Komma före huvudsatsen 'stannade vi hemma'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket bindeord anger ett VILLKOR?",
+          "options": [
+            "eftersom",
+            "när",
+            "om",
+            "fast"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Om' inleder villkorsbisatser: 'Om du studerar, klarar du provet.'"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är bisatsen i: 'Vi väntade tills tåget kom'?",
+          "options": [
+            "Vi väntade",
+            "tills tåget kom",
+            "tåget kom",
+            "vi väntade tills"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Tills tåget kom' är bisatsen – 'tills' är bindeordet som inleder den."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i: 'Jag läser böcker ___ jag kan lära mig nya saker.'",
+          "answer": "för att",
+          "hint": "Bisatsen anger syftet.",
+          "explanation": "'För att' inleder en avsiktsbisats och anger syftet med handlingen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening innehåller en RELATIVBISATS (som börjar med 'som')?",
+          "options": [
+            "Jag hoppas att han kommer.",
+            "Hon gick hem eftersom hon var trött.",
+            "Boken som jag läste var spännande.",
+            "Vi spelar om det är soligt."
+          ],
+          "correctIndex": 2,
+          "explanation": "'Som jag läste' är en relativbisats – den inleds med 'som' och beskriver 'boken'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur många bisatser finns det i: 'Jag tror att hon vet att han ljuger'?",
+          "options": [
+            "Ingen",
+            "En",
+            "Två",
+            "Tre"
+          ],
+          "correctIndex": 2,
+          "explanation": "Det finns två bisatser: 'att hon vet att han ljuger' (den yttre) och 'att han ljuger' (den inre, inbäddade bisatsen)."
         }
       ]
     },
@@ -155,6 +333,165 @@
             4
           ],
           "explanation": "'Busschauffören' och 'centralstationen' är sammansatta ord."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad kallas det första ledet i ett sammansatt ord?",
+          "options": [
+            "Efterled",
+            "Förled",
+            "Fogevokal",
+            "Suffix"
+          ],
+          "correctIndex": 1,
+          "explanation": "Det första ledet kallas förled och preciserar vad det sista ledet (efterledet) är."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Bilda ett ord av 'dag' + 'bok': ___",
+          "answer": "dagbok",
+          "hint": "En bok man skriver i varje dag.",
+          "explanation": "'Dagbok' = dag + bok. Förledet 'dag' preciserar vad boken används till."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket sammansatt ord har fogevokal 's'?",
+          "options": [
+            "fotboll",
+            "nyckelring",
+            "landskap",
+            "blåbär"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Landskap' = land + s + kap. Fogevokalen 's' binder ihop de två leden."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är efterledet i 'fotbollsplan'?",
+          "options": [
+            "fotbolls",
+            "fot",
+            "plan",
+            "boll"
+          ],
+          "correctIndex": 2,
+          "explanation": "Efterledet är det sista ledet och anger vad ordet är. I 'fotbollsplan' är efterledet 'plan'."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Bilda ett sammansatt ord av 'hand' + 'väska': ___",
+          "answer": "handväska",
+          "hint": "En väska man bär i handen.",
+          "explanation": "'Handväska' = hand + väska. Det är ett sammansatt ord utan fogevokal."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket av dessa ord är INTE sammansatt?",
+          "options": [
+            "klassrum",
+            "pennskrin",
+            "skola",
+            "lärobok"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Skola' är ett enkelt ord, inte sammansatt. De andra är sammansatta: klassrum, pennskrin, lärobok."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur bildas ordet 'olycklig'?",
+          "options": [
+            "Sammansättning av 'olycka' + 'lig'",
+            "Prefixet 'o-' + 'lycklig'",
+            "Suffix '-lig' läggs till 'olycka'",
+            "Sammansättning av 'o' + 'lyck' + 'lig'"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Olycklig' bildas av prefixet 'o-' (som ger negativ/motsatt betydelse) + adjektivet 'lycklig'."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Bilda ett sammansatt ord: 'sommar' + 'stuga' = ___",
+          "answer": "sommarstuga",
+          "hint": "En stuga man bor i på sommaren.",
+          "explanation": "'Sommarstuga' = sommar + stuga. Prefixledet 'sommar' preciserar vilken typ av stuga det är."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket prefix gör ett ord till dess motsats?",
+          "options": [
+            "-lig",
+            "-are",
+            "o-",
+            "-ning"
+          ],
+          "correctIndex": 2,
+          "explanation": "Prefixet 'o-' skapar motsatsen: lycklig → olycklig, sann → osann, möjlig → omöjlig."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är suffixet '-are' för funktion i ord som 'lärare', 'löpare', 'skrivare'?",
+          "options": [
+            "Det gör adjektiv av verb",
+            "Det bildar substantiv som beskriver en person som utför handlingen",
+            "Det gör verb av substantiv",
+            "Det bildar adverb"
+          ],
+          "correctIndex": 1,
+          "explanation": "Suffixet '-are' bildar agentsubstantiv: den som lär = lärare, den som löper = löpare."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är bildat med suffixet '-ning'?",
+          "options": [
+            "läsare",
+            "läsning",
+            "läsbar",
+            "läst"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Läsning' är bildat av verbet 'läsa' + suffixet '-ning', som skapar ett substantiv av en handling."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med sammansatta ord korrekt placerade!",
+          "words": [
+            "Skolbibliotekarien",
+            "hjälpte",
+            "eleverna",
+            "hitta",
+            "rätt",
+            "böcker",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "explanation": "'Skolbibliotekarien' är ett sammansatt ord: skol + bibliotekarie + n (bestämd form)."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Vilket suffix bildar ett adjektiv av substantivet 'fara'? fara + ___ = farlig",
+          "answer": "-lig",
+          "hint": "Tänk på adjektiv som 'farlig', 'lycklig', 'trevlig'.",
+          "explanation": "Suffixet '-lig' läggs till substantiv eller verb för att bilda adjektiv: fara → farlig, lycka → lycklig."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad kallas det att skriva ihop ord som egentligen är två ord?",
+          "options": [
+            "Derivation",
+            "Särkrivning",
+            "Sammansättning",
+            "Prefixering"
+          ],
+          "correctIndex": 2,
+          "explanation": "Att skriva ihop två ord till ett kallas sammansättning. Att felaktigt skriva dem isär kallas särkrivning."
         }
       ]
     },
