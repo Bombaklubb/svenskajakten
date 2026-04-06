@@ -1254,6 +1254,122 @@
             5
           ],
           "explanation": "'Gubben' (dubbelt b) och 'kanna' (dubbelt n) – båda har kort vokal och dubbelkonsonant."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är rätt stavat? (att hoppa upp och ner)",
+          "options": [
+            "hoppa",
+            "hopa",
+            "hopppa",
+            "hoopa"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Hoppa' – kort betonat o kräver dubbelt p: h-o-pp-a."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är rätt stavat? (en liten söt kattunge)",
+          "options": [
+            "kiling",
+            "killing",
+            "killling",
+            "kiiling"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Killing' – kort betonat i kräver dubbelt l: k-i-ll-i-n-g."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Rätt stavning: 'Vi ska ta en pra___stund.' (prata, substantiv)",
+          "answer": "t",
+          "hint": "Pratstund – är a-et i 'prat' långt eller kort?",
+          "explanation": "'Pratstund' – a-et i 'prat' är långt (man drar ut på det), därför enkelt t. p-r-a-t."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är rätt stavat? (en person man är gift med, kvinna)",
+          "options": [
+            "fru",
+            "fruu",
+            "frru",
+            "frun"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Fru' – u-et är långt, därför enkelt r: f-r-u. Ingen dubbelteckning."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är rätt stavat? (ett träd med röda bär)",
+          "options": [
+            "ros",
+            "ross",
+            "rosse",
+            "rose"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Ros' – o-et är långt, därför enkelt s: r-o-s. Ingen dubbelteckning."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Rätt stavning: 'Han la___de sig tidigt.' (verbet 'lägga', dåtid)",
+          "answer": "d",
+          "hint": "Lade eller ladde? Är a-et i 'lade' kort eller långt?",
+          "explanation": "'Lade' – a-et är långt i denna form, därför enkelt d: l-a-d-e."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är rätt stavat? (synonym till 'skynda')",
+          "options": [
+            "hasta",
+            "hassta",
+            "haasta",
+            "hasssta"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Hasta' – a-et är långt, därför enkelt s: h-a-s-t-a."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord KRÄVER dubbelteckning?",
+          "options": [
+            "bil",
+            "sol",
+            "bulle",
+            "mat"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Bulle' – u-et är kort och betonat, därför dubbelt l: b-u-ll-e."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Rätt stavning: 'Vi åt spe___at till middag.' (grönsaken)",
+          "answer": "n",
+          "hint": "Spenat – är e-et i 'spe-' kort eller långt?",
+          "explanation": "'Spenat' – e-et är långt, därför enkelt n: s-p-e-n-a-t."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen – var uppmärksam på dubbelteckning!",
+          "words": [
+            "Lille",
+            "Kalle",
+            "vill",
+            "ha",
+            "en",
+            "bulle",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "explanation": "'Lille' (ll), 'Kalle' (ll) och 'bulle' (ll) – alla tre har dubbelt l och kort vokal."
         }
       ]
     },
@@ -1332,6 +1448,122 @@
             5
           ],
           "explanation": "'De' är subjekt (de som ger), 'dem' är objekt (de som tar emot presenten)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: '___ vann tävlingen!' (de som vann)",
+          "options": [
+            "Dem",
+            "De",
+            "Dom",
+            "Di"
+          ],
+          "correctIndex": 1,
+          "explanation": "'De vann' – de är subjekt (de som utför handlingen). Byt till 'vi': 'Vi vann' – stämmer!"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: 'Jag såg ___ på bio igår.'",
+          "options": [
+            "de",
+            "dem",
+            "dom",
+            "di"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Jag såg dem' – dem är objekt. Byt till 'oss': 'Jag såg oss' – stämmer! Skriv 'dem'."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt form: '___ hade glömt sina böcker.' (de/dem)",
+          "answer": "De",
+          "hint": "Vem glömde? Byt till 'vi': 'Vi hade glömt...' – stämmer?",
+          "explanation": "'De hade glömt' – de är subjekt. 'Vi hade glömt' låter rätt → skriv 'de'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: 'Kan du hälsa ___ från mig?'",
+          "options": [
+            "de",
+            "dem",
+            "dom",
+            "dei"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Hälsa dem' – dem är objekt. Byt till 'oss': 'Kan du hälsa oss' – stämmer! Skriv 'dem'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: '___ pratade hela vägen hem.'",
+          "options": [
+            "Dem",
+            "De",
+            "Dom",
+            "Dei"
+          ],
+          "correctIndex": 1,
+          "explanation": "'De pratade' – de är subjekt. Byt till 'vi': 'Vi pratade hela vägen hem' – stämmer!"
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt form: 'Läraren delade ut böcker till ___.' (de/dem)",
+          "answer": "dem",
+          "hint": "Läraren delade ut till – vem fick böckerna? Byt till 'oss'.",
+          "explanation": "'Till dem' – dem är objekt. 'Delade ut till oss' låter rätt → skriv 'dem'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: '___ tränade varje dag inför loppet.'",
+          "options": [
+            "Dem",
+            "De",
+            "Dom",
+            "Di"
+          ],
+          "correctIndex": 1,
+          "explanation": "'De tränade' – de är subjekt. Byt till 'vi': 'Vi tränade' – stämmer!"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: 'Vi bjöd ___ på kalas.'",
+          "options": [
+            "de",
+            "dem",
+            "dom",
+            "di"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Vi bjöd dem' – dem är objekt. Byt till 'oss': 'Vi bjöd oss' – stämmer! Skriv 'dem'."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med rätt de/dem!",
+          "words": [
+            "De",
+            "hjälpte",
+            "dem",
+            "som",
+            "behövde",
+            "det",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "explanation": "'De' är subjekt (de som hjälper), 'dem' är objekt (de som får hjälp)."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt form: 'Vi mötte ___ utanför biblioteket.' (de/dem)",
+          "answer": "dem",
+          "hint": "Vi mötte – vem mötte vi? Byt till 'oss': Vi mötte oss.",
+          "explanation": "'Vi mötte dem' – dem är objekt. 'Vi mötte oss' låter rätt → skriv 'dem'."
         }
       ]
     },
@@ -1412,6 +1644,122 @@
             6
           ],
           "explanation": "'Vart ska vi åka?' – frågar om destination (vi ska åka någonstans). Rätt ord är 'vart'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: '___ är min jacka?' (jackan hänger/ligger stilla)",
+          "options": [
+            "Vart",
+            "Var",
+            "Vad",
+            "Hur"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Var är min jacka?' – frågar om platsen där jackan befinner sig. Var = plats/läge."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: '___ springer du?' (du är på väg åt ett håll)",
+          "options": [
+            "Var",
+            "Vart",
+            "Vad",
+            "Vem"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Vart springer du?' – frågar om riktning. Du rör dig mot ett mål. Vart = rörelse/riktning."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt ord: '___ har du lagt pennorna?' (var/vart)",
+          "answer": "Var",
+          "hint": "Pennorna ligger stilla någonstans. Frågar du om plats eller rörelse?",
+          "explanation": "'Var har du lagt pennorna?' – frågar om platsen. Pennorna rör sig inte, de befinner sig någonstans."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: '___ tog fåglarna vägen?' (de flög iväg)",
+          "options": [
+            "Var",
+            "Vart",
+            "Vad",
+            "När"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Vart tog fåglarna vägen?' – de flög iväg i en riktning. Vart = rörelse/riktning."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är RÄTT?",
+          "options": [
+            "Vart sitter katten?",
+            "Var sitter katten?",
+            "Var springer katten dit?",
+            "Vart är boken?"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Var sitter katten?' – katten sitter still. Var = plats. 'Vart springer katten?' = rörelse."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt ord: '___ ska klassen åka på utflykt?' (var/vart)",
+          "answer": "Vart",
+          "hint": "Klassen ska åka iväg – rörelse mot ett mål.",
+          "explanation": "'Vart ska klassen åka?' – de är på väg någonstans. Vart = rörelse/riktning/destination."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: 'Vi visste inte ___ vi befann oss.' (ingen rörelse – vi var vilse)",
+          "options": [
+            "vart",
+            "var",
+            "vad",
+            "vem"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Var vi befann oss' – vi befann oss (stilla) på en plats. Var = plats/läge."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: 'Jag undrar ___ hon är på väg.'",
+          "options": [
+            "var",
+            "vart",
+            "vad",
+            "hur"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Vart hon är på väg' – hon är i rörelse mot ett mål. Vart = riktning."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg frågan med rätt var/vart!",
+          "words": [
+            "Var",
+            "brukar",
+            "du",
+            "sitta",
+            "i",
+            "klassrummet",
+            "?"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "explanation": "'Var brukar du sitta?' – sitter är att befinna sig stilla. Var = plats."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt ord: '___ tänker du gå på sommarlovet?' (var/vart)",
+          "answer": "Vart",
+          "hint": "Gå på sommarlovet = röra sig till ett ställe. Rörelse eller plats?",
+          "explanation": "'Vart tänker du gå?' – du ska gå iväg till ett mål. Vart = rörelse/destination."
         }
       ]
     },
