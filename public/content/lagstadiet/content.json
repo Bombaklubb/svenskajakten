@@ -1403,6 +1403,131 @@
           ],
           "correctIndex": 2,
           "explanation": "I 'katt' är k, t och t konsonanter – alltså 3 konsonanter. Bara a är vokal."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken av dessa bokstäver är en vokal?",
+          "options": [
+            "p",
+            "t",
+            "å",
+            "n"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Å' är en vokal. De svenska vokalerna är: a, e, i, o, u, y, å, ä, ö."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur många vokaler finns det i ordet 'blomma'?",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "correctIndex": 1,
+          "explanation": "I 'blomma' finns det två vokaler: o och a. B, l, m och m är konsonanter."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "I ordet 'hund' är h, n och d konsonanter. Vilket är vokalen? ___",
+          "answer": "u",
+          "hint": "Vokalerna är: a, e, i, o, u, y, å, ä, ö.",
+          "explanation": "I 'hund' är 'u' vokalen. H, n och d är konsonanter."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord börjar med en konsonant?",
+          "options": [
+            "äpple",
+            "orm",
+            "is",
+            "boll"
+          ],
+          "correctIndex": 3,
+          "explanation": "'Boll' börjar med konsonanten b. Äpple (ä), orm (o) och is (i) börjar alla med vokaler."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur många konsonanter finns det i ordet 'glad'?",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "correctIndex": 2,
+          "explanation": "I 'glad' är g, l och d konsonanter – alltså 3. Bara a är vokal."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "I ordet 'bok' är b och k konsonanter. Vilket är vokalen? ___",
+          "answer": "o",
+          "hint": "Vilket ljud hör du mitt i ordet 'bok'?",
+          "explanation": "I 'bok' är 'o' vokalen. B och k är konsonanter."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord har FLEST vokaler?",
+          "options": [
+            "boll",
+            "träd",
+            "öron",
+            "arm"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Öron' har två vokaler: ö och o. De andra orden har bara en vokal var."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken av dessa är en vokal?",
+          "options": [
+            "g",
+            "ö",
+            "r",
+            "s"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Ö' är en vokal. G, r och s är konsonanter."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur många vokaler finns det i ordet 'cykel'?",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "0"
+          ],
+          "correctIndex": 1,
+          "explanation": "I 'cykel' finns det två vokaler: y och e. C, k och l är konsonanter."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Sätt vokalerna i rätt ordning (alla svenska vokaler)!",
+          "words": [
+            "a",
+            "e",
+            "i",
+            "o",
+            "u",
+            "y",
+            "å",
+            "ä",
+            "ö"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "explanation": "De 9 svenska vokalerna i ordning: a, e, i, o, u, y, å, ä, ö."
         }
       ]
     },
@@ -1536,6 +1661,106 @@
           ],
           "correctIndex": 1,
           "explanation": "'Dansa' börjar med d. Dans – D som i Dansa, Dag, Djur."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas det man läser i skolan? (en samling papper med text)",
+          "options": [
+            "dok",
+            "bok",
+            "dåk",
+            "bock"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Bok' börjar med b. B-O-K. Tänk: B som i Bok, Boll, Bil."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord stavas rätt? (det man gör när man sover på natten)",
+          "options": [
+            "drömmer",
+            "brömmer",
+            "dröbbar",
+            "brömbar"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Drömmer' börjar med d. D-R-Ö-M-M-E-R. Lyssna: D-ljud, inte B-ljud!"
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt bokstav: '__rev' (ett papper man skriver och skickar till någon)",
+          "answer": "b",
+          "hint": "Brev eller drev? Tänk på b-ljudet med läpparna.",
+          "explanation": "'Brev' börjar med b. Man skriver ett brev till sin kompis – B-R-E-V."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt bokstav: '__arn' (unga människor, t.ex. i skolan)",
+          "answer": "b",
+          "hint": "Barn eller darn? Säg ordet högt – börjar det med b-ljud eller d-ljud?",
+          "explanation": "'Barn' börjar med b. Man gör b-ljudet med läpparna: B-A-R-N."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas väderfenomenet med åska och regn?",
+          "options": [
+            "dunder",
+            "bunder",
+            "gunder",
+            "tunder"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Dunder' börjar med d. D-U-N-D-E-R. Lyssna: D-ljud, inte B-ljud!"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord stavas rätt? (det som finns i ett träd, grön och platt)",
+          "options": [
+            "blad",
+            "dlad",
+            "blat",
+            "dlat"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Blad' börjar med bl. B-L-A-D. Träden har gröna blad."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt bokstav: '__ol' (något runt man spelar med)",
+          "answer": "b",
+          "hint": "Bol eller dol? Tänk på b-ljudet!",
+          "explanation": "'Boll' börjar med b. Man slår ihop läpparna för att göra b-ljud: B-O-L-L."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt stavning: 'Vår hund heter ___.' (ett populärt hundnamn som börjar med b)",
+          "options": [
+            "Bella",
+            "Della",
+            "Gella",
+            "Hella"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Bella' börjar med b. B-E-L-L-A. Tänk: B som i Bella, Boll, Bil."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt bokstav: '__uva' (en fågel som kurrar)",
+          "answer": "d",
+          "hint": "Duva eller buva? Lyssna på begynnelseljudet.",
+          "explanation": "'Duva' börjar med d. D-U-V-A. Det är ett d-ljud, inte b-ljud!"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas möbeln man sover i?",
+          "options": [
+            "däng",
+            "bäng",
+            "säng",
+            "gäng"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Säng' börjar med s. S-Ä-N-G. Varken b eller d!"
         }
       ]
     },
@@ -1669,6 +1894,126 @@
           ],
           "correctIndex": 0,
           "explanation": "'Ser' stavas med e. Ser – S-E-R. Här är det e-ljud, inte ä-ljud."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt stavning: 'Klockan ___ tre.' (klockverbet)",
+          "options": [
+            "er",
+            "är",
+            "ör",
+            "ar"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Är' stavas med ä – Ä-R. 'Klockan är tre.' Lyssna: ä-ljud!"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt stavning: 'Barnen ___ på lekplatsen.' (roar sig)",
+          "options": [
+            "lekar",
+            "leker",
+            "läkar",
+            "läker"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Leker' stavas med e – L-E-K-E-R. Det är ett tydligt e-ljud."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt bokstav: 'Hon h___lper mig med läxan.' (ger hjälp)",
+          "answer": "ä",
+          "hint": "Hjälper eller hjelper? Lyssna på vokalljudet.",
+          "explanation": "'Hjälper' stavas med ä – H-J-Ä-L-P-E-R. Lyssna: det är ett ä-ljud."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas det man gör med munnen när man berättar något?",
+          "options": [
+            "berätter",
+            "berättar",
+            "berettar",
+            "beretter"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Berättar' stavas med ä och a – B-E-R-Ä-T-T-A-R."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: 'Jag ___ min kompis.' (känner väl)",
+          "options": [
+            "kenner",
+            "känner",
+            "kannar",
+            "kennar"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Känner' stavas med ä – K-Ä-N-N-E-R. Lyssna på ä-ljudet."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt bokstav: 'Läraren fr___gar eleverna.' (ställer en fråga)",
+          "answer": "å",
+          "hint": "Frågar eller fregor? Hör du ett å-ljud eller e-ljud?",
+          "explanation": "'Frågar' stavas med å – F-R-Å-G-A-R. Lyssna noga på vokalljudet."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt stavning: 'Jag ___ på stolen.' (sitter)",
+          "options": [
+            "seter",
+            "sitter",
+            "sätter",
+            "setter"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Sitter' stavas med i och e – S-I-T-T-E-R. Inte ä eller e i förstavelsen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas det man gör med boken? (tittar på orden och förstår)",
+          "options": [
+            "leser",
+            "läser",
+            "laser",
+            "lesar"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Läser' stavas med ä – L-Ä-S-E-R. Lyssna: Lä-ser. Tydligt ä-ljud i början."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med rätt e- och ä-ord!",
+          "words": [
+            "Hon",
+            "läser",
+            "en",
+            "bok",
+            "och",
+            "äter",
+            "ett",
+            "äpple",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "explanation": "'Läser' och 'äter' stavas med ä. 'En' och 'ett' stavas med e."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt bokstav: 'Hon l___ser sin favoritbok.' (tittar på ord och förstår)",
+          "answer": "ä",
+          "hint": "Leser eller läser? Lyssna på vokalljudet.",
+          "explanation": "'Läser' stavas med ä – L-Ä-S-E-R. Det heter läser, inte leser."
         }
       ]
     },
