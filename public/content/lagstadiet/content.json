@@ -657,6 +657,120 @@
             6
           ],
           "explanation": "'Stora' och 'röda' är adjektiven som beskriver äpplet."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är ett adjektiv?",
+          "options": [
+            "hoppar",
+            "sten",
+            "mjuk",
+            "snabbt"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Mjuk' är ett adjektiv – det beskriver hur något känns."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i ett adjektiv: 'Himlen är ___ idag.' (om himlen är utan moln och har fin färg)",
+          "answer": "blå",
+          "hint": "Vilken färg har himlen på en solig dag?",
+          "explanation": "'Blå' är ett adjektiv som beskriver himlens färg."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj adjektivet i meningen: 'Den hungriga björnen letade efter mat.'",
+          "options": [
+            "Den",
+            "hungriga",
+            "björnen",
+            "letade"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Hungriga' är adjektivet – det beskriver hur björnen är (hungrig)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket par är BÅDA adjektiv?",
+          "options": [
+            "springer, hoppar",
+            "stor, liten",
+            "hund, katt",
+            "fort, sakta"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Stor' och 'liten' är båda adjektiv – de beskriver storlek."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i ett adjektiv: 'Vattnet i havet är ___.' (om temperaturen är låg)",
+          "answer": "kallt",
+          "hint": "Hur är havsvatten oftast – varmt eller kallt?",
+          "explanation": "'Kallt' är ett adjektiv som beskriver vattnets temperatur."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening har ett adjektiv som beskriver FORM?",
+          "options": [
+            "Katten är trött.",
+            "Bollar är runda.",
+            "Hunden springer.",
+            "Vi äter lunch."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Runda' beskriver bollens form – det är ett adjektiv."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord beskriver hur något SMAKAR?",
+          "options": [
+            "söt",
+            "springer",
+            "bollen",
+            "snabbt"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Söt' är ett adjektiv som beskriver smak – t.ex. 'söt glass'."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med adjektivet på rätt plats!",
+          "words": [
+            "Den",
+            "varma",
+            "soppan",
+            "smakar",
+            "gott",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "explanation": "'Varma' är adjektivet som beskriver soppan. 'Gott' beskriver hur soppan smakar."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad beskriver adjektivet 'tung' i meningen 'Väskan är tung'?",
+          "options": [
+            "Var väskan finns",
+            "Hur väskan är (vikt)",
+            "Vad väskan heter",
+            "Vem som äger väskan"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Tung' beskriver väskans egenskaper (vikt) – adjektiv berättar HUR något är."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i ett adjektiv: 'Min hund är väldigt ___.' (om hunden är snäll mot alla)",
+          "answer": "snäll",
+          "hint": "Hur är en hund som aldrig biter och alltid är vänlig?",
+          "explanation": "'Snäll' är ett adjektiv som beskriver hundens personlighet."
         }
       ]
     },
@@ -798,6 +912,124 @@
             6
           ],
           "explanation": "'Erik', 'Maja' (personnamn) och 'Malmö' (stad) börjar alla med stor bokstav."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket alternativ är rätt skrivet?",
+          "options": [
+            "min bror heter liam.",
+            "Min bror heter liam.",
+            "Min bror heter Liam.",
+            "min Bror heter Liam."
+          ],
+          "correctIndex": 2,
+          "explanation": "Meningen börjar med stor M och personnamnet Liam har stor L."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Skriv rätt: 'Vi åkte till ___.' (staden i västra Sverige, börjar med G)",
+          "answer": "Göteborg",
+          "hint": "Stadsnamn börjar alltid med stor bokstav.",
+          "explanation": "'Göteborg' börjar med stor G – det är ett platsnamn."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är korrekt skriven?",
+          "options": [
+            "igår regnade det.",
+            "Igår regnade det.",
+            "igår Regnade det.",
+            "Igår regnade Det."
+          ],
+          "correctIndex": 1,
+          "explanation": "Varje mening börjar med stor bokstav: 'Igår regnade det.'"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad ska ha stor bokstav?",
+          "options": [
+            "Adjektiv",
+            "Verb",
+            "Namn på länder",
+            "Adverb"
+          ],
+          "correctIndex": 2,
+          "explanation": "Namn på länder, städer och personer börjar alltid med stor bokstav: Sverige, Paris, Sofia."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Korrigera: 'min kompis heter nova.' → '___'",
+          "answer": "Min kompis heter Nova.",
+          "hint": "Tänk på stor bokstav i början av meningen och på personnamnet.",
+          "explanation": "Rätt: 'Min kompis heter Nova.' – stor M i början, stor N i namnet Nova."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord ska ha stor bokstav i meningen: '___ bor i ___.'?",
+          "options": [
+            "Bara det första ordet",
+            "Bara personnamnet",
+            "Personnamnet och stadsnamnet",
+            "Alla ord"
+          ],
+          "correctIndex": 2,
+          "explanation": "Personnamn och stadsnamn börjar alltid med stor bokstav: 'Ella bor i Uppsala.'"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken rad är RÄTT skriven?",
+          "options": [
+            "vi åkte till Norge på semester.",
+            "Vi åkte till norge på semester.",
+            "Vi åkte till Norge på semester.",
+            "vi Åkte till Norge på semester."
+          ],
+          "correctIndex": 2,
+          "explanation": "'Vi' börjar meningen (stor V) och 'Norge' är ett landsnamn (stor N)."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med stor bokstav på rätt ställe!",
+          "words": [
+            "Lina",
+            "bor",
+            "i",
+            "Uppsala",
+            "med",
+            "sin",
+            "familj",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "explanation": "'Lina' (personnamn) och 'Uppsala' (stadsnamn) börjar med stor bokstav."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur ska veckodagen skrivas i en mening?",
+          "options": [
+            "på måndag",
+            "på Måndag",
+            "På Måndag",
+            "På måndag"
+          ],
+          "correctIndex": 3,
+          "explanation": "Veckodagar skrivs med liten bokstav i svenska: måndag, tisdag, onsdag. Stor bokstav bara i början av mening."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt: '___ spelar fotboll.' (börja med pojknamnet 'omar')",
+          "answer": "Omar",
+          "hint": "Personnamn börjar alltid med stor bokstav.",
+          "explanation": "'Omar' börjar med stor O – det är ett personnamn."
         }
       ]
     },
@@ -926,6 +1158,118 @@
             3
           ],
           "explanation": "'Var bor du?' – en fråga om plats, avslutas med frågetecken."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket tecken passar? 'Åh, vad roligt___'",
+          "options": [
+            ".",
+            "?",
+            "!",
+            ","
+          ],
+          "correctIndex": 2,
+          "explanation": "'Åh, vad roligt!' – man utropar något med glädje. Utropstecken visar stark känsla."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Vilket tecken fattas? 'Titta, en fjäril___'",
+          "answer": "!",
+          "hint": "Man är glad och förvånad när man ser en fjäril.",
+          "explanation": "Utropstecken (!) används när man ropar eller är förvånad: 'Titta, en fjäril!'"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt tecken: 'Var är min jacka___'",
+          "options": [
+            ".",
+            "!",
+            "?",
+            ","
+          ],
+          "correctIndex": 2,
+          "explanation": "Det är en fråga – den avslutas med frågetecken."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är rätt skriven?",
+          "options": [
+            "Det snöar ute?",
+            "Det snöar ute.",
+            "det snöar ute.",
+            "Det snöar ute"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Det snöar ute.' – påstående med punkt. Börjar med stor bokstav."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Vilket tecken fattas? 'Kan du hjälpa mig___'",
+          "answer": "?",
+          "hint": "Meningen börjar med 'Kan du' – det är en fråga.",
+          "explanation": "Frågetecken (?) sätts efter frågor. 'Kan du hjälpa mig?' är en fråga."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: 'Stopp___ Du ska inte springa inomhus.'",
+          "options": [
+            ".",
+            "?",
+            "!",
+            ","
+          ],
+          "correctIndex": 2,
+          "explanation": "'Stopp!' – det är ett rop/kommando. Utropstecken används."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening avslutas med punkt?",
+          "options": [
+            "Var bor du?",
+            "Oj, vad hungrig jag är!",
+            "Jag heter Maja.",
+            "Vad heter din katt?"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Jag heter Maja.' är ett påstående – det avslutas med punkt."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med rätt skiljetecken sist!",
+          "words": [
+            "Hunden",
+            "sover",
+            "på",
+            "mattan",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "explanation": "'Hunden sover på mattan.' är ett påstående – det avslutas med punkt."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket tecken passar i slutet av: 'Hjälp, jag kan inte hitta hem___'",
+          "options": [
+            ".",
+            ",",
+            "?",
+            "!"
+          ],
+          "correctIndex": 3,
+          "explanation": "'Hjälp, jag kan inte hitta hem!' – det är ett rop och uttrycker stark känsla – utropstecken."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Vilket tecken fattas? 'Hur gammal är din hund___'",
+          "answer": "?",
+          "hint": "Meningen börjar med 'Hur' – det är en fråga.",
+          "explanation": "Frågetecken sätts efter frågor. 'Hur gammal är din hund?' är en fråga."
         }
       ]
     },
