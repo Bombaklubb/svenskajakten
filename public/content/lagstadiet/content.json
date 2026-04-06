@@ -136,6 +136,127 @@
             4
           ],
           "explanation": "'Katten' och 'soffan' är substantiven i meningen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är ett substantiv?",
+          "options": [
+            "springer",
+            "trött",
+            "träd",
+            "simmar"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Träd' är ett substantiv – det är ett växtnamn. De andra orden är verb eller adjektiv."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i ett substantiv: 'Vi bor i ett ___.' (en byggnad man bor i)",
+          "answer": "hus",
+          "hint": "Det är en stor byggnad med dörrar och fönster.",
+          "explanation": "'Hus' är ett substantiv – det är en sak (en byggnad)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur många substantiv finns i: 'Läraren skriver på tavlan'?",
+          "options": [
+            "0",
+            "1",
+            "2",
+            "3"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Läraren' och 'tavlan' är de två substantiven. 'Skriver' och 'på' är inte substantiv."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket av dessa är INTE ett substantiv?",
+          "options": [
+            "cykel",
+            "bok",
+            "glad",
+            "stol"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Glad' är ett adjektiv – det beskriver hur något är. Cykel, bok och stol är alla substantiv."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är ett substantiv?",
+          "options": [
+            "hoppar",
+            "snabbt",
+            "sjunger",
+            "blomma"
+          ],
+          "correctIndex": 3,
+          "explanation": "'Blomma' är ett substantiv – det är en växt. De andra orden är verb eller adverb."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i ett substantiv: 'Jag dricker ett glas ___.' (det vita man får från kor)",
+          "answer": "mjölk",
+          "hint": "Det är en vit dryck som kommer från kor.",
+          "explanation": "'Mjölk' är ett substantiv – det är en dryck (en sak)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening innehåller FLEST substantiv?",
+          "options": [
+            "Hon springer fort.",
+            "Hunden och katten leker.",
+            "Vi åker till stranden.",
+            "Pojken hoppar högt."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Hunden och katten leker' har två substantiv: hunden och katten."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är ett substantiv?",
+          "options": [
+            "åker",
+            "grön",
+            "stolen",
+            "snabbt"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Stolen' är ett substantiv – det är en möbel (en sak). Åker är verb, grön är adjektiv, snabbt är adverb."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen – hitta och placera substantiven rätt!",
+          "words": [
+            "Pojken",
+            "och",
+            "hunden",
+            "springer",
+            "i",
+            "skogen",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "explanation": "'Pojken', 'hunden' och 'skogen' är alla substantiv i meningen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är ett substantiv för 'det man skriver med i skolan'?",
+          "options": [
+            "skriva",
+            "pennvässare",
+            "räkna",
+            "sudda"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Pennvässare' är ett substantiv – det är en sak (ett föremål). Skriva, räkna och sudda är verb."
         }
       ]
     },
@@ -274,6 +395,125 @@
             4
           ],
           "explanation": "'Sover' är verbet – det berättar vad katten gör."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är ett verb?",
+          "options": [
+            "simmar",
+            "stor",
+            "bok",
+            "snabb"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Simmar' är ett verb – det berättar vad man gör i vattnet."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i ett verb: 'Barnet ___ i badet.' (rör sig i vatten)",
+          "answer": "simmar",
+          "hint": "Vad gör man när man är i vattnet och rör armarna och benen?",
+          "explanation": "'Simmar' är ett verb som berättar hur barnet rör sig i vattnet."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt verb: 'Solen ___ starkt idag.'",
+          "options": [
+            "regnar",
+            "skiner",
+            "snöar",
+            "blåser"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Skiner' är rätt verb – solen skiner, det ger ljus och värme."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur många verb finns det i: 'Hunden skäller och springer'?",
+          "options": [
+            "0",
+            "1",
+            "2",
+            "3"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Skäller' och 'springer' är de två verben – de berättar vad hunden gör."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är INTE ett verb?",
+          "options": [
+            "hoppar",
+            "sjunger",
+            "dansar",
+            "glad"
+          ],
+          "correctIndex": 3,
+          "explanation": "'Glad' är ett adjektiv – det beskriver hur man mår. Hoppar, sjunger och dansar är verb."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i ett verb: 'Barnen ___ på lekplatsen.' (roar sig utomhus)",
+          "answer": "leker",
+          "hint": "Vad gör barn när de är på lekplatsen och har roligt?",
+          "explanation": "'Leker' är ett verb – det berättar vad barnen gör på lekplatsen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt verb: 'Fisken ___ i sjön.'",
+          "options": [
+            "flyger",
+            "springer",
+            "simmar",
+            "klättrar"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Simmar' – fiskar simmar i vattnet. Det är det rätta verbet för fiskars rörelse."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket verb passar? 'Mamma ___ middag i köket.'",
+          "options": [
+            "sover",
+            "lagar",
+            "sjunger",
+            "springer"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Lagar' – man lagar mat i köket. Det är ett verb som berättar vad mamma gör."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen – verbet ska stå på rätt plats!",
+          "words": [
+            "Katten",
+            "klättrar",
+            "upp",
+            "i",
+            "trädet",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "explanation": "'Klättrar' är verbet – det berättar vad katten gör."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är ett verb i meningen: 'Den lilla fågeln sjunger vackert'?",
+          "options": [
+            "lilla",
+            "fågeln",
+            "sjunger",
+            "vackert"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Sjunger' är verbet – det berättar vad fågeln gör."
         }
       ]
     },
@@ -2721,7 +2961,10 @@
           "type": "fill-in-blank",
           "question": "Fyll i: ___ God morgon! ___ sa mamma och log.",
           "answer": "\"",
-          "alternativeAnswers": ["»", "«"],
+          "alternativeAnswers": [
+            "»",
+            "«"
+          ],
           "hint": "Repliken ska omslutas av citattecken – ett i början och ett i slutet.",
           "explanation": "Korrekt: \"God morgon!\" sa mamma och log. Citattecknen omslutar hela repliken."
         },
@@ -2740,8 +2983,20 @@
         {
           "type": "build-sentence",
           "instruction": "Sätt orden i rätt ordning för en korrekt dialog med citattecken:",
-          "words": ["\"Kom", "hit!\"", "ropade", "pappa", "."],
-          "correctOrder": [0, 1, 2, 3, 4],
+          "words": [
+            "\"Kom",
+            "hit!\"",
+            "ropade",
+            "pappa",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
           "explanation": "\"Kom hit!\" ropade pappa. Utropstecknet sitter inuti citattecknen."
         },
         {
@@ -3009,70 +3264,120 @@
         {
           "type": "multiple-choice",
           "question": "Vilket ord rimmar med 'katt'?",
-          "options": ["hund", "hatt", "blomma", "träd"],
+          "options": [
+            "hund",
+            "hatt",
+            "blomma",
+            "träd"
+          ],
           "correctIndex": 1,
           "explanation": "'Hatt' rimmar med 'katt' – båda slutar på '-att'."
         },
         {
           "type": "multiple-choice",
           "question": "Vilket ord rimmar med 'sol'?",
-          "options": ["bil", "sal", "bol", "ful"],
+          "options": [
+            "bil",
+            "sal",
+            "bol",
+            "ful"
+          ],
           "correctIndex": 2,
           "explanation": "'Bol' rimmar med 'sol' – båda slutar på '-ol'."
         },
         {
           "type": "multiple-choice",
           "question": "Vilket ord rimmar med 'hus'?",
-          "options": ["hatt", "bok", "dag", "mus"],
+          "options": [
+            "hatt",
+            "bok",
+            "dag",
+            "mus"
+          ],
           "correctIndex": 3,
           "explanation": "'Mus' rimmar med 'hus' – båda slutar på '-us'."
         },
         {
           "type": "multiple-choice",
           "question": "Vilket ord rimmar INTE med 'dag'?",
-          "options": ["lag", "bag", "bil", "vag"],
+          "options": [
+            "lag",
+            "bag",
+            "bil",
+            "vag"
+          ],
           "correctIndex": 2,
           "explanation": "'Bil' rimmar inte med 'dag'. Lag, bag och vag slutar alla på '-ag' precis som dag."
         },
         {
           "type": "multiple-choice",
           "question": "Vilket ord rimmar med 'häst'?",
-          "options": ["bil", "sol", "fest", "katt"],
+          "options": [
+            "bil",
+            "sol",
+            "fest",
+            "katt"
+          ],
           "correctIndex": 2,
           "explanation": "'Fest' rimmar med 'häst' – båda slutar på '-est'."
         },
         {
           "type": "multiple-choice",
           "question": "Vilket ord rimmar med 'boll'?",
-          "options": ["dag", "doll", "hus", "katt"],
+          "options": [
+            "dag",
+            "doll",
+            "hus",
+            "katt"
+          ],
           "correctIndex": 1,
           "explanation": "'Doll' rimmar med 'boll' – båda slutar på '-oll'."
         },
         {
           "type": "multiple-choice",
           "question": "Vilket ord rimmar med 'snö'?",
-          "options": ["skog", "berg", "sjö", "sol"],
+          "options": [
+            "skog",
+            "berg",
+            "sjö",
+            "sol"
+          ],
           "correctIndex": 2,
           "explanation": "'Sjö' rimmar med 'snö' – båda slutar på '-ö'."
         },
         {
           "type": "multiple-choice",
           "question": "Vilket par rimmar?",
-          "options": ["bil och katt", "sol och bol", "dag och hus", "orm och bok"],
+          "options": [
+            "bil och katt",
+            "sol och bol",
+            "dag och hus",
+            "orm och bok"
+          ],
           "correctIndex": 1,
           "explanation": "'Sol och bol' rimmar – båda slutar på '-ol'."
         },
         {
           "type": "multiple-choice",
           "question": "Vilket ord rimmar med 'land'?",
-          "options": ["hus", "sand", "katt", "bok"],
+          "options": [
+            "hus",
+            "sand",
+            "katt",
+            "bok"
+          ],
           "correctIndex": 1,
           "explanation": "'Sand' rimmar med 'land' – båda slutar på '-and'."
         },
         {
           "type": "multiple-choice",
           "question": "Vilket ord rimmar med 'fin'?",
-          "options": ["dag", "min", "bok", "hus"],
+          "options": [
+            "dag",
+            "min",
+            "bok",
+            "hus"
+          ],
           "correctIndex": 1,
           "explanation": "'Min' rimmar med 'fin' – båda slutar på '-in'."
         },
@@ -3114,21 +3419,36 @@
         {
           "type": "multiple-choice",
           "question": "Vilket ord rimmar med 'grön'?",
-          "options": ["röd", "bön", "blå", "vit"],
+          "options": [
+            "röd",
+            "bön",
+            "blå",
+            "vit"
+          ],
           "correctIndex": 1,
           "explanation": "'Bön' rimmar med 'grön' – båda slutar på '-ön'."
         },
         {
           "type": "multiple-choice",
           "question": "Vilket ord rimmar med 'fisk'?",
-          "options": ["bok", "katt", "disk", "hund"],
+          "options": [
+            "bok",
+            "katt",
+            "disk",
+            "hund"
+          ],
           "correctIndex": 2,
           "explanation": "'Disk' rimmar med 'fisk' – båda slutar på '-isk'."
         },
         {
           "type": "multiple-choice",
           "question": "Vilket ord rimmar INTE med 'sång'?",
-          "options": ["lång", "dag", "gång", "tång"],
+          "options": [
+            "lång",
+            "dag",
+            "gång",
+            "tång"
+          ],
           "correctIndex": 1,
           "explanation": "'Dag' rimmar inte med 'sång'. Lång, gång och tång slutar på '-ång' precis som sång."
         },
@@ -3142,7 +3462,12 @@
         {
           "type": "multiple-choice",
           "question": "Vilket ord rimmar med 'glad'?",
-          "options": ["ledsen", "bad", "arg", "trött"],
+          "options": [
+            "ledsen",
+            "bad",
+            "arg",
+            "trött"
+          ],
           "correctIndex": 1,
           "explanation": "'Bad' rimmar med 'glad' – båda slutar på '-ad'."
         }
@@ -4723,26 +5048,86 @@
       "bonusPoints": 30,
       "timeLimit": 60,
       "words": [
-        { "word": "hund", "clue": "Djuret som skäller och viftar på svansen" },
-        { "word": "katt", "clue": "Djuret som jamar och spinner" },
-        { "word": "bok", "clue": "Man läser berättelser ur en ___" },
-        { "word": "sol", "clue": "Lyser och värmer oss på himlen" },
-        { "word": "dag", "clue": "Måndag, tisdag och onsdag är ___ar" },
-        { "word": "bil", "clue": "Fordon med fyra hjul och motor" },
-        { "word": "hus", "clue": "Byggnad där familjer bor" },
-        { "word": "mat", "clue": "Vi äter ___ tre gånger om dagen" },
-        { "word": "arm", "clue": "Kroppsdel med handen i slutet" },
-        { "word": "ben", "clue": "Man går och springer med sina ___" },
-        { "word": "fot", "clue": "Sitter längst ner på benet" },
-        { "word": "hand", "clue": "Har fem fingrar och används för att gripa" },
-        { "word": "öga", "clue": "Man ser med sina ___" },
-        { "word": "öra", "clue": "Man hör med sina ___" },
-        { "word": "näsa", "clue": "Sitter mitt i ansiktet och luktar" },
-        { "word": "mun", "clue": "Man pratar och äter med sin ___" },
-        { "word": "ord", "clue": "Bokstäver som sätts ihop bildar ett ___" },
-        { "word": "glas", "clue": "Man dricker vatten ur ett ___" },
-        { "word": "bord", "clue": "Möbel man äter vid" },
-        { "word": "stol", "clue": "Möbel man sitter på" }
+        {
+          "word": "hund",
+          "clue": "Djuret som skäller och viftar på svansen"
+        },
+        {
+          "word": "katt",
+          "clue": "Djuret som jamar och spinner"
+        },
+        {
+          "word": "bok",
+          "clue": "Man läser berättelser ur en ___"
+        },
+        {
+          "word": "sol",
+          "clue": "Lyser och värmer oss på himlen"
+        },
+        {
+          "word": "dag",
+          "clue": "Måndag, tisdag och onsdag är ___ar"
+        },
+        {
+          "word": "bil",
+          "clue": "Fordon med fyra hjul och motor"
+        },
+        {
+          "word": "hus",
+          "clue": "Byggnad där familjer bor"
+        },
+        {
+          "word": "mat",
+          "clue": "Vi äter ___ tre gånger om dagen"
+        },
+        {
+          "word": "arm",
+          "clue": "Kroppsdel med handen i slutet"
+        },
+        {
+          "word": "ben",
+          "clue": "Man går och springer med sina ___"
+        },
+        {
+          "word": "fot",
+          "clue": "Sitter längst ner på benet"
+        },
+        {
+          "word": "hand",
+          "clue": "Har fem fingrar och används för att gripa"
+        },
+        {
+          "word": "öga",
+          "clue": "Man ser med sina ___"
+        },
+        {
+          "word": "öra",
+          "clue": "Man hör med sina ___"
+        },
+        {
+          "word": "näsa",
+          "clue": "Sitter mitt i ansiktet och luktar"
+        },
+        {
+          "word": "mun",
+          "clue": "Man pratar och äter med sin ___"
+        },
+        {
+          "word": "ord",
+          "clue": "Bokstäver som sätts ihop bildar ett ___"
+        },
+        {
+          "word": "glas",
+          "clue": "Man dricker vatten ur ett ___"
+        },
+        {
+          "word": "bord",
+          "clue": "Möbel man äter vid"
+        },
+        {
+          "word": "stol",
+          "clue": "Möbel man sitter på"
+        }
       ]
     },
     {
@@ -4754,26 +5139,86 @@
       "bonusPoints": 35,
       "timeLimit": 60,
       "words": [
-        { "word": "äpple", "clue": "Rött eller grönt frukt med kärnhus" },
-        { "word": "björn", "clue": "Stort brunt djur i skogen" },
-        { "word": "fågel", "clue": "Djur med vingar och fjädrar som flyger" },
-        { "word": "skola", "clue": "Hit går barn för att lära sig" },
-        { "word": "blomma", "clue": "Vacker växt med kronblad och doft" },
-        { "word": "vatten", "clue": "Klar dryck man behöver för att leva" },
-        { "word": "lampa", "clue": "Ger ljus i rummet" },
-        { "word": "trappa", "clue": "Stegen man går uppför inomhus" },
-        { "word": "fönster", "clue": "Genomskinlig ruta i väggen" },
-        { "word": "dörr", "clue": "Öppning man går igenom in i ett rum" },
-        { "word": "säng", "clue": "Man sover i en ___" },
-        { "word": "kudde", "clue": "Lägger man huvudet på när man sover" },
-        { "word": "matta", "clue": "Mjukt tyg man lägger på golvet" },
-        { "word": "hylla", "clue": "Möbel med plan där man ställer böcker" },
-        { "word": "mjölk", "clue": "Vit dryck som kommer från kor" },
-        { "word": "bröd", "clue": "Bakas av mjöl och äts med smör" },
-        { "word": "smör", "clue": "Gult och fett, smetas på bröd" },
-        { "word": "choklad", "clue": "Söt brun godis gjord av kakaobönor" },
-        { "word": "apelsin", "clue": "Rund orange frukt med surt skal" },
-        { "word": "banan", "clue": "Gul böjd frukt från tropikerna" }
+        {
+          "word": "äpple",
+          "clue": "Rött eller grönt frukt med kärnhus"
+        },
+        {
+          "word": "björn",
+          "clue": "Stort brunt djur i skogen"
+        },
+        {
+          "word": "fågel",
+          "clue": "Djur med vingar och fjädrar som flyger"
+        },
+        {
+          "word": "skola",
+          "clue": "Hit går barn för att lära sig"
+        },
+        {
+          "word": "blomma",
+          "clue": "Vacker växt med kronblad och doft"
+        },
+        {
+          "word": "vatten",
+          "clue": "Klar dryck man behöver för att leva"
+        },
+        {
+          "word": "lampa",
+          "clue": "Ger ljus i rummet"
+        },
+        {
+          "word": "trappa",
+          "clue": "Stegen man går uppför inomhus"
+        },
+        {
+          "word": "fönster",
+          "clue": "Genomskinlig ruta i väggen"
+        },
+        {
+          "word": "dörr",
+          "clue": "Öppning man går igenom in i ett rum"
+        },
+        {
+          "word": "säng",
+          "clue": "Man sover i en ___"
+        },
+        {
+          "word": "kudde",
+          "clue": "Lägger man huvudet på när man sover"
+        },
+        {
+          "word": "matta",
+          "clue": "Mjukt tyg man lägger på golvet"
+        },
+        {
+          "word": "hylla",
+          "clue": "Möbel med plan där man ställer böcker"
+        },
+        {
+          "word": "mjölk",
+          "clue": "Vit dryck som kommer från kor"
+        },
+        {
+          "word": "bröd",
+          "clue": "Bakas av mjöl och äts med smör"
+        },
+        {
+          "word": "smör",
+          "clue": "Gult och fett, smetas på bröd"
+        },
+        {
+          "word": "choklad",
+          "clue": "Söt brun godis gjord av kakaobönor"
+        },
+        {
+          "word": "apelsin",
+          "clue": "Rund orange frukt med surt skal"
+        },
+        {
+          "word": "banan",
+          "clue": "Gul böjd frukt från tropikerna"
+        }
       ]
     },
     {
@@ -4785,26 +5230,86 @@
       "bonusPoints": 40,
       "timeLimit": 60,
       "words": [
-        { "word": "fotboll", "clue": "Rund boll man sparkar med foten" },
-        { "word": "dagbok", "clue": "Bok man skriver om sin dag i" },
-        { "word": "solros", "clue": "Stor gul blomma som följer solen" },
-        { "word": "snögubbe", "clue": "Figur byggd av snöbollar" },
-        { "word": "fågelbo", "clue": "Där fåglar lägger sina ägg" },
-        { "word": "blåbär", "clue": "Små mörkblå bär som växer i skogen" },
-        { "word": "jordgubbe", "clue": "Röd söt frukt med frön på utsidan" },
-        { "word": "regnbåge", "clue": "Sju färger på himlen efter regnet" },
-        { "word": "glasögon", "clue": "Hjälper ögonen att se skarpare" },
-        { "word": "tandborste", "clue": "Borsten man borstar tänderna med" },
-        { "word": "handduk", "clue": "Torkar sig med den efter bad" },
-        { "word": "ryggsäck", "clue": "Väska man bär på ryggen till skolan" },
-        { "word": "halsduk", "clue": "Lindas runt halsen när det är kallt" },
-        { "word": "handskar", "clue": "Skyddar händerna mot kylan" },
-        { "word": "klocka", "clue": "Visar hur dags det är" },
-        { "word": "potatis", "clue": "Brun knöl som kokas till middag" },
-        { "word": "vindruva", "clue": "Liten rund frukt som växer i klase" },
-        { "word": "sommarlov", "clue": "Lång ledighet från skolan på sommaren" },
-        { "word": "vinterlov", "clue": "Kort ledighet mitt i vintern" },
-        { "word": "lekplats", "clue": "Ute­plats med rutschkana och gunga" }
+        {
+          "word": "fotboll",
+          "clue": "Rund boll man sparkar med foten"
+        },
+        {
+          "word": "dagbok",
+          "clue": "Bok man skriver om sin dag i"
+        },
+        {
+          "word": "solros",
+          "clue": "Stor gul blomma som följer solen"
+        },
+        {
+          "word": "snögubbe",
+          "clue": "Figur byggd av snöbollar"
+        },
+        {
+          "word": "fågelbo",
+          "clue": "Där fåglar lägger sina ägg"
+        },
+        {
+          "word": "blåbär",
+          "clue": "Små mörkblå bär som växer i skogen"
+        },
+        {
+          "word": "jordgubbe",
+          "clue": "Röd söt frukt med frön på utsidan"
+        },
+        {
+          "word": "regnbåge",
+          "clue": "Sju färger på himlen efter regnet"
+        },
+        {
+          "word": "glasögon",
+          "clue": "Hjälper ögonen att se skarpare"
+        },
+        {
+          "word": "tandborste",
+          "clue": "Borsten man borstar tänderna med"
+        },
+        {
+          "word": "handduk",
+          "clue": "Torkar sig med den efter bad"
+        },
+        {
+          "word": "ryggsäck",
+          "clue": "Väska man bär på ryggen till skolan"
+        },
+        {
+          "word": "halsduk",
+          "clue": "Lindas runt halsen när det är kallt"
+        },
+        {
+          "word": "handskar",
+          "clue": "Skyddar händerna mot kylan"
+        },
+        {
+          "word": "klocka",
+          "clue": "Visar hur dags det är"
+        },
+        {
+          "word": "potatis",
+          "clue": "Brun knöl som kokas till middag"
+        },
+        {
+          "word": "vindruva",
+          "clue": "Liten rund frukt som växer i klase"
+        },
+        {
+          "word": "sommarlov",
+          "clue": "Lång ledighet från skolan på sommaren"
+        },
+        {
+          "word": "vinterlov",
+          "clue": "Kort ledighet mitt i vintern"
+        },
+        {
+          "word": "lekplats",
+          "clue": "Ute­plats med rutschkana och gunga"
+        }
       ]
     },
     {
@@ -4816,26 +5321,86 @@
       "bonusPoints": 45,
       "timeLimit": 60,
       "words": [
-        { "word": "djur", "clue": "Levande varelse som inte är en växt" },
-        { "word": "hjälp", "clue": "Att stödja någon som behöver det" },
-        { "word": "ljus", "clue": "Ger oss möjlighet att se i mörker" },
-        { "word": "sjö", "clue": "Stor samling sötvatten omgiven av land" },
-        { "word": "skjorta", "clue": "Klädesplagg med knappar framtill" },
-        { "word": "stjärna", "clue": "Lyser som en liten punkt på natthimlen" },
-        { "word": "tjej", "clue": "Annat ord för flicka eller ung kvinna" },
-        { "word": "tjock", "clue": "Motsatsen till tunn" },
-        { "word": "kyrka", "clue": "Byggnad för gudstjänst med torn" },
-        { "word": "cykel", "clue": "Fordon med två hjul man trampar" },
-        { "word": "kyckling", "clue": "Ung höna eller maträtt av den" },
-        { "word": "fjäder", "clue": "Mjuk del av fågelns yttre hölje" },
-        { "word": "kjol", "clue": "Klädesplagg som hänger nedanför midjan" },
-        { "word": "hjärta", "clue": "Organ som pumpar blodet runt i kroppen" },
-        { "word": "hjärna", "clue": "Organ i skallen man tänker med" },
-        { "word": "djungel", "clue": "Tät tropisk skog med många djur" },
-        { "word": "sju", "clue": "Siffran som kommer efter sex" },
-        { "word": "sjunga", "clue": "Göra musik med rösten" },
-        { "word": "björk", "clue": "Vitt träd som är vanligt i Sverige" },
-        { "word": "njuta", "clue": "Att ha stor glädje av något" }
+        {
+          "word": "djur",
+          "clue": "Levande varelse som inte är en växt"
+        },
+        {
+          "word": "hjälp",
+          "clue": "Att stödja någon som behöver det"
+        },
+        {
+          "word": "ljus",
+          "clue": "Ger oss möjlighet att se i mörker"
+        },
+        {
+          "word": "sjö",
+          "clue": "Stor samling sötvatten omgiven av land"
+        },
+        {
+          "word": "skjorta",
+          "clue": "Klädesplagg med knappar framtill"
+        },
+        {
+          "word": "stjärna",
+          "clue": "Lyser som en liten punkt på natthimlen"
+        },
+        {
+          "word": "tjej",
+          "clue": "Annat ord för flicka eller ung kvinna"
+        },
+        {
+          "word": "tjock",
+          "clue": "Motsatsen till tunn"
+        },
+        {
+          "word": "kyrka",
+          "clue": "Byggnad för gudstjänst med torn"
+        },
+        {
+          "word": "cykel",
+          "clue": "Fordon med två hjul man trampar"
+        },
+        {
+          "word": "kyckling",
+          "clue": "Ung höna eller maträtt av den"
+        },
+        {
+          "word": "fjäder",
+          "clue": "Mjuk del av fågelns yttre hölje"
+        },
+        {
+          "word": "kjol",
+          "clue": "Klädesplagg som hänger nedanför midjan"
+        },
+        {
+          "word": "hjärta",
+          "clue": "Organ som pumpar blodet runt i kroppen"
+        },
+        {
+          "word": "hjärna",
+          "clue": "Organ i skallen man tänker med"
+        },
+        {
+          "word": "djungel",
+          "clue": "Tät tropisk skog med många djur"
+        },
+        {
+          "word": "sju",
+          "clue": "Siffran som kommer efter sex"
+        },
+        {
+          "word": "sjunga",
+          "clue": "Göra musik med rösten"
+        },
+        {
+          "word": "björk",
+          "clue": "Vitt träd som är vanligt i Sverige"
+        },
+        {
+          "word": "njuta",
+          "clue": "Att ha stor glädje av något"
+        }
       ]
     },
     {
@@ -4847,26 +5412,86 @@
       "bonusPoints": 50,
       "timeLimit": 60,
       "words": [
-        { "word": "bibliotek", "clue": "Ställe med massor av böcker att låna" },
-        { "word": "matematik", "clue": "Skolämnet med siffror och räkning" },
-        { "word": "fantastisk", "clue": "Jättebra och häpnadsväckande" },
-        { "word": "plötsligt", "clue": "Något som händer väldigt snabbt och oväntat" },
-        { "word": "tillsammans", "clue": "Att göra något gemensamt med fler personer" },
-        { "word": "ungefär", "clue": "Inte exakt men nära rätt svar" },
-        { "word": "faktiskt", "clue": "Det är verkligen och sant så" },
-        { "word": "troligen", "clue": "Det stämmer nog, med stor sannolikhet" },
-        { "word": "aldrig", "clue": "Inte en enda gång, noll gånger" },
-        { "word": "alltid", "clue": "Varje gång, utan undantag" },
-        { "word": "ordentlig", "clue": "Gjord på rätt och noggrant sätt" },
-        { "word": "välkommen", "clue": "Hälsning när man bjuder in någon" },
-        { "word": "förklara", "clue": "Göra något svårt lättare att förstå" },
-        { "word": "läraren", "clue": "Den som undervisar eleverna i skolan" },
-        { "word": "förskola", "clue": "Skola för barn innan de börjar ettan" },
-        { "word": "kompisar", "clue": "Vänner man leker och umgås med" },
-        { "word": "semester", "clue": "Lång ledighet från jobbet eller skolan" },
-        { "word": "omtänksam", "clue": "Snäll person som tänker på andras behov" },
-        { "word": "rättstavning", "clue": "Att stava ord på rätt sätt" },
-        { "word": "uppmärksam", "clue": "Att noga lyssna och märka vad som händer" }
+        {
+          "word": "bibliotek",
+          "clue": "Ställe med massor av böcker att låna"
+        },
+        {
+          "word": "matematik",
+          "clue": "Skolämnet med siffror och räkning"
+        },
+        {
+          "word": "fantastisk",
+          "clue": "Jättebra och häpnadsväckande"
+        },
+        {
+          "word": "plötsligt",
+          "clue": "Något som händer väldigt snabbt och oväntat"
+        },
+        {
+          "word": "tillsammans",
+          "clue": "Att göra något gemensamt med fler personer"
+        },
+        {
+          "word": "ungefär",
+          "clue": "Inte exakt men nära rätt svar"
+        },
+        {
+          "word": "faktiskt",
+          "clue": "Det är verkligen och sant så"
+        },
+        {
+          "word": "troligen",
+          "clue": "Det stämmer nog, med stor sannolikhet"
+        },
+        {
+          "word": "aldrig",
+          "clue": "Inte en enda gång, noll gånger"
+        },
+        {
+          "word": "alltid",
+          "clue": "Varje gång, utan undantag"
+        },
+        {
+          "word": "ordentlig",
+          "clue": "Gjord på rätt och noggrant sätt"
+        },
+        {
+          "word": "välkommen",
+          "clue": "Hälsning när man bjuder in någon"
+        },
+        {
+          "word": "förklara",
+          "clue": "Göra något svårt lättare att förstå"
+        },
+        {
+          "word": "läraren",
+          "clue": "Den som undervisar eleverna i skolan"
+        },
+        {
+          "word": "förskola",
+          "clue": "Skola för barn innan de börjar ettan"
+        },
+        {
+          "word": "kompisar",
+          "clue": "Vänner man leker och umgås med"
+        },
+        {
+          "word": "semester",
+          "clue": "Lång ledighet från jobbet eller skolan"
+        },
+        {
+          "word": "omtänksam",
+          "clue": "Snäll person som tänker på andras behov"
+        },
+        {
+          "word": "rättstavning",
+          "clue": "Att stava ord på rätt sätt"
+        },
+        {
+          "word": "uppmärksam",
+          "clue": "Att noga lyssna och märka vad som händer"
+        }
       ]
     }
   ]
