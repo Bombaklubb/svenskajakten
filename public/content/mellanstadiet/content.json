@@ -73,6 +73,127 @@
             4
           ],
           "explanation": "'Maja' är subjektet, 'åt' är predikatet, 'ett äpple' är objektet."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är subjektet i: 'Den gamla hunden sover på mattan'?",
+          "options": [
+            "Den",
+            "gamla",
+            "Den gamla hunden",
+            "sover"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Den gamla hunden' är hela subjektet – det är de som sover. Subjektet kan vara flera ord."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är predikatet i: 'Barnen leker ute i trädgården'?",
+          "options": [
+            "Barnen",
+            "leker",
+            "ute",
+            "trädgården"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Leker' är predikatet – det är verbet som berättar vad barnen gör."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "I meningen 'Eleverna i klassen sjunger en sång' är subjektet ___.",
+          "answer": "Eleverna i klassen",
+          "hint": "Vem sjunger? Det kan vara fler än ett ord.",
+          "explanation": "'Eleverna i klassen' är subjektet – de är de som sjunger."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är predikatet i: 'Min bror ska resa till London'?",
+          "options": [
+            "Min bror",
+            "ska resa",
+            "resa",
+            "London"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Ska resa' är predikatet – ett sammansatt predikat med hjälpverb (ska) + verb (resa)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket påstående stämmer om subjektet?",
+          "options": [
+            "Subjektet är alltid ett enda ord.",
+            "Subjektet är det som utför handlingen.",
+            "Subjektet är alltid ett verb.",
+            "Subjektet står alltid sist i meningen."
+          ],
+          "correctIndex": 1,
+          "explanation": "Subjektet är den som utför handlingen (eller det som meningen handlar om). Det kan vara ett eller flera ord."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "I meningen 'Läraren förklarade uppgiften' är predikatet ___.",
+          "answer": "förklarade",
+          "hint": "Vad gjorde läraren? Predikatet är verbet.",
+          "explanation": "'Förklarade' är predikatet – det berättar vad läraren gjorde."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken del av meningen är understruken? 'De två kattERna _sover_ på soffan.'",
+          "options": [
+            "Subjekt",
+            "Predikat",
+            "Objekt",
+            "Adverbial"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Sover' är understruket – det är predikatet (verbet) i meningen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är subjektet i: 'Igår åt vi pizza'?",
+          "options": [
+            "Igår",
+            "åt",
+            "vi",
+            "pizza"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Vi' är subjektet – det är vi som åt. Tänk: vem åt? – vi."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen: subjekt + predikat + adverbial!",
+          "words": [
+            "Hunden",
+            "springer",
+            "i",
+            "parken",
+            "varje",
+            "dag",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "explanation": "'Hunden' = subjekt, 'springer' = predikat, 'i parken varje dag' = adverbial."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är predikatet i: 'Sofia har läst hela boken'?",
+          "options": [
+            "Sofia",
+            "har läst",
+            "hela",
+            "boken"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Har läst' är predikatet – ett sammansatt predikat i perfekt (har + supinum)."
         }
       ]
     },
@@ -151,6 +272,120 @@
             5
           ],
           "explanation": "'Hon och jag' – man sätter alltid den andra personen före 'jag'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket pronomen ersätter 'boken och pennor'?",
+          "options": [
+            "den",
+            "det",
+            "de",
+            "dem"
+          ],
+          "correctIndex": 2,
+          "explanation": "Flera saker (bok och pennor) ersätts med 'de' som subjekt: 'De ligger på bordet.'"
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Sara tappade sin väska. ___ hittade den i klassrummet.",
+          "answer": "Hon",
+          "hint": "Sara är en flicka – vilket pronomen används?",
+          "explanation": "'Hon' ersätter Sara eftersom Sara är en flicka."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt pronomen: 'Jag ringde Erik. Jag ringde ___.'",
+          "options": [
+            "han",
+            "honom",
+            "hans",
+            "sig"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Honom' är objektsformen av 'han'. Man ringer HONOM – han tar emot samtalet."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket är ett possessivt pronomen?",
+          "options": [
+            "jag",
+            "han",
+            "hennes",
+            "de"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Hennes' är ett possessivt pronomen – det visar att något tillhör henne. T.ex. 'hennes cykel'."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt pronomen: 'Huset är gammalt. ___ har stora fönster.'",
+          "answer": "Det",
+          "hint": "Huset är ett n-ord (ett hus) – vilket pronomen ersätter det?",
+          "explanation": "'Det' ersätter ett neutralt ord (n-ord) som 'huset'. Jämför: 'bilen → den', 'huset → det'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt pronomen: 'Vi träffade Maja och Leo. Vi träffade ___.'",
+          "options": [
+            "de",
+            "dem",
+            "dom",
+            "de och dem"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Dem' är objektsformen – vi träffade DEM (de tar emot handlingen). Byt till 'oss': 'Vi träffade oss' → dem."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket pronomen används när man talar till en grupp?",
+          "options": [
+            "jag",
+            "du",
+            "ni",
+            "vi"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Ni' används när man talar till flera personer: 'Kan ni hjälpa mig?'"
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt pronomen: 'Det är ___ bok.' (tillhör mig)",
+          "answer": "min",
+          "hint": "Det possessiva pronomenet för 'jag' + utrum-ord.",
+          "explanation": "'Min' är possessivt pronomen för 'jag' + utrum-ord (en-ord): min bok, min cykel."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med rätt pronomen!",
+          "words": [
+            "Han",
+            "gav",
+            "henne",
+            "en",
+            "blomma",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "explanation": "'Han' = subjekt (nominativ), 'henne' = objekt (objektsform av hon)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket pronomen passar? 'Katten tvättar ___ varje dag.' (katten tvättar sig själv)",
+          "options": [
+            "den",
+            "sig",
+            "honom",
+            "henne"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Sig' är ett reflexivt pronomen – det används när subjektet utför handlingen på sig självt."
         }
       ]
     },
@@ -232,6 +467,122 @@
             6
           ],
           "explanation": "'Förra veckan' och 'cyklade' visar att det hände i dåtid."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket tempus är: 'Snart ska vi resa till Spanien'?",
+          "options": [
+            "Nutid",
+            "Dåtid",
+            "Framtid",
+            "Perfekt"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Snart ska' visar framtid – det har inte hänt än."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Skriv i dåtid: 'Jag sitter och läser.' → 'Igår ___ jag och läste.'",
+          "answer": "satt",
+          "hint": "Sitter → satt i dåtid. Oregelbundet verb!",
+          "explanation": "'Satt' är dåtidsform av 'sitter/sitta'. Oregelbundet verb."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är dåtidsformen av 'får'?",
+          "options": [
+            "fårde",
+            "fick",
+            "fårat",
+            "fårade"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Fick' är dåtidsform av 'får/få'. Oregelbundet verb: får → fick."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket verb är i PERFEKT (har + supinum)?",
+          "options": [
+            "sprang",
+            "springer",
+            "har sprungit",
+            "ska springa"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Har sprungit' är perfekt – det visar att något hänt och har koppling till nu."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Skriv i dåtid: 'Hon ser filmen.' → 'Igår ___ hon filmen.'",
+          "answer": "såg",
+          "hint": "Ser → såg i dåtid. Oregelbundet verb!",
+          "explanation": "'Såg' är dåtidsform av 'ser/se'. Oregelbundet verb: ser → såg."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket tidsuttryck hör ihop med DÅTID?",
+          "options": [
+            "snart",
+            "just nu",
+            "härom dagen",
+            "imorgon"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Härom dagen' pekar bakåt i tiden – det är ett dåtidssignal."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt dåtidsform av 'äter':",
+          "options": [
+            "ätade",
+            "åt",
+            "ätit",
+            "äter"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Åt' är dåtidsform av 'äter/äta'. Oregelbundet verb: äter → åt."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Skriv i framtid: 'Vi simmar i sjön.' → 'I sommar ___ vi i sjön.'",
+          "answer": "ska vi simma",
+          "hint": "Framtid bildas med 'ska' + infinitiv.",
+          "explanation": "'Ska simma' visar framtid. I sommar ska vi simma i sjön."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen i PERFEKT (har + verb)!",
+          "words": [
+            "Jag",
+            "har",
+            "redan",
+            "läst",
+            "den",
+            "boken",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "explanation": "'Har läst' är perfekt – handlingen är avslutad men relevant nu ('redan')."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är i NUTID (presens)?",
+          "options": [
+            "Vi spelade tennis igår.",
+            "Vi ska spela tennis imorgon.",
+            "Vi spelar tennis varje vecka.",
+            "Vi har spelat tennis."
+          ],
+          "correctIndex": 2,
+          "explanation": "'Spelar' är presens (nutid). 'Varje vecka' visar att det är en pågående vana."
         }
       ]
     },
@@ -1516,8 +1867,22 @@
         {
           "type": "build-sentence",
           "instruction": "Bygg den korrekta dialogmeningen:",
-          "words": ["\"Titta,", "en", "regnbåge!\"", "utbrast", "Sofia", "."],
-          "correctOrder": [0, 1, 2, 3, 4, 5],
+          "words": [
+            "\"Titta,",
+            "en",
+            "regnbåge!\"",
+            "utbrast",
+            "Sofia",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
           "explanation": "\"Titta, en regnbåge!\" utbrast Sofia. Hela repliken är inom citattecknen, utropstecknet inuti."
         },
         {
@@ -1704,8 +2069,22 @@
         {
           "type": "build-sentence",
           "instruction": "Bygg liknelsen i rätt ordning:",
-          "words": ["Hennes", "ögon", "glittrade", "som", "stjärnor", "."],
-          "correctOrder": [0, 1, 2, 3, 4, 5],
+          "words": [
+            "Hennes",
+            "ögon",
+            "glittrade",
+            "som",
+            "stjärnor",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
           "explanation": "'Hennes ögon glittrade som stjärnor' är en liknelse – ögonen jämförs med stjärnors glitter."
         },
         {
@@ -1787,7 +2166,11 @@
           "type": "fill-in-blank",
           "question": "Fyll i så att det blir en metafor: 'Klassrummet var ett ___ av oljud.'",
           "answer": "hav",
-          "alternativeAnswers": ["kaos", "inferno", "virrvarr"],
+          "alternativeAnswers": [
+            "kaos",
+            "inferno",
+            "virrvarr"
+          ],
           "hint": "Tänk på något stort och överväldigande.",
           "explanation": "Metaforen 'ett hav av oljud' beskriver att det var oerhört mycket ljud – som att drunkna i det."
         },
@@ -1818,8 +2201,22 @@
         {
           "type": "build-sentence",
           "instruction": "Bygg metaforen i rätt ordning:",
-          "words": ["Livet", "är", "en", "lång", "resa", "."],
-          "correctOrder": [0, 1, 2, 3, 4, 5],
+          "words": [
+            "Livet",
+            "är",
+            "en",
+            "lång",
+            "resa",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
           "explanation": "'Livet är en lång resa' är en metafor – livet jämförs direkt med en resa utan 'som'."
         },
         {
@@ -3129,26 +3526,86 @@
       "bonusPoints": 30,
       "timeLimit": 60,
       "words": [
-        { "word": "berätta", "clue": "Att säga vad som hände – att ___ en historia" },
-        { "word": "förklara", "clue": "Göra något svårt lättare att förstå" },
-        { "word": "förstå", "clue": "Att fatta och begripa" },
-        { "word": "bestämma", "clue": "Att fatta ett beslut" },
-        { "word": "beroende", "clue": "Inte klara sig utan något – ___ av hjälp" },
-        { "word": "viktig", "clue": "Har stor betydelse" },
-        { "word": "rättvis", "clue": "Behandlar alla lika och hederligt" },
-        { "word": "demokrati", "clue": "Styresätt där folket röstar" },
-        { "word": "miljö", "clue": "Naturen och vår omgivning" },
-        { "word": "energi", "clue": "Kraft som behövs för att göra saker" },
-        { "word": "klimat", "clue": "Väder och temperaturmönster under lång tid" },
-        { "word": "ekosystem", "clue": "Djur, växter och miljö som lever ihop" },
-        { "word": "befolkning", "clue": "Alla människor som bor i ett land" },
-        { "word": "rättigheter", "clue": "Saker man har rätt att göra och få" },
-        { "word": "skyldigheter", "clue": "Saker man är tvungen att göra" },
-        { "word": "medborgare", "clue": "Person som tillhör ett land juridiskt" },
-        { "word": "samhälle", "clue": "Alla människor och institutioner i ett land" },
-        { "word": "myndighet", "clue": "Statlig organisation med bestämd uppgift" },
-        { "word": "regering", "clue": "Grupp av ministrar som styr landet" },
-        { "word": "riksdag", "clue": "Sveriges folkvalda parlament" }
+        {
+          "word": "berätta",
+          "clue": "Att säga vad som hände – att ___ en historia"
+        },
+        {
+          "word": "förklara",
+          "clue": "Göra något svårt lättare att förstå"
+        },
+        {
+          "word": "förstå",
+          "clue": "Att fatta och begripa"
+        },
+        {
+          "word": "bestämma",
+          "clue": "Att fatta ett beslut"
+        },
+        {
+          "word": "beroende",
+          "clue": "Inte klara sig utan något – ___ av hjälp"
+        },
+        {
+          "word": "viktig",
+          "clue": "Har stor betydelse"
+        },
+        {
+          "word": "rättvis",
+          "clue": "Behandlar alla lika och hederligt"
+        },
+        {
+          "word": "demokrati",
+          "clue": "Styresätt där folket röstar"
+        },
+        {
+          "word": "miljö",
+          "clue": "Naturen och vår omgivning"
+        },
+        {
+          "word": "energi",
+          "clue": "Kraft som behövs för att göra saker"
+        },
+        {
+          "word": "klimat",
+          "clue": "Väder och temperaturmönster under lång tid"
+        },
+        {
+          "word": "ekosystem",
+          "clue": "Djur, växter och miljö som lever ihop"
+        },
+        {
+          "word": "befolkning",
+          "clue": "Alla människor som bor i ett land"
+        },
+        {
+          "word": "rättigheter",
+          "clue": "Saker man har rätt att göra och få"
+        },
+        {
+          "word": "skyldigheter",
+          "clue": "Saker man är tvungen att göra"
+        },
+        {
+          "word": "medborgare",
+          "clue": "Person som tillhör ett land juridiskt"
+        },
+        {
+          "word": "samhälle",
+          "clue": "Alla människor och institutioner i ett land"
+        },
+        {
+          "word": "myndighet",
+          "clue": "Statlig organisation med bestämd uppgift"
+        },
+        {
+          "word": "regering",
+          "clue": "Grupp av ministrar som styr landet"
+        },
+        {
+          "word": "riksdag",
+          "clue": "Sveriges folkvalda parlament"
+        }
       ]
     },
     {
@@ -3160,26 +3617,86 @@
       "bonusPoints": 35,
       "timeLimit": 60,
       "words": [
-        { "word": "experiment", "clue": "Vetenskapligt försök för att testa en idé" },
-        { "word": "observation", "clue": "Att noga titta och lägga märke till" },
-        { "word": "hypotes", "clue": "En gissning man ska testa" },
-        { "word": "slutsats", "clue": "Det man kommer fram till efter ett experiment" },
-        { "word": "temperatur", "clue": "Hur varmt eller kallt något är" },
-        { "word": "rörelse", "clue": "Förflyttning i rymden" },
-        { "word": "hastighet", "clue": "Hur snabbt något rör sig" },
-        { "word": "magnetism", "clue": "Kraften som drar till sig järn" },
-        { "word": "elektricitet", "clue": "Ström som driver lampor och apparater" },
-        { "word": "friktion", "clue": "Motståndskraft när ytor gnids mot varandra" },
-        { "word": "gravitation", "clue": "Kraftens som drar saker mot jordens centrum" },
-        { "word": "reaktion", "clue": "Vad som händer när ämnen blandas" },
-        { "word": "fotosyntesen", "clue": "Hur växter gör mat av ljus och koldioxid" },
-        { "word": "metabolism", "clue": "Kroppens kemiska processer för att leva" },
-        { "word": "organism", "clue": "Levande varelse – djur, växt eller svamp" },
-        { "word": "evolution", "clue": "Hur arter förändras och anpassas över tid" },
-        { "word": "genetik", "clue": "Läran om arv och DNA" },
-        { "word": "mineral", "clue": "Naturligt fast ämne i berggrunden" },
-        { "word": "kristall", "clue": "Regelbunden struktur av atomer eller molekyler" },
-        { "word": "vulkan", "clue": "Berg som spyr ut lava och aska" }
+        {
+          "word": "experiment",
+          "clue": "Vetenskapligt försök för att testa en idé"
+        },
+        {
+          "word": "observation",
+          "clue": "Att noga titta och lägga märke till"
+        },
+        {
+          "word": "hypotes",
+          "clue": "En gissning man ska testa"
+        },
+        {
+          "word": "slutsats",
+          "clue": "Det man kommer fram till efter ett experiment"
+        },
+        {
+          "word": "temperatur",
+          "clue": "Hur varmt eller kallt något är"
+        },
+        {
+          "word": "rörelse",
+          "clue": "Förflyttning i rymden"
+        },
+        {
+          "word": "hastighet",
+          "clue": "Hur snabbt något rör sig"
+        },
+        {
+          "word": "magnetism",
+          "clue": "Kraften som drar till sig järn"
+        },
+        {
+          "word": "elektricitet",
+          "clue": "Ström som driver lampor och apparater"
+        },
+        {
+          "word": "friktion",
+          "clue": "Motståndskraft när ytor gnids mot varandra"
+        },
+        {
+          "word": "gravitation",
+          "clue": "Kraftens som drar saker mot jordens centrum"
+        },
+        {
+          "word": "reaktion",
+          "clue": "Vad som händer när ämnen blandas"
+        },
+        {
+          "word": "fotosyntesen",
+          "clue": "Hur växter gör mat av ljus och koldioxid"
+        },
+        {
+          "word": "metabolism",
+          "clue": "Kroppens kemiska processer för att leva"
+        },
+        {
+          "word": "organism",
+          "clue": "Levande varelse – djur, växt eller svamp"
+        },
+        {
+          "word": "evolution",
+          "clue": "Hur arter förändras och anpassas över tid"
+        },
+        {
+          "word": "genetik",
+          "clue": "Läran om arv och DNA"
+        },
+        {
+          "word": "mineral",
+          "clue": "Naturligt fast ämne i berggrunden"
+        },
+        {
+          "word": "kristall",
+          "clue": "Regelbunden struktur av atomer eller molekyler"
+        },
+        {
+          "word": "vulkan",
+          "clue": "Berg som spyr ut lava och aska"
+        }
       ]
     },
     {
@@ -3191,26 +3708,86 @@
       "bonusPoints": 40,
       "timeLimit": 60,
       "words": [
-        { "word": "kontinent", "clue": "En av jordens sju stora landmassor" },
-        { "word": "halvö", "clue": "Landstycke omgivet av vatten på tre sidor" },
-        { "word": "ekvatorn", "clue": "Den imaginära linjen mitt runt jordklotet" },
-        { "word": "longitud", "clue": "Koordinat som mäter läge öst–väst" },
-        { "word": "latitud", "clue": "Koordinat som mäter läge nord–syd" },
-        { "word": "migration", "clue": "Att flytta från ett land till ett annat" },
-        { "word": "revolution", "clue": "Snabb och genomgripande samhällsförändring" },
-        { "word": "reformation", "clue": "1500-talets religionsreform av kyrkan" },
-        { "word": "kolonisering", "clue": "Att ett land tar kontroll över ett annat" },
-        { "word": "nationalism", "clue": "Starkt kärlekskänsla för sitt eget land" },
-        { "word": "industrialism", "clue": "Samhällsepoken med fabriker och maskiner" },
-        { "word": "parlamentarism", "clue": "Styrelsesätt där parlamentet har makten" },
-        { "word": "absolutism", "clue": "Styrelsesätt där kungen hade all makt" },
-        { "word": "monarki", "clue": "Land som styrs av en kung eller drottning" },
-        { "word": "republik", "clue": "Land utan kung, med vald president" },
-        { "word": "diktatur", "clue": "Land styrt av en person med total makt" },
-        { "word": "imperialism", "clue": "Stormakts strävan att kontrollera andra länder" },
-        { "word": "globalisering", "clue": "Världen knyts allt mer samman ekonomiskt" },
-        { "word": "hållbarhet", "clue": "Att använda resurser utan att skada framtiden" },
-        { "word": "bistånd", "clue": "Hjälp och stöd till fattiga länder" }
+        {
+          "word": "kontinent",
+          "clue": "En av jordens sju stora landmassor"
+        },
+        {
+          "word": "halvö",
+          "clue": "Landstycke omgivet av vatten på tre sidor"
+        },
+        {
+          "word": "ekvatorn",
+          "clue": "Den imaginära linjen mitt runt jordklotet"
+        },
+        {
+          "word": "longitud",
+          "clue": "Koordinat som mäter läge öst–väst"
+        },
+        {
+          "word": "latitud",
+          "clue": "Koordinat som mäter läge nord–syd"
+        },
+        {
+          "word": "migration",
+          "clue": "Att flytta från ett land till ett annat"
+        },
+        {
+          "word": "revolution",
+          "clue": "Snabb och genomgripande samhällsförändring"
+        },
+        {
+          "word": "reformation",
+          "clue": "1500-talets religionsreform av kyrkan"
+        },
+        {
+          "word": "kolonisering",
+          "clue": "Att ett land tar kontroll över ett annat"
+        },
+        {
+          "word": "nationalism",
+          "clue": "Starkt kärlekskänsla för sitt eget land"
+        },
+        {
+          "word": "industrialism",
+          "clue": "Samhällsepoken med fabriker och maskiner"
+        },
+        {
+          "word": "parlamentarism",
+          "clue": "Styrelsesätt där parlamentet har makten"
+        },
+        {
+          "word": "absolutism",
+          "clue": "Styrelsesätt där kungen hade all makt"
+        },
+        {
+          "word": "monarki",
+          "clue": "Land som styrs av en kung eller drottning"
+        },
+        {
+          "word": "republik",
+          "clue": "Land utan kung, med vald president"
+        },
+        {
+          "word": "diktatur",
+          "clue": "Land styrt av en person med total makt"
+        },
+        {
+          "word": "imperialism",
+          "clue": "Stormakts strävan att kontrollera andra länder"
+        },
+        {
+          "word": "globalisering",
+          "clue": "Världen knyts allt mer samman ekonomiskt"
+        },
+        {
+          "word": "hållbarhet",
+          "clue": "Att använda resurser utan att skada framtiden"
+        },
+        {
+          "word": "bistånd",
+          "clue": "Hjälp och stöd till fattiga länder"
+        }
       ]
     },
     {
@@ -3222,26 +3799,86 @@
       "bonusPoints": 45,
       "timeLimit": 60,
       "words": [
-        { "word": "grammatik", "clue": "Reglerna för hur ett språk är uppbyggt" },
-        { "word": "interpunktion", "clue": "Skiljeteckens samlade användning i text" },
-        { "word": "meningsbyggnad", "clue": "Hur ord sätts ihop till meningar" },
-        { "word": "intonation", "clue": "Hur tonhöjden varierar i talet" },
-        { "word": "synonym", "clue": "Ord med samma eller liknande betydelse" },
-        { "word": "antonym", "clue": "Ord med motsatt betydelse" },
-        { "word": "metafor", "clue": "Bildligt uttryck, t.ex. 'livet är en resa'" },
-        { "word": "liknelse", "clue": "Jämförelse med 'som', t.ex. 'snabb som vinden'" },
-        { "word": "allitteration", "clue": "Upprepning av samma begynnelseljud" },
-        { "word": "personifikation", "clue": "Ge ting mänskliga egenskaper" },
-        { "word": "berättarperspektiv", "clue": "Vem som berättar historien – jagperson eller han/hon" },
-        { "word": "klimax", "clue": "Berättelsens spänningshöjdpunkt" },
-        { "word": "konflikt", "clue": "Motsättning eller problem i en berättelse" },
-        { "word": "protagonist", "clue": "Huvudpersonen i en berättelse" },
-        { "word": "antagonist", "clue": "Motståndaren till huvudpersonen" },
-        { "word": "detaljer", "clue": "Små specifika delar av en beskrivning" },
-        { "word": "citat", "clue": "Exakta ord hämtade från en källa" },
-        { "word": "referens", "clue": "Hänvisning till en källa" },
-        { "word": "parafrasera", "clue": "Återberätta med egna ord" },
-        { "word": "sammanfatta", "clue": "Kortfattat återge det viktigaste" }
+        {
+          "word": "grammatik",
+          "clue": "Reglerna för hur ett språk är uppbyggt"
+        },
+        {
+          "word": "interpunktion",
+          "clue": "Skiljeteckens samlade användning i text"
+        },
+        {
+          "word": "meningsbyggnad",
+          "clue": "Hur ord sätts ihop till meningar"
+        },
+        {
+          "word": "intonation",
+          "clue": "Hur tonhöjden varierar i talet"
+        },
+        {
+          "word": "synonym",
+          "clue": "Ord med samma eller liknande betydelse"
+        },
+        {
+          "word": "antonym",
+          "clue": "Ord med motsatt betydelse"
+        },
+        {
+          "word": "metafor",
+          "clue": "Bildligt uttryck, t.ex. 'livet är en resa'"
+        },
+        {
+          "word": "liknelse",
+          "clue": "Jämförelse med 'som', t.ex. 'snabb som vinden'"
+        },
+        {
+          "word": "allitteration",
+          "clue": "Upprepning av samma begynnelseljud"
+        },
+        {
+          "word": "personifikation",
+          "clue": "Ge ting mänskliga egenskaper"
+        },
+        {
+          "word": "berättarperspektiv",
+          "clue": "Vem som berättar historien – jagperson eller han/hon"
+        },
+        {
+          "word": "klimax",
+          "clue": "Berättelsens spänningshöjdpunkt"
+        },
+        {
+          "word": "konflikt",
+          "clue": "Motsättning eller problem i en berättelse"
+        },
+        {
+          "word": "protagonist",
+          "clue": "Huvudpersonen i en berättelse"
+        },
+        {
+          "word": "antagonist",
+          "clue": "Motståndaren till huvudpersonen"
+        },
+        {
+          "word": "detaljer",
+          "clue": "Små specifika delar av en beskrivning"
+        },
+        {
+          "word": "citat",
+          "clue": "Exakta ord hämtade från en källa"
+        },
+        {
+          "word": "referens",
+          "clue": "Hänvisning till en källa"
+        },
+        {
+          "word": "parafrasera",
+          "clue": "Återberätta med egna ord"
+        },
+        {
+          "word": "sammanfatta",
+          "clue": "Kortfattat återge det viktigaste"
+        }
       ]
     },
     {
@@ -3253,26 +3890,86 @@
       "bonusPoints": 50,
       "timeLimit": 60,
       "words": [
-        { "word": "analysera", "clue": "Bryta ner och undersöka noggrant" },
-        { "word": "argumentera", "clue": "Ge skäl och motiveringar för en ståndpunkt" },
-        { "word": "kategorisera", "clue": "Dela in i grupper eller kategorier" },
-        { "word": "problematisera", "clue": "Lyfta fram komplexiteten i en fråga" },
-        { "word": "generalisera", "clue": "Dra brett gällande slutsatser" },
-        { "word": "konkretisera", "clue": "Göra abstrakt mer tydligt och gripbart" },
-        { "word": "systematisera", "clue": "Ordna på ett ordnat och planerat sätt" },
-        { "word": "källkritik", "clue": "Granska hur trovärdiga källorna är" },
-        { "word": "primärkälla", "clue": "Originalkälla t.ex. brev eller dagbok" },
-        { "word": "sekundärkälla", "clue": "Källa som tolkar eller refererar primärkällor" },
-        { "word": "reliabilitet", "clue": "Hur tillförlitliga mätresultaten är" },
-        { "word": "validitet", "clue": "Om man verkligen mäter det man vill mäta" },
-        { "word": "representativ", "clue": "Speglar helheten rättvist" },
-        { "word": "objektivitet", "clue": "Att vara saklig och opartisk" },
-        { "word": "subjektivitet", "clue": "Påverkas av egna åsikter och känslor" },
-        { "word": "perspektiv", "clue": "Synsätt eller infallsvinkel" },
-        { "word": "konsekvens", "clue": "Följd eller resultat av en handling" },
-        { "word": "proportioner", "clue": "Förhållanden mellan delar och helhet" },
-        { "word": "kompromiss", "clue": "Lösning där båda parter ger efter lite" },
-        { "word": "förhandling", "clue": "Diskussion för att nå en överenskommelse" }
+        {
+          "word": "analysera",
+          "clue": "Bryta ner och undersöka noggrant"
+        },
+        {
+          "word": "argumentera",
+          "clue": "Ge skäl och motiveringar för en ståndpunkt"
+        },
+        {
+          "word": "kategorisera",
+          "clue": "Dela in i grupper eller kategorier"
+        },
+        {
+          "word": "problematisera",
+          "clue": "Lyfta fram komplexiteten i en fråga"
+        },
+        {
+          "word": "generalisera",
+          "clue": "Dra brett gällande slutsatser"
+        },
+        {
+          "word": "konkretisera",
+          "clue": "Göra abstrakt mer tydligt och gripbart"
+        },
+        {
+          "word": "systematisera",
+          "clue": "Ordna på ett ordnat och planerat sätt"
+        },
+        {
+          "word": "källkritik",
+          "clue": "Granska hur trovärdiga källorna är"
+        },
+        {
+          "word": "primärkälla",
+          "clue": "Originalkälla t.ex. brev eller dagbok"
+        },
+        {
+          "word": "sekundärkälla",
+          "clue": "Källa som tolkar eller refererar primärkällor"
+        },
+        {
+          "word": "reliabilitet",
+          "clue": "Hur tillförlitliga mätresultaten är"
+        },
+        {
+          "word": "validitet",
+          "clue": "Om man verkligen mäter det man vill mäta"
+        },
+        {
+          "word": "representativ",
+          "clue": "Speglar helheten rättvist"
+        },
+        {
+          "word": "objektivitet",
+          "clue": "Att vara saklig och opartisk"
+        },
+        {
+          "word": "subjektivitet",
+          "clue": "Påverkas av egna åsikter och känslor"
+        },
+        {
+          "word": "perspektiv",
+          "clue": "Synsätt eller infallsvinkel"
+        },
+        {
+          "word": "konsekvens",
+          "clue": "Följd eller resultat av en handling"
+        },
+        {
+          "word": "proportioner",
+          "clue": "Förhållanden mellan delar och helhet"
+        },
+        {
+          "word": "kompromiss",
+          "clue": "Lösning där båda parter ger efter lite"
+        },
+        {
+          "word": "förhandling",
+          "clue": "Diskussion för att nå en överenskommelse"
+        }
       ]
     }
   ]
