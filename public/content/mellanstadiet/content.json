@@ -662,6 +662,125 @@
             5
           ],
           "explanation": "'Stora' (adjektiv) beskriver hunden, 'högt' (adverb) beskriver skällde."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är ett adjektiv i: 'Den trötta löparen sprang långsamt'?",
+          "options": [
+            "trötta",
+            "löparen",
+            "sprang",
+            "långsamt"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Trötta' är ett adjektiv – det beskriver substantivet 'löparen'. 'Långsamt' är adverb."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Gör om adjektivet till adverb: 'tyst' → Han läser ___.",
+          "options": [
+            "tyst",
+            "tystare",
+            "tystt",
+            "tysta"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Tyst' fungerar både som adjektiv och adverb. Han läser tyst – 'tyst' beskriver hur han läser."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt form: 'Det är en ___ dag.' (sol + ig)",
+          "answer": "solig",
+          "hint": "Adjektiv som beskriver vädret – härleds från 'sol'.",
+          "explanation": "'Solig' är ett adjektiv – det beskriver hur dagen är (full av sol)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är ett ADVERB i: 'De arbetar hårt varje dag'?",
+          "options": [
+            "De",
+            "arbetar",
+            "hårt",
+            "dag"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Hårt' är ett adverb – det beskriver HUR de arbetar (verbet)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt form: 'Hunden skäller ___.' (med hög röst)",
+          "options": [
+            "hög",
+            "höga",
+            "högt",
+            "högre"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Högt' är adverbformen – det beskriver HUR hunden skäller. Adjektiv + -t = adverb."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Gör om adjektivet till adverb: 'lugn' → Läraren pratar ___.",
+          "answer": "lugnt",
+          "hint": "Adjektiv + -t bildar ofta adverb.",
+          "explanation": "'Lugnt' är adverbet – det beskriver HUR läraren pratar. Lugn → lugnt."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket påstående om adjektiv stämmer?",
+          "options": [
+            "Adjektiv beskriver verb.",
+            "Adjektiv beskriver substantiv.",
+            "Adjektiv är alltid adverb.",
+            "Adjektiv slutar alltid på -t."
+          ],
+          "correctIndex": 1,
+          "explanation": "Adjektiv beskriver substantiv (saker, personer, djur): en stor hund, ett kallt vatten."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: 'Hon är en ___ simmerska.' (duktig)",
+          "options": [
+            "duktigt",
+            "duktiga",
+            "duktig",
+            "duktigare"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Duktig' är adjektiv i obestämd form singular utrum (en-ord): en duktig simmerska."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen – adjektiv och adverb på rätt plats!",
+          "words": [
+            "Den",
+            "trötta",
+            "eleven",
+            "svarade",
+            "sakta",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "explanation": "'Trötta' (adjektiv) beskriver eleven, 'sakta' (adverb) beskriver hur eleven svarade."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är skillnaden mellan 'glad' och 'glatt' i dessa meningar: 'en glad flicka' / 'Hon skrattar glatt'?",
+          "options": [
+            "Ingen skillnad – de betyder samma sak.",
+            "'Glad' är adjektiv (beskriver flickan), 'glatt' är adverb (beskriver skrattar).",
+            "'Glatt' är adjektiv och 'glad' är adverb.",
+            "Båda är adjektiv."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Glad' = adjektiv (beskriver substantiv). 'Glatt' = adverb (beskriver verb). Adjektiv + -t = adverb."
         }
       ]
     },
@@ -740,6 +859,122 @@
             5
           ],
           "explanation": "'Sjunger' har sj-stavning, 'skjuter' har skj-stavning – båda ger sj-ljud!"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas det svenska ordet för 'nurse' (person som vårdar sjuka)?",
+          "options": [
+            "sjöterska",
+            "skjöterska",
+            "sköterska",
+            "schöterska"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Sköterska' stavas sk + ö – sk följt av ö ger sj-ljud. s-k-ö-t-e-r-s-k-a."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas aktiviteten att glida på snö nedför en backe?",
+          "options": [
+            "sjåka",
+            "skida",
+            "skjida",
+            "schida"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Skida' stavas sk + i – sk följt av i ger sj-ljud. s-k-i-d-a."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt stavning: '___öldpadda' (reptil med hårdt skal)",
+          "answer": "sk",
+          "hint": "Sk + ö ger sj-ljud. Tänk: sk följt av ö.",
+          "explanation": "'Sköldpadda' stavas sk + ö – sk följt av ö ger sj-ljud."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord har SJ-ljud stavat med 'sj'?",
+          "options": [
+            "skida",
+            "skjuta",
+            "sjukhus",
+            "sked"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Sjukhus' stavas med sj – s-j-u-k-h-u-s. De andra orden har sk- eller skj-stavning."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt stavning: '___äl' (djuret med fenor som solar sig på klippor)",
+          "answer": "s",
+          "hint": "Säl stavas enkelt: s + ä + l. Inget sj-ljud!",
+          "explanation": "'Säl' stavas s-ä-l. Inte sj-ljud – bara ett vanligt s-ljud."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord stavas med 'sj' och har sj-ljud?",
+          "options": [
+            "sked",
+            "skida",
+            "själ",
+            "skönhet"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Själ' stavas s-j – sj-stavning. De andra orden har sk-stavning (sk + e/i/ö = sj-ljud)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilka stavningar ger ALLA sj-ljud?",
+          "options": [
+            "s, sk, sj",
+            "sj, skj, sk (före e, i, y, ä, ö)",
+            "tj, kj, k",
+            "ch, sch, sh"
+          ],
+          "correctIndex": 1,
+          "explanation": "Sj-ljudet kan skrivas: sj (sjunga), skj (skjuta), sk före e/i/y/ä/ö (sked, skida)."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt stavning: '___önhet' (att vara vacker)",
+          "answer": "sk",
+          "hint": "Sk + ö ger sj-ljud. Sk___nhet.",
+          "explanation": "'Skönhet' stavas sk + ö – sk följt av ö ger sj-ljud. s-k-ö-n-h-e-t."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas 'att skruva' (med en skruvmejsel)?",
+          "options": [
+            "sjruva",
+            "skruva",
+            "skjruva",
+            "chruva"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Skruva' stavas sk + r – här ger sk INTE sj-ljud! SK ger bara sj-ljud före e, i, y, ä, ö."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med rätt sj-ord!",
+          "words": [
+            "Hon",
+            "skidade",
+            "nedför",
+            "den",
+            "sköna",
+            "backen",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "explanation": "'Skidade' (sk+i=sj-ljud) och 'sköna' (sk+ö=sj-ljud) – båda har sj-ljud med sk-stavning."
         }
       ]
     },
@@ -820,6 +1055,127 @@
             6
           ],
           "explanation": "'Tjugo' (tj-stavning) och 'kära' (k + ä = tj-ljud) – samma ljud, olika stavning!"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas siffran 1000?",
+          "options": [
+            "tusen",
+            "kjusen",
+            "tjusen",
+            "kusen"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Tusen' stavas t-u-s-e-n. Inget tj-ljud här – bara t-ljud!"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas fågeln med lång hals som bor i Afrika?",
+          "options": [
+            "kjirraf",
+            "giraff",
+            "tjiraff",
+            "kiraff"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Giraff' stavas g-i-r-a-f-f. Inget tj-ljud alls!"
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt stavning: '___öp' (att betala och ta med sig en vara)",
+          "answer": "k",
+          "hint": "K + ö ger tj-ljud. Köpa stavas k + ö.",
+          "explanation": "'Köp' stavas k + ö – k följt av ö ger tj-ljud. k-ö-p."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord har TJ-ljud stavat med bara 'k'?",
+          "options": [
+            "tjugo",
+            "kjol",
+            "kär",
+            "tjäder"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Kär' stavas k + ä – k följt av ä ger tj-ljud. k-ä-r. De andra orden har tj- eller kj-stavning."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt stavning: '___yla' (kallt väder, låg temperatur)",
+          "answer": "k",
+          "hint": "K + y ger tj-ljud. Vilket är den första bokstaven?",
+          "explanation": "'Kyla' stavas k + y – k följt av y ger tj-ljud. k-y-l-a."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilka stavningar ger TJ-ljud?",
+          "options": [
+            "tj, kj, k (före e, i, y, ä, ö)",
+            "sj, skj, sk",
+            "ch, sh, sch",
+            "tj, sj, kj"
+          ],
+          "correctIndex": 0,
+          "explanation": "Tj-ljud kan skrivas: tj (tjugo), kj (kjol), k före e/i/y/ä/ö (kär, kyla, kek=kex)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas 'ett kex' (sprött bakverk)?",
+          "options": [
+            "tjex",
+            "kjex",
+            "kex",
+            "chex"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Kex' stavas k-e-x. K följt av e ger tj-ljud – men vi hör faktiskt 'kjex' i uttalet!"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord har TJ-ljud stavat med 'tj'?",
+          "options": [
+            "kär",
+            "kjol",
+            "tjuv",
+            "kyla"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Tjuv' stavas tj-u-v – tj-stavning ger tj-ljud. De andra har k- eller kj-stavning."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur stavas 'kyrka' (religiös byggnad)?",
+          "options": [
+            "tjyrka",
+            "kjyrka",
+            "kyrka",
+            "chyrka"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Kyrka' stavas k + y – k följt av y ger tj-ljud. k-y-r-k-a."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med tj-ljud-orden på rätt plats!",
+          "words": [
+            "Tjugo",
+            "kylda",
+            "körsbär",
+            "låg",
+            "i",
+            "skålen",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "explanation": "'Tjugo' (tj), 'kylda' (k+y=tj-ljud), 'körsbär' (k+ö=tj-ljud) – alla har tj-ljud!"
         }
       ]
     },
