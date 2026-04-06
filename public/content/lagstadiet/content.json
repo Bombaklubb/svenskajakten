@@ -2902,6 +2902,125 @@
             5
           ],
           "explanation": "'Enorm' är en synonym till 'stor' – båda betyder att något är mycket stort."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är en synonym till 'liten'?",
+          "options": [
+            "stor",
+            "winzig",
+            "pytteliten",
+            "bred"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Pytteliten' och 'liten' betyder ungefär samma sak – att något är litet."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj synonymen till 'trött':",
+          "options": [
+            "pigg",
+            "slut",
+            "hungrig",
+            "glad"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Slut' och 'trött' kan betyda ungefär samma sak – att man inte orkar mer."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "En synonym till 'hus' är 'hem'. En synonym till 'barn' är 'un___'.",
+          "answer": "ge",
+          "hint": "Unge – ett annat ord för ett litet barn eller djurungar.",
+          "explanation": "'Unge' är ett annat ord för barn – en synonym som ofta används om djurungar också."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är en synonym till 'börja'?",
+          "options": [
+            "sluta",
+            "starta",
+            "fortsätta",
+            "glömma"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Starta' och 'börja' betyder ungefär samma sak – att sätta igång med något."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj synonymen till 'gå':",
+          "options": [
+            "springa",
+            "flyga",
+            "promenera",
+            "simma"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Promenera' och 'gå' betyder ungefär samma sak – att ta sig fram till fots i lugnt tempo."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är INTE en synonym till 'glad'?",
+          "options": [
+            "lycklig",
+            "nöjd",
+            "munter",
+            "arg"
+          ],
+          "correctIndex": 3,
+          "explanation": "'Arg' är motsatsen till glad – inte en synonym. Lycklig, nöjd och munter är alla synonymer."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "En synonym till 'titta' är 'se'. En synonym till 'kasta' är 'sl___nga'.",
+          "answer": "ä",
+          "hint": "Slunga – att kasta något med kraft.",
+          "explanation": "'Slunga' är en synonym till 'kasta' – att kasta med kraft."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är en synonym till 'roligt'?",
+          "options": [
+            "tråkigt",
+            "kul",
+            "svårt",
+            "läskigt"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Kul' och 'roligt' betyder ungefär samma sak – att något är underhållande och trevligt."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med en synonym till 'stor'!",
+          "words": [
+            "Den",
+            "enorme",
+            "elefanten",
+            "drack",
+            "vatten",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "explanation": "'Enorme' är en synonym till 'stor' – den enorme elefanten = den stora elefanten."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är en synonym till 'hjälpa'?",
+          "options": [
+            "störa",
+            "stödja",
+            "hindra",
+            "glömma"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Stödja' och 'hjälpa' betyder ungefär samma sak – att göra det lättare för någon."
         }
       ]
     },
@@ -3043,6 +3162,124 @@
           ],
           "correctIndex": 1,
           "explanation": "'Fullt' är motsatsen till 'tomt' – ett glas kan vara tomt eller fullt."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är motsatsordet till 'lätt'?",
+          "options": [
+            "enkel",
+            "tunn",
+            "tung",
+            "smal"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Tung' är den direkta motsatsen till 'lätt' – en stor sten är tung, en fjäder är lätt."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är motsatsordet till 'frisk'?",
+          "options": [
+            "glad",
+            "sjuk",
+            "trött",
+            "stark"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Sjuk' är motsatsen till 'frisk' – när man inte mår bra är man sjuk."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Motsatsen till 'börja' är '___'.",
+          "answer": "sluta",
+          "hint": "Om man inte börjar, vad gör man då istället?",
+          "explanation": "'Sluta' är motsatsen till 'börja' – man kan börja eller sluta med något."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket par är ett korrekt par av motsatsord?",
+          "options": [
+            "kall – sval",
+            "snabb – kvick",
+            "inne – ute",
+            "glad – nöjd"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Inne – ute' är ett riktigt motsatspar. Kall/sval och glad/nöjd är snarare synonymer."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är motsatsordet till 'fram'?",
+          "options": [
+            "till",
+            "ner",
+            "bak",
+            "upp"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Bak' (eller 'bakåt') är motsatsen till 'fram' (eller 'framåt')."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Motsatsen till 'smutsig' är '___'.",
+          "answer": "ren",
+          "hint": "Om något inte är smutsigt, vad är det då?",
+          "explanation": "'Ren' är motsatsen till 'smutsig' – tvättade kläder är rena."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är motsatsordet till 'rätt'?",
+          "options": [
+            "sant",
+            "fel",
+            "bra",
+            "korrekt"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Fel' är motsatsen till 'rätt' – svar kan vara rätt eller fel."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket par är ett korrekt par av motsatsord?",
+          "options": [
+            "mörk – svart",
+            "söt – salt",
+            "röd – grön",
+            "snabb – rask"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Söt – salt' är ett riktigt motsatspar – smaker som är varandras motsatser."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med ett motsatspar!",
+          "words": [
+            "Elefanten",
+            "är",
+            "stor",
+            "men",
+            "myran",
+            "är",
+            "liten",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "explanation": "'Stor' och 'liten' är motsatsord – elefanten är stor, myran är liten."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Motsatsen till 'våt' är '___'.",
+          "answer": "torr",
+          "hint": "Om håret inte är vått efter duschen, vad är det då?",
+          "explanation": "'Torr' är motsatsen till 'våt' – torkad tvätt är torr, inte våt."
         }
       ]
     },
@@ -3178,6 +3415,127 @@
             6
           ],
           "explanation": "'Klassrummet' är ett sammansatt ord (klass + rum) skrivet ihop."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket alternativ är korrekt skrivet?",
+          "options": [
+            "pizza bit",
+            "pizzabit",
+            "pizza-bit",
+            "Pizzabit"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Pizzabit' skrivs ihop – det är en bit av en pizza."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är FELAKTIGT skrivet?",
+          "options": [
+            "cykelhjälm",
+            "sol ros",
+            "glasögon",
+            "barnbok"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Sol ros' är fel – det ska vara 'solros'. Sammansatta ord skrivs alltid ihop!"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är FELAKTIGT skrivet?",
+          "options": [
+            "dagbok",
+            "fotboll",
+            "is kall",
+            "glasögon"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Is kall' är fel – det ska vara 'iskall'. Sammansatta ord skrivs ihop!"
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Skriv rätt: 'Hon dricker apelsin juice.' → Hon dricker ___.",
+          "answer": "apelsinjuice",
+          "hint": "Apelsin + juice = ett sammansatt ord.",
+          "explanation": "'Apelsinjuice' skrivs ihop – ett ord för drycken gjord på apelsiner."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj den korrekta stavningen av 'bok' + 'hylla':",
+          "options": [
+            "bok hylla",
+            "bok-hylla",
+            "bokhylla",
+            "Bokhylla"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Bokhylla' skrivs ihop med liten bokstav – ett möbel för böcker."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hitta felet i meningen: 'Jag köpte choklad glass till alla.'",
+          "options": [
+            "Jag",
+            "köpte",
+            "choklad glass",
+            "alla"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Chokladglass' ska skrivas ihop – det är ett sammansatt ord."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Skriv rätt: 'Vi spelade fotbolls match.' → Vi spelade ___.",
+          "answer": "fotbollsmatch",
+          "hint": "Fotbolls + match = ett sammansatt ord med foge-s.",
+          "explanation": "'Fotbollsmatch' skrivs ihop – en match i fotboll."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket alternativ är rätt skrivet?",
+          "options": [
+            "hand väska",
+            "hand-väska",
+            "handväska",
+            "HandVäska"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Handväska' skrivs ihop med liten bokstav – en väska man bär i handen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hitta det felaktigt skrivna ordet: 'Vi åt frukost macka och drack juice.'",
+          "options": [
+            "åt",
+            "frukost macka",
+            "drack",
+            "juice"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Frukostmacka' ska skrivas ihop – en macka man äter till frukost."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen – ett av orden är ett sammansatt ord!",
+          "words": [
+            "Jag",
+            "cyklar",
+            "till",
+            "simhallen",
+            "på",
+            "lördagar",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "explanation": "'Simhallen' är ett sammansatt ord (sim + hall) skrivet ihop."
         }
       ]
     },
