@@ -5898,6 +5898,116 @@
           ],
           "correctIndex": 1,
           "explanation": "'Bad' rimmar med 'glad' – båda slutar på '-ad'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord rimmar med 'natt'?",
+          "options": [
+            "dag",
+            "katt",
+            "sol",
+            "boll"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Katt' rimmar med 'natt' – båda slutar på '-att'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord rimmar med 'stor'?",
+          "options": [
+            "liten",
+            "mor",
+            "snabb",
+            "glad"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Mor' rimmar med 'stor' – båda slutar på '-or'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord rimmar med 'björn'?",
+          "options": [
+            "räv",
+            "örn",
+            "hund",
+            "varg"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Örn' rimmar med 'björn' – båda slutar på '-örn'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket par rimmar?",
+          "options": [
+            "hund och katt",
+            "träd och träd",
+            "natt och matt",
+            "sol och hus"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Natt och matt' rimmar – båda slutar på '-att'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord rimmar med 'blomma'?",
+          "options": [
+            "träd",
+            "komma",
+            "ros",
+            "gräs"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Komma' rimmar med 'blomma' – båda slutar på '-omma'."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Sten och ___ rimmar. (det motsatta till smutsig)",
+          "answer": "ren",
+          "hint": "Tvätten är ren eller smutsig. Vad rimmar med sten?",
+          "explanation": "'Ren' rimmar med 'sten' – båda slutar på '-en'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord rimmar med 'ren'?",
+          "options": [
+            "smutsig",
+            "sten",
+            "kall",
+            "varm"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Sten' rimmar med 'ren' – båda slutar på '-en'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord rimmar INTE med 'bål'?",
+          "options": [
+            "hål",
+            "kål",
+            "sol",
+            "mål"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Sol' rimmar inte med 'bål'. Hål, kål och mål slutar alla på '-ål'."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Bil och ___ rimmar. (ett träd med hängande grenar vid vattnet)",
+          "answer": "pil",
+          "hint": "Det är ett träd som ofta hänger ner sina grenar mot vattnet.",
+          "explanation": "'Pil' rimmar med 'bil' – båda slutar på '-il'. Pilträdet hänger vid sjöar."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord rimmar med 'kul'?",
+          "options": [
+            "trist",
+            "ful",
+            "rolig",
+            "glad"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Ful' rimmar med 'kul' – båda slutar på '-ul'."
         }
       ]
     },
