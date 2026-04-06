@@ -3671,6 +3671,122 @@
             6
           ],
           "explanation": "'Favoritbok' (favorit+bok) och 'isbjörn' (is+björn) är båda sammansatta ord."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är 'äppeljuice' sammansatt av?",
+          "options": [
+            "äppel + jui + ce",
+            "äpple + juice",
+            "äppel + uice",
+            "äpp + eljuice"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Äppeljuice' = äpple + juice. En dryck gjord på äpplen."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Sätt ihop: 'land' + 'väg' = ___",
+          "answer": "landsväg",
+          "hint": "En väg ute på landet.",
+          "explanation": "'Landsväg' = lands + väg. En stor väg utanför staden."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord berättar HUR en 'regnbåge' är?",
+          "options": [
+            "regn",
+            "båge",
+            "regnbåg",
+            "en"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Regn-' är förledet – det berättar hurudan bågen är (en båge som uppstår i regn)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket av dessa ÄR ett sammansatt ord?",
+          "options": [
+            "snabb",
+            "hoppar",
+            "under",
+            "solsken"
+          ],
+          "correctIndex": 3,
+          "explanation": "'Solsken' = sol + sken. Det är ett sammansatt ord. De andra är enkla ord."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Sätt ihop: 'mat' + 'låda' = ___",
+          "answer": "matlåda",
+          "hint": "En låda man har sin mat i.",
+          "explanation": "'Matlåda' = mat + låda. En behållare man tar med sin mat i till skolan."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är 'fågelbo' sammansatt av?",
+          "options": [
+            "fågel + b + o",
+            "fåg + elbo",
+            "fågel + bo",
+            "få + gelbo"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Fågelbo' = fågel + bo. Fågelns hem kallas ett bo."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening innehåller ett sammansatt ord?",
+          "options": [
+            "Jag springer fort.",
+            "Vi åker buss.",
+            "Hon dricker mjölk.",
+            "Jag bär min ryggsäck."
+          ],
+          "correctIndex": 3,
+          "explanation": "'Ryggsäck' = rygg + säck. Det är ett sammansatt ord – en säck man bär på ryggen."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Sätt ihop: 'fisk' + 'pinne' = ___",
+          "answer": "fiskpinne",
+          "hint": "En maträtt av fisk formad som en pinne.",
+          "explanation": "'Fiskpinne' = fisk + pinne. En populär maträtt bland barn!"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur många led har det sammansatta ordet 'skolbussföraren'?",
+          "options": [
+            "2",
+            "3",
+            "4",
+            "1"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Skolbussföraren' = skol + buss + förare. Tre led ihop! Det är ett långt sammansatt ord."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med rätt sammansatta ord!",
+          "words": [
+            "Vi",
+            "äter",
+            "frukost",
+            "och",
+            "dricker",
+            "apelsinjuice",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "explanation": "'Apelsinjuice' = apelsin + juice. Ett sammansatt ord skrivet ihop."
         }
       ]
     },
@@ -3802,6 +3918,118 @@
             4
           ],
           "explanation": "'Under' är prepositionen – den berättar var katten sover."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt preposition: 'Boken ligger ___ bordet.' (ovanpå)",
+          "options": [
+            "under",
+            "på",
+            "bakom",
+            "framför"
+          ],
+          "correctIndex": 1,
+          "explanation": "'På' – boken ligger på bordet, alltså ovanpå."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt preposition: 'Katten gömmer sig ___ soffan.' (nedanunder)",
+          "options": [
+            "på",
+            "framför",
+            "under",
+            "över"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Under' – katten gömmer sig under soffan, alltså nedanunder."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt preposition: 'Fågeln sitter ___ grenen.' (ovanpå)",
+          "answer": "på",
+          "hint": "Fågeln är ovanpå grenen.",
+          "explanation": "'På' – fågeln sitter på grenen, ovanpå den."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: 'Nyckeln hänger ___ dörren.' (precis vid ingången, inte bakom)",
+          "options": [
+            "bakom",
+            "under",
+            "vid",
+            "över"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Vid' – nyckeln hänger vid dörren, alltså bredvid eller nära den."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt preposition: 'Vi bor ___ tredje våningen.'",
+          "options": [
+            "i",
+            "på",
+            "till",
+            "från"
+          ],
+          "correctIndex": 1,
+          "explanation": "'På' – man bor på en våning. 'Vi bor på tredje våningen.'"
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt preposition: 'Barnen leker ___ skolan.' (utomhus vid skolan)",
+          "answer": "utanför",
+          "hint": "De är inte inne i skolan – de är ... skolan.",
+          "explanation": "'Utanför' – barnen leker utanför skolan, alltså utomhus vid byggnaden."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt: 'Hunden hoppar ___ staketet.' (från ena sidan till andra)",
+          "options": [
+            "under",
+            "på",
+            "över",
+            "bakom"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Över' – hunden hoppar över staketet, alltså från en sida till andra."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är en preposition?",
+          "options": [
+            "springer",
+            "glad",
+            "framför",
+            "äter"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Framför' är en preposition – den berättar var något är (framför något annat)."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med rätt preposition!",
+          "words": [
+            "Bollen",
+            "rullade",
+            "under",
+            "sängen",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "explanation": "'Under' är prepositionen – den berättar vart bollen rullade."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt preposition: 'Kom och sätt dig ___ mig!' (bredvid)",
+          "answer": "bredvid",
+          "hint": "Man vill att personen sätter sig nära, på sidan om.",
+          "explanation": "'Bredvid' – att sitta bredvid någon är att sitta på sidan om dem."
         }
       ]
     },
@@ -3935,6 +4163,125 @@
             5
           ],
           "explanation": "'Snälla' (adjektiv) beskriver läraren. 'Lugnt' (adverb) beskriver hur hon pratar."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är ett adjektiv i: 'Den hungriga katten miade'?",
+          "options": [
+            "Den",
+            "hungriga",
+            "katten",
+            "miade"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Hungriga' är ett adjektiv – det beskriver hur katten är (hungrig)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är ett adverb i: 'Hon visslade glatt'?",
+          "options": [
+            "Hon",
+            "visslade",
+            "glatt",
+            "Den"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Glatt' är ett adverb – det berättar HUR hon visslade."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Välj rätt form: 'Hunden springer ___.' (fort/fortare)",
+          "answer": "fort",
+          "hint": "Fråga: Hur springer hunden? Det svarar ett adverb på.",
+          "explanation": "'Fort' är adverbformen – det berättar HUR hunden springer."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj adjektivet i: 'Vi åt god soppa till lunch.'",
+          "options": [
+            "Vi",
+            "åt",
+            "god",
+            "lunch"
+          ],
+          "correctIndex": 2,
+          "explanation": "'God' är ett adjektiv – det beskriver hur soppan är (god = välsmakande)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är ett adverb i: 'Flickan sjunger högt'?",
+          "options": [
+            "Flickan",
+            "sjunger",
+            "högt",
+            "och"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Högt' är ett adverb – det berättar HUR flickan sjunger."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i adjektivet: 'En ___ hund skäller mycket.' (en hund som inte är stor)",
+          "answer": "liten",
+          "hint": "Vilket adjektiv beskriver en hund som inte är stor?",
+          "explanation": "'Liten' är ett adjektiv som beskriver hundens storlek."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt form: 'Pojken pratar ___.' (tyst, om han pratar med låg röst)",
+          "options": [
+            "tyst",
+            "tysta",
+            "tystare",
+            "tystt"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Tyst' är adverbformen när det berättar HUR pojken pratar."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening innehåller ett adverb?",
+          "options": [
+            "Den röda bilen stannade.",
+            "Barnet är trött.",
+            "Hunden springer snabbt.",
+            "Vi har en stor trädgård."
+          ],
+          "correctIndex": 2,
+          "explanation": "'Snabbt' är adverbet – det berättar HUR hunden springer."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen – adjektivet och adverbet på rätt plats!",
+          "words": [
+            "Den",
+            "söta",
+            "katten",
+            "sover",
+            "djupt",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "explanation": "'Söta' (adjektiv) beskriver katten. 'Djupt' (adverb) beskriver hur den sover."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad beskriver adjektivet 'mjuk' i: 'Kudden är mjuk'?",
+          "options": [
+            "Var kudden finns",
+            "Hur kudden är (känsla)",
+            "Vad kudden heter",
+            "Vem som äger kudden"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Mjuk' beskriver kuddens egenskap (känsla) – adjektiv berättar HUR något är."
         }
       ]
     },
