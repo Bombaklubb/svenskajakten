@@ -5127,6 +5127,122 @@
           ],
           "correctIndex": 0,
           "explanation": "\"Titta på månen!\" viskade Noa. – Utropstecknet sitter inuti, sedan skriver man talverbet med liten bokstav."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är rätt skriven med citattecken?",
+          "options": [
+            "\"God natt\" viskade mamma.",
+            "\"God natt,\" viskade mamma.",
+            "God natt, \"viskade mamma.\"",
+            "\"God natt\" viskade, mamma."
+          ],
+          "correctIndex": 1,
+          "explanation": "Kommatecknet sitter inuti citattecknen och 'viskade' börjar med liten bokstav: \"God natt,\" viskade mamma."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt tecken: 'Emma ropade___ \"Kom och lek med mig!\"'",
+          "answer": ":",
+          "hint": "Vilket tecken använder man direkt innan ett citat?",
+          "explanation": "Kolon (:) används för att introducera ett direkt citat: Emma ropade: \"Kom och lek med mig!\""
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Var ska punkt/utropstecken sitta i meningen: Han ropade ___ Titta ___",
+          "options": [
+            "Han ropade. \"Titta!\"",
+            "Han ropade: \"Titta!\"",
+            "Han ropade: \"Titta.\"",
+            "Han ropade: Titta!"
+          ],
+          "correctIndex": 1,
+          "explanation": "Kolon före citatet, utropstecken hör till repliken och sitter inuti citattecknen: Han ropade: \"Titta!\""
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket talverb KAN användas efter citattecknen?",
+          "options": [
+            "sprang",
+            "hoppade",
+            "viskade",
+            "cyklade"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Viskade' är ett talverb – det handlar om hur man säger något. Sprang, hoppade och cyklade är rörelseverb."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i: '\"Jag är så glad!\" ___ Lina och hoppade.'",
+          "answer": "ropade",
+          "hint": "Vilket ord visar att Lina sa det med hög röst?",
+          "explanation": "'Ropade' är ett talverb som passar här. Man kan också skriva 'sa', 'utbrast' eller 'skrek'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening har rätt citattecken och komma?",
+          "options": [
+            "\"Jag vill ha mer mat\", sa han.",
+            "\"Jag vill ha mer mat,\" sa han.",
+            "\"Jag vill ha mer mat.\" sa han.",
+            "\"Jag vill ha mer mat\" sa han,"
+          ],
+          "correctIndex": 1,
+          "explanation": "Kommat sitter INUTI citattecknen: \"...mat,\" sa han. Sedan skriver man vem som sa det med liten bokstav."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur skriver man en fråga med citattecken?",
+          "options": [
+            "\"Är du trött\"? frågade hon.",
+            "\"Är du trött?\" frågade hon.",
+            "\"Är du trött,\" frågade hon?",
+            "Är du trött? \"frågade hon\"."
+          ],
+          "correctIndex": 1,
+          "explanation": "Frågetecknet hör till repliken och sitter inuti citattecknen: \"Är du trött?\" frågade hon."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg dialogen i rätt ordning!",
+          "words": [
+            "\"Välkommen",
+            "hit!\"",
+            "sa",
+            "läraren",
+            "och",
+            "log",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "explanation": "\"Välkommen hit!\" sa läraren och log. Utropstecknet sitter inuti citattecknen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är FELAKTIGT skriven?",
+          "options": [
+            "\"Hej!\" sa hon.",
+            "\"God morgon,\" svarade han.",
+            "\"Var är du\"? frågade hon.",
+            "\"Titta på stjärnorna!\" viskade pappa."
+          ],
+          "correctIndex": 2,
+          "explanation": "Frågetecknet ska sitta INUTI citattecknen: \"Var är du?\" frågade hon."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt bokstav: '\"Kan du hjälpa mig?\" ___ frågade Noa.'",
+          "answer": "f",
+          "hint": "Talverbet börjar med liten bokstav efter citattecknen.",
+          "explanation": "'frågade' börjar med liten f efter citattecknen. Talverbet efter ett citat skrivs alltid med liten bokstav."
         }
       ]
     },
@@ -5197,6 +5313,127 @@
           ],
           "correctIndex": 1,
           "explanation": "Styckeindelning hjälper läsaren att följa med i texten och förstå dess struktur."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur många ämnen ska ett stycke helst handla om?",
+          "options": [
+            "Så många som möjligt",
+            "Minst tre",
+            "Bara ett",
+            "Exakt två"
+          ],
+          "correctIndex": 2,
+          "explanation": "Varje stycke ska helst handla om ett ämne – en tanke eller händelse per stycke."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Varför börjar man ett nytt stycke?",
+          "options": [
+            "För att texten ska bli längre",
+            "För att man byter ämne, tid eller plats",
+            "För att man gjort ett misstag",
+            "För att varje mening ska ha eget stycke"
+          ],
+          "correctIndex": 1,
+          "explanation": "Nytt stycke används när man byter ämne, hoppar i tid eller byter plats i berättelsen."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "I en berättelse bör varje nytt stycke börja med ___ bokstav.",
+          "answer": "stor",
+          "hint": "Vad har varje ny mening – och varje nytt stycke?",
+          "explanation": "Varje ny mening – och varje nytt stycke – börjar med stor bokstav."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Om du skriver om din morgon och sedan vill berätta om skolan – vad gör du?",
+          "options": [
+            "Fortsätter direkt utan paus",
+            "Sätter ett kommatecken och fortsätter",
+            "Börjar ett nytt stycke",
+            "Skriver en rubrik"
+          ],
+          "correctIndex": 2,
+          "explanation": "Du börjar ett nytt stycke när du byter ämne – från morgonen hemma till skolan."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket av dessa är ett bra sätt att markera nytt stycke?",
+          "options": [
+            "Skriv NYTT STYCKE med stora bokstäver",
+            "Lämna en blankrad eller gör indragning",
+            "Sätt tre punkter (...)",
+            "Byt färg på texten"
+          ],
+          "correctIndex": 1,
+          "explanation": "Nytt stycke markeras med en blankrad (tom rad) eller indragning på första raden i stycket."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "En berättelse om din dag har tre delar: morgon, skola, kväll. Hur många stycken behöver du minst?",
+          "options": [
+            "1",
+            "2",
+            "3",
+            "6"
+          ],
+          "correctIndex": 2,
+          "explanation": "Du behöver minst tre stycken – ett för varje del: morgon, skola och kväll."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Ett stycke består av en eller flera ___ som hänger ihop.",
+          "answer": "meningar",
+          "hint": "Vad är texten uppbyggd av?",
+          "explanation": "Ett stycke består av meningar som handlar om samma sak och hör ihop."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Varför är det bra att dela upp en text i stycken?",
+          "options": [
+            "Det gör texten kortare",
+            "Det är ett krav från skolan",
+            "Det gör texten lättare att läsa och förstå",
+            "Det gör texten längre och bättre"
+          ],
+          "correctIndex": 2,
+          "explanation": "Styckeindelning hjälper läsaren – det blir tydligare vad som hör ihop och lättare att följa med."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen om styckeindelning!",
+          "words": [
+            "Varje",
+            "stycke",
+            "handlar",
+            "om",
+            "ett",
+            "ämne",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "explanation": "Principen för styckeindelning: varje stycke = ett ämne eller en tanke."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "En berättelse börjar: 'Det var en gång en hund som hette Max.' Nästa stycke börjar bäst med:",
+          "options": [
+            "Hunden åt mat.",
+            "En dag hittade Max en skattkarta.",
+            "Max var brun.",
+            "Max gillade bollar."
+          ],
+          "correctIndex": 1,
+          "explanation": "'En dag hittade Max en skattkarta' introducerar en ny händelse – perfekt start för ett nytt stycke!"
         }
       ]
     },
@@ -5327,6 +5564,116 @@
           ],
           "correctIndex": 1,
           "explanation": "'Inga fem ören kvar' är ett uttryck för att man har slut på pengar. Fem ören är den minsta myntenheten – har man inte ens det, är man pank."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder uttrycket 'Sätta sig i blöt'?",
+          "options": [
+            "Att bli våt i regnet.",
+            "Att hamna i en jobbig situation man orsakat själv.",
+            "Att bada i ett badkar.",
+            "Att glömma paraplyet hemma."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Sätta sig i blöt' betyder att man orsakat sig själv problem – man har hamnat i en besvärlig sits."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder 'Ta tjuren vid hornen'?",
+          "options": [
+            "Att hantera ett djur.",
+            "Att ta tag i ett problem direkt och modigt.",
+            "Att vara arg som en tjur.",
+            "Att springa fort."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Ta tjuren vid hornen' betyder att man modigt tar itu med ett svårt problem direkt."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Om din kompis säger 'Det är lugnt som en filbunke' – vad menar hen?",
+          "options": [
+            "Det är kallt.",
+            "Allt är lugnt och fridfullt.",
+            "Man ska äta filbunke.",
+            "Det är tråkigt."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Lugnt som en filbunke' är ett uttryck för att allt är stilla och utan problem."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i: 'Nu har du verkligen klippt till ___.' Betyder att man gjort något modigt.",
+          "answer": "dig",
+          "hint": "Man klipper till – sig eller något annat?",
+          "explanation": "'Klippa till sig' betyder att göra något med kraft eller mod – ta för sig."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder 'Gå som katten kring het gröt'?",
+          "options": [
+            "Att katten äter gröt.",
+            "Att undvika att prata om det viktiga – gå runt ämnet.",
+            "Att gå försiktigt.",
+            "Att vara hungrig."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Gå som katten kring het gröt' – man kretsar runt problemet utan att ta tag i det."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Om mamma säger 'Vi har inte råd, vi är på knäna' – vad menar hon?",
+          "options": [
+            "Hon är trött och vill sitta.",
+            "De har väldigt lite pengar.",
+            "De behöver nya knän.",
+            "De ska träna."
+          ],
+          "correctIndex": 1,
+          "explanation": "'På knäna' är ett uttryck för att vara utmattad eller ha det ekonomiskt väldigt svårt."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder 'Bita ihop'?",
+          "options": [
+            "Att äta fort.",
+            "Att vara tyst och uthärda något jobbigt.",
+            "Att bita i ett äpple.",
+            "Att gräla med någon."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Bita ihop' betyder att man håller ut och klarar något svårt utan att ge upp eller klaga."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i: 'Nu är det dags att kavla upp ___.' Betyder: det är dags att börja jobba.",
+          "answer": "ärmarna",
+          "hint": "Vad gör man med tröjan när man ska arbeta hårt?",
+          "explanation": "'Kavla upp ärmarna' betyder att sätta igång och arbeta – man är redo att göra något."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder 'Ha tur i oturen'?",
+          "options": [
+            "Att alltid ha otur.",
+            "Att något bra händer mitt i något dåligt.",
+            "Att spela tur.",
+            "Att inte ha någon tur alls."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Ha tur i oturen' – trots att något gick fel, gick åtminstone inte allt fel. Lite tur mitt i oturen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Om din kompis säger 'Jag är på topp idag!' – vad menar hen?",
+          "options": [
+            "Hen sitter högt upp.",
+            "Hen mår jättebra och är i toppform.",
+            "Hen är trött.",
+            "Hen är överst i klassen."
+          ],
+          "correctIndex": 1,
+          "explanation": "'På topp' är ett uttryck för att man mår riktigt bra och presterar på sitt bästa."
         }
       ]
     },
