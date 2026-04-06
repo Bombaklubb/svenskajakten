@@ -2428,6 +2428,122 @@
             6
           ],
           "explanation": "'Läraren' (ä), 'säger' (ä), 'vädret' (ä) – alla tre stavas med ä. 'Vackert' stavas med e: v-a-ck-e-r-t."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt stavning: 'Hon ___ alltid på sina löften.' (håller)",
+          "options": [
+            "heller",
+            "häller",
+            "håller",
+            "haller"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Håller' stavas med å – h-å-l-l-e-r. Varken e eller ä här, utan å!"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt stavning av verbet: 'Han ___ mycket om historia.' (vet/känner till)",
+          "options": [
+            "vet",
+            "vät",
+            "vet",
+            "vett"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Vet' stavas med e – v-e-t. Grundordet är 'veta' och böjs 'vet' i nutid."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt bokstav: 'Det är sv___rt att lära sig.' (inte lätt)",
+          "answer": "å",
+          "hint": "Svårt eller svärt? Hör du ett å-ljud eller ä-ljud?",
+          "explanation": "'Svårt' stavas med å – s-v-å-r-t. Svårt = inte lätt."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt stavning: 'Vi ___ i söndags.' (träffades)",
+          "options": [
+            "mötes",
+            "möttes",
+            "mättes",
+            "metes"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Möttes' stavas med ö – m-ö-t-t-e-s. Dåtidsformen av 'mötas'."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt bokstav: 'Han l___mnar skolan klockan tre.' (går därifrån)",
+          "answer": "ä",
+          "hint": "Lämnar eller lemnar? Grundordet är 'lämna' – med ä.",
+          "explanation": "'Lämnar' stavas med ä – l-ä-m-n-a-r. Grundordet 'lämna' har ä."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt stavning: 'Det finns bara ett s___te kvar på bussen.' (plats att sitta)",
+          "options": [
+            "sete",
+            "säte",
+            "sete",
+            "sæte"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Säte' stavas med ä – s-ä-t-e. Ett säte är en sittplats."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är rätt stavat? (att känna fruktan)",
+          "options": [
+            "rädas",
+            "redas",
+            "rädas",
+            "rades"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Rädas' stavas med ä – r-ä-d-a-s. Att rädas = att vara rädd för något."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt bokstav: 'Jag tr___ffar min kompis imorgon.' (möter)",
+          "answer": "ä",
+          "hint": "Träffar eller treffar? Grundordet är 'träff' – med ä.",
+          "explanation": "'Träffar' stavas med ä – t-r-ä-f-f-a-r. Att träffa någon = att möta dem."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen – var noga med e och ä!",
+          "words": [
+            "Läraren",
+            "frågade",
+            "om",
+            "vi",
+            "förstår",
+            "texten",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "explanation": "'Läraren' (ä), 'frågade' (å+a), 'förstår' (ö+å) – ingen ä eller e-förväxling här, men vänj dig vid att läsa noggrant!"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt stavning: 'De ___ länge om problemet.' (diskuterade)",
+          "options": [
+            "pratede",
+            "pratade",
+            "prätade",
+            "prätede"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Pratade' stavas med a – p-r-a-t-a-d-e. Dåtidsformen av 'prata'."
         }
       ]
     },
@@ -2503,6 +2619,129 @@
           ],
           "correctIndex": 1,
           "explanation": "'Påbörja' är den mest formella synonymen till 'börja' – passar bäst i skriftliga texter."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj den bästa synonymen till 'rädd' i meningen: 'Han var ___ inför föredraget.'",
+          "options": [
+            "nervös",
+            "ledsen",
+            "trött",
+            "arg"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Nervös' är en nyanserad synonym till 'rädd' i detta sammanhang – man är orolig och spänd inför något."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är en synonym till 'kunnig'?",
+          "options": [
+            "okunnig",
+            "kompetent",
+            "nybörjare",
+            "ointresserad"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Kompetent' och 'kunnig' betyder ungefär samma sak – att man kan och behärskar något väl."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "En synonym till 'svar' i formell text är '___'.",
+          "answer": "respons",
+          "hint": "Det engelska låneordet som används i formella sammanhang.",
+          "explanation": "'Respons' är en synonym till 'svar' och används ofta i formella och akademiska texter."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj synonymen till 'gå' som passar bäst i meningen: 'Hon ___ stolt in i rummet.'",
+          "options": [
+            "traskade",
+            "skyndade",
+            "stegade",
+            "haltade"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Stegade' visar att hon gick med långa, stolta steg – en nyanserad synonym som passar med 'stolt'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är en synonym till 'förstöra'?",
+          "options": [
+            "bygga",
+            "reparera",
+            "demolera",
+            "skapa"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Demolera' och 'förstöra' betyder ungefär samma sak – att bryta ner eller ta sönder något."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "En mer formell synonym till 'visa' är '___'.",
+          "answer": "demonstrera",
+          "hint": "Det börjar på 'demon...' och används i presentationer.",
+          "explanation": "'Demonstrera' är en formell synonym till 'visa' – att tydligt visa hur något fungerar."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj den bästa synonymen till 'tyst' i meningen: 'Biblioteket var ___.'",
+          "options": [
+            "öde",
+            "stilla",
+            "tomt",
+            "mörkt"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Stilla' är en bra synonym till 'tyst' – det antyder lugn och ro, som i ett bibliotek."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är en synonym till 'svår'?",
+          "options": [
+            "enkel",
+            "krånglig",
+            "lätt",
+            "tydlig"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Krånglig' och 'svår' betyder ungefär samma sak – att något är komplicerat och tar tid att förstå."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Byt ut 'sa' mot en mer nyanserad synonym!",
+          "words": [
+            "Hon",
+            "viskade",
+            "att",
+            "allting",
+            "skulle",
+            "bli",
+            "bra",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "explanation": "'Viskade' är en synonym till 'sa' som visar att hon pratade tyst och försiktigt – mer nyanserat än 'sa'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj synonymen till 'hjälpa' som passar i meningen: 'Medicinen ___ mot huvudvärk.'",
+          "options": [
+            "hjälper",
+            "lindrar",
+            "botar",
+            "skadar"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Lindrar' är den mest träffsäkra synonymen – medicin lindrar smärta, minskar den. 'Botar' är för starkt (det innebär full tillfriskning)."
         }
       ]
     },
@@ -2589,6 +2828,124 @@
             6
           ],
           "explanation": "'Livlig' och 'stillsam' är motsatsord – de skapar en kontrast mellan stad och by."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är motsatsordet till 'noggrann'?",
+          "options": [
+            "exakt",
+            "slarvig",
+            "försiktig",
+            "metodisk"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Slarvig' är motsatsen till 'noggrann' – en slarvig person bryr sig inte om detaljer."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket par är ett korrekt par av motsatsord?",
+          "options": [
+            "ödmjuk – blygsam",
+            "arrogant – ödmjuk",
+            "stolt – nöjd",
+            "glad – munter"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Arrogant – ödmjuk' är ett riktigt motsatspar. Arrogant = överlägsen, ödmjuk = anspråkslös."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Motsatsen till 'frihet' är '___'.",
+          "answer": "fångenskap",
+          "hint": "Om man inte är fri, vad är man då? Tänk på fängelse.",
+          "explanation": "'Fångenskap' är motsatsen till 'frihet' – att vara inlåst och inte fri."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är motsatsordet till 'generös'?",
+          "options": [
+            "snål",
+            "rik",
+            "givmild",
+            "vänlig"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Snål' är motsatsen till 'generös' – en snål person ger ogärna av sina tillgångar."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt motsatsord till 'permanent':",
+          "options": [
+            "konstant",
+            "varaktig",
+            "tillfällig",
+            "evig"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Tillfällig' är motsatsen till 'permanent' – något tillfälligt varar inte länge."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Motsatsen till 'sällsynt' är '___'.",
+          "answer": "vanlig",
+          "hint": "Om något inte är sällsynt, är det...?",
+          "explanation": "'Vanlig' är motsatsen till 'sällsynt' – något vanligt förekommer ofta och är lätt att hitta."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är motsatsordet till 'ytlig'?",
+          "options": [
+            "grund",
+            "smal",
+            "djupgående",
+            "snabb"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Djupgående' är motsatsen till 'ytlig' – en djupgående analys går på djupet, en ytlig stannar på ytan."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket par är ett korrekt par av motsatsord?",
+          "options": [
+            "konsekvent – konsekvens",
+            "framgång – motgång",
+            "fördelar – nytta",
+            "lösa – klara"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Framgång – motgång' är ett riktigt motsatspar – framgång = lyckas, motgång = misslyckas/stöta på hinder."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med ett tydligt motsatspar!",
+          "words": [
+            "Han",
+            "var",
+            "modig",
+            "men",
+            "hon",
+            "var",
+            "feg",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "explanation": "'Modig' och 'feg' är motsatsord – modig = inte rädd, feg = rädd och undvikande."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Motsatsen till 'komplicerad' är '___'.",
+          "answer": "enkel",
+          "hint": "Om något inte är komplicerat, är det...?",
+          "explanation": "'Enkel' är motsatsen till 'komplicerad' – en enkel uppgift är lätt att förstå och genomföra."
         }
       ]
     },
