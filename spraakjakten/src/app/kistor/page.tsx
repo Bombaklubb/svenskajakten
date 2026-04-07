@@ -7,7 +7,7 @@ import Header from "@/components/ui/Header";
 import { loadStudent, loadGamification, saveGamification } from "@/lib/storage";
 import { CHEST_LABELS, CHEST_COLORS } from "@/lib/gamification";
 import { BlurFade } from "@/components/magicui/blur-fade";
-import type { StudentData, GamificationData, Chest } from "@/lib/types";
+import type { StudentData, GamificationData, Chest, ChestType } from "@/lib/types";
 
 const CHEST_IMAGES: Record<string, string> = {
   wood:    "/bronskista.png",
@@ -70,6 +70,12 @@ export default function KistorPage() {
 
   const unopened = gam?.chests.filter((c) => !c.opened) ?? [];
   const opened   = gam?.chests.filter((c) =>  c.opened) ?? [];
+
+  // Group opened chests by type, preserving a consistent display order
+  const CHEST_ORDER = ["wood", "silver", "gold", "emerald", "ruby", "diamond"];
+  const openedByType = CHEST_ORDER
+    .map((type) => ({ type, chests: opened.filter((c) => c.type === type) }))
+    .filter(({ chests }) => chests.length > 0);
 
   return (
     <div className="min-h-screen bg-sky-50 dark:bg-gray-900">
@@ -162,62 +168,71 @@ export default function KistorPage() {
         {/* Trophy shelf */}
         {opened.length > 0 && (
           <BlurFade delay={0.08}>
-            <div className="card">
-              <h2 className="text-lg font-black text-gray-800 dark:text-gray-100 mb-1">
-                🏆 Troféhylla ({opened.length})
-              </h2>
-              <p className="text-xs text-gray-400 dark:text-gray-500 mb-4">Dina öppnade kistor</p>
-
-              {/* Shelf display */}
-              <div
-                className="relative rounded-2xl px-4 pt-4 pb-0 overflow-hidden"
-                style={{ background: "linear-gradient(180deg, #fef3c7 0%, #fde68a 100%)" }}
+            {/* Header */}
+            <div className="flex items-center gap-3 mb-3">
+              <h2 className="text-xl font-black text-gray-800 dark:text-gray-100">🏆 Troféhylla</h2>
+              <span
+                className="px-2.5 py-0.5 rounded-full text-xs font-black text-white"
+                style={{ background: "linear-gradient(135deg, #f59e0b, #d97706)" }}
               >
-                {/* Wood shelf plank */}
-                <div
-                  className="absolute bottom-0 left-0 right-0 h-5 rounded-b-2xl"
-                  style={{ background: "linear-gradient(180deg, #92400e, #78350f)" }}
-                />
-                <div className="flex flex-wrap gap-4 justify-center pb-6">
-                  {opened.slice().reverse().map((chest) => (
-                    <div key={chest.id} className="flex flex-col items-center gap-1">
-                      <div className="relative w-16 h-16">
-                        <Image
-                          src={OPENED_CHEST_IMAGES[chest.type]}
-                          alt={CHEST_LABELS[chest.type]}
-                          fill
-                          className="object-contain drop-shadow-md"
-                        />
-                      </div>
-                      <span className="text-[10px] font-bold text-amber-800">{CHEST_LABELS[chest.type]}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+                {opened.length} {opened.length === 1 ? "kista" : "kistor"}
+              </span>
+            </div>
 
-              {/* Rewards list */}
-              <div className="mt-4 space-y-2">
-                {opened.slice().reverse().map((chest) => chest.openedReward && (
-                  <div
-                    key={chest.id}
-                    className="flex items-center gap-3 px-3 py-2 rounded-xl bg-gray-50 dark:bg-gray-700/50"
-                  >
-                    <div className="relative w-8 h-8 flex-shrink-0">
-                      <Image
-                        src={OPENED_CHEST_IMAGES[chest.type]}
-                        alt={CHEST_LABELS[chest.type]}
-                        fill
-                        className="object-contain"
-                      />
+            {/* One shelf card per chest type */}
+            <div className="space-y-4">
+              {openedByType.map(({ type: rawType, chests }) => { const type = rawType as ChestType; return (
+                <div
+                  key={type}
+                  className="rounded-2xl overflow-hidden"
+                  style={{ boxShadow: "0 4px 0 0 rgba(180,120,30,0.2)" }}
+                >
+                  {/* Type header */}
+                  <div className="flex items-center gap-2 px-4 py-2.5 bg-white dark:bg-gray-800 border-b border-amber-100 dark:border-gray-700">
+                    <div className="relative w-6 h-6 flex-shrink-0">
+                      <Image src={OPENED_CHEST_IMAGES[type]} alt={CHEST_LABELS[type]} fill className="object-contain" />
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-xs font-bold text-gray-400 dark:text-gray-500">{CHEST_LABELS[chest.type]}</p>
-                      <p className="text-sm text-sj-600 dark:text-sj-400 font-medium">{chest.openedReward}</p>
-                    </div>
-                    <span className="text-xs text-gray-400">✓</span>
+                    <span className="text-sm font-black text-gray-700 dark:text-gray-200">{CHEST_LABELS[type]}</span>
+                    <span
+                      className="ml-1 px-2 py-0.5 rounded-full text-[11px] font-black text-white"
+                      style={{ background: "linear-gradient(135deg, #f59e0b, #d97706)" }}
+                    >
+                      ×{chests.length}
+                    </span>
                   </div>
-                ))}
-              </div>
+
+                  {/* Shelf with chests */}
+                  <div
+                    className="relative px-4 pt-4 pb-0"
+                    style={{ background: "linear-gradient(180deg, #fef9ec 0%, #fde68a 100%)" }}
+                  >
+                    {/* Wood plank */}
+                    <div
+                      className="absolute bottom-0 left-0 right-0 h-4"
+                      style={{ background: "linear-gradient(180deg, #92400e, #78350f)" }}
+                    />
+                    <div className="flex flex-wrap gap-5 pb-6">
+                      {chests.map((chest) => (
+                        <div key={chest.id} className="flex flex-col items-center gap-1">
+                          <div className="relative w-16 h-16 drop-shadow-md">
+                            <Image
+                              src={OPENED_CHEST_IMAGES[chest.type]}
+                              alt={CHEST_LABELS[chest.type]}
+                              fill
+                              className="object-contain"
+                            />
+                          </div>
+                          {chest.openedReward && (
+                            <span className="text-[10px] font-bold text-amber-900 max-w-[72px] text-center leading-tight">
+                              {chest.openedReward.replace(/^[^\s]+\s/, "")}
+                            </span>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ); })}
             </div>
           </BlurFade>
         )}
