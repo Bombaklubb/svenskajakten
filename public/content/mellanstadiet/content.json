@@ -3097,6 +3097,128 @@
             6
           ],
           "explanation": "'Förra veckan' och 'läste' visar att det hände i dåtid."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket alternativ är rätt DÅTID av verbet 'gå'?",
+          "options": [
+            "gådde",
+            "gick",
+            "gåde",
+            "gått"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Gå' är ett oregelbundet verb. Dåtid heter 'gick'.",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket alternativ är rätt NUTID av verbet 'springa'?",
+          "options": [
+            "sprunger",
+            "sprang",
+            "springer",
+            "springde"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Springa' böjs: springer (nutid), sprang (dåtid).",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är skriven i FRAMTID?",
+          "options": [
+            "Hon läste en bok.",
+            "Hon läser en bok.",
+            "Hon kommer att läsa en bok.",
+            "Hon har läst en bok."
+          ],
+          "correctIndex": 2,
+          "explanation": "'Kommer att läsa' uttrycker framtid.",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening innehåller PERFEKT tempus?",
+          "options": [
+            "Jag åt lunch.",
+            "Jag har ätit lunch.",
+            "Jag äter lunch.",
+            "Jag ska äta lunch."
+          ],
+          "correctIndex": 1,
+          "explanation": "Perfekt bildas med 'har' + supinum: 'har ätit'.",
+          "points": 10
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Verbet 'komma' i dåtid: Han ___ sent till skolan igår.",
+          "answer": "kom",
+          "hint": "Oregelbundet verb – inte 'kommade'",
+          "explanation": "'Komma' är oregelbundet: kommer (nutid) → kom (dåtid).",
+          "points": 10
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Verbet 'ta' i dåtid: Hon ___ av sig jackан.",
+          "answer": "tog",
+          "hint": "Oregelbundet verb",
+          "explanation": "'Ta' böjs: tar (nutid) → tog (dåtid).",
+          "points": 10
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt form: Imorgon ___ vi resa till farmor. (framtid med 'ska')",
+          "answer": "ska",
+          "hint": "Framtid med hjälpverbet ska + infinitiv",
+          "explanation": "'Imorgon ska vi resa' – ska + infinitiv uttrycker framtid.",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket tidsuttryck hör ihop med DÅTID?",
+          "options": [
+            "imorgon",
+            "just nu",
+            "förra veckan",
+            "om en stund"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Förra veckan' pekar bakåt i tid och hör ihop med dåtid.",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket tidsuttryck hör ihop med FRAMTID?",
+          "options": [
+            "igår",
+            "nyss",
+            "för länge sedan",
+            "nästa år"
+          ],
+          "correctIndex": 3,
+          "explanation": "'Nästa år' pekar framåt och hör ihop med framtid.",
+          "points": 10
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg en mening i PERFEKT tempus med orden:",
+          "words": [
+            "Vi",
+            "har",
+            "vunnit",
+            "matchen",
+            "!"
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "explanation": "Perfekt: 'har' + supinum ('vunnit'). Vi har vunnit matchen!",
+          "points": 10
         }
       ]
     },
@@ -3167,6 +3289,137 @@
           ],
           "correctIndex": 0,
           "explanation": "Talstrecket följs av ett mellanslag och repliken avslutas med komma före 'sa Emma'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur skriver man talstreck rätt i en dialog?",
+          "options": [
+            "–Hej, sa han.",
+            "– Hej, sa han.",
+            "- Hej, sa han.",
+            "— Hej, sa han."
+          ],
+          "correctIndex": 1,
+          "explanation": "Talstreck är ett tankstreck (–) följt av ett mellanslag före repliken.",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är skillnaden på bindestreck (-) och talstreck (–)?",
+          "options": [
+            "Det är samma tecken",
+            "Bindestreck är kortare och används i ord; talstreck är längre och inleder repliker",
+            "Talstreck används i ord; bindestreck inleder repliker",
+            "Talstreck används bara i poesi"
+          ],
+          "correctIndex": 1,
+          "explanation": "Bindestreck (-) används i sammansatta ord. Talstreck (–) är längre och inleder repliker i dialog.",
+          "points": 10
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Vilket skiljetecken fattas? ___ Vad vill du ha? frågade expediten.",
+          "answer": "–",
+          "hint": "Tankstreck som inleder en replik",
+          "explanation": "Repliker i dialog inleds med talstreck (–).",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur ska talverbet (sa, frågade, svarade) skrivas efter en replik?",
+          "options": [
+            "Med stor bokstav: – Hej! Sa Emma.",
+            "Med liten bokstav: – Hej! sa Emma.",
+            "Utan komma: – Hej sa Emma.",
+            "På ny rad: – Hej!\n sa Emma."
+          ],
+          "correctIndex": 1,
+          "explanation": "Talverbet efter repliken skrivs med liten bokstav: – Hej! sa Emma.",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken dialog är korrekt skriven?",
+          "options": [
+            "– Kan vi leka? frågade Liam. – Ja visst svarade Nora.",
+            "– Kan vi leka? frågade Liam.\n– Ja visst, svarade Nora.",
+            "– Kan vi leka? Frågade Liam. – Ja visst, Svarade Nora.",
+            "–Kan vi leka frågade Liam. –Ja visst svarade Nora."
+          ],
+          "correctIndex": 1,
+          "explanation": "Varje ny talare börjar på ny rad, talstreck följs av mellanslag, och talverb skrivs med liten bokstav.",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Var placeras kommatecknet i meningen: – Det snöar ___ sa Erik glatt.",
+          "options": [
+            "Inget komma behövs",
+            "– Det snöar! sa Erik glatt.",
+            "– Det snöar, sa Erik glatt.",
+            "– Det snöar. Sa Erik glatt."
+          ],
+          "correctIndex": 2,
+          "explanation": "När repliken slutar med ett påstående sätts komma före talverbet: – Det snöar, sa Erik glatt.",
+          "points": 10
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt interpunktion: – Är du hungrig___ frågade mamma.",
+          "answer": "?",
+          "hint": "Repliken är en fråga",
+          "explanation": "En frågereplik avslutas med frågetecken: – Är du hungrig? frågade mamma.",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening visar RÄTT användning av talstreck?",
+          "options": [
+            "Emma sa –Jag är glad.",
+            "Emma sa: – Jag är glad.",
+            "– Jag är glad sa Emma",
+            "– Jag är glad, sa Emma."
+          ],
+          "correctIndex": 3,
+          "explanation": "Korrekt: – Jag är glad, sa Emma. Talstreck inleder repliken och komma sätts före talverbet.",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Varför börjar varje replik i en dialog på en ny rad?",
+          "options": [
+            "Det är bara en gammal regel utan syfte",
+            "För att det ser snyggt ut",
+            "För att läsaren lätt ska se vem som talar",
+            "Bara om dialogen är lång"
+          ],
+          "correctIndex": 2,
+          "explanation": "Ny rad för varje talare gör det enkelt att följa vem som säger vad.",
+          "points": 10
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Sätt orden i rätt ordning för att skapa en korrekt dialograd:",
+          "words": [
+            "–",
+            "Kom",
+            "hit",
+            "!",
+            "ropade",
+            "pappa",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "explanation": "Korrekt: – Kom hit! ropade pappa. Talstreck, replik med utropstecken, sedan talverb med liten bokstav och punkt.",
+          "points": 10
         }
       ]
     },
@@ -3306,6 +3559,135 @@
           ],
           "correctIndex": 0,
           "explanation": "När talaren nämns först används kolon före citattecknen: Erik sa: \"Det är min bok.\" Punkten sitter inuti citattecknen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur ser svenska citattecken ut?",
+          "options": [
+            "\"text\"",
+            "'text'",
+            "„text“",
+            "“text”"
+          ],
+          "correctIndex": 3,
+          "explanation": "Svenska citattecken är “text” – öppnas med “ och stängs med ”.",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Var placeras frågetecknet när repliken är en fråga med citattecken?",
+          "options": [
+            "“Var är du”? frågade hon.",
+            "“Var är du?” frågade hon.",
+            "“Var är du” frågade hon?",
+            "Var är du? frågade hon."
+          ],
+          "correctIndex": 1,
+          "explanation": "Frågetecknet hör till repliken och placeras inuti citattecknen: “Var är du?”",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Var placeras utropstecknet i meningen: Hon skrek ___ Passa på___",
+          "options": [
+            "“Passa på”! skrek hon.",
+            "“Passa på!” skrek hon.",
+            "“Passa på” skrek hon!",
+            "“Passa på.” skrek hon!"
+          ],
+          "correctIndex": 1,
+          "explanation": "Utropstecknet hör till repliken: “Passa på!” skrek hon.",
+          "points": 10
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Lägg till citattecken rätt: Hon visade skylten som det stod ___ Stängt ___ på.",
+          "answer": "“Stängt”",
+          "hint": "Öppna med “ och stäng med ”",
+          "explanation": "Citattecken används kring det exakta innehållet: “Stängt”.",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur skriver man rätt när talaren presenteras FÖRE repliken?",
+          "options": [
+            "Läraren sa “Sitt ner”.",
+            "Läraren sa: “Sitt ner.”",
+            "Läraren sa, “Sitt ner.”",
+            "Läraren: “Sitt ner”."
+          ],
+          "correctIndex": 1,
+          "explanation": "När talaren presenteras före repliken används kolon: Läraren sa: “Sitt ner.”",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket påstående om citattecken och ny rad är korrekt?",
+          "options": [
+            "Varje citattecken-replik börjar på ny rad",
+            "Ny rad bara om repliken är längre än en mening",
+            "Citattecken används mest i löptext, inte i renodlad dialog",
+            "Citattecken och talstreck används alltid tillsammans"
+          ],
+          "correctIndex": 2,
+          "explanation": "Citattecken används ofta när tal citeras i löpande text. I renodlad dialog är talstreck vanligare.",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är FEL?",
+          "options": [
+            "“Jag är trött,” sa hon.",
+            "“Kom nu!” ropade han.",
+            "“Vad heter du?” frågade flickan.",
+            "“Det är kallt.” Sa han med darrande röst."
+          ],
+          "correctIndex": 3,
+          "explanation": "Talverbet 'sa' ska ha liten bokstav: “Det är kallt,” sa han med darrande röst.",
+          "points": 10
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Komplettera med rätt interpunktion: “Jag kommer imorgon___ lovade Anton.",
+          "answer": ",",
+          "hint": "Vad sätts efter en påståendereplik, innan talverbet?",
+          "explanation": "Efter en påståendereplik sätts komma innan talverbet: “Jag kommer imorgon,” lovade Anton.",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening använder citattecken KORREKT för att citera en bok?",
+          "options": [
+            "Hon läste boken -Alfons Åberg- högt.",
+            "Hon läste boken 'Alfons Åberg' högt.",
+            "Hon läste boken “Alfons Åberg” högt.",
+            "Hon läste boken (Alfons Åberg) högt."
+          ],
+          "correctIndex": 2,
+          "explanation": "Citattecken används för att markera titlar och citat: “Alfons Åberg”.",
+          "points": 10
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Sätt orden i rätt ordning för en korrekt mening med citattecken:",
+          "words": [
+            "“Vi",
+            "vinner",
+            "!”",
+            "jublade",
+            "laget",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "explanation": "Korrekt: “Vi vinner!” jublade laget. Utropstecknet inuti citattecknen, talverb med liten bokstav.",
+          "points": 10
         }
       ]
     },
