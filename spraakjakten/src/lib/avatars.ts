@@ -12,6 +12,20 @@ const PIX = `${DB}/pixel-art/svg`;
 const EMO = `${DB}/fun-emoji/svg`;
 
 export const AVATARS: Avatar[] = [
+  // ── 12 login-page avatars (DiceBear adventurer, plain bg) ──────────────────
+  { id: "felix",  emoji: "😊", name: "Felix",  image: `${ADV}?seed=Felix&radius=50&backgroundColor=b6e3f4` },
+  { id: "anna",   emoji: "😊", name: "Anna",   image: `${ADV}?seed=Anna&radius=50&backgroundColor=ffdfbf` },
+  { id: "carlos", emoji: "😊", name: "Carlos", image: `${ADV}?seed=Carlos&radius=50&backgroundColor=c0aede` },
+  { id: "zoe",    emoji: "😊", name: "Zoe",    image: `${ADV}?seed=Zoe&radius=50&backgroundColor=ffd5dc` },
+  { id: "niko",   emoji: "😊", name: "Niko",   image: `${ADV}?seed=Niko&radius=50&backgroundColor=d1fae5` },
+  { id: "emma",   emoji: "😊", name: "Emma",   image: `${ADV}?seed=Emma&radius=50&backgroundColor=fde68a` },
+  { id: "leo",    emoji: "😊", name: "Leo",    image: `${ADV}?seed=Leo&radius=50&backgroundColor=bae4bc` },
+  { id: "maya",   emoji: "😊", name: "Maya",   image: `${ADV}?seed=Maya&radius=50&backgroundColor=f8d7da` },
+  { id: "kai",    emoji: "😊", name: "Kai",    image: `${ADV}?seed=Kai&radius=50&backgroundColor=d4f0f7` },
+  { id: "sofia",  emoji: "😊", name: "Sofia",  image: `${ADV}?seed=Sofia&radius=50&backgroundColor=fce4c8` },
+  { id: "ravi",   emoji: "😊", name: "Ravi",   image: `${ADV}?seed=Ravi&radius=50&backgroundColor=e8d5f5` },
+  { id: "luna",   emoji: "😊", name: "Luna",   image: `${ADV}?seed=Luna&radius=50&backgroundColor=f0f4d8` },
+  // ── Legacy avatars (kept for backwards compatibility) ───────────────────────
   { id: "ninja",       emoji: "🥷",  name: "Ninjan",
     image: `${PIX}?seed=Ninjan&backgroundColor=1e1b4b&backgroundType=gradientLinear&radius=50` },
   { id: "wizard",      emoji: "🧙",  name: "Trollkarlen",
