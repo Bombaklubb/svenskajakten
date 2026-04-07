@@ -9,6 +9,12 @@ import { getLanguage } from "@/lib/languages";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import type { StudentData, LanguageContent, VocabularyModule, GrammarModule } from "@/lib/types";
 
+const FLAG_GRADIENT: Record<string, string> = {
+  franska: "linear-gradient(to right, #2563eb 33.33%, #f0f0f0 33.33%, #f0f0f0 66.66%, #dc2626 66.66%)",
+  spanska: "linear-gradient(to bottom, #c60b1e 25%, #ffc400 25%, #ffc400 75%, #c60b1e 75%)",
+  tyska:   "linear-gradient(to bottom, #111827 33.33%, #dc2626 33.33%, #dc2626 66.66%, #FFCE00 66.66%)",
+};
+
 interface Props {
   params: Promise<{ language: string }>;
 }
@@ -73,7 +79,10 @@ export default function WorldPage({ params }: Props) {
             ← Tillbaka
           </Link>
           <div className="flex items-center gap-4">
-            <span className="text-6xl drop-shadow-lg">{lang.flag}</span>
+            <div
+              className="w-16 h-11 rounded-lg flex-shrink-0 drop-shadow-lg"
+              style={{ background: FLAG_GRADIENT[lang.id] }}
+            />
             <div>
               <div className="text-sm font-bold text-white/70 mb-1">{lang.nativeName}</div>
               <h1
