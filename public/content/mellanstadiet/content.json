@@ -3758,6 +3758,126 @@
           ],
           "correctIndex": 1,
           "explanation": "Styckeindelning hjälper läsaren att följa med i texten och förstå dess struktur."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket exempel visar RÄTT styckeindelning när ämnet byter?",
+          "options": [
+            "Vi åkte till sjön. Det var soligt. Plötsligt hittade vi en grotta. Den var mörk och mystisk. Vi letade efter skatter.",
+            "Vi åkte till sjön. Det var soligt.\n\nPlötsligt hittade vi en grotta. Den var mörk och mystisk. Vi letade efter skatter.",
+            "Vi åkte till sjön. Det var soligt. Plötsligt hittade\nvi en grotta. Den var mörk och mystisk.",
+            "Vi åkte till sjön.\nDet var soligt.\nPlötsligt hittade vi en grotta."
+          ],
+          "correctIndex": 1,
+          "explanation": "Nytt ämne (resan → grottan) markeras med ett nytt stycke – en blank rad emellan.",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur långt bör ett stycke vara?",
+          "options": [
+            "Alltid exakt tre meningar",
+            "Alltid en mening",
+            "Så långt som behövs – ett stycke täcker ett sammanhängande ämne",
+            "Minst tio meningar"
+          ],
+          "correctIndex": 2,
+          "explanation": "Det finns ingen fast regel. Ett stycke bör täcka ett sammanhängande ämne eller tanke.",
+          "points": 10
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Det första stycket i en text kallas ofta för ___.",
+          "answer": "inledning",
+          "hint": "Vilket ord beskriver textens start?",
+          "explanation": "En texts uppbyggnad brukar vara: inledning – handling/mittdel – avslutning.",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken av dessa är ett BRA skäl att börja ett nytt stycke?",
+          "options": [
+            "Meningen är för lång",
+            "En ny person börjar tala eller agera i berättelsen",
+            "Man har skrivit tre meningar i rad",
+            "Det är slutet av sidan"
+          ],
+          "correctIndex": 1,
+          "explanation": "Nytt stycke när en ny person träder in, ämnet byter eller handlingen hoppar i tid/rum.",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad kallas det sista stycket i en text?",
+          "options": [
+            "Inledning",
+            "Klimax",
+            "Avslutning",
+            "Strofslut"
+          ],
+          "correctIndex": 2,
+          "explanation": "Textens uppbyggnad: inledning – mittdel – avslutning. Det sista stycket kallas avslutning.",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Varför är det fel att ha ett stycke per mening i hela texten?",
+          "options": [
+            "Det är aldrig fel",
+            "Det bryter upp texten så att samhörande tankar splittras och texten blir hackig",
+            "Man får inte ha fler än 5 stycken",
+            "Stycken måste alltid vara minst 5 meningar"
+          ],
+          "correctIndex": 1,
+          "explanation": "Meningar som hör ihop ska vara i samma stycke. Annars blir texten splittrad och svår att följa.",
+          "points": 10
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "I en handskriven text markerar man nytt stycke med ett ___ i.",
+          "answer": "indrag",
+          "hint": "Man flyttar in texten lite från vänster kant",
+          "explanation": "Indrag (att börja lite inåt på raden) är ett klassiskt sätt att markera nytt stycke.",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken signal visar att ett nytt stycke bör börja?",
+          "options": [
+            "Nästa mening handlar om exakt samma sak",
+            "Texten byter plats, tid eller ämne",
+            "Man har nått mitten av sidan",
+            "Man använder ett nytt adjektiv"
+          ],
+          "correctIndex": 1,
+          "explanation": "Nytt stycke markerar övergång: ny plats, ny tid, nytt ämne eller ny person.",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur markeras ett nytt stycke i digitala texter (t.ex. i Word)?",
+          "options": [
+            "Med ett indrag och ingen blank rad",
+            "Antingen med indrag ELLER med en blank rad mellan styckena",
+            "Alltid med tre blanka rader",
+            "Med ett asterisktecken (*)"
+          ],
+          "correctIndex": 1,
+          "explanation": "I digitala texter används antingen indrag eller blank rad – men oftast inte båda samtidigt.",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "En elev skriver en berättelse om en resa. Hon har ett stycke om packning, ett om bussresan och ett om hotellet. Vad är bra med det?",
+          "options": [
+            "Ingenting – det är för många stycken",
+            "Varje stycke täcker ett eget ämne vilket gör texten lätt att följa",
+            "Det är bra om varje stycke har precis 3 meningar",
+            "Det är bra om styckena är lika långa"
+          ],
+          "correctIndex": 1,
+          "explanation": "Bra styckeindelning innebär att varje stycke har ett tydligt ämne – det gör texten lätt att följa.",
+          "points": 10
         }
       ]
     },
@@ -3890,6 +4010,135 @@
           ],
           "correctIndex": 1,
           "explanation": "'Tunn som ett papper' är en känd liknelse för att beskriva extrem tunnhet."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord används OFTAST för att binda ihop en liknelse?",
+          "options": [
+            "och",
+            "men",
+            "som",
+            "fast"
+          ],
+          "correctIndex": 2,
+          "explanation": "Liknelser använder jämförelseord som 'som' eller 'lika ... som': 'stark som en björn'.",
+          "points": 10
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i: 'Hans händer var kalla ___ is.'",
+          "answer": "som",
+          "hint": "Jämförelseord i liknelser",
+          "explanation": "'Kalla som is' är en liknelse som jämför händernas kyla med is.",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad jämförs i liknelsen: 'Pojken sprang lika snabbt som vinden'?",
+          "options": [
+            "Pojkens styrka jämförs med vinden",
+            "Pojkens hastighet jämförs med vindens hastighet",
+            "Pojken jämförs med ett träd i vinden",
+            "Pojkens röst jämförs med vinden"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Lika snabbt som vinden' – det är hastigheten som jämförs.",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hitta liknelsen: Vilket alternativ är en liknelse om tystnad?",
+          "options": [
+            "Det var tyst i rummet.",
+            "Ingen pratade.",
+            "Det var tyst som i en grav.",
+            "Tystnaden varade länge."
+          ],
+          "correctIndex": 2,
+          "explanation": "'Tyst som i en grav' är en liknelse – tystnaden jämförs med den totala tystnaden i en grav.",
+          "points": 10
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Skapa en liknelse: 'Hennes leende var varmt ___ solen.'",
+          "answer": "som",
+          "hint": "Vilket ord kopplar ihop de två sakerna som jämförs?",
+          "explanation": "'Varmt som solen' – en liknelse som beskriver värmen i hennes leende.",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken liknelse beskriver att en person är mycket seg och uthållig?",
+          "options": [
+            "Stark som en storm",
+            "Seg som läder",
+            "Snabb som en pil",
+            "Mjuk som dun"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Seg som läder' – läder är ett material som tål mycket, jämförs med uthållighet.",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad kallas de ord som används för att jämföra i en liknelse?",
+          "options": [
+            "Metaforord",
+            "Jämförelseord",
+            "Adjektiv",
+            "Konjunktioner"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Som', 'lika ... som', 'liknar' kallas jämförelseord och används i liknelser.",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad gör en liknelse med ett påstående?",
+          "options": [
+            "Den gör det mer abstrakt och svårt att förstå",
+            "Den gör det mer konkret och levande genom att jämföra",
+            "Den tar bort känslan ur texten",
+            "Den berättar bara fakta"
+          ],
+          "correctIndex": 1,
+          "explanation": "Liknelser gör texten mer levande – läsaren kan visualisera det som beskrivs.",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken liknelse passar bäst för att beskriva en röst som är mjuk och behaglig?",
+          "options": [
+            "En röst som en åskknall",
+            "En röst som en liten klocka",
+            "En röst som ett rivjärn",
+            "En röst som vinden i stormen"
+          ],
+          "correctIndex": 1,
+          "explanation": "'En röst som en liten klocka' ger intryck av en klar, lätt och behaglig röst.",
+          "points": 10
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg en korrekt liknelse av dessa ord:",
+          "words": [
+            "Natten",
+            "var",
+            "svart",
+            "som",
+            "kol",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "explanation": "'Natten var svart som kol' – en liknelse där nattens svärta jämförs med kolets.",
+          "points": 10
         }
       ]
     },
@@ -4034,6 +4283,135 @@
           ],
           "correctIndex": 1,
           "explanation": "Exempel på döda metaforer: 'bordsben', 'flaskhalsen', 'tidsfördriva'. Vi använder dem utan att tänka på att de är metaforer."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Varför är 'Han är ett lejon' en metafor och inte en liknelse?",
+          "options": [
+            "Eftersom det handlar om ett djur",
+            "Eftersom den saknar jämförelseord som 'som' – påståendet görs direkt",
+            "Eftersom den beskriver utseende",
+            "Eftersom den är kortare"
+          ],
+          "correctIndex": 1,
+          "explanation": "Metaforer säger att något ÄR något annat direkt, utan 'som'. Liknelser jämför med 'som'.",
+          "points": 10
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i så att det blir en metafor: 'Hennes ord var ___ som stack djupt.'",
+          "answer": "pilar",
+          "hint": "Vad kan ord jämföras med som sticker?",
+          "explanation": "'Hennes ord var pilar som stack djupt' – orden jämförs direkt med pilar.",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder metaforen 'Livet är en berg-och-dalbana'?",
+          "options": [
+            "Man bor nära ett nöjesfält",
+            "Livet har höga och låga perioder, med snabba förändringar",
+            "Livet är alltid roligt",
+            "Livet är farligt"
+          ],
+          "correctIndex": 1,
+          "explanation": "Berg-och-dalbanan symboliserar upp- och nedgångar – en metafor för livets växlingar.",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är en metafor?",
+          "options": [
+            "Solen lyser starkt.",
+            "Solen är en stor eldkula på himlen.",
+            "Solen ser ut som ett ägg.",
+            "Solen stiger upp tidigt."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Solen är en stor eldkula' – solen kallas direkt en eldkula, utan jämförelseord.",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder metaforen 'Klassrummet är en zoo'?",
+          "options": [
+            "Det finns djur i klassrummet",
+            "Klassrummet är kaotiskt och livligt som ett djurhem",
+            "Eleverna äter som djur",
+            "Klassrummet luktar illa"
+          ],
+          "correctIndex": 1,
+          "explanation": "Att kalla klassrummet en zoo beskriver kaos och larm – en metafor för stökighet.",
+          "points": 10
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Skapa en metafor: 'Han är ett ___ i fotbollslaget.' (han är ovärderlig och stark)",
+          "answer": "klippa",
+          "hint": "Vad kallas något som är stabilt och pålitligt?",
+          "explanation": "'Han är en klippa' – klippan symboliserar stabilitet och pålitlighet.",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken metafor beskriver att en person bär på en tung börda?",
+          "options": [
+            "Hon är en fjäder",
+            "Hon bär världen på sina axlar",
+            "Hon är snabb som vinden",
+            "Hon är tyst som natten"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Bär världen på sina axlar' är en metafor för en person med mycket ansvar och bekymmer.",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket påstående om metaforer stämmer?",
+          "options": [
+            "Metaforer är alltid ologiska och bör undvikas",
+            "Metaforer ger läsaren en ny och kreativ syn på något",
+            "Metaforer berättar bara fakta",
+            "Metaforer används bara i dikter"
+          ],
+          "correctIndex": 1,
+          "explanation": "Metaforer ger färg och liv åt språket – de skapar bilder och känslor hos läsaren.",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder metaforen 'Natten lade sin mantel över staden'?",
+          "options": [
+            "Någon tappade en kappa utomhus",
+            "Mörkret spred sig sakta över staden när det blev natt",
+            "Det var kallt på natten",
+            "Staden belystes av lampor"
+          ],
+          "correctIndex": 1,
+          "explanation": "Natten ges egenskapen att 'lägga en mantel' – en metafor för hur mörkret breder ut sig.",
+          "points": 10
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg metaforen i rätt ordning:",
+          "words": [
+            "Skolan",
+            "är",
+            "ett",
+            "kunskapens",
+            "tempel",
+            "."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "explanation": "'Skolan är ett kunskapens tempel' – en metafor som liknar skolan vid ett heligt rum för lärande.",
+          "points": 10
         }
       ]
     },
@@ -4164,6 +4542,126 @@
           ],
           "correctIndex": 1,
           "explanation": "Ribban från höjdhopp – ju högre ribba, desto svårare att ta sig över. 'Sätta ribban högt' betyder att ställa höga krav."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder idiomen 'Hålla tummarna'?",
+          "options": [
+            "Hålla händerna i fickorna",
+            "Önska någon lycka eller hoppas att något ska gå bra",
+            "Vara rädd för något",
+            "Vägra att göra något"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Hålla tummarna' betyder att önska någon lycka – man 'håller tummarna' för att det ska gå bra.",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder 'Ge upp'?",
+          "options": [
+            "Ge en present till någon",
+            "Sluta försöka med något",
+            "Börja om från början",
+            "Ge bort sina saker"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Ge upp' är ett idiom som betyder att sluta kämpa eller försöka.",
+          "points": 10
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Idiom: 'Det är ingen ko på ___' betyder att det inte är bråttom.",
+          "answer": "isen",
+          "hint": "Var brukar kor inte vara?",
+          "explanation": "'Det är ingen ko på isen' – det är lugnt, ingen fara, ingen brådska.",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder 'Ha isen' i uttrycket 'Han hade isen' på matchen?",
+          "options": [
+            "Han var mycket kall",
+            "Han var lugn och behärskad i avgörande lägen",
+            "Han åkte skridskor bra",
+            "Han var rädd"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Ha isen' eller 'hålla isen' betyder att vara lugn och cool i press-situationer.",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad menas med 'Sätta fingret på något'?",
+          "options": [
+            "Röra vid ett föremål",
+            "Hitta och peka ut precis vad problemet är",
+            "Skriva ner något viktigt",
+            "Visa att man är arg"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Sätta fingret på något' betyder att identifiera eller påpeka det verkliga problemet.",
+          "points": 10
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Idiom: 'Ta bladet från ___ och säga vad man tycker' – tala öppet och ärligt.",
+          "answer": "munnen",
+          "hint": "Vad täcker man munnen med?",
+          "explanation": "'Ta bladet från munnen' betyder att tala öppet och direkt utan att dölja sina tankar.",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder 'Slå två flugor i en smäll'?",
+          "options": [
+            "Vara våldsam mot insekter",
+            "Lösa två problem eller uppnå två mål på en gång",
+            "Misslyckas med något",
+            "Göra något snabbt och dåligt"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Slå två flugor i en smäll' – göra två saker på samma gång och lösa båda.",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder 'Kasta in handduken'?",
+          "options": [
+            "Kasta en handduk på golvet",
+            "Ge upp och erkänna nederlag",
+            "Börja en ny uppgift",
+            "Be om hjälp med tvätten"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Kasta in handduken' kommer från boxning och betyder att ge upp – erkänna att man förlorat.",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Om någon 'har huvudet på skaft', vad innebär det?",
+          "options": [
+            "Att personen är sjuk",
+            "Att personen är klok, praktisk och ordentlig",
+            "Att personen har ont i nacken",
+            "Att personen är störst i gruppen"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Ha huvudet på skaft' = vara förnuftig, påhittig och klara saker på ett bra sätt.",
+          "points": 10
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder 'Det är ingen dans på rosor'?",
+          "options": [
+            "Att dansen är vacker",
+            "Att något är svårt och krävande, inte enkelt",
+            "Att man inte gillar rosor",
+            "Att det är roligt att dansa"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Ingen dans på rosor' – ingenting är perfekt och enkelt; det kräver ansträngning.",
+          "points": 10
         }
       ]
     },
