@@ -11,12 +11,6 @@ import { BlurFade } from "@/components/magicui/blur-fade";
 import { NumberTicker } from "@/components/magicui/number-ticker";
 import type { StudentData, StageId } from "@/lib/types";
 
-const SCENE_EMOJIS: Record<StageId, string> = {
-  lagstadiet:    "🌾 🌿 ✏️",
-  mellanstadiet: "🌲 📖 🧚",
-  hogstadiet:    "🌊 📜 🍾",
-  gymnasiet:     "🏛️ 📚 🎓",
-};
 
 export default function HomePage() {
   const [student, setStudent] = useState<StudentData | null>(null);
@@ -214,9 +208,7 @@ export default function HomePage() {
                               </div>
                             )}
                           </div>
-                          <div className="mt-2.5 text-2xl opacity-75 tracking-widest">
-                            {SCENE_EMOJIS[stage.id as StageId]}
-                          </div>
+
                         </div>
 
                         {/* Footer */}
