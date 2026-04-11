@@ -11,6 +11,7 @@ import MultipleChoice from "@/components/exercises/MultipleChoice";
 import FillInBlank from "@/components/exercises/FillInBlank";
 import BuildSentence from "@/components/exercises/BuildSentence";
 import { loadStudent, saveModuleProgress, loadGamification, saveGamification, addToRetryQueue } from "@/lib/storage";
+import { trackEvent } from "@/lib/analytics";
 import {
   chestsEarnedFromPoints,
   chestsEarnedFromExercises,
@@ -98,6 +99,27 @@ export default function GrammarModulePage({ params }: Props) {
         exercise: currentExercise,
         addedAt: new Date().toISOString(),
       });
+    }
+
+    // Anonymous analytics tracking
+    if (currentExercise && mod && stage) {
+      const preview =
+        currentExercise.type === "multiple-choice" ? currentExercise.question.slice(0, 60)
+        : currentExercise.type === "fill-in-blank" ? currentExercise.question.slice(0, 60)
+        : currentExercise.instruction.slice(0, 60);
+
+      if (correct) {
+        trackEvent({ type: "exercise_done", stage: stageId, moduleId });
+      } else {
+        trackEvent({
+          type: "wrong_answer",
+          stage: stageId,
+          moduleId,
+          exerciseIdx: currentIndex,
+          moduleTitle: mod.title,
+          questionPreview: preview,
+        });
+      }
     }
 
     if (currentIndex + 1 >= totalExercises) {
