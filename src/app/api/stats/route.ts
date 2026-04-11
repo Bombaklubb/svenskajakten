@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { validateToken } from "../teacher-auth/route";
+import { validateToken } from "@/lib/teacherAuth";
 
 interface MistakeRecord {
   count: number;
