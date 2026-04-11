@@ -5,27 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/ui/Header";
 import { loadStudent, loadGamification, saveGamification } from "@/lib/storage";
-import { CHEST_LABELS, CHEST_COLORS } from "@/lib/gamification";
+import { CHEST_LABELS, CHEST_COLORS, CHEST_IMAGES, OPENED_CHEST_IMAGES, CHEST_ORDER } from "@/lib/gamification";
 import { BlurFade } from "@/components/magicui/blur-fade";
-import type { StudentData, GamificationData, Chest, ChestType } from "@/lib/types";
-
-const CHEST_IMAGES: Record<string, string> = {
-  wood:    "/bronskista.png",
-  silver:  "/silverkista.png",
-  gold:    "/guldkista.png",
-  emerald: "/smaragdkista.png",
-  ruby:    "/rubinkista.png",
-  diamond: "/diamantkista.png",
-};
-
-const OPENED_CHEST_IMAGES: Record<string, string> = {
-  wood:    "/oppen-kista-brons.png",
-  silver:  "/oppen-kista-silver.png",
-  gold:    "/oppen-kista-guld.png",
-  emerald: "/oppen-kista-smaragd.png",
-  ruby:    "/oppen-kista-rubin.png",
-  diamond: "/oppen-kista-diamant.png",
-};
+import type { StudentData, GamificationData, Chest } from "@/lib/types";
 
 const CHEST_REWARDS: Record<string, string[]> = {
   wood:    ["🌟 +15 bonuspoäng", "📚 Ordförrådstips", "💡 Gratis ledtråd"],
@@ -71,8 +53,6 @@ export default function KistorPage() {
   const unopened = gam?.chests.filter((c) => !c.opened) ?? [];
   const opened   = gam?.chests.filter((c) =>  c.opened) ?? [];
 
-  // Group opened chests by type, preserving a consistent display order
-  const CHEST_ORDER = ["wood", "silver", "gold", "emerald", "ruby", "diamond"];
   const openedByType = CHEST_ORDER
     .map((type) => ({ type, chests: opened.filter((c) => c.type === type) }))
     .filter(({ chests }) => chests.length > 0);
@@ -181,7 +161,7 @@ export default function KistorPage() {
 
             {/* One shelf card per chest type */}
             <div className="space-y-4">
-              {openedByType.map(({ type: rawType, chests }) => { const type = rawType as ChestType; return (
+              {openedByType.map(({ type, chests }) => (
                 <div
                   key={type}
                   className="rounded-2xl overflow-hidden"
@@ -232,7 +212,7 @@ export default function KistorPage() {
                     </div>
                   </div>
                 </div>
-              ); })}
+              ))}
             </div>
           </BlurFade>
         )}

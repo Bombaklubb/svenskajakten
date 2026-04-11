@@ -141,6 +141,26 @@ export const BOSS_QUESTIONS = [
 
 // ─── Chest helpers ────────────────────────────────────────────────────────────
 
+export const CHEST_ORDER: ChestType[] = ["wood", "silver", "gold", "emerald", "ruby", "diamond"];
+
+export const CHEST_IMAGES: Record<ChestType, string> = {
+  wood:    "/bronskista.png",
+  silver:  "/silverkista.png",
+  gold:    "/guldkista.png",
+  emerald: "/smaragdkista.png",
+  ruby:    "/rubinkista.png",
+  diamond: "/diamantkista.png",
+};
+
+export const OPENED_CHEST_IMAGES: Record<ChestType, string> = {
+  wood:    "/oppen-kista-brons.png",
+  silver:  "/oppen-kista-silver.png",
+  gold:    "/oppen-kista-guld.png",
+  emerald: "/oppen-kista-smaragd.png",
+  ruby:    "/oppen-kista-rubin.png",
+  diamond: "/oppen-kista-diamant.png",
+};
+
 export const CHEST_LABELS: Record<ChestType, string> = {
   wood:    "Bronskista",
   silver:  "Silverkista",

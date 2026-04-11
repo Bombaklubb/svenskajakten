@@ -7,6 +7,7 @@ export interface Language {
   name: string;
   nativeName: string;
   flag: string;
+  flagGradient: string;
   emoji: string;
   colorClass: string;
   bgClass: string;
