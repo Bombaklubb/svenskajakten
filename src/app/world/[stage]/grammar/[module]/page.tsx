@@ -10,7 +10,7 @@ import ResultModal from "@/components/ui/ResultModal";
 import MultipleChoice from "@/components/exercises/MultipleChoice";
 import FillInBlank from "@/components/exercises/FillInBlank";
 import BuildSentence from "@/components/exercises/BuildSentence";
-import { loadStudent, saveModuleProgress, loadGamification, saveGamification } from "@/lib/storage";
+import { loadStudent, saveModuleProgress, loadGamification, saveGamification, addToRetryQueue } from "@/lib/storage";
 import {
   chestsEarnedFromPoints,
   chestsEarnedFromExercises,
@@ -85,6 +85,20 @@ export default function GrammarModulePage({ params }: Props) {
   function handleAnswer(correct: boolean) {
     const newResults = [...results, correct];
     setResults(newResults);
+
+    // Add wrong answers to retry queue
+    if (!correct && currentExercise && mod && stage) {
+      addToRetryQueue({
+        key: `grammar-${moduleId}-${currentIndex}`,
+        stageId: stage.id,
+        kind: "grammar",
+        moduleId: mod.id,
+        moduleTitle: mod.title,
+        moduleIcon: mod.icon ?? "📝",
+        exercise: currentExercise,
+        addedAt: new Date().toISOString(),
+      });
+    }
 
     if (currentIndex + 1 >= totalExercises) {
       const totalCorrect = newResults.filter(Boolean).length;

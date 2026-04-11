@@ -219,6 +219,20 @@ export interface GamificationData {
   achievementsRewarded: string[];
 }
 
+// ─── Retry queue (persisted per student per stage) ────────────────────────────
+
+export interface RetryItem {
+  /** Unique key: `${kind}-${moduleId}-${exerciseIndex}` */
+  key: string;
+  stageId: string;
+  kind: "grammar" | "spelling";
+  moduleId: string;
+  moduleTitle: string;
+  moduleIcon: string;
+  exercise: GrammarExercise;
+  addedAt: string;
+}
+
 // ─── Exercise session (in-memory, not persisted) ──────────────────────────────
 
 export interface ExerciseResult {

@@ -1,4 +1,4 @@
-import type { StudentData, StageId, ModuleProgress, StageProgress, HeroConfig, GamificationData } from "./types";
+import type { StudentData, StageId, ModuleProgress, StageProgress, HeroConfig, GamificationData, RetryItem } from "./types";
 import { defaultGamificationData } from "./gamification";
 
 // Legacy key (single student) – kept only for migration
@@ -244,6 +244,38 @@ export function importProgress(file: File): Promise<StudentData> {
     reader.onerror = () => reject(new Error("Filläsning misslyckades."));
     reader.readAsText(file);
   });
+}
+
+// ─── Retry queue ──────────────────────────────────────────────────────────────
+
+function getRetryKey(stageId: string): string {
+  const name = getCurrentName();
+  return `svenskajakten_retry_${name ?? "anon"}_${stageId}`;
+}
+
+export function loadRetryQueue(stageId: string): RetryItem[] {
+  if (typeof window === "undefined") return [];
+  try {
+    const raw = localStorage.getItem(getRetryKey(stageId));
+    if (!raw) return [];
+    return JSON.parse(raw) as RetryItem[];
+  } catch {
+    return [];
+  }
+}
+
+export function addToRetryQueue(item: RetryItem): void {
+  if (typeof window === "undefined") return;
+  const queue = loadRetryQueue(item.stageId);
+  if (queue.some((q) => q.key === item.key)) return; // no duplicates
+  queue.push(item);
+  localStorage.setItem(getRetryKey(item.stageId), JSON.stringify(queue));
+}
+
+export function removeFromRetryQueue(stageId: string, key: string): void {
+  if (typeof window === "undefined") return;
+  const queue = loadRetryQueue(stageId).filter((q) => q.key !== key);
+  localStorage.setItem(getRetryKey(stageId), JSON.stringify(queue));
 }
 
 export function generateShareCode(data: StudentData): string {

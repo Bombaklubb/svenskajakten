@@ -6,10 +6,13 @@ import { notFound } from "next/navigation";
 import Header from "@/components/ui/Header";
 import ModuleCard from "@/components/ui/ModuleCard";
 import FinalTestCard from "@/components/ui/FinalTestCard";
-import { loadStudent } from "@/lib/storage";
+import { loadStudent, loadRetryQueue, removeFromRetryQueue } from "@/lib/storage";
 import { getStage } from "@/lib/stages";
 import { BlurFade } from "@/components/magicui/blur-fade";
-import type { StudentData, StageContent } from "@/lib/types";
+import MultipleChoice from "@/components/exercises/MultipleChoice";
+import FillInBlank from "@/components/exercises/FillInBlank";
+import BuildSentence from "@/components/exercises/BuildSentence";
+import type { StudentData, StageContent, RetryItem } from "@/lib/types";
 
 interface RuleItem {
   term: string;
@@ -28,7 +31,7 @@ interface Props {
   params: Promise<{ stage: string }>;
 }
 
-type Tab = "grammar" | "reading" | "spelling" | "wordsearch" | "regler" | "spel";
+type Tab = "grammar" | "reading" | "spelling" | "wordsearch" | "regler" | "spel" | "retry";
 
 export default function WorldPage({ params }: Props) {
   const { stage: stageId } = use(params);
@@ -39,6 +42,11 @@ export default function WorldPage({ params }: Props) {
   const [rules, setRules] = useState<RuleSection[]>([]);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState<Tab>("grammar");
+
+  // Retry queue state
+  const [retryQueue, setRetryQueue] = useState<RetryItem[]>([]);
+  const [retryItem, setRetryItem] = useState<RetryItem | null>(null);
+  const [retryResult, setRetryResult] = useState<"correct" | "wrong" | null>(null);
 
   useEffect(() => {
     const s = loadStudent();
@@ -52,6 +60,7 @@ export default function WorldPage({ params }: Props) {
       .then((r) => r.json())
       .then((data: { sections: RuleSection[] }) => setRules(data.sections))
       .catch(() => {});
+    setRetryQueue(loadRetryQueue(stageId));
   }, [stageId]);
 
   if (!stage) return notFound();
@@ -84,7 +93,24 @@ export default function WorldPage({ params }: Props) {
     { id: "regler",     label: "📐 Språkregler" },
     { id: "wordsearch", label: "🔍 Ordsökning" },
     { id: "spel",       label: "🎮 Spel" },
+    { id: "retry",      label: retryQueue.length > 0 ? `🔄 Försök igen (${retryQueue.length})` : "🔄 Försök igen" },
   ];
+
+  function handleRetryAnswer(correct: boolean) {
+    if (!retryItem) return;
+    if (correct) {
+      removeFromRetryQueue(stageId, retryItem.key);
+      const updated = retryQueue.filter((q) => q.key !== retryItem.key);
+      setRetryQueue(updated);
+      setRetryResult("correct");
+    } else {
+      setRetryResult("wrong");
+    }
+    setTimeout(() => {
+      setRetryResult(null);
+      setRetryItem(null);
+    }, 2000);
+  }
 
   return (
     <div className="min-h-screen bg-amber-50 dark:bg-gray-900">
@@ -235,6 +261,108 @@ export default function WorldPage({ params }: Props) {
                 </div>
               </Link>
             </div>
+          </div>
+
+        ) : activeTab === "retry" ? (
+          /* Försök igen tab */
+          <div>
+            {retryItem ? (
+              /* Exercise view */
+              <div>
+                <button
+                  onClick={() => { setRetryItem(null); setRetryResult(null); }}
+                  className="inline-flex items-center gap-1.5 text-sv-600 dark:text-sv-400 hover:text-sv-800 dark:hover:text-sv-200 text-sm font-medium mb-4 transition-colors"
+                >
+                  ← Tillbaka till listan
+                </button>
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="text-2xl">{retryItem.moduleIcon}</span>
+                  <div>
+                    <div className="text-xs text-gray-400 dark:text-gray-500 uppercase tracking-wide font-semibold">
+                      {retryItem.kind === "grammar" ? "Grammatik" : "Stavning"}
+                    </div>
+                    <div className="font-bold text-gray-800 dark:text-gray-100">{retryItem.moduleTitle}</div>
+                  </div>
+                </div>
+
+                {retryResult ? (
+                  <div className={`card text-center py-10 ${retryResult === "correct" ? "border-green-300 bg-green-50 dark:bg-green-900/20" : "border-red-300 bg-red-50 dark:bg-red-900/20"}`}>
+                    <div className="text-5xl mb-3">{retryResult === "correct" ? "✅" : "❌"}</div>
+                    <p className={`text-lg font-black ${retryResult === "correct" ? "text-green-700 dark:text-green-300" : "text-red-700 dark:text-red-300"}`}>
+                      {retryResult === "correct" ? "Rätt! Uppgiften är klar!" : "Fel – försök igen nästa gång!"}
+                    </p>
+                  </div>
+                ) : (
+                  <div className="card">
+                    <div key={retryItem.key}>
+                      {retryItem.exercise.type === "multiple-choice" && (
+                        <MultipleChoice exercise={retryItem.exercise} onAnswer={handleRetryAnswer} isLast />
+                      )}
+                      {retryItem.exercise.type === "fill-in-blank" && (
+                        <FillInBlank exercise={retryItem.exercise} onAnswer={handleRetryAnswer} isLast />
+                      )}
+                      {retryItem.exercise.type === "build-sentence" && (
+                        <BuildSentence exercise={retryItem.exercise} onAnswer={handleRetryAnswer} isLast />
+                      )}
+                    </div>
+                  </div>
+                )}
+              </div>
+            ) : (
+              /* List view */
+              <div>
+                <div className="mb-6 text-center">
+                  <div className="text-4xl mb-2">🔄</div>
+                  <h2 className="text-xl font-black text-gray-900 dark:text-gray-100">Försök igen</h2>
+                  <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
+                    Här samlas uppgifter du svarat fel på. Klara dem för att ta bort dem!
+                  </p>
+                </div>
+
+                {retryQueue.length === 0 ? (
+                  <div className="card text-center py-12">
+                    <div className="text-5xl mb-3">🌟</div>
+                    <p className="font-black text-gray-800 dark:text-gray-100 text-lg">Bra jobbat!</p>
+                    <p className="text-gray-400 dark:text-gray-500 text-sm mt-1">Inga uppgifter att repetera just nu.</p>
+                  </div>
+                ) : (
+                  <div className="space-y-2">
+                    {retryQueue.map((item) => {
+                      const preview =
+                        item.exercise.type === "multiple-choice" ? item.exercise.question
+                        : item.exercise.type === "fill-in-blank" ? item.exercise.question
+                        : item.exercise.instruction;
+                      return (
+                        <button
+                          key={item.key}
+                          onClick={() => { setRetryItem(item); setRetryResult(null); }}
+                          className="w-full text-left card hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 cursor-pointer group"
+                        >
+                          <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 rounded-xl bg-red-50 dark:bg-red-900/30 flex items-center justify-center text-xl flex-shrink-0">
+                              {item.moduleIcon}
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center gap-2 mb-0.5">
+                                <span className="text-xs font-bold text-red-500 dark:text-red-400 uppercase tracking-wide">
+                                  {item.kind === "grammar" ? "Grammatik" : "Stavning"}
+                                </span>
+                                <span className="text-xs text-gray-400 dark:text-gray-500">·</span>
+                                <span className="text-xs text-gray-500 dark:text-gray-400">{item.moduleTitle}</span>
+                              </div>
+                              <p className="text-sm text-gray-800 dark:text-gray-200 font-medium truncate">
+                                {preview}
+                              </p>
+                            </div>
+                            <span className="text-sv-400 group-hover:text-sv-600 transition-colors flex-shrink-0">→</span>
+                          </div>
+                        </button>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+            )}
           </div>
 
         ) : /* Language rules tab */
