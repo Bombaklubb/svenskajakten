@@ -27,12 +27,17 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ error: "KV ej konfigurerat." }, { status: 503 });
     }
 
+    // Clean stale online sessions before counting
+    await kv.zremrangebyscore("online:sessions", 0, Date.now() - 5 * 60 * 1000);
+
     // Totals
-    const [totalExercises, totalWrong, totalSessions, totalDuration] = await Promise.all([
+    const [totalExercises, totalWrong, totalSessions, totalDuration, uniqueDevices, onlineNow] = await Promise.all([
       kv.get<number>("total:exercises"),
       kv.get<number>("total:wrong"),
       kv.get<number>("total:sessions"),
       kv.get<number>("total:duration"),
+      kv.scard("unique:devices"),
+      kv.zcard("online:sessions"),
     ]);
 
     // Daily data: last 14 days
@@ -75,6 +80,8 @@ export async function GET(req: NextRequest) {
         wrong: totalWrong ?? 0,
         sessions: totalSessions ?? 0,
         durationSeconds: totalDuration ?? 0,
+        uniqueDevices: uniqueDevices ?? 0,
+        onlineNow: onlineNow ?? 0,
       },
       daily,
       topMistakes,

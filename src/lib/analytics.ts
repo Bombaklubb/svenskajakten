@@ -6,6 +6,30 @@ export interface TrackEvent {
   moduleTitle?: string;
   questionPreview?: string;
   durationSeconds?: number;
+  deviceId?: string;
+  sessionId?: string;
+}
+
+/** Returns a persistent anonymous device ID (survives across sessions on same browser). */
+export function getOrCreateDeviceId(): string {
+  const KEY = "sj_device_id";
+  let id = localStorage.getItem(KEY);
+  if (!id) {
+    id = crypto.randomUUID();
+    localStorage.setItem(KEY, id);
+  }
+  return id;
+}
+
+/** Returns a per-session ID (cleared when browser/tab closes). */
+export function getOrCreateSessionId(): string {
+  const KEY = "sj_session_id";
+  let id = sessionStorage.getItem(KEY);
+  if (!id) {
+    id = crypto.randomUUID();
+    sessionStorage.setItem(KEY, id);
+  }
+  return id;
 }
 
 /**
@@ -17,6 +41,15 @@ export function trackEvent(event: TrackEvent): void {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(event),
-    keepalive: true, // survives page unload (session_end)
+    keepalive: true,
+  }).catch(() => {});
+}
+
+/** Refreshes the "online" status for the current session. */
+export function sendHeartbeat(sessionId: string): void {
+  fetch("/api/heartbeat", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ sessionId }),
   }).catch(() => {});
 }

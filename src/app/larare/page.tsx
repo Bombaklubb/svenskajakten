@@ -23,6 +23,8 @@ interface Stats {
     wrong: number;
     sessions: number;
     durationSeconds: number;
+    uniqueDevices: number;
+    onlineNow: number;
   };
   daily: DailyEntry[];
   topMistakes: MistakeRecord[];
@@ -90,9 +92,12 @@ export default function LararePage() {
     }
   }, []);
 
-  // Load stats when token is available
+  // Load stats when token is available + auto-refresh every 30s for online count
   useEffect(() => {
-    if (token) fetchStats(token);
+    if (!token) return;
+    fetchStats(token);
+    const interval = setInterval(() => fetchStats(token), 30_000);
+    return () => clearInterval(interval);
   }, [token, fetchStats]);
 
   async function handleLogin(e: React.FormEvent) {
@@ -222,17 +227,23 @@ export default function LararePage() {
           <>
             {/* Totals cards */}
             <section>
-              <h2 className="font-black text-gray-800 dark:text-gray-100 mb-3 text-sm uppercase tracking-wider">Totalt – alla enheter</h2>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              <h2 className="font-black text-gray-800 dark:text-gray-100 mb-3 text-sm uppercase tracking-wider">Översikt</h2>
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
                 {[
-                  { label: "Uppgifter gjorda", value: stats.totals.exercises.toLocaleString("sv-SE"), icon: "📝" },
-                  { label: "Sessioner", value: stats.totals.sessions.toLocaleString("sv-SE"), icon: "🚀" },
-                  { label: "Total tid", value: formatDuration(stats.totals.durationSeconds), icon: "⏱️" },
-                  { label: "Felaktiga svar", value: stats.totals.wrong.toLocaleString("sv-SE"), icon: "❌" },
-                ].map(({ label, value, icon }) => (
+                  { label: "Inloggade nu", value: String(stats.totals.onlineNow), icon: "🟢", highlight: stats.totals.onlineNow > 0 },
+                  { label: "Unika enheter", value: stats.totals.uniqueDevices.toLocaleString("sv-SE"), icon: "💻", highlight: false },
+                  { label: "Uppgifter gjorda", value: stats.totals.exercises.toLocaleString("sv-SE"), icon: "📝", highlight: false },
+                  { label: "Sessioner", value: stats.totals.sessions.toLocaleString("sv-SE"), icon: "🚀", highlight: false },
+                  { label: "Total tid", value: formatDuration(stats.totals.durationSeconds), icon: "⏱️", highlight: false },
+                  { label: "Felaktiga svar", value: stats.totals.wrong.toLocaleString("sv-SE"), icon: "❌", highlight: false },
+                ].map(({ label, value, icon, highlight }) => (
                   <div
                     key={label}
-                    className="bg-white dark:bg-gray-800 rounded-2xl border border-slate-200 dark:border-gray-700 p-4 text-center shadow-sm"
+                    className={`rounded-2xl border p-4 text-center shadow-sm transition-colors ${
+                      highlight
+                        ? "bg-green-50 dark:bg-green-900/20 border-green-300 dark:border-green-700"
+                        : "bg-white dark:bg-gray-800 border-slate-200 dark:border-gray-700"
+                    }`}
                   >
                     <div className="text-2xl mb-1">{icon}</div>
                     <div className="text-2xl font-black text-gray-900 dark:text-gray-100">{value}</div>

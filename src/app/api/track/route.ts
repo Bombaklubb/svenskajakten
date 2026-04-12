@@ -16,7 +16,7 @@ function todayKey(): string {
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { type, stage, moduleId, exerciseIdx, moduleTitle, questionPreview, durationSeconds } = body;
+    const { type, stage, moduleId, exerciseIdx, moduleTitle, questionPreview, durationSeconds, deviceId, sessionId } = body;
 
     // Lazily import kv – silently skip if env vars not configured
     let kv: import("@vercel/kv").VercelKV;
@@ -28,13 +28,24 @@ export async function POST(req: NextRequest) {
     }
 
     const day = todayKey();
+    const ONLINE_TTL = 5 * 60 * 1000; // 5 min in ms
 
     if (type === "session_start") {
-      await Promise.all([
+      const ops: Promise<unknown>[] = [
         kv.incr("total:sessions"),
         kv.incr(`daily:${day}:sessions`),
-        kv.expire(`daily:${day}:sessions`, 60 * 60 * 24 * 90), // 90 days TTL
-      ]);
+        kv.expire(`daily:${day}:sessions`, 60 * 60 * 24 * 90),
+      ];
+      // Track unique devices (anonymous random ID from browser)
+      if (deviceId && typeof deviceId === "string") {
+        ops.push(kv.sadd("unique:devices", deviceId));
+      }
+      // Track online now via sorted set (score = timestamp)
+      if (sessionId && typeof sessionId === "string") {
+        ops.push(kv.zadd("online:sessions", { score: Date.now(), member: sessionId }));
+        ops.push(kv.zremrangebyscore("online:sessions", 0, Date.now() - ONLINE_TTL));
+      }
+      await Promise.all(ops);
     } else if (type === "session_end" && typeof durationSeconds === "number" && durationSeconds > 0) {
       await kv.incrby("total:duration", durationSeconds);
     } else if (type === "exercise_done") {
