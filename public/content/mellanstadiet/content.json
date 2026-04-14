@@ -1229,7 +1229,7 @@
             "mugg",
             "mug",
             "muugg",
-            "mugg"
+            "mugge"
           ],
           "correctIndex": 0,
           "explanation": "'Mugg' – kort betonat u kräver dubbelt g: m-u-gg."
@@ -2239,7 +2239,7 @@
           "question": "Välj rätt stavning: 'Jag ___ om att bli astronaut.' (drömmade)",
           "options": [
             "brömde",
-            "drömde",
+            "dömde",
             "brömde om",
             "drömde"
           ],
@@ -2369,7 +2369,7 @@
           "options": [
             "seger",
             "säger",
-            "seger",
+            "segger",
             "sæger"
           ],
           "correctIndex": 1,
@@ -2447,7 +2447,7 @@
           "options": [
             "vet",
             "vät",
-            "vet",
+            "vete",
             "vett"
           ],
           "correctIndex": 0,
@@ -2485,7 +2485,7 @@
           "options": [
             "sete",
             "säte",
-            "sete",
+            "seete",
             "sæte"
           ],
           "correctIndex": 1,
@@ -2497,7 +2497,7 @@
           "options": [
             "rädas",
             "redas",
-            "rädas",
+            "räddes",
             "rades"
           ],
           "correctIndex": 0,
@@ -5228,7 +5228,7 @@
             "katt",
             "kat",
             "kaat",
-            "katt"
+            "katte"
           ],
           "correctIndex": 0,
           "explanation": "'Katt' stavas med dubbelt t – kort vokal kräver dubbel konsonant."

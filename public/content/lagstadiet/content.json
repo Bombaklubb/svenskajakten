@@ -4909,7 +4909,7 @@
           "question": "Vilket alternativ visar en KORREKT dialog?",
           "options": [
             "– Hur mår du? frågade hon. – Bra tack! svarade han.",
-            "– Hur mår du? frågade hon. – Bra tack! svarade han.",
+            "– Hur mår du frågade hon. – Bra tack svarade han.",
             "– Hur mår du? frågade hon. –Bra tack! svarade han.",
             "Hur mår du? frågade hon. Bra tack! svarade han."
           ],
