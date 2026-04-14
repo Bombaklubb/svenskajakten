@@ -2,21 +2,6 @@
 
 import { useState, useEffect, useCallback } from "react";
 
-interface MistakeRecord {
-  count: number;
-  stage: string;
-  moduleId: string;
-  moduleTitle: string;
-  exerciseIdx: number;
-  questionPreview: string;
-}
-
-interface DailyEntry {
-  date: string;
-  exercises: number;
-  sessions: number;
-}
-
 interface Stats {
   totals: {
     exercises: number;
@@ -26,16 +11,16 @@ interface Stats {
     uniqueDevices: number;
     onlineNow: number;
   };
-  daily: DailyEntry[];
-  topMistakes: MistakeRecord[];
+  stageExercises: Record<string, number>;
+  statsStartedAt: string | null;
 }
 
-const STAGE_LABELS: Record<string, string> = {
-  lagstadiet: "Lågstadiet (Åk 1–3)",
-  mellanstadiet: "Mellanstadiet (Åk 4–6)",
-  hogstadiet: "Högstadiet (Åk 7–9)",
-  gymnasiet: "Gymnasiet",
-};
+const STAGES = [
+  { id: "lagstadiet",    label: "Lågstadiet",    subtitle: "Åk 1–3", color: "#f59e0b", bg: "bg-amber-50 dark:bg-amber-900/20", border: "border-amber-200 dark:border-amber-700", text: "text-amber-700 dark:text-amber-300" },
+  { id: "mellanstadiet", label: "Mellanstadiet", subtitle: "Åk 4–6", color: "#22c55e", bg: "bg-green-50 dark:bg-green-900/20",  border: "border-green-200 dark:border-green-700",  text: "text-green-700 dark:text-green-300" },
+  { id: "hogstadiet",    label: "Högstadiet",    subtitle: "Åk 7–9", color: "#3b82f6", bg: "bg-blue-50 dark:bg-blue-900/20",    border: "border-blue-200 dark:border-blue-700",    text: "text-blue-700 dark:text-blue-300" },
+  { id: "gymnasiet",     label: "Gymnasiet",     subtitle: "",       color: "#a855f7", bg: "bg-purple-50 dark:bg-purple-900/20", border: "border-purple-200 dark:border-purple-700", text: "text-purple-700 dark:text-purple-300" },
+];
 
 function formatDuration(seconds: number): string {
   if (seconds < 60) return `${seconds} sek`;
@@ -45,9 +30,12 @@ function formatDuration(seconds: number): string {
   return `${h}h ${m}m`;
 }
 
-function formatDate(iso: string): string {
-  const d = new Date(iso + "T12:00:00");
-  return d.toLocaleDateString("sv-SE", { day: "numeric", month: "short" });
+function formatStartDate(iso: string): string {
+  return new Date(iso).toLocaleDateString("sv-SE", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
 }
 
 export default function LararePage() {
@@ -225,6 +213,13 @@ export default function LararePage() {
 
         {stats && (
           <>
+            {/* Stats start date */}
+            {stats.statsStartedAt && (
+              <p className="text-xs text-gray-400 dark:text-gray-500 text-right -mb-4">
+                Statistik insamlad sedan {formatStartDate(stats.statsStartedAt)}
+              </p>
+            )}
+
             {/* Totals cards */}
             <section>
               <h2 className="font-black text-gray-800 dark:text-gray-100 mb-3 text-sm uppercase tracking-wider">Översikt</h2>
@@ -252,91 +247,51 @@ export default function LararePage() {
               </div>
             </section>
 
-            {/* Daily bar chart */}
+            {/* Per-stage usage */}
             <section>
               <h2 className="font-black text-gray-800 dark:text-gray-100 mb-3 text-sm uppercase tracking-wider">
-                Dagliga uppgifter – senaste 14 dagarna
+                Användning per stadie
               </h2>
-              <div className="bg-white dark:bg-gray-800 rounded-2xl border border-slate-200 dark:border-gray-700 p-5 shadow-sm">
+              <div className="bg-white dark:bg-gray-800 rounded-2xl border border-slate-200 dark:border-gray-700 p-5 shadow-sm space-y-5">
                 {(() => {
-                  const maxVal = Math.max(...stats.daily.map((d) => d.exercises), 1);
-                  return (
-                    <div className="space-y-2">
-                      {stats.daily.map((d) => (
-                        <div key={d.date} className="flex items-center gap-3">
-                          <span className="text-xs text-gray-500 dark:text-gray-400 w-14 text-right shrink-0">
-                            {formatDate(d.date)}
-                          </span>
-                          <div className="flex-1 bg-slate-100 dark:bg-gray-700 rounded-full h-6 overflow-hidden">
-                            <div
-                              className="h-full rounded-full flex items-center justify-end pr-2 transition-all duration-500"
-                              style={{
-                                width: `${Math.max((d.exercises / maxVal) * 100, d.exercises > 0 ? 3 : 0)}%`,
-                                background: "linear-gradient(90deg, #006AA7, #0891b2)",
-                              }}
-                            />
+                  const total = STAGES.reduce((sum, s) => sum + (stats.stageExercises[s.id] ?? 0), 0);
+                  const maxVal = Math.max(...STAGES.map((s) => stats.stageExercises[s.id] ?? 0), 1);
+                  return STAGES.map((s) => {
+                    const count = stats.stageExercises[s.id] ?? 0;
+                    const pct = total > 0 ? Math.round((count / total) * 100) : 0;
+                    const barWidth = Math.max((count / maxVal) * 100, count > 0 ? 3 : 0);
+                    return (
+                      <div key={s.id}>
+                        <div className="flex items-center justify-between mb-1.5">
+                          <div className="flex items-center gap-2">
+                            <span className="font-bold text-gray-800 dark:text-gray-100 text-sm">{s.label}</span>
+                            {s.subtitle && (
+                              <span className="text-xs text-gray-400 dark:text-gray-500">{s.subtitle}</span>
+                            )}
                           </div>
-                          <span className="text-xs font-bold text-gray-700 dark:text-gray-300 w-8 shrink-0">
-                            {d.exercises}
-                          </span>
+                          <div className="flex items-center gap-3">
+                            <span className="text-xs text-gray-500 dark:text-gray-400 font-medium">
+                              {count.toLocaleString("sv-SE")} uppgifter
+                            </span>
+                            <span className={`text-xs font-bold px-2 py-0.5 rounded-full border ${s.bg} ${s.border} ${s.text}`}>
+                              {pct}%
+                            </span>
+                          </div>
                         </div>
-                      ))}
-                    </div>
-                  );
+                        <div className="w-full bg-slate-100 dark:bg-gray-700 rounded-full h-5 overflow-hidden">
+                          <div
+                            className="h-full rounded-full transition-all duration-700"
+                            style={{ width: `${barWidth}%`, background: s.color }}
+                          />
+                        </div>
+                      </div>
+                    );
+                  });
                 })()}
+                {STAGES.every((s) => (stats.stageExercises[s.id] ?? 0) === 0) && (
+                  <p className="text-center text-gray-400 text-sm py-4">Inga uppgifter registrerade ännu.</p>
+                )}
               </div>
-            </section>
-
-            {/* Top mistakes */}
-            <section>
-              <h2 className="font-black text-gray-800 dark:text-gray-100 mb-3 text-sm uppercase tracking-wider">
-                Vanligaste felen (topp {stats.topMistakes.length})
-              </h2>
-              {stats.topMistakes.length === 0 ? (
-                <div className="bg-white dark:bg-gray-800 rounded-2xl border border-slate-200 dark:border-gray-700 p-8 text-center text-gray-400">
-                  <div className="text-3xl mb-2">🎉</div>
-                  <p>Inga fel registrerade ännu.</p>
-                </div>
-              ) : (
-                <div className="bg-white dark:bg-gray-800 rounded-2xl border border-slate-200 dark:border-gray-700 shadow-sm overflow-hidden">
-                  <table className="w-full text-sm">
-                    <thead>
-                      <tr className="border-b border-slate-100 dark:border-gray-700 bg-slate-50 dark:bg-gray-750">
-                        <th className="text-left px-4 py-3 text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wide w-8">#</th>
-                        <th className="text-left px-4 py-3 text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wide">Stadie</th>
-                        <th className="text-left px-4 py-3 text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wide">Modul</th>
-                        <th className="text-left px-4 py-3 text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wide hidden sm:table-cell">Fråga</th>
-                        <th className="text-right px-4 py-3 text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wide">Fel</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {stats.topMistakes.map((m, i) => (
-                        <tr key={`${m.stage}-${m.moduleId}-${m.exerciseIdx}`}
-                          className="border-b border-slate-50 dark:border-gray-700 last:border-0 hover:bg-slate-50 dark:hover:bg-gray-750 transition-colors">
-                          <td className="px-4 py-3 text-gray-400 font-medium">{i + 1}</td>
-                          <td className="px-4 py-3 text-gray-600 dark:text-gray-300">
-                            <span className="whitespace-nowrap">
-                              {STAGE_LABELS[m.stage] ?? m.stage}
-                            </span>
-                          </td>
-                          <td className="px-4 py-3 font-medium text-gray-800 dark:text-gray-200">
-                            {m.moduleTitle}
-                            <span className="text-xs text-gray-400 ml-1">(nr {m.exerciseIdx + 1})</span>
-                          </td>
-                          <td className="px-4 py-3 text-gray-500 dark:text-gray-400 hidden sm:table-cell max-w-xs truncate">
-                            {m.questionPreview}
-                          </td>
-                          <td className="px-4 py-3 text-right">
-                            <span className="inline-block bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 font-bold px-2.5 py-1 rounded-lg text-xs">
-                              {m.count}
-                            </span>
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-              )}
             </section>
 
             {/* GDPR notice */}

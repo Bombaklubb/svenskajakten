@@ -1,14 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { validateToken } from "@/lib/teacherAuth";
 
-interface MistakeRecord {
-  count: number;
-  stage: string;
-  moduleId: string;
-  moduleTitle: string;
-  exerciseIdx: number;
-  questionPreview: string;
-}
+const STAGES = ["lagstadiet", "mellanstadiet", "hogstadiet", "gymnasiet"] as const;
 
 export async function GET(req: NextRequest) {
   const authHeader = req.headers.get("authorization") ?? "";
@@ -30,49 +23,26 @@ export async function GET(req: NextRequest) {
     // Clean stale online sessions before counting
     await kv.zremrangebyscore("online:sessions", 0, Date.now() - 5 * 60 * 1000);
 
-    // Totals
-    const [totalExercises, totalWrong, totalSessions, totalDuration, uniqueDevices, onlineNow] = await Promise.all([
-      kv.get<number>("total:exercises"),
-      kv.get<number>("total:wrong"),
-      kv.get<number>("total:sessions"),
-      kv.get<number>("total:duration"),
-      kv.scard("unique:devices"),
-      kv.zcard("online:sessions"),
-    ]);
+    // Totals + online + start date
+    const [totalExercises, totalWrong, totalSessions, totalDuration, uniqueDevices, onlineNow, statsStartedAt] =
+      await Promise.all([
+        kv.get<number>("total:exercises"),
+        kv.get<number>("total:wrong"),
+        kv.get<number>("total:sessions"),
+        kv.get<number>("total:duration"),
+        kv.scard("unique:devices"),
+        kv.zcard("online:sessions"),
+        kv.get<string>("stats:started"),
+      ]);
 
-    // Daily data: last 14 days
-    const dailyKeys: string[] = [];
-    for (let i = 13; i >= 0; i--) {
-      const d = new Date();
-      d.setDate(d.getDate() - i);
-      dailyKeys.push(d.toISOString().slice(0, 10));
-    }
-
-    const dailyExercisesRaw = await Promise.all(
-      dailyKeys.map((day) => kv.get<number>(`daily:${day}:exercises`))
+    // Per-stage exercise counts
+    const stageCounts = await Promise.all(
+      STAGES.map((s) => kv.get<number>(`stage:${s}:exercises`))
     );
-    const dailySessionsRaw = await Promise.all(
-      dailyKeys.map((day) => kv.get<number>(`daily:${day}:sessions`))
-    );
-
-    const daily = dailyKeys.map((day, i) => ({
-      date: day,
-      exercises: dailyExercisesRaw[i] ?? 0,
-      sessions: dailySessionsRaw[i] ?? 0,
-    }));
-
-    // Top mistakes: scan keys with pattern mistake:*
-    const mistakeKeys = await kv.keys("mistake:*");
-    let topMistakes: MistakeRecord[] = [];
-    if (mistakeKeys.length > 0) {
-      const records = await Promise.all(
-        mistakeKeys.map((k) => kv.get<MistakeRecord>(k))
-      );
-      topMistakes = records
-        .filter((r): r is MistakeRecord => r !== null)
-        .sort((a, b) => b.count - a.count)
-        .slice(0, 20);
-    }
+    const stageExercises: Record<string, number> = {};
+    STAGES.forEach((s, i) => {
+      stageExercises[s] = stageCounts[i] ?? 0;
+    });
 
     return NextResponse.json({
       totals: {
@@ -83,8 +53,8 @@ export async function GET(req: NextRequest) {
         uniqueDevices: uniqueDevices ?? 0,
         onlineNow: onlineNow ?? 0,
       },
-      daily,
-      topMistakes,
+      stageExercises,
+      statsStartedAt: statsStartedAt ?? null,
     });
   } catch {
     return NextResponse.json({ error: "Serverfel." }, { status: 500 });

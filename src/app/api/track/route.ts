@@ -35,6 +35,7 @@ export async function POST(req: NextRequest) {
         kv.incr("total:sessions"),
         kv.incr(`daily:${day}:sessions`),
         kv.expire(`daily:${day}:sessions`, 60 * 60 * 24 * 90),
+        kv.setnx("stats:started", new Date().toISOString()),
       ];
       // Track unique devices (anonymous random ID from browser)
       if (deviceId && typeof deviceId === "string") {
@@ -49,11 +50,15 @@ export async function POST(req: NextRequest) {
     } else if (type === "session_end" && typeof durationSeconds === "number" && durationSeconds > 0) {
       await kv.incrby("total:duration", durationSeconds);
     } else if (type === "exercise_done") {
-      await Promise.all([
+      const ops: Promise<unknown>[] = [
         kv.incr("total:exercises"),
         kv.incr(`daily:${day}:exercises`),
         kv.expire(`daily:${day}:exercises`, 60 * 60 * 24 * 90),
-      ]);
+      ];
+      if (stage && typeof stage === "string") {
+        ops.push(kv.incr(`stage:${stage}:exercises`));
+      }
+      await Promise.all(ops);
     } else if (type === "wrong_answer" && stage && moduleId && typeof exerciseIdx === "number") {
       const mistakeKey = `mistake:${stage}:${moduleId}:${exerciseIdx}`;
       const existing = await kv.get<MistakeRecord>(mistakeKey);
