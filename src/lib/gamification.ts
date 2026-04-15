@@ -292,7 +292,7 @@ export const BOSS_QUESTIONS: BossQuestion[] = [
     type: "multiple-choice",
     category: "spelling",
     question: "Vilket ord stavas rätt?",
-    options: ["Eftersom", "Efersom", "Eferson", "Eftersom"],
+    options: ["Eftersom", "Efersom", "Eferson", "Eftesom"],
     correctIndex: 0,
   },
   {

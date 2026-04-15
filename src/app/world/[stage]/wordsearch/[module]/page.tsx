@@ -6,7 +6,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/ui/Header";
 import WordSearch from "@/components/exercises/WordSearch";
-import { loadStudent, saveModuleProgress, loadGamification, saveGamification } from "@/lib/storage";
+import { loadStudent, saveStudent, saveModuleProgress, loadGamification, saveGamification } from "@/lib/storage";
 import { chestsEarnedFromPoints, chestsEarnedFromExercises, chestsEarnedFromAchievements, rollMysteryBox, BOSS_UNLOCK_THRESHOLD } from "@/lib/gamification";
 import { ACHIEVEMENTS, isUnlocked } from "@/lib/achievements";
 import MysteryBoxPopup from "@/components/ui/MysteryBoxPopup";
@@ -92,7 +92,11 @@ export default function WordSearchModulePage({ params }: Props) {
     if (firstChest) setChestEarned(firstChest.type as ChestType);
     if (bossNowUnlocked) setBossJustUnlocked(true);
 
-    if (mysteryPoints > 0) setStudent({ ...updatedStudent, totalPoints: updatedStudent.totalPoints + mysteryPoints });
+    if (mysteryPoints > 0) {
+      const withMystery = { ...updatedStudent, totalPoints: updatedStudent.totalPoints + mysteryPoints };
+      saveStudent(withMystery);
+      setStudent(withMystery);
+    }
 
     saveGamification({
       ...gam,

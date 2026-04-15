@@ -6,7 +6,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/ui/Header";
 import ResultModal from "@/components/ui/ResultModal";
-import { loadStudent, saveModuleProgress, loadGamification, saveGamification } from "@/lib/storage";
+import { loadStudent, saveStudent, saveModuleProgress, loadGamification, saveGamification } from "@/lib/storage";
 import {
   chestsEarnedFromPoints,
   chestsEarnedFromExercises,
@@ -168,7 +168,11 @@ export default function StavningstestPage({ params }: Props) {
         achievementsRewarded: [...(gam.achievementsRewarded ?? []), ...achChests.map((c) => c.achievementId)],
       });
 
-      if (mysteryPoints > 0) setStudent({ ...updated, totalPoints: updated.totalPoints + mysteryPoints });
+      if (mysteryPoints > 0) {
+        const withMystery = { ...updated, totalPoints: updated.totalPoints + mysteryPoints };
+        saveStudent(withMystery);
+        setStudent(withMystery);
+      }
       if (firstChest) setChestEarned(firstChest.type as ChestType);
       if (nowBossUnlocked && !wasBossUnlocked) setBossJustUnlocked(true);
       if (mystery) setMysteryBox(mystery);

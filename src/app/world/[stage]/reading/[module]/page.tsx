@@ -7,7 +7,7 @@ import { notFound } from "next/navigation";
 import Header from "@/components/ui/Header";
 import ResultModal from "@/components/ui/ResultModal";
 import ReadingQuestionComponent from "@/components/exercises/ReadingQuestion";
-import { loadStudent, saveModuleProgress, loadGamification, saveGamification } from "@/lib/storage";
+import { loadStudent, saveStudent, saveModuleProgress, loadGamification, saveGamification } from "@/lib/storage";
 import { chestsEarnedFromPoints, chestsEarnedFromExercises, chestsEarnedFromAchievements, rollMysteryBox, BOSS_UNLOCK_THRESHOLD } from "@/lib/gamification";
 import { ACHIEVEMENTS, isUnlocked } from "@/lib/achievements";
 import MysteryBoxPopup from "@/components/ui/MysteryBoxPopup";
@@ -110,7 +110,11 @@ export default function ReadingModulePage({ params }: Props) {
           exerciseMilestonesRewarded: [...gam.exerciseMilestonesRewarded, ...exChests.map((c) => c.milestone)],
           achievementsRewarded: [...(gam.achievementsRewarded ?? []), ...achChests.map((c) => c.achievementId)],
         });
-        if (mysteryPoints > 0) setStudent({ ...updated, totalPoints: updated.totalPoints + mysteryPoints });
+        if (mysteryPoints > 0) {
+          const withMystery = { ...updated, totalPoints: updated.totalPoints + mysteryPoints };
+          saveStudent(withMystery);
+          setStudent(withMystery);
+        }
         if (firstChest) setChestEarned(firstChest.type as ChestType);
         if (nowBossUnlocked && !wasBossUnlocked) setBossJustUnlocked(true);
         if (mystery) setMysteryBox(mystery);

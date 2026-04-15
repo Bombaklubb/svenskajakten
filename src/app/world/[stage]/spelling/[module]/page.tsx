@@ -10,7 +10,7 @@ import ResultModal from "@/components/ui/ResultModal";
 import MultipleChoice from "@/components/exercises/MultipleChoice";
 import FillInBlank from "@/components/exercises/FillInBlank";
 import BuildSentence from "@/components/exercises/BuildSentence";
-import { loadStudent, saveModuleProgress, loadGamification, saveGamification, addToRetryQueue } from "@/lib/storage";
+import { loadStudent, saveStudent, saveModuleProgress, loadGamification, saveGamification, addToRetryQueue } from "@/lib/storage";
 import { trackEvent } from "@/lib/analytics";
 import {
   chestsEarnedFromPoints,
@@ -181,7 +181,9 @@ export default function SpellingModulePage({ params }: Props) {
         });
 
         if (mysteryPoints > 0) {
-          setStudent({ ...updated, totalPoints: updated.totalPoints + mysteryPoints });
+          const withMystery = { ...updated, totalPoints: updated.totalPoints + mysteryPoints };
+          saveStudent(withMystery);
+          setStudent(withMystery);
         }
 
         if (firstChest) setChestEarned(firstChest.type as ChestType);
