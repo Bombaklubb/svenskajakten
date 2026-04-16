@@ -213,13 +213,6 @@ export default function LararePage() {
 
         {stats && (
           <>
-            {/* Stats start date */}
-            {stats.statsStartedAt && (
-              <p className="text-xs text-gray-400 dark:text-gray-500 text-right -mb-4">
-                Statistik insamlad sedan {formatStartDate(stats.statsStartedAt)}
-              </p>
-            )}
-
             {/* Totals cards */}
             <section>
               <h2 className="font-black text-gray-800 dark:text-gray-100 mb-3 text-sm uppercase tracking-wider">Översikt</h2>
@@ -295,11 +288,28 @@ export default function LararePage() {
             </section>
 
             {/* GDPR notice */}
-            <section className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-2xl p-4">
-              <p className="text-green-800 dark:text-green-300 text-xs font-medium">
-                🔒 GDPR-säkrad: Ingen statistik innehåller elevnamn, IP-adresser eller enhetsidentifierare.
-                All data är anonyma aggregerade räknare som inte kan kopplas till enskilda elever.
-              </p>
+            <section className="rounded-2xl overflow-hidden border border-green-700/40" style={{ background: "#0d1f1a" }}>
+              <div className="p-5">
+                <p className="font-black text-green-400 text-sm mb-2">🔒 GDPR-säkrad statistik</p>
+                <p className="text-green-300 text-sm mb-3">
+                  Inga personuppgifter samlas in. Varje enhet identifieras av ett slumpmässigt anonymt ID som inte kan kopplas till en person. All statistik är aggregerad och visas aldrig på individnivå.
+                </p>
+                <ul className="space-y-1 text-green-400 text-sm">
+                  <li>✓ Inga namn, IP-adresser eller inloggningsuppgifter lagras</li>
+                  <li>✓ Anonymt enhets-ID (UUID) – kan inte kopplas till en elev</li>
+                  <li>✓ Endast summerad data visas (antal, tid, uppgifter)</li>
+                </ul>
+              </div>
+              {stats.statsStartedAt && (
+                <div className="border-t border-green-700/40 px-5 py-3 flex items-center gap-2">
+                  <span className="text-base">📅</span>
+                  <p className="text-green-300 text-sm">
+                    Svenskajakten började samla in anonym statistik{" "}
+                    <strong className="text-green-200">{formatStartDate(stats.statsStartedAt)}</strong>.{" "}
+                    Data äldre än 14 dagar visas inte i grafen.
+                  </p>
+                </div>
+              )}
             </section>
           </>
         )}
