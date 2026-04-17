@@ -475,7 +475,8 @@ export default function WorldPage({ params }: Props) {
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             {(
-              activeTab === "grammar" ? content.grammar
+              activeTab === "grammar"
+                ? [...content.grammar].sort((a, b) => a.id === "sluttest" ? 1 : b.id === "sluttest" ? -1 : 0)
               : activeTab === "reading" ? content.reading
               : (content.wordsearch ?? [])
             ).map((mod, idx, arr) => {
