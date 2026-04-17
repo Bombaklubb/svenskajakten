@@ -23,6 +23,7 @@ import {
   openRubyChest,
   openDiamondChest,
   checkMissedExerciseMilestones,
+  checkMissedPointMilestones,
 } from "@/lib/gamification";
 import type { StudentData, GamificationData, Chest, ChestType } from "@/lib/types";
 
@@ -243,24 +244,34 @@ export default function KistorPage() {
 
     const loaded = loadGamification();
 
-    // Award any exercise milestones the player has crossed but not yet received
-    // (happens when new milestones are added to the app after the player's data was created)
-    const missed = checkMissedExerciseMilestones(
+    // Award any milestones the player has crossed but not yet received
+    // (covers imported progress and retroactive milestone additions)
+    const missedEx = checkMissedExerciseMilestones(
       loaded.exercisesCompleted,
       loaded.exerciseMilestonesRewarded
     );
-    if (missed.length > 0) {
+    const missedPts = checkMissedPointMilestones(
+      s.totalPoints,
+      loaded.pointsMilestonesRewarded
+    );
+    const totalMissed = [...missedEx, ...missedPts];
+
+    if (totalMissed.length > 0) {
       const updated: GamificationData = {
         ...loaded,
-        chests: [...loaded.chests, ...missed.map((m) => m.chest)],
+        chests: [...loaded.chests, ...totalMissed.map((m) => m.chest)],
         exerciseMilestonesRewarded: [
           ...loaded.exerciseMilestonesRewarded,
-          ...missed.map((m) => m.milestone),
+          ...missedEx.map((m) => m.milestone),
+        ],
+        pointsMilestonesRewarded: [
+          ...loaded.pointsMilestonesRewarded,
+          ...missedPts.map((m) => m.milestone),
         ],
       };
       saveGamification(updated);
       setGam(updated);
-      setMissedChestsCount(missed.length);
+      setMissedChestsCount(totalMissed.length);
     } else {
       setGam(loaded);
     }
