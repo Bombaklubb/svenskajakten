@@ -1326,7 +1326,12 @@
           "type": "fill-in-blank",
           "question": "Skapa en liknelse: 'Hennes ilska var ___ som ett vulkanutbrott.'",
           "answer": "het",
-          "alternativeAnswers": ["våldsam", "explosiv", "kraftfull", "vild"],
+          "alternativeAnswers": [
+            "våldsam",
+            "explosiv",
+            "kraftfull",
+            "vild"
+          ],
           "hint": "Tänk på en egenskap som vulkanutbrott och ilska delar.",
           "explanation": "Flera svar fungerar – det viktiga är att egenskapen logiskt kopplar tenorn (ilskan) och fordonet (vulkanutbrott)."
         },
@@ -1397,7 +1402,10 @@
           "type": "fill-in-blank",
           "question": "Identifiera metaforen i meningen: 'Hennes karriär tog fart och hon nådde toppen.' Skriv metaforen: ___",
           "answer": "tog fart",
-          "alternativeAnswers": ["nådde toppen", "toppen"],
+          "alternativeAnswers": [
+            "nådde toppen",
+            "toppen"
+          ],
           "explanation": "Både 'tog fart' (rörelse/acceleration) och 'nådde toppen' (bergsklättring) är döda metaforer för karriärutveckling."
         },
         {
@@ -1452,7 +1460,12 @@
           "type": "fill-in-blank",
           "question": "Fyll i fordonet i metaforen: 'Hoppet är det sista ___ mot förtvivlan.'",
           "answer": "försvaret",
-          "alternativeAnswers": ["skyddet", "vapnet", "värnet", "bulvarket"],
+          "alternativeAnswers": [
+            "skyddet",
+            "vapnet",
+            "värnet",
+            "bulvarket"
+          ],
           "hint": "Tänk på något som skyddar mot något farligt.",
           "explanation": "Metaforer med krig/försvar är vanliga för att beskriva inre psykologiska tillstånd."
         },
@@ -1597,6 +1610,97 @@
           ],
           "correctIndex": 1,
           "explanation": "En äldre bondkaraktär som säger 'nu är det dags att ta i med hårdhandskarna' avslöjar ursprung och världsbild. Idiomval är en viktig stilistisk markör."
+        }
+      ]
+    },
+    {
+      "id": "hitta-ratt-kluring",
+      "title": "Hitta rätt – kluring",
+      "description": "Avancerade kluringfrågor om grammatik, stilgrepp och retorik!",
+      "icon": "🔍",
+      "pointsRequired": 0,
+      "bonusPoints": 30,
+      "helpText": [
+        "Frågorna handlar om grammatik och stilgrepp.",
+        "Läs alla ledtrådar – de sista är bäst!",
+        "Svaret är ett grammatikbegrepp eller stilgrepp."
+      ],
+      "exercises": [
+        {
+          "id": "hog-kluring-1",
+          "type": "word-clues",
+          "clues": [
+            "Jag är ett stilgrepp",
+            "Jag jämför med hjälp av 'som' eller 'lika'",
+            "T.ex. 'stark som ett lejon'"
+          ],
+          "answer": "liknelse",
+          "alternativeAnswers": [
+            "liknelser"
+          ],
+          "explanation": "En liknelse jämför något med något annat med ord som 'som' eller 'lika', t.ex. 'han är stark som ett lejon'."
+        },
+        {
+          "id": "hog-kluring-2",
+          "type": "word-clues",
+          "clues": [
+            "Jag är ett grammatiskt begrepp",
+            "Det finns rak och omvänd form av mig",
+            "Jag handlar om var orden placeras i meningen"
+          ],
+          "answer": "ordföljd",
+          "explanation": "Ordföljd handlar om i vilken ordning ord placeras i en mening. Rak: Subjekt–Predikat. Omvänd: Predikat–Subjekt."
+        },
+        {
+          "id": "hog-kluring-3",
+          "type": "word-clues",
+          "clues": [
+            "Jag är en satstyp",
+            "Jag kan inte stå ensam",
+            "Jag börjar ofta med 'att', 'som' eller 'när'"
+          ],
+          "answer": "bisats",
+          "alternativeAnswers": [
+            "bisatser"
+          ],
+          "explanation": "En bisats är beroende av en huvudsats och kan inte stå ensam, t.ex. 'när hon kom hem'."
+        },
+        {
+          "id": "hog-kluring-4",
+          "type": "word-clues",
+          "clues": [
+            "Jag är ett satsled",
+            "Jag berättar var, när eller hur",
+            "Jag svarar på frågorna 'var?', 'när?' och 'hur?'"
+          ],
+          "answer": "adverbial",
+          "explanation": "Adverbialet är ett satsled som berättar om tid, plats eller sätt, t.ex. 'igår', 'snabbt' eller 'i parken'."
+        },
+        {
+          "id": "hog-kluring-5",
+          "type": "word-clues",
+          "clues": [
+            "Jag är en tempusform",
+            "Jag beskriver saker som hände i det förflutna",
+            "Sprang, åt och sov är exempel på mig"
+          ],
+          "answer": "preteritum",
+          "alternativeAnswers": [
+            "imperfekt",
+            "dåtid"
+          ],
+          "explanation": "Preteritum (dåtid) används för att berätta om saker som har hänt, t.ex. 'han åt', 'hon sprang'."
+        },
+        {
+          "id": "hog-kluring-6",
+          "type": "word-clues",
+          "clues": [
+            "Jag är ett retoriskt begrepp",
+            "Jag handlar om fakta och logiska bevis",
+            "Aristoteles listade mig som ett av tre övertalningsmedel"
+          ],
+          "answer": "logos",
+          "explanation": "Logos är det retoriska medlet som handlar om logik och fakta. De tre medlen är logos, etos och patos."
         }
       ]
     },
@@ -2587,26 +2691,86 @@
       "bonusPoints": 30,
       "timeLimit": 60,
       "words": [
-        { "word": "argument", "clue": "Skäl eller motivering för en ståndpunkt" },
-        { "word": "tes", "clue": "Påstående man vill bevisa i en text" },
-        { "word": "analys", "clue": "Noggrann undersökning och tolkning" },
-        { "word": "tolkning", "clue": "Förklaring av vad något betyder" },
-        { "word": "perspektiv", "clue": "Synvinkel eller sätt att se på något" },
-        { "word": "källkritik", "clue": "Granska hur tillförlitliga källor är" },
-        { "word": "primärkälla", "clue": "Originaldokument, t.ex. dagbok eller brev" },
-        { "word": "objektivitet", "clue": "Saklig och opartisk hållning" },
-        { "word": "generaliseringar", "clue": "Slutsatser dragna om en hel grupp" },
-        { "word": "statistik", "clue": "Insamling och analys av siffror och data" },
-        { "word": "reliabilitet", "clue": "Hur tillförlitlig en undersökning är" },
-        { "word": "validitet", "clue": "Om man mäter det man verkligen vill mäta" },
-        { "word": "hypotes", "clue": "Vetenskaplig gissning som ska testas" },
-        { "word": "slutledning", "clue": "Logisk slutsats baserad på fakta" },
-        { "word": "konsekvens", "clue": "Följd eller resultat av en handling" },
-        { "word": "kausalitet", "clue": "Orsak och verkan – A leder till B" },
-        { "word": "korrelation", "clue": "Samband mellan två variabler" },
-        { "word": "disposition", "clue": "Textens uppbyggnad och struktur" },
-        { "word": "koherens", "clue": "Att texten hänger ihop logiskt" },
-        { "word": "kohesion", "clue": "Ord och meningar binds ihop smidigt" }
+        {
+          "word": "argument",
+          "clue": "Skäl eller motivering för en ståndpunkt"
+        },
+        {
+          "word": "tes",
+          "clue": "Påstående man vill bevisa i en text"
+        },
+        {
+          "word": "analys",
+          "clue": "Noggrann undersökning och tolkning"
+        },
+        {
+          "word": "tolkning",
+          "clue": "Förklaring av vad något betyder"
+        },
+        {
+          "word": "perspektiv",
+          "clue": "Synvinkel eller sätt att se på något"
+        },
+        {
+          "word": "källkritik",
+          "clue": "Granska hur tillförlitliga källor är"
+        },
+        {
+          "word": "primärkälla",
+          "clue": "Originaldokument, t.ex. dagbok eller brev"
+        },
+        {
+          "word": "objektivitet",
+          "clue": "Saklig och opartisk hållning"
+        },
+        {
+          "word": "generaliseringar",
+          "clue": "Slutsatser dragna om en hel grupp"
+        },
+        {
+          "word": "statistik",
+          "clue": "Insamling och analys av siffror och data"
+        },
+        {
+          "word": "reliabilitet",
+          "clue": "Hur tillförlitlig en undersökning är"
+        },
+        {
+          "word": "validitet",
+          "clue": "Om man mäter det man verkligen vill mäta"
+        },
+        {
+          "word": "hypotes",
+          "clue": "Vetenskaplig gissning som ska testas"
+        },
+        {
+          "word": "slutledning",
+          "clue": "Logisk slutsats baserad på fakta"
+        },
+        {
+          "word": "konsekvens",
+          "clue": "Följd eller resultat av en handling"
+        },
+        {
+          "word": "kausalitet",
+          "clue": "Orsak och verkan – A leder till B"
+        },
+        {
+          "word": "korrelation",
+          "clue": "Samband mellan två variabler"
+        },
+        {
+          "word": "disposition",
+          "clue": "Textens uppbyggnad och struktur"
+        },
+        {
+          "word": "koherens",
+          "clue": "Att texten hänger ihop logiskt"
+        },
+        {
+          "word": "kohesion",
+          "clue": "Ord och meningar binds ihop smidigt"
+        }
       ]
     },
     {
@@ -2618,26 +2782,86 @@
       "bonusPoints": 35,
       "timeLimit": 60,
       "words": [
-        { "word": "konstitution", "clue": "Grundlagar som reglerar ett land" },
-        { "word": "parlamentarism", "clue": "Styrelseskick där parlamentet är överordnat" },
-        { "word": "suveränitet", "clue": "Statens rätt att styra sig själv" },
-        { "word": "legitimitet", "clue": "Erkänd rätt att utöva makt" },
-        { "word": "transparens", "clue": "Öppenhet och insyn i beslutsprocesser" },
-        { "word": "meritokrati", "clue": "System där framgång beror på förtjänst" },
-        { "word": "byråkrati", "clue": "Stort system med många regler och tjänstemän" },
-        { "word": "oligarki", "clue": "Fåmansvälde – makten hos några få" },
-        { "word": "plutokrati", "clue": "Styre av de rika" },
-        { "word": "ratificering", "clue": "Formellt godkännande av ett avtal" },
-        { "word": "globalisering", "clue": "Världens länder knyts allt starkare samman" },
-        { "word": "nationalism", "clue": "Stark lojalitet och kärlek till den egna nationen" },
-        { "word": "imperialism", "clue": "Stormakts expansion och kontroll av andra" },
-        { "word": "kolonialism", "clue": "Européers erövrande och styre av fjärran länder" },
-        { "word": "dekolonisering", "clue": "Frigörelseprocess från kolonial makt" },
-        { "word": "sekularisering", "clue": "Samhällets minskade religiösa inflytande" },
-        { "word": "industrialisering", "clue": "Övergången till fabriksproduktion" },
-        { "word": "urbanisering", "clue": "Folk flyttar allt mer till städer" },
-        { "word": "befolkningstillväxt", "clue": "Ökning av antal människor i ett område" },
-        { "word": "välfärdsstat", "clue": "Stat som ansvarar för medborgares trygghet" }
+        {
+          "word": "konstitution",
+          "clue": "Grundlagar som reglerar ett land"
+        },
+        {
+          "word": "parlamentarism",
+          "clue": "Styrelseskick där parlamentet är överordnat"
+        },
+        {
+          "word": "suveränitet",
+          "clue": "Statens rätt att styra sig själv"
+        },
+        {
+          "word": "legitimitet",
+          "clue": "Erkänd rätt att utöva makt"
+        },
+        {
+          "word": "transparens",
+          "clue": "Öppenhet och insyn i beslutsprocesser"
+        },
+        {
+          "word": "meritokrati",
+          "clue": "System där framgång beror på förtjänst"
+        },
+        {
+          "word": "byråkrati",
+          "clue": "Stort system med många regler och tjänstemän"
+        },
+        {
+          "word": "oligarki",
+          "clue": "Fåmansvälde – makten hos några få"
+        },
+        {
+          "word": "plutokrati",
+          "clue": "Styre av de rika"
+        },
+        {
+          "word": "ratificering",
+          "clue": "Formellt godkännande av ett avtal"
+        },
+        {
+          "word": "globalisering",
+          "clue": "Världens länder knyts allt starkare samman"
+        },
+        {
+          "word": "nationalism",
+          "clue": "Stark lojalitet och kärlek till den egna nationen"
+        },
+        {
+          "word": "imperialism",
+          "clue": "Stormakts expansion och kontroll av andra"
+        },
+        {
+          "word": "kolonialism",
+          "clue": "Européers erövrande och styre av fjärran länder"
+        },
+        {
+          "word": "dekolonisering",
+          "clue": "Frigörelseprocess från kolonial makt"
+        },
+        {
+          "word": "sekularisering",
+          "clue": "Samhällets minskade religiösa inflytande"
+        },
+        {
+          "word": "industrialisering",
+          "clue": "Övergången till fabriksproduktion"
+        },
+        {
+          "word": "urbanisering",
+          "clue": "Folk flyttar allt mer till städer"
+        },
+        {
+          "word": "befolkningstillväxt",
+          "clue": "Ökning av antal människor i ett område"
+        },
+        {
+          "word": "välfärdsstat",
+          "clue": "Stat som ansvarar för medborgares trygghet"
+        }
       ]
     },
     {
@@ -2649,26 +2873,86 @@
       "bonusPoints": 40,
       "timeLimit": 60,
       "words": [
-        { "word": "fotosyntes", "clue": "Växtens process att bilda socker av ljus" },
-        { "word": "metabolism", "clue": "Kroppens alla kemiska processer sammantaget" },
-        { "word": "osmosis", "clue": "Vatten rör sig genom ett halvgenomträngligt membran" },
-        { "word": "diffusion", "clue": "Ämnen sprids från hög till låg koncentration" },
-        { "word": "homeostas", "clue": "Kroppens förmåga att hålla stabila förhållanden" },
-        { "word": "biodiversitet", "clue": "Mångfalden av arter i ett ekosystem" },
-        { "word": "ekosystem", "clue": "Samspelet mellan organismer och deras miljö" },
-        { "word": "kvantmekanik", "clue": "Fysik på atomär och subatomär nivå" },
-        { "word": "relativitetsteori", "clue": "Einsteins teori om rum, tid och gravitation" },
-        { "word": "termoynamik", "clue": "Läran om värme och energiomvandling" },
-        { "word": "elektromagnetism", "clue": "Samspelet mellan elektriska och magnetiska fält" },
-        { "word": "kärnfusion", "clue": "Atomkärnor slås ihop och frigör energi" },
-        { "word": "radioaktivitet", "clue": "Instabila atomkärnors spontana sönderfallning" },
-        { "word": "partikelfysik", "clue": "Studiet av materians minsta beståndsdelar" },
-        { "word": "astrobiologi", "clue": "Forskning om liv utanför jorden" },
-        { "word": "genetik", "clue": "Läran om ärftlighet och DNA" },
-        { "word": "kromosomer", "clue": "Strukturer i cellkärnan som bär på DNA" },
-        { "word": "mutation", "clue": "Förändring i arvsmassan" },
-        { "word": "immunsystemet", "clue": "Kroppens försvar mot sjukdomar" },
-        { "word": "hormon", "clue": "Kemiskt budbärarämne i kroppen" }
+        {
+          "word": "fotosyntes",
+          "clue": "Växtens process att bilda socker av ljus"
+        },
+        {
+          "word": "metabolism",
+          "clue": "Kroppens alla kemiska processer sammantaget"
+        },
+        {
+          "word": "osmosis",
+          "clue": "Vatten rör sig genom ett halvgenomträngligt membran"
+        },
+        {
+          "word": "diffusion",
+          "clue": "Ämnen sprids från hög till låg koncentration"
+        },
+        {
+          "word": "homeostas",
+          "clue": "Kroppens förmåga att hålla stabila förhållanden"
+        },
+        {
+          "word": "biodiversitet",
+          "clue": "Mångfalden av arter i ett ekosystem"
+        },
+        {
+          "word": "ekosystem",
+          "clue": "Samspelet mellan organismer och deras miljö"
+        },
+        {
+          "word": "kvantmekanik",
+          "clue": "Fysik på atomär och subatomär nivå"
+        },
+        {
+          "word": "relativitetsteori",
+          "clue": "Einsteins teori om rum, tid och gravitation"
+        },
+        {
+          "word": "termoynamik",
+          "clue": "Läran om värme och energiomvandling"
+        },
+        {
+          "word": "elektromagnetism",
+          "clue": "Samspelet mellan elektriska och magnetiska fält"
+        },
+        {
+          "word": "kärnfusion",
+          "clue": "Atomkärnor slås ihop och frigör energi"
+        },
+        {
+          "word": "radioaktivitet",
+          "clue": "Instabila atomkärnors spontana sönderfallning"
+        },
+        {
+          "word": "partikelfysik",
+          "clue": "Studiet av materians minsta beståndsdelar"
+        },
+        {
+          "word": "astrobiologi",
+          "clue": "Forskning om liv utanför jorden"
+        },
+        {
+          "word": "genetik",
+          "clue": "Läran om ärftlighet och DNA"
+        },
+        {
+          "word": "kromosomer",
+          "clue": "Strukturer i cellkärnan som bär på DNA"
+        },
+        {
+          "word": "mutation",
+          "clue": "Förändring i arvsmassan"
+        },
+        {
+          "word": "immunsystemet",
+          "clue": "Kroppens försvar mot sjukdomar"
+        },
+        {
+          "word": "hormon",
+          "clue": "Kemiskt budbärarämne i kroppen"
+        }
       ]
     },
     {
@@ -2680,26 +2964,86 @@
       "bonusPoints": 45,
       "timeLimit": 60,
       "words": [
-        { "word": "intertextualitet", "clue": "Hur texter refererar till och påverkar varandra" },
-        { "word": "narratologi", "clue": "Studiet av berättarstrukturer" },
-        { "word": "fokalisering", "clue": "Vems synvinkel berättelsen förmedlas genom" },
-        { "word": "berättarperspektiv", "clue": "Vem som berättar och hur nära karaktärerna" },
-        { "word": "kronologisk", "clue": "Ordnad i tidsföljd från äldst till nyast" },
-        { "word": "analepsis", "clue": "Tillbakablick – berättaren går bakåt i tid" },
-        { "word": "prolepsis", "clue": "Föregriper framtida händelser i berättandet" },
-        { "word": "allegori", "clue": "Berättelse med en dold symbolisk mening" },
-        { "word": "symbolism", "clue": "Användning av symboler för djupare mening" },
-        { "word": "ironik", "clue": "Säger det motsatta av vad man menar" },
-        { "word": "sarkasm", "clue": "Skarp och bitter form av ironi" },
-        { "word": "paradox", "clue": "Påstående som tycks självmotsträgande men är sant" },
-        { "word": "eufemism", "clue": "Mildare uttryck för något känsligt" },
-        { "word": "hyperbol", "clue": "Medveten överdrift i språket" },
-        { "word": "litotes", "clue": "Underdrift för att framhäva" },
-        { "word": "anafora", "clue": "Upprepning av ord i inledningen av meningar" },
-        { "word": "epifora", "clue": "Upprepning av ord i slutet av meningar" },
-        { "word": "chiasm", "clue": "Korsvis växling av grammatiska mönster" },
-        { "word": "oxymoron", "clue": "Kombination av motsatta ord, t.ex. 'levande död'" },
-        { "word": "stilistik", "clue": "Läran om språklig stil och uttrycksmedel" }
+        {
+          "word": "intertextualitet",
+          "clue": "Hur texter refererar till och påverkar varandra"
+        },
+        {
+          "word": "narratologi",
+          "clue": "Studiet av berättarstrukturer"
+        },
+        {
+          "word": "fokalisering",
+          "clue": "Vems synvinkel berättelsen förmedlas genom"
+        },
+        {
+          "word": "berättarperspektiv",
+          "clue": "Vem som berättar och hur nära karaktärerna"
+        },
+        {
+          "word": "kronologisk",
+          "clue": "Ordnad i tidsföljd från äldst till nyast"
+        },
+        {
+          "word": "analepsis",
+          "clue": "Tillbakablick – berättaren går bakåt i tid"
+        },
+        {
+          "word": "prolepsis",
+          "clue": "Föregriper framtida händelser i berättandet"
+        },
+        {
+          "word": "allegori",
+          "clue": "Berättelse med en dold symbolisk mening"
+        },
+        {
+          "word": "symbolism",
+          "clue": "Användning av symboler för djupare mening"
+        },
+        {
+          "word": "ironik",
+          "clue": "Säger det motsatta av vad man menar"
+        },
+        {
+          "word": "sarkasm",
+          "clue": "Skarp och bitter form av ironi"
+        },
+        {
+          "word": "paradox",
+          "clue": "Påstående som tycks självmotsträgande men är sant"
+        },
+        {
+          "word": "eufemism",
+          "clue": "Mildare uttryck för något känsligt"
+        },
+        {
+          "word": "hyperbol",
+          "clue": "Medveten överdrift i språket"
+        },
+        {
+          "word": "litotes",
+          "clue": "Underdrift för att framhäva"
+        },
+        {
+          "word": "anafora",
+          "clue": "Upprepning av ord i inledningen av meningar"
+        },
+        {
+          "word": "epifora",
+          "clue": "Upprepning av ord i slutet av meningar"
+        },
+        {
+          "word": "chiasm",
+          "clue": "Korsvis växling av grammatiska mönster"
+        },
+        {
+          "word": "oxymoron",
+          "clue": "Kombination av motsatta ord, t.ex. 'levande död'"
+        },
+        {
+          "word": "stilistik",
+          "clue": "Läran om språklig stil och uttrycksmedel"
+        }
       ]
     },
     {
@@ -2711,26 +3055,86 @@
       "bonusPoints": 50,
       "timeLimit": 60,
       "words": [
-        { "word": "epistemologi", "clue": "Filosofigrenen om kunskapens natur" },
-        { "word": "ontologi", "clue": "Filosofigrenen om varats natur" },
-        { "word": "hermeneutik", "clue": "Tolkningsteori för texter och mening" },
-        { "word": "fenomenologi", "clue": "Filosofi om den direkta upplevelsen" },
-        { "word": "dialektik", "clue": "Tankemetod med tes, antites och syntes" },
-        { "word": "empirism", "clue": "Kunskap grundas på erfarenhet och observation" },
-        { "word": "rationalism", "clue": "Kunskap grundas på förnuft och logik" },
-        { "word": "konstruktivism", "clue": "Kunskap konstrueras aktivt av individen" },
-        { "word": "positivism", "clue": "Vetenskaplig kunskap baseras enbart på fakta" },
-        { "word": "relativism", "clue": "Sanningen är relativ och kontextberoende" },
-        { "word": "determinism", "clue": "Allt är förutbestämt av orsaker" },
-        { "word": "existentialism", "clue": "Filosfi om individens frihet och ansvar" },
-        { "word": "strukturalism", "clue": "Strukturer styr mänskligt tänkande och kultur" },
-        { "word": "poststrukturalism", "clue": "Ifrågasätter fasta strukturer och mening" },
-        { "word": "dekonstruktion", "clue": "Derridas metod att avslöja textens motsägelser" },
-        { "word": "diskursanalys", "clue": "Analys av hur makt skapas via språk" },
-        { "word": "intersektionalitet", "clue": "Hur olika maktstrukturer samverkar" },
-        { "word": "normalisering", "clue": "Process där det avvikande görs normalt" },
-        { "word": "stigmatisering", "clue": "Märkning av grupp som mindervärd" },
-        { "word": "marginalisering", "clue": "Utestängning från samhällets centrum" }
+        {
+          "word": "epistemologi",
+          "clue": "Filosofigrenen om kunskapens natur"
+        },
+        {
+          "word": "ontologi",
+          "clue": "Filosofigrenen om varats natur"
+        },
+        {
+          "word": "hermeneutik",
+          "clue": "Tolkningsteori för texter och mening"
+        },
+        {
+          "word": "fenomenologi",
+          "clue": "Filosofi om den direkta upplevelsen"
+        },
+        {
+          "word": "dialektik",
+          "clue": "Tankemetod med tes, antites och syntes"
+        },
+        {
+          "word": "empirism",
+          "clue": "Kunskap grundas på erfarenhet och observation"
+        },
+        {
+          "word": "rationalism",
+          "clue": "Kunskap grundas på förnuft och logik"
+        },
+        {
+          "word": "konstruktivism",
+          "clue": "Kunskap konstrueras aktivt av individen"
+        },
+        {
+          "word": "positivism",
+          "clue": "Vetenskaplig kunskap baseras enbart på fakta"
+        },
+        {
+          "word": "relativism",
+          "clue": "Sanningen är relativ och kontextberoende"
+        },
+        {
+          "word": "determinism",
+          "clue": "Allt är förutbestämt av orsaker"
+        },
+        {
+          "word": "existentialism",
+          "clue": "Filosfi om individens frihet och ansvar"
+        },
+        {
+          "word": "strukturalism",
+          "clue": "Strukturer styr mänskligt tänkande och kultur"
+        },
+        {
+          "word": "poststrukturalism",
+          "clue": "Ifrågasätter fasta strukturer och mening"
+        },
+        {
+          "word": "dekonstruktion",
+          "clue": "Derridas metod att avslöja textens motsägelser"
+        },
+        {
+          "word": "diskursanalys",
+          "clue": "Analys av hur makt skapas via språk"
+        },
+        {
+          "word": "intersektionalitet",
+          "clue": "Hur olika maktstrukturer samverkar"
+        },
+        {
+          "word": "normalisering",
+          "clue": "Process där det avvikande görs normalt"
+        },
+        {
+          "word": "stigmatisering",
+          "clue": "Märkning av grupp som mindervärd"
+        },
+        {
+          "word": "marginalisering",
+          "clue": "Utestängning från samhällets centrum"
+        }
       ]
     }
   ]

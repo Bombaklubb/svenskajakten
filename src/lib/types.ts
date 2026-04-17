@@ -52,10 +52,21 @@ export interface BuildSentenceExercise {
   explanation?: string;
 }
 
+export interface WordCluesExercise {
+  id: string;
+  type: "word-clues";
+  clues: string[];
+  answer: string;
+  alternativeAnswers?: string[];
+  hint?: string;
+  explanation?: string;
+}
+
 export type GrammarExercise =
   | MultipleChoiceExercise
   | FillInBlankExercise
-  | BuildSentenceExercise;
+  | BuildSentenceExercise
+  | WordCluesExercise;
 
 export interface ReadingQuestion {
   id: string;

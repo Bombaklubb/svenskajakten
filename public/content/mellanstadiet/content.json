@@ -5127,6 +5127,91 @@
           "explanation": "Frågetecken som hör till repliken placeras INUTI citattecknen."
         }
       ]
+    },
+    {
+      "id": "hitta-ratt-kluring",
+      "title": "Hitta rätt – kluring",
+      "description": "Läs ledtrådarna och gissa vilket grammatikbegrepp som beskrivs!",
+      "icon": "🔍",
+      "pointsRequired": 0,
+      "bonusPoints": 25,
+      "helpText": [
+        "Varje kluring beskriver ett ord eller ett grammatikbegrepp.",
+        "Läs alla ledtrådar – de sista är bäst!",
+        "Svaret är alltid ett enda ord."
+      ],
+      "exercises": [
+        {
+          "id": "mel-kluring-1",
+          "type": "word-clues",
+          "clues": [
+            "Jag är ett verb",
+            "Jag beskriver en handling",
+            "Jag börjar på S"
+          ],
+          "answer": "skriva",
+          "alternativeAnswers": [
+            "skriver",
+            "skriv"
+          ],
+          "explanation": "Skriva är ett verb som beskriver handlingen att forma bokstäver och ord."
+        },
+        {
+          "id": "mel-kluring-2",
+          "type": "word-clues",
+          "clues": [
+            "Jag är en ordklass",
+            "Jag ersätter ett substantiv",
+            "Han, hon och det är exempel på mig"
+          ],
+          "answer": "pronomen",
+          "explanation": "Pronomen är en ordklass som ersätter substantiv, t.ex. 'han' ersätter 'pojken'."
+        },
+        {
+          "id": "mel-kluring-3",
+          "type": "word-clues",
+          "clues": [
+            "Jag är ett satsled",
+            "Jag talar om vem som utför handlingen",
+            "Jag svarar på frågan 'Vem?'"
+          ],
+          "answer": "subjekt",
+          "explanation": "Subjektet är den del av meningen som utför handlingen, t.ex. 'Hunden' i 'Hunden springer'."
+        },
+        {
+          "id": "mel-kluring-4",
+          "type": "word-clues",
+          "clues": [
+            "Jag är ett skiljetecken",
+            "Jag avslutar en fråga",
+            "Jag ser ut som en krok med en punkt under"
+          ],
+          "answer": "frågetecken",
+          "explanation": "Frågetecknet (?) används i slutet av en fråga, t.ex. 'Hur mår du?'"
+        },
+        {
+          "id": "mel-kluring-5",
+          "type": "word-clues",
+          "clues": [
+            "Jag är en ordklass",
+            "Jag beskriver ett substantiv",
+            "Stor, liten och snabb är exempel på mig"
+          ],
+          "answer": "adjektiv",
+          "explanation": "Adjektiv är en ordklass som beskriver hur något är, t.ex. 'den röda bilen'."
+        },
+        {
+          "id": "mel-kluring-6",
+          "type": "word-clues",
+          "clues": [
+            "Jag är ett verb",
+            "Jag är i dåtid",
+            "Jag är dåtidsformen av 'springer'"
+          ],
+          "answer": "sprang",
+          "explanation": "Sprang är preteritum (dåtid) av verbet springa."
+        }
+      ]
     }
   ],
   "reading": [

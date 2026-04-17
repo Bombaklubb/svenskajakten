@@ -6473,6 +6473,91 @@
           "explanation": "Kolon efter talverbet, stor bokstav inuti citattecknen och punkt inuti citattecknet."
         }
       ]
+    },
+    {
+      "id": "hitta-ratt-kluring",
+      "title": "Hitta rätt – kluring",
+      "description": "Läs ledtrådarna och gissa vilket ord som beskrivs!",
+      "icon": "🔍",
+      "pointsRequired": 0,
+      "bonusPoints": 20,
+      "helpText": [
+        "Läs alla ledtrådar noga innan du gissar.",
+        "Svaret är alltid ett enda ord.",
+        "Tänk på vilken ordklass ordet tillhör!"
+      ],
+      "exercises": [
+        {
+          "id": "lag-kluring-1",
+          "type": "word-clues",
+          "clues": [
+            "Jag är ett djur",
+            "Jag bor i havet",
+            "Jag har fenor"
+          ],
+          "answer": "fisk",
+          "explanation": "En fisk är ett djur som lever i vatten och andas med gälar."
+        },
+        {
+          "id": "lag-kluring-2",
+          "type": "word-clues",
+          "clues": [
+            "Jag är ett verb",
+            "Man gör mig med benen",
+            "Jag börjar på S"
+          ],
+          "answer": "springa",
+          "alternativeAnswers": [
+            "springer",
+            "sprang"
+          ],
+          "explanation": "Springa är ett verb som beskriver rörelsen att röra sig snabbt med benen."
+        },
+        {
+          "id": "lag-kluring-3",
+          "type": "word-clues",
+          "clues": [
+            "Jag är ett adjektiv",
+            "Jag är en färg",
+            "Jag har samma färg som gräset"
+          ],
+          "answer": "grön",
+          "explanation": "Grön är ett adjektiv som beskriver en färg – samma färg som löv och gräs."
+        },
+        {
+          "id": "lag-kluring-4",
+          "type": "word-clues",
+          "clues": [
+            "Jag är ett substantiv",
+            "Man hittar mig i skolan",
+            "Man skriver med mig"
+          ],
+          "answer": "penna",
+          "explanation": "En penna är ett skrivverktyg som används i skolan."
+        },
+        {
+          "id": "lag-kluring-5",
+          "type": "word-clues",
+          "clues": [
+            "Jag är en ordklass",
+            "Bord, katt och hus tillhör mig",
+            "Jag svarar på frågan 'Vad?'"
+          ],
+          "answer": "substantiv",
+          "explanation": "Substantiv är en ordklass som innehåller namn på saker, djur och personer."
+        },
+        {
+          "id": "lag-kluring-6",
+          "type": "word-clues",
+          "clues": [
+            "Jag är ett djur",
+            "Jag är gul och svart",
+            "Jag kan stickas och gör honung"
+          ],
+          "answer": "bi",
+          "explanation": "Ett bi är ett insekt som samlar nektar och tillverkar honung."
+        }
+      ]
     }
   ],
   "reading": [

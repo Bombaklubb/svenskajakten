@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { BuildSentenceExercise } from "@/lib/types";
+import { getCorrectMessage } from "@/lib/feedback";
 
 function shuffle(arr: number[]): number[] {
   const a = [...arr];
@@ -21,6 +22,7 @@ interface Props {
 export default function BuildSentence({ exercise, onAnswer, isLast }: Props) {
   const [placed, setPlaced] = useState<number[]>([]);
   const [state, setState] = useState<"idle" | "correct" | "wrong">("idle");
+  const [correctMsg, setCorrectMsg] = useState("");
   const [showHint, setShowHint] = useState(false);
   const [shuffledOrder] = useState<number[]>(() =>
     shuffle(exercise.words.map((_, i) => i))
@@ -43,6 +45,7 @@ export default function BuildSentence({ exercise, onAnswer, isLast }: Props) {
     const correct =
       placed.length === exercise.correctOrder.length &&
       placed.every((wordIdx, pos) => wordIdx === exercise.correctOrder[pos]);
+    if (correct) setCorrectMsg(getCorrectMessage());
     setState(correct ? "correct" : "wrong");
   }
 
@@ -150,7 +153,7 @@ export default function BuildSentence({ exercise, onAnswer, isLast }: Props) {
           }`}
         >
           <p className="font-semibold">
-            {state === "correct" ? "✓ Perfekt!" : `✗ Inte riktigt. Rätt: "${correctSentence}"`}
+            {state === "correct" ? correctMsg : `✗ Inte riktigt. Rätt: "${correctSentence}"`}
           </p>
           {exercise.explanation && (
             <p className="text-sm mt-1 opacity-80">💡 {exercise.explanation}</p>

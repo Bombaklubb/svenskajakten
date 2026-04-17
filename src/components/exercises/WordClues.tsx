@@ -1,34 +1,31 @@
 "use client";
 
 import { useState, useRef } from "react";
-import type { FillInBlankExercise } from "@/lib/types";
+import type { WordCluesExercise } from "@/lib/types";
 import { getCorrectMessage } from "@/lib/feedback";
 
 interface Props {
-  exercise: FillInBlankExercise;
+  exercise: WordCluesExercise;
   onAnswer: (correct: boolean) => void;
   isLast?: boolean;
 }
 
-export default function FillInBlank({ exercise, onAnswer, isLast }: Props) {
+export default function WordClues({ exercise, onAnswer, isLast }: Props) {
   const [input, setInput] = useState("");
   const [state, setState] = useState<"idle" | "correct" | "wrong">("idle");
   const [correctMsg, setCorrectMsg] = useState("");
   const [showHint, setShowHint] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const parts = exercise.question.split("___");
-
-  function normalizeAnswer(s: string) {
-    return s.trim().toLowerCase()
-      .replace(/[\u2018\u2019\u201A\u201B\u2032\u02BC]/g, "'");
+  function normalize(s: string) {
+    return s.trim().toLowerCase();
   }
 
   function handleSubmit() {
     if (state !== "idle" || !input.trim()) return;
-    const given = normalizeAnswer(input);
-    const expected = normalizeAnswer(exercise.answer);
-    const alternatives = (exercise.alternativeAnswers ?? []).map(normalizeAnswer);
+    const given = normalize(input);
+    const expected = normalize(exercise.answer);
+    const alternatives = (exercise.alternativeAnswers ?? []).map(normalize);
     const correct = given === expected || alternatives.includes(given);
     if (correct) setCorrectMsg(getCorrectMessage());
     setState(correct ? "correct" : "wrong");
@@ -38,35 +35,26 @@ export default function FillInBlank({ exercise, onAnswer, isLast }: Props) {
     if (e.key === "Enter") handleSubmit();
   }
 
-  const borderColor =
-    state === "correct"
-      ? "border-green-400 bg-green-50 dark:bg-green-900/30"
-      : state === "wrong"
-      ? "border-red-400 bg-red-50 dark:bg-red-900/30"
-      : "border-sv-300 bg-white dark:bg-gray-700 dark:border-sv-600 focus-within:border-sv-500";
-
   return (
     <div className="space-y-5 animate-fade-in">
-      <div className="text-base sm:text-xl font-medium text-gray-800 dark:text-gray-100 leading-relaxed flex flex-wrap items-center gap-x-2 gap-y-2">
-        <span>{parts[0]}</span>
-        <span
-          className={`inline-flex items-center border-b-4 px-1 min-w-[80px] transition-colors duration-300 ${
-            state === "correct"
-              ? "border-green-400 text-green-700"
-              : state === "wrong"
-              ? "border-red-400 text-red-700"
-              : "border-sv-400 text-sv-700"
-          }`}
-        >
-          {state !== "idle" ? (
-            <span className="font-bold">
-              {state === "correct" ? input : exercise.answer}
-            </span>
-          ) : (
-            <span className="text-gray-400 text-sm italic">svar</span>
-          )}
+      <div className="flex items-center gap-2 mb-1">
+        <span className="text-lg">🔍</span>
+        <span className="text-sm font-bold text-sv-600 dark:text-sv-300 uppercase tracking-wide">
+          Kluring – vad är det?
         </span>
-        {parts[1] && <span>{parts[1]}</span>}
+      </div>
+
+      {/* Clues */}
+      <div className="space-y-2">
+        {exercise.clues.map((clue, i) => (
+          <div
+            key={i}
+            className="flex items-start gap-3 bg-sv-50 dark:bg-sv-900/20 border border-sv-200 dark:border-sv-700 rounded-xl px-4 py-3"
+          >
+            <span className="text-sv-400 dark:text-sv-500 font-bold text-base mt-0.5 flex-shrink-0">→</span>
+            <span className="text-sv-900 dark:text-sv-100 text-base font-medium">{clue}</span>
+          </div>
+        ))}
       </div>
 
       {exercise.hint && (
@@ -87,7 +75,7 @@ export default function FillInBlank({ exercise, onAnswer, isLast }: Props) {
       )}
 
       {state === "idle" && (
-        <div className={`flex gap-2 rounded-xl border-2 overflow-hidden transition-colors ${borderColor}`}>
+        <div className={`flex gap-2 rounded-xl border-2 overflow-hidden transition-colors border-sv-300 bg-white dark:bg-gray-700 dark:border-sv-600 focus-within:border-sv-500`}>
           <input
             ref={inputRef}
             type="text"

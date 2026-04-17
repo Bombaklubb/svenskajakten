@@ -12,6 +12,7 @@ import { BlurFade } from "@/components/magicui/blur-fade";
 import MultipleChoice from "@/components/exercises/MultipleChoice";
 import FillInBlank from "@/components/exercises/FillInBlank";
 import BuildSentence from "@/components/exercises/BuildSentence";
+import WordClues from "@/components/exercises/WordClues";
 import type { StudentData, StageContent, RetryItem } from "@/lib/types";
 
 interface RuleItem {
@@ -304,6 +305,9 @@ export default function WorldPage({ params }: Props) {
                       {retryItem.exercise.type === "build-sentence" && (
                         <BuildSentence exercise={retryItem.exercise} onAnswer={handleRetryAnswer} isLast />
                       )}
+                      {retryItem.exercise.type === "word-clues" && (
+                        <WordClues exercise={retryItem.exercise} onAnswer={handleRetryAnswer} isLast />
+                      )}
                     </div>
                   </div>
                 )}
@@ -331,6 +335,7 @@ export default function WorldPage({ params }: Props) {
                       const preview =
                         item.exercise.type === "multiple-choice" ? item.exercise.question
                         : item.exercise.type === "fill-in-blank" ? item.exercise.question
+                        : item.exercise.type === "word-clues" ? item.exercise.clues[0]
                         : item.exercise.instruction;
                       return (
                         <button

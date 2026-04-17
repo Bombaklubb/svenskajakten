@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { MultipleChoiceExercise } from "@/lib/types";
+import { getCorrectMessage } from "@/lib/feedback";
 
 interface Props {
   exercise: MultipleChoiceExercise;
@@ -12,12 +13,14 @@ interface Props {
 export default function MultipleChoice({ exercise, onAnswer, isLast }: Props) {
   const [selected, setSelected] = useState<number | null>(null);
   const [revealed, setRevealed] = useState(false);
+  const [correctMsg, setCorrectMsg] = useState("");
   const [showHint, setShowHint] = useState(false);
 
   function handleSelect(idx: number) {
     if (revealed) return;
     setSelected(idx);
     setRevealed(true);
+    if (idx === exercise.correctIndex) setCorrectMsg(getCorrectMessage());
   }
 
   function optionStyle(idx: number): string {
@@ -74,6 +77,20 @@ export default function MultipleChoice({ exercise, onAnswer, isLast }: Props) {
           </button>
         ))}
       </div>
+
+      {revealed && (
+        <div
+          className={`rounded-xl px-4 py-3 border animate-slide-up text-sm font-semibold ${
+            selected === exercise.correctIndex
+              ? "bg-green-50 dark:bg-green-900/30 border-green-200 dark:border-green-700 text-green-800 dark:text-green-300"
+              : "bg-red-50 dark:bg-red-900/30 border-red-200 dark:border-red-700 text-red-800 dark:text-red-300"
+          }`}
+        >
+          {selected === exercise.correctIndex
+            ? correctMsg
+            : `✗ Fel. Rätt svar: "${exercise.options[exercise.correctIndex]}"`}
+        </div>
+      )}
 
       {revealed && exercise.explanation && (
         <div className="bg-sv-50 dark:bg-sv-900/30 border border-sv-200 dark:border-sv-700 rounded-xl p-4 text-sm text-sv-800 dark:text-sv-200 animate-slide-up">

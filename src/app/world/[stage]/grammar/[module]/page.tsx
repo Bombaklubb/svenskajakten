@@ -10,6 +10,7 @@ import ResultModal from "@/components/ui/ResultModal";
 import MultipleChoice from "@/components/exercises/MultipleChoice";
 import FillInBlank from "@/components/exercises/FillInBlank";
 import BuildSentence from "@/components/exercises/BuildSentence";
+import WordClues from "@/components/exercises/WordClues";
 import { loadStudent, saveStudent, saveModuleProgress, loadGamification, saveGamification, addToRetryQueue } from "@/lib/storage";
 import { trackEvent } from "@/lib/analytics";
 import {
@@ -106,6 +107,7 @@ export default function GrammarModulePage({ params }: Props) {
       const preview =
         currentExercise.type === "multiple-choice" ? currentExercise.question.slice(0, 60)
         : currentExercise.type === "fill-in-blank" ? currentExercise.question.slice(0, 60)
+        : currentExercise.type === "word-clues" ? currentExercise.clues[0].slice(0, 60)
         : currentExercise.instruction.slice(0, 60);
 
       if (correct) {
@@ -330,6 +332,8 @@ export default function GrammarModulePage({ params }: Props) {
                   ? "🔘 Flerval"
                   : currentExercise.type === "fill-in-blank"
                   ? "✏️ Fyll i"
+                  : currentExercise.type === "word-clues"
+                  ? "🔍 Kluring"
                   : "🔤 Bygg mening"}
               </span>
             )}
@@ -353,6 +357,13 @@ export default function GrammarModulePage({ params }: Props) {
               )}
               {currentExercise.type === "build-sentence" && (
                 <BuildSentence
+                  exercise={currentExercise}
+                  onAnswer={handleAnswer}
+                  isLast={currentIndex + 1 === totalExercises}
+                />
+              )}
+              {currentExercise.type === "word-clues" && (
+                <WordClues
                   exercise={currentExercise}
                   onAnswer={handleAnswer}
                   isLast={currentIndex + 1 === totalExercises}
