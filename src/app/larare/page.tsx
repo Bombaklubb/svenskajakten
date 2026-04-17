@@ -216,13 +216,10 @@ export default function LararePage() {
             {/* Totals cards */}
             <section>
               <h2 className="font-black text-gray-800 dark:text-gray-100 mb-3 text-sm uppercase tracking-wider">Översikt</h2>
-              <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+              <div className="grid grid-cols-2 gap-3 max-w-xs">
                 {[
                   { label: "Inloggade nu", value: String(stats.totals.onlineNow), icon: "🟢", highlight: stats.totals.onlineNow > 0 },
                   { label: "Unika enheter", value: stats.totals.uniqueDevices.toLocaleString("sv-SE"), icon: "💻", highlight: false },
-                  { label: "Uppgifter gjorda", value: stats.totals.exercises.toLocaleString("sv-SE"), icon: "📝", highlight: false },
-                  { label: "Total tid", value: formatDuration(stats.totals.durationSeconds), icon: "⏱️", highlight: false },
-                  { label: "Felaktiga svar", value: stats.totals.wrong.toLocaleString("sv-SE"), icon: "❌", highlight: false },
                 ].map(({ label, value, icon, highlight }) => (
                   <div
                     key={label}

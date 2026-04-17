@@ -33,9 +33,9 @@ export default function SessionTracker() {
       }
     }
 
-    // Ctrl+Shift+L → teacher dashboard
+    // Ctrl+Shift+L or Ctrl+Shift+P → teacher dashboard
     function handleKeydown(e: KeyboardEvent) {
-      if (e.ctrlKey && e.shiftKey && e.key === "L") {
+      if (e.ctrlKey && e.shiftKey && (e.key === "L" || e.key === "P")) {
         e.preventDefault();
         router.push("/larare");
       }
