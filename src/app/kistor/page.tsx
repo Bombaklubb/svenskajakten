@@ -43,42 +43,42 @@ function ChestCard({ chest, onOpen }: { chest: Chest; onOpen: (id: string) => vo
   return (
     <div
       onClick={handleClick}
-      className={`relative flex items-center gap-4 px-5 py-4 rounded-3xl transition-all cursor-pointer select-none ${
+      className={`w-full relative flex items-center gap-4 px-5 py-4 rounded-2xl transition-all cursor-pointer select-none ${
         !chest.opened
-          ? `bg-gradient-to-br ${meta.color} hover:scale-[1.02] active:scale-[0.98]`
+          ? `bg-gradient-to-r ${meta.color} active:scale-[0.98]`
           : "bg-gray-100 dark:bg-gray-700 cursor-default opacity-60"
       }`}
       style={{
-        border: "3px solid",
-        borderColor: chest.opened ? "#cbd5e1" : "rgba(255,255,255,0.3)",
+        border: "2px solid",
+        borderColor: chest.opened ? "#cbd5e1" : "rgba(255,255,255,0.25)",
         boxShadow: chest.opened
           ? "none"
-          : "0 6px 20px rgba(0,0,0,0.15), 0 2px 6px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.3)",
-        transform: animating ? "scale(1.04) rotate(-1deg)" : "scale(1)",
+          : "0 4px 12px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.25)",
+        transform: animating ? "scale(1.02) rotate(-0.5deg)" : "scale(1)",
         transition: "transform 0.15s ease-out, box-shadow 0.15s",
       }}
     >
-      {/* Chest image */}
+      {/* Chest image – fixed width so all rows align */}
       <div
-        className="w-16 h-16 flex-shrink-0 flex items-center justify-center"
+        className="w-14 h-14 flex-shrink-0 flex items-center justify-center"
         style={{ animation: animating ? "shake 0.4s ease-in-out" : "none" }}
       >
         <img
           src={chest.opened ? meta.openImage : meta.image}
           alt={meta.label}
-          className="w-full h-full object-contain drop-shadow-lg"
+          className="w-full h-full object-contain drop-shadow-md"
         />
       </div>
 
       {/* Text */}
       <div className="flex-1 min-w-0">
-        <p className={`font-bold text-base ${chest.opened ? "text-gray-400 dark:text-gray-500" : "text-white"}`}>
+        <p className={`font-bold text-base leading-tight ${chest.opened ? "text-gray-400 dark:text-gray-500" : "text-white"}`}>
           {meta.label}
         </p>
         {chest.opened ? (
-          <p className="text-xs text-gray-400 dark:text-gray-500">Öppnad</p>
+          <p className="text-xs text-gray-400 dark:text-gray-500 mt-0.5">Öppnad</p>
         ) : (
-          <p className="text-sm text-white/80">{meta.description}</p>
+          <p className="text-sm text-white/80 mt-0.5">{meta.description}</p>
         )}
         {chest.opened && chest.openedReward && (
           <p className="text-xs text-gray-500 dark:text-gray-400 leading-snug mt-0.5">{chest.openedReward}</p>
@@ -87,7 +87,7 @@ function ChestCard({ chest, onOpen }: { chest: Chest; onOpen: (id: string) => vo
 
       {/* Open arrow */}
       {!chest.opened && (
-        <span className="text-white/70 text-xl flex-shrink-0">→</span>
+        <span className="text-white/70 text-xl flex-shrink-0">›</span>
       )}
       <style jsx>{`
         @keyframes shake {
@@ -426,7 +426,7 @@ export default function KistorPage() {
                 </p>
               </div>
             ) : (
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-3">
                 {unopened.map((chest) => (
                   <ChestCard key={chest.id} chest={chest} onOpen={handleOpenChest} />
                 ))}
