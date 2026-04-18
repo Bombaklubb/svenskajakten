@@ -1,17 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import { makeToken } from "@/lib/teacherAuth";
 
+const DEFAULT_PASSWORD = "Korsängen";
+
 export async function POST(req: NextRequest) {
   try {
     const { password } = await req.json();
-    const expected = process.env.TEACHER_PASSWORD;
-
-    if (!expected) {
-      return NextResponse.json(
-        { error: "TEACHER_PASSWORD är inte konfigurerat på servern." },
-        { status: 503 }
-      );
-    }
+    const expected = process.env.TEACHER_PASSWORD ?? DEFAULT_PASSWORD;
 
     if (password !== expected) {
       return NextResponse.json({ error: "Fel lösenord." }, { status: 401 });
