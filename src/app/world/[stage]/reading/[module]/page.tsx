@@ -8,7 +8,7 @@ import Header from "@/components/ui/Header";
 import ResultModal from "@/components/ui/ResultModal";
 import ReadingQuestionComponent from "@/components/exercises/ReadingQuestion";
 import { loadStudent, saveStudent, saveModuleProgress, loadGamification, saveGamification } from "@/lib/storage";
-import { chestsEarnedFromPoints, chestsEarnedFromExercises, chestsEarnedFromAchievements, rollMysteryBox, BOSS_UNLOCK_THRESHOLD } from "@/lib/gamification";
+import { chestsEarnedFromPoints, chestsEarnedFromExercises, chestsEarnedFromAchievements, rollMysteryBox, capNewChests, BOSS_UNLOCK_THRESHOLD } from "@/lib/gamification";
 import { ACHIEVEMENTS, isUnlocked } from "@/lib/achievements";
 import MysteryBoxPopup from "@/components/ui/MysteryBoxPopup";
 import { getStage } from "@/lib/stages";
@@ -102,7 +102,7 @@ export default function ReadingModulePage({ params }: Props) {
         const mysteryPoints = mystery?.type === "points" && mystery.points ? mystery.points : 0;
         saveGamification({
           ...gam,
-          chests: [...gam.chests, ...allNewChests, ...extraMysteryChest],
+          chests: [...gam.chests, ...capNewChests(gam.chests, [...allNewChests, ...extraMysteryChest])],
           badges: mysteryBadge && !gam.badges.includes(mysteryBadge) ? [...gam.badges, mysteryBadge] : gam.badges,
           exercisesCompleted: newEx,
           bossUnlocked: nowBossUnlocked,

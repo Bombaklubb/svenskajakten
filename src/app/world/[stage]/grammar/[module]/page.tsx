@@ -18,6 +18,7 @@ import {
   chestsEarnedFromExercises,
   chestsEarnedFromAchievements,
   rollMysteryBox,
+  capNewChests,
   BOSS_UNLOCK_THRESHOLD,
 } from "@/lib/gamification";
 import { ACHIEVEMENTS, isUnlocked } from "@/lib/achievements";
@@ -173,7 +174,7 @@ export default function GrammarModulePage({ params }: Props) {
 
         const newGam = {
           ...gam,
-          chests: [...gam.chests, ...allNewChests, ...extraMysteryChest],
+          chests: [...gam.chests, ...capNewChests(gam.chests, [...allNewChests, ...extraMysteryChest])],
           badges: mysteryBadge && !gam.badges.includes(mysteryBadge)
             ? [...gam.badges, mysteryBadge]
             : gam.badges,

@@ -24,6 +24,7 @@ import {
   openDiamondChest,
   checkMissedExerciseMilestones,
   checkMissedPointMilestones,
+  capNewChests,
 } from "@/lib/gamification";
 import type { StudentData, GamificationData, Chest, ChestType } from "@/lib/types";
 
@@ -302,7 +303,9 @@ export default function KistorPage() {
     const newBadges = result.badge && !gam.badges.includes(result.badge)
       ? [...gam.badges, result.badge]
       : gam.badges;
-    if (result.bonusChest) newChests.push(result.bonusChest);
+    if (result.bonusChest && capNewChests(newChests, [result.bonusChest]).length > 0) {
+      newChests.push(result.bonusChest);
+    }
 
     const newGam = { ...gam, chests: newChests, badges: newBadges };
     saveGamification(newGam);

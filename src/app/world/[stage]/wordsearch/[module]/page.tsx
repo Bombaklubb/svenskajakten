@@ -7,7 +7,7 @@ import { notFound } from "next/navigation";
 import Header from "@/components/ui/Header";
 import WordSearch from "@/components/exercises/WordSearch";
 import { loadStudent, saveStudent, saveModuleProgress, loadGamification, saveGamification } from "@/lib/storage";
-import { chestsEarnedFromPoints, chestsEarnedFromExercises, chestsEarnedFromAchievements, rollMysteryBox, BOSS_UNLOCK_THRESHOLD } from "@/lib/gamification";
+import { chestsEarnedFromPoints, chestsEarnedFromExercises, chestsEarnedFromAchievements, rollMysteryBox, capNewChests, BOSS_UNLOCK_THRESHOLD } from "@/lib/gamification";
 import { ACHIEVEMENTS, isUnlocked } from "@/lib/achievements";
 import MysteryBoxPopup from "@/components/ui/MysteryBoxPopup";
 import { BlurFade } from "@/components/magicui/blur-fade";
@@ -100,7 +100,7 @@ export default function WordSearchModulePage({ params }: Props) {
 
     saveGamification({
       ...gam,
-      chests: [...gam.chests, ...allNewChests, ...extraMysteryChest],
+      chests: [...gam.chests, ...capNewChests(gam.chests, [...allNewChests, ...extraMysteryChest])],
       badges: mysteryBadge && !gam.badges.includes(mysteryBadge) ? [...gam.badges, mysteryBadge] : gam.badges,
       exercisesCompleted: newExercises,
       bossUnlocked: bossNowUnlocked || gam.bossUnlocked,

@@ -225,6 +225,7 @@ export interface GamificationData {
   bossUnlocked: boolean;
   bossLastAttempt?: string;
   bossWins: number;
+  bossWinsPerBoss?: Record<string, number>;
   pointsMilestonesRewarded: number[];
   exerciseMilestonesRewarded: number[];
   achievementsRewarded: string[];

@@ -9,6 +9,7 @@ import type {
 
 export const BOSS_UNLOCK_THRESHOLD = 5;
 export const MYSTERY_BOX_CHANCE = 0.15;
+export const MAX_CHESTS_PER_TYPE = 10;
 
 export const POINT_CHEST_MILESTONES: { points: number; type: ChestType }[] = [
   { points: 10,    type: "wood" },
@@ -28,7 +29,6 @@ export const POINT_CHEST_MILESTONES: { points: number; type: ChestType }[] = [
   { points: 1000,  type: "gold" },
   { points: 1250,  type: "silver" },
   { points: 1500,  type: "silver" },
-  { points: 1750,  type: "wood" },
   { points: 2000,  type: "silver" },
   { points: 2500,  type: "gold" },
   { points: 3000,  type: "silver" },
@@ -206,7 +206,7 @@ export const ALL_BADGES = [
   { id: "mystery_hunter", label: "Mysteriejägare",     emoji: "🎁" },
 ];
 
-// ─── Boss challenge questions (Swedish language) ─────────────────────────────
+// ─── Boss challenge (Swedish language) ───────────────────────────────────────
 
 export interface BossQuestion {
   id: string;
@@ -217,96 +217,178 @@ export interface BossQuestion {
   correctIndex: number;
 }
 
-export const BOSS_QUESTIONS: BossQuestion[] = [
+export interface Boss {
+  id: string;
+  name: string;
+  emoji: string;
+  subtitle: string;
+  difficulty: string;
+  difficultyStars: number;
+  description: string;
+  gradient: string;
+  accentColor: string;
+  borderColor: string;
+  questions: BossQuestion[];
+  passThreshold: number;
+  bonusPoints: number;
+  rewardChestType: ChestType;
+}
+
+export const BOSSES: Boss[] = [
   {
-    id: "bq1",
-    type: "multiple-choice",
-    category: "grammar",
-    question: "Vilket alternativ är grammatiskt korrekt?",
-    options: [
-      "Jag och han gick till affären.",
-      "Han och jag gick till affären.",
-      "Mig och han gick till affären.",
-      "Han och mig gick till affären.",
+    id: "grammatikbossen",
+    name: "Grammatikbossen",
+    emoji: "👹",
+    subtitle: "Grammatik & stavning",
+    difficulty: "Mellannivå",
+    difficultyStars: 1,
+    description: "Bossen testar din grammatik och stavning. Svara rätt på minst 6 av 10 frågor!",
+    gradient: "linear-gradient(135deg, #7f1d1d, #991b1b, #dc2626)",
+    accentColor: "#dc2626",
+    borderColor: "#fca5a5",
+    passThreshold: 0.6,
+    bonusPoints: 150,
+    rewardChestType: "wood",
+    questions: [
+      { id: "g1", type: "multiple-choice", category: "grammar",
+        question: "Vilket alternativ är grammatiskt korrekt?",
+        options: ["Jag och han gick till affären.", "Han och jag gick till affären.", "Mig och han gick till affären.", "Han och mig gick till affären."],
+        correctIndex: 1 },
+      { id: "g2", type: "multiple-choice", category: "spelling",
+        question: "Hur stavas djuret som säger 'mjau'?",
+        options: ["Katt", "Kat", "Kkat", "Kaht"],
+        correctIndex: 0 },
+      { id: "g3", type: "multiple-choice", category: "grammar",
+        question: "Fyll i rätt ord: 'Igår ___ vi på bio.'",
+        options: ["är", "var", "hade", "blir"],
+        correctIndex: 1 },
+      { id: "g4", type: "multiple-choice", category: "reading",
+        question: "Vad betyder ordet 'häpnadsväckande'?",
+        options: ["Tråkig", "Förvånande och imponerande", "Liten", "Snabb"],
+        correctIndex: 1 },
+      { id: "g5", type: "multiple-choice", category: "grammar",
+        question: "Vilket är plural av 'ett barn'?",
+        options: ["Barns", "Barnen", "Barn", "Barnerna"],
+        correctIndex: 2 },
+      { id: "g6", type: "multiple-choice", category: "spelling",
+        question: "Vilket ord stavas rätt?",
+        options: ["Vänner", "Vännar", "Venner", "Vennar"],
+        correctIndex: 0 },
+      { id: "g7", type: "multiple-choice", category: "grammar",
+        question: "Välj rätt ordform: 'Det ___ regna imorgon.'",
+        options: ["kan", "kanske", "möjlig", "trolig"],
+        correctIndex: 0 },
+      { id: "g8", type: "multiple-choice", category: "reading",
+        question: "Om någon är 'förtjust', hur mår de?",
+        options: ["Mycket glada och nöjda", "Mycket arga", "Mycket trötta", "Mycket ledsna"],
+        correctIndex: 0 },
+      { id: "g9", type: "multiple-choice", category: "spelling",
+        question: "Vilket ord stavas rätt?",
+        options: ["Eftersom", "Efersom", "Eferson", "Eftesom"],
+        correctIndex: 0 },
+      { id: "g10", type: "multiple-choice", category: "grammar",
+        question: "Vilken mening är i preteritum (dåtid)?",
+        options: ["Igår äter jag pizza.", "Igår åt jag pizza.", "Igår ätande jag pizza.", "Igår ska jag äta pizza."],
+        correctIndex: 1 },
     ],
-    correctIndex: 1,
   },
   {
-    id: "bq2",
-    type: "multiple-choice",
-    category: "spelling",
-    question: "Hur stavades djuret som säger 'mjau'?",
-    options: ["Katt", "Katt", "Kat", "Kkat"],
-    correctIndex: 0,
-  },
-  {
-    id: "bq3",
-    type: "multiple-choice",
-    category: "grammar",
-    question: "Fyll i rätt ord: 'Igår ___ vi på bio.'",
-    options: ["är", "var", "hade", "blir"],
-    correctIndex: 1,
-  },
-  {
-    id: "bq4",
-    type: "multiple-choice",
-    category: "reading",
-    question: "Vad betyder ordet 'häpnadsväckande'?",
-    options: ["Tråkig", "Förvånande och imponerande", "Liten", "Snabb"],
-    correctIndex: 1,
-  },
-  {
-    id: "bq5",
-    type: "multiple-choice",
-    category: "grammar",
-    question: "Vilket är plural av 'ett barn'?",
-    options: ["Barns", "Barnen", "Barn", "Barnerna"],
-    correctIndex: 2,
-  },
-  {
-    id: "bq6",
-    type: "multiple-choice",
-    category: "spelling",
-    question: "Vilket ord stavas rätt?",
-    options: ["Vänner", "Vännar", "Vänner", "Venner"],
-    correctIndex: 0,
-  },
-  {
-    id: "bq7",
-    type: "multiple-choice",
-    category: "grammar",
-    question: "Välj rätt ordform: 'Det ___ regna imorgon.'",
-    options: ["kan", "kanske", "möjlig", "trolig"],
-    correctIndex: 0,
-  },
-  {
-    id: "bq8",
-    type: "multiple-choice",
-    category: "reading",
-    question: "Om någon är 'förtjust', hur mår de?",
-    options: ["Mycket glada och nöjda", "Mycket arga", "Mycket trötta", "Mycket ledsna"],
-    correctIndex: 0,
-  },
-  {
-    id: "bq9",
-    type: "multiple-choice",
-    category: "spelling",
-    question: "Vilket ord stavas rätt?",
-    options: ["Eftersom", "Efersom", "Eferson", "Eftesom"],
-    correctIndex: 0,
-  },
-  {
-    id: "bq10",
-    type: "multiple-choice",
-    category: "grammar",
-    question: "Vilken mening är i preteritum (dåtid)?",
-    options: [
-      "Igår äter jag pizza.",
-      "Igår åt jag pizza.",
-      "Igår ätande jag pizza.",
-      "Igår ska jag äta pizza.",
+    id: "stavningsdrakens",
+    name: "Stavningsdrakens",
+    emoji: "🐉",
+    subtitle: "Avancerad stavning",
+    difficulty: "Avancerad",
+    difficultyStars: 2,
+    description: "Draken sprutar felstavningar! Svara rätt på minst 5 av 8 stavningsfrågor!",
+    gradient: "linear-gradient(135deg, #4c1d95, #6d28d9, #7c3aed)",
+    accentColor: "#7c3aed",
+    borderColor: "#c4b5fd",
+    passThreshold: 0.625,
+    bonusPoints: 250,
+    rewardChestType: "silver",
+    questions: [
+      { id: "s1", type: "multiple-choice", category: "spelling",
+        question: "Vilket ord stavas rätt?",
+        options: ["Äventyr", "Äventhyr", "Aventyr", "Äventir"],
+        correctIndex: 0 },
+      { id: "s2", type: "multiple-choice", category: "spelling",
+        question: "Vilket ord stavas rätt?",
+        options: ["Framgång", "Framgong", "Framgang", "Framgóng"],
+        correctIndex: 0 },
+      { id: "s3", type: "multiple-choice", category: "spelling",
+        question: "Vilket ord stavas rätt?",
+        options: ["Möjlighet", "Möjlighett", "Möjligheit", "Möyliget"],
+        correctIndex: 0 },
+      { id: "s4", type: "multiple-choice", category: "spelling",
+        question: "Vilket alternativ stavas korrekt?",
+        options: ["Nästan", "Nastan", "Nästen", "Nestan"],
+        correctIndex: 0 },
+      { id: "s5", type: "multiple-choice", category: "spelling",
+        question: "Vilket ord stavas rätt?",
+        options: ["Sorg", "Zorg", "Sorgg", "Sórg"],
+        correctIndex: 0 },
+      { id: "s6", type: "multiple-choice", category: "spelling",
+        question: "Hur stavas 'att tycka om'?",
+        options: ["Gilla", "Gila", "Gjilla", "Ghilla"],
+        correctIndex: 0 },
+      { id: "s7", type: "multiple-choice", category: "spelling",
+        question: "Vilket ord stavas rätt?",
+        options: ["Hänsyn", "Hensyn", "Hänsünn", "Hähnsyn"],
+        correctIndex: 0 },
+      { id: "s8", type: "multiple-choice", category: "spelling",
+        question: "Vilket ord stavas rätt?",
+        options: ["Självförtroende", "Sälvförtroende", "Självförtoende", "Självförtroenede"],
+        correctIndex: 0 },
     ],
-    correctIndex: 1,
+  },
+  {
+    id: "ordkungen",
+    name: "Ordkungen",
+    emoji: "🧙",
+    subtitle: "Ordkunskap & läsförståelse",
+    difficulty: "Expert",
+    difficultyStars: 3,
+    description: "Kungen av ord utmanar dig! Svara rätt på minst 5 av 8 svåra frågor om ordkunskap!",
+    gradient: "linear-gradient(135deg, #1e3a5f, #1d4ed8, #2563eb)",
+    accentColor: "#2563eb",
+    borderColor: "#93c5fd",
+    passThreshold: 0.625,
+    bonusPoints: 400,
+    rewardChestType: "gold",
+    questions: [
+      { id: "o1", type: "multiple-choice", category: "reading",
+        question: "Vad betyder 'perspektiv'?",
+        options: ["Synvinkel eller sätt att se på saker", "En sorts kamera", "En matematisk formel", "Ett perspektivglas"],
+        correctIndex: 0 },
+      { id: "o2", type: "multiple-choice", category: "reading",
+        question: "Vilket ord beskriver 'tillståndet när man inte kan sova'?",
+        options: ["Sömnlöshet", "Trötthet", "Dåsighet", "Sömnighet"],
+        correctIndex: 0 },
+      { id: "o3", type: "multiple-choice", category: "reading",
+        question: "Vad betyder 'vältalig'?",
+        options: ["Duktig på att tala övertygande", "Talar för fort", "Pratar för mycket", "Har en vacker röst"],
+        correctIndex: 0 },
+      { id: "o4", type: "multiple-choice", category: "grammar",
+        question: "Vilket ord är ett antonym (motsats) till 'frivillig'?",
+        options: ["Obligatorisk", "Valfri", "Önskad", "Spontan"],
+        correctIndex: 0 },
+      { id: "o5", type: "multiple-choice", category: "reading",
+        question: "Vad innebär att 'resonera'?",
+        options: ["Att tänka och argumentera logiskt", "Att sjunga melodiskt", "Att reparera något", "Att räkna matematik"],
+        correctIndex: 0 },
+      { id: "o6", type: "multiple-choice", category: "reading",
+        question: "Vad menas med att en text är 'saklig'?",
+        options: ["Den håller sig till fakta utan att vara känslomässig", "Den handlar om djur", "Den är skriven på latin", "Den är oseriös"],
+        correctIndex: 0 },
+      { id: "o7", type: "multiple-choice", category: "reading",
+        question: "Vad betyder 'paradox'?",
+        options: ["Ett påstående som verkar motsägelsefullt men ändå kan vara sant", "En enkel matematisk formel", "En sorts berättelse", "En konstig dikt"],
+        correctIndex: 0 },
+      { id: "o8", type: "multiple-choice", category: "reading",
+        question: "Vilket ord betyder 'att bekräfta att något är sant'?",
+        options: ["Verifiera", "Falsifiera", "Duplicera", "Ignorera"],
+        correctIndex: 0 },
+    ],
   },
 ];
 
@@ -548,6 +630,20 @@ export function openDiamondChest(badges: string[]): {
     .filter(Boolean)
     .join(" • ");
   return { points: pts, badge: badge?.id, bonusChest, description: desc };
+}
+
+export function capNewChests(existing: Chest[], toAdd: Chest[]): Chest[] {
+  const counts: Partial<Record<ChestType, number>> = {};
+  for (const c of existing) counts[c.type] = (counts[c.type] ?? 0) + 1;
+  const result: Chest[] = [];
+  for (const c of toAdd) {
+    const current = counts[c.type] ?? 0;
+    if (current < MAX_CHESTS_PER_TYPE) {
+      result.push(c);
+      counts[c.type] = current + 1;
+    }
+  }
+  return result;
 }
 
 export function defaultGamificationData(): GamificationData {
