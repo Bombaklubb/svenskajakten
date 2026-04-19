@@ -41,7 +41,9 @@ export default function ProfilePage() {
     const grammarMods = Object.values(s.grammarModules);
     const readingMods = Object.values(s.readingModules);
     const spellingMods = Object.values(s.spellingModules ?? {});
-    const all = [...grammarMods, ...readingMods, ...spellingMods];
+    const wordsearchMods = Object.values(s.wordsearchModules ?? {});
+    const stavningstestMods = Object.values(s.stavningstestModules ?? {});
+    const all = [...grammarMods, ...readingMods, ...spellingMods, ...wordsearchMods, ...stavningstestMods];
     const completed = all.filter((m) => m.completed).length;
     const totalPoints = all.reduce((sum, m) => sum + m.points, 0);
     return { completed, totalPoints, grammarMods, readingMods, spellingMods };

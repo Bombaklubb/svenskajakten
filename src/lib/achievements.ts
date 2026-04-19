@@ -4,10 +4,11 @@ import {
   GiSprout, GiScrollQuill, GiOpenBook, GiPencil, GiLeafSwirl,
   GiBullseye, GiStarMedal, GiDiamondTrophy, GiTrophyCup, GiLaurelCrown,
   GiMagnifyingGlass, GiCrossedSwords,
-  GiWorld, GiStarKey, GiCastleRuins, GiLaurels,
+  GiWorld, GiStarKey, GiLaurels,
   GiEarthAmerica, GiFireball, GiSwordsEmblem, GiImperialCrown,
   GiMountainClimbing, GiGraduateCap, GiMountaintop, GiGems,
   GiRocketFlight, GiStrong, GiStarFormation, GiCrown, GiSoccerBall,
+  GiPodiumWinner, GiSpeedometer,
 } from "react-icons/gi";
 
 export interface Achievement {
@@ -22,12 +23,13 @@ function stageStats(student: StudentData, stageId: StageId) {
   const s = student.stages[stageId];
   const gram  = Object.values(s.grammarModules).filter((m) => m.completed);
   const read  = Object.values(s.readingModules).filter((m) => m.completed);
-  const spell = Object.values(s.spellingModules    ?? {}).filter((m) => m.completed);
-  const ws    = Object.values(s.wordsearchModules  ?? {}).filter((m) => m.completed);
-  const all   = [...gram, ...read, ...spell, ...ws];
+  const spell = Object.values(s.spellingModules       ?? {}).filter((m) => m.completed);
+  const ws    = Object.values(s.wordsearchModules     ?? {}).filter((m) => m.completed);
+  const st    = Object.values(s.stavningstestModules  ?? {}).filter((m) => m.completed);
+  const all   = [...gram, ...read, ...spell, ...ws, ...st];
   const points = all.reduce((sum, m) => sum + m.points, 0);
   return { gram: gram.length, read: read.length, spell: spell.length,
-           ws: ws.length, total: all.length, points };
+           ws: ws.length, st: st.length, total: all.length, points };
 }
 
 export const ACHIEVEMENTS: Achievement[] = [
@@ -42,8 +44,10 @@ export const ACHIEVEMENTS: Achievement[] = [
   { id: "lag-8",  stageId: "lagstadiet", icon: "💎", title: "Poängemästare I",   description: "Samla 150 poäng i Ordängen." },
   { id: "lag-9",  stageId: "lagstadiet", icon: "🏆", title: "Ängshjälte",        description: "Klara 10 moduler i Ordängen. Belöning: 🥈 Silverkista!" },
   { id: "lag-10", stageId: "lagstadiet", icon: "🌟", title: "Ängskung",          description: "Klara 18 moduler i Ordängen. Belöning: 🏆 Guldkista!" },
-  { id: "lag-11", stageId: "lagstadiet", icon: "🔍", title: "Ordjägaren I",      description: "Klara en ordsökningsmodul i Ordängen." },
+  { id: "lag-11", stageId: "lagstadiet", icon: "🔍", title: "Ordjägaren I",       description: "Klara en ordsökningsmodul i Ordängen." },
   { id: "lag-12", stageId: "lagstadiet", icon: "🔍", title: "Ordjägaren II",      description: "Klara 3 ordsökningsmoduler i Ordängen." },
+  { id: "lag-13", stageId: "lagstadiet", icon: "⏱️", title: "Skrivtestaren I",    description: "Klara ett stavningstest i Ordängen." },
+  { id: "lag-14", stageId: "lagstadiet", icon: "🥇", title: "Skrivtestaren II",   description: "Klara 3 stavningstest i Ordängen." },
 
   // ── Berättelseskogen ──────────────────────────────────────────────────────
   { id: "mel-1",  stageId: "mellanstadiet", icon: "🌲", title: "Skogsvandrare",     description: "Klara din första modul i Berättelseskogen." },
@@ -56,8 +60,10 @@ export const ACHIEVEMENTS: Achievement[] = [
   { id: "mel-8",  stageId: "mellanstadiet", icon: "💎", title: "Poängemästare II",  description: "Samla 150 poäng i Berättelseskogen." },
   { id: "mel-9",  stageId: "mellanstadiet", icon: "🏆", title: "Skogshjälte",       description: "Klara 10 moduler i Berättelseskogen. Belöning: 🥈 Silverkista!" },
   { id: "mel-10", stageId: "mellanstadiet", icon: "🌟", title: "Skogslegende",      description: "Klara 18 moduler i Berättelseskogen. Belöning: 🏆 Guldkista!" },
-  { id: "mel-11", stageId: "mellanstadiet", icon: "🔍", title: "Ordjägaren II",     description: "Klara en ordsökningsmodul i Berättelseskogen." },
-  { id: "mel-12", stageId: "mellanstadiet", icon: "🔍", title: "Ordjägaren III",    description: "Klara 3 ordsökningsmoduler i Berättelseskogen." },
+  { id: "mel-11", stageId: "mellanstadiet", icon: "🔍", title: "Skogsjägaren I",     description: "Klara en ordsökningsmodul i Berättelseskogen." },
+  { id: "mel-12", stageId: "mellanstadiet", icon: "🔍", title: "Skogsjägaren II",   description: "Klara 3 ordsökningsmoduler i Berättelseskogen." },
+  { id: "mel-13", stageId: "mellanstadiet", icon: "⏱️", title: "Skogsskrivaren I",  description: "Klara ett stavningstest i Berättelseskogen." },
+  { id: "mel-14", stageId: "mellanstadiet", icon: "🥇", title: "Skogsskrivaren II", description: "Klara 3 stavningstest i Berättelseskogen." },
 
   // ── Texthavet ─────────────────────────────────────────────────────────────
   { id: "hog-1",  stageId: "hogstadiet", icon: "🌊", title: "Havsfarare",        description: "Klara din första modul i Texthavet." },
@@ -70,8 +76,10 @@ export const ACHIEVEMENTS: Achievement[] = [
   { id: "hog-8",  stageId: "hogstadiet", icon: "💎", title: "Poängemästare III", description: "Samla 150 poäng i Texthavet." },
   { id: "hog-9",  stageId: "hogstadiet", icon: "🏆", title: "Havsmästare",       description: "Klara 10 moduler i Texthavet. Belöning: 🥈 Silverkista!" },
   { id: "hog-10", stageId: "hogstadiet", icon: "🌟", title: "Havslegende",       description: "Klara 18 moduler i Texthavet. Belöning: 🏆 Guldkista!" },
-  { id: "hog-11", stageId: "hogstadiet", icon: "🔍", title: "Ordjägaren III",    description: "Klara en ordsökningsmodul i Texthavet." },
-  { id: "hog-12", stageId: "hogstadiet", icon: "🔍", title: "Ordjägaren IV",      description: "Klara 3 ordsökningsmoduler i Texthavet." },
+  { id: "hog-11", stageId: "hogstadiet", icon: "🔍", title: "Havsjägaren I",      description: "Klara en ordsökningsmodul i Texthavet." },
+  { id: "hog-12", stageId: "hogstadiet", icon: "🔍", title: "Havsjägaren II",     description: "Klara 3 ordsökningsmoduler i Texthavet." },
+  { id: "hog-13", stageId: "hogstadiet", icon: "⏱️", title: "Havsskrivaren I",    description: "Klara ett stavningstest i Texthavet." },
+  { id: "hog-14", stageId: "hogstadiet", icon: "🥇", title: "Havsskrivaren II",   description: "Klara 3 stavningstest i Texthavet." },
 
   // ── Skrivakademin ─────────────────────────────────────────────────────────
   { id: "gym-1",  stageId: "gymnasiet", icon: "🏰", title: "Akademiklättrare",   description: "Klara din första modul i Skrivakademin." },
@@ -84,8 +92,10 @@ export const ACHIEVEMENTS: Achievement[] = [
   { id: "gym-8",  stageId: "gymnasiet", icon: "💎", title: "Poängemästare IV",   description: "Samla 150 poäng i Skrivakademin." },
   { id: "gym-9",  stageId: "gymnasiet", icon: "🏆", title: "Akademimästare",     description: "Klara 10 moduler i Skrivakademin. Belöning: 🥈 Silverkista!" },
   { id: "gym-10", stageId: "gymnasiet", icon: "🌟", title: "Akademilegende",     description: "Klara 18 moduler i Skrivakademin. Belöning: 🏆 Guldkista!" },
-  { id: "gym-11", stageId: "gymnasiet", icon: "🔍", title: "Ordjägaren IV",      description: "Klara en ordsökningsmodul i Skrivakademin." },
-  { id: "gym-12", stageId: "gymnasiet", icon: "🔍", title: "Ordjägaren V",       description: "Klara 3 ordsökningsmoduler i Skrivakademin." },
+  { id: "gym-11", stageId: "gymnasiet", icon: "🔍", title: "Akademijägaren I",    description: "Klara en ordsökningsmodul i Skrivakademin." },
+  { id: "gym-12", stageId: "gymnasiet", icon: "🔍", title: "Akademijägaren II",   description: "Klara 3 ordsökningsmoduler i Skrivakademin." },
+  { id: "gym-13", stageId: "gymnasiet", icon: "⏱️", title: "Akademiskrivaren I",  description: "Klara ett stavningstest i Skrivakademin." },
+  { id: "gym-14", stageId: "gymnasiet", icon: "🥇", title: "Akademiskrivaren II", description: "Klara 3 stavningstest i Skrivakademin." },
 
   // ── Globala ────────────────────────────────────────────────────────────────
   { id: "global-1", stageId: "global", icon: "🚀", title: "Första steget",       description: "Klara din allra första modul." },
@@ -119,7 +129,7 @@ export function isUnlocked(a: Achievement, student: StudentData): boolean {
   }
 
   const sid = a.stageId as StageId;
-  const { gram, read, spell, ws, total, points } = stageStats(student, sid);
+  const { gram, read, spell, ws, st, total, points } = stageStats(student, sid);
 
   const prefix = sid === "lagstadiet" ? "lag"
     : sid === "mellanstadiet" ? "mel"
@@ -138,6 +148,8 @@ export function isUnlocked(a: Achievement, student: StudentData): boolean {
   if (a.id === `${prefix}-10`) return total >= 18;
   if (a.id === `${prefix}-11`) return ws >= 1;
   if (a.id === `${prefix}-12`) return ws >= 3;
+  if (a.id === `${prefix}-13`) return st >= 1;
+  if (a.id === `${prefix}-14`) return st >= 3;
   return false;
 }
 
@@ -146,18 +158,22 @@ export const ACHIEVEMENT_ICONS: Record<string, IconType> = {
   "lag-4":  GiPencil,        "lag-5":  GiLeafSwirl,    "lag-6":  GiBullseye,
   "lag-7":  GiStarMedal,     "lag-8":  GiDiamondTrophy,"lag-9":  GiTrophyCup,
   "lag-10": GiLaurelCrown,   "lag-11": GiMagnifyingGlass, "lag-12": GiCrossedSwords,
+  "lag-13": GiSpeedometer,   "lag-14": GiPodiumWinner,
   "mel-1":  GiWorld,         "mel-2":  GiScrollQuill,  "mel-3":  GiOpenBook,
   "mel-4":  GiPencil,        "mel-5":  GiStarKey,      "mel-6":  GiBullseye,
   "mel-7":  GiStarMedal,     "mel-8":  GiDiamondTrophy,"mel-9":  GiTrophyCup,
   "mel-10": GiLaurels,       "mel-11": GiMagnifyingGlass, "mel-12": GiCrossedSwords,
+  "mel-13": GiSpeedometer,   "mel-14": GiPodiumWinner,
   "hog-1":  GiEarthAmerica,  "hog-2":  GiScrollQuill,  "hog-3":  GiOpenBook,
   "hog-4":  GiPencil,        "hog-5":  GiFireball,     "hog-6":  GiBullseye,
   "hog-7":  GiStarMedal,     "hog-8":  GiDiamondTrophy,"hog-9":  GiSwordsEmblem,
   "hog-10": GiImperialCrown, "hog-11": GiMagnifyingGlass, "hog-12": GiCrossedSwords,
+  "hog-13": GiSpeedometer,   "hog-14": GiPodiumWinner,
   "gym-1":  GiMountainClimbing,"gym-2": GiScrollQuill, "gym-3":  GiOpenBook,
   "gym-4":  GiPencil,        "gym-5":  GiGems,         "gym-6":  GiBullseye,
   "gym-7":  GiStarMedal,     "gym-8":  GiDiamondTrophy,"gym-9":  GiGraduateCap,
   "gym-10": GiMountaintop,   "gym-11": GiMagnifyingGlass, "gym-12": GiCrossedSwords,
+  "gym-13": GiSpeedometer,   "gym-14": GiPodiumWinner,
   "global-1": GiRocketFlight, "global-2": GiStrong,    "global-3": GiEarthAmerica,
   "global-4": GiStarFormation,"global-5": GiCrown,     "global-6": GiSoccerBall,
   "global-7": GiGraduateCap,
