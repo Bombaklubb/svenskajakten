@@ -77,6 +77,7 @@ export default function ReadingModulePage({ params }: Props) {
       const finalPts = passed ? pts + mod!.bonusPoints : pts;
 
       if (student) {
+        const wasAlreadyCompleted = student.stages[stage!.id]?.readingModules?.[mod!.id]?.completed ?? false;
         const updated = saveModuleProgress(student, stage!.id, "reading", mod!.id, finalPts, passed);
         setStudent(updated);
 
@@ -94,7 +95,7 @@ export default function ReadingModulePage({ params }: Props) {
         const firstChest = allNewChests[0];
         const wasBossUnlocked = gam.bossUnlocked;
         const nowBossUnlocked = wasBossUnlocked || newEx >= BOSS_UNLOCK_THRESHOLD;
-        const mystery = rollMysteryBox(gam.badges);
+        const mystery = wasAlreadyCompleted ? null : rollMysteryBox(gam.badges);
         const extraMysteryChest = mystery?.type === "chest" && mystery.chestType
           ? [{ id: `chest_m_${Date.now()}`, type: mystery.chestType, earnedAt: new Date().toISOString(), opened: false } as import("@/lib/types").Chest]
           : [];

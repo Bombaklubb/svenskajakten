@@ -132,6 +132,7 @@ export default function SpellingModulePage({ params }: Props) {
       const finalPts = passed ? pts + mod!.bonusPoints : pts;
 
       if (student) {
+        const wasAlreadyCompleted = student.stages[stage!.id]?.spellingModules?.[mod!.id]?.completed ?? false;
         const updated = saveModuleProgress(
           student,
           stage!.id,
@@ -165,7 +166,7 @@ export default function SpellingModulePage({ params }: Props) {
         const wasBossUnlocked = gam.bossUnlocked;
         const nowBossUnlocked = wasBossUnlocked || newExercises >= BOSS_UNLOCK_THRESHOLD;
 
-        const mystery = rollMysteryBox(gam.badges);
+        const mystery = wasAlreadyCompleted ? null : rollMysteryBox(gam.badges);
         const extraMysteryChest = mystery?.type === "chest" && mystery.chestType
           ? [{ id: `chest_m_${Date.now()}`, type: mystery.chestType, earnedAt: new Date().toISOString(), opened: false } as import("@/lib/types").Chest]
           : [];

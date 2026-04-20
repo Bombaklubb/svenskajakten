@@ -126,6 +126,7 @@ export default function StavningstestPage({ params }: Props) {
     const pts = passed ? totalCorrect * POINTS_PER_CORRECT + (mod?.bonusPoints ?? 0) : totalCorrect * POINTS_PER_CORRECT;
 
     if (student && mod) {
+      const wasAlreadyCompleted = student.stages[stage!.id]?.stavningstestModules?.[mod.id]?.completed ?? false;
       const updated = saveModuleProgress(student, stage!.id, "stavningstest", mod.id, pts, passed);
       setStudent(updated);
 
@@ -150,7 +151,7 @@ export default function StavningstestPage({ params }: Props) {
       const wasBossUnlocked = gam.bossUnlocked;
       const nowBossUnlocked = wasBossUnlocked || newExercises >= BOSS_UNLOCK_THRESHOLD;
 
-      const mystery = rollMysteryBox(gam.badges);
+      const mystery = wasAlreadyCompleted ? null : rollMysteryBox(gam.badges);
       const extraMysteryChest =
         mystery?.type === "chest" && mystery.chestType
           ? [{ id: `chest_m_${Date.now()}`, type: mystery.chestType, earnedAt: new Date().toISOString(), opened: false } as import("@/lib/types").Chest]

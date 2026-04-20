@@ -65,6 +65,7 @@ export default function WordSearchModulePage({ params }: Props) {
 
     if (!student) { setPhase("done"); return; }
 
+    const wasAlreadyCompleted = student.stages[stageId as any]?.wordsearchModules?.[moduleId]?.completed ?? false;
     const oldPoints = student.totalPoints;
     const updatedStudent = saveModuleProgress(student, stageId as any, "wordsearch", moduleId, totalPoints, true);
     setStudent(updatedStudent);
@@ -81,7 +82,7 @@ export default function WordSearchModulePage({ params }: Props) {
     const allNewChests = [...ptChests.map(c => c.chest), ...exChests.map(c => c.chest), ...achChests.map(c => c.chest)];
     const firstChest = allNewChests[0];
 
-    const mystery = rollMysteryBox(gam.badges);
+    const mystery = wasAlreadyCompleted ? null : rollMysteryBox(gam.badges);
     const extraMysteryChest = mystery?.type === "chest" && mystery.chestType
       ? [{ id: `chest_m_${Date.now()}`, type: mystery.chestType, earnedAt: new Date().toISOString(), opened: false } as import("@/lib/types").Chest]
       : [];
