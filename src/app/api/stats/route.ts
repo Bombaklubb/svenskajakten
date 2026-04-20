@@ -23,8 +23,10 @@ export async function GET(req: NextRequest) {
     // Clean stale online sessions before counting
     await kv.zremrangebyscore("online:sessions", 0, Date.now() - 5 * 60 * 1000);
 
-    // Totals + online + start date
-    const [totalExercises, totalWrong, totalSessions, totalDuration, uniqueDevices, onlineNow, statsStartedAt] =
+    const today = new Date().toISOString().slice(0, 10);
+
+    // Totals + online + start date + today's unique devices
+    const [totalExercises, totalWrong, totalSessions, totalDuration, uniqueDevices, onlineNow, statsStartedAt, todayDevices] =
       await Promise.all([
         kv.get<number>("total:exercises"),
         kv.get<number>("total:wrong"),
@@ -33,6 +35,7 @@ export async function GET(req: NextRequest) {
         kv.scard("unique:devices"),
         kv.zcard("online:sessions"),
         kv.get<string>("stats:started"),
+        kv.scard(`daily:${today}:devices`),
       ]);
 
     // Per-stage exercise counts
@@ -52,6 +55,7 @@ export async function GET(req: NextRequest) {
         durationSeconds: totalDuration ?? 0,
         uniqueDevices: uniqueDevices ?? 0,
         onlineNow: onlineNow ?? 0,
+        todayDevices: todayDevices ?? 0,
       },
       stageExercises,
       statsStartedAt: statsStartedAt ?? null,

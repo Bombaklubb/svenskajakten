@@ -40,6 +40,8 @@ export async function POST(req: NextRequest) {
       // Track unique devices (anonymous random ID from browser)
       if (deviceId && typeof deviceId === "string") {
         ops.push(kv.sadd("unique:devices", deviceId));
+        ops.push(kv.sadd(`daily:${day}:devices`, deviceId));
+        ops.push(kv.expire(`daily:${day}:devices`, 60 * 60 * 24 * 90));
       }
       // Track online now via sorted set (score = timestamp)
       if (sessionId && typeof sessionId === "string") {

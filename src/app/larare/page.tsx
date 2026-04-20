@@ -10,6 +10,7 @@ interface Stats {
     durationSeconds: number;
     uniqueDevices: number;
     onlineNow: number;
+    todayDevices: number;
   };
   stageExercises: Record<string, number>;
   statsStartedAt: string | null;
@@ -216,9 +217,10 @@ export default function LararePage() {
             {/* Totals cards */}
             <section>
               <h2 className="font-black text-gray-800 dark:text-gray-100 mb-3 text-sm uppercase tracking-wider">Översikt</h2>
-              <div className="grid grid-cols-2 gap-3 max-w-xs">
+              <div className="grid grid-cols-3 gap-3 max-w-lg">
                 {[
                   { label: "Inloggade nu", value: String(stats.totals.onlineNow), icon: "🟢", highlight: stats.totals.onlineNow > 0 },
+                  { label: "Inloggade idag", value: stats.totals.todayDevices.toLocaleString("sv-SE"), icon: "📅", highlight: stats.totals.todayDevices > 0 },
                   { label: "Unika enheter", value: stats.totals.uniqueDevices.toLocaleString("sv-SE"), icon: "💻", highlight: false },
                 ].map(({ label, value, icon, highlight }) => (
                   <div
