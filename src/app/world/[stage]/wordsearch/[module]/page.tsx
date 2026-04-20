@@ -65,7 +65,7 @@ export default function WordSearchModulePage({ params }: Props) {
 
     if (!student) { setPhase("done"); return; }
 
-    const wasAlreadyCompleted = student.stages[stageId as any]?.wordsearchModules?.[moduleId]?.completed ?? false;
+    const wasAlreadyCompleted = student.stages[stage!.id]?.wordsearchModules?.[moduleId]?.completed ?? false;
     const oldPoints = student.totalPoints;
     const updatedStudent = saveModuleProgress(student, stageId as any, "wordsearch", moduleId, totalPoints, true);
     setStudent(updatedStudent);
