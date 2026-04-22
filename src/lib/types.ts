@@ -150,12 +150,52 @@ export interface WordSearchModule {
   words: WordSearchWord[];
 }
 
+// ─── Phoneme / Morpheme exercises ────────────────────────────────────────────
+
+export type FonemExerciseType =
+  | "sound-choice"       // Hear a phoneme → choose the letter
+  | "word-first-sound"   // Hear a word → choose its first sound
+  | "blend-sounds"       // Tap individual sounds → choose the word they form
+  | "combine-morphemes"  // Tap word parts → choose the compound word
+  | "listen-and-write";  // Hear a word → tap letters to spell it
+
+export interface FonemExercise {
+  id: string;
+  type: FonemExerciseType;
+  /** Text passed to SpeechSynthesis (the phoneme, word, or sounds) */
+  speakText: string;
+  question: string;
+  /** For choice-based types: answer alternatives */
+  options?: string[];
+  correctIndex?: number;
+  /** For blend-sounds: the individual sounds e.g. ["s","o","l"] */
+  sounds?: string[];
+  /** For combine-morphemes: the word parts e.g. ["sol","sken"] */
+  morphemes?: string[];
+  /** For listen-and-write: the target word */
+  answer?: string;
+  explanation?: string;
+}
+
+export interface FonemModule {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+  level: 1 | 2 | 3;
+  pointsRequired: number;
+  bonusPoints: number;
+  helpText?: string[];
+  exercises: FonemExercise[];
+}
+
 export interface StageContent {
   grammar: GrammarModule[];
   reading: ReadingModule[];
   spelling?: SpellingModule[];
   wordsearch?: WordSearchModule[];
   stavningstest?: SpellingTimedModule[];
+  fonem?: FonemModule[];
 }
 
 // ─── Student progress (stored in localStorage) ───────────────────────────────
@@ -175,6 +215,7 @@ export interface StageProgress {
   spellingModules: Record<string, ModuleProgress>;
   wordsearchModules: Record<string, ModuleProgress>;
   stavningstestModules: Record<string, ModuleProgress>;
+  fonemModules?: Record<string, ModuleProgress>;
 }
 
 export type SkinTone = "light" | "light_brown" | "dark";

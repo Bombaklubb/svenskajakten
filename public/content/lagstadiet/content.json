@@ -8117,5 +8117,417 @@
         }
       ]
     }
+  ],
+  "fonem": [
+    {
+      "id": "fonem-1",
+      "title": "Bokstavsljud",
+      "description": "Lyssna på ljud och koppla dem till rätt bokstav",
+      "icon": "🔊",
+      "level": 1,
+      "pointsRequired": 0,
+      "bonusPoints": 15,
+      "helpText": [
+        "Tryck på 🔊 för att höra ljudet.",
+        "Välj bokstaven som låter likadant.",
+        "Lyssna gärna flera gånger!"
+      ],
+      "exercises": [
+        {
+          "id": "f1-1",
+          "type": "sound-choice",
+          "speakText": "mmm",
+          "question": "Vilket ljud hör du?",
+          "options": [
+            "m",
+            "n",
+            "s"
+          ],
+          "correctIndex": 0,
+          "explanation": "/m/-ljudet hörs i ord som mamma och mus."
+        },
+        {
+          "id": "f1-2",
+          "type": "sound-choice",
+          "speakText": "sss",
+          "question": "Vilket ljud hör du?",
+          "options": [
+            "r",
+            "s",
+            "t"
+          ],
+          "correctIndex": 1,
+          "explanation": "/s/-ljudet hörs i ord som sol och sax."
+        },
+        {
+          "id": "f1-3",
+          "type": "sound-choice",
+          "speakText": "lll",
+          "question": "Vilket ljud hör du?",
+          "options": [
+            "l",
+            "k",
+            "b"
+          ],
+          "correctIndex": 0,
+          "explanation": "/l/-ljudet hörs i ord som lamm och lejon."
+        },
+        {
+          "id": "f1-4",
+          "type": "word-first-sound",
+          "speakText": "mamma",
+          "question": "Vilket ljud börjar ordet med?",
+          "options": [
+            "m",
+            "r",
+            "a"
+          ],
+          "correctIndex": 0,
+          "explanation": "mamma börjar med /m/-ljudet."
+        },
+        {
+          "id": "f1-5",
+          "type": "word-first-sound",
+          "speakText": "sol",
+          "question": "Vilket ljud börjar ordet med?",
+          "options": [
+            "s",
+            "f",
+            "l"
+          ],
+          "correctIndex": 0,
+          "explanation": "sol börjar med /s/-ljudet."
+        },
+        {
+          "id": "f1-6",
+          "type": "word-first-sound",
+          "speakText": "boll",
+          "question": "Vilket ljud börjar ordet med?",
+          "options": [
+            "p",
+            "b",
+            "d"
+          ],
+          "correctIndex": 1,
+          "explanation": "boll börjar med /b/-ljudet."
+        },
+        {
+          "id": "f1-7",
+          "type": "sound-choice",
+          "speakText": "rrr",
+          "question": "Vilket ljud hör du?",
+          "options": [
+            "n",
+            "l",
+            "r"
+          ],
+          "correctIndex": 2,
+          "explanation": "/r/-ljudet hörs i ord som råtta och röd."
+        },
+        {
+          "id": "f1-8",
+          "type": "word-first-sound",
+          "speakText": "rosa",
+          "question": "Vilket ljud börjar ordet med?",
+          "options": [
+            "l",
+            "r",
+            "n"
+          ],
+          "correctIndex": 1,
+          "explanation": "rosa börjar med /r/-ljudet."
+        }
+      ]
+    },
+    {
+      "id": "fonem-2",
+      "title": "Ljud i ord",
+      "description": "Sätt ihop enskilda ljud och bygg ord",
+      "icon": "🔤",
+      "level": 2,
+      "pointsRequired": 0,
+      "bonusPoints": 20,
+      "helpText": [
+        "Tryck på varje ljud-knapp för att höra dem ett och ett.",
+        "Vilka ljud hör du? Välj rätt ord!",
+        "Lyssna gärna flera gånger."
+      ],
+      "exercises": [
+        {
+          "id": "f2-1",
+          "type": "word-first-sound",
+          "speakText": "katt",
+          "question": "Vilket ljud börjar ordet med?",
+          "options": [
+            "k",
+            "t",
+            "g"
+          ],
+          "correctIndex": 0,
+          "explanation": "katt börjar med /k/-ljudet."
+        },
+        {
+          "id": "f2-2",
+          "type": "blend-sounds",
+          "speakText": "sol",
+          "question": "Tryck på ljuden – vilket ord bildas?",
+          "sounds": [
+            "s",
+            "o",
+            "l"
+          ],
+          "options": [
+            "sol",
+            "bol",
+            "los",
+            "sal"
+          ],
+          "correctIndex": 0,
+          "explanation": "s + o + l = sol ☀️"
+        },
+        {
+          "id": "f2-3",
+          "type": "blend-sounds",
+          "speakText": "bil",
+          "question": "Tryck på ljuden – vilket ord bildas?",
+          "sounds": [
+            "b",
+            "i",
+            "l"
+          ],
+          "options": [
+            "lib",
+            "bol",
+            "bil",
+            "ilb"
+          ],
+          "correctIndex": 2,
+          "explanation": "b + i + l = bil 🚗"
+        },
+        {
+          "id": "f2-4",
+          "type": "blend-sounds",
+          "speakText": "mus",
+          "question": "Tryck på ljuden – vilket ord bildas?",
+          "sounds": [
+            "m",
+            "u",
+            "s"
+          ],
+          "options": [
+            "sum",
+            "mus",
+            "usm",
+            "ums"
+          ],
+          "correctIndex": 1,
+          "explanation": "m + u + s = mus 🐭"
+        },
+        {
+          "id": "f2-5",
+          "type": "word-first-sound",
+          "speakText": "ägg",
+          "question": "Vilket ljud börjar ordet med?",
+          "options": [
+            "ä",
+            "e",
+            "i"
+          ],
+          "correctIndex": 0,
+          "explanation": "ägg börjar med /ä/-ljudet."
+        },
+        {
+          "id": "f2-6",
+          "type": "blend-sounds",
+          "speakText": "hus",
+          "question": "Tryck på ljuden – vilket ord bildas?",
+          "sounds": [
+            "h",
+            "u",
+            "s"
+          ],
+          "options": [
+            "hus",
+            "suh",
+            "uhs",
+            "shu"
+          ],
+          "correctIndex": 0,
+          "explanation": "h + u + s = hus 🏠"
+        },
+        {
+          "id": "f2-7",
+          "type": "blend-sounds",
+          "speakText": "ros",
+          "question": "Tryck på ljuden – vilket ord bildas?",
+          "sounds": [
+            "r",
+            "o",
+            "s"
+          ],
+          "options": [
+            "sor",
+            "osr",
+            "ros",
+            "rso"
+          ],
+          "correctIndex": 2,
+          "explanation": "r + o + s = ros 🌹"
+        },
+        {
+          "id": "f2-8",
+          "type": "word-first-sound",
+          "speakText": "orm",
+          "question": "Vilket ljud börjar ordet med?",
+          "options": [
+            "o",
+            "a",
+            "u"
+          ],
+          "correctIndex": 0,
+          "explanation": "orm börjar med /o/-ljudet."
+        }
+      ]
+    },
+    {
+      "id": "fonem-3",
+      "title": "Bygga ord",
+      "description": "Skriv ord och sätt ihop sammansatta ord",
+      "icon": "🧩",
+      "level": 3,
+      "pointsRequired": 0,
+      "bonusPoints": 25,
+      "helpText": [
+        "Nu kombinerar vi ord och ljud!",
+        "Tryck på 🔊 för att höra ordet.",
+        "För sammansatta ord: tryck på varje del och välj rätt kombination."
+      ],
+      "exercises": [
+        {
+          "id": "f3-1",
+          "type": "listen-and-write",
+          "speakText": "sol",
+          "question": "Hör du ordet? Tryck på bokstäverna i rätt ordning!",
+          "answer": "sol",
+          "options": [
+            "n",
+            "p",
+            "r"
+          ],
+          "explanation": "s + o + l = sol ☀️"
+        },
+        {
+          "id": "f3-2",
+          "type": "listen-and-write",
+          "speakText": "bil",
+          "question": "Hör du ordet? Tryck på bokstäverna i rätt ordning!",
+          "answer": "bil",
+          "options": [
+            "n",
+            "a",
+            "k"
+          ],
+          "explanation": "b + i + l = bil 🚗"
+        },
+        {
+          "id": "f3-3",
+          "type": "combine-morphemes",
+          "speakText": "fotboll",
+          "question": "Sätt ihop orden – vad heter det nya ordet?",
+          "morphemes": [
+            "fot",
+            "boll"
+          ],
+          "options": [
+            "fotboll",
+            "bollfot",
+            "fotplan",
+            "bollsport"
+          ],
+          "correctIndex": 0,
+          "explanation": "fot + boll = fotboll ⚽"
+        },
+        {
+          "id": "f3-4",
+          "type": "listen-and-write",
+          "speakText": "katt",
+          "question": "Hör du ordet? Tryck på bokstäverna i rätt ordning!",
+          "answer": "katt",
+          "options": [
+            "m",
+            "e",
+            "p"
+          ],
+          "explanation": "k + a + t + t = katt 🐱"
+        },
+        {
+          "id": "f3-5",
+          "type": "combine-morphemes",
+          "speakText": "solros",
+          "question": "Sätt ihop orden – vad heter det nya ordet?",
+          "morphemes": [
+            "sol",
+            "ros"
+          ],
+          "options": [
+            "rosblad",
+            "solros",
+            "rossol",
+            "solstol"
+          ],
+          "correctIndex": 1,
+          "explanation": "sol + ros = solros 🌻"
+        },
+        {
+          "id": "f3-6",
+          "type": "combine-morphemes",
+          "speakText": "hundhus",
+          "question": "Sätt ihop orden – vad heter det nya ordet?",
+          "morphemes": [
+            "hund",
+            "hus"
+          ],
+          "options": [
+            "hundkoja",
+            "hushund",
+            "hundhus",
+            "hundstall"
+          ],
+          "correctIndex": 2,
+          "explanation": "hund + hus = hundhus 🐕🏠"
+        },
+        {
+          "id": "f3-7",
+          "type": "listen-and-write",
+          "speakText": "hus",
+          "question": "Hör du ordet? Tryck på bokstäverna i rätt ordning!",
+          "answer": "hus",
+          "options": [
+            "l",
+            "n",
+            "t"
+          ],
+          "explanation": "h + u + s = hus 🏠"
+        },
+        {
+          "id": "f3-8",
+          "type": "combine-morphemes",
+          "speakText": "sjöman",
+          "question": "Sätt ihop orden – vad heter det nya ordet?",
+          "morphemes": [
+            "sjö",
+            "man"
+          ],
+          "options": [
+            "sjöman",
+            "mansjö",
+            "sjöhäst",
+            "sjöfogel"
+          ],
+          "correctIndex": 0,
+          "explanation": "sjö + man = sjöman ⚓"
+        }
+      ]
+    }
   ]
 }
