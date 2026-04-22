@@ -263,11 +263,12 @@ export default function FonemModulePage({ params }: Props) {
         {/* Result modal */}
         {showResult && (
           <ResultModal
-            correct={totalCorrect}
-            total={totalExercises}
-            points={totalCorrect * POINTS_PER_CORRECT + (totalCorrect / totalExercises >= 0.6 ? mod!.bonusPoints : 0)}
+            totalCorrect={totalCorrect}
+            totalQuestions={totalExercises}
+            points={totalCorrect * POINTS_PER_CORRECT}
+            bonusPoints={totalCorrect / totalExercises >= 0.6 ? mod!.bonusPoints : 0}
             chestEarned={chestEarned}
-            bossJustUnlocked={bossJustUnlocked}
+            bossUnlocked={bossJustUnlocked}
             onRetry={handleRetry}
             onContinue={handleContinue}
           />
