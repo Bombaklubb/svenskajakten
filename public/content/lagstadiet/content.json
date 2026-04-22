@@ -8136,7 +8136,7 @@
         {
           "id": "f1-1",
           "type": "sound-choice",
-          "speakText": "mmm",
+          "speakText": "m",
           "question": "Vilket ljud hör du?",
           "options": [
             "m",
@@ -8149,7 +8149,7 @@
         {
           "id": "f1-2",
           "type": "sound-choice",
-          "speakText": "sss",
+          "speakText": "s",
           "question": "Vilket ljud hör du?",
           "options": [
             "r",
@@ -8162,7 +8162,7 @@
         {
           "id": "f1-3",
           "type": "sound-choice",
-          "speakText": "lll",
+          "speakText": "l",
           "question": "Vilket ljud hör du?",
           "options": [
             "l",
@@ -8214,7 +8214,7 @@
         {
           "id": "f1-7",
           "type": "sound-choice",
-          "speakText": "rrr",
+          "speakText": "r",
           "question": "Vilket ljud hör du?",
           "options": [
             "n",
