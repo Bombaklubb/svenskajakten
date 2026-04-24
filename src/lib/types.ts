@@ -189,6 +189,9 @@ export interface FonemModule {
   exercises: FonemExercise[];
 }
 
+/** MorfemModule reuses the same exercise format as FonemModule */
+export type MorfemModule = FonemModule;
+
 export interface StageContent {
   grammar: GrammarModule[];
   reading: ReadingModule[];
@@ -196,6 +199,7 @@ export interface StageContent {
   wordsearch?: WordSearchModule[];
   stavningstest?: SpellingTimedModule[];
   fonem?: FonemModule[];
+  morfem?: MorfemModule[];
 }
 
 // ─── Student progress (stored in localStorage) ───────────────────────────────
@@ -216,6 +220,7 @@ export interface StageProgress {
   wordsearchModules: Record<string, ModuleProgress>;
   stavningstestModules: Record<string, ModuleProgress>;
   fonemModules?: Record<string, ModuleProgress>;
+  morfemModules?: Record<string, ModuleProgress>;
 }
 
 export type SkinTone = "light" | "light_brown" | "dark";

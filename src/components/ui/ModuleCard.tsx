@@ -10,7 +10,7 @@ interface ModuleCardProps {
   title: string;
   description: string;
   icon: string;
-  kind: "grammar" | "reading" | "spelling" | "wordsearch" | "stavningstest" | "fonem";
+  kind: "grammar" | "reading" | "spelling" | "wordsearch" | "stavningstest" | "fonem" | "morfem";
   stage: Stage;
   progress: ModuleProgress | null;
   locked: boolean;
@@ -24,6 +24,7 @@ const KIND_LABEL: Record<string, string> = {
   wordsearch: "🔍 Ordsökning",
   stavningstest: "⏱️ Stavningstest",
   fonem: "🔊 Fonem",
+  morfem: "🧩 Morfem",
 };
 
 const STAGE_GRADIENT: Record<string, string> = {

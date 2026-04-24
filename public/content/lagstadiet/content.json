@@ -8529,5 +8529,487 @@
         }
       ]
     }
+  ],
+  "morfem": [
+    {
+      "id": "morfem-1",
+      "title": "Sammansatta ord",
+      "description": "Sätt ihop två ord och bilda ett nytt!",
+      "icon": "🧩",
+      "level": 1,
+      "pointsRequired": 0,
+      "bonusPoints": 15,
+      "helpText": [
+        "Två ord kan sättas ihop till ett nytt ord.",
+        "Exempel: sol + sken = solsken",
+        "Tryck på 🔊 för att höra varje ordel."
+      ],
+      "exercises": [
+        {
+          "id": "m1-1",
+          "type": "combine-morphemes",
+          "speakText": "fotboll",
+          "question": "Sätt ihop orden – vad heter det nya ordet?",
+          "morphemes": [
+            "fot",
+            "boll"
+          ],
+          "options": [
+            "fotboll",
+            "bollfot",
+            "fotplan",
+            "bollsport"
+          ],
+          "correctIndex": 0,
+          "explanation": "fot + boll = fotboll ⚽"
+        },
+        {
+          "id": "m1-2",
+          "type": "combine-morphemes",
+          "speakText": "solros",
+          "question": "Sätt ihop orden – vad heter det nya ordet?",
+          "morphemes": [
+            "sol",
+            "ros"
+          ],
+          "options": [
+            "rossol",
+            "solros",
+            "solblomma",
+            "rosenröd"
+          ],
+          "correctIndex": 1,
+          "explanation": "sol + ros = solros 🌻"
+        },
+        {
+          "id": "m1-3",
+          "type": "combine-morphemes",
+          "speakText": "hundhus",
+          "question": "Sätt ihop orden – vad heter det nya ordet?",
+          "morphemes": [
+            "hund",
+            "hus"
+          ],
+          "options": [
+            "hushund",
+            "hundhus",
+            "hundkoja",
+            "hundstall"
+          ],
+          "correctIndex": 1,
+          "explanation": "hund + hus = hundhus 🐕🏠"
+        },
+        {
+          "id": "m1-4",
+          "type": "combine-morphemes",
+          "speakText": "sjöman",
+          "question": "Sätt ihop orden – vad heter det nya ordet?",
+          "morphemes": [
+            "sjö",
+            "man"
+          ],
+          "options": [
+            "sjöman",
+            "mansjö",
+            "sjöhäst",
+            "sjöfolk"
+          ],
+          "correctIndex": 0,
+          "explanation": "sjö + man = sjöman ⚓"
+        },
+        {
+          "id": "m1-5",
+          "type": "combine-morphemes",
+          "speakText": "jordgubbe",
+          "question": "Sätt ihop orden – vad heter det nya ordet?",
+          "morphemes": [
+            "jord",
+            "gubbe"
+          ],
+          "options": [
+            "gubbejord",
+            "jordgubbe",
+            "jordbär",
+            "gubbjord"
+          ],
+          "correctIndex": 1,
+          "explanation": "jord + gubbe = jordgubbe 🍓"
+        },
+        {
+          "id": "m1-6",
+          "type": "combine-morphemes",
+          "speakText": "sommarlov",
+          "question": "Sätt ihop orden – vad heter det nya ordet?",
+          "morphemes": [
+            "sommar",
+            "lov"
+          ],
+          "options": [
+            "lovsommar",
+            "sommarsol",
+            "sommarlov",
+            "semesterlov"
+          ],
+          "correctIndex": 2,
+          "explanation": "sommar + lov = sommarlov 🌞"
+        },
+        {
+          "id": "m1-7",
+          "type": "combine-morphemes",
+          "speakText": "regnbåge",
+          "question": "Sätt ihop orden – vad heter det nya ordet?",
+          "morphemes": [
+            "regn",
+            "båge"
+          ],
+          "options": [
+            "regnbåge",
+            "bågeregn",
+            "regnbåge",
+            "regnbue"
+          ],
+          "correctIndex": 0,
+          "explanation": "regn + båge = regnbåge 🌈"
+        },
+        {
+          "id": "m1-8",
+          "type": "combine-morphemes",
+          "speakText": "blomkruka",
+          "question": "Sätt ihop orden – vad heter det nya ordet?",
+          "morphemes": [
+            "blom",
+            "kruka"
+          ],
+          "options": [
+            "krukablom",
+            "blomkruka",
+            "blomvas",
+            "blommakorg"
+          ],
+          "correctIndex": 1,
+          "explanation": "blom + kruka = blomkruka 🪴"
+        }
+      ]
+    },
+    {
+      "id": "morfem-2",
+      "title": "Orddelar – hitta rätt",
+      "description": "Lyssna och välj vilka orddelar som bildar ordet",
+      "icon": "🔍",
+      "level": 2,
+      "pointsRequired": 0,
+      "bonusPoints": 20,
+      "helpText": [
+        "Ord kan delas upp i delar – morfem.",
+        "Lyssna på hela ordet och välj rätt delar.",
+        "Exempel: fotboll = fot + boll"
+      ],
+      "exercises": [
+        {
+          "id": "m2-1",
+          "type": "blend-sounds",
+          "speakText": "solsken",
+          "question": "Lyssna – vilka delar ingår i ordet?",
+          "sounds": [
+            "sol",
+            "sken"
+          ],
+          "options": [
+            "solsken",
+            "solljus",
+            "skensol",
+            "ljussken"
+          ],
+          "correctIndex": 0,
+          "explanation": "sol + sken = solsken ☀️"
+        },
+        {
+          "id": "m2-2",
+          "type": "blend-sounds",
+          "speakText": "fågelbo",
+          "question": "Lyssna – vilka delar ingår i ordet?",
+          "sounds": [
+            "fågel",
+            "bo"
+          ],
+          "options": [
+            "bofågel",
+            "fågelbo",
+            "fågelrede",
+            "boplats"
+          ],
+          "correctIndex": 1,
+          "explanation": "fågel + bo = fågelbo 🐦🏠"
+        },
+        {
+          "id": "m2-3",
+          "type": "blend-sounds",
+          "speakText": "barnbok",
+          "question": "Lyssna – vilka delar ingår i ordet?",
+          "sounds": [
+            "barn",
+            "bok"
+          ],
+          "options": [
+            "bokbarn",
+            "barnbok",
+            "barnsaga",
+            "läsbok"
+          ],
+          "correctIndex": 1,
+          "explanation": "barn + bok = barnbok 📚"
+        },
+        {
+          "id": "m2-4",
+          "type": "blend-sounds",
+          "speakText": "glasögon",
+          "question": "Lyssna – vilka delar ingår i ordet?",
+          "sounds": [
+            "glas",
+            "ögon"
+          ],
+          "options": [
+            "ögensglas",
+            "glasögon",
+            "glasögon",
+            "synglas"
+          ],
+          "correctIndex": 1,
+          "explanation": "glas + ögon = glasögon 👓"
+        },
+        {
+          "id": "m2-5",
+          "type": "blend-sounds",
+          "speakText": "tandborste",
+          "question": "Lyssna – vilka delar ingår i ordet?",
+          "sounds": [
+            "tand",
+            "borste"
+          ],
+          "options": [
+            "borstentand",
+            "tandborste",
+            "tandrengöring",
+            "munsköljning"
+          ],
+          "correctIndex": 1,
+          "explanation": "tand + borste = tandborste 🪥"
+        },
+        {
+          "id": "m2-6",
+          "type": "blend-sounds",
+          "speakText": "pannkaka",
+          "question": "Lyssna – vilka delar ingår i ordet?",
+          "sounds": [
+            "pann",
+            "kaka"
+          ],
+          "options": [
+            "pannkaka",
+            "kakpann",
+            "plättar",
+            "pannbröd"
+          ],
+          "correctIndex": 0,
+          "explanation": "pann + kaka = pannkaka 🥞"
+        },
+        {
+          "id": "m2-7",
+          "type": "blend-sounds",
+          "speakText": "tågstation",
+          "question": "Lyssna – vilka delar ingår i ordet?",
+          "sounds": [
+            "tåg",
+            "station"
+          ],
+          "options": [
+            "stationståg",
+            "tågstation",
+            "tåghållplats",
+            "järnväg"
+          ],
+          "correctIndex": 1,
+          "explanation": "tåg + station = tågstation 🚂"
+        },
+        {
+          "id": "m2-8",
+          "type": "blend-sounds",
+          "speakText": "snögubbe",
+          "question": "Lyssna – vilka delar ingår i ordet?",
+          "sounds": [
+            "snö",
+            "gubbe"
+          ],
+          "options": [
+            "gubbesnö",
+            "snögubbe",
+            "snöman",
+            "snöboll"
+          ],
+          "correctIndex": 1,
+          "explanation": "snö + gubbe = snögubbe ⛄"
+        }
+      ]
+    },
+    {
+      "id": "morfem-3",
+      "title": "Förstavelser och ändelser",
+      "description": "Lär dig hur förstavelser och ändelser förändrar ord",
+      "icon": "🔤",
+      "level": 3,
+      "pointsRequired": 0,
+      "bonusPoints": 25,
+      "helpText": [
+        "En förstavelse läggs FÖRE ett ord: o + lycklig = olycklig",
+        "En ändelse läggs EFTER ett ord: spring + er = springer",
+        "Prova att sätta ihop delarna och lyssna!"
+      ],
+      "exercises": [
+        {
+          "id": "m3-1",
+          "type": "combine-morphemes",
+          "speakText": "olycklig",
+          "question": "Förstavelsen 'o' betyder 'inte'. Vad blir ordet?",
+          "morphemes": [
+            "o",
+            "lycklig"
+          ],
+          "options": [
+            "olycklig",
+            "lyckligooo",
+            "olycksa",
+            "inte lycklig"
+          ],
+          "correctIndex": 0,
+          "explanation": "o + lycklig = olycklig (= inte lycklig) 😢"
+        },
+        {
+          "id": "m3-2",
+          "type": "combine-morphemes",
+          "speakText": "springer",
+          "question": "Ändelsen '-er' visar nutid. Vad blir ordet?",
+          "morphemes": [
+            "spring",
+            "er"
+          ],
+          "options": [
+            "springen",
+            "springer",
+            "sprang",
+            "springa"
+          ],
+          "correctIndex": 1,
+          "explanation": "spring + er = springer 🏃"
+        },
+        {
+          "id": "m3-3",
+          "type": "combine-morphemes",
+          "speakText": "omöjlig",
+          "question": "Förstavelsen 'o' betyder 'inte'. Vad blir ordet?",
+          "morphemes": [
+            "o",
+            "möjlig"
+          ],
+          "options": [
+            "omöjlig",
+            "möjligo",
+            "inte möjlig",
+            "omöjligt"
+          ],
+          "correctIndex": 0,
+          "explanation": "o + möjlig = omöjlig (= inte möjlig) 🚫"
+        },
+        {
+          "id": "m3-4",
+          "type": "combine-morphemes",
+          "speakText": "lärare",
+          "question": "Ändelsen '-are' betyder 'en som gör'. Vad blir ordet?",
+          "morphemes": [
+            "lär",
+            "are"
+          ],
+          "options": [
+            "läraren",
+            "lärare",
+            "lärar",
+            "lärandes"
+          ],
+          "correctIndex": 1,
+          "explanation": "lär + are = lärare (= en som lär ut) 👩‍🏫"
+        },
+        {
+          "id": "m3-5",
+          "type": "combine-morphemes",
+          "speakText": "oärlig",
+          "question": "Förstavelsen 'o' betyder 'inte'. Vad blir ordet?",
+          "morphemes": [
+            "o",
+            "ärlig"
+          ],
+          "options": [
+            "oärlig",
+            "ärligare",
+            "inte ärlig",
+            "ärligo"
+          ],
+          "correctIndex": 0,
+          "explanation": "o + ärlig = oärlig (= inte ärlig) 🤥"
+        },
+        {
+          "id": "m3-6",
+          "type": "combine-morphemes",
+          "speakText": "simmare",
+          "question": "Ändelsen '-are' betyder 'en som gör'. Vad blir ordet?",
+          "morphemes": [
+            "sim",
+            "are"
+          ],
+          "options": [
+            "simaren",
+            "simmare",
+            "simmande",
+            "simer"
+          ],
+          "correctIndex": 1,
+          "explanation": "sim + mare = simmare (= en som simmar) 🏊"
+        },
+        {
+          "id": "m3-7",
+          "type": "combine-morphemes",
+          "speakText": "oskyldig",
+          "question": "Förstavelsen 'o' betyder 'inte'. Vad blir ordet?",
+          "morphemes": [
+            "o",
+            "skyldig"
+          ],
+          "options": [
+            "skyldigo",
+            "oskyldig",
+            "oskyld",
+            "skyldigare"
+          ],
+          "correctIndex": 1,
+          "explanation": "o + skyldig = oskyldig (= inte skyldig) 😇"
+        },
+        {
+          "id": "m3-8",
+          "type": "combine-morphemes",
+          "speakText": "målare",
+          "question": "Ändelsen '-are' betyder 'en som gör'. Vad blir ordet?",
+          "morphemes": [
+            "mål",
+            "are"
+          ],
+          "options": [
+            "målaren",
+            "målare",
+            "målande",
+            "måler"
+          ],
+          "correctIndex": 1,
+          "explanation": "mål + are = målare (= en som målar) 🎨"
+        }
+      ]
+    }
   ]
 }

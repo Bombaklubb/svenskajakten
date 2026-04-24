@@ -18,6 +18,7 @@ function emptyStageProgress(stageId: StageId): StageProgress {
     wordsearchModules: {},
     stavningstestModules: {},
     fonemModules: {},
+    morfemModules: {},
   };
 }
 
@@ -146,7 +147,7 @@ export function saveHero(hero: HeroConfig): void {
 export function getModuleProgress(
   data: StudentData,
   stageId: StageId,
-  kind: "grammar" | "reading" | "spelling" | "wordsearch" | "stavningstest" | "fonem",
+  kind: "grammar" | "reading" | "spelling" | "wordsearch" | "stavningstest" | "fonem" | "morfem",
   moduleId: string
 ): ModuleProgress | null {
   const stage = data.stages[stageId];
@@ -156,6 +157,7 @@ export function getModuleProgress(
     : kind === "spelling" ? (stage.spellingModules ?? {})
     : kind === "stavningstest" ? (stage.stavningstestModules ?? {})
     : kind === "fonem" ? (stage.fonemModules ?? {})
+    : kind === "morfem" ? (stage.morfemModules ?? {})
     : (stage.wordsearchModules ?? {});
   return map[moduleId] ?? null;
 }
@@ -163,7 +165,7 @@ export function getModuleProgress(
 export function saveModuleProgress(
   data: StudentData,
   stageId: StageId,
-  kind: "grammar" | "reading" | "spelling" | "wordsearch" | "stavningstest" | "fonem",
+  kind: "grammar" | "reading" | "spelling" | "wordsearch" | "stavningstest" | "fonem" | "morfem",
   moduleId: string,
   points: number,
   completed: boolean
@@ -173,12 +175,14 @@ export function saveModuleProgress(
   if (!stage.wordsearchModules) stage.wordsearchModules = {};
   if (!stage.stavningstestModules) stage.stavningstestModules = {};
   if (!stage.fonemModules) stage.fonemModules = {};
+  if (!stage.morfemModules) stage.morfemModules = {};
   const map =
     kind === "grammar" ? stage.grammarModules
     : kind === "reading" ? stage.readingModules
     : kind === "spelling" ? stage.spellingModules
     : kind === "stavningstest" ? stage.stavningstestModules
     : kind === "fonem" ? stage.fonemModules
+    : kind === "morfem" ? stage.morfemModules
     : stage.wordsearchModules;
   const existing = map[moduleId];
   const prevPoints = existing?.points ?? 0;
