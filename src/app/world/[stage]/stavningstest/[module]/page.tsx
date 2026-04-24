@@ -49,6 +49,7 @@ export default function StavningstestPage({ params }: Props) {
   const [chestEarned, setChestEarned] = useState<ChestType | undefined>();
   const [bossJustUnlocked, setBossJustUnlocked] = useState(false);
   const [mysteryBox, setMysteryBox] = useState<MysteryBoxReward | null>(null);
+  const [prevAttemptCount, setPrevAttemptCount] = useState(0);
 
   const inputRef = useRef<HTMLInputElement>(null);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -127,6 +128,7 @@ export default function StavningstestPage({ params }: Props) {
 
     if (student && mod) {
       const wasAlreadyCompleted = student.stages[stage!.id]?.stavningstestModules?.[mod.id]?.completed ?? false;
+      setPrevAttemptCount(student.stages[stage!.id]?.stavningstestModules?.[mod.id]?.attempts ?? 0);
       const updated = saveModuleProgress(student, stage!.id, "stavningstest", mod.id, pts, passed);
       setStudent(updated);
 
@@ -453,6 +455,7 @@ export default function StavningstestPage({ params }: Props) {
           onContinue={handleContinue}
           onRetry={handleRetry}
           passedOverride={totalCorrect === totalWords}
+          prevAttempts={prevAttemptCount}
           subtitle={
             totalCorrect === totalWords
               ? "🎉 Perfekt! Alla ord rätt – testet klarat!"

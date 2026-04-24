@@ -54,6 +54,7 @@ export default function SpellingModulePage({ params }: Props) {
   const [chestEarned, setChestEarned] = useState<ChestType | undefined>();
   const [bossJustUnlocked, setBossJustUnlocked] = useState(false);
   const [mysteryBox, setMysteryBox] = useState<MysteryBoxReward | null>(null);
+  const [prevAttemptCount, setPrevAttemptCount] = useState(0);
 
   useEffect(() => {
     const s = loadStudent();
@@ -133,6 +134,7 @@ export default function SpellingModulePage({ params }: Props) {
 
       if (student) {
         const wasAlreadyCompleted = student.stages[stage!.id]?.spellingModules?.[mod!.id]?.completed ?? false;
+        setPrevAttemptCount(student.stages[stage!.id]?.spellingModules?.[mod!.id]?.attempts ?? 0);
         const updated = saveModuleProgress(
           student,
           stage!.id,
@@ -389,6 +391,7 @@ export default function SpellingModulePage({ params }: Props) {
           bossUnlocked={bossJustUnlocked}
           onContinue={handleContinue}
           onRetry={handleRetry}
+          prevAttempts={prevAttemptCount}
         />
       )}
 

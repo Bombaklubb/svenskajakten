@@ -7,7 +7,7 @@ import { notFound } from "next/navigation";
 import Header from "@/components/ui/Header";
 import WordSearch from "@/components/exercises/WordSearch";
 import { loadStudent, saveStudent, saveModuleProgress, loadGamification, saveGamification } from "@/lib/storage";
-import { chestsEarnedFromPoints, chestsEarnedFromExercises, chestsEarnedFromAchievements, rollMysteryBox, capNewChests, BOSS_UNLOCK_THRESHOLD } from "@/lib/gamification";
+import { chestsEarnedFromPoints, chestsEarnedFromExercises, chestsEarnedFromAchievements, rollMysteryBox, capNewChests, BOSS_UNLOCK_THRESHOLD, getPointsMultiplier } from "@/lib/gamification";
 import { ACHIEVEMENTS, isUnlocked } from "@/lib/achievements";
 import MysteryBoxPopup from "@/components/ui/MysteryBoxPopup";
 import { BlurFade } from "@/components/magicui/blur-fade";
@@ -33,6 +33,7 @@ export default function WordSearchModulePage({ params }: Props) {
   const [chestEarned, setChestEarned] = useState<ChestType | undefined>();
   const [bossJustUnlocked, setBossJustUnlocked] = useState(false);
   const [mysteryBox, setMysteryBox] = useState<MysteryBoxReward | null>(null);
+  const [prevAttemptCount, setPrevAttemptCount] = useState(0);
 
   useEffect(() => {
     const s = loadStudent();
@@ -66,6 +67,7 @@ export default function WordSearchModulePage({ params }: Props) {
     if (!student) { setPhase("done"); return; }
 
     const wasAlreadyCompleted = student.stages[stage!.id]?.wordsearchModules?.[moduleId]?.completed ?? false;
+    setPrevAttemptCount(student.stages[stage!.id]?.wordsearchModules?.[moduleId]?.attempts ?? 0);
     const oldPoints = student.totalPoints;
     const updatedStudent = saveModuleProgress(student, stageId as any, "wordsearch", moduleId, totalPoints, true);
     setStudent(updatedStudent);
@@ -193,6 +195,19 @@ export default function WordSearchModulePage({ params }: Props) {
               <h2 className="text-3xl font-black text-sv-900 dark:text-gray-100 mb-2">Alla ord hittade!</h2>
               <p className="text-sv-400 dark:text-gray-400 mb-6 font-medium">Fantastiskt jobbat – du hittade alla {mod.words.length} ord!</p>
 
+              {prevAttemptCount > 0 && (() => {
+                const m = getPointsMultiplier(prevAttemptCount);
+                return (
+                  <div className="bg-blue-50 dark:bg-blue-900/30 border-2 border-blue-200 dark:border-blue-700 rounded-2xl p-3 mb-4 text-left">
+                    <p className="text-sm font-bold text-blue-800 dark:text-blue-300">
+                      {m === 0
+                        ? "ℹ️ Du har gjort denna övning flera gånger – du får inga fler poäng för den."
+                        : `ℹ️ Du har gjort denna övning förut – du får ${Math.round(m * 100)}% av poängen.`}
+                    </p>
+                  </div>
+                );
+              })()}
+
               <div
                 className="bg-gradient-to-b from-amber-50 to-amber-100 dark:bg-amber-900/30 border-3 border-amber-300 dark:border-amber-700 rounded-2xl p-5 mb-4"
                 style={{ boxShadow: "0 4px 0 0 rgba(245,158,11,0.25)" }}
@@ -200,12 +215,12 @@ export default function WordSearchModulePage({ params }: Props) {
                 <div className="flex items-center justify-center gap-3 text-amber-700 dark:text-amber-300">
                   <span className="text-3xl">⭐</span>
                   <div>
-                    <span className="text-3xl font-black">{earnedPoints}</span>
+                    <span className="text-3xl font-black">{Math.round(earnedPoints * getPointsMultiplier(prevAttemptCount))}</span>
                     <span className="text-lg ml-1 font-bold">poäng</span>
                   </div>
                 </div>
                 <p className="text-sm text-amber-600 dark:text-amber-400 mt-1.5 font-semibold">
-                  inkl. {mod.bonusPoints} bonuspoäng för att hitta alla ord!
+                  inkl. {Math.round(mod.bonusPoints * getPointsMultiplier(prevAttemptCount))} bonuspoäng för att hitta alla ord!
                 </p>
               </div>
 

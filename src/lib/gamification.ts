@@ -9,7 +9,14 @@ import type {
 
 export const BOSS_UNLOCK_THRESHOLD = 5;
 export const MYSTERY_BOX_CHANCE = 0.15;
-export const MAX_CHESTS_PER_TYPE = 16;
+export const MAX_CHESTS_PER_TYPE = 30;
+
+export function getPointsMultiplier(prevAttempts: number): number {
+  if (prevAttempts === 0) return 1.0;
+  if (prevAttempts === 1) return 0.5;
+  if (prevAttempts === 2) return 0.25;
+  return 0;
+}
 
 export const POINT_CHEST_MILESTONES: { points: number; type: ChestType }[] = [
   { points: 10,    type: "wood" },

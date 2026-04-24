@@ -57,6 +57,7 @@ export default function FonemModulePage({ params }: Props) {
   const [chestEarned, setChestEarned] = useState<ChestType | undefined>();
   const [bossJustUnlocked, setBossJustUnlocked] = useState(false);
   const [mysteryBox, setMysteryBox] = useState<MysteryBoxReward | null>(null);
+  const [prevAttemptCount, setPrevAttemptCount] = useState(0);
 
   useEffect(() => {
     setStudent(loadStudent());
@@ -104,6 +105,7 @@ export default function FonemModulePage({ params }: Props) {
       if (student) {
         const wasAlreadyCompleted =
           student.stages[stage!.id]?.fonemModules?.[mod!.id]?.completed ?? false;
+        setPrevAttemptCount(student.stages[stage!.id]?.fonemModules?.[mod!.id]?.attempts ?? 0);
 
         const updated = saveModuleProgress(
           student,
@@ -271,6 +273,7 @@ export default function FonemModulePage({ params }: Props) {
             bossUnlocked={bossJustUnlocked}
             onRetry={handleRetry}
             onContinue={handleContinue}
+            prevAttempts={prevAttemptCount}
           />
         )}
 

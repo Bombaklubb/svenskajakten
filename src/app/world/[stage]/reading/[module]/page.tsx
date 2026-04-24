@@ -36,6 +36,7 @@ export default function ReadingModulePage({ params }: Props) {
   const [chestEarned, setChestEarned] = useState<ChestType | undefined>();
   const [bossJustUnlocked, setBossJustUnlocked] = useState(false);
   const [mysteryBox, setMysteryBox] = useState<MysteryBoxReward | null>(null);
+  const [prevAttemptCount, setPrevAttemptCount] = useState(0);
 
   useEffect(() => {
     const s = loadStudent();
@@ -78,6 +79,7 @@ export default function ReadingModulePage({ params }: Props) {
 
       if (student) {
         const wasAlreadyCompleted = student.stages[stage!.id]?.readingModules?.[mod!.id]?.completed ?? false;
+        setPrevAttemptCount(student.stages[stage!.id]?.readingModules?.[mod!.id]?.attempts ?? 0);
         const updated = saveModuleProgress(student, stage!.id, "reading", mod!.id, finalPts, passed);
         setStudent(updated);
 
@@ -319,6 +321,7 @@ export default function ReadingModulePage({ params }: Props) {
           bossUnlocked={bossJustUnlocked}
           onContinue={handleContinue}
           onRetry={handleRetry}
+          prevAttempts={prevAttemptCount}
         />
       )}
 

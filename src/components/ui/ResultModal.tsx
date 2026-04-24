@@ -1,6 +1,7 @@
 "use client";
 
 import type { ChestType } from "@/lib/types";
+import { getPointsMultiplier } from "@/lib/gamification";
 import { Button } from "@/components/ui/button";
 
 const CHEST_LABELS: Record<ChestType, string> = {
@@ -31,6 +32,7 @@ interface ResultModalProps {
   onRetry: () => void;
   passedOverride?: boolean;
   subtitle?: string;
+  prevAttempts?: number;
 }
 
 export default function ResultModal({
@@ -44,9 +46,13 @@ export default function ResultModal({
   onRetry,
   passedOverride,
   subtitle,
+  prevAttempts = 0,
 }: ResultModalProps) {
   const pct = Math.round((totalCorrect / totalQuestions) * 100);
   const passed = passedOverride !== undefined ? passedOverride : pct >= 60;
+  const multiplier = getPointsMultiplier(prevAttempts);
+  const displayPoints = Math.round(points * multiplier);
+  const displayBonus = Math.round(bonusPoints * multiplier);
 
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fade-in">
@@ -90,6 +96,17 @@ export default function ResultModal({
           </div>
         </div>
 
+        {/* Replay notice */}
+        {prevAttempts > 0 && (
+          <div className="bg-blue-50 dark:bg-blue-900/30 border-2 border-blue-200 dark:border-blue-700 rounded-2xl p-3 mb-4 text-left">
+            <p className="text-sm font-bold text-blue-800 dark:text-blue-300">
+              {multiplier === 0
+                ? "ℹ️ Du har gjort denna övning flera gånger – du får inga fler poäng för den."
+                : `ℹ️ Du har gjort denna övning förut – du får ${Math.round(multiplier * 100)}% av poängen.`}
+            </p>
+          </div>
+        )}
+
         {/* Points */}
         <div
           className="bg-gradient-to-b from-amber-50 to-amber-100 dark:bg-amber-900/30 border-3 border-amber-300 dark:border-amber-700 rounded-2xl p-5 mb-4"
@@ -98,13 +115,13 @@ export default function ResultModal({
           <div className="flex items-center justify-center gap-3 text-amber-700 dark:text-amber-300">
             <span className="text-3xl">⭐</span>
             <div>
-              <span className="text-3xl font-black">{points}</span>
+              <span className="text-3xl font-black">{displayPoints}</span>
               <span className="text-lg ml-1 font-bold">poäng</span>
             </div>
           </div>
-          {bonusPoints > 0 && passed && (
+          {displayBonus > 0 && passed && (
             <p className="text-sm text-amber-600 dark:text-amber-400 mt-2 font-bold">
-              + {bonusPoints} bonuspoäng för godkänt! 🏆
+              + {displayBonus} bonuspoäng för godkänt! 🏆
             </p>
           )}
         </div>

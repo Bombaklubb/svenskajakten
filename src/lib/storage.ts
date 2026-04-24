@@ -1,5 +1,5 @@
 import type { StudentData, StageId, ModuleProgress, StageProgress, HeroConfig, GamificationData, RetryItem } from "./types";
-import { defaultGamificationData } from "./gamification";
+import { defaultGamificationData, getPointsMultiplier } from "./gamification";
 
 // Legacy key (single student) – kept only for migration
 const LEGACY_KEY = "svenskajakten_student";
@@ -185,14 +185,15 @@ export function saveModuleProgress(
     : kind === "morfem" ? stage.morfemModules
     : stage.wordsearchModules;
   const existing = map[moduleId];
-  const prevPoints = existing?.points ?? 0;
-  const addedPoints = Math.max(0, points - prevPoints);
+  const prevAttempts = existing?.attempts ?? 0;
+  const multiplier = getPointsMultiplier(prevAttempts);
+  const addedPoints = Math.round(points * multiplier);
 
   map[moduleId] = {
     moduleId,
     completed: existing?.completed || completed,
-    points: Math.max(prevPoints, points),
-    attempts: (existing?.attempts ?? 0) + 1,
+    points: (existing?.points ?? 0) + addedPoints,
+    attempts: prevAttempts + 1,
     lastAttempt: new Date().toISOString(),
   };
 
