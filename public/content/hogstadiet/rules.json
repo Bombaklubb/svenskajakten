@@ -7,18 +7,23 @@
       "content": [
         {
           "term": "Huvudsats",
-          "explanation": "En sats som kan stå ensam och bilda en fullständig mening.",
-          "examples": ["Jag vet.", "Vi stannade hemma.", "Hon sjunger."]
+          "explanation": "En sats som kan stå ensam och bilda en fullständig mening. Har rak eller omvänd ordföljd.",
+          "examples": ["Jag vet att du har rätt.", "Vi stannade hemma.", "Hon sjunger när hon är glad."]
         },
         {
           "term": "Bisats",
-          "explanation": "En sats som är beroende av huvudsatsen och inleds av ett bindeord.",
-          "examples": ["...att du har rätt", "...eftersom det regnade", "...när hon kom"]
+          "explanation": "En sats som är beroende av huvudsatsen. Inleds av ett bindeord och kan inte stå ensam.",
+          "examples": ["...att du har rätt", "...eftersom det regnade", "...när hon kom", "...om du vill"]
         },
         {
           "term": "Vanliga bindeord",
-          "explanation": "Ord som inleder bisatser.",
-          "examples": ["att, om, när, eftersom, fast, trots att, som, vilken, vars"]
+          "explanation": "Subjunktioner och relativa pronomen som inleder bisatser.",
+          "examples": ["att, om, när, eftersom, fast, trots att, så att, som, vilken, vars, var, dit"]
+        },
+        {
+          "term": "Satsadverbial i bisats",
+          "explanation": "I bisatsen placeras adverbial (inte, alltid, ofta) FÖRE predikatet – tvärtom mot i huvudsatsen.",
+          "examples": ["Jag vet att han inte kom. (bisats: inte + kom)", "Hon sa att hon aldrig äter det."]
         }
       ]
     },
@@ -29,17 +34,17 @@
       "content": [
         {
           "term": "Rak ordföljd",
-          "explanation": "Subjekt + Predikat + Objekt. Den vanligaste ordföljden.",
-          "examples": ["Han åt pizza igår.", "Lisa läser en bok.", "Vi spelar fotboll."]
+          "explanation": "Subjekt + Predikat (+ Objekt). Den grundläggande svenska ordföljden.",
+          "examples": ["Han åt pizza igår.", "Lisa läser en bok.", "Vi spelar fotboll idag."]
         },
         {
           "term": "Omvänd ordföljd",
-          "explanation": "Adverbial + Predikat + Subjekt. Används när meningen inleds med adverbial.",
-          "examples": ["Igår åt han pizza.", "Aldrig har jag sett det.", "Imorgon reser vi."]
+          "explanation": "Inleds av adverbial eller bisats → predikatet kommer FÖRE subjektet.",
+          "examples": ["Igår åt han pizza.", "Aldrig har jag sett det.", "Om det regnar, stannar vi inne."]
         },
         {
           "term": "Bisatsens ordföljd",
-          "explanation": "I bisatsen: bindeord + subjekt + bisatsadverbial + predikat.",
+          "explanation": "I bisatsen: bindeord + subjekt + (satsadverbial) + predikat + (objekt).",
           "examples": ["...att han aldrig kom dit", "...om du inte vill", "...när hon inte är hemma"]
         }
       ]
@@ -51,18 +56,18 @@
       "content": [
         {
           "term": "Genus (utrumord / neutrumord)",
-          "explanation": "Utrumord (en-ord): en stor bil. Neutrumord (ett-ord): ett stort hus.",
-          "examples": ["en röd blomma (utrum)", "ett rött hus (neutrum)", "den/det"]
+          "explanation": "Utrumord (n-ord) tar 'en'. Neutrumord (t-ord) tar 'ett'. Påverkar adjektivets form.",
+          "examples": ["en stor bil (utrum)", "ett stort hus (neutrum)", "den/det, sin/sitt/sina"]
         },
         {
           "term": "Adjektivböjning",
-          "explanation": "Adjektiv böjs efter substantivets genus och numerus (singular/plural).",
-          "examples": ["en stor bil", "ett stort hus", "stora bilar", "den stora bilen"]
+          "explanation": "Adjektiv böjs efter substantivets genus och numerus.",
+          "examples": ["en röd blomma – ett rött hus – röda blommor", "den röda blomman – det röda huset"]
         },
         {
           "term": "Predikativ kongruens",
-          "explanation": "Adjektivet i predikativ ställning böjs som neutrumform för n-ord, men med -a i bestämd form.",
-          "examples": ["Bilen är stor.", "Huset är stort.", "Bilarna är stora."]
+          "explanation": "Adjektiv efter kopulaverb (vara, bli, verka) böjs efter subjektet.",
+          "examples": ["Bilen är stor. (utrum)", "Huset är stort. (neutrum)", "Bilarna är stora. (plural)"]
         }
       ]
     },
@@ -73,62 +78,104 @@
       "content": [
         {
           "term": "De och dem",
-          "explanation": "De = subjekt (byt mot 'vi'). Dem = objekt (byt mot 'oss').",
-          "examples": ["De spelar. (Vi spelar ✓)", "Jag ser dem. (Jag ser oss ✓)"]
+          "explanation": "De = subjekt (byt mot 'vi'). Dem = objekt (byt mot 'oss'). Byttestet avgör.",
+          "examples": ["De spelar. → Vi spelar. ✓ (De är rätt)", "Jag ser dem. → Jag ser oss. ✓ (dem är rätt)"]
         },
         {
-          "term": "Sin och hans/hennes",
-          "explanation": "Sin/sitt/sina: reflexivt – ägaren är subjektet. Hans/hennes/deras: ägaren är utanför satsen.",
-          "examples": ["Kalle tvättade sina händer. (Kalles egna)", "Hon tog hans bok. (inte hennes)"]
+          "term": "Sin/sitt/sina och hans/hennes/deras",
+          "explanation": "Sin/sitt/sina: reflexivt – ägaren är meningen eget subjekt. Hans/hennes: ägaren är utanför satsen.",
+          "examples": ["Kalle tvättade sina händer. (Kalles egna)", "Lisa tog hans bok. (inte Lisas bok)"]
         },
         {
-          "term": "Sig och honom/henne",
-          "explanation": "Sig: reflexivt pronomen när objektet syftar på subjektet.",
-          "examples": ["Han tvättade sig. (Han tvättade sig själv)", "Hon klädde sig. (sig själv)"]
+          "term": "Lånord och homofoner",
+          "explanation": "Ord som låter lika men stavas och betyder olika – kontexten avgör.",
+          "examples": ["ren (djuret) – rena (adjektiv)", "sill (fisk) – sil (köksutensilium)", "sak – such"]
+        },
+        {
+          "term": "Var eller vart?",
+          "explanation": "Var = läge/plats. Vart = riktning dit.",
+          "examples": ["Var är du? (läge)", "Vart ska du? (riktning dit)", "Varifrån kom du? (riktning därifrån)"]
         }
       ]
     },
     {
       "id": "sammansattning",
-      "title": "Samman- och särskrivning",
+      "title": "Samman- och särskrivning samt ordbildning",
       "icon": "🔗",
       "content": [
         {
           "term": "Sammansatta ord skrivs ihop",
-          "explanation": "På svenska skrivs sammansatta ord alltid ihop – inte med mellanslag.",
-          "examples": ["skolbuss (inte skol buss)", "rödvin (inte röd vin)", "handväska"]
+          "explanation": "På svenska skrivs sammansatta ord alltid utan mellanslag.",
+          "examples": ["skolbuss (inte skol buss)", "rödvin (inte röd vin)", "handväska, semesterresa"]
         },
         {
           "term": "Adjektiv + substantiv skrivs isär",
-          "explanation": "Adjektiv som bestämmer substantiv skrivs som separata ord.",
-          "examples": ["en gammal bil", "ett rött äpple", "stora hundar"]
+          "explanation": "När adjektivet är en fri bestämning till substantivet skrivs det som separat ord.",
+          "examples": ["en gammal bil", "ett rött äpple", "stora hundar", "en fri kvinna"]
         },
         {
           "term": "Foge-s",
-          "explanation": "Ibland sätts ett s mellan de sammansatta leden.",
-          "examples": ["arbetsplats (arbete+s+plats)", "landsväg (land+s+väg)", "statsminister"]
+          "explanation": "Ibland fogas ett s in mellan leden i ett sammansatt ord.",
+          "examples": ["arbete + plats → arbetsplats", "land + väg → landsväg", "stat + minister → statsminister"]
+        },
+        {
+          "term": "Ordbildning med prefix och suffix",
+          "explanation": "Ord byggs med förstavelser (prefix) och ändelser (suffix) för att skapa ny betydelse.",
+          "examples": ["o- (olik, ojämn)", "miss- (misslyckas)", "-lig (rolig, farlig)", "-ning (läsning, ökning)"]
         }
       ]
     },
     {
-      "id": "skiljetecken-avancerat",
-      "title": "Skiljetecken – avancerat",
+      "id": "skiljetecken-text",
+      "title": "Skiljetecken och textskapande",
       "icon": "⁉️",
       "content": [
         {
           "term": "Semikolon (;)",
-          "explanation": "Förbinder nära relaterade meningar utan konjunktion.",
+          "explanation": "Förbinder två nära relaterade meningar utan konjunktion. Starkare än komma, svagare än punkt.",
           "examples": ["Det regnade; vi stannade inne.", "Hon kom tidigt; han kom sent."]
         },
         {
           "term": "Tankstreck (–)",
-          "explanation": "Markerar inskott, paus eller ersätter parentes för dramatisk effekt.",
-          "examples": ["Sverige – landet i norr – är vackert.", "Hon log – och allt förändrades."]
+          "explanation": "Markerar inskott, paus eller ersätter parentes. Används även som talstreck i dialog.",
+          "examples": ["Sverige – landet i norr – är vackert.", "– Kom hit! ropade Maja."]
         },
         {
-          "term": "Kolon (:)",
-          "explanation": "Inleder lista, förklaring eller direktcitat.",
-          "examples": ["Vi behöver: mjölk och bröd.", "Han sa: 'Hej!'"]
+          "term": "Talstreck i dialog",
+          "explanation": "Ny replik = ny rad + talstreck. Verbet som anger vem som talar skrivs med liten bokstav.",
+          "examples": ["– Vad vill du ha? frågade hon.", "– En smörgås, tack, svarade han.", "– Varsågod, sa hon."]
+        },
+        {
+          "term": "Citattecken i löpande text",
+          "explanation": "Används för citat i löpande text, titlar och ironi.",
+          "examples": ["Han beskrev sig som en \"expert\".", "Romanen \"Mio min Mio\" skrevs av Lindgren."]
+        },
+        {
+          "term": "Styckesindelning",
+          "explanation": "Nytt stycke vid nytt tankeled: ny tid, ny plats, nytt ämne eller ny talare. Ökar läsbarheten.",
+          "examples": ["Stycke 1: Bakgrund och inledning.", "(ny rad + eventuellt indrag)", "Stycke 2: Argument eller händelse."]
+        }
+      ]
+    },
+    {
+      "id": "bildsprak-analys",
+      "title": "Bildspråk och stilistik",
+      "icon": "🎨",
+      "content": [
+        {
+          "term": "Liknelse – analys och effekt",
+          "explanation": "Jämförelse med 'som'. Effekten beror på vad man jämför med – välj en bild som förstärker känslan.",
+          "examples": ["Snabb som blixten. (fart + dramatik)", "Tyst som en grav. (skräckeffekt)", "Skrikig som en korp."]
+        },
+        {
+          "term": "Metafor – analys och tolkning",
+          "explanation": "Säger att något ÄR något annat. Starkare än liknelse. Tolka vilken känsla/egenskap som lyfts fram.",
+          "examples": ["'Livet är en berg-och-dalbana.' → Livet är oförutsägbart och omväxlande.", "'Orden var pilar.'"]
+        },
+        {
+          "term": "Idiom och uttryck",
+          "explanation": "Fasta fraser med bildlig betydelse. Tolkas som en helhet, inte ord för ord.",
+          "examples": ["'Sätta foten ner' = bestämma sig", "'Ta sig vatten över huvudet' = ta på sig för mycket", "'Bita i det sura äpplet'"]
         }
       ]
     }

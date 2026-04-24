@@ -7,33 +7,70 @@
       "content": [
         {
           "term": "Logos",
-          "explanation": "Appell till förnuftet – fakta, statistik, logiska argument.",
-          "examples": ["Forskning visar att...", "Statistiken bevisar...", "Logiken kräver att..."]
+          "explanation": "Appell till förnuftet – fakta, statistik, logiska argument och belägg.",
+          "examples": ["Forskning visar att...", "Statistiken bevisar...", "Av detta följer logiskt att..."]
         },
         {
           "term": "Ethos",
-          "explanation": "Appell till trovärdighet – vem talar och varför ska vi lita på dem?",
-          "examples": ["Som läkare kan jag säga...", "Enligt experterna...", "Min erfarenhet visar..."]
+          "explanation": "Appell till trovärdighet – talarens karaktär, kompetens och auktoritet.",
+          "examples": ["Som läkare kan jag säga...", "Enligt experterna...", "Min mångåriga erfarenhet visar..."]
         },
         {
           "term": "Pathos",
-          "explanation": "Appell till känslor – engagera mottagaren emotionellt.",
-          "examples": ["Tänk på barnen som lider...", "Vi kan inte blunda för...", "Detta är en katastrof."]
+          "explanation": "Appell till känslor – engagera mottagaren genom att väcka empati, ilska, hopp eller rädsla.",
+          "examples": ["Tänk på barnen som lider...", "Vi kan inte blunda för...", "Varje dag dör tusentals av..."]
         },
         {
-          "term": "Metafor",
-          "explanation": "En bild där något kallas något annat utan 'som' eller 'lika'.",
-          "examples": ["Livet är en resa.", "Du är mitt solsken.", "Ordet är ett svärd."]
+          "term": "Liknelse – retorisk effekt",
+          "explanation": "Jämförelse med 'som'. I retorik väljs bilden för att förstärka ett argument eller väcka känsla.",
+          "examples": ["'Vår ekonomi är som ett läckande fartyg – vi måste täppa hålen nu.'", "Snabb som vinden."]
         },
         {
-          "term": "Liknelse",
-          "explanation": "En jämförelse med 'som' eller 'lika'.",
-          "examples": ["Snabb som vinden.", "Stark som en björn.", "Tyst som natten."]
+          "term": "Metafor – konceptuell funktion",
+          "explanation": "Säger att något ÄR något annat. I retorik strukturerar metaforen hur vi tänker om ett ämne.",
+          "examples": ["'Diskussionen är ett krig' → vi attackerar, försvarar, vinner argument.", "'Tid är pengar.'"]
         },
         {
           "term": "Anafor",
-          "explanation": "Upprepning av ord i början av meningar för att skapa rytm och kraft.",
-          "examples": ["Vi ska kämpa. Vi ska vinna. Vi ska lyckas.", "Jag drömmer om... Jag hoppas på..."]
+          "explanation": "Upprepning av ord i början av meningar. Skapar rytm, kraft och eftertryck.",
+          "examples": ["Vi ska kämpa. Vi ska vinna. Vi ska lyckas.", "Jag drömmer om frihet. Jag drömmer om rättvisa."]
+        },
+        {
+          "term": "Övriga stilfigurer",
+          "explanation": "Antites (kontrast), hyperbol (överdrift), ironi (säger motsatsen) och retorisk fråga.",
+          "examples": ["Antites: 'Liten tuva stjälper stort lass.'", "Hyperbol: 'Jag har sagt det tusen gånger!'", "Retorisk fråga: 'Kan vi verkligen acceptera detta?'"]
+        }
+      ]
+    },
+    {
+      "id": "argumentationsanalys",
+      "title": "Argumentationsanalys",
+      "icon": "🔬",
+      "content": [
+        {
+          "term": "Tes och argument",
+          "explanation": "En argumenterande text har en tes (ståndpunkt) som stöds av argument och belägg.",
+          "examples": ["Tes: 'Skoltiden bör börja senare.'", "Argument: 'Ungdomar sover biologiskt sett längre på morgonen.'"]
+        },
+        {
+          "term": "Belägg och källkritik",
+          "explanation": "Argumentets styrka beror på beläggets trovärdighet. Bedöm källans aktualitet, syfte och metod.",
+          "examples": ["Stark källa: peer-reviewed studie från 2023.", "Svag källa: anonym blogg utan referenslista."]
+        },
+        {
+          "term": "Motargument och bemötande",
+          "explanation": "En stark text erkänner motargument och bemöter dem. Visar att skribenten tänkt allsidigt.",
+          "examples": ["'Visserligen kan man invända att..., men...'", "'Det är sant att..., dock visar...'"]
+        },
+        {
+          "term": "Felslut att undvika",
+          "explanation": "Vanliga logiska fel som försvagar argumentationen.",
+          "examples": ["Halmgubbe: förvanska motståndarens åsikt.", "Ad hominem: angripa personen istället för argumentet.", "Falsk dikotomi: presentera bara två alternativ."]
+        },
+        {
+          "term": "Appellanvändning i analys",
+          "explanation": "Analysera VILKA retoriska appellformer texten använder och HUR de påverkar läsaren.",
+          "examples": ["'Skribenten använder pathos genom att berätta om konkreta fall...'", "'Ethos byggs upp via....'"]
         }
       ]
     },
@@ -44,18 +81,23 @@
       "content": [
         {
           "term": "Formellt språk",
-          "explanation": "Används i akademiska texter, myndigheter och affärskorrespondens. Passiva konstruktioner, nominaliseringar, formella konjunktioner.",
+          "explanation": "Akademiska texter, myndigheter och affärskorrespondens. Passiv, nominaliseringar, formella bindeord.",
           "examples": ["Härmed översänder jag...", "Det har konstaterats att...", "Följaktligen kan man dra slutsatsen..."]
         },
         {
           "term": "Neutralt språk",
-          "explanation": "Används i nyheter, faktatexter och rapporter. Sakligt och tydligt utan starka värdeladdningar.",
-          "examples": ["Studien visar att...", "Enligt rapporten...", "Undersökningen genomfördes..."]
+          "explanation": "Nyhetstext, rapporter och faktatexter. Sakligt, tydligt, utan starka värdeladdningar.",
+          "examples": ["Studien visar att...", "Enligt rapporten...", "Undersökningen genomfördes under 2024."]
         },
         {
           "term": "Informellt språk",
-          "explanation": "Används i samtal, SMS och sociala medier. Vardagliga ord, förkortningar, slang.",
-          "examples": ["Va händer?", "Kolla det här!", "Typ, jag fattar inte..."]
+          "explanation": "Samtal, SMS, sociala medier. Vardagliga ord, förkortningar, interjektioner, talspråkliga former.",
+          "examples": ["Va händer?", "Kolla det här!", "Typ, jag fattar inte riktigt..."]
+        },
+        {
+          "term": "Stilval i skrivande",
+          "explanation": "Anpassa stilnivån till syfte, mottagare och kontext – fel stilnivå skadar textens trovärdighet.",
+          "examples": ["Formell rapport → formellt språk.", "Brev till kompis → informellt.", "Debattartikel → neutralt till formellt."]
         }
       ]
     },
@@ -66,40 +108,50 @@
       "content": [
         {
           "term": "Vad är nominalisering?",
-          "explanation": "Att omvandla verb eller adjektiv till substantiv för att skapa ett formellare och mer komprimerat språk.",
-          "examples": ["diskutera → diskussion", "undersöka → undersökning", "besluta → beslut"]
+          "explanation": "Att omvandla verb eller adjektiv till substantiv. Skapar ett komprimerat, formellt uttryck.",
+          "examples": ["diskutera → diskussion", "undersöka → undersökning", "besluta → beslut", "fri → frihet"]
         },
         {
           "term": "Vanliga suffix",
-          "explanation": "Suffix som bildar nominalisieringar: -ning, -ande, -else, -tion, -het.",
-          "examples": ["röra → rörelse", "fri → frihet", "förändra → förändring", "organisera → organisation"]
+          "explanation": "Suffix som bildar nominaliseringar i svenska.",
+          "examples": ["röra → rörelse (-else)", "förändra → förändring (-ning)", "organisera → organisation (-tion)", "varm → värme (-e)"]
         },
         {
-          "term": "Effekten av nominalisering",
-          "explanation": "Nominaliseringar skapar ett mer opersonligt, formellt och komprimerat uttryck typiskt för akademisk och myndighetsprosa.",
-          "examples": ["Aktivt: 'Man genomförde en analys.'", "Nominaliserat: 'Genomförandet av analysen...'"]
+          "term": "Effekt och risk",
+          "explanation": "Nominalisering skapar ett mer opersonligt och formellt uttryck – men för mycket gör texten tung.",
+          "examples": ["Aktivt: 'Vi genomförde en analys.'", "Nominaliserat: 'Genomförandet av analysen...'", "Balansera formellt och tydligt."]
         }
       ]
     },
     {
-      "id": "akademiskt-sprak",
-      "title": "Akademiskt språk",
+      "id": "akademiskt-formellt",
+      "title": "Akademiskt och formellt skriftspråk",
       "icon": "📖",
       "content": [
         {
           "term": "Akademiska nyckelord",
-          "explanation": "Ord som ofta förekommer i vetenskapliga och akademiska texter.",
-          "examples": ["analys, syntes, kontext, perspektiv, implikation, evidens, diskurs, hypotes"]
+          "explanation": "Begrepp som signalerar vetenskapligt tänkande och analytisk förmåga.",
+          "examples": ["analys, syntes, kontext, perspektiv, implikation, evidens, diskurs, hypotes, paradigm"]
         },
         {
           "term": "Passiv konstruktion",
-          "explanation": "Akademiska texter använder ofta passiv för att betona fenomen snarare än person.",
-          "examples": ["Data samlades in. (passiv)", "Studien genomfördes 2020.", "Resultaten analyserades."]
+          "explanation": "Passiv används i formella texter för att betona fenomenet, inte personen.",
+          "examples": ["Data samlades in. (passiv)", "Studien genomfördes 2024.", "Resultaten analyserades noggrant."]
         },
         {
-          "term": "Formella konjunktioner",
-          "explanation": "Ord som binder samman argument på ett formellt sätt.",
-          "examples": ["Följaktligen, Dessutom, Emellertid, Vad gäller, Av detta följer att"]
+          "term": "Formella bindeord",
+          "explanation": "Konjunktioner och adverbial som binder ihop argument på ett logiskt och formellt sätt.",
+          "examples": ["Följaktligen, Dessutom, Emellertid, Vad gäller, Av detta följer att, Trots detta, Ej desto mindre"]
+        },
+        {
+          "term": "Formellt skriftspråk – kännetecken",
+          "explanation": "Långa meningar, nominalfraser, passiv, opersonlig stil och distans till 'jag'.",
+          "examples": ["'En hög grad av precision eftersträvas.' (istf. 'Vi försöker vara noggranna.')", "Undvik talspråk."]
+        },
+        {
+          "term": "Idiom och fasta uttryck",
+          "explanation": "Formella texter undviker slangidiom, men idiomatiska fraser finns i alla stilnivåer.",
+          "examples": ["Formellt: 'Med anledning av ovanstående...'", "Informellt idiom att undvika: 'Det är klart som korvspad att...'"]
         }
       ]
     },
@@ -110,18 +162,23 @@
       "content": [
         {
           "term": "Varför källhänvisa?",
-          "explanation": "Källhänvisningar visar var information kommer ifrån och stärker textens trovärdighet.",
-          "examples": ["Undviker plagiat", "Möjliggör för läsaren att kontrollera uppgifter", "Visar akademisk hederlighet"]
+          "explanation": "Visar varifrån information kommer, stärker trovärdigheten och undviker plagiat.",
+          "examples": ["Undviker plagiat.", "Möjliggör granskning.", "Visar akademisk hederlighet."]
         },
         {
           "term": "APA-format (förenklat)",
-          "explanation": "Vanligt format för källhänvisning: Efternamn, Förnamn. (År). Titel. Förlag.",
+          "explanation": "Vanligt format: Efternamn, Förnamn. (År). Titel. Förlag.",
           "examples": ["Lindgren, A. (1945). Pippi Långstrump. Rabén & Sjögren.", "I texten: (Lindgren, 1945)"]
         },
         {
           "term": "Primär- och sekundärkälla",
-          "explanation": "Primärkälla: originaldokument. Sekundärkälla: tolkning av primärkälla.",
-          "examples": ["Primär: dagbok, lagtext, originalstudie", "Sekundär: lärobok, artikel om en annan studie"]
+          "explanation": "Primärkälla: originaldokument. Sekundärkälla: tolkning av primärkälla. Sträva efter primärkällor.",
+          "examples": ["Primär: originalstudie, lagtext, dagbok.", "Sekundär: lärobok som refererar till studien."]
+        },
+        {
+          "term": "Källkritik",
+          "explanation": "Bedöm källan utifrån: aktualitet, avsändare, syfte och beroende av andra källor.",
+          "examples": ["Aktualitet: hur gammal är informationen?", "Avsändare: vem och varför?", "Syfte: informera, övertala, sälja?"]
         }
       ]
     },
@@ -132,23 +189,23 @@
       "content": [
         {
           "term": "Argumenterande text",
-          "explanation": "Syftar till att övertala läsaren. Innehåller tes, argument och belägg.",
-          "examples": ["Debattartikel", "Insändare", "Recension"]
+          "explanation": "Syftar till att övertala läsaren. Har tes, argument och belägg. Tar tydlig ställning.",
+          "examples": ["Debattartikel", "Insändare", "Recension", "Krönika"]
         },
         {
           "term": "Utredande text",
-          "explanation": "Undersöker ett ämne allsidigt utan att ta ställning.",
-          "examples": ["PM", "Rapport", "Utredning"]
+          "explanation": "Undersöker ett ämne allsidigt utan att ta tydlig ställning. Presenterar fakta och perspektiv.",
+          "examples": ["PM", "Rapport", "Utredning", "Analys"]
         },
         {
           "term": "Berättande text",
-          "explanation": "Berättar en historia med händelseförlopp, karaktärer och miljö.",
-          "examples": ["Roman", "Novell", "Saga"]
+          "explanation": "Berättar en historia med händelseförlopp, karaktärer och miljö. Använder bildspråk.",
+          "examples": ["Roman", "Novell", "Saga", "Memoar"]
         },
         {
           "term": "Informerande text",
-          "explanation": "Förmedlar fakta och information objektivt.",
-          "examples": ["Lärobok", "Manual", "Nyhetsartikel"]
+          "explanation": "Förmedlar fakta och information objektivt utan värdering.",
+          "examples": ["Lärobok", "Manual", "Nyhetsartikel", "Encyklopedi"]
         }
       ]
     }

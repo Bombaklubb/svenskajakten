@@ -7,13 +7,13 @@
       "content": [
         {
           "term": "Subjekt",
-          "explanation": "Den som utför handlingen i meningen. Svarar på frågan 'Vem?' eller 'Vad?'",
+          "explanation": "Den som utför handlingen. Svarar på frågan 'Vem?' eller 'Vad?' före predikatet.",
           "examples": ["Lisa läser.", "Hunden springer.", "De leker."]
         },
         {
           "term": "Predikat",
-          "explanation": "Verbet i meningen – vad subjektet gör.",
-          "examples": ["Lisa läser.", "Hunden springer.", "Vi spelar fotboll."]
+          "explanation": "Verbet – vad subjektet gör eller är.",
+          "examples": ["Lisa läser.", "Hunden springer snabbt.", "Vi spelar fotboll."]
         },
         {
           "term": "Objekt",
@@ -22,47 +22,62 @@
         },
         {
           "term": "Adverbial",
-          "explanation": "Bestämmer hur, när eller var något händer.",
+          "explanation": "Bestämmer hur, när eller var något händer. Kan ofta flyttas i meningen.",
           "examples": ["Vi spelar i parken. (var?)", "Hon sjunger vackert. (hur?)", "De kom igår. (när?)"]
         }
       ]
     },
     {
       "id": "tempus",
-      "title": "Tempus (tidsformer)",
+      "title": "Tempus – tidsformer",
       "icon": "⏰",
       "content": [
         {
           "term": "Presens (nutid)",
-          "explanation": "Något händer nu.",
-          "examples": ["Jag läser.", "De springer.", "Hon sjunger."]
+          "explanation": "Något händer nu eller brukar hända. Ändelse: -ar eller -er.",
+          "examples": ["Jag läser. (nu)", "De springer varje dag. (brukar)", "Hon sjunger."]
         },
         {
           "term": "Preteritum (dåtid)",
-          "explanation": "Något hände förr. Lägg ofta till -ade, -te eller ändra vokalen.",
-          "examples": ["Jag läste.", "De sprang.", "Hon sjöng."]
+          "explanation": "Något hände förr. Ändelse: -ade, -te eller vokalskifte.",
+          "examples": ["läser → läste", "hoppar → hoppade", "springer → sprang", "äter → åt"]
         },
         {
           "term": "Perfekt",
-          "explanation": "Något har hänt och är kopplat till nutiden. Använd 'har' + supinum.",
+          "explanation": "Något har hänt och är kopplat till nutiden. Bildas med 'har' + supinum.",
           "examples": ["Jag har läst boken.", "De har sprungit.", "Hon har sjungit."]
+        },
+        {
+          "term": "Futurum (framtid)",
+          "explanation": "Något ska hända. Använd 'ska', 'kommer att' eller 'tänker'.",
+          "examples": ["Jag ska läsa.", "Vi kommer att spela.", "Hon tänker sjunga."]
         }
       ]
     },
     {
       "id": "pronomen",
-      "title": "Pronomen",
+      "title": "Pronomen och vanliga förväxlingar",
       "icon": "👥",
       "content": [
         {
           "term": "Personliga pronomen",
           "explanation": "Ersätter namn och substantiv för att undvika upprepning.",
-          "examples": ["jag, du, han, hon, det, vi, ni, de"]
+          "examples": ["jag, du, han, hon, den, det, vi, ni, de"]
+        },
+        {
+          "term": "De eller dem?",
+          "explanation": "De = subjekt (byt mot 'vi' – funkar det?). Dem = objekt (byt mot 'oss' – funkar det?).",
+          "examples": ["De springer. (Vi springer ✓)", "Jag ser dem. (Jag ser oss ✓)", "De är snälla."]
+        },
+        {
+          "term": "Var eller vart?",
+          "explanation": "Var = plats/läge (ingen rörelse). Vart = riktning dit.",
+          "examples": ["Var är du? (du är stilla)", "Vart går du? (du rör dig dit)", "Var bor han?"]
         },
         {
           "term": "Reflexiva pronomen",
-          "explanation": "Syftar tillbaka på subjektet.",
-          "examples": ["sig, mig, dig, oss, er"]
+          "explanation": "Syftar tillbaka på subjektet – man gör något med/mot sig själv.",
+          "examples": ["Hon tvättade sig.", "Han klädde sig.", "Vi roade oss.", "De skyndade sig."]
         }
       ]
     },
@@ -73,62 +88,109 @@
       "content": [
         {
           "term": "Adjektiv",
-          "explanation": "Beskriver ett substantiv – hur något är.",
-          "examples": ["en stor bil", "en snäll lärare", "ett gult hus"]
+          "explanation": "Beskriver ett substantiv – hur det är. Böjs efter genus (en/ett) och antal.",
+          "examples": ["en stor bil, ett stort hus, stora bilar", "en snäll lärare, ett snällt barn"]
+        },
+        {
+          "term": "Komparation av adjektiv",
+          "explanation": "Adjektiv kan jämföra: grundform – komparativ – superlativ.",
+          "examples": ["stor – större – störst", "snabb – snabbare – snabbast", "god – bättre – bäst"]
         },
         {
           "term": "Adverb",
-          "explanation": "Beskriver ett verb – hur något görs. Slutar ofta på -t.",
-          "examples": ["springer snabbt", "sjunger vackert", "bor nära"]
+          "explanation": "Beskriver ett verb eller adjektiv. Svarar på hur, när, var. Slutar ofta på -t.",
+          "examples": ["springer snabbt", "sjunger vackert", "bor nära", "ganska stor", "mycket glad"]
         }
       ]
     },
     {
       "id": "sj-tj-ng-ljud",
-      "title": "Sj-, tj- och ng-ljud",
+      "title": "Sj-, tj-, ng-ljud och dubbelteckning",
       "icon": "🔤",
       "content": [
         {
           "term": "Sj-ljud",
           "explanation": "Kan skrivas: sj, sk (före e/i/y/ä/ö), skj, stj, sch, ch.",
-          "examples": ["sjunga, skämt, skjuta, stjärna, schema, chef"]
+          "examples": ["sjunga, skämt, skjuta, stjärna, schema, chef, sjö, skiva"]
         },
         {
           "term": "Tj-ljud",
           "explanation": "Kan skrivas: tj, k (före e/i/y/ä/ö), kj.",
-          "examples": ["tjuv, kyckling, kyss, kärlek, kjol"]
+          "examples": ["tjuv, kyckling, kyss, kärlek, kikare, kjol, tjäna, keps"]
         },
         {
           "term": "Ng-ljud",
-          "explanation": "Skrivs 'ng'. Förekommer i slutet av stavelser.",
-          "examples": ["sång, ring, lång, ingenting, något"]
+          "explanation": "Skrivs 'ng'. Förekommer i slutet av stavelser och låter som ett nasalt ljud.",
+          "examples": ["sång, ring, lång, ingenting, något, ängel, längd"]
+        },
+        {
+          "term": "Dubbelteckning – fortsättning",
+          "explanation": "Kort vokal → dubbel konsonant. Lång vokal → enkel konsonant. Gäller även i sammansatta ord.",
+          "examples": ["full – ful", "kall – kal", "himmel – hyml (ej ord)", "bästa – bäst"]
         }
       ]
     },
     {
-      "id": "skiljetecken",
-      "title": "Skiljetecken",
+      "id": "skiljetecken-text",
+      "title": "Skiljetecken och textskapande",
       "icon": "⁉️",
       "content": [
         {
-          "term": "Punkt (.)",
-          "explanation": "Avslutar en påståendemening.",
-          "examples": ["Jag heter Maja.", "Solen skiner idag."]
+          "term": "Punkt, frågetecken och utropstecken",
+          "explanation": "Punkt avslutar påståenden. Frågetecken avslutar frågor. Utropstecken visar känsla eller kommando.",
+          "examples": ["Jag heter Maja.", "Vad heter du?", "Titta!"]
         },
         {
           "term": "Kommatecken (,)",
-          "explanation": "Används vid uppräkningar, inskott och ibland bisatser.",
-          "examples": ["Jag köpte äpplen, päron och bananer.", "Ja, det stämmer."]
+          "explanation": "Används i uppräkningar (inte före 'och' vid sista ledet), inskott och bisatser.",
+          "examples": ["äpplen, päron och bananer", "Min syster, som bor i Göteborg, hälsade.", "Om du vill, kan vi gå."]
         },
         {
-          "term": "Kolon (:)",
-          "explanation": "Inleder en lista, förklaring eller direkt anföring.",
-          "examples": ["Vi behöver: mjölk, bröd och ägg.", "Han sa: 'Hej!'"]
+          "term": "Talstreck i dialog (–)",
+          "explanation": "Ny replik = ny rad + talstreck. Verbet som berättar vem som talar skrivs med liten bokstav.",
+          "examples": ["– Hej! sa Maja.", "– Hej! svarade Kalle.", "– Hur mår du? frågade han."]
         },
         {
-          "term": "Semikolon (;)",
-          "explanation": "Förbinder två nära relaterade meningar utan konjunktion.",
-          "examples": ["Det regnade; vi stannade inne.", "Hon kom tidigt; han kom sent."]
+          "term": "Citattecken (\"\")",
+          "explanation": "Används för citat i löpande text eller vid titlar.",
+          "examples": ["Han sa \"okej\" och nickade.", "Boken \"Alfons Åberg\" handlar om en pojke."]
+        },
+        {
+          "term": "Styckesindelning",
+          "explanation": "Ny rad och nytt stycke när du byter tanke, plats, tid eller talare. Ökar textens tydlighet.",
+          "examples": ["Stycke 1: Introduktion av problemet.", "(ny rad)", "Stycke 2: Förklaring och lösning."]
+        }
+      ]
+    },
+    {
+      "id": "bildsprak-ordkunskap",
+      "title": "Bildspråk och ordkunskap",
+      "icon": "🎨",
+      "content": [
+        {
+          "term": "Synonymer",
+          "explanation": "Ord med liknande betydelse. Använd för att variera och nyansera språket.",
+          "examples": ["glad = lycklig = förtjust = nöjd", "stor = enorm = jättelik", "snabb = kvick = hastig"]
+        },
+        {
+          "term": "Motsatsord (antonymer)",
+          "explanation": "Ord med motsatt betydelse. Hjälper att skapa kontraster i texten.",
+          "examples": ["varm ↔ kall", "stark ↔ svag", "komma ↔ gå", "ljus ↔ mörk"]
+        },
+        {
+          "term": "Liknelse",
+          "explanation": "En jämförelse med 'som' eller 'lika'. Beskriver något genom att jämföra det med något bekant.",
+          "examples": ["Snabb som vinden.", "Stark som en björn.", "Hennes ögon var som stjärnor.", "Tyst som ett berg."]
+        },
+        {
+          "term": "Metafor",
+          "explanation": "Säger att något ÄR något annat – utan 'som'. Ger ett starkare och mer poetiskt intryck än liknelsen.",
+          "examples": ["Livet är en resa.", "Du är mitt solsken.", "Hjärtat är ett hav av känslor."]
+        },
+        {
+          "term": "Idiom och uttryck",
+          "explanation": "Fasta fraser vars bokstavliga betydelse inte stämmer – man måste känna till uttrycket.",
+          "examples": ["'Kosta skjortan' = vara dyrt", "'Hålla tummen' = önska lycka", "'Ge järnet' = anstränga sig"]
         }
       ]
     }

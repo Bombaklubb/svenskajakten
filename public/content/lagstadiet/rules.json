@@ -7,66 +7,194 @@
       "content": [
         {
           "term": "Substantiv",
-          "explanation": "Namn på saker, djur och personer.",
-          "examples": ["hund", "boll", "flicka", "hus", "skola"]
+          "explanation": "Namn på saker, djur, platser och personer. Brukar ha 'en' eller 'ett' framför sig.",
+          "examples": ["en hund", "ett hus", "en flicka", "en skola", "ett äpple"]
         },
         {
           "term": "Verb",
-          "explanation": "Ord som beskriver handlingar – vad man gör.",
-          "examples": ["springer", "äter", "sover", "leker", "hoppar"]
+          "explanation": "Ord som beskriver handlingar eller tillstånd – vad man gör eller är.",
+          "examples": ["springer", "äter", "sover", "leker", "hoppar", "är", "har"]
         },
         {
           "term": "Adjektiv",
-          "explanation": "Ord som beskriver hur något ser ut eller är.",
-          "examples": ["stor", "liten", "glad", "röd", "söt"]
+          "explanation": "Ord som beskriver hur något ser ut eller är. Svarar på frågan 'hurdan?'",
+          "examples": ["stor", "liten", "glad", "röd", "söt", "tung", "varm"]
+        },
+        {
+          "term": "Adverb",
+          "explanation": "Ord som beskriver hur, när eller var något händer. Bestämmer ett verb.",
+          "examples": ["snabbt (springer snabbt)", "högt (sjunger högt)", "ofta", "alltid", "aldrig"]
+        },
+        {
+          "term": "Preposition",
+          "explanation": "Litet ord som visar var något är eller hur det förhåller sig till något annat.",
+          "examples": ["på (på bordet)", "i (i lådan)", "under (under sängen)", "till", "från", "med"]
         }
       ]
     },
     {
       "id": "meningsbyggnad",
-      "title": "Hur man bygger en mening",
+      "title": "Meningsbyggnad och skiljetecken",
       "icon": "🏗️",
       "content": [
         {
-          "term": "En mening börjar med stor bokstav",
-          "explanation": "Det första ordet i en mening skrivs alltid med stor bokstav.",
-          "examples": ["Hunden springer.", "Katten sover.", "Barnen leker."]
+          "term": "Stor bokstav i meningens början",
+          "explanation": "Det första ordet i varje mening skrivs alltid med stor bokstav.",
+          "examples": ["Hunden springer.", "Katten sover.", "Vi leker i parken."]
         },
         {
-          "term": "En mening slutar med punkt",
-          "explanation": "När meningen är klar sätter man en punkt (.) i slutet.",
+          "term": "Punkt (.)",
+          "explanation": "Sätts sist i en vanlig påståendemening.",
           "examples": ["Jag heter Maja.", "Vi bor i Sverige.", "Solen skiner."]
         },
         {
-          "term": "En fråga slutar med frågetecken",
-          "explanation": "Frågor avslutas alltid med frågetecken (?).",
+          "term": "Frågetecken (?)",
+          "explanation": "Avslutar en fråga.",
           "examples": ["Vad heter du?", "Hur mår du?", "Var bor du?"]
         },
         {
+          "term": "Utropstecken (!)",
+          "explanation": "Används vid utrop, kommandon eller när man vill visa stark känsla.",
+          "examples": ["Stopp!", "Vilken fin dag!", "Hjälp!"]
+        },
+        {
           "term": "Namn börjar med stor bokstav",
-          "explanation": "Namn på personer och platser skrivs alltid med stor bokstav.",
-          "examples": ["Anna", "Kalle", "Sverige", "Stockholm", "Göteborg"]
+          "explanation": "Namn på personer, djur och platser skrivs alltid med stor bokstav.",
+          "examples": ["Anna", "Kalle", "Svansen (kattens namn)", "Sverige", "Stockholm"]
+        },
+        {
+          "term": "Styckesindelning",
+          "explanation": "En text delas in i stycken. Ett nytt stycke börjar på ny rad och handlar om ett nytt tankeinnehåll.",
+          "examples": ["Stycke 1: Vi gick till parken.", "(ny rad)", "Stycke 2: Där lekte vi hela dagen."]
         }
       ]
     },
     {
-      "id": "vanliga-fel",
-      "title": "Vanliga fel att undvika",
+      "id": "tempus",
+      "title": "Tempus – tidsformer",
+      "icon": "⏰",
+      "content": [
+        {
+          "term": "Presens (nutid)",
+          "explanation": "Något händer just nu eller brukar hända. Verbet är i sin grundform eller med ändelse -ar/-er.",
+          "examples": ["Jag läser. (nu)", "Hon springer varje dag. (brukar)", "Vi äter. (nu)"]
+        },
+        {
+          "term": "Preteritum (dåtid)",
+          "explanation": "Något hände förut. Lägg till -ade eller -te, eller ändra vokalen i verbet.",
+          "examples": ["läser → läste", "hoppar → hoppade", "springer → sprang", "äter → åt"]
+        },
+        {
+          "term": "Futurum (framtid)",
+          "explanation": "Något ska hända i framtiden. Använd 'ska', 'kommer att' eller 'tänker' + verb.",
+          "examples": ["Jag ska läsa.", "Vi kommer att spela.", "Hon tänker hoppa."]
+        }
+      ]
+    },
+    {
+      "id": "dialoger",
+      "title": "Dialoger – talstreck och citattecken",
+      "icon": "💬",
+      "content": [
+        {
+          "term": "Talstreck (–)",
+          "explanation": "Används när man skriver vad någon säger i en dialog. Varje taltur börjar på ny rad med ett talstreck.",
+          "examples": ["– Hej! sa Maja.", "– Hej! svarade Kalle.", "– Hur mår du? frågade hon."]
+        },
+        {
+          "term": "Verb efter repliken",
+          "explanation": "Verbet som berättar vem som talar skrivs med liten bokstav direkt efter repliken.",
+          "examples": ["– Kom hit! ropade Kalle.", "– Okej, sa Maja.", "– Vänta! utbrast han."]
+        },
+        {
+          "term": "Citattecken (\"\")",
+          "explanation": "Används när man citerar vad någon sagt eller skrivit, ofta i löpande text.",
+          "examples": ["Maja sa \"hej\" och log.", "Han svarade \"ja\" på frågan."]
+        }
+      ]
+    },
+    {
+      "id": "ordkunskap",
+      "title": "Ordkunskap",
+      "icon": "📖",
+      "content": [
+        {
+          "term": "Synonymer",
+          "explanation": "Ord som betyder ungefär samma sak. Gör texten mer varierad.",
+          "examples": ["glad = lycklig = nöjd", "stor = enorm = jättestor", "snabb = kvick = fort"]
+        },
+        {
+          "term": "Motsatsord (antonymer)",
+          "explanation": "Ord som betyder motsatsen till varandra.",
+          "examples": ["stor ↔ liten", "glad ↔ ledsen", "varm ↔ kall", "dag ↔ natt"]
+        },
+        {
+          "term": "Idiom och uttryck",
+          "explanation": "Fasta fraser vars betydelse inte kan förstås ord för ord – man måste känna till frasen.",
+          "examples": ["'Hålla tummen' = önska lycka till", "'Kosta skjortan' = vara dyrt", "'Ta det lugnt' = slappna av"]
+        },
+        {
+          "term": "Rim",
+          "explanation": "Ord som slutar med samma ljud rimmar. Rim används ofta i sånger och dikter.",
+          "examples": ["katt – hatt", "sol – bol", "sten – ben", "snö – blö"]
+        }
+      ]
+    },
+    {
+      "id": "ljud-stavning",
+      "title": "Ljud och stavning",
+      "icon": "🔤",
+      "content": [
+        {
+          "term": "Vokaler",
+          "explanation": "Bokstäver som man andas ut utan att stänga munnen: a, e, i, o, u, y, å, ä, ö.",
+          "examples": ["a (katt)", "e (ben)", "i (fisk)", "o (bok)", "u (hus)", "å (år)", "ä (ägg)", "ö (öra)"]
+        },
+        {
+          "term": "Konsonanter",
+          "explanation": "Alla övriga bokstäver (inte vokaler): b, c, d, f, g, h, j, k, l, m, n, p, r, s, t, v, x, z.",
+          "examples": ["b (boll)", "d (dörr)", "f (fisk)", "k (katt)", "m (mjölk)", "s (sol)"]
+        },
+        {
+          "term": "Dubbelteckning",
+          "explanation": "Kort vokal → dubbel konsonant. Lång vokal → enkel konsonant.",
+          "examples": ["katt (kort a) – mat (långt a)", "glass (kort a) – glas (långt a)", "full (kort u) – jul (långt u)"]
+        },
+        {
+          "term": "Specialbokstäverna å, ä, ö",
+          "explanation": "Svenska har tre extra vokaler som inte finns på engelskan. Blanda inte ihop dem med a och o.",
+          "examples": ["äpple (inte apple)", "öga (inte oga)", "år (inte ar)", "fågelbo (å-ljud)"]
+        }
+      ]
+    },
+    {
+      "id": "vanliga-forväxlingar",
+      "title": "Vanliga förväxlingar",
       "icon": "⚠️",
       "content": [
         {
-          "term": "Dubbelteckning",
-          "explanation": "Kort vokal följs av dubbel konsonant. Lång vokal följs av enkel konsonant.",
-          "examples": ["katt (kort a) men mat (långt a)", "glass (kort a) men glas (långt a)", "boll (kort o) men bol (finns ej)"]
+          "term": "B eller D?",
+          "explanation": "b och d ser lika ut – tänk: b:et har 'magen' åt höger, d:et har 'ryggen' åt höger.",
+          "examples": ["boll (b)", "dörr (d)", "banan (b)", "dag (d)", "bil (b)", "djur (d)"]
         },
         {
-          "term": "Glöm inte specialbokstäverna",
-          "explanation": "Svenska har å, ä och ö – blanda inte ihop dem med a och o.",
-          "examples": ["äpple (inte apple)", "öga (inte oga)", "år (inte ar)"]
+          "term": "E eller Ä?",
+          "explanation": "Lyssna noga – ä-ljud är öppnare i munnen. I slutna stavelser skrivs ofta ä.",
+          "examples": ["ben (e-ljud)", "äpple (ä-ljud)", "se (e)", "säg (ä)", "leka (e)", "läsa (ä)"]
+        },
+        {
+          "term": "De eller dem?",
+          "explanation": "De = subjekt (gör något). Dem = objekt (något görs med dem). Tips: byt mot vi/oss.",
+          "examples": ["De leker. (Vi leker ✓)", "Jag ser dem. (Jag ser oss ✓)", "De är här."]
+        },
+        {
+          "term": "Var eller vart?",
+          "explanation": "Var = rörelse saknas (stillastående). Vart = rörelse dit (dit man ska).",
+          "examples": ["Var är du? (du är stilla)", "Vart går du? (du är på väg)", "Var bor du? (plats)"]
         },
         {
           "term": "Sammansatta ord skrivs ihop",
-          "explanation": "På svenska skrivs sammansatta ord som ett ord, inte som två.",
+          "explanation": "På svenska skrivs sammansatta ord alltid som ett enda ord – inte med mellanslag.",
           "examples": ["skolbuss (inte skol buss)", "hundhus (inte hund hus)", "solros (inte sol ros)"]
         }
       ]
