@@ -11,21 +11,19 @@ interface Props {
 // ─── Speech ───────────────────────────────────────────────────────────────────
 
 // Swedish TTS reads single consonants as letter names ("em", "ess", "el").
-// For isolated phoneme contexts (sound-choice exercises), map each consonant
-// to a Swedish keyword that TTS reads correctly, so students hear the actual
-// phoneme at the start of a familiar word.
-const CONSONANT_WORDS: Record<string, string> = {
-  b: "boll",  d: "dag",   f: "fisk",  g: "glass", h: "hund",
-  j: "ja",    k: "katt",  l: "lejon", m: "mamma", n: "nalle",
-  p: "pappa", r: "råtta", s: "sol",   t: "tåg",   v: "vind",
-  z: "zebra",
+// For phoneme-context (sound-choice), map each consonant to a short CV-syllable
+// ("ma", "sa", "la") spoken at very slow rate so the consonant onset is clear.
+const CONSONANT_SYLLABLES: Record<string, string> = {
+  b: "ba", d: "da", f: "fa", g: "ga", h: "ha",
+  j: "ja", k: "ka", l: "la", m: "ma", n: "na",
+  p: "pa", r: "ra", s: "sa", t: "ta", v: "va",
+  z: "za",
 };
 const VOWELS = new Set(["a","e","i","o","u","y","å","ä","ö"]);
 
-/** Resolves a single consonant character to a keyword for phoneme context. */
 function resolvePhoneme(text: string): string {
   if (text.length === 1 && !VOWELS.has(text.toLowerCase())) {
-    return CONSONANT_WORDS[text.toLowerCase()] ?? text;
+    return CONSONANT_SYLLABLES[text.toLowerCase()] ?? text;
   }
   return text;
 }
@@ -34,9 +32,11 @@ function speak(text: string, slow = false, phonemeContext = false) {
   if (typeof window === "undefined") return;
   const synth = window.speechSynthesis;
   synth.cancel();
-  const utt = new SpeechSynthesisUtterance(phonemeContext ? resolvePhoneme(text) : text);
+  const resolved = phonemeContext ? resolvePhoneme(text) : text;
+  const utt = new SpeechSynthesisUtterance(resolved);
   utt.lang = "sv-SE";
-  utt.rate = slow ? 0.45 : 0.82;
+  // Very slow rate for phoneme context so the initial consonant onset is prominent
+  utt.rate = phonemeContext ? 0.25 : slow ? 0.45 : 0.82;
   utt.pitch = 1.15;
   synth.speak(utt);
 }
@@ -182,7 +182,10 @@ export default function FonemExerciseComponent({ exercise, onAnswer }: Props) {
   // ── sound-choice & word-first-sound ────────────────────────────────────────
   if (exercise.type === "sound-choice" || exercise.type === "word-first-sound") {
     const isWordType = exercise.type === "word-first-sound";
-    const cols = (exercise.options?.length ?? 3) <= 3 ? "grid-cols-3" : "grid-cols-2";
+    // word-first-sound has short letter options (3-col); sound-choice has word options (1-col)
+    const cols = isWordType
+      ? ((exercise.options?.length ?? 3) <= 3 ? "grid-cols-3" : "grid-cols-2")
+      : "grid-cols-1";
     return (
       <div className="space-y-6">
         <p className="text-lg font-bold text-center text-gray-700 dark:text-gray-200">{exercise.question}</p>

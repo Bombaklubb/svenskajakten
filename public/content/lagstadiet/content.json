@@ -7997,12 +7997,12 @@
         {
           "id": "f1-1",
           "type": "sound-choice",
-          "speakText": "mamma",
-          "question": "Vilket ljud börjar du höra?",
+          "speakText": "m",
+          "question": "Vilket ord börjar med det här ljudet?",
           "options": [
-            "m",
-            "n",
-            "s"
+            "Matta 🟫",
+            "Nalle 🧸",
+            "Sol ☀️"
           ],
           "correctIndex": 0,
           "explanation": "/m/-ljudet hörs i ord som mamma och mus."
@@ -8010,12 +8010,12 @@
         {
           "id": "f1-2",
           "type": "sound-choice",
-          "speakText": "sol",
-          "question": "Vilket ljud börjar du höra?",
+          "speakText": "s",
+          "question": "Vilket ord börjar med det här ljudet?",
           "options": [
-            "r",
-            "s",
-            "t"
+            "Fisk 🐟",
+            "Sol ☀️",
+            "Boll ⚽"
           ],
           "correctIndex": 1,
           "explanation": "/s/-ljudet hörs i ord som sol och sax."
@@ -8023,14 +8023,14 @@
         {
           "id": "f1-3",
           "type": "sound-choice",
-          "speakText": "lejon",
-          "question": "Vilket ljud börjar du höra?",
+          "speakText": "l",
+          "question": "Vilket ord börjar med det här ljudet?",
           "options": [
-            "l",
-            "k",
-            "b"
+            "Katt 🐱",
+            "Lejon 🦁",
+            "Båt ⛵"
           ],
-          "correctIndex": 0,
+          "correctIndex": 1,
           "explanation": "/l/-ljudet hörs i ord som lamm och lejon."
         },
         {
@@ -8075,14 +8075,14 @@
         {
           "id": "f1-7",
           "type": "sound-choice",
-          "speakText": "råtta",
-          "question": "Vilket ljud börjar du höra?",
+          "speakText": "r",
+          "question": "Vilket ord börjar med det här ljudet?",
           "options": [
-            "n",
-            "l",
-            "r"
+            "Nalle 🧸",
+            "Ros 🌹",
+            "Lampa 💡"
           ],
-          "correctIndex": 2,
+          "correctIndex": 1,
           "explanation": "/r/-ljudet hörs i ord som råtta och röd."
         },
         {
