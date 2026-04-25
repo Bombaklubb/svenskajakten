@@ -10,11 +10,31 @@ interface Props {
 
 // ─── Speech ───────────────────────────────────────────────────────────────────
 
-function speak(text: string, slow = false) {
+// Swedish TTS reads single consonants as letter names ("em", "ess", "el").
+// For isolated phoneme contexts (sound-choice exercises), map each consonant
+// to a Swedish keyword that TTS reads correctly, so students hear the actual
+// phoneme at the start of a familiar word.
+const CONSONANT_WORDS: Record<string, string> = {
+  b: "boll",  d: "dag",   f: "fisk",  g: "glass", h: "hund",
+  j: "ja",    k: "katt",  l: "lejon", m: "mamma", n: "nalle",
+  p: "pappa", r: "råtta", s: "sol",   t: "tåg",   v: "vind",
+  z: "zebra",
+};
+const VOWELS = new Set(["a","e","i","o","u","y","å","ä","ö"]);
+
+/** Resolves a single consonant character to a keyword for phoneme context. */
+function resolvePhoneme(text: string): string {
+  if (text.length === 1 && !VOWELS.has(text.toLowerCase())) {
+    return CONSONANT_WORDS[text.toLowerCase()] ?? text;
+  }
+  return text;
+}
+
+function speak(text: string, slow = false, phonemeContext = false) {
   if (typeof window === "undefined") return;
   const synth = window.speechSynthesis;
   synth.cancel();
-  const utt = new SpeechSynthesisUtterance(text);
+  const utt = new SpeechSynthesisUtterance(phonemeContext ? resolvePhoneme(text) : text);
   utt.lang = "sv-SE";
   utt.rate = slow ? 0.45 : 0.82;
   utt.pitch = 1.15;
@@ -29,17 +49,19 @@ function PlayBtn({
   slow,
   label,
   size = "md",
+  phonemeContext = false,
 }: {
   text: string;
   slow?: boolean;
   label: string;
   size?: "sm" | "md" | "lg";
+  phonemeContext?: boolean;
 }) {
   const [playing, setPlaying] = useState(false);
 
   function handleClick() {
     if (playing) return;
-    speak(text, slow);
+    speak(text, slow, phonemeContext);
     setPlaying(true);
     setTimeout(() => setPlaying(false), 1500);
   }
@@ -146,7 +168,8 @@ export default function FonemExerciseComponent({ exercise, onAnswer }: Props) {
     setSelected(index);
     setAnswered(true);
     setWasCorrect(correct);
-    if (!correct) speak(exercise.speakText, true);
+    const isPhonemeEx = exercise.type === "sound-choice";
+    if (!correct) speak(exercise.speakText, true, isPhonemeEx);
   }
 
   function optionState(i: number): "idle" | "correct" | "wrong" {
@@ -168,6 +191,7 @@ export default function FonemExerciseComponent({ exercise, onAnswer }: Props) {
             text={exercise.speakText}
             label={isWordType ? exercise.speakText : "Lyssna på ljudet"}
             size="lg"
+            phonemeContext={!isWordType}
           />
           {isWordType && (
             <PlayBtn text={exercise.speakText} slow label="Långsamt" size="sm" />

@@ -8136,8 +8136,8 @@
         {
           "id": "f1-1",
           "type": "sound-choice",
-          "speakText": "m",
-          "question": "Vilket ljud hör du?",
+          "speakText": "mamma",
+          "question": "Vilket ljud börjar du höra?",
           "options": [
             "m",
             "n",
@@ -8149,8 +8149,8 @@
         {
           "id": "f1-2",
           "type": "sound-choice",
-          "speakText": "s",
-          "question": "Vilket ljud hör du?",
+          "speakText": "sol",
+          "question": "Vilket ljud börjar du höra?",
           "options": [
             "r",
             "s",
@@ -8162,8 +8162,8 @@
         {
           "id": "f1-3",
           "type": "sound-choice",
-          "speakText": "l",
-          "question": "Vilket ljud hör du?",
+          "speakText": "lejon",
+          "question": "Vilket ljud börjar du höra?",
           "options": [
             "l",
             "k",
@@ -8214,8 +8214,8 @@
         {
           "id": "f1-7",
           "type": "sound-choice",
-          "speakText": "r",
-          "question": "Vilket ljud hör du?",
+          "speakText": "råtta",
+          "question": "Vilket ljud börjar du höra?",
           "options": [
             "n",
             "l",
