@@ -20,7 +20,6 @@ export interface Stage {
 // ─── Exercise types ───────────────────────────────────────────────────────────
 
 export type GrammarExerciseType = "multiple-choice" | "fill-in-blank" | "build-sentence";
-export type ReadingQuestionType = "on-the-line" | "between-the-lines" | "beyond-the-lines";
 
 export interface MultipleChoiceExercise {
   id: string;
@@ -68,16 +67,6 @@ export type GrammarExercise =
   | BuildSentenceExercise
   | WordCluesExercise;
 
-export interface ReadingQuestion {
-  id: string;
-  type: ReadingQuestionType;
-  question: string;
-  options: string[];
-  correctIndex: number;
-  hint?: string;
-  explanation?: string;
-}
-
 // ─── Module definitions ───────────────────────────────────────────────────────
 
 export interface GrammarModule {
@@ -89,19 +78,6 @@ export interface GrammarModule {
   bonusPoints: number;
   helpText?: string[];
   exercises: GrammarExercise[];
-}
-
-export interface ReadingModule {
-  id: string;
-  title: string;
-  description: string;
-  icon: string;
-  pointsRequired: number;
-  bonusPoints: number;
-  helpText?: string[];
-  text: string;
-  author?: string;
-  questions: ReadingQuestion[];
 }
 
 export interface SpellingModule {
@@ -194,7 +170,6 @@ export type MorfemModule = FonemModule;
 
 export interface StageContent {
   grammar: GrammarModule[];
-  reading: ReadingModule[];
   spelling?: SpellingModule[];
   wordsearch?: WordSearchModule[];
   stavningstest?: SpellingTimedModule[];
@@ -215,7 +190,6 @@ export interface ModuleProgress {
 export interface StageProgress {
   stageId: StageId;
   grammarModules: Record<string, ModuleProgress>;
-  readingModules: Record<string, ModuleProgress>;
   spellingModules: Record<string, ModuleProgress>;
   wordsearchModules: Record<string, ModuleProgress>;
   stavningstestModules: Record<string, ModuleProgress>;

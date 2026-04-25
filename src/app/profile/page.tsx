@@ -39,14 +39,13 @@ export default function ProfilePage() {
   function getStageStats(stageId: StageId) {
     const s = student!.stages[stageId];
     const grammarMods = Object.values(s.grammarModules);
-    const readingMods = Object.values(s.readingModules);
     const spellingMods = Object.values(s.spellingModules ?? {});
     const wordsearchMods = Object.values(s.wordsearchModules ?? {});
     const stavningstestMods = Object.values(s.stavningstestModules ?? {});
-    const all = [...grammarMods, ...readingMods, ...spellingMods, ...wordsearchMods, ...stavningstestMods];
+    const all = [...grammarMods, ...spellingMods, ...wordsearchMods, ...stavningstestMods];
     const completed = all.filter((m) => m.completed).length;
     const totalPoints = all.reduce((sum, m) => sum + m.points, 0);
-    return { completed, totalPoints, grammarMods, readingMods, spellingMods };
+    return { completed, totalPoints, grammarMods, spellingMods };
   }
 
   const joinDate = new Date(student.createdAt).toLocaleDateString("sv-SE");
@@ -98,8 +97,8 @@ export default function ProfilePage() {
             <h2 className="text-lg font-bold text-sv-900 dark:text-gray-100 mb-3">📊 Progression per stadie</h2>
             <div className="space-y-3">
               {STAGES.map((stage, i) => {
-                const { completed, totalPoints, grammarMods, readingMods, spellingMods } = getStageStats(stage.id);
-                const total = grammarMods.length + readingMods.length + spellingMods.length;
+                const { completed, totalPoints, grammarMods, spellingMods } = getStageStats(stage.id);
+                const total = grammarMods.length + spellingMods.length;
                 const pct = total > 0 ? (completed / total) * 100 : 0;
 
                 return (
@@ -130,10 +129,9 @@ export default function ProfilePage() {
                           showPercent
                         />
                         {total > 0 && (
-                          <div className="mt-3 grid grid-cols-3 gap-2">
+                          <div className="mt-3 grid grid-cols-2 gap-2">
                             {[
                               { mods: grammarMods, label: "📝 Grammatik" },
-                              { mods: readingMods, label: "📖 Läsning" },
                               { mods: spellingMods, label: "✏️ Stavning" },
                             ].map(({ mods, label }) => (
                               <div key={label} className="bg-sv-50 dark:bg-gray-700 rounded-xl p-2 text-xs text-center border border-sv-100 dark:border-gray-600">

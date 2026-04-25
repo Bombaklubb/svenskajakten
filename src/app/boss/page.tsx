@@ -13,7 +13,6 @@ const PASS_BADGE = "boss_slayer";
 const CAT_LABELS: Record<string, string> = {
   grammar: "Grammatik",
   spelling: "Stavning",
-  reading: "Läsförståelse",
 };
 
 type Phase = "select" | "intro" | "battle" | "win" | "lose";

@@ -10,7 +10,7 @@ interface ModuleCardProps {
   title: string;
   description: string;
   icon: string;
-  kind: "grammar" | "reading" | "spelling" | "wordsearch" | "stavningstest" | "fonem" | "morfem";
+  kind: "grammar" | "spelling" | "wordsearch" | "stavningstest" | "fonem" | "morfem";
   stage: Stage;
   progress: ModuleProgress | null;
   locked: boolean;
@@ -19,7 +19,6 @@ interface ModuleCardProps {
 
 const KIND_LABEL: Record<string, string> = {
   grammar: "📝 Grammatik",
-  reading: "📖 Läsning",
   spelling: "✏️ Stavning",
   wordsearch: "🔍 Ordsökning",
   stavningstest: "⏱️ Stavningstest",

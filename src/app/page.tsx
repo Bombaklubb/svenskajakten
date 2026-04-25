@@ -169,12 +169,10 @@ export default function HomePage() {
               {STAGES.map((stage, i) => {
                 const stageProgress = student.stages[stage.id];
                 const grammarMods  = Object.values(stageProgress.grammarModules);
-                const readingMods  = Object.values(stageProgress.readingModules);
                 const spellingMods = Object.values(stageProgress.spellingModules ?? {});
                 const totalCompleted = grammarMods.filter((m) => m.completed).length
-                  + readingMods.filter((m) => m.completed).length
                   + spellingMods.filter((m) => m.completed).length;
-                const stagePoints = [...grammarMods, ...readingMods, ...spellingMods]
+                const stagePoints = [...grammarMods, ...spellingMods]
                   .reduce((sum, m) => sum + m.points, 0);
 
                 return (

@@ -205,7 +205,6 @@ export const CHEST_META: Record<
 export const ALL_BADGES = [
   { id: "grammar_star",    label: "Grammatikstjärna",  emoji: "⭐" },
   { id: "spelling_ace",   label: "Stavningsmästare",   emoji: "🔤" },
-  { id: "reading_pro",    label: "Läsproffs",          emoji: "📖" },
   { id: "curious_learner",label: "Nyfiken lärare",     emoji: "🔍" },
   { id: "word_wizard",    label: "Ordtrollkarl",       emoji: "🪄" },
   { id: "svenska_hero",   label: "Svenskahjälte",      emoji: "🦸" },
@@ -218,7 +217,7 @@ export const ALL_BADGES = [
 export interface BossQuestion {
   id: string;
   type: "multiple-choice";
-  category: "grammar" | "spelling" | "reading";
+  category: "grammar" | "spelling";
   question: string;
   options: string[];
   correctIndex: number;
@@ -269,7 +268,7 @@ export const BOSSES: Boss[] = [
         question: "Fyll i rätt ord: 'Igår ___ vi på bio.'",
         options: ["är", "var", "hade", "blir"],
         correctIndex: 1 },
-      { id: "g4", type: "multiple-choice", category: "reading",
+      { id: "g4", type: "multiple-choice", category: "grammar",
         question: "Vad betyder ordet 'häpnadsväckande'?",
         options: ["Tråkig", "Liten", "Snabb", "Förvånande och imponerande"],
         correctIndex: 3 },
@@ -285,7 +284,7 @@ export const BOSSES: Boss[] = [
         question: "Välj rätt ordform: 'Det ___ regna imorgon.'",
         options: ["kanske", "möjlig", "trolig", "kan"],
         correctIndex: 3 },
-      { id: "g8", type: "multiple-choice", category: "reading",
+      { id: "g8", type: "multiple-choice", category: "grammar",
         question: "Om någon är 'förtjust', hur mår de?",
         options: ["Mycket arga", "Mycket glada och nöjda", "Mycket trötta", "Mycket ledsna"],
         correctIndex: 1 },
@@ -363,15 +362,15 @@ export const BOSSES: Boss[] = [
     bonusPoints: 400,
     rewardChestType: "gold",
     questions: [
-      { id: "o1", type: "multiple-choice", category: "reading",
+      { id: "o1", type: "multiple-choice", category: "grammar",
         question: "Vad betyder 'perspektiv'?",
         options: ["En sorts kamera", "Synvinkel eller sätt att se på saker", "En matematisk formel", "Ett perspektivglas"],
         correctIndex: 1 },
-      { id: "o2", type: "multiple-choice", category: "reading",
+      { id: "o2", type: "multiple-choice", category: "grammar",
         question: "Vilket ord beskriver 'tillståndet när man inte kan sova'?",
         options: ["Trötthet", "Dåsighet", "Sömnlöshet", "Sömnighet"],
         correctIndex: 2 },
-      { id: "o3", type: "multiple-choice", category: "reading",
+      { id: "o3", type: "multiple-choice", category: "grammar",
         question: "Vad betyder 'vältalig'?",
         options: ["Talar för fort", "Pratar för mycket", "Har en vacker röst", "Duktig på att tala övertygande"],
         correctIndex: 3 },
@@ -379,19 +378,19 @@ export const BOSSES: Boss[] = [
         question: "Vilket ord är ett antonym (motsats) till 'frivillig'?",
         options: ["Valfri", "Önskad", "Obligatorisk", "Spontan"],
         correctIndex: 2 },
-      { id: "o5", type: "multiple-choice", category: "reading",
+      { id: "o5", type: "multiple-choice", category: "grammar",
         question: "Vad innebär att 'resonera'?",
         options: ["Att sjunga melodiskt", "Att tänka och argumentera logiskt", "Att reparera något", "Att räkna matematik"],
         correctIndex: 1 },
-      { id: "o6", type: "multiple-choice", category: "reading",
+      { id: "o6", type: "multiple-choice", category: "grammar",
         question: "Vad menas med att en text är 'saklig'?",
         options: ["Den handlar om djur", "Den är skriven på latin", "Den är oseriös", "Den håller sig till fakta utan att vara känslomässig"],
         correctIndex: 3 },
-      { id: "o7", type: "multiple-choice", category: "reading",
+      { id: "o7", type: "multiple-choice", category: "grammar",
         question: "Vad betyder 'paradox'?",
         options: ["En enkel matematisk formel", "En konstig dikt", "En sorts berättelse", "Ett påstående som verkar motsägelsefullt men ändå kan vara sant"],
         correctIndex: 3 },
-      { id: "o8", type: "multiple-choice", category: "reading",
+      { id: "o8", type: "multiple-choice", category: "grammar",
         question: "Vilket ord betyder 'att bekräfta att något är sant'?",
         options: ["Falsifiera", "Verifiera", "Duplicera", "Ignorera"],
         correctIndex: 1 },
