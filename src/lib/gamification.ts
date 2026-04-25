@@ -522,7 +522,7 @@ export function openWoodChest(): {
   description: string;
   bonusChest?: Chest;
 } {
-  const pts = Math.floor(Math.random() * 51) + 50;
+  const pts = Math.floor(Math.random() * 101) + 20;
   return { points: pts, description: `+${pts} poäng` };
 }
 
@@ -532,7 +532,7 @@ export function openSilverChest(badges: string[]): {
   bonusChest?: Chest;
   description: string;
 } {
-  const pts = Math.floor(Math.random() * 101) + 100;
+  const pts = Math.floor(Math.random() * 101) + 20;
   const available = ALL_BADGES.filter(
     (b) => b.id !== "boss_slayer" && !badges.includes(b.id)
   );
@@ -556,7 +556,7 @@ export function openGoldChest(badges: string[]): {
   bonusChest?: Chest;
   description: string;
 } {
-  const pts = Math.floor(Math.random() * 301) + 200;
+  const pts = Math.floor(Math.random() * 101) + 20;
   const available = ALL_BADGES.filter((b) => !badges.includes(b.id));
   const badge = available.length > 0
     ? available[Math.floor(Math.random() * available.length)]
@@ -578,7 +578,7 @@ export function openEmeraldChest(badges: string[]): {
   bonusChest?: Chest;
   description: string;
 } {
-  const pts = Math.floor(Math.random() * 401) + 400;
+  const pts = Math.floor(Math.random() * 101) + 20;
   const available = ALL_BADGES.filter((b) => !badges.includes(b.id));
   const badge = available.length > 0
     ? available[Math.floor(Math.random() * available.length)]
@@ -600,7 +600,7 @@ export function openRubyChest(badges: string[]): {
   bonusChest?: Chest;
   description: string;
 } {
-  const pts = Math.floor(Math.random() * 601) + 600;
+  const pts = Math.floor(Math.random() * 101) + 20;
   const available = ALL_BADGES.filter((b) => !badges.includes(b.id));
   const badge = available.length > 0
     ? available[Math.floor(Math.random() * available.length)]
@@ -622,7 +622,7 @@ export function openDiamondChest(badges: string[]): {
   bonusChest?: Chest;
   description: string;
 } {
-  const pts = Math.floor(Math.random() * 1001) + 1000;
+  const pts = Math.floor(Math.random() * 101) + 20;
   const available = ALL_BADGES.filter((b) => !badges.includes(b.id));
   const badge = available.length > 0
     ? available[Math.floor(Math.random() * available.length)]
