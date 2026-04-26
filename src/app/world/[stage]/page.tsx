@@ -32,7 +32,7 @@ interface Props {
   params: Promise<{ stage: string }>;
 }
 
-type Tab = "grammar" | "spelling" | "wordsearch" | "fonem" | "morfem" | "regler" | "spel" | "retry";
+type Tab = "grammar" | "spelling" | "wordsearch" | "regler" | "spel" | "retry";
 
 export default function WorldPage({ params }: Props) {
   const { stage: stageId } = use(params);
@@ -76,14 +76,12 @@ export default function WorldPage({ params }: Props) {
 
   const stageProgress = student?.stages[stage.id as keyof typeof student.stages];
 
-  function getModuleProgress(kind: "grammar" | "spelling" | "wordsearch" | "stavningstest" | "fonem" | "morfem", moduleId: string) {
+  function getModuleProgress(kind: "grammar" | "spelling" | "wordsearch" | "stavningstest", moduleId: string) {
     if (!stageProgress) return null;
     const map =
       kind === "grammar" ? stageProgress.grammarModules
       : kind === "spelling" ? (stageProgress.spellingModules ?? {})
       : kind === "stavningstest" ? (stageProgress.stavningstestModules ?? {})
-      : kind === "fonem" ? (stageProgress.fonemModules ?? {})
-      : kind === "morfem" ? (stageProgress.morfemModules ?? {})
       : (stageProgress.wordsearchModules ?? {});
     return map[moduleId] ?? null;
   }
@@ -91,8 +89,6 @@ export default function WorldPage({ params }: Props) {
   const tabs: { id: Tab; label: string }[] = [
     { id: "grammar",    label: "📝 Grammatik" },
     { id: "spelling",   label: "✏️ Stavning" },
-    { id: "fonem",      label: "🔊 Fonem" },
-    { id: "morfem",     label: "🧩 Morfem" },
     { id: "regler",     label: "📐 Språkregler" },
     { id: "wordsearch", label: "🔍 Ordsökning" },
     { id: "spel",       label: "🎮 Spel" },
@@ -147,8 +143,6 @@ export default function WorldPage({ params }: Props) {
               { label: "Grammatik", icon: "📝", count: Object.values(stageProgress.grammarModules).filter((m) => m.completed).length, total: content?.grammar.length ?? 0 },
               { label: "Stavning",  icon: "✏️", count: Object.values(stageProgress.spellingModules ?? {}).filter((m) => m.completed).length, total: content?.spelling?.length ?? 0 },
               { label: "Ordsök.",   icon: "🔍", count: Object.values(stageProgress.wordsearchModules ?? {}).filter((m) => m.completed).length, total: content?.wordsearch?.length ?? 0 },
-              { label: "Fonem",     icon: "🔊", count: Object.values(stageProgress.fonemModules ?? {}).filter((m) => m.completed).length, total: content?.fonem?.length ?? 0 },
-              { label: "Morfem",    icon: "🧩", count: Object.values(stageProgress.morfemModules ?? {}).filter((m) => m.completed).length, total: content?.morfem?.length ?? 0 },
             ].map(({ label, icon, count, total }) => {
               const done = total > 0 && count === total;
               return (
@@ -471,60 +465,6 @@ export default function WorldPage({ params }: Props) {
               <div className="card text-center py-10 text-gray-400">
                 <div className="text-3xl mb-2">✏️</div>
                 <p>Inga stavningsövningar tillgängliga ännu.</p>
-              </div>
-            )}
-          </div>
-
-        ) : activeTab === "fonem" ? (
-          <div className="space-y-4">
-            {(content?.fonem ?? []).length === 0 ? (
-              <div className="card text-center py-10 text-gray-400">
-                <div className="text-3xl mb-2">🔊</div>
-                <p>Inga fonemövningar tillgängliga ännu.</p>
-              </div>
-            ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                {(content?.fonem ?? []).map((mod, idx, arr) => (
-                  <ModuleCard
-                    key={mod.id}
-                    id={mod.id}
-                    title={mod.title}
-                    description={mod.description}
-                    icon={mod.icon}
-                    kind="fonem"
-                    stage={stage}
-                    progress={getModuleProgress("fonem", mod.id)}
-                    locked={false}
-                    prevModuleTitle={idx > 0 ? arr[idx - 1].title : null}
-                  />
-                ))}
-              </div>
-            )}
-          </div>
-
-        ) : activeTab === "morfem" ? (
-          <div className="space-y-4">
-            {(content?.morfem ?? []).length === 0 ? (
-              <div className="card text-center py-10 text-gray-400">
-                <div className="text-3xl mb-2">🧩</div>
-                <p>Inga morfemövningar tillgängliga ännu.</p>
-              </div>
-            ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                {(content?.morfem ?? []).map((mod, idx, arr) => (
-                  <ModuleCard
-                    key={mod.id}
-                    id={mod.id}
-                    title={mod.title}
-                    description={mod.description}
-                    icon={mod.icon}
-                    kind="morfem"
-                    stage={stage}
-                    progress={getModuleProgress("morfem", mod.id)}
-                    locked={false}
-                    prevModuleTitle={idx > 0 ? arr[idx - 1].title : null}
-                  />
-                ))}
               </div>
             )}
           </div>
