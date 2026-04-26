@@ -3,9 +3,9 @@
 import { useState, useRef, useEffect } from "react";
 
 const LINKS = [
-  { label: "Läsjakten",      href: "https://www.lasjakten.vercel.app",       emoji: "📚" },
-  { label: "Mattejakten",    href: "https://www.mattejakten.vercel.app",     emoji: "🔢" },
-  { label: "Engelskajakten", href: "https://www.engelskajakten.vercel.app",  emoji: "🇬🇧" },
+  { label: "Läsjakten",      href: "https://lasjakten.vercel.app",       emoji: "📚" },
+  { label: "Mattejakten",    href: "https://mattejakten.vercel.app",     emoji: "🔢" },
+  { label: "Engelskajakten", href: "https://engelskajakten.vercel.app",  emoji: "🇬🇧" },
 ];
 
 export default function JaktlankarMenu() {
