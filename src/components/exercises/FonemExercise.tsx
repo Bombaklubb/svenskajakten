@@ -10,43 +10,33 @@ interface Props {
 
 // ─── Speech ───────────────────────────────────────────────────────────────────
 
-// Swedish TTS reads single consonants as letter names ("em", "ess", "el").
-// Strategy: for continuant consonants (nasals, fricatives, liquids) use the
-// doubled form — Swedish TTS recognises "mm" as a nasal hum, "ss" as a hiss,
-// "ll"/"rr" as the lateral/rhotic sound rather than letter names.
-// For stop consonants (b, d, p, t, k, g) which can't be sustained, use a
-// short CV-syllable as the closest approximation.
-const PHONEME_TEXT: Record<string, string> = {
-  // Nasals – doubled = sustained nasal hum
-  m: "mm",  n: "nn",
-  // Fricatives – doubled = sustained friction sound
-  f: "ff",  s: "ss",  v: "vv",
-  // Liquids – doubled = sustained lateral/rhotic
-  l: "ll",  r: "rr",
-  // Stops – use short syllable (stops cannot be isolated without a vowel)
-  b: "ba",  d: "da",  g: "ga",  h: "ha",
-  j: "ja",  k: "ka",  p: "pa",  t: "ta",
-  z: "za",
-};
 const VOWELS = new Set(["a","e","i","o","u","y","å","ä","ö"]);
 
-function resolvePhoneme(text: string): string {
-  if (text.length === 1 && !VOWELS.has(text.toLowerCase())) {
-    return PHONEME_TEXT[text.toLowerCase()] ?? text;
-  }
-  return text;
+function isSingleConsonant(text: string): boolean {
+  return text.length === 1 && !VOWELS.has(text.toLowerCase());
+}
+
+// For TTS fallback (words, blends, etc.)
+function speakTTS(text: string, rate: number) {
+  if (typeof window === "undefined") return;
+  const synth = window.speechSynthesis;
+  synth.cancel();
+  const utt = new SpeechSynthesisUtterance(text);
+  utt.lang = "sv-SE";
+  utt.rate = rate;
+  utt.pitch = 1.15;
+  synth.speak(utt);
 }
 
 function speak(text: string, slow = false, phonemeContext = false) {
   if (typeof window === "undefined") return;
-  const synth = window.speechSynthesis;
-  synth.cancel();
-  const resolved = phonemeContext ? resolvePhoneme(text) : text;
-  const utt = new SpeechSynthesisUtterance(resolved);
-  utt.lang = "sv-SE";
-  utt.rate = phonemeContext ? 0.3 : slow ? 0.45 : 0.82;
-  utt.pitch = 1.15;
-  synth.speak(utt);
+  // For single consonants in phoneme context: play pre-recorded audio file
+  if (phonemeContext && isSingleConsonant(text)) {
+    const audio = new Audio(`/audio/fonem/${text.toLowerCase()}.wav`);
+    audio.play().catch(() => speakTTS(text, 0.3)); // TTS fallback if file missing
+    return;
+  }
+  speakTTS(text, phonemeContext ? 0.3 : slow ? 0.45 : 0.82);
 }
 
 // ─── Shared sub-components ───────────────────────────────────────────────────
