@@ -188,7 +188,7 @@ function TrophyShelf({ chests }: { chests: Chest[] }) {
     wood: chests.filter((c) => c.type === "wood"),
   };
 
-  const order: ChestType[] = ["hemlig", "diamond", "ruby", "emerald", "gold", "silver", "wood"];
+  const order: ChestType[] = ["wood", "silver", "gold", "emerald", "ruby", "diamond", "hemlig"];
 
   return (
     <div className="space-y-6">
@@ -288,7 +288,10 @@ export default function KistorPage() {
 
   if (!student || !gam) return null;
 
-  const unopened = gam.chests.filter((c) => !c.opened);
+  const CHEST_ORDER: ChestType[] = ["wood", "silver", "gold", "emerald", "ruby", "diamond", "hemlig"];
+  const unopened = [...gam.chests.filter((c) => !c.opened)].sort(
+    (a, b) => CHEST_ORDER.indexOf(a.type) - CHEST_ORDER.indexOf(b.type)
+  );
   const opened = gam.chests.filter((c) => c.opened);
   const exercisesLeft = Math.max(0, BOSS_UNLOCK_THRESHOLD - gam.exercisesCompleted);
 
