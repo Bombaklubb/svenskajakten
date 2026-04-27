@@ -143,7 +143,7 @@ export function chestsEarnedFromAchievements(
 
 export const CHEST_META: Record<
   ChestType,
-  { label: string; emoji: string; image: string; openImage: string; color: string; borderColor: string; shadowColor: string; description: string }
+  { label: string; emoji: string; image: string; openImage: string; color: string; borderColor: string; shadowColor: string; description: string; imageClass?: string }
 > = {
   wood: {
     label: "Bronskista",
@@ -214,6 +214,7 @@ export const CHEST_META: Record<
     borderColor: "border-violet-500",
     shadowColor: "shadow-violet-900/50",
     description: "En unik kista för de allra mest dedikerade – extremt sällsynt!",
+    imageClass: "scale-[1.55]",
   },
 };
 

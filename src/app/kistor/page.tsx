@@ -68,7 +68,7 @@ function ChestCard({ chest, onOpen }: { chest: Chest; onOpen: (id: string) => vo
         <img
           src={chest.opened ? meta.openImage : meta.image}
           alt={meta.label}
-          className="w-full h-full object-contain drop-shadow-md"
+          className={`w-full h-full object-contain drop-shadow-md ${meta.imageClass ?? ""}`}
         />
       </div>
 
@@ -201,7 +201,7 @@ function TrophyShelf({ chests }: { chests: Chest[] }) {
           <div key={type}>
             {/* Shelf label */}
             <div className={`flex items-center gap-2 mb-2 font-bold text-sm ${style.label}`}>
-              <img src={meta.image} alt={meta.label} className="w-5 h-5 object-contain" />
+              <img src={meta.image} alt={meta.label} className={`w-5 h-5 object-contain ${meta.imageClass ?? ""}`} />
               <span>{meta.label}</span>
               <span className={`ml-1 px-2 py-0.5 text-xs rounded-full font-bold ${style.count}`}>
                 ×{items.length}
@@ -216,7 +216,7 @@ function TrophyShelf({ chests }: { chests: Chest[] }) {
               <div className="flex flex-wrap gap-4">
                 {items.map((chest) => (
                   <div key={chest.id} className="flex flex-col items-center gap-1 w-14">
-                    <img src={meta.openImage} alt={meta.label} className="w-8 h-8 object-contain drop-shadow" />
+                    <img src={meta.openImage} alt={meta.label} className={`w-8 h-8 object-contain drop-shadow ${meta.imageClass ?? ""}`} />
                     {chest.openedReward && (
                       <span className="text-[10px] text-center text-gray-500 dark:text-gray-400 leading-tight line-clamp-2">
                         {chest.openedReward}
@@ -516,7 +516,7 @@ export default function KistorPage() {
               <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/smaragdkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Smaragdkista:</strong> 8 000 – 12 000 poäng</span></li>
               <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/rubinkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Rubinkista:</strong> 15 000 – 20 000 poäng</span></li>
               <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/diamantkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Diamantkista:</strong> 25 000 – 40 000 poäng</span></li>
-              <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/hemligkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Hemliga kistan:</strong> 60 000 – 100 000 poäng 🔒</span></li>
+              <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/hemligkista.png" alt="" className="w-6 h-6 object-contain scale-[1.55]" /></div><span><strong>Hemliga kistan:</strong> 60 000 – 100 000 poäng 🔒</span></li>
             </ul>
             <p className="text-xs font-bold text-sv-500 dark:text-sv-300 uppercase tracking-wide mb-2">Övningsmilstolpar</p>
             <ul className="space-y-2 text-sm text-sv-800 dark:text-sv-100 mb-4">
@@ -526,7 +526,7 @@ export default function KistorPage() {
               <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/smaragdkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Smaragdkista:</strong> 150 – 200 övningar</span></li>
               <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/rubinkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Rubinkista:</strong> 250 – 300 övningar</span></li>
               <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/diamantkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Diamantkista:</strong> 400 – 500 övningar</span></li>
-              <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/hemligkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Hemliga kistan:</strong> 750 – 1 000 övningar 🔒</span></li>
+              <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/hemligkista.png" alt="" className="w-6 h-6 object-contain scale-[1.55]" /></div><span><strong>Hemliga kistan:</strong> 750 – 1 000 övningar 🔒</span></li>
             </ul>
             <div className="flex items-center gap-3 text-sm text-sv-800 dark:text-sv-100 pt-3 border-t border-sv-100 dark:border-gray-700">
               <span>🎁</span>
