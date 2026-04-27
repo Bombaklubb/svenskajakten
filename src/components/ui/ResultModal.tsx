@@ -11,6 +11,7 @@ const CHEST_LABELS: Record<ChestType, string> = {
   emerald: "Smaragdkista",
   ruby: "Rubinkista",
   diamond: "Diamantkista",
+  hemlig: "Hemliga kistan",
 };
 const CHEST_IMAGES: Record<ChestType, string> = {
   wood: "/content/bronskista.png",
@@ -19,6 +20,7 @@ const CHEST_IMAGES: Record<ChestType, string> = {
   emerald: "/content/smaragdkista.png",
   ruby: "/content/rubinkista.png",
   diamond: "/content/diamantkista.png",
+  hemlig: "/content/hemligkista.png",
 };
 
 interface ResultModalProps {
