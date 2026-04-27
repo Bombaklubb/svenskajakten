@@ -3,9 +3,9 @@
 import { useState, useRef, useEffect } from "react";
 
 const LINKS = [
-  { label: "Läsjakten",      href: "https://lasjakten.vercel.app",       emoji: "📚" },
-  { label: "Mattejakten",    href: "https://mattejakten.vercel.app",     emoji: "🔢" },
-  { label: "Engelskajakten", href: "https://engelskajakten.vercel.app",  emoji: "🇬🇧" },
+  { label: "Läsjakten",      href: "https://lasjakten.vercel.app",       icon: <span>📚</span> },
+  { label: "Mattejakten",    href: "https://mattejakten.vercel.app",     icon: <span>🔢</span> },
+  { label: "Engelskajakten", href: "https://engelskajakten.vercel.app",  icon: <img src="/flags/gb.svg" alt="GB" width={20} height={14} style={{ borderRadius: 2 }} /> },
 ];
 
 export default function JaktlankarMenu() {
@@ -37,7 +37,7 @@ export default function JaktlankarMenu() {
           className="absolute bottom-full right-0 mb-2 bg-white dark:bg-gray-800 border-2 border-slate-200 dark:border-gray-600 rounded-2xl shadow-xl overflow-hidden min-w-[180px]"
           style={{ boxShadow: "0 8px 24px -4px rgba(0,0,0,0.18)" }}
         >
-          {LINKS.map(({ label, href, emoji }) => (
+          {LINKS.map(({ label, href, icon }) => (
             <a
               key={href}
               href={href}
@@ -46,7 +46,7 @@ export default function JaktlankarMenu() {
               onClick={() => setOpen(false)}
               className="flex items-center gap-2.5 px-4 py-3 text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-gray-700 transition-colors border-b border-slate-100 dark:border-gray-700 last:border-0"
             >
-              <span>{emoji}</span>
+              {icon}
               <span>{label}</span>
               <span className="ml-auto text-slate-400 text-xs">↗</span>
             </a>
