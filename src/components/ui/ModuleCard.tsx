@@ -89,20 +89,30 @@ export default function ModuleCard({
         >
           <div className="flex items-center gap-4">
             {/* Icon */}
-            <div
-              className={`w-14 h-14 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0 transition-transform duration-200 group-hover:scale-110 group-hover:rotate-3 border-3 ${
-                progress?.completed
-                  ? stage.colorClass + " text-white border-white/30"
-                  : "bg-sv-50 dark:bg-gray-700 border-sv-100 dark:border-gray-600"
-              }`}
-              style={{
-                boxShadow: progress?.completed
-                  ? "0 3px 0 0 rgba(0,0,0,0.2), inset 0 2px 4px 0 rgba(255,255,255,0.3)"
-                  : "0 3px 0 0 rgba(249,115,22,0.1), inset 0 2px 4px 0 rgba(255,255,255,0.8)"
-              }}
-            >
-              {progress?.completed ? "✓" : icon}
-            </div>
+            {(() => {
+              const content = progress?.completed ? "✓" : icon;
+              const sizeClass =
+                content.length >= 5 ? "text-[10px]" :
+                content.length >= 4 ? "text-xs" :
+                content.length >= 3 ? "text-sm" :
+                content.length >= 2 ? "text-base" : "text-2xl";
+              return (
+                <div
+                  className={`w-14 h-14 rounded-2xl flex items-center justify-center flex-wrap content-center gap-0 ${sizeClass} flex-shrink-0 overflow-hidden transition-transform duration-200 group-hover:scale-110 group-hover:rotate-3 border-3 ${
+                    progress?.completed
+                      ? stage.colorClass + " text-white border-white/30"
+                      : "bg-sv-50 dark:bg-gray-700 border-sv-100 dark:border-gray-600"
+                  }`}
+                  style={{
+                    boxShadow: progress?.completed
+                      ? "0 3px 0 0 rgba(0,0,0,0.2), inset 0 2px 4px 0 rgba(255,255,255,0.3)"
+                      : "0 3px 0 0 rgba(249,115,22,0.1), inset 0 2px 4px 0 rgba(255,255,255,0.8)"
+                  }}
+                >
+                  {content}
+                </div>
+              );
+            })()}
 
             {/* Content */}
             <div className="flex-1 min-w-0">
