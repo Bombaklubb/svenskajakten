@@ -53,6 +53,9 @@ export const POINT_CHEST_MILESTONES: { points: number; type: ChestType }[] = [
   { points: 25000, type: "diamond" },
   { points: 30000, type: "diamond" },
   { points: 40000, type: "diamond" },
+  { points: 60000, type: "hemlig" },
+  { points: 80000, type: "hemlig" },
+  { points: 100000, type: "hemlig" },
 ];
 
 export const EXERCISE_CHEST_MILESTONES: { exercises: number; type: ChestType }[] = [
@@ -87,6 +90,8 @@ export const EXERCISE_CHEST_MILESTONES: { exercises: number; type: ChestType }[]
   { exercises: 300, type: "ruby" },
   { exercises: 400, type: "diamond" },
   { exercises: 500, type: "diamond" },
+  { exercises: 750, type: "hemlig" },
+  { exercises: 1000, type: "hemlig" },
 ];
 
 // ─── Achievement → chest rewards ─────────────────────────────────────────────
@@ -199,6 +204,16 @@ export const CHEST_META: Record<
     borderColor: "border-sky-400",
     shadowColor: "shadow-sky-600/40",
     description: "Den legendariska diamantkistan – den ultimata belöningen!",
+  },
+  hemlig: {
+    label: "Hemliga kistan",
+    emoji: "🔒",
+    image: "/content/hemligkista.png",
+    openImage: "/content/oppen-kista-hemlig.png",
+    color: "from-violet-700 to-purple-900",
+    borderColor: "border-violet-500",
+    shadowColor: "shadow-violet-900/50",
+    description: "En unik kista för de allra mest dedikerade – extremt sällsynt!",
   },
 };
 
@@ -632,6 +647,28 @@ export function openDiamondChest(badges: string[]): {
     `+${pts} poäng`,
     badge ? `Märke: ${badge.label} ${badge.emoji}` : null,
     bonusChest ? "Bonus: Rubinkista!" : null,
+  ]
+    .filter(Boolean)
+    .join(" • ");
+  return { points: pts, badge: badge?.id, bonusChest, description: desc };
+}
+
+export function openHemligChest(badges: string[]): {
+  points: number;
+  badge?: string;
+  bonusChest?: Chest;
+  description: string;
+} {
+  const pts = Math.floor(Math.random() * 201) + 100;
+  const available = ALL_BADGES.filter((b) => !badges.includes(b.id));
+  const badge = available.length > 0
+    ? available[Math.floor(Math.random() * available.length)]
+    : null;
+  const bonusChest = Math.random() < 0.6 ? makeChest("diamond") : undefined;
+  const desc = [
+    `+${pts} poäng`,
+    badge ? `Märke: ${badge.label} ${badge.emoji}` : null,
+    bonusChest ? "Bonus: Diamantkista!" : null,
   ]
     .filter(Boolean)
     .join(" • ");

@@ -22,6 +22,7 @@ import {
   openEmeraldChest,
   openRubyChest,
   openDiamondChest,
+  openHemligChest,
   checkMissedExerciseMilestones,
   checkMissedPointMilestones,
   capNewChests,
@@ -132,6 +133,12 @@ function RewardPopup({ result, onClose }: { result: RewardResult; onClose: () =>
 }
 
 const SHELF_STYLES: Record<ChestType, { bg: string; plank: string; count: string; label: string }> = {
+  hemlig: {
+    bg: "linear-gradient(135deg, rgba(167,139,250,0.25), rgba(109,40,217,0.15))",
+    plank: "linear-gradient(180deg, #4c1d95, #3b0764)",
+    count: "bg-violet-600 text-white",
+    label: "text-violet-700 dark:text-violet-300",
+  },
   diamond: {
     bg: "linear-gradient(135deg, rgba(125,211,252,0.2), rgba(14,165,233,0.12))",
     plank: "linear-gradient(180deg, #0369a1, #0c4a6e)",
@@ -172,6 +179,7 @@ const SHELF_STYLES: Record<ChestType, { bg: string; plank: string; count: string
 
 function TrophyShelf({ chests }: { chests: Chest[] }) {
   const byType: Record<ChestType, Chest[]> = {
+    hemlig: chests.filter((c) => c.type === "hemlig"),
     diamond: chests.filter((c) => c.type === "diamond"),
     ruby: chests.filter((c) => c.type === "ruby"),
     emerald: chests.filter((c) => c.type === "emerald"),
@@ -180,7 +188,7 @@ function TrophyShelf({ chests }: { chests: Chest[] }) {
     wood: chests.filter((c) => c.type === "wood"),
   };
 
-  const order: ChestType[] = ["diamond", "ruby", "emerald", "gold", "silver", "wood"];
+  const order: ChestType[] = ["hemlig", "diamond", "ruby", "emerald", "gold", "silver", "wood"];
 
   return (
     <div className="space-y-6">
@@ -295,7 +303,8 @@ export default function KistorPage() {
     else if (chest.type === "gold") result = openGoldChest(gam.badges);
     else if (chest.type === "emerald") result = openEmeraldChest(gam.badges);
     else if (chest.type === "ruby") result = openRubyChest(gam.badges);
-    else result = openDiamondChest(gam.badges);
+    else if (chest.type === "diamond") result = openDiamondChest(gam.badges);
+    else result = openHemligChest(gam.badges);
 
     const newChests = gam.chests.map((c) =>
       c.id === chestId ? { ...c, opened: true, openedReward: result.description } : c
@@ -507,6 +516,7 @@ export default function KistorPage() {
               <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/smaragdkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Smaragdkista:</strong> 8 000 – 12 000 poäng</span></li>
               <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/rubinkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Rubinkista:</strong> 15 000 – 20 000 poäng</span></li>
               <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/diamantkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Diamantkista:</strong> 25 000 – 40 000 poäng</span></li>
+              <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/hemligkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Hemliga kistan:</strong> 60 000 – 100 000 poäng 🔒</span></li>
             </ul>
             <p className="text-xs font-bold text-sv-500 dark:text-sv-300 uppercase tracking-wide mb-2">Övningsmilstolpar</p>
             <ul className="space-y-2 text-sm text-sv-800 dark:text-sv-100 mb-4">
@@ -516,6 +526,7 @@ export default function KistorPage() {
               <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/smaragdkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Smaragdkista:</strong> 150 – 200 övningar</span></li>
               <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/rubinkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Rubinkista:</strong> 250 – 300 övningar</span></li>
               <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/diamantkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Diamantkista:</strong> 400 – 500 övningar</span></li>
+              <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/hemligkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Hemliga kistan:</strong> 750 – 1 000 övningar 🔒</span></li>
             </ul>
             <div className="flex items-center gap-3 text-sm text-sv-800 dark:text-sv-100 pt-3 border-t border-sv-100 dark:border-gray-700">
               <span>🎁</span>
