@@ -5685,7 +5685,7 @@
       "bonusPoints": 20,
       "helpText": [
         "Rim är när två ord slutar på samma ljud.",
-        "Exempel: katt – hatt, sol – bol, hus – mus.",
+        "Exempel: katt – hatt, sol – stol, hus – mus.",
         "Lyssna på slutljudet i ordet – vilket annat ord låter likadant?"
       ],
       "exercises": [
@@ -5707,11 +5707,11 @@
           "options": [
             "bil",
             "sal",
-            "bol",
+            "stol",
             "ful"
           ],
           "correctIndex": 2,
-          "explanation": "'Bol' rimmar med 'sol' – båda slutar på '-ol'."
+          "explanation": "'Stol' rimmar med 'sol' – båda slutar på '-ol'."
         },
         {
           "type": "multiple-choice",
@@ -5754,12 +5754,12 @@
           "question": "Vilket ord rimmar med 'boll'?",
           "options": [
             "dag",
-            "doll",
+            "roll",
             "hus",
             "katt"
           ],
           "correctIndex": 1,
-          "explanation": "'Doll' rimmar med 'boll' – båda slutar på '-oll'."
+          "explanation": "'Roll' rimmar med 'boll' – båda slutar på '-oll'."
         },
         {
           "type": "multiple-choice",
@@ -5778,12 +5778,12 @@
           "question": "Vilket par rimmar?",
           "options": [
             "bil och katt",
-            "sol och bol",
+            "häst och fest",
             "dag och hus",
             "orm och bok"
           ],
           "correctIndex": 1,
-          "explanation": "'Sol och bol' rimmar – båda slutar på '-ol'."
+          "explanation": "'Häst och fest' rimmar – båda slutar på '-est'."
         },
         {
           "type": "multiple-choice",
@@ -5802,12 +5802,12 @@
           "question": "Vilket ord rimmar med 'fin'?",
           "options": [
             "dag",
-            "min",
+            "vin",
             "bok",
             "hus"
           ],
           "correctIndex": 1,
-          "explanation": "'Min' rimmar med 'fin' – båda slutar på '-in'."
+          "explanation": "'Vin' rimmar med 'fin' – båda slutar på '-in' med långt i-ljud."
         },
         {
           "type": "fill-in-blank",
@@ -5825,10 +5825,10 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Sol och ___ rimmar. (ett lekobjekt du kan studsa)",
-          "answer": "bol",
-          "hint": "Det är runt och man kan studsa med det.",
-          "explanation": "'Bol' rimmar med 'sol' – båda slutar på '-ol'."
+          "question": "Sol och ___ rimmar. (ett möbel man sitter på)",
+          "answer": "stol",
+          "hint": "Man sitter på den vid matbordet.",
+          "explanation": "'Stol' rimmar med 'sol' – båda slutar på '-ol'."
         },
         {
           "type": "fill-in-blank",
@@ -5882,10 +5882,10 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Boll och ___ rimmar. (en leksak som liknar en docka)",
-          "answer": "doll",
-          "hint": "Det är en leksak som ser ut som en liten människa.",
-          "explanation": "'Doll' rimmar med 'boll' – båda slutar på '-oll'."
+          "question": "Boll och ___ rimmar. (en uppgift eller funktion)",
+          "answer": "roll",
+          "hint": "Vad har du för ___ i gruppen?",
+          "explanation": "'Roll' rimmar med 'boll' – båda slutar på '-oll'."
         },
         {
           "type": "multiple-choice",

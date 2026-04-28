@@ -332,19 +332,24 @@ export default function BossPage() {
 
             <div className="space-y-3">
               {currentQ.options.map((opt, idx) => {
-                let style: React.CSSProperties = {
-                  border: "3px solid #e5e7eb",
-                  background: "white",
-                  boxShadow: "0 2px 8px rgba(0,0,0,0.06)",
-                };
+                let btnClass = "w-full text-left px-4 py-3 rounded-2xl font-medium transition-all cursor-pointer disabled:cursor-default text-gray-800 dark:text-gray-100";
+                let btnStyle: React.CSSProperties = { boxShadow: "0 2px 8px rgba(0,0,0,0.06)" };
+
                 if (confirmed) {
                   if (idx === currentQ.correctIndex) {
-                    style = { border: "3px solid #22c55e", background: "#f0fdf4", boxShadow: "0 2px 8px rgba(34,197,94,0.2)" };
+                    btnClass += " bg-green-50 dark:bg-green-900/40 border-[3px] border-green-500";
+                    btnStyle = { boxShadow: "0 2px 8px rgba(34,197,94,0.25)" };
                   } else if (idx === selected) {
-                    style = { border: "3px solid #ef4444", background: "#fef2f2", boxShadow: "0 2px 8px rgba(239,68,68,0.2)" };
+                    btnClass += " bg-red-50 dark:bg-red-900/40 border-[3px] border-red-500";
+                    btnStyle = { boxShadow: "0 2px 8px rgba(239,68,68,0.25)" };
+                  } else {
+                    btnClass += " bg-white dark:bg-gray-700 border-[3px] border-gray-200 dark:border-gray-600";
                   }
                 } else if (idx === selected) {
-                  style = { border: `3px solid ${activeBoss.accentColor}`, background: "#fff8f8", boxShadow: `0 2px 8px rgba(0,0,0,0.12)` };
+                  btnClass += " bg-orange-50 dark:bg-gray-600 border-[3px]";
+                  btnStyle = { borderColor: activeBoss.accentColor, boxShadow: "0 2px 8px rgba(0,0,0,0.12)" };
+                } else {
+                  btnClass += " bg-white dark:bg-gray-700 border-[3px] border-gray-200 dark:border-gray-600";
                 }
 
                 return (
@@ -352,10 +357,10 @@ export default function BossPage() {
                     key={idx}
                     onClick={() => handleSelect(idx)}
                     disabled={confirmed}
-                    className="w-full text-left px-4 py-3 rounded-2xl font-medium text-gray-800 dark:text-gray-100 transition-all cursor-pointer disabled:cursor-default"
-                    style={style}
+                    className={btnClass}
+                    style={btnStyle}
                   >
-                    <span className="font-bold text-gray-500 mr-2">{["A", "B", "C", "D"][idx]}.</span>
+                    <span className="font-bold text-gray-500 dark:text-gray-400 mr-2">{["A", "B", "C", "D"][idx]}.</span>
                     {opt}
                   </button>
                 );
