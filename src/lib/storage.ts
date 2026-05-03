@@ -92,7 +92,17 @@ export function loadStudent(): StudentData | null {
   const name = getCurrentName();
   if (!name) return null;
   const all = getAllStudents();
-  return all[name] ?? null;
+  const data = all[name];
+  if (!data) return null;
+  const today = new Date().toISOString().slice(0, 10);
+  if (data.lastStreakDate !== today) {
+    const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
+    data.streak = data.lastStreakDate === yesterday ? (data.streak ?? 0) + 1 : 1;
+    data.lastStreakDate = today;
+    all[name] = data;
+    saveAllStudents(all);
+  }
+  return data;
 }
 
 export function saveStudent(data: StudentData): void {

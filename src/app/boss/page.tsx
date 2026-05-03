@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Header from "@/components/ui/Header";
 import { loadStudent, saveStudent, loadGamification, saveGamification } from "@/lib/storage";
-import { BOSSES, getBadge, capNewChests } from "@/lib/gamification";
+import { BOSSES, getBadge, capNewChests, CHEST_META } from "@/lib/gamification";
 import type { StudentData, GamificationData, Chest, ChestType } from "@/lib/types";
 
 const PASS_BADGE = "boss_slayer";
@@ -20,8 +20,8 @@ type Phase = "select" | "intro" | "battle" | "win" | "lose";
 function DifficultyStars({ count }: { count: number }) {
   return (
     <span className="flex gap-0.5">
-      {[1, 2, 3].map((n) => (
-        <span key={n} className={`text-sm ${n <= count ? "opacity-100" : "opacity-25"}`}>⚡</span>
+      {Array.from({ length: 6 }, (_, i) => i + 1).map((n) => (
+        <span key={n} className={`text-xs ${n <= count ? "opacity-100" : "opacity-20"}`}>⚡</span>
       ))}
     </span>
   );
@@ -258,7 +258,7 @@ export default function BossPage() {
             <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
               <li className="flex items-start gap-2">
                 <span className="text-green-500 mt-0.5 flex-shrink-0">✓</span>
-                Vinn: +{activeBoss.bonusPoints} poäng + märket "Bossbesegrare" + {activeBoss.rewardChestType === "wood" ? "bronskista" : activeBoss.rewardChestType === "silver" ? "silverkista" : "guldkista"}!
+                Vinn: +{activeBoss.bonusPoints} poäng + märket &quot;Bossbesegrare&quot; + {CHEST_META[activeBoss.rewardChestType].label.toLowerCase()}!
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-orange-500 mt-0.5 flex-shrink-0">↺</span>
@@ -398,8 +398,8 @@ export default function BossPage() {
   if (phase === "win" && activeBoss) {
     const totalCorrect = results.filter(Boolean).length;
     const badge = getBadge(PASS_BADGE);
-    const chestLabel = activeBoss.rewardChestType === "wood" ? "Bronskista" : activeBoss.rewardChestType === "silver" ? "Silverkista" : "Guldkista";
-    const chestEmoji = activeBoss.rewardChestType === "wood" ? "📦" : activeBoss.rewardChestType === "silver" ? "🪙" : "🏆";
+    const chestLabel = CHEST_META[activeBoss.rewardChestType].label;
+    const chestEmoji = CHEST_META[activeBoss.rewardChestType].emoji;
 
     return (
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900">

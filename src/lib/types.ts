@@ -168,6 +168,8 @@ export interface StudentData {
   totalPoints: number;
   stages: Record<StageId, StageProgress>;
   hero?: HeroConfig;
+  streak?: number;
+  lastStreakDate?: string; // YYYY-MM-DD
 }
 
 // ─── Gamification ─────────────────────────────────────────────────────────────
