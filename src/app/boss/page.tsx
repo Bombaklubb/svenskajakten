@@ -38,6 +38,7 @@ export default function BossPage() {
   const [results, setResults] = useState<boolean[]>([]);
   const [selected, setSelected] = useState<number | null>(null);
   const [confirmed, setConfirmed] = useState(false);
+  const [awardedBonus, setAwardedBonus] = useState(0);
 
   useEffect(() => {
     const s = loadStudent();
@@ -95,17 +96,20 @@ export default function BossPage() {
           const hasBossSlayer = gam!.badges.includes(PASS_BADGE);
           const newBadges = hasBossSlayer ? gam!.badges : [...gam!.badges, PASS_BADGE];
           const prevWins = gam!.bossWinsPerBoss ?? {};
+          const prevBossWins = prevWins[activeBoss.id] ?? 0;
+          const actualBonus = prevBossWins === 0 ? Math.min(activeBoss.bonusPoints, 200) : prevBossWins === 1 ? 50 : 0;
           const newGam: GamificationData = {
             ...gam!,
             chests: [...gam!.chests, ...cappedChests],
             badges: newBadges,
             bossWins: gam!.bossWins + 1,
             bossLastAttempt: new Date().toISOString(),
-            bossWinsPerBoss: { ...prevWins, [activeBoss.id]: (prevWins[activeBoss.id] ?? 0) + 1 },
+            bossWinsPerBoss: { ...prevWins, [activeBoss.id]: prevBossWins + 1 },
           };
           saveGamification(newGam);
           setGam(newGam);
-          const updatedStudent: StudentData = { ...student!, totalPoints: student!.totalPoints + activeBoss.bonusPoints };
+          setAwardedBonus(actualBonus);
+          const updatedStudent: StudentData = { ...student!, totalPoints: student!.totalPoints + actualBonus };
           saveStudent(updatedStudent);
           setStudent(updatedStudent);
         } else {
@@ -213,6 +217,8 @@ export default function BossPage() {
   // ── Boss intro ───────────────────────────────────────────────────────────────
   if (phase === "intro" && activeBoss) {
     const neededCorrect = Math.ceil(activeBoss.questions.length * activeBoss.passThreshold);
+    const currentWins = gam.bossWinsPerBoss?.[activeBoss.id] ?? 0;
+    const expectedBonus = currentWins === 0 ? Math.min(activeBoss.bonusPoints, 200) : currentWins === 1 ? 50 : 0;
     return (
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
         <Header student={student} />
@@ -245,7 +251,7 @@ export default function BossPage() {
             <div className="grid grid-cols-3 gap-3 text-center">
               {[
                 { value: activeBoss.questions.length, label: "frågor", color: "bg-gray-50 dark:bg-gray-700 border-gray-200 dark:border-gray-600", textColor: "text-gray-700 dark:text-gray-200" },
-                { value: `+${activeBoss.bonusPoints}`, label: "bonuspoäng", color: "bg-amber-50 dark:bg-amber-900/20 border-amber-200 dark:border-amber-800", textColor: "text-amber-700 dark:text-amber-300" },
+                { value: expectedBonus > 0 ? `+${expectedBonus}` : "0", label: "bonuspoäng", color: "bg-amber-50 dark:bg-amber-900/20 border-amber-200 dark:border-amber-800", textColor: "text-amber-700 dark:text-amber-300" },
                 { value: `${neededCorrect}/${activeBoss.questions.length}`, label: "för att vinna", color: "bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800", textColor: "text-green-700 dark:text-green-300" },
               ].map((stat) => (
                 <div key={stat.label} className={`rounded-2xl p-3 border ${stat.color}`}>
@@ -258,7 +264,7 @@ export default function BossPage() {
             <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
               <li className="flex items-start gap-2">
                 <span className="text-green-500 mt-0.5 flex-shrink-0">✓</span>
-                Vinn: +{activeBoss.bonusPoints} poäng + märket &quot;Bossbesegrare&quot; + {CHEST_META[activeBoss.rewardChestType].label.toLowerCase()}!
+                Vinn: {expectedBonus > 0 ? `+${expectedBonus} poäng + ` : ""}märket &quot;Bossbesegrare&quot; + {CHEST_META[activeBoss.rewardChestType].label.toLowerCase()}!
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-orange-500 mt-0.5 flex-shrink-0">↺</span>
@@ -417,7 +423,7 @@ export default function BossPage() {
 
             <div className="grid grid-cols-3 gap-3 mb-6">
               <div className="bg-white rounded-2xl p-3 border border-green-200">
-                <p className="text-2xl font-black text-green-600">+{activeBoss.bonusPoints}</p>
+                <p className="text-2xl font-black text-green-600">{awardedBonus > 0 ? `+${awardedBonus}` : "0"}</p>
                 <p className="text-xs text-green-500">bonuspoäng</p>
               </div>
               <div className="bg-white rounded-2xl p-3 border border-green-200">
