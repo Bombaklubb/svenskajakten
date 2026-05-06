@@ -5125,6 +5125,124 @@
           ],
           "correctIndex": 1,
           "explanation": "Frågetecken som hör till repliken placeras INUTI citattecknen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt stavning: Han ___ kläderna som gått sönder. (preteritum av 'lappa')",
+          "options": [
+            "lapade",
+            "lappade",
+            "lapaade",
+            "lappede"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Lappade' – dubbel-p bevaras i preteritum. 'Lappa' har kort a + pp."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket alternativ är rätt stavat?",
+          "options": [
+            "somaren",
+            "sommaren",
+            "somarren",
+            "summarren"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Sommaren' – 'sommar' har dubbel-m (kort o). I bestämd form bevaras dubbel-m."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket sammansatt ord betyder 'en korg för bröd'?",
+          "options": [
+            "korgbröd",
+            "brödkorg",
+            "bröds korg",
+            "bröde korg"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Brödkorg' = bröd + korg. Första ledet berättar vad korgen är till för."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket av dessa är ett sammansatt ord?",
+          "options": [
+            "springer",
+            "snabbt",
+            "fågelbo",
+            "sjöng"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Fågelbo' = fågel + bo. Det är ett sammansatt substantiv. De andra är verb eller adverb."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ordpar visar skillnaden mellan lång och kort vokal tydligast?",
+          "options": [
+            "sol/bol",
+            "ful/full",
+            "och/och",
+            "den/den"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Ful' (lång u) vs 'full' (kort u + ll) – klassiskt par som visar hur dubbel konsonant ger kort vokal."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Ordet 'mitt' (i mitten) har ___ vokal.",
+          "answer": "kort",
+          "alternativeAnswers": [
+            "en kort"
+          ],
+          "hint": "Dubbel-t i slutet ger ledtråden",
+          "explanation": "'Mitt' har dubbel-t (tt) efter i-et – det signalerar kort vokal."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder förkortningen 'dvs.'?",
+          "options": [
+            "det vill säga",
+            "då vi slutar",
+            "det var sant",
+            "dock vill stjärnan"
+          ],
+          "correctIndex": 0,
+          "explanation": "'dvs.' = det vill säga. Används för att förklara: 'Jag är trött, dvs. jag behöver vila.'"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder 'm.fl.'?",
+          "options": [
+            "med fler",
+            "med flera",
+            "mycket fler",
+            "mer för lite"
+          ],
+          "correctIndex": 1,
+          "explanation": "'m.fl.' = med flera. 'Lisa, Erik m.fl. kom till festen' = Lisa, Erik och flera till."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt ord: '___ gillar att spela fotboll.'",
+          "options": [
+            "De",
+            "Dem",
+            "Di",
+            "Dom"
+          ],
+          "correctIndex": 0,
+          "explanation": "'De' = subjekt. Tips: Passar 'vi'? 'Vi gillar fotboll' → Ja → skriv 'de'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt ord: 'Vi hjälpte ___ att bygga huset.'",
+          "options": [
+            "de",
+            "dem",
+            "di",
+            "dom"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Dem' = objekt. Tips: Passar 'oss'? 'Vi hjälpte oss' → Ja → skriv 'dem'."
         }
       ]
     },

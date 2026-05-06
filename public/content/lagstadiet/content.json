@@ -6471,6 +6471,119 @@
           ],
           "correctIndex": 1,
           "explanation": "Kolon efter talverbet, stor bokstav inuti citattecknen och punkt inuti citattecknet."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord stavas rätt? (glassordet man slickar på)",
+          "options": [
+            "glas",
+            "glass",
+            "glasss",
+            "glaas"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Glass' (glassen man äter) stavas med dubbel-s – vokalen a är kort."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket av dessa ord har dubbelteckning?",
+          "options": [
+            "sol",
+            "full",
+            "hus",
+            "bil"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Full' har dubbel-l (ll) eftersom u-et är kort. Sol, hus och bil har lång vokal."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket sammansatt ord bildas av 'sol' och 'sken'?",
+          "options": [
+            "sol sken",
+            "solen sken",
+            "solsken",
+            "solsken"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Solsken' skrivs ihop – sammansatta ord ska alltid skrivas utan mellanslag."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Av orden 'bok' och 'hylla' bildas det sammansatta ordet ___.",
+          "answer": "bokhylla",
+          "hint": "En möbel för böcker",
+          "explanation": "'Bokhylla' = bok + hylla. Sammansatta ord skrivs ihop."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Har ordet 'katt' lång eller kort vokal?",
+          "options": [
+            "Lång vokal",
+            "Kort vokal"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Katt' har kort a-vokal – dubbel-t (tt) efter a-et visar att vokalen är kort."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord har LÅNG vokal?",
+          "options": [
+            "full",
+            "glass",
+            "hopp",
+            "sol"
+          ],
+          "correctIndex": 3,
+          "explanation": "'Sol' har lång o-vokal – ett l efter o-et. De andra orden har dubbel konsonant = kort vokal."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder förkortningen 't.ex.'?",
+          "options": [
+            "till exempel",
+            "tack och adjö",
+            "tidigt examen",
+            "trevlig expedition"
+          ],
+          "correctIndex": 0,
+          "explanation": "'t.ex.' = till exempel. Används när man ger ett exempel: 'Djur, t.ex. katter.'"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder förkortningen 'osv.'?",
+          "options": [
+            "och så vidare",
+            "om så vill",
+            "oss var",
+            "ofta som vanligt"
+          ],
+          "correctIndex": 0,
+          "explanation": "'osv.' = och så vidare. Används när man inte räknar upp allt: 'Äpplen, päron, osv.'"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt ord: '___ springer fort till skolan.'",
+          "options": [
+            "De",
+            "Dem",
+            "Dom",
+            "Di"
+          ],
+          "correctIndex": 0,
+          "explanation": "'De' används som subjekt – de är de som gör handlingen (springer). Båda uttalas 'dom'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt ord: 'Jag ser ___ borta vid lekplatsen.'",
+          "options": [
+            "de",
+            "dem",
+            "di",
+            "dom"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Dem' används som objekt. 'Jag ser vem?' – Dem! Jämför: 'De springer' (subjekt)."
         }
       ]
     },
