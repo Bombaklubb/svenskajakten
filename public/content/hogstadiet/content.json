@@ -2166,6 +2166,372 @@
           "explanation": "Skiljetecken som hör till repliken – frågetecken, utropstecken, punkt – placeras INUTI citattecknen."
         }
       ]
+    },
+    {
+      "id": "dubbelteckning-hog-1",
+      "title": "Dubbelteckning – avancerad",
+      "description": "Förstå den fonetiska regeln bakom dubbelteckning",
+      "icon": "✍️",
+      "bonusPoints": 30,
+      "helpText": [
+        "Regeln: Betonad, kort vokal i öppen stavelse → dubbel konsonant vid morfemgräns.",
+        "Regeln gäller i alla ordformer: 'simma' → simmar, simmat, simmarens.",
+        "Undantag: Ord av utländskt ursprung följer inte alltid regeln: 'klass', 'stress'.",
+        "Vokalkvantitet avgörs av om stavelsen är öppen (lång vokal) eller sluten (kort vokal)."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Varför heter det 'springer' och inte 'springger'?",
+          "options": [
+            "Vokalen i är lång, ett g räcker",
+            "Vokalen i är kort men regeln gäller inte verb",
+            "Det är ett historiskt undantag",
+            "Man har tagit bort ett g för enkelhetens skull"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Springer' har lång i-vokal (spriiinger) + ng-kluster. Lång vokal = ingen dubbelkonsonant behövs."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är FELSTAVAT?",
+          "options": [
+            "kammaren",
+            "sommaren",
+            "lammaren",
+            "hammaren"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Lamm' är ett ett-ord: 'lammet' (inte 'lammaren'). 'Kammaren', 'sommaren' och 'hammaren' är alla rätt."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Verbformen av 'att simma' i presens är ___.",
+          "answer": "simmar",
+          "hint": "Dubbel-m bevaras i presens",
+          "explanation": "'Simma' → 'simmar'. Dubbel-m bevaras när verbet böjs eftersom o-et är kort."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken regel styr dubbelteckning i svenska?",
+          "options": [
+            "Man dubbelskriver alltid konsonanter i slutet av ord.",
+            "Kort betonad vokal följs av dubbel konsonant.",
+            "Man dubbelskriver konsonanter framför alla suffix.",
+            "Dubbelteckning används bara i substantiv."
+          ],
+          "correctIndex": 1,
+          "explanation": "Regeln: Kort betonad vokal + konsonant → dubbelskrivning. Lång vokal + konsonant → enkel konsonant."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Han ___ ner för trappan och slog sig. (preteritum av 'ramla')",
+          "options": [
+            "ramlad",
+            "ramlade",
+            "ramllade",
+            "ramlede"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Ramla' → 'ramlade' – l-et fördubblas inte i preteritum. 'Ramla' har lång a + l, inte kort vokal."
+        }
+      ]
+    },
+    {
+      "id": "sammansatta-ord-hog-1",
+      "title": "Sammansatta ord – analys och bildning",
+      "description": "Analysera sammansatta ord och lär dig om fognings-s",
+      "icon": "🔗",
+      "bonusPoints": 30,
+      "helpText": [
+        "I sammansatta ord är det SISTA ledet (grundordet) som bestämmer ordklass och böjning.",
+        "Ibland läggs ett foge-s till: 'lands' + 'lag' = landslag, 'stats' + 'minister' = statsminister.",
+        "Fel foge-s är ett vanligt fel: 'bokshylla' ska vara 'bokhylla' (inget s).",
+        "Första ledet (förledet) används alltid i obestämd singularis: 'hundkoppel', inte 'hundskoppel'."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilket led bestämmer ordklassen i 'barnboksförfattare'?",
+          "options": [
+            "barn",
+            "bok",
+            "författare",
+            "barnbok"
+          ],
+          "correctIndex": 2,
+          "explanation": "Det sista ledet (grundordet) 'författare' bestämmer ordklassen. En barnboksförfattare är en typ av författare."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Av 'musik' och 'högskola' bildas det sammansatta ordet ___.",
+          "answer": "musikhögskola",
+          "alternativeAnswers": [
+            "musikhögskolan"
+          ],
+          "hint": "En högskola för musik",
+          "explanation": "'Musikhögskola' = musik + högskola. Ingen foge-s krävs här."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket sammansatt ord är FELAKTIGT stavet (fel foge)?",
+          "options": [
+            "barnbok",
+            "bokshylla",
+            "solsken",
+            "landslag"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Bokshylla' är fel – det ska vara 'bokhylla'. Inte alla sammansättningar tar foge-s. 'Bokhylla' = bok + hylla."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Varför skriver man 'hundkoppel' och inte 'hundars koppel'?",
+          "options": [
+            "I sammansatta ord används förledet i obestämd singularis utan böjning.",
+            "Det är ett historiskt undantag.",
+            "Båda formerna är accepterade.",
+            "Det beror på om hunden är stor eller liten."
+          ],
+          "correctIndex": 0,
+          "explanation": "Förledet i sammansatta ord står alltid i obestämd singularis: 'hund' + 'koppel' = 'hundkoppel'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur skriver man 'ett rum för gäster' korrekt?",
+          "options": [
+            "gästs rum",
+            "gäst rum",
+            "gästrum",
+            "gästernas rum"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Gästrum' = gäst + rum. Sammansatta ord skrivs ihop och förledet böjs inte."
+        }
+      ]
+    },
+    {
+      "id": "lang-kort-vokal-hog-1",
+      "title": "Lång eller kort vokal – fonetik",
+      "description": "Förstå vokalkvantitet och dess koppling till stavning",
+      "icon": "🔊",
+      "bonusPoints": 30,
+      "helpText": [
+        "Vokalkvantitet: Vokal kan vara lång (/V:/) eller kort (/V/) beroende på stavelsen.",
+        "Öppen betonad stavelse (V + en konsonant) = lång vokal: so-l, bi-l, ma-t.",
+        "Sluten betonad stavelse (V + konsonantkluster eller dubbel konsonant) = kort vokal: katt, hjälp, full.",
+        "I svenska är vokalkvantitet fonematisk – den avgör ordets betydelse: 'ful' ≠ 'full'."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "I vilken mening är vokalen i det markerade ordet LÅNG?",
+          "options": [
+            "Glaset är fullt med vatten.",
+            "Hunden är full av lera.",
+            "Vi fick fulla poäng!",
+            "Han är inte ful, han är snygg."
+          ],
+          "correctIndex": 3,
+          "explanation": "'Ful' (ugly) har lång u-vokal och ett l. De andra orden har 'full' med kort u + ll."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Varför har 'hall' och 'vall' kort vokal?",
+          "options": [
+            "De är substantiv och följer en speciell regel.",
+            "Dubbel konsonant (ll) efter vokalen signalerar kort vokal.",
+            "De är korta ord och har därför kort vokal.",
+            "De slutar på -all vilket alltid ger kort vokal."
+          ],
+          "correctIndex": 1,
+          "explanation": "Dubbel-l (ll) efter vokalen signalerar att vokalen är kort. Det är en fonetisk regel i svenska."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord i dessa alternativ har LÅNG vokal?",
+          "options": [
+            "kall",
+            "hal",
+            "gall",
+            "ball"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Hal' (slippery) har lång a-vokal – ett l. Kall, gall och ball har alla dubbel-l = kort vokal."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "I ord med konsonantkluster, t.ex. 'hjälp', är vokalen alltid ___.",
+          "answer": "kort",
+          "alternativeAnswers": [
+            "korta",
+            "en kort"
+          ],
+          "hint": "Konsonantkluster = sluten stavelse",
+          "explanation": "Konsonantkluster stänger stavelsen och ger kort vokal. 'Hjälp': ä + lp-kluster = kort ä."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket påstående om vokalkvantitet är korrekt?",
+          "options": [
+            "Lång vokal föregår alltid en dubbel konsonant.",
+            "Kort vokal föregår alltid dubbel konsonant eller konsonantkluster i betonad stavelse.",
+            "Vokalkvantitet är irrelevant i skrift.",
+            "Alla vokaler är lika långa i betonad stavelse."
+          ],
+          "correctIndex": 1,
+          "explanation": "Kort betonad vokal → dubbel konsonant eller konsonantkluster. Lång betonad vokal → en konsonant."
+        }
+      ]
+    },
+    {
+      "id": "forkortningar-hog-1",
+      "title": "Förkortningar – formellt och informellt",
+      "description": "Lär dig förkortningar i formella texter och förstå deras funktion",
+      "icon": "📝",
+      "bonusPoints": 30,
+      "helpText": [
+        "Formella förkortningar: p.g.a. (på grund av), t.o.m. (till och med), s.k. (så kallad).",
+        "'t.ex.' introducerar ett EXEMPEL. 'dvs.' FÖRKLARAR. De är inte synonymer!",
+        "Latinska förkortningar: 'etc.' (et cetera = och så vidare) = sv. 'osv.'",
+        "I formell text föredras ofta de svenska alternativen framför latinska."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder förkortningen 'p.g.a.'?",
+          "options": [
+            "på grund av",
+            "per gram avtal",
+            "på god avstånd",
+            "per gång avsett"
+          ],
+          "correctIndex": 0,
+          "explanation": "'p.g.a.' = på grund av. 'Matchen ställdes in p.g.a. regn' = på grund av regn."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är skillnaden mellan 't.ex.' och 'dvs.'?",
+          "options": [
+            "De är synonymer och kan alltid användas omväxlande.",
+            "'t.ex.' introducerar ett exempel, 'dvs.' förklarar eller förtydligar.",
+            "'dvs.' är mer informellt.",
+            "Det finns ingen skillnad."
+          ],
+          "correctIndex": 1,
+          "explanation": "'t.ex.': 'Djur, t.ex. hundar' (exempel). 'dvs.': 'Jag är hungrig, dvs. jag behöver mat' (förklaring). De kan INTE bytas ut mot varandra."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder förkortningen 's.k.'?",
+          "options": [
+            "så kallad",
+            "som krävs",
+            "senast kallad",
+            "storskalig karta"
+          ],
+          "correctIndex": 0,
+          "explanation": "'s.k.' = så kallad. 'Den s.k. skärmtiden' = den så kallade skärmtiden."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Den latinska förkortningen 'etc.' motsvarar den svenska förkortningen ___.",
+          "answer": "osv.",
+          "alternativeAnswers": [
+            "osv",
+            "och så vidare"
+          ],
+          "hint": "Och så vidare",
+          "explanation": "'etc.' (et cetera) = 'osv.' (och så vidare). I formell svensk text föredras 'osv.'"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder 't.o.m.'?",
+          "options": [
+            "till och med",
+            "till om måndag",
+            "tidigt och modigt",
+            "tillbaka om morgonen"
+          ],
+          "correctIndex": 0,
+          "explanation": "'t.o.m.' = till och med. 'Erbjudandet gäller t.o.m. fredag' = till och med fredag."
+        }
+      ]
+    },
+    {
+      "id": "homofoner-hog-1",
+      "title": "Homofoner – kontext och betydelse",
+      "description": "Välj rätt homofon utifrån kontext och grammatisk funktion",
+      "icon": "👂",
+      "bonusPoints": 30,
+      "helpText": [
+        "Homofoner: samma uttal, olika stavning och betydelse.",
+        "'De'/'dem' = /dom/: 'De' (subjekt), 'Dem' (objekt). Tips: byt ut mot 'vi'/'oss'.",
+        "Passar 'vi'? → Skriv 'de'. Passar 'oss'? → Skriv 'dem'.",
+        "Ord som 'kör', 'bär', 'väcker' är polysema (ett ord, flera betydelser) men inte homofonpar."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt ord: 'Rapporten skickades till ___ på avdelningen.'",
+          "options": [
+            "de",
+            "dem",
+            "di",
+            "dom"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Dem' = objekt efter 'till'. Tips: 'till oss' passar → skriv 'dem'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt ord: '___ tyckte att uppgiften var svår.'",
+          "options": [
+            "De",
+            "Dem",
+            "Di",
+            "Dom"
+          ],
+          "correctIndex": 0,
+          "explanation": "'De' = subjekt (de som tyckte). Tips: 'vi tyckte' passar → skriv 'de'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt ord: 'Boken läste ___ igår kväll.'",
+          "options": [
+            "de",
+            "dem",
+            "di",
+            "dom"
+          ],
+          "correctIndex": 0,
+          "explanation": "Inverterad ordföljd: 'de läste boken' = de är subjektet. 'Vi läste boken' passar → skriv 'de'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening har KORREKT användning av de/dem?",
+          "options": [
+            "Dem springer fort varje morgon.",
+            "Vi hjälper de med projektet.",
+            "De springer fort varje morgon.",
+            "Jag ser de på gatan."
+          ],
+          "correctIndex": 2,
+          "explanation": "'De springer' = de är subjektet. 'Vi springer' passar → skriv 'de'. I de andra meningarna ska 'dem' användas (objekt)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är korrekt skriven?",
+          "options": [
+            "Det var de som vi pratade med.",
+            "Det var dem som vi pratade med.",
+            "Det var di som vi pratade med.",
+            "Det var dom som vi pratade med."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Dem' = objekt efter 'med'. 'Vi pratade med oss' → oss passar → skriv 'dem'. Alltså: 'dem som vi pratade med'."
+        }
+      ]
     }
   ],
   "spelling": [

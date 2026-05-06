@@ -5212,6 +5212,367 @@
           "explanation": "Sprang är preteritum (dåtid) av verbet springa."
         }
       ]
+    },
+    {
+      "id": "dubbelteckning-mel-2",
+      "title": "Dubbelteckning – fördjupning",
+      "description": "Öva dubbelteckning i böjda ordformer och svårare ord",
+      "icon": "✍️",
+      "bonusPoints": 25,
+      "helpText": [
+        "Regeln: Kort betonad vokal + konsonant → dubbel konsonant.",
+        "Regeln gäller även i böjda former: 'simma' → 'simmar', 'hoppa' → 'hoppade'.",
+        "Jämför: 'sommar' (dubbel-m, kort o) men 'sommardag' (dubbel-m bevaras).",
+        "Tricky par: 'hal' (lång a, = slippery) vs 'hall' (kort a = hallway)."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt stavning: 'Vi sitter i ___.' (rummet precis innanför ytterdörren)",
+          "options": [
+            "halen",
+            "hallen",
+            "hallen",
+            "haalen"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Hallen' (bestämd form av 'hall') stavas med dubbel-l. 'Hall' har kort a-vokal."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket alternativ är rätt stavat?",
+          "options": [
+            "somaren",
+            "sommaren",
+            "somarren",
+            "summarren"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Sommaren' – 'sommar' har dubbel-m (kort o). I bestämd form bevaras dubbel-m: sommaren."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Hon ___ varje morgon i sjön. (presens av 'simma')",
+          "answer": "simmar",
+          "hint": "Vad gör hon? (presens av simma)",
+          "explanation": "'Simma' → presens 'simmar' – dubbel-m bevaras när man böjer verbet."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är rätt stavad?",
+          "options": [
+            "Jag komer hem vid fyratiden.",
+            "Jag kömmer hem vid fyratiden.",
+            "Jag kommer hem vid fyratiden.",
+            "Jag comer hem vid fyratiden."
+          ],
+          "correctIndex": 2,
+          "explanation": "'Kommer' stavas med dubbel-m – 'komma' har kort o, och mm-et bevaras i presens."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Han ___ kläderna som gått sönder. (preteritum av 'lappa')",
+          "options": [
+            "lapade",
+            "lappade",
+            "lapaade",
+            "lappede"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Lappa' → 'lappade' – dubbel-p bevaras i preteritum. Kort a + pp = dubbelteckning."
+        }
+      ]
+    },
+    {
+      "id": "sammansatta-ord-mel-1",
+      "title": "Sammansatta ord – fördjupning",
+      "description": "Analysera och bilda sammansatta ord",
+      "icon": "🔗",
+      "bonusPoints": 25,
+      "helpText": [
+        "Sammansatta ord bildas av två eller fler ord: sol + glasögon = solglasögon.",
+        "Ibland fogas orden samman med ett -s-: hunds + koppel = hundkoppel (fognings-s).",
+        "Det sista ledet (grundordet) bestämmer ordklassen: 'barnbok' är en typ av bok.",
+        "Skriv alltid ihop – 'bil kö' är FEL, 'bilkö' är RÄTT!"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilket sammansatt ord betyder 'en korg för bröd'?",
+          "options": [
+            "korgbröd",
+            "brödkorg",
+            "bröds korg",
+            "bröde korg"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Brödkorg' = bröd + korg. Det första ledet berättar vad korgen är till för."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Av 'hand' och 'väska' bildas ordet ___.",
+          "answer": "handväska",
+          "hint": "En väska man bär i handen",
+          "explanation": "'Handväska' = hand + väska. Man sätter ihop orden utan mellanslag."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur skriver man 'glasögon för solen' som ett sammansatt ord?",
+          "options": [
+            "glasögonsol",
+            "solglasögon",
+            "sol-glasögon",
+            "sols glasögon"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Solglasögon' = sol + glasögon. 'Sol' berättar vilken sorts glasögon."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket av dessa är ett sammansatt ord?",
+          "options": [
+            "springer",
+            "snabbt",
+            "fågelbo",
+            "sjöng"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Fågelbo' = fågel + bo. Det är ett sammansatt substantiv. De andra är verb eller adverb."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur skriver man 'en bil som drivs av el'?",
+          "options": [
+            "el-bil",
+            "el bil",
+            "elbil",
+            "elens bil"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Elbil' = el + bil. Sammansatta ord skrivs alltid ihop, utan bindestreck eller mellanslag."
+        }
+      ]
+    },
+    {
+      "id": "lang-kort-vokal-mel-1",
+      "title": "Lång eller kort vokal – fördjupning",
+      "description": "Förstå regeln bakom lång och kort vokal",
+      "icon": "🔊",
+      "bonusPoints": 25,
+      "helpText": [
+        "Regel: Betonad vokal + EN konsonant = lång vokal (sol, bil, mat).",
+        "Regel: Betonad vokal + DUBBEL konsonant eller konsonantkluster = kort vokal (katt, full, hjälp).",
+        "Paret 'ful/full' visar skillnaden: ful (lång u) = ful, full (kort u) = fylld.",
+        "Paret 'hal/hall': hal (lång a, = slippery), hall (kort a = hallway)."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Varför har ordet 'massa' kort vokal?",
+          "options": [
+            "För att det är ett långt ord",
+            "För att det finns dubbel-s (ss) efter a-et",
+            "För att det börjar på m",
+            "Det har egentligen lång vokal"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Massa' har dubbel-s (ss) efter a-et. Dubbel konsonant = signal om kort vokal."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord har LÅNG vokal?",
+          "options": [
+            "kulle",
+            "hammare",
+            "massa",
+            "resa"
+          ],
+          "correctIndex": 3,
+          "explanation": "'Resa' har lång e-vokal – ett s efter vokalen. Kulle, hammare och massa har dubbel konsonant = kort vokal."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Ordet 'mitt' (i mitten) har ___ vokal.",
+          "answer": "kort",
+          "alternativeAnswers": [
+            "en kort"
+          ],
+          "hint": "Dubbel-t i slutet ger ledtråden",
+          "explanation": "'Mitt' har dubbel-t (tt) efter i-et → kort vokal."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt ord: 'Golvet var ___ av is.' (slippery)",
+          "options": [
+            "hall",
+            "hal",
+            "hål",
+            "haal"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Hal' (slippery) har lång a-vokal och ett l. 'Hall' (hallway) har kort a och dubbel-l."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ordpar visar skillnaden mellan lång och kort vokal tydligast?",
+          "options": [
+            "sol/bol",
+            "ful/full",
+            "och/och",
+            "den/den"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Ful' (lång u, ful) vs 'full' (kort u, fylld) – ett klassiskt par som visar hur dubbel konsonant ger kort vokal."
+        }
+      ]
+    },
+    {
+      "id": "forkortningar-mel-1",
+      "title": "Förkortningar – vanliga och officiella",
+      "description": "Lär dig fler förkortningar som används i skolan och vardagen",
+      "icon": "📝",
+      "bonusPoints": 25,
+      "helpText": [
+        "Förkortningar sparar plats i text: 'dvs.' = det vill säga, 'fr.o.m.' = från och med.",
+        "'t.ex.' introducerar ett EXEMPEL. 'dvs.' FÖRKLARAR eller förtydligar.",
+        "Månadsförkortningar: jan, feb, mar, apr, maj, jun, jul, aug, sep, okt, nov, dec.",
+        "Väderstreck: N = norr, S = söder, Ö = öster, V = väster."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder förkortningen 'dvs.'?",
+          "options": [
+            "det vill säga",
+            "då vi slutar",
+            "det var sant",
+            "dock vill stjärnan"
+          ],
+          "correctIndex": 0,
+          "explanation": "'dvs.' = det vill säga. Man använder det för att förklara: 'Jag är trött, dvs. jag behöver sova.'"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder 'fr.o.m.'?",
+          "options": [
+            "från och med",
+            "från om måndag",
+            "för oss med",
+            "fritt om möjligt"
+          ],
+          "correctIndex": 0,
+          "explanation": "'fr.o.m.' = från och med. 'Reglerna gäller fr.o.m. måndag' = från och med måndag."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder 'm.fl.'?",
+          "options": [
+            "med fler",
+            "med flera",
+            "mycker fler",
+            "mer för lite"
+          ],
+          "correctIndex": 1,
+          "explanation": "'m.fl.' = med flera. 'Lisa, Erik m.fl. kom till festen' = Lisa, Erik och flera till."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Förkortningen 'nr' betyder ___.",
+          "answer": "nummer",
+          "alternativeAnswers": [
+            "numret"
+          ],
+          "hint": "Används t.ex. om husnummer",
+          "explanation": "'nr' = nummer. 'Bo på nr 5' = bo på nummer 5."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är förkortningen för 'och så vidare'?",
+          "options": [
+            "t.ex.",
+            "osv.",
+            "m.m.",
+            "dvs."
+          ],
+          "correctIndex": 1,
+          "explanation": "'osv.' = och så vidare. 'Hundar, katter, osv.' = hundar, katter och så vidare."
+        }
+      ]
+    },
+    {
+      "id": "homofoner-mel-1",
+      "title": "Homofoner – välj rätt ord",
+      "description": "Öva på ord som låter lika men har olika betydelse och stavning",
+      "icon": "👂",
+      "bonusPoints": 25,
+      "helpText": [
+        "Homofoner låter lika men har olika stavning och betydelse.",
+        "'De' och 'dem' uttalas båda 'dom' – men används olika i skrift.",
+        "'De' = subjekt (de som gör): De springer. 'Dem' = objekt (den det görs mot): Jag ser dem.",
+        "Tips: Testa med 'vi/oss' – passar 'vi'? Skriv 'de'. Passar 'oss'? Skriv 'dem'."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt ord: '___ gillar att spela fotboll.'",
+          "options": [
+            "De",
+            "Dem",
+            "Di",
+            "Dom"
+          ],
+          "correctIndex": 0,
+          "explanation": "'De' = subjekt. Tips: Passar 'vi'? 'Vi gillar fotboll.' → Ja → skriv 'de'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt ord: 'Läraren frågade ___.'",
+          "options": [
+            "de",
+            "dem",
+            "di",
+            "dom"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Dem' = objekt. Tips: Passar 'oss'? 'Läraren frågade oss.' → Ja → skriv 'dem'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord kan betyda BÅDE 'att framföra musik' OCH 'en sånggrupp'?",
+          "options": [
+            "spela",
+            "kör",
+            "sjunga",
+            "band"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Kör' är ett homofont ord: 'Vi körde bil' (presens av köra) och 'Skolans kör sjunger' (sångkör). Samma uttal, olika betydelser."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt ord: 'Vi hjälpte ___ med flytten.'",
+          "options": [
+            "de",
+            "dem",
+            "di",
+            "dom"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Dem' = objekt. 'Vi hjälpte oss' → Ja, 'oss' passar → skriv 'dem'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är korrekt skriven?",
+          "options": [
+            "Dem lekte i parken hela dagen.",
+            "De lekte i parken hela dagen.",
+            "Dom lekte i parken hela dagen.",
+            "Di lekte i parken hela dagen."
+          ],
+          "correctIndex": 1,
+          "explanation": "'De' = subjektet (de som lekte). I skrift skriver man 'de', inte 'dom', även om det uttalas 'dom'."
+        }
+      ]
     }
   ],
   "spelling": [

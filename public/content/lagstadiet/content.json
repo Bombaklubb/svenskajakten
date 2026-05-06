@@ -6558,6 +6558,355 @@
           "explanation": "Ett bi är ett insekt som samlar nektar och tillverkar honung."
         }
       ]
+    },
+    {
+      "id": "dubbelteckning-lag-1",
+      "title": "Dubbelteckning",
+      "description": "Lär dig när man skriver dubbel konsonant",
+      "icon": "✍️",
+      "bonusPoints": 20,
+      "helpText": [
+        "När vokalen (a, e, i, o, u …) i ett ord är KORT, dubbelskriver man konsonanten efter.",
+        "Exempel: 'katt' (kort a + tt), 'full' (kort u + ll), 'glass' (kort a + ss).",
+        "Har vokalen lång vokal skriver man bara en konsonant: 'sol', 'bil', 'hus'.",
+        "Tips: Lyssna om vokalen 'sträcks ut' – gör den det är den lång och behöver ingen dubbel konsonant."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är rätt stavat för djuret som säger 'mjau'?",
+          "options": [
+            "kat",
+            "katt",
+            "kkat",
+            "cat"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Katt' stavas med dubbel-t. Vokalen a är kort, och då dubbelskriver vi konsonanten."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord har dubbelteckning?",
+          "options": [
+            "sol",
+            "hus",
+            "full",
+            "bil"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Full' har dubbel-l (ll) eftersom u-et är kort. Sol, hus och bil har lång vokal."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt ord: 'Bakverksbilen säljer ___ (glassen som man slickar på)'",
+          "answer": "glass",
+          "hint": "Söt, kall delikatess med kort a-ljud",
+          "explanation": "'Glass' (glassen man äter) stavas med dubbel-s eftersom a-et är kort."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är rätt stavad?",
+          "options": [
+            "Katten sov på matan.",
+            "Katten sov på mattan.",
+            "Katten sov på matann.",
+            "Katten sov på matten."
+          ],
+          "correctIndex": 1,
+          "explanation": "'Mattan' stavas med dubbel-t – 'matta' har kort a, och tt-et bevaras i bestämd form."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt ord: 'Han är inte ful – han är ___.' (så full som ett glas vatten)",
+          "options": [
+            "ful",
+            "full",
+            "fuull",
+            "fúll"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Full' (fylld) har kort u och skrivs med dubbel-l. 'Ful' (ful/ful utseende) har lång u och ett l."
+        }
+      ]
+    },
+    {
+      "id": "sammansatta-ord-lag-2",
+      "title": "Sammansatta ord – bygg nya ord",
+      "description": "Sätt ihop ord och bilda nya sammansatta ord",
+      "icon": "🔗",
+      "bonusPoints": 20,
+      "helpText": [
+        "Sammansatta ord bildas när man sätter ihop två ord till ett nytt: sol + sken = solsken.",
+        "Man skriver alltid ihop sammansatta ord – aldrig med mellanslag!",
+        "Det första ordet berättar vilken sorts av det andra ordet det handlar om.",
+        "Exempel: 'fotboll' = en sorts boll man sparkar med foten."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilket sammansatt ord bildas av 'sol' och 'sken'?",
+          "options": [
+            "sol sken",
+            "solsken",
+            "solen sken",
+            "solensken"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Solsken' skrivs ihop. Sammansatta ord ska alltid skrivas i ett ord."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Av orden 'bok' och 'hylla' bildas det sammansatta ordet ___.",
+          "answer": "bokhylla",
+          "hint": "En möbel där man ställer böcker",
+          "explanation": "'Bokhylla' = bok + hylla. En hylla för böcker."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad heter 'en bil som tillhör brandkåren'?",
+          "options": [
+            "bilbrand",
+            "brandbil",
+            "brand bil",
+            "brandsbil"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Brandbil' = brand + bil. Det första ledet (brand) berättar vilken sorts bil det är."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket av dessa är ett sammansatt ord skrivet på rätt sätt?",
+          "options": [
+            "fot boll",
+            "fotsboll",
+            "fotboll",
+            "fotensboll"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Fotboll' skrivs ihop. Man ska aldrig ha mellanslag i sammansatta ord."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Vad heter ett hus man bor i som är gjort av trä? (trä + hus)",
+          "answer": "trähus",
+          "hint": "Trä + hus",
+          "explanation": "'Trähus' = trä + hus. En bostad byggd av trä."
+        }
+      ]
+    },
+    {
+      "id": "lang-kort-vokal-lag-1",
+      "title": "Lång eller kort vokal",
+      "description": "Lär dig skillnaden mellan lång och kort vokal",
+      "icon": "🔊",
+      "bonusPoints": 20,
+      "helpText": [
+        "En lång vokal 'sträcker ut sig' när du säger ordet: maaat, biil, huus.",
+        "En kort vokal är snabb och studsig: katt, full, glass.",
+        "Tips: Lång vokal + en konsonant (sol, bil). Kort vokal + dubbel konsonant (katt, full).",
+        "Prova att lyssna: 'ful' (lång u) och 'full' (kort u) – hör du skillnaden?"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Har ordet 'sol' lång eller kort vokal?",
+          "options": [
+            "Lång vokal",
+            "Kort vokal"
+          ],
+          "correctIndex": 0,
+          "explanation": "I 'sol' är o-et långt. Det följs av bara ett l, och man sträcker ut o-et när man säger ordet."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Har ordet 'katt' lång eller kort vokal?",
+          "options": [
+            "Lång vokal",
+            "Kort vokal"
+          ],
+          "correctIndex": 1,
+          "explanation": "I 'katt' är a-et kort. Vi vet det för att det finns dubbel-t (tt) efter vokalen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord har LÅNG vokal?",
+          "options": [
+            "full",
+            "glass",
+            "bil",
+            "hopp"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Bil' har lång i-vokal – ett l efter vokalen. Full, glass och hopp har dubbel konsonant = kort vokal."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord har KORT vokal?",
+          "options": [
+            "hus",
+            "sol",
+            "bil",
+            "kulle"
+          ],
+          "correctIndex": 3,
+          "explanation": "'Kulle' har kort u – dubbel-l (ll) efter vokalen visar att vokalen är kort."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Vokalen i ordet 'mat' (maten man äter) är ___.",
+          "answer": "lång",
+          "alternativeAnswers": [
+            "lang"
+          ],
+          "hint": "Säg ordet högt – sträcker du på a-et?",
+          "explanation": "'Mat' har lång a-vokal. Det följs av bara ett t, och man sträcker ut a-et."
+        }
+      ]
+    },
+    {
+      "id": "forkortningar-lag-1",
+      "title": "Förkortningar – vad betyder de?",
+      "description": "Lär dig vanliga förkortningar som används i Sverige",
+      "icon": "📝",
+      "bonusPoints": 20,
+      "helpText": [
+        "Förkortningar är korta versioner av längre ord eller fraser.",
+        "Vanliga förkortningar: t.ex. = till exempel, osv. = och så vidare, m.m. = med mera.",
+        "Förkortningar skrivs ofta med punkt, t.ex. 'bl.a.' och 'dvs.'",
+        "Förkortningar sparar tid och plats i text!"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder förkortningen 't.ex.'?",
+          "options": [
+            "till exempel",
+            "tack och adjö",
+            "tidigt examen",
+            "trevlig expedition"
+          ],
+          "correctIndex": 0,
+          "explanation": "'t.ex.' = till exempel. Man använder det när man ger ett exempel: 'Djur, t.ex. hundar och katter.'"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder 'osv.'?",
+          "options": [
+            "och så vidare",
+            "om så vill",
+            "oss var",
+            "oftast som vanligt"
+          ],
+          "correctIndex": 0,
+          "explanation": "'osv.' = och så vidare. Det används när man inte räknar upp allt: 'Äpplen, päron, osv.'"
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Mötet börjar kl. 10. Vad betyder 'kl.'?",
+          "answer": "klockan",
+          "hint": "Det handlar om tid",
+          "explanation": "'kl.' = klockan. Man skriver 'kl. 10' istället för 'klockan 10'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder 'ca.'?",
+          "options": [
+            "ungefär",
+            "certifierat",
+            "cent",
+            "chill"
+          ],
+          "correctIndex": 0,
+          "explanation": "'ca.' = circa = ungefär. Man skriver 'ca. 5 km' istället för 'ungefär 5 kilometer'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betyder 'bl.a.'?",
+          "options": [
+            "bland annat",
+            "blå",
+            "bli av",
+            "bland alla"
+          ],
+          "correctIndex": 0,
+          "explanation": "'bl.a.' = bland annat. 'I klassen finns bl.a. Lisa och Kalle' = bland annat Lisa och Kalle."
+        }
+      ]
+    },
+    {
+      "id": "homofoner-lag-1",
+      "title": "Homofoner – ord som låter lika",
+      "description": "Välj rätt ord när de låter likadant men har olika betydelse",
+      "icon": "👂",
+      "bonusPoints": 20,
+      "helpText": [
+        "Homofoner är ord som låter lika men stavas olika och betyder olika saker.",
+        "Det vanligaste paret i svenska: 'de' och 'dem' – båda uttalas 'dom'!",
+        "'De' används som subjekt: De springer. (Vem springer? De.)",
+        "'Dem' används som objekt: Jag ser dem. (Jag ser vem? Dem.)"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt ord: '___ springer fort mot skolan.'",
+          "options": [
+            "De",
+            "Dem",
+            "Di",
+            "Dom"
+          ],
+          "correctIndex": 0,
+          "explanation": "'De' används som subjekt – de är den som gör handlingen (springer). Båda 'de' och 'dem' uttalas 'dom'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt ord: 'Läraren delade ut böcker till ___.'",
+          "options": [
+            "de",
+            "dem",
+            "di",
+            "dom"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Dem' används som objekt – efter 'till' använder man objektsformen 'dem'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord kan betyda BÅDE en frukt OCH 'att bära något'?",
+          "options": [
+            "päron",
+            "bär",
+            "äpple",
+            "körsbär"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Bär' kan betyda ett bär (frukt) eller presensformen av 'bära': 'Han bär väskan.' Det kallas ett homofont ord."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Välj rätt ord: 'Jag hjälpte ___ med läxorna.'",
+          "options": [
+            "de",
+            "dem",
+            "di",
+            "dom"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Dem' används som objekt. 'Jag hjälpte vem?' – Dem! Jämför: 'De hjälpte mig.' (de = subjekt)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är rätt skriven?",
+          "options": [
+            "Dem lekte i parken.",
+            "De lekte i parken.",
+            "Dom lekte i parken.",
+            "Di lekte i parken."
+          ],
+          "correctIndex": 1,
+          "explanation": "'De' används som subjekt i skrift. 'De lekte' = De (som lekte) är subjektet. Man skriver 'de', inte 'dom'."
+        }
+      ]
     }
   ],
   "spelling": [
