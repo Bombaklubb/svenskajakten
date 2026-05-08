@@ -15,10 +15,10 @@ const CATEGORIES: { id: Category; label: string; emoji: string; color: string; s
 
 const SLOTS: { id: SlotKey; label: string; emoji: string }[] = [
   { id: "huvudroll",   label: "Huvudroll",   emoji: "🦸" },
-  { id: "medhjalpare", label: "Medhjälpare", emoji: "🤝" },
-  { id: "bov",         label: "Bov",         emoji: "😈" },
-  { id: "problem",     label: "Problem",     emoji: "⚠️" },
   { id: "miljo",       label: "Miljö",       emoji: "🌍" },
+  { id: "problem",     label: "Problem",     emoji: "⚠️" },
+  { id: "bov",         label: "Bov",         emoji: "😈" },
+  { id: "medhjalpare", label: "Medhjälpare", emoji: "🤝" },
 ];
 
 type Pool = Record<SlotKey, string[]>;
@@ -204,6 +204,23 @@ const DATA: Record<Category, Pool> = {
     ],
   },
 };
+
+function buildIntro(v: Record<SlotKey, string>, cat: Category): string {
+  const lc = (s: string) => s.charAt(0).toLowerCase() + s.slice(1);
+  const { huvudroll: hr, medhjalpare: med, bov, problem: prob, miljo } = v;
+  switch (cat) {
+    case "äventyr":
+      return `${miljo} väntade en fara som inte fick underskattas. ${hr} visste vad som stod på spel — ${lc(prob)}. Det var ${lc(bov)} som låg bakom alltihop. Nu gällde det att hålla huvudet kallt och lita på ${lc(med)}.`;
+    case "fantasi":
+      return `${miljo} dolde sig magi och urgamla hemligheter. ${hr} hade sökt detta ställe länge, men nu var det inte tid att tveka — ${lc(prob)}. Det var ${lc(bov)} som hade satt igång det hela. Tur att ${lc(med)} var redo att ge stöd.`;
+    case "sci-fi":
+      return `Larm och varningssignaler ekade ${lc(miljo)}. ${hr} analyserade situationen blixtsnabbt: ${lc(prob)}. Bakom det hela stod ${lc(bov)}, och de visste precis vad de höll på med. Den enda chansen var ${lc(med)}.`;
+    case "mysterium":
+      return `${miljo} doldes en hemlighet som inte fick komma fram. ${hr} hade börjat dra i trådarna — och det de hittade var oroande: ${lc(prob)}. ${bov} stod troligtvis bakom alltihop. Men med hjälp av ${lc(med)} kanske sanningen äntligen kunde avslöjas.`;
+    case "vardag":
+      return `Dagen hade börjat precis som vanligt ${lc(miljo)}. Men ${lc(hr)} märkte snart att något var fel — ${lc(prob)}. Det var ${lc(bov)} som hade ställt till det. Lyckligtvis dök ${lc(med)} upp precis i rätt tid.`;
+  }
+}
 
 const EMPTY: Record<SlotKey, string> = {
   huvudroll: "", medhjalpare: "", bov: "", problem: "", miljo: "",
@@ -394,10 +411,8 @@ export default function SkrivgeneratorTab() {
           <p className="font-black text-gray-800 dark:text-gray-100 text-sm mb-2">
             📖 Din berättelsestart:
           </p>
-          <p className="text-gray-700 dark:text-gray-200 text-sm leading-relaxed">
-            <strong>{values.huvudroll}</strong> och {values.medhjalpare} befinner sig{" "}
-            <strong>{values.miljo}</strong>. Boven <strong>{values.bov}</strong> ställer
-            till med problem: <em>{values.problem}</em>.
+          <p className="text-gray-700 dark:text-gray-200 text-sm leading-relaxed italic">
+            {buildIntro(values, category)}
           </p>
           <p className="text-xs text-gray-400 dark:text-gray-500 mt-3">
             Snurra om enskilda delar med 🔄 eller tryck på <strong>SNURRA ALLT!</strong> för en ny start.
