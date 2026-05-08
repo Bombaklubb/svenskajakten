@@ -14,6 +14,7 @@ import FillInBlank from "@/components/exercises/FillInBlank";
 import BuildSentence from "@/components/exercises/BuildSentence";
 import WordClues from "@/components/exercises/WordClues";
 import type { StudentData, StageContent, RetryItem } from "@/lib/types";
+import SkrivgeneratorTab from "@/components/ui/SkrivgeneratorTab";
 
 interface RuleItem {
   term: string;
@@ -32,7 +33,7 @@ interface Props {
   params: Promise<{ stage: string }>;
 }
 
-type Tab = "grammar" | "spelling" | "wordsearch" | "regler" | "spel" | "retry";
+type Tab = "grammar" | "spelling" | "wordsearch" | "regler" | "spel" | "retry" | "skrivgenerator";
 
 export default function WorldPage({ params }: Props) {
   const { stage: stageId } = use(params);
@@ -92,7 +93,8 @@ export default function WorldPage({ params }: Props) {
     { id: "regler",     label: "📐 Språkregler" },
     { id: "wordsearch", label: "🔍 Ordsökning" },
     { id: "spel",       label: "🎮 Spel" },
-    { id: "retry",      label: retryQueue.length > 0 ? `🔄 Försök igen (${retryQueue.length})` : "🔄 Försök igen" },
+    { id: "retry",           label: retryQueue.length > 0 ? `🔄 Försök igen (${retryQueue.length})` : "🔄 Försök igen" },
+    { id: "skrivgenerator",  label: "✍️ Skrivgenerator" },
   ];
 
   function handleRetryAnswer(correct: boolean) {
@@ -366,6 +368,9 @@ export default function WorldPage({ params }: Props) {
               </div>
             )}
           </div>
+
+        ) : activeTab === "skrivgenerator" ? (
+          <SkrivgeneratorTab />
 
         ) : /* Language rules tab */
         activeTab === "regler" ? (
