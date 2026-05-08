@@ -189,7 +189,7 @@ export default function HomePage() {
                               <span className="text-5xl drop-shadow-lg">{stage.emoji}</span>
                               <div>
                                 <div className="text-xs font-bold text-white bg-black/30 rounded-full px-2.5 py-0.5 inline-block mb-1.5">
-                                  {stage.subtitle} · {stage.grades}
+                                  {stage.subtitle}
                                 </div>
                                 <h3
                                   className="text-2xl font-black text-white leading-tight"

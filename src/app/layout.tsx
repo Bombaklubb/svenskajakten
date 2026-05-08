@@ -6,7 +6,7 @@ import JaktlankarMenu from "@/components/ui/JaktlankarMenu";
 export const metadata: Metadata = {
   title: "Svenskajakten – Lär dig svenska",
   description:
-    "En gratis svenskträningsapp för åk 1–gymnasiet. Grammatikövningar och läsförståelse i fyra spännande världar.",
+    "En gratis svenskträningsapp för Nivå 1–10. Grammatikövningar och läsförståelse i fyra spännande världar.",
   keywords: ["svenska", "skola", "övningar", "grammatik", "läsförståelse", "gratis"],
   icons: {
     icon: "/icon.svg",

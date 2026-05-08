@@ -17,10 +17,10 @@ interface Stats {
 }
 
 const STAGES = [
-  { id: "lagstadiet",    label: "Lågstadiet",    subtitle: "Åk 1–3", color: "#f59e0b", bg: "bg-amber-50 dark:bg-amber-900/20", border: "border-amber-200 dark:border-amber-700", text: "text-amber-700 dark:text-amber-300" },
-  { id: "mellanstadiet", label: "Mellanstadiet", subtitle: "Åk 4–6", color: "#22c55e", bg: "bg-green-50 dark:bg-green-900/20",  border: "border-green-200 dark:border-green-700",  text: "text-green-700 dark:text-green-300" },
-  { id: "hogstadiet",    label: "Högstadiet",    subtitle: "Åk 7–9", color: "#3b82f6", bg: "bg-blue-50 dark:bg-blue-900/20",    border: "border-blue-200 dark:border-blue-700",    text: "text-blue-700 dark:text-blue-300" },
-  { id: "gymnasiet",     label: "Gymnasiet",     subtitle: "",       color: "#a855f7", bg: "bg-purple-50 dark:bg-purple-900/20", border: "border-purple-200 dark:border-purple-700", text: "text-purple-700 dark:text-purple-300" },
+  { id: "lagstadiet",    label: "Nivå 1–3",  subtitle: "Nivå 1–3", color: "#f59e0b", bg: "bg-amber-50 dark:bg-amber-900/20", border: "border-amber-200 dark:border-amber-700", text: "text-amber-700 dark:text-amber-300" },
+  { id: "mellanstadiet", label: "Nivå 4–6",  subtitle: "Nivå 4–6", color: "#22c55e", bg: "bg-green-50 dark:bg-green-900/20",  border: "border-green-200 dark:border-green-700",  text: "text-green-700 dark:text-green-300" },
+  { id: "hogstadiet",    label: "Nivå 7–9",  subtitle: "Nivå 7–9", color: "#3b82f6", bg: "bg-blue-50 dark:bg-blue-900/20",    border: "border-blue-200 dark:border-blue-700",    text: "text-blue-700 dark:text-blue-300" },
+  { id: "gymnasiet",     label: "Nivå 10",   subtitle: "Nivå 10",  color: "#a855f7", bg: "bg-purple-50 dark:bg-purple-900/20", border: "border-purple-200 dark:border-purple-700", text: "text-purple-700 dark:text-purple-300" },
 ];
 
 function formatDuration(seconds: number): string {
