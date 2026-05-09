@@ -1,6 +1,249 @@
 {
   "grammar": [
     {
+      "id": "alfabetet-1",
+      "title": "Alfabetet – bokstävernas ordning",
+      "description": "Lär dig alfabetets ordning och de svenska specialbokstäverna",
+      "icon": "🔤",
+      "bonusPoints": 20,
+      "helpText": [
+        "Det svenska alfabetet har 29 bokstäver – från A till Ö.",
+        "De tre svenska specialbokstäverna är Å, Ä och Ö – de finns sist i alfabetet.",
+        "Alfabetisk ordning används bland annat i ordböcker och lexikon.",
+        "Öva på att sjunga eller rabbla alfabetet för att lära dig ordningen!"
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Hur många bokstäver finns det i det svenska alfabetet?",
+          "options": [
+            "26",
+            "28",
+            "29",
+            "31"
+          ],
+          "correctIndex": 2,
+          "explanation": "Svenska alfabetet har 29 bokstäver – från A till Ö."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilka tre bokstäver finns i svenska alfabetet men INTE i det engelska?",
+          "options": [
+            "A, B, C",
+            "Å, Ä, Ö",
+            "Q, W, X",
+            "P, R, S"
+          ],
+          "correctIndex": 1,
+          "explanation": "Å, Ä och Ö är de tre speciella svenska bokstäverna."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken bokstav kommer SIST i svenska alfabetet?",
+          "options": [
+            "Z",
+            "Ä",
+            "Å",
+            "Ö"
+          ],
+          "correctIndex": 3,
+          "explanation": "Ö är den allra sista bokstaven. Ordningen är …Z, Å, Ä, Ö."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken bokstav kommer EFTER C i alfabetet?",
+          "options": [
+            "A",
+            "B",
+            "D",
+            "E"
+          ],
+          "correctIndex": 2,
+          "explanation": "Ordningen är A B C D – D kommer precis efter C."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Alfabetet börjar med bokstaven ___.",
+          "answer": "A",
+          "hint": "Det är den allra första bokstaven.",
+          "explanation": "Alfabetet börjar med A och slutar med Ö."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken bokstav är den 5:e i det svenska alfabetet? (A=1, B=2, C=3, D=4…)",
+          "options": [
+            "D",
+            "E",
+            "F",
+            "G"
+          ],
+          "correctIndex": 1,
+          "explanation": "A(1) B(2) C(3) D(4) E(5) – den femte bokstaven är E."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket av dessa ord kommer FÖRST om man sorterar i bokstavsordning?",
+          "options": [
+            "Björn",
+            "Apelsin",
+            "Cykel",
+            "Dörr"
+          ],
+          "correctIndex": 1,
+          "explanation": "Apelsin börjar med A – den första bokstaven – och kommer därför först."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken bokstav kommer FÖRE G i alfabetet?",
+          "options": [
+            "E",
+            "F",
+            "H",
+            "I"
+          ],
+          "correctIndex": 1,
+          "explanation": "Ordningen är …E F G H… – F kommer precis före G."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord börjar med bokstaven Ä?",
+          "options": [
+            "Åsna",
+            "Öga",
+            "Äpple",
+            "Björn"
+          ],
+          "correctIndex": 2,
+          "explanation": "Äpple börjar med Ä – en av de tre svenska specialbokstäverna."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Var hittar du ord sorterade i bokstavsordning (alfabetisk ordning)?",
+          "options": [
+            "I en kokbok",
+            "I en ordbok/lexikon",
+            "I en serietidning",
+            "I en matematikbok"
+          ],
+          "correctIndex": 1,
+          "explanation": "I en ordbok (lexikon) är alla ord sorterade från A till Ö."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken bokstav kommer PRECIS FÖRE Å i alfabetet?",
+          "options": [
+            "Ä",
+            "X",
+            "Y",
+            "Z"
+          ],
+          "correctIndex": 3,
+          "explanation": "Slutet av alfabetet är …Z, Å, Ä, Ö – Z kommer precis före Å."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Bokstaven som kommer EFTER M i alfabetet är ___.",
+          "answer": "N",
+          "hint": "Tänk på alfabetssången: …L M N…",
+          "explanation": "N kommer direkt efter M i alfabetet."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord skulle komma SIST i en ordbok?",
+          "options": [
+            "Zebra",
+            "Åsna",
+            "Ödla",
+            "Älg"
+          ],
+          "correctIndex": 2,
+          "explanation": "Ö är den sista bokstaven i alfabetet – ord som börjar med Ö kommer sist."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur många bokstäver är det i ordet 'katt'?",
+          "options": [
+            "3",
+            "4",
+            "5",
+            "6"
+          ],
+          "correctIndex": 1,
+          "explanation": "K-A-T-T – 'katt' har 4 bokstäver."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken bokstav börjar ordet 'skola' med?",
+          "options": [
+            "K",
+            "O",
+            "S",
+            "A"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Skola' börjar med bokstaven S."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Den svenska specialbokstaven som ser ut som ett A med en ring ovanpå heter ___.",
+          "answer": "Å",
+          "hint": "Det ser ut som ett A med en liten cirkel ovanpå.",
+          "explanation": "Å är bokstaven A med en ring (°) ovanpå."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Sätt orden i bokstavsordning (alfabetisk ordning)!",
+          "words": [
+            "Cykel",
+            "Apelsin",
+            "Björn"
+          ],
+          "correct": [
+            "Apelsin",
+            "Björn",
+            "Cykel"
+          ],
+          "explanation": "A kommer före B, och B kommer före C – så ordningen är Apelsin, Björn, Cykel."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord börjar med bokstaven Ö?",
+          "options": [
+            "Älg",
+            "Åsna",
+            "Öga",
+            "Björn"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Öga' börjar med Ö, den allra sista bokstaven i alfabetet."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken bokstav är den 10:e i alfabetet? (A=1, B=2…)",
+          "options": [
+            "H",
+            "I",
+            "J",
+            "K"
+          ],
+          "correctIndex": 2,
+          "explanation": "A(1) B(2) C(3) D(4) E(5) F(6) G(7) H(8) I(9) J(10) – J är den 10:e."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad kallas det när man sorterar ord från A till Ö?",
+          "options": [
+            "Numerisk ordning",
+            "Alfabetisk ordning",
+            "Kronologisk ordning",
+            "Slumpmässig ordning"
+          ],
+          "correctIndex": 1,
+          "explanation": "Att sortera ord från A till Ö kallas alfabetisk ordning."
+        }
+      ]
+    },
+    {
       "id": "substantiv-1",
       "title": "Substantiv – saker och djur",
       "description": "Lär dig känna igen substantiv",
