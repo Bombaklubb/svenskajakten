@@ -22,7 +22,15 @@ import { getStage } from "@/lib/stages";
 import type { StudentData, StageContent, SpellingTimedModule } from "@/lib/types";
 
 const POINTS_PER_CORRECT = 10;
-const DEFAULT_TIME_LIMIT = 60;
+const DEFAULT_TIME_LIMIT = 90;
+
+function getLetterHint(word: string): string {
+  if (word.length <= 2) return word.split("").join(" ");
+  const first = word[0];
+  const last = word[word.length - 1];
+  const blanks = Array(word.length - 2).fill("_").join(" ");
+  return `${first}  ${blanks}  ${last}`;
+}
 
 interface Props {
   params: Promise<{ stage: string; module: string }>;
@@ -44,6 +52,7 @@ export default function StavningstestPage({ params }: Props) {
   const [feedback, setFeedback] = useState<"correct" | "wrong" | null>(null);
   const [timeLeft, setTimeLeft] = useState(DEFAULT_TIME_LIMIT);
   const [timesUp, setTimesUp] = useState(false);
+  const [hintUsed, setHintUsed] = useState(false);
 
   const [showResult, setShowResult] = useState(false);
   const [chestEarned, setChestEarned] = useState<ChestType | undefined>();
@@ -201,6 +210,7 @@ export default function StavningstestPage({ params }: Props) {
       } else {
         setResults(newResults);
         setCurrentIndex((i) => i + 1);
+        setHintUsed(false);
       }
     }, 600);
   }
@@ -220,6 +230,7 @@ export default function StavningstestPage({ params }: Props) {
     setChestEarned(undefined);
     setBossJustUnlocked(false);
     setMysteryBox(null);
+    setHintUsed(false);
     setPhase("intro");
   }
 
@@ -280,8 +291,8 @@ export default function StavningstestPage({ params }: Props) {
                 `Du får ${timeLimit} sekunder på dig att stava ${totalWords} ord.`,
                 "Läs ledtråden och skriv ordet med rätt stavning.",
                 "Tryck på Enter eller klicka på knappen för att svara.",
+                "Fastnar du? Tryck på 💡 Visa ledtråd för att se första och sista bokstaven.",
                 "Du måste ha ALLA rätt för att klara testet och få bonuspoäng.",
-                "Varje korrekt svar ger poäng, men fullständigt godkänt kräver 100 % rätt.",
               ].map((tip, i) => (
                 <li
                   key={i}
@@ -388,7 +399,7 @@ export default function StavningstestPage({ params }: Props) {
           </div>
 
           {/* Clue */}
-          <div className="text-center mb-6">
+          <div className="text-center mb-4">
             <p className="text-xs text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-2 font-semibold">
               Ledtråd
             </p>
@@ -396,6 +407,27 @@ export default function StavningstestPage({ params }: Props) {
               {currentWord?.clue}
             </p>
           </div>
+
+          {/* Letter hint */}
+          {!feedback && (
+            <div className="text-center mb-5">
+              {hintUsed ? (
+                <div className="inline-flex flex-col items-center gap-1 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-700 rounded-xl px-5 py-2.5">
+                  <span className="text-xs text-amber-600 dark:text-amber-400 font-bold uppercase tracking-wider">Bokstavsledtråd</span>
+                  <span className="text-xl font-black tracking-[0.25em] text-amber-700 dark:text-amber-300 font-mono">
+                    {getLetterHint(currentWord?.word ?? "")}
+                  </span>
+                </div>
+              ) : (
+                <button
+                  onClick={() => setHintUsed(true)}
+                  className="text-sm font-semibold text-amber-600 dark:text-amber-400 hover:text-amber-800 dark:hover:text-amber-200 border border-amber-300 dark:border-amber-600 rounded-xl px-4 py-1.5 transition-colors hover:bg-amber-50 dark:hover:bg-amber-900/20"
+                >
+                  💡 Visa ledtråd
+                </button>
+              )}
+            </div>
+          )}
 
           {/* Feedback overlay */}
           {feedback && (
