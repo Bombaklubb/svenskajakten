@@ -22,7 +22,7 @@ import { getStage } from "@/lib/stages";
 import type { StudentData, StageContent, SpellingTimedModule } from "@/lib/types";
 
 const POINTS_PER_CORRECT = 10;
-const DEFAULT_TIME_LIMIT = 90;
+const DEFAULT_TIME_LIMIT = 150;
 
 function getLetterHint(word: string): string {
   if (word.length <= 2) return word.split("").join(" ");
