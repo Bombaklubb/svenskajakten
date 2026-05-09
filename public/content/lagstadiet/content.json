@@ -6584,6 +6584,97 @@
           ],
           "correctIndex": 1,
           "explanation": "'Dem' används som objekt. 'Jag ser vem?' – Dem! Jämför: 'De springer' (subjekt)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket alternativ är rätt skrivet?",
+          "options": [
+            "choklad kaka",
+            "chokladkaka",
+            "choklad-kaka",
+            "Chokladkaka"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Chokladkaka' skrivs ihop – det är ett sammansatt ord."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hitta det felaktigt skrivna ordet: 'Jag har en röd cykel hjälm.'",
+          "options": [
+            "Jag",
+            "röd",
+            "cykel hjälm",
+            "har"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Cykelhjälm' ska skrivas ihop som ett ord, inte isär."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur ska en replik börja i en dialog?",
+          "options": [
+            "Med citattecken: \"Hej!\"",
+            "Med talstreck: – Hej!",
+            "Med kolon: Hej:",
+            "Med parentes: (Hej!)"
+          ],
+          "correctIndex": 1,
+          "explanation": "I en dialog börjar varje replik med ett talstreck (–), inte ett bindestreck (-)."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt tecken: '___ Vad heter du?' frågade flickan.",
+          "answer": "–",
+          "hint": "Repliker i dialoger inleds med ett talstreck.",
+          "explanation": "Talstrecket (–) markerar att någon börjar tala i en dialog."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är ett stycke i en text?",
+          "options": [
+            "En enskild mening",
+            "En grupp meningar som handlar om samma sak",
+            "En rubrik",
+            "En hel berättelse"
+          ],
+          "correctIndex": 1,
+          "explanation": "Ett stycke är en grupp meningar som hör ihop och handlar om samma ämne."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "När ska man börja ett nytt stycke?",
+          "options": [
+            "Efter varje mening",
+            "När man byter ämne eller tanke",
+            "Bara i långa texter",
+            "Aldrig"
+          ],
+          "correctIndex": 1,
+          "explanation": "Man börjar ett nytt stycke när man byter ämne, plats eller tid i berättelsen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord rimmar med 'sol'?",
+          "options": [
+            "bil",
+            "sal",
+            "stol",
+            "ful"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Sol' och 'stol' slutar med samma ljud (-ol) och rimmar med varandra."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord rimmar med 'hund'?",
+          "options": [
+            "katt",
+            "rund",
+            "björn",
+            "sol"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Hund' och 'rund' rimmar – de slutar med samma ljud (-und)."
         }
       ]
     },

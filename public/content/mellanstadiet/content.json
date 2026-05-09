@@ -5243,6 +5243,116 @@
           ],
           "correctIndex": 1,
           "explanation": "'Dem' = objekt. Tips: Passar 'oss'? 'Vi hjälpte oss' → Ja → skriv 'dem'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket alternativ visar rätt skriven dialog med talstreck?",
+          "options": [
+            "\"Är du trött?\" frågade Erik.",
+            "– Är du trött? frågade Erik.",
+            "- Är du trött? frågade Erik.",
+            "Är du trött? frågade Erik."
+          ],
+          "correctIndex": 1,
+          "explanation": "I dialog med talstreck börjar repliken med ett långt talstreck (–), inte ett kort bindestreck (-)."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt tecken: '___ Vi ses imorgon!' sa hon.",
+          "answer": "–",
+          "hint": "Repliker inleds med talstreck.",
+          "explanation": "Talstrecket (–) är längre än bindestrecket (-) och används för att markera dialog."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Varför delar man in en text i stycken?",
+          "options": [
+            "För att fylla ut sidan",
+            "För att göra det lättare att läsa och följa med i texten",
+            "Därför att det är ett krav i skolan",
+            "För att varje mening ska synas tydligt"
+          ],
+          "correctIndex": 1,
+          "explanation": "Styckeindelning hjälper läsaren att följa med i texten och förstå när ett nytt ämne börjar."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur markerar man ett nytt stycke i löpande text?",
+          "options": [
+            "Med tre punkter (...)",
+            "Med en tom rad eller indragning",
+            "Med ett utropstecken",
+            "Med stor bokstav mitt i texten"
+          ],
+          "correctIndex": 1,
+          "explanation": "Nytt stycke markeras med en tom rad eller en indragning av första raden."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är skillnaden mellan ett substantiv och ett adjektiv?",
+          "options": [
+            "Ingen skillnad",
+            "Substantiv namnger saker/personer, adjektiv beskriver hur de är",
+            "Substantiv beskriver handlingar, adjektiv namnger saker",
+            "Substantiv är alltid plural"
+          ],
+          "correctIndex": 1,
+          "explanation": "Substantiv namnger saker, djur och personer. Adjektiv beskriver hur dessa ser ut eller är."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord i 'Den lilla hunden springer snabbt' är ett adverb?",
+          "options": [
+            "Den",
+            "lilla",
+            "hunden",
+            "snabbt"
+          ],
+          "correctIndex": 3,
+          "explanation": "'Snabbt' är ett adverb – det beskriver hur hunden springer (verbet)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur många vokaler finns i ordet 'bibliotek'?",
+          "options": [
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "correctIndex": 2,
+          "explanation": "Bibliotek har 4 vokaler: i, i, o, e. De övriga bokstäverna är konsonanter."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord innehåller ett konsonantkluster (flera konsonanter i rad)?",
+          "options": [
+            "äpple",
+            "strand",
+            "öga",
+            "åka"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Strand' börjar med konsonantklustret 'str' – tre konsonanter i rad."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ord är rätt stavat?",
+          "options": [
+            "veder",
+            "väder",
+            "vedder",
+            "vädder"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Väder' stavas med ä – det är ett ä-ljud, inte ett e-ljud."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Fyll i rätt bokstav: 'Hon s___ger alltid rätt svar.'",
+          "answer": "ä",
+          "hint": "Verbet 'säger' innehåller ett ä-ljud.",
+          "explanation": "'Säger' stavas med ä – e och ä kan lätt förväxlas."
         }
       ]
     },

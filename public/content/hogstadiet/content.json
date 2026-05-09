@@ -2284,6 +2284,73 @@
           ],
           "correctIndex": 2,
           "explanation": "'De springer' – de är subjektet. 'Vi springer' passar → skriv 'de'. I de andra meningarna ska 'dem' användas."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening visar korrekt användning av talstreck i dialog?",
+          "options": [
+            "\"Det är dags att gå,\" sade han.",
+            "– Det är dags att gå, sade han.",
+            "- Det är dags att gå, sade han.",
+            "Det är dags att gå! sade han."
+          ],
+          "correctIndex": 1,
+          "explanation": "I skönlitterär dialog används talstreck (–), inte citattecken. Talstrecket är längre än bindestrecket."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Var placeras 'sade han / frågade hon' i en dialog med talstreck?",
+          "options": [
+            "På nästa rad",
+            "Direkt efter repliken på samma rad",
+            "I en fotnot",
+            "Alltid med citattecken"
+          ],
+          "correctIndex": 1,
+          "explanation": "I talstrecks-dialog kommer 'sade han' etc. direkt efter repliken på samma rad."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket påstående om styckeindelning är korrekt?",
+          "options": [
+            "Varje mening ska ha ett eget stycke",
+            "Stycken bryts vid ny tanke, ny talare eller nytt sammanhang",
+            "Styckelängden ska alltid vara exakt fem meningar",
+            "Stycken används bara i romaner"
+          ],
+          "correctIndex": 1,
+          "explanation": "Styckeindelning följer textens innehåll – ny talare, nytt ämne eller ny handling motiverar ett nytt stycke."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "I en dialog börjar ett nytt stycke när en ___ talare tar över.",
+          "answer": "ny",
+          "hint": "Varje person som talar bör ha ett eget stycke.",
+          "explanation": "När en ny person börjar tala markeras det med ett nytt stycke."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är skillnaden mellan ett adjektiv och ett adverb?",
+          "options": [
+            "Det finns ingen skillnad",
+            "Adjektiv beskriver substantiv, adverb beskriver verb/adjektiv/andra adverb",
+            "Adverb beskriver substantiv, adjektiv beskriver verb",
+            "Adjektiv är alltid kortare än adverb"
+          ],
+          "correctIndex": 1,
+          "explanation": "Adjektiv modifierar substantiv ('en snabb bil'), adverb modifierar verb, adjektiv eller adverb ('han körde snabbt')."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är ett prepositionsuttryck?",
+          "options": [
+            "Ett verb i passiv form",
+            "En fras som inleds av en preposition och anger relation",
+            "En frågemening",
+            "En mening utan subjekt"
+          ],
+          "correctIndex": 1,
+          "explanation": "Prepositionsuttryck inleds av en preposition (på, i, av, med…) och anger rumslig, tidslig eller annan relation."
         }
       ]
     },
