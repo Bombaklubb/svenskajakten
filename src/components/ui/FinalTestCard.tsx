@@ -6,6 +6,8 @@ import type { ModuleProgress, Stage } from "@/lib/types";
 interface FinalTestCardProps {
   stage: Stage;
   progress: ModuleProgress | null;
+  moduleId?: string;
+  number?: 1 | 2;
 }
 
 const STAGE_COLORS: Record<string, { from: string; to: string; glow: string }> = {
@@ -15,8 +17,8 @@ const STAGE_COLORS: Record<string, { from: string; to: string; glow: string }> =
   gymnasiet:     { from: "#7c3aed", to: "#6d28d9", glow: "rgba(124,58,237,0.4)" },
 };
 
-export default function FinalTestCard({ stage, progress }: FinalTestCardProps) {
-  const href = `/world/${stage.id}/grammar/sluttest`;
+export default function FinalTestCard({ stage, progress, moduleId = "sluttest", number }: FinalTestCardProps) {
+  const href = `/world/${stage.id}/grammar/${moduleId}`;
   const colors = STAGE_COLORS[stage.id] ?? STAGE_COLORS.lagstadiet;
   const completed = !!progress?.completed;
 
@@ -73,7 +75,7 @@ export default function FinalTestCard({ stage, progress }: FinalTestCardProps) {
                     color: completed ? "#92400e" : "white",
                   }}
                 >
-                  ✦ SLUTTEST
+                  ✦ {number ? `SLUTTEST ${number}` : "SLUTTEST"}
                 </span>
                 {completed && (
                   <span className="text-xs font-black px-3 py-1 rounded-full bg-emerald-500 text-white border-2 border-emerald-400">
@@ -89,13 +91,13 @@ export default function FinalTestCard({ stage, progress }: FinalTestCardProps) {
                   textShadow: completed ? "none" : "0 1px 3px rgba(0,0,0,0.3)",
                 }}
               >
-                Sluttest – Grammatik
+                {number ? `Sluttest ${number} – Grammatik` : "Sluttest – Grammatik"}
               </h3>
               <p
                 className="text-sm font-semibold mt-0.5"
                 style={{ color: completed ? "#92400e" : "rgba(255,255,255,0.85)" }}
               >
-                30+ frågor · Blandat innehåll · 100 bonuspoäng
+                25+ frågor · Blandat innehåll · 100 bonuspoäng
               </p>
             </div>
 

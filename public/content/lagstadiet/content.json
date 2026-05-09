@@ -6013,12 +6013,12 @@
     },
     {
       "id": "sluttest",
-      "title": "Sluttest – Grammatik",
-      "description": "Testa allt du lärt dig! 38 blandade frågor om grammatik på lågstadienivå.",
+      "title": "Sluttest 1 – Grammatik",
+      "description": "Del 1 av 2 – testa allt du lärt dig! Blandade frågor om grammatik på lågstadienivå.",
       "icon": "🏆",
       "bonusPoints": 100,
       "helpText": [
-        "Det här är ditt stora sluttest! Du kommer att få frågor om allt du har övat på.",
+        "Det här är del 1 av sluttest! Du kommer att få frågor om allt du har övat på.",
         "Ta det lugnt och läs varje fråga noga innan du svarar.",
         "Du behöver svara rätt på 60% av frågorna för att klara testet och få bonuspoäng.",
         "Lycka till – du klarar det! 🌟"
@@ -6349,7 +6349,22 @@
           ],
           "correctIndex": 1,
           "explanation": "Man flyger 'i himlen' – prepositioner visar var något är eller sker."
-        },
+        }
+      ]
+    },
+    {
+      "id": "sluttest-2",
+      "title": "Sluttest 2 – Grammatik",
+      "description": "Del 2 av 2 – fler blandade frågor om grammatik på lågstadienivå.",
+      "icon": "🏆",
+      "bonusPoints": 100,
+      "helpText": [
+        "Det här är del 2 av sluttest! Fler frågor om allt du har övat på.",
+        "Ta det lugnt och läs varje fråga noga innan du svarar.",
+        "Du behöver svara rätt på 60% av frågorna för att klara testet och få bonuspoäng.",
+        "Lycka till – du klarar det! 🌟"
+      ],
+      "exercises": [
         {
           "type": "multiple-choice",
           "question": "Vilket verb är i presens (nutid)?",

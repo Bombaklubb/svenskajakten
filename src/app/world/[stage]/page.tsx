@@ -473,15 +473,23 @@ export default function WorldPage({ params }: Props) {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             {(
               activeTab === "grammar"
-                ? [...content.grammar].sort((a, b) => a.id === "sluttest" ? 1 : b.id === "sluttest" ? -1 : 0)
+                ? [...content.grammar].sort((a, b) => {
+                    const aFinal = a.id === "sluttest" || a.id === "sluttest-2";
+                    const bFinal = b.id === "sluttest" || b.id === "sluttest-2";
+                    if (aFinal && bFinal) return a.id === "sluttest" ? -1 : 1;
+                    return aFinal ? 1 : bFinal ? -1 : 0;
+                  })
               : (content.wordsearch ?? [])
             ).map((mod, idx, arr) => {
-              if (activeTab === "grammar" && mod.id === "sluttest") {
+              if (activeTab === "grammar" && (mod.id === "sluttest" || mod.id === "sluttest-2")) {
+                const num = mod.id === "sluttest" ? 1 : 2;
                 return (
                   <div key={mod.id} className="col-span-1 sm:col-span-2">
                     <FinalTestCard
                       stage={stage}
                       progress={getModuleProgress("grammar", mod.id)}
+                      moduleId={mod.id}
+                      number={num}
                     />
                   </div>
                 );
