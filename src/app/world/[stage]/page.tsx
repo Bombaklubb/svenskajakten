@@ -6,7 +6,7 @@ import { notFound } from "next/navigation";
 import Header from "@/components/ui/Header";
 import ModuleCard from "@/components/ui/ModuleCard";
 import FinalTestCard from "@/components/ui/FinalTestCard";
-import { loadStudent, loadRetryQueue, removeFromRetryQueue } from "@/lib/storage";
+import { loadStudent, saveStudent, loadRetryQueue, removeFromRetryQueue } from "@/lib/storage";
 import { getStage } from "@/lib/stages";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import MultipleChoice from "@/components/exercises/MultipleChoice";
@@ -48,6 +48,7 @@ export default function WorldPage({ params }: Props) {
   const [retryQueue, setRetryQueue] = useState<RetryItem[]>([]);
   const [retryItem, setRetryItem] = useState<RetryItem | null>(null);
   const [retryResult, setRetryResult] = useState<"correct" | "wrong" | null>(null);
+  const [retryPoints, setRetryPoints] = useState(0);
 
   useEffect(() => {
     const s = loadStudent();
@@ -99,8 +100,14 @@ export default function WorldPage({ params }: Props) {
     if (!retryItem) return;
     if (correct) {
       removeFromRetryQueue(stageId, retryItem.key);
-      const updated = retryQueue.filter((q) => q.key !== retryItem.key);
-      setRetryQueue(updated);
+      setRetryQueue((q) => q.filter((r) => r.key !== retryItem.key));
+      const pts = Math.floor(Math.random() * 26) + 25; // 25–50
+      setRetryPoints(pts);
+      if (student) {
+        const updated = { ...student, totalPoints: student.totalPoints + pts };
+        saveStudent(updated);
+        setStudent(updated);
+      }
       setRetryResult("correct");
     } else {
       setRetryResult("wrong");
@@ -289,6 +296,11 @@ export default function WorldPage({ params }: Props) {
                     <p className={`text-lg font-black ${retryResult === "correct" ? "text-green-700 dark:text-green-300" : "text-red-700 dark:text-red-300"}`}>
                       {retryResult === "correct" ? "Rätt! Uppgiften är klar!" : "Fel – försök igen nästa gång!"}
                     </p>
+                    {retryResult === "correct" && (
+                      <p className="text-amber-600 dark:text-amber-400 font-black text-xl mt-2">
+                        +{retryPoints} ⭐
+                      </p>
+                    )}
                   </div>
                 ) : (
                   <div className="card">
