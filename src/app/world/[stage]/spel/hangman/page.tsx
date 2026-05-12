@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback, use } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/ui/Header";
-import { loadStudent } from "@/lib/storage";
+import { loadStudent, saveStudent } from "@/lib/storage";
 import { getStage } from "@/lib/stages";
 import type { StudentData } from "@/lib/types";
 
@@ -103,7 +103,7 @@ export default function SnogubbenPage({ params }: Props) {
   const [student, setStudent] = useState<StudentData | null>(null);
   useEffect(() => { setStudent(loadStudent()); }, []);
   if (!stage) return notFound();
-  return <SnogubbenGame stageId={stageId} stage={stage} student={student} />;
+  return <SnogubbenGame stageId={stageId} stage={stage} student={student} setStudent={setStudent} />;
 }
 
 // ── Snowman SVG ───────────────────────────────────────────────────────────────
@@ -226,17 +226,17 @@ function Snowman({ wrongCount, isWon }: { wrongCount: number; isWon: boolean }) 
   );
 }
 
-function SnogubbenGame({ stageId, stage, student }: {
+function SnogubbenGame({ stageId, stage, student, setStudent }: {
   stageId: string;
   stage: ReturnType<typeof getStage> & object;
   student: StudentData | null;
+  setStudent: (s: StudentData) => void;
 }) {
   const [wordList] = useState(() => shuffle(WORDS[stageId] ?? WORDS.lagstadiet));
   const [wordIndex, setWordIndex] = useState(0);
   const [guessed, setGuessed] = useState<Set<string>>(new Set());
   const [phase, setPhase] = useState<"playing" | "won" | "lost">("playing");
   const [score, setScore] = useState(0);
-  const [round, setRound] = useState(1);
   const [showHint, setShowHint] = useState(false);
 
   const current = wordList[wordIndex % wordList.length];
@@ -251,12 +251,18 @@ function SnogubbenGame({ stageId, stage, student }: {
 
   useEffect(() => {
     if (isWon && phase === "playing") {
-      setScore(s => s + 50 + livesLeft * 10);
+      const pts = 50 + livesLeft * 10;
+      setScore(s => s + pts);
+      if (student) {
+        const updated = { ...student, totalPoints: student.totalPoints + pts };
+        saveStudent(updated);
+        setStudent(updated);
+      }
       setPhase("won");
     } else if (isLost && phase === "playing") {
       setPhase("lost");
     }
-  }, [isWon, isLost, livesLeft, phase]);
+  }, [isWon, isLost, livesLeft, phase]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const guess = useCallback((letter: string) => {
     if (phase !== "playing" || guessed.has(letter)) return;
@@ -267,16 +273,6 @@ function SnogubbenGame({ stageId, stage, student }: {
     setWordIndex(i => i + 1);
     setGuessed(new Set());
     setPhase("playing");
-    setRound(r => r + 1);
-    setShowHint(false);
-  }, []);
-
-  const restart = useCallback(() => {
-    setWordIndex(0);
-    setGuessed(new Set());
-    setPhase("playing");
-    setScore(0);
-    setRound(1);
     setShowHint(false);
   }, []);
 
@@ -297,10 +293,7 @@ function SnogubbenGame({ stageId, stage, student }: {
           <Link href={`/world/${stageId}`} className="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 text-sm font-semibold">
             ← Avsluta
           </Link>
-          <div className="flex items-center gap-3">
-            <span className="text-sm font-bold text-gray-500 dark:text-gray-400">Runda {round}</span>
-            <span className="text-sm font-black text-amber-500">⭐ {score}p</span>
-          </div>
+          <span className="text-sm font-black text-amber-500">⭐ {score}p</span>
         </div>
 
         {/* Lives as snowflakes */}
@@ -385,14 +378,14 @@ function SnogubbenGame({ stageId, stage, student }: {
                 className={`px-5 py-2 rounded-xl font-bold text-white text-sm cursor-pointer ${stage!.colorClass}`}
                 style={{ boxShadow: "0 3px 0 0 rgba(0,0,0,0.2)" }}
               >
-                Nästa ord →
+                Spela igen 🔄
               </button>
-              <button
-                onClick={restart}
-                className="px-4 py-2 rounded-xl font-bold text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 text-sm cursor-pointer"
+              <Link
+                href={`/world/${stageId}`}
+                className="px-4 py-2 rounded-xl font-bold text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 text-sm"
               >
-                Börja om
-              </button>
+                ← Avsluta
+              </Link>
             </div>
           </div>
         )}
