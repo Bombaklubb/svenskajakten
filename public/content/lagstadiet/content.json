@@ -198,12 +198,13 @@
             "Apelsin",
             "Björn"
           ],
-          "correct": [
-            "Apelsin",
-            "Björn",
-            "Cykel"
-          ],
-          "explanation": "A kommer före B, och B kommer före C – så ordningen är Apelsin, Björn, Cykel."
+          "explanation": "A kommer före B, och B kommer före C – så ordningen är Apelsin, Björn, Cykel.",
+          "id": "alfabetet-1-ex-16",
+          "correctOrder": [
+            1,
+            2,
+            0
+          ]
         },
         {
           "type": "multiple-choice",
