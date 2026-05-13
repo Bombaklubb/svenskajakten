@@ -4666,6 +4666,251 @@
       ]
     },
     {
+      "id": "o-eller-aa-mel-1",
+      "title": "O eller Å? – fördjupning",
+      "description": "Träna på ord som byter betydelse helt när O byts mot Å",
+      "icon": "🔡",
+      "bonusPoints": 20,
+      "helpText": [
+        "O och Å är båda rundade vokaler – men Å har ett mörkare, mer öppet ljud.",
+        "Ordets betydelse förändras ibland helt: 'bor' (bor/lives) vs 'bår' (stretcher).",
+        "I sammansatta ord – tänk på grundordet: 'storgatan' har 'stor' (adjektiv), inte 'står' (verb).",
+        "Läs hela meningen och tänk på sammanhanget – vad ska stå där logiskt?"
+      ],
+      "exercises": [
+        {
+          "id": "o-aa-mel-1-1",
+          "type": "multiple-choice",
+          "question": "'Han ___ i en liten lägenhet i Göteborg.' – välj rätt form.",
+          "options": [
+            "bor",
+            "bår",
+            "bur",
+            "bar"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Bo' → 'bor' i nutid, med O. En 'bår' (med Å) är det man bär sjuka på."
+        },
+        {
+          "id": "o-aa-mel-1-2",
+          "type": "multiple-choice",
+          "question": "'Ambulansen kom med en ___ till akuten.' – välj rätt ord.",
+          "options": [
+            "bår",
+            "bor",
+            "bur",
+            "bar"
+          ],
+          "correctIndex": 0,
+          "explanation": "En 'bår' (med Å) är ett bärbart underlag. 'Bor' (med O) är ett verb."
+        },
+        {
+          "id": "o-aa-mel-1-3",
+          "type": "fill-in-blank",
+          "question": "Fyll i O eller Å: 'b_rd' – 'Vi åt middag vid bordet.'",
+          "answer": "O",
+          "hint": "Möbeln du sitter vid och äter vid – hur stavas den?",
+          "explanation": "'Bord' (möbeln) stavas med O."
+        },
+        {
+          "id": "o-aa-mel-1-4",
+          "type": "fill-in-blank",
+          "question": "Fyll i O eller Å: 'f_lk' – 'Det var mycket folk på torget.'",
+          "answer": "O",
+          "hint": "Många människor på ett ställe – vilket ord är det?",
+          "explanation": "'Folk' (människor) stavas med O."
+        },
+        {
+          "id": "o-aa-mel-1-5",
+          "type": "fill-in-blank",
+          "question": "Fyll i O eller Å: 'g_rd' – 'Familjen bor på en liten bondgård.'",
+          "answer": "Å",
+          "hint": "Platsen med ladugård, åkrar och djur.",
+          "explanation": "'Gård' (bondgård) stavas med Å."
+        },
+        {
+          "id": "o-aa-mel-1-6",
+          "type": "multiple-choice",
+          "question": "'Hästen slog med ___ i marken.' – välj rätt ord för hästens fot.",
+          "options": [
+            "hov",
+            "håv",
+            "hav",
+            "hev"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Hov' (hästens hårda fot) stavas med O. 'Håv' (med Å) är ett nät för att fånga insekter."
+        },
+        {
+          "id": "o-aa-mel-1-7",
+          "type": "multiple-choice",
+          "question": "'Biologiläraren använde en ___ för att fånga fjärilar.' – välj rätt ord.",
+          "options": [
+            "håv",
+            "hov",
+            "hav",
+            "hev"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Håv' (insektsnät) stavas med Å. 'Hov' (med O) är hästens fot."
+        },
+        {
+          "id": "o-aa-mel-1-8",
+          "type": "multiple-choice",
+          "question": "'Han ___ lite för sig själv åt vitsen.' – välj rätt dåtidsform av 'le'.",
+          "options": [
+            "log",
+            "låg",
+            "lag",
+            "leg"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Le' (skratta tyst) → dåtid 'log', med O. 'Låg' (med Å) är dåtid av 'ligga'."
+        },
+        {
+          "id": "o-aa-mel-1-9",
+          "type": "multiple-choice",
+          "question": "'Boken ___ kvar på golvet hela natten.' – välj rätt dåtidsform av 'ligga'.",
+          "options": [
+            "låg",
+            "log",
+            "lag",
+            "leg"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Ligga' → dåtid 'låg', med Å. 'Log' (med O) är dåtid av 'le'."
+        },
+        {
+          "id": "o-aa-mel-1-10",
+          "type": "fill-in-blank",
+          "question": "Fyll i O eller Å: 'l_g' – 'Hon log när hon fick beröm.'",
+          "answer": "O",
+          "hint": "Det är dåtid av 'le' – att le/skratta tyst.",
+          "explanation": "'Log' (dåtid av le) stavas med O."
+        },
+        {
+          "id": "o-aa-mel-1-11",
+          "type": "fill-in-blank",
+          "question": "Fyll i O eller Å: 'l_g' – 'Hunden låg still under bordet.'",
+          "answer": "Å",
+          "hint": "Det är dåtid av 'ligga' – att befinna sig liggandes.",
+          "explanation": "'Låg' (dåtid av ligga) stavas med Å."
+        },
+        {
+          "id": "o-aa-mel-1-12",
+          "type": "multiple-choice",
+          "question": "'Han ___ tåget och kom en timme för sent.' – välj rätt dåtidsform av 'ta'.",
+          "options": [
+            "tog",
+            "tåg",
+            "tag",
+            "teg"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Ta' → dåtid 'tog', med O. 'Tåg' (med Å) är fordonet på räls."
+        },
+        {
+          "id": "o-aa-mel-1-13",
+          "type": "multiple-choice",
+          "question": "Vilket av dessa ord skrivs med Å?",
+          "options": [
+            "bord",
+            "folk",
+            "son",
+            "tåg"
+          ],
+          "correctIndex": 3,
+          "explanation": "'Tåg' (fordonet) skrivs med Å. Bord, folk och son skrivs med O."
+        },
+        {
+          "id": "o-aa-mel-1-14",
+          "type": "multiple-choice",
+          "question": "Vilket av dessa ord skrivs med O?",
+          "options": [
+            "stå",
+            "tåg",
+            "råd",
+            "folk"
+          ],
+          "correctIndex": 3,
+          "explanation": "'Folk' skrivs med O. Stå, tåg och råd skrivs med Å."
+        },
+        {
+          "id": "o-aa-mel-1-15",
+          "type": "multiple-choice",
+          "question": "'Detektiven undersökte platsen för ___et.' – välj rätt ord för det allvarliga brottet.",
+          "options": [
+            "mord",
+            "mård",
+            "mort",
+            "mard"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Mord' (det allvarligaste brottet) stavas med O. 'Mård' (med Å) är ett litet rovdjur."
+        },
+        {
+          "id": "o-aa-mel-1-16",
+          "type": "multiple-choice",
+          "question": "'Jägaren spårade en ___ i skogen.' – välj rätt ord för det lilla rovdjuret.",
+          "options": [
+            "mård",
+            "mord",
+            "mart",
+            "mard"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Mård' (ett litet rovdjur, släkting till veslan) stavas med Å. 'Mord' (med O) är ett brott."
+        },
+        {
+          "id": "o-aa-mel-1-17",
+          "type": "fill-in-blank",
+          "question": "Fyll i O eller Å: 'm_rd' – 'Polisen utredde mordet noggrant.'",
+          "answer": "O",
+          "hint": "Det allvarligaste brottet – hur stavas det?",
+          "explanation": "'Mord' (brottet) stavas med O."
+        },
+        {
+          "id": "o-aa-mel-1-18",
+          "type": "multiple-choice",
+          "question": "'Läraren ___ stilla och lyssnade medan eleven berättade.' – välj rätt dåtidsform av 'stå'.",
+          "options": [
+            "stod",
+            "ståd",
+            "stad",
+            "sted"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Stå' → dåtid 'stod', med O. Notera: dåtidsformen byter till O trots att 'stå' har Å."
+        },
+        {
+          "id": "o-aa-mel-1-19",
+          "type": "multiple-choice",
+          "question": "'Kåren' och 'koren' – vilket ord syftar på en grupp/organisation?",
+          "options": [
+            "kåren",
+            "koren",
+            "båda betyder samma sak",
+            "ingendera"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Kår' (med Å) = grupp/organisation (t.ex. militärkår). 'Kor' (med O) = plural av ko (djuret)."
+        },
+        {
+          "id": "o-aa-mel-1-20",
+          "type": "multiple-choice",
+          "question": "Vilken mening är korrekt?",
+          "options": [
+            "Han bor i ett stort hus med en vacker trädgård.",
+            "Han bår i ett stårt hus med en vacker trädgård.",
+            "Han bor i ett stård hus med en vacker trädgård.",
+            "Han bår i ett stort hus med en vacker trädgård."
+          ],
+          "correctIndex": 0,
+          "explanation": "'Bor' (verb, med O), 'stort' (adjektiv, med O) och 'trädgård' (med Å) – alla rätt stavade."
+        }
+      ]
+    },
+    {
       "id": "sluttest",
       "title": "Sluttest 1 – Grammatik",
       "description": "Del 1 av 2 – testa allt du lärt dig! Blandade frågor om grammatik på mellanstadienivå.",

@@ -6256,6 +6256,251 @@
       ]
     },
     {
+      "id": "o-eller-aa-lag-1",
+      "title": "O eller Å?",
+      "description": "Träna på skillnaden mellan O och Å – ord som lätt blandas ihop",
+      "icon": "🔡",
+      "bonusPoints": 20,
+      "helpText": [
+        "O låter som i 'bok', 'sol' och 'stor' – munnen är lite rund.",
+        "Å låter som i 'råd', 'stå' och 'tåg' – munnen är mer rund och öppen.",
+        "Säg ordet högt och lyssna noga – hör du O eller Å?",
+        "Vanliga fällor: 'mor' (mamma) och 'mår' (känner sig) låter nästan likadant!"
+      ],
+      "exercises": [
+        {
+          "id": "o-aa-lag-1-1",
+          "type": "multiple-choice",
+          "question": "Vilken bokstav finns i mitten av ordet 'bok'?",
+          "options": [
+            "O",
+            "Å",
+            "U",
+            "E"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Bok' stavas med O – precis som 'sol', 'ros' och 'stor'."
+        },
+        {
+          "id": "o-aa-lag-1-2",
+          "type": "multiple-choice",
+          "question": "Vilken bokstav finns i mitten av ordet 'råd'?",
+          "options": [
+            "O",
+            "Å",
+            "A",
+            "I"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Råd' stavas med Å – precis som 'tåg', 'stå' och 'hål'."
+        },
+        {
+          "id": "o-aa-lag-1-3",
+          "type": "multiple-choice",
+          "question": "Hur stavas ordet som betyder 'mamma'?",
+          "options": [
+            "mor",
+            "mår",
+            "mur",
+            "mar"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Mor' (mamma) skrivs med O. 'Mår' (hur man känner sig) skrivs med Å."
+        },
+        {
+          "id": "o-aa-lag-1-4",
+          "type": "multiple-choice",
+          "question": "'Hon ___ inte bra idag.' – vilket ord passar?",
+          "options": [
+            "mår",
+            "mor",
+            "mur",
+            "mar"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Mår' (hur man känner sig) skrivs med Å. 'Mor' (mamma) skrivs med O."
+        },
+        {
+          "id": "o-aa-lag-1-5",
+          "type": "fill-in-blank",
+          "question": "Fyll i O eller Å: 'r_s' (en blomma med taggar)",
+          "answer": "O",
+          "hint": "Tänk på en röd blomma – 'ros'. Vilken vokal hör du?",
+          "explanation": "'Ros' stavas med O."
+        },
+        {
+          "id": "o-aa-lag-1-6",
+          "type": "fill-in-blank",
+          "question": "Fyll i O eller Å: 'r_d' (nyttigt förslag man ger någon)",
+          "answer": "Å",
+          "hint": "Läraren ger dig ett ___ när du fastnar. Hör du O eller Å?",
+          "explanation": "'Råd' stavas med Å."
+        },
+        {
+          "id": "o-aa-lag-1-7",
+          "type": "multiple-choice",
+          "question": "Vilket ord betyder 'det motsatta till liten'?",
+          "options": [
+            "stor",
+            "står",
+            "ster",
+            "star"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Stor' (adjektiv) skrivs med O. 'Står' (verb, att stå) skrivs med Å."
+        },
+        {
+          "id": "o-aa-lag-1-8",
+          "type": "multiple-choice",
+          "question": "'Läraren ___ framme vid tavlan.' – vilket ord passar?",
+          "options": [
+            "står",
+            "stor",
+            "ster",
+            "star"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Stå' → 'står' i nutid, med Å. 'Stor' är adjektivet (stor/liten)."
+        },
+        {
+          "id": "o-aa-lag-1-9",
+          "type": "multiple-choice",
+          "question": "Vilket av dessa ord innehåller bokstaven Å?",
+          "options": [
+            "bord",
+            "tåg",
+            "son",
+            "ros"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Tåg' skrivs med Å. De andra orden – bord, son, ros – skrivs med O."
+        },
+        {
+          "id": "o-aa-lag-1-10",
+          "type": "multiple-choice",
+          "question": "Vilket av dessa ord innehåller bokstaven O?",
+          "options": [
+            "hål",
+            "nål",
+            "ros",
+            "råd"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Ros' skrivs med O. De andra orden – hål, nål, råd – skrivs med Å."
+        },
+        {
+          "id": "o-aa-lag-1-11",
+          "type": "fill-in-blank",
+          "question": "Fyll i O eller Å: 'b_k' (du läser i den)",
+          "answer": "O",
+          "hint": "Tänk på din läsbok i skolan – hur stavas den?",
+          "explanation": "'Bok' stavas med O."
+        },
+        {
+          "id": "o-aa-lag-1-12",
+          "type": "fill-in-blank",
+          "question": "Fyll i O eller Å: 'h_l' (ett hål i strumpan)",
+          "answer": "Å",
+          "hint": "Strumpan gick sönder och det uppstod ett ___.",
+          "explanation": "'Hål' stavas med Å."
+        },
+        {
+          "id": "o-aa-lag-1-13",
+          "type": "multiple-choice",
+          "question": "Hur stavas fordonet som åker på räls?",
+          "options": [
+            "tåg",
+            "tog",
+            "tag",
+            "teg"
+          ],
+          "correctIndex": 0,
+          "explanation": "Fordonet heter 'tåg' och stavas med Å. 'Tog' är dåtid av verbet 'ta'."
+        },
+        {
+          "id": "o-aa-lag-1-14",
+          "type": "multiple-choice",
+          "question": "'Vi ___ tåget till Stockholm igår.' – välj rätt form av 'ta'.",
+          "options": [
+            "tog",
+            "tåg",
+            "tag",
+            "teg"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Ta' i dåtid är 'tog' (med O). 'Tåg' (med Å) är fordonet."
+        },
+        {
+          "id": "o-aa-lag-1-15",
+          "type": "multiple-choice",
+          "question": "Hur stavas djuret på gården som ger mjölk?",
+          "options": [
+            "ko",
+            "kå",
+            "ku",
+            "ka"
+          ],
+          "correctIndex": 0,
+          "explanation": "Djuret heter 'ko' och stavas med O."
+        },
+        {
+          "id": "o-aa-lag-1-16",
+          "type": "fill-in-blank",
+          "question": "Fyll i O eller Å: 's_l' (lyser på himlen)",
+          "answer": "O",
+          "hint": "Den lyser gult och ger värme. Hur stavas den?",
+          "explanation": "'Sol' stavas med O."
+        },
+        {
+          "id": "o-aa-lag-1-17",
+          "type": "fill-in-blank",
+          "question": "Fyll i O eller Å: 'g_rd' (bondgård med djur och åkrar)",
+          "answer": "Å",
+          "hint": "Dit åker man och ser kor och hästar.",
+          "explanation": "'Gård' stavas med Å."
+        },
+        {
+          "id": "o-aa-lag-1-18",
+          "type": "multiple-choice",
+          "question": "'Ge mig ett gott ___.' – välj rätt ord för ett nyttigt tips.",
+          "options": [
+            "råd",
+            "rod",
+            "röd",
+            "rad"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Råd' (tips/förslag) stavas med Å."
+        },
+        {
+          "id": "o-aa-lag-1-19",
+          "type": "multiple-choice",
+          "question": "Vilket ord rimmar med 'stå'?",
+          "options": [
+            "rå",
+            "ro",
+            "ri",
+            "ra"
+          ],
+          "correctIndex": 0,
+          "explanation": "Stå – rå – blå – gå: alla slutar med Å-ljud."
+        },
+        {
+          "id": "o-aa-lag-1-20",
+          "type": "multiple-choice",
+          "question": "'Pojken ___ ner på sängen och somnade direkt.' – välj rätt form av 'ligga'.",
+          "options": [
+            "låg",
+            "log",
+            "lag",
+            "leg"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Ligga' i dåtid är 'låg' (med Å). 'Log' (med O) är dåtid av 'le' (skratta)."
+        }
+      ]
+    },
+    {
       "id": "sluttest",
       "title": "Sluttest 1 – Grammatik",
       "description": "Del 1 av 2 – testa allt du lärt dig! Blandade frågor om grammatik på lågstadienivå.",
