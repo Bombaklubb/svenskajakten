@@ -4072,9 +4072,9 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Fyll i rätt preposition: 'Jag går ___ skolan varje morgon.' (riktning mot)",
+          "question": "Fyll i rätt preposition: 'Jag går ___ skolan varje morgon.'",
           "answer": "till",
-          "hint": "Man är på väg – vilket ord visar riktningen dit?",
+          "hint": "Du är på väg dit – du rör dig i riktning mot skolan.",
           "explanation": "'Till' visar riktning: man går till skolan."
         },
         {
@@ -4103,9 +4103,9 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Fyll i rätt preposition: 'Fågeln flyger ___ trädet.' (ovanför)",
+          "question": "Fyll i rätt preposition: 'Fågeln flyger ___ trädet.'",
           "answer": "över",
-          "hint": "Fågeln är högre upp än trädet.",
+          "hint": "Fågeln är högre upp än trädet när den flyger förbi.",
           "explanation": "'Över' – fågeln flyger över trädet, alltså ovanför."
         },
         {
@@ -4189,9 +4189,9 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Fyll i rätt preposition: 'Fågeln sitter ___ grenen.' (ovanpå)",
+          "question": "Fyll i rätt preposition: 'Fågeln sitter ___ grenen.'",
           "answer": "på",
-          "hint": "Fågeln är ovanpå grenen.",
+          "hint": "Fågeln vilar ovanpå grenen – den är inte under den.",
           "explanation": "'På' – fågeln sitter på grenen, ovanpå den."
         },
         {
@@ -4220,9 +4220,9 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Fyll i rätt preposition: 'Barnen leker ___ skolan.' (utomhus vid skolan)",
+          "question": "Fyll i rätt preposition: 'Barnen leker ___ skolan.'",
           "answer": "utanför",
-          "hint": "De är inte inne i skolan – de är ... skolan.",
+          "hint": "Barnen är inte inne i skolan – de är på andra sidan av väggen.",
           "explanation": "'Utanför' – barnen leker utanför skolan, alltså utomhus vid byggnaden."
         },
         {
@@ -4270,9 +4270,9 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Fyll i rätt preposition: 'Kom och sätt dig ___ mig!' (bredvid)",
+          "question": "Fyll i rätt preposition: 'Kom och sätt dig ___ mig.'",
           "answer": "bredvid",
-          "hint": "Man vill att personen sätter sig nära, på sidan om.",
+          "hint": "Du vill att personen sätter sig precis intill dig, på sidan om.",
           "explanation": "'Bredvid' – att sitta bredvid någon är att sitta på sidan om dem."
         }
       ]
