@@ -112,10 +112,7 @@ export default function WorldPage({ params }: Props) {
     } else {
       setRetryResult("wrong");
     }
-    setTimeout(() => {
-      setRetryResult(null);
-      setRetryItem(null);
-    }, 2000);
+    // result stays until user clicks Nästa
   }
 
   return (
@@ -301,6 +298,13 @@ export default function WorldPage({ params }: Props) {
                         +{retryPoints} ⭐
                       </p>
                     )}
+                    <button
+                      onClick={() => { setRetryResult(null); setRetryItem(null); }}
+                      className="mt-6 px-6 py-2.5 rounded-xl font-bold text-white text-sm cursor-pointer"
+                      style={{ background: "linear-gradient(135deg, #006AA7, #004a75)", boxShadow: "0 3px 0 0 rgba(0,0,0,0.2)" }}
+                    >
+                      Nästa →
+                    </button>
                   </div>
                 ) : (
                   <div className="card">
