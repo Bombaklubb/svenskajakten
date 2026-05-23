@@ -6,6 +6,7 @@ const LINKS = [
   { label: "Läsjakten",      href: "https://lasjakten.vercel.app",       icon: <span>📚</span> },
   { label: "Mattejakten",    href: "https://mattejakten.vercel.app",     icon: <span>🔢</span> },
   { label: "Engelskajakten", href: "https://engelskajakten.vercel.app",  icon: <img src="/flags/gb.svg" alt="GB" width={20} height={14} style={{ borderRadius: 2 }} /> },
+  { label: "Readhunt",       href: "https://readhunt.vercel.app",        icon: <span>📖</span> },
 ];
 
 export default function JaktlankarMenu() {
