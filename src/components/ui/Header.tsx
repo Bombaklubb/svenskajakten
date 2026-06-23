@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useDarkMode } from "@/lib/useDarkMode";
-import { clearStudent, loadGamification } from "@/lib/storage";
+import { clearStudent, loadGamification, getSpendable } from "@/lib/storage";
 import { getAvatar } from "@/lib/avatars";
 import FramedAvatar from "@/components/ui/FramedAvatar";
 import type { StudentData } from "@/lib/types";
@@ -82,19 +82,21 @@ export default function Header({ student, onLogout }: HeaderProps) {
               )}
             </Link>
 
-            {/* Butiken */}
+            {/* Butiken – spenderbara poäng */}
             <Link
               href="/butik"
-              title="Butiken"
-              className="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-b from-orange-100 to-orange-50 dark:from-orange-900/40 dark:to-orange-800/20 border-2 border-orange-300 dark:border-orange-600 hover:border-orange-400 hover:scale-110 transition-all touch-manipulation cursor-pointer"
+              title="Butiken · poäng att spendera"
+              className="flex items-center gap-1.5 bg-gradient-to-b from-orange-50 to-orange-100 dark:from-orange-900/40 dark:to-orange-800/20 border-2 border-orange-300 dark:border-orange-600 hover:border-orange-400 hover:scale-105 transition-all touch-manipulation cursor-pointer px-2.5 py-1.5 rounded-xl"
               style={{ boxShadow: "0 3px 0 0 rgba(249, 115, 22, 0.2), inset 0 2px 4px 0 rgba(255, 255, 255, 0.8)" }}
             >
-              <span className="text-lg leading-none select-none">🛒</span>
+              <span className="text-base leading-none select-none">🛒</span>
+              <span className="text-sm font-bold text-orange-700 dark:text-orange-400">{getSpendable(student)}</span>
             </Link>
 
-            {/* Points */}
+            {/* Totala poäng */}
             <div
               className="hidden xs:flex items-center gap-1.5 bg-gradient-to-b from-amber-50 to-amber-100 dark:bg-amber-900/30 border-2 border-amber-300 dark:border-amber-700 px-3 py-1.5 rounded-xl cursor-default"
+              title="Totala poäng du samlat"
               style={{ boxShadow: "0 3px 0 0 rgba(245, 158, 11, 0.25), inset 0 2px 4px 0 rgba(255, 255, 255, 0.8)" }}
             >
               <span className="text-amber-500 text-base">⭐</span>
