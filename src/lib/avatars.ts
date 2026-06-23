@@ -1,4 +1,4 @@
-export type AvatarCategory = "utvalda" | "fantasi" | "djur" | "skoltema" | "fordon" | "yrken";
+export type AvatarCategory = "utvalda" | "djur" | "skoltema" | "fordon" | "yrken" | "roligt" | "sasong" | "fantasi";
 
 export interface Avatar {
   id: string;
@@ -10,11 +10,13 @@ export interface Avatar {
 
 export const CATEGORY_LABELS: Record<AvatarCategory, string> = {
   utvalda: "Utvalda",
-  fantasi: "Fantasi",
   djur: "Djur",
   skoltema: "Skoltema",
   fordon: "Fordon",
   yrken: "Yrken",
+  roligt: "Roligt",
+  sasong: "Säsong",
+  fantasi: "Fantasi",
 };
 
 const DB = "https://api.dicebear.com/9.x";
@@ -123,6 +125,33 @@ export const AVATARS: Avatar[] = [
   { id: "doctor",      emoji: "🧑‍⚕️", name: "Doktorn",       category: "yrken" },
   { id: "firefighter", emoji: "🧑‍🚒", name: "Brandmannen",   category: "yrken" },
   { id: "mechanic",    emoji: "🧑‍🔧", name: "Mekanikern",    category: "yrken" },
+
+  // ─── Roligt ─────────────────────────────────────────────────────────────
+  { id: "coolpotato",    emoji: "🥔",  name: "Potatis med solglasögon", category: "roligt" },
+  { id: "dancingtaco",   emoji: "🌮",  name: "Dansande taco",           category: "roligt" },
+  { id: "flyingbanana",  emoji: "🍌",  name: "Flygande banan",          category: "roligt" },
+  { id: "zombie",        emoji: "🧟",  name: "Zombie med lunch",        category: "roligt" },
+  { id: "sourcucumber",  emoji: "🥒",  name: "Sur gurka",               category: "roligt" },
+  { id: "broccolihero",  emoji: "🥦",  name: "Broccolisuperhjälte",     category: "roligt" },
+  { id: "ogremonster",   emoji: "👹",  name: "Toffelmonster",           category: "roligt" },
+  { id: "coffeecup",     emoji: "☕",  name: "Kaffekopp med min",       category: "roligt" },
+
+  // ─── Säsong ─────────────────────────────────────────────────────────────
+  { id: "easterbunny",   emoji: "🐇",  name: "Påskhare",        category: "sasong" },
+  { id: "summerpirate",  emoji: "🏴‍☠️", name: "Sommarpirat",     category: "sasong" },
+  { id: "halloween",     emoji: "👻",  name: "Halloween-spöke", category: "sasong" },
+  { id: "santa",         emoji: "🎅",  name: "Jultomte",        category: "sasong" },
+  { id: "snowman",       emoji: "⛄",  name: "Snögubbe",        category: "sasong" },
+  { id: "midsummer",     emoji: "💐",  name: "Midsommarfirare", category: "sasong" },
+
+  // ─── Fantasi (extra) ────────────────────────────────────────────────────
+  { id: "phoenix",       emoji: "🔥",  name: "Fenix",                 category: "fantasi" },
+  { id: "firedragon",    emoji: "🐉",  name: "Elddrake",              category: "fantasi" },
+  { id: "icemage",       emoji: "🧊",  name: "Ismagiker",             category: "fantasi" },
+  { id: "rainbow",       emoji: "🌈",  name: "Regnbågsenhörning",     category: "fantasi" },
+  { id: "diamonddragon", emoji: "💎",  name: "Diamantdrake",          category: "fantasi" },
+  { id: "galaxyhero",    emoji: "🌟",  name: "Galaxhjälte",           category: "fantasi" },
+  { id: "legendwizard",  emoji: "🔮",  name: "Legendarisk trollkarl", category: "fantasi" },
 ];
 
 export function getAvatar(id: string): Avatar {

@@ -2,7 +2,7 @@ import { AVATARS, type Avatar, type AvatarCategory } from "./avatars";
 
 // ─── Rarities ──────────────────────────────────────────────────────────────────
 
-export type Rarity = "vanlig" | "ovanlig" | "sallsynt" | "episk" | "legendarisk";
+export type Rarity = "vanlig" | "ovanlig" | "sallsynt" | "episk" | "legendarisk" | "mytisk";
 
 export interface RarityMeta {
   id: Rarity;
@@ -16,8 +16,9 @@ export const RARITY_META: Record<Rarity, RarityMeta> = {
   vanlig:       { id: "vanlig",       label: "VANLIG",       price: 150,  badgeClass: "bg-slate-200 text-slate-600 dark:bg-slate-700 dark:text-slate-300" },
   ovanlig:      { id: "ovanlig",      label: "OVANLIG",      price: 250,  badgeClass: "bg-emerald-200 text-emerald-700 dark:bg-emerald-800/60 dark:text-emerald-300" },
   sallsynt:     { id: "sallsynt",     label: "SÄLLSYNT",     price: 400,  badgeClass: "bg-sky-200 text-sky-700 dark:bg-sky-800/60 dark:text-sky-300" },
-  episk:        { id: "episk",        label: "EPISK",        price: 700,  badgeClass: "bg-fuchsia-200 text-fuchsia-700 dark:bg-fuchsia-800/60 dark:text-fuchsia-300" },
-  legendarisk:  { id: "legendarisk",  label: "LEGENDARISK",  price: 1200, badgeClass: "bg-amber-200 text-amber-700 dark:bg-amber-800/60 dark:text-amber-300" },
+  episk:        { id: "episk",        label: "EPISK",        price: 1000, badgeClass: "bg-fuchsia-200 text-fuchsia-700 dark:bg-fuchsia-800/60 dark:text-fuchsia-300" },
+  legendarisk:  { id: "legendarisk",  label: "LEGENDARISK",  price: 2500, badgeClass: "bg-amber-200 text-amber-700 dark:bg-amber-800/60 dark:text-amber-300" },
+  mytisk:       { id: "mytisk",       label: "MYTISK",       price: 5000, badgeClass: "bg-purple-200 text-purple-700 dark:bg-purple-800/60 dark:text-purple-300" },
 };
 
 // ─── Avatar shop items ───────────────────────────────────────────────────────────
@@ -98,6 +99,33 @@ const AVATAR_RARITY: Record<string, Rarity> = {
   doctor: "sallsynt",
   firefighter: "sallsynt",
   mechanic: "sallsynt",
+
+  // Roligt
+  coolpotato: "sallsynt",
+  dancingtaco: "sallsynt",
+  flyingbanana: "sallsynt",
+  zombie: "sallsynt",
+  sourcucumber: "sallsynt",
+  broccolihero: "sallsynt",
+  ogremonster: "sallsynt",
+  coffeecup: "sallsynt",
+
+  // Säsong
+  easterbunny: "sallsynt",
+  summerpirate: "sallsynt",
+  halloween: "sallsynt",
+  santa: "sallsynt",
+  snowman: "sallsynt",
+  midsummer: "sallsynt",
+
+  // Fantasi (extra)
+  phoenix: "legendarisk",
+  firedragon: "episk",
+  icemage: "episk",
+  rainbow: "legendarisk",
+  diamonddragon: "mytisk",
+  galaxyhero: "mytisk",
+  legendwizard: "mytisk",
 };
 
 export interface ShopAvatar extends Avatar {
@@ -117,7 +145,7 @@ export function getShopAvatar(id: string): ShopAvatar | undefined {
 // ─── Category groups ─────────────────────────────────────────────────────────────
 // Order in which categories appear in the shop.
 
-export const CATEGORY_ORDER: AvatarCategory[] = ["utvalda", "fantasi", "djur", "skoltema", "fordon", "yrken"];
+export const CATEGORY_ORDER: AvatarCategory[] = ["utvalda", "djur", "skoltema", "fordon", "yrken", "roligt", "sasong", "fantasi"];
 
 export function groupAvatarsByCategory(avatars: ShopAvatar[]): { category: AvatarCategory; items: ShopAvatar[] }[] {
   return CATEGORY_ORDER.map((category) => ({
