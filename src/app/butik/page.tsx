@@ -14,8 +14,8 @@ import {
   equipAvatar,
   equipFrame,
 } from "@/lib/storage";
-import { getAvatar } from "@/lib/avatars";
-import { SHOP_AVATARS, FRAMES, RARITY_META, type Rarity } from "@/lib/shop";
+import { getAvatar, CATEGORY_LABELS } from "@/lib/avatars";
+import { SHOP_AVATARS, FRAMES, RARITY_META, groupAvatarsByCategory, type Rarity } from "@/lib/shop";
 import type { StudentData } from "@/lib/types";
 
 type Tab = "avatarer" | "ramar" | "mina";
@@ -111,7 +111,7 @@ export default function ButikPage() {
     { id: "mina",     label: "🎒 Mina köp" },
   ];
 
-  const sortedAvatars = [...SHOP_AVATARS].sort((a, b) => a.price - b.price);
+  const avatarGroups = groupAvatarsByCategory(SHOP_AVATARS);
 
   return (
     <div className="min-h-screen bg-amber-50 dark:bg-gray-900">
@@ -173,48 +173,56 @@ export default function ButikPage() {
         {/* ─── Avatarer ───────────────────────────────────────────────── */}
         {tab === "avatarer" && (
           <BlurFade>
-            <h2 className="text-xs font-black uppercase tracking-wider text-sv-400 dark:text-gray-500 mb-3">Figurer</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-              {sortedAvatars.map((a) => {
-                const owned = ownedAvatars.includes(a.id);
-                const equipped = student.avatar === a.id;
-                const affordable = spendable >= a.price;
-                return (
-                  <div key={a.id} className="card flex flex-col items-center text-center !p-4">
-                    <FramedAvatar avatar={a} frameId={student.equippedFrame} size={72} className="mb-2" />
-                    <div className="font-black text-sm text-sv-900 dark:text-gray-100 leading-tight">{a.name}</div>
-                    <div className="my-1.5"><RarityBadge rarity={a.rarity} /></div>
-                    {!owned && <PriceTag price={a.price} />}
-                    <div className="w-full mt-2">
-                      {equipped ? (
-                        <button disabled className="w-full py-2 rounded-xl font-bold text-sm bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 border-2 border-emerald-300 dark:border-emerald-700 cursor-default">
-                          ✓ Vald
-                        </button>
-                      ) : owned ? (
-                        <button
-                          onClick={() => handleEquipAvatar(a.id)}
-                          className="w-full py-2 rounded-xl font-bold text-sm text-white cursor-pointer"
-                          style={{ background: "linear-gradient(135deg, #006AA7, #004a75)", boxShadow: "0 3px 0 0 rgba(0,0,0,0.18)" }}
-                        >
-                          Använd
-                        </button>
-                      ) : affordable ? (
-                        <button
-                          onClick={() => handleBuyAvatar(a.id, a.name)}
-                          className="w-full py-2 rounded-xl font-bold text-sm text-white cursor-pointer"
-                          style={{ background: "linear-gradient(135deg, #f97316, #ea6c0a)", boxShadow: "0 3px 0 0 rgba(234,108,10,0.4)" }}
-                        >
-                          Köp
-                        </button>
-                      ) : (
-                        <button disabled className="w-full py-2 rounded-xl font-bold text-sm bg-sv-100 dark:bg-gray-700 text-sv-400 dark:text-gray-500 cursor-not-allowed">
-                          För dyrt
-                        </button>
-                      )}
-                    </div>
+            <div className="space-y-7">
+              {avatarGroups.map(({ category, items }) => (
+                <div key={category}>
+                  <h2 className="text-xs font-black uppercase tracking-wider text-sv-400 dark:text-gray-500 mb-3">
+                    {CATEGORY_LABELS[category]}
+                  </h2>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+                    {items.map((a) => {
+                      const owned = ownedAvatars.includes(a.id);
+                      const equipped = student.avatar === a.id;
+                      const affordable = spendable >= a.price;
+                      return (
+                        <div key={a.id} className="card flex flex-col items-center text-center !p-4">
+                          <FramedAvatar avatar={a} frameId={student.equippedFrame} size={72} className="mb-2" />
+                          <div className="font-black text-sm text-sv-900 dark:text-gray-100 leading-tight">{a.name}</div>
+                          <div className="my-1.5"><RarityBadge rarity={a.rarity} /></div>
+                          {!owned && <PriceTag price={a.price} />}
+                          <div className="w-full mt-2">
+                            {equipped ? (
+                              <button disabled className="w-full py-2 rounded-xl font-bold text-sm bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 border-2 border-emerald-300 dark:border-emerald-700 cursor-default">
+                                ✓ Vald
+                              </button>
+                            ) : owned ? (
+                              <button
+                                onClick={() => handleEquipAvatar(a.id)}
+                                className="w-full py-2 rounded-xl font-bold text-sm text-white cursor-pointer"
+                                style={{ background: "linear-gradient(135deg, #006AA7, #004a75)", boxShadow: "0 3px 0 0 rgba(0,0,0,0.18)" }}
+                              >
+                                Använd
+                              </button>
+                            ) : affordable ? (
+                              <button
+                                onClick={() => handleBuyAvatar(a.id, a.name)}
+                                className="w-full py-2 rounded-xl font-bold text-sm text-white cursor-pointer"
+                                style={{ background: "linear-gradient(135deg, #f97316, #ea6c0a)", boxShadow: "0 3px 0 0 rgba(234,108,10,0.4)" }}
+                              >
+                                Köp
+                              </button>
+                            ) : (
+                              <button disabled className="w-full py-2 rounded-xl font-bold text-sm bg-sv-100 dark:bg-gray-700 text-sv-400 dark:text-gray-500 cursor-not-allowed">
+                                För dyrt
+                              </button>
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
-                );
-              })}
+                </div>
+              ))}
             </div>
           </BlurFade>
         )}

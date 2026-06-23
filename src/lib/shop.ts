@@ -1,4 +1,4 @@
-import { AVATARS, type Avatar } from "./avatars";
+import { AVATARS, type Avatar, type AvatarCategory } from "./avatars";
 
 // ─── Rarities ──────────────────────────────────────────────────────────────────
 
@@ -49,6 +49,55 @@ const AVATAR_RARITY: Record<string, Rarity> = {
   genie: "legendarisk",
   dragon: "legendarisk",
   unicorn: "legendarisk",
+
+  // Utvalda
+  artsoul: "sallsynt",
+  cyborg: "sallsynt",
+  pixelhero: "sallsynt",
+  retrofigure: "sallsynt",
+  hero: "episk",
+  megabot: "episk",
+  eightbit: "episk",
+
+  // Djur
+  puppy: "vanlig",
+  kitten: "vanlig",
+  bunny: "vanlig",
+  chick: "vanlig",
+  penguin: "vanlig",
+  koala: "vanlig",
+  zebra: "sallsynt",
+  giraffe: "sallsynt",
+
+  // Skoltema
+  bookworm: "vanlig",
+  mathwhiz: "vanlig",
+  artist: "vanlig",
+  musicstar: "vanlig",
+  scientist: "sallsynt",
+  linguist: "sallsynt",
+  librarian: "sallsynt",
+  inventor: "sallsynt",
+
+  // Fordon
+  car: "vanlig",
+  suv: "vanlig",
+  taxi: "vanlig",
+  bus: "vanlig",
+  bike: "vanlig",
+  pickup: "sallsynt",
+  motorcycle: "sallsynt",
+  policecar: "sallsynt",
+
+  // Yrken
+  police: "vanlig",
+  builder: "vanlig",
+  chef: "vanlig",
+  farmer: "vanlig",
+  teacher: "vanlig",
+  doctor: "sallsynt",
+  firefighter: "sallsynt",
+  mechanic: "sallsynt",
 };
 
 export interface ShopAvatar extends Avatar {
@@ -63,6 +112,20 @@ export const SHOP_AVATARS: ShopAvatar[] = AVATARS.map((a) => {
 
 export function getShopAvatar(id: string): ShopAvatar | undefined {
   return SHOP_AVATARS.find((a) => a.id === id);
+}
+
+// ─── Category groups ─────────────────────────────────────────────────────────────
+// Order in which categories appear in the shop.
+
+export const CATEGORY_ORDER: AvatarCategory[] = ["utvalda", "fantasi", "djur", "skoltema", "fordon", "yrken"];
+
+export function groupAvatarsByCategory(avatars: ShopAvatar[]): { category: AvatarCategory; items: ShopAvatar[] }[] {
+  return CATEGORY_ORDER.map((category) => ({
+    category,
+    items: avatars
+      .filter((a) => (a.category ?? "fantasi") === category)
+      .sort((a, b) => a.price - b.price),
+  })).filter((g) => g.items.length > 0);
 }
 
 // ─── Frames (Ramar) ──────────────────────────────────────────────────────────────

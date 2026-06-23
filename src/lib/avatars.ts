@@ -1,9 +1,21 @@
+export type AvatarCategory = "utvalda" | "fantasi" | "djur" | "skoltema" | "fordon" | "yrken";
+
 export interface Avatar {
   id: string;
   emoji: string;
   name: string;
   image?: string;
+  category?: AvatarCategory;
 }
+
+export const CATEGORY_LABELS: Record<AvatarCategory, string> = {
+  utvalda: "Utvalda",
+  fantasi: "Fantasi",
+  djur: "Djur",
+  skoltema: "Skoltema",
+  fordon: "Fordon",
+  yrken: "Yrken",
+};
 
 const DB = "https://api.dicebear.com/9.x";
 const ADV = `${DB}/adventurer/svg`;
@@ -62,6 +74,55 @@ export const AVATARS: Avatar[] = [
     image: `${ADV}?seed=Grodan&backgroundColor=14532d&backgroundType=gradientLinear&radius=50` },
   { id: "footballer",  emoji: "⚽",  name: "Fotbollsspelaren",
     image: `${ADV}?seed=Fotbollsspelaren&backgroundColor=14532d&backgroundType=gradientLinear&radius=50` },
+
+  // ─── Utvalda ────────────────────────────────────────────────────────────
+  { id: "artsoul",     emoji: "🎭",  name: "Konstnärssjälen",  category: "utvalda" },
+  { id: "cyborg",      emoji: "🦾",  name: "Cyborgen",         category: "utvalda" },
+  { id: "pixelhero",   emoji: "🎮",  name: "Pixelhjälten",     category: "utvalda" },
+  { id: "retrofigure", emoji: "👾",  name: "Retrofiguren",     category: "utvalda" },
+  { id: "hero",        emoji: "🦸",  name: "Hjälten",          category: "utvalda" },
+  { id: "megabot",     emoji: "🤖",  name: "Megaboten",        category: "utvalda" },
+  { id: "eightbit",    emoji: "👾",  name: "8-bitaren",        category: "utvalda" },
+
+  // ─── Djur ───────────────────────────────────────────────────────────────
+  { id: "puppy",       emoji: "🐶",  name: "Valpen",     category: "djur" },
+  { id: "kitten",      emoji: "🐱",  name: "Kattungen",  category: "djur" },
+  { id: "bunny",       emoji: "🐰",  name: "Kaninen",    category: "djur" },
+  { id: "chick",       emoji: "🐥",  name: "Kycklingen", category: "djur" },
+  { id: "penguin",     emoji: "🐧",  name: "Pingvinen",  category: "djur" },
+  { id: "koala",       emoji: "🐨",  name: "Koalan",     category: "djur" },
+  { id: "zebra",       emoji: "🦓",  name: "Zebran",     category: "djur" },
+  { id: "giraffe",     emoji: "🦒",  name: "Giraffen",   category: "djur" },
+
+  // ─── Skoltema ───────────────────────────────────────────────────────────
+  { id: "bookworm",    emoji: "🐛",  name: "Bokmasken",        category: "skoltema" },
+  { id: "mathwhiz",    emoji: "🔢",  name: "Mattesnillet",     category: "skoltema" },
+  { id: "artist",      emoji: "🎨",  name: "Konstnären",       category: "skoltema" },
+  { id: "musicstar",   emoji: "🎵",  name: "Musikstjärnan",    category: "skoltema" },
+  { id: "scientist",   emoji: "🔬",  name: "Vetenskapsgeniet", category: "skoltema" },
+  { id: "linguist",    emoji: "📚",  name: "Språkmästaren",    category: "skoltema" },
+  { id: "librarian",   emoji: "📖",  name: "Bibliotekarien",   category: "skoltema" },
+  { id: "inventor",    emoji: "💡",  name: "Uppfinnaren",      category: "skoltema" },
+
+  // ─── Fordon ─────────────────────────────────────────────────────────────
+  { id: "car",         emoji: "🚗",  name: "Bilen",         category: "fordon" },
+  { id: "suv",         emoji: "🚙",  name: "Stadsjeepen",   category: "fordon" },
+  { id: "taxi",        emoji: "🚕",  name: "Taxin",         category: "fordon" },
+  { id: "bus",         emoji: "🚌",  name: "Bussen",        category: "fordon" },
+  { id: "bike",        emoji: "🚲",  name: "Cykeln",        category: "fordon" },
+  { id: "pickup",      emoji: "🛻",  name: "Pickupen",      category: "fordon" },
+  { id: "motorcycle",  emoji: "🏍️", name: "Motorcykeln",   category: "fordon" },
+  { id: "policecar",   emoji: "🚓",  name: "Polisbilen",    category: "fordon" },
+
+  // ─── Yrken ──────────────────────────────────────────────────────────────
+  { id: "police",      emoji: "👮",  name: "Polisen",       category: "yrken" },
+  { id: "builder",     emoji: "👷",  name: "Byggaren",      category: "yrken" },
+  { id: "chef",        emoji: "👨‍🍳", name: "Kocken",        category: "yrken" },
+  { id: "farmer",      emoji: "🧑‍🌾", name: "Bonden",        category: "yrken" },
+  { id: "teacher",     emoji: "🧑‍🏫", name: "Läraren",       category: "yrken" },
+  { id: "doctor",      emoji: "🧑‍⚕️", name: "Doktorn",       category: "yrken" },
+  { id: "firefighter", emoji: "🧑‍🚒", name: "Brandmannen",   category: "yrken" },
+  { id: "mechanic",    emoji: "🧑‍🔧", name: "Mekanikern",    category: "yrken" },
 ];
 
 export function getAvatar(id: string): Avatar {
