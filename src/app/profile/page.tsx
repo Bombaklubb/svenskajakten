@@ -8,6 +8,7 @@ import { loadStudent } from "@/lib/storage";
 import { STAGES } from "@/lib/stages";
 import { ACHIEVEMENTS, ACHIEVEMENT_ICONS, isUnlocked } from "@/lib/achievements";
 import { getAvatar } from "@/lib/avatars";
+import FramedAvatar from "@/components/ui/FramedAvatar";
 import { NumberTicker } from "@/components/magicui/number-ticker";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import type { StudentData, StageId } from "@/lib/types";
@@ -68,14 +69,7 @@ export default function ProfilePage() {
             }}
           >
             <div className="flex items-center gap-4 flex-wrap">
-              <div
-                className="w-20 h-20 rounded-2xl bg-white/20 flex items-center justify-center text-5xl overflow-hidden flex-shrink-0 border-3 border-white/30"
-                style={{ boxShadow: "inset 0 2px 4px rgba(0,0,0,0.2)" }}
-              >
-                {av.image
-                  ? <img src={av.image} alt={av.name} className="w-full h-full object-contain p-1" />
-                  : av.emoji}
-              </div>
+              <FramedAvatar avatar={av} frameId={student.equippedFrame} size={80} className="flex-shrink-0" />
               <div className="flex-1 min-w-0">
                 <h1 className="text-2xl font-black drop-shadow-sm">{student.name}</h1>
                 <p className="text-white/70 text-sm mt-0.5">Aktiv sedan {joinDate}</p>

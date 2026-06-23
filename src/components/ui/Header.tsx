@@ -5,14 +5,9 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useDarkMode } from "@/lib/useDarkMode";
 import { clearStudent, loadGamification } from "@/lib/storage";
-import { getAvatar, type Avatar } from "@/lib/avatars";
+import { getAvatar } from "@/lib/avatars";
+import FramedAvatar from "@/components/ui/FramedAvatar";
 import type { StudentData } from "@/lib/types";
-
-function AvatarImg({ av }: { av: Avatar }) {
-  const [error, setError] = useState(false);
-  if (!av.image || error) return <span className="text-lg leading-none">{av.emoji}</span>;
-  return <img src={av.image} alt={av.name} className="w-full h-full object-contain" onError={() => setError(true)} />;
-}
 
 interface HeaderProps {
   student: StudentData | null;
@@ -87,6 +82,16 @@ export default function Header({ student, onLogout }: HeaderProps) {
               )}
             </Link>
 
+            {/* Butiken */}
+            <Link
+              href="/butik"
+              title="Butiken"
+              className="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-b from-orange-100 to-orange-50 dark:from-orange-900/40 dark:to-orange-800/20 border-2 border-orange-300 dark:border-orange-600 hover:border-orange-400 hover:scale-110 transition-all touch-manipulation cursor-pointer"
+              style={{ boxShadow: "0 3px 0 0 rgba(249, 115, 22, 0.2), inset 0 2px 4px 0 rgba(255, 255, 255, 0.8)" }}
+            >
+              <span className="text-lg leading-none select-none">🛒</span>
+            </Link>
+
             {/* Points */}
             <div
               className="hidden xs:flex items-center gap-1.5 bg-gradient-to-b from-amber-50 to-amber-100 dark:bg-amber-900/30 border-2 border-amber-300 dark:border-amber-700 px-3 py-1.5 rounded-xl cursor-default"
@@ -115,12 +120,7 @@ export default function Header({ student, onLogout }: HeaderProps) {
                   href="/profile"
                   className="hidden sm:flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-sv-50 dark:hover:bg-gray-800 transition-all cursor-pointer border-2 border-transparent hover:border-sv-200"
                 >
-                  <div
-                    className="w-9 h-9 rounded-xl overflow-hidden bg-sv-50 dark:bg-gray-700 flex items-center justify-center flex-shrink-0 border-2 border-sv-200 dark:border-gray-600"
-                    style={{ boxShadow: "0 2px 0 0 rgba(0, 106, 167, 0.12)" }}
-                  >
-                    <AvatarImg av={av} />
-                  </div>
+                  <FramedAvatar avatar={av} frameId={student.equippedFrame} size={36} className="flex-shrink-0" />
                   <span className="text-sm font-bold text-sv-700 dark:text-gray-200">{student.name}</span>
                 </Link>
               );

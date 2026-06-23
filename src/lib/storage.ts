@@ -1,5 +1,6 @@
 import type { StudentData, StageId, ModuleProgress, StageProgress, HeroConfig, GamificationData, RetryItem } from "./types";
 import { defaultGamificationData, getPointsMultiplier } from "./gamification";
+import { getShopAvatar, getFrame } from "./shop";
 
 // Legacy key (single student) – kept only for migration
 const LEGACY_KEY = "svenskajakten_student";
@@ -26,6 +27,9 @@ function defaultStudentData(name: string): StudentData {
     createdAt: now,
     lastActive: now,
     totalPoints: 0,
+    spentPoints: 0,
+    ownedAvatars: [],
+    ownedFrames: [],
     stages: {
       lagstadiet: emptyStageProgress("lagstadiet"),
       mellanstadiet: emptyStageProgress("mellanstadiet"),
@@ -94,6 +98,12 @@ export function loadStudent(): StudentData | null {
   const all = getAllStudents();
   const data = all[name];
   if (!data) return null;
+  // Ensure the student owns their currently selected avatar (migration for shop)
+  if (!data.ownedAvatars || data.ownedAvatars.length === 0) {
+    data.ownedAvatars = [data.avatar ?? "ninja"];
+  } else if (data.avatar && !data.ownedAvatars.includes(data.avatar)) {
+    data.ownedAvatars.push(data.avatar);
+  }
   const today = new Date().toISOString().slice(0, 10);
   if (data.lastStreakDate !== today) {
     const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
@@ -126,7 +136,10 @@ export function createStudent(name: string, avatar?: string): StudentData {
     return existing;
   }
   const data = defaultStudentData(trimmed);
-  if (avatar) data.avatar = avatar;
+  if (avatar) {
+    data.avatar = avatar;
+    data.ownedAvatars = [avatar];
+  }
   saveStudent(data);
   return data;
 }
@@ -284,6 +297,69 @@ export function removeFromRetryQueue(stageId: string, key: string): void {
   if (typeof window === "undefined") return;
   const queue = loadRetryQueue(stageId).filter((q) => q.key !== key);
   localStorage.setItem(getRetryKey(stageId), JSON.stringify(queue));
+}
+
+// ─── Shop (Butiken) ───────────────────────────────────────────────────────────
+
+/** Points the student still has available to spend in the shop. */
+export function getSpendable(data: StudentData): number {
+  return Math.max(0, data.totalPoints - (data.spentPoints ?? 0));
+}
+
+export type PurchaseResult =
+  | { ok: true; student: StudentData }
+  | { ok: false; reason: "owned" | "broke" | "missing" };
+
+/** Buy an avatar. On success the avatar is added to ownedAvatars and equipped. */
+export function buyAvatar(data: StudentData, avatarId: string): PurchaseResult {
+  const item = getShopAvatar(avatarId);
+  if (!item) return { ok: false, reason: "missing" };
+  const owned = data.ownedAvatars ?? [];
+  if (owned.includes(avatarId)) return { ok: false, reason: "owned" };
+  if (getSpendable(data) < item.price) return { ok: false, reason: "broke" };
+
+  const updated: StudentData = {
+    ...data,
+    spentPoints: (data.spentPoints ?? 0) + item.price,
+    ownedAvatars: [...owned, avatarId],
+    avatar: avatarId, // auto-equip on purchase
+  };
+  saveStudent(updated);
+  return { ok: true, student: updated };
+}
+
+/** Buy a frame. On success the frame is added to ownedFrames and equipped. */
+export function buyFrame(data: StudentData, frameId: string): PurchaseResult {
+  const item = getFrame(frameId);
+  if (!item) return { ok: false, reason: "missing" };
+  const owned = data.ownedFrames ?? [];
+  if (owned.includes(frameId)) return { ok: false, reason: "owned" };
+  if (getSpendable(data) < item.price) return { ok: false, reason: "broke" };
+
+  const updated: StudentData = {
+    ...data,
+    spentPoints: (data.spentPoints ?? 0) + item.price,
+    ownedFrames: [...owned, frameId],
+    equippedFrame: frameId, // auto-equip on purchase
+  };
+  saveStudent(updated);
+  return { ok: true, student: updated };
+}
+
+/** Equip an already-owned avatar. */
+export function equipAvatar(data: StudentData, avatarId: string): StudentData {
+  if (!(data.ownedAvatars ?? []).includes(avatarId)) return data;
+  const updated = { ...data, avatar: avatarId };
+  saveStudent(updated);
+  return updated;
+}
+
+/** Equip an owned frame, or pass "" to remove the current frame. */
+export function equipFrame(data: StudentData, frameId: string): StudentData {
+  if (frameId && !(data.ownedFrames ?? []).includes(frameId)) return data;
+  const updated = { ...data, equippedFrame: frameId };
+  saveStudent(updated);
+  return updated;
 }
 
 export function generateShareCode(data: StudentData): string {

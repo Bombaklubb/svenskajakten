@@ -170,6 +170,11 @@ export interface StudentData {
   hero?: HeroConfig;
   streak?: number;
   lastStreakDate?: string; // YYYY-MM-DD
+  // ─── Shop (Butiken) ─────────────────────────────────────
+  spentPoints?: number;       // total points spent in the shop (spendable = totalPoints - spentPoints)
+  ownedAvatars?: string[];    // avatar ids the student owns
+  ownedFrames?: string[];     // frame ids the student owns
+  equippedFrame?: string;     // currently equipped frame id ("" / undefined = none)
 }
 
 // ─── Gamification ─────────────────────────────────────────────────────────────
