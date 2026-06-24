@@ -299,7 +299,7 @@ export function removeFromRetryQueue(stageId: string, key: string): void {
   localStorage.setItem(getRetryKey(stageId), JSON.stringify(queue));
 }
 
-// ─── Shop (Butiken) ───────────────────────────────────────────────────────────
+// ─── Shop (Affären) ───────────────────────────────────────────────────────────
 
 /** Points the student still has available to spend in the shop. */
 export function getSpendable(data: StudentData): number {

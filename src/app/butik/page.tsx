@@ -133,7 +133,7 @@ export default function ButikPage() {
             <div className="flex items-center gap-3">
               <span className="text-5xl drop-shadow-lg">🛒</span>
               <div>
-                <h1 className="text-3xl font-black text-shadow">Butiken</h1>
+                <h1 className="text-3xl font-black text-shadow">Affären</h1>
                 <p className="text-white/80 font-semibold mt-0.5">Spendera dina poäng på coola saker!</p>
               </div>
             </div>

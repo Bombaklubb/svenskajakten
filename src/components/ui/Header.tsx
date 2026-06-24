@@ -82,10 +82,10 @@ export default function Header({ student, onLogout }: HeaderProps) {
               )}
             </Link>
 
-            {/* Butiken – spenderbara poäng */}
+            {/* Affären – spenderbara poäng */}
             <Link
               href="/butik"
-              title="Butiken · poäng att spendera"
+              title="Affären · poäng att spendera"
               className="flex items-center gap-1.5 bg-gradient-to-b from-orange-50 to-orange-100 dark:from-orange-900/40 dark:to-orange-800/20 border-2 border-orange-300 dark:border-orange-600 hover:border-orange-400 hover:scale-105 transition-all touch-manipulation cursor-pointer px-2.5 py-1.5 rounded-xl"
               style={{ boxShadow: "0 3px 0 0 rgba(249, 115, 22, 0.2), inset 0 2px 4px 0 rgba(255, 255, 255, 0.8)" }}
             >
