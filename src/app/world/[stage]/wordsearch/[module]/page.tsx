@@ -12,6 +12,7 @@ import { ACHIEVEMENTS, isUnlocked } from "@/lib/achievements";
 import MysteryBoxPopup from "@/components/ui/MysteryBoxPopup";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { getStage } from "@/lib/stages";
+import { getThemeClassName } from "@/lib/shop";
 import type { StudentData, StageContent, WordSearchModule, ChestType, MysteryBoxReward } from "@/lib/types";
 
 const POINTS_PER_WORD = 5;
@@ -116,7 +117,7 @@ export default function WordSearchModulePage({ params }: Props) {
   }
 
   return (
-    <div className="min-h-screen bg-amber-50 dark:bg-gray-900">
+    <div className={`min-h-screen ${getThemeClassName(student?.equippedTheme)}`}>
       <Header student={student} />
 
       {/* Hero banner */}

@@ -7,6 +7,7 @@ import Header from "@/components/ui/Header";
 import { loadStudent, createStudent, clearStudent, studentExists } from "@/lib/storage";
 import { STAGES } from "@/lib/stages";
 import { AVATARS } from "@/lib/avatars";
+import { getThemeClassName } from "@/lib/shop";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { NumberTicker } from "@/components/magicui/number-ticker";
 import type { StudentData, StageId } from "@/lib/types";
@@ -153,7 +154,7 @@ export default function HomePage() {
 
   // ─── Logged in – stage selection ────────────────────────────────────────────
   return (
-    <div className="min-h-screen bg-amber-50 dark:bg-gray-900">
+    <div className={`min-h-screen ${getThemeClassName(student.equippedTheme)}`}>
       <Header student={student} onLogout={handleLogout} />
 
       <main className="max-w-5xl mx-auto px-4 py-4">

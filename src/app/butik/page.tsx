@@ -13,12 +13,16 @@ import {
   buyFrame,
   equipAvatar,
   equipFrame,
+  buyTheme,
+  equipTheme,
+  buyEffect,
+  equipEffect,
 } from "@/lib/storage";
 import { getAvatar, CATEGORY_LABELS } from "@/lib/avatars";
-import { SHOP_AVATARS, FRAMES, RARITY_META, groupAvatarsByCategory, type Rarity } from "@/lib/shop";
+import { SHOP_AVATARS, FRAMES, THEMES, EFFECTS, RARITY_META, groupAvatarsByCategory, getThemeClassName, type Rarity } from "@/lib/shop";
 import type { StudentData } from "@/lib/types";
 
-type Tab = "avatarer" | "ramar" | "mina";
+type Tab = "avatarer" | "ramar" | "teman" | "effekter" | "mina";
 
 function RarityBadge({ rarity }: { rarity: Rarity }) {
   const meta = RARITY_META[rarity];
@@ -102,19 +106,51 @@ export default function ButikPage() {
     if (!student) return;
     setStudent(equipFrame(student, id));
   }
+  function handleBuyTheme(id: string, name: string) {
+    if (!student) return;
+    const res = buyTheme(student, id);
+    if (res.ok) {
+      setStudent(res.student);
+      flash(`Du köpte ${name}! 🎉`);
+    } else if (res.reason === "broke") {
+      flash("Du har inte råd ännu!");
+    }
+  }
+  function handleEquipTheme(id: string) {
+    if (!student) return;
+    setStudent(equipTheme(student, id));
+  }
+  function handleBuyEffect(id: string, name: string) {
+    if (!student) return;
+    const res = buyEffect(student, id);
+    if (res.ok) {
+      setStudent(res.student);
+      flash(`Du köpte ${name}! 🎉`);
+    } else if (res.reason === "broke") {
+      flash("Du har inte råd ännu!");
+    }
+  }
+  function handleEquipEffect(id: string) {
+    if (!student) return;
+    setStudent(equipEffect(student, id));
+  }
 
   const currentAvatar = getAvatar(student.avatar ?? "ninja");
+  const ownedThemes = student.ownedThemes ?? [];
+  const ownedEffects = student.ownedEffects ?? [];
 
   const tabs: { id: Tab; label: string }[] = [
     { id: "avatarer", label: "🧑 Avatarer" },
     { id: "ramar",    label: "🖼️ Ramar" },
+    { id: "teman",    label: "🎨 Teman" },
+    { id: "effekter", label: "✨ Effekter" },
     { id: "mina",     label: "🎒 Mina köp" },
   ];
 
   const avatarGroups = groupAvatarsByCategory(SHOP_AVATARS);
 
   return (
-    <div className="min-h-screen bg-amber-50 dark:bg-gray-900">
+    <div className={`min-h-screen ${getThemeClassName(student.equippedTheme)}`}>
       <Header student={student} />
 
       {/* Banner */}
@@ -186,7 +222,7 @@ export default function ButikPage() {
                       const affordable = spendable >= a.price;
                       return (
                         <div key={a.id} className="card flex flex-col items-center text-center !p-4">
-                          <FramedAvatar avatar={a} frameId={student.equippedFrame} size={72} className="mb-2" />
+                          <FramedAvatar avatar={a} frameId={student.equippedFrame} effectId={student.equippedEffect} size={72} className="mb-2" />
                           <div className="font-black text-sm text-sv-900 dark:text-gray-100 leading-tight">{a.name}</div>
                           <div className="my-1.5"><RarityBadge rarity={a.rarity} /></div>
                           {!owned && <PriceTag price={a.price} />}
@@ -279,6 +315,113 @@ export default function ButikPage() {
           </BlurFade>
         )}
 
+        {/* ─── Teman ──────────────────────────────────────────────────── */}
+        {tab === "teman" && (
+          <BlurFade>
+            <h2 className="text-xs font-black uppercase tracking-wider text-sv-400 dark:text-gray-500 mb-3">Bakgrundsteman för appen</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+              {THEMES.map((t) => {
+                const owned = ownedThemes.includes(t.id);
+                const equipped = student.equippedTheme === t.id;
+                const affordable = spendable >= t.price;
+                return (
+                  <div key={t.id} className="card flex flex-col items-center text-center !p-4">
+                    <div
+                      className="w-full h-14 rounded-xl mb-2 border-2 border-white/40"
+                      style={{ background: t.swatch, boxShadow: "inset 0 2px 4px 0 rgba(255,255,255,0.4)" }}
+                    />
+                    <div className="font-black text-sm text-sv-900 dark:text-gray-100 leading-tight">{t.name}</div>
+                    <div className="my-1.5"><RarityBadge rarity={t.rarity} /></div>
+                    {!owned && <PriceTag price={t.price} />}
+                    <div className="w-full mt-2">
+                      {equipped ? (
+                        <button
+                          onClick={() => handleEquipTheme("")}
+                          className="w-full py-2 rounded-xl font-bold text-sm bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 border-2 border-emerald-300 dark:border-emerald-700 cursor-pointer"
+                        >
+                          ✓ Vald · ta bort
+                        </button>
+                      ) : owned ? (
+                        <button
+                          onClick={() => handleEquipTheme(t.id)}
+                          className="w-full py-2 rounded-xl font-bold text-sm text-white cursor-pointer"
+                          style={{ background: "linear-gradient(135deg, #006AA7, #004a75)", boxShadow: "0 3px 0 0 rgba(0,0,0,0.18)" }}
+                        >
+                          Använd
+                        </button>
+                      ) : affordable ? (
+                        <button
+                          onClick={() => handleBuyTheme(t.id, t.name)}
+                          className="w-full py-2 rounded-xl font-bold text-sm text-white cursor-pointer"
+                          style={{ background: "linear-gradient(135deg, #f97316, #ea6c0a)", boxShadow: "0 3px 0 0 rgba(234,108,10,0.4)" }}
+                        >
+                          Köp
+                        </button>
+                      ) : (
+                        <button disabled className="w-full py-2 rounded-xl font-bold text-sm bg-sv-100 dark:bg-gray-700 text-sv-400 dark:text-gray-500 cursor-not-allowed">
+                          För dyrt
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </BlurFade>
+        )}
+
+        {/* ─── Effekter ───────────────────────────────────────────────── */}
+        {tab === "effekter" && (
+          <BlurFade>
+            <h2 className="text-xs font-black uppercase tracking-wider text-sv-400 dark:text-gray-500 mb-3">Effekter runt din avatar</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+              {EFFECTS.map((e) => {
+                const owned = ownedEffects.includes(e.id);
+                const equipped = student.equippedEffect === e.id;
+                const affordable = spendable >= e.price;
+                return (
+                  <div key={e.id} className="card flex flex-col items-center text-center !p-4">
+                    <FramedAvatar avatar={currentAvatar} frameId={student.equippedFrame} effectId={e.id} size={72} className="mb-2" />
+                    <div className="font-black text-sm text-sv-900 dark:text-gray-100 leading-tight">{e.name}</div>
+                    <div className="my-1.5"><RarityBadge rarity={e.rarity} /></div>
+                    {!owned && <PriceTag price={e.price} />}
+                    <div className="w-full mt-2">
+                      {equipped ? (
+                        <button
+                          onClick={() => handleEquipEffect("")}
+                          className="w-full py-2 rounded-xl font-bold text-sm bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 border-2 border-emerald-300 dark:border-emerald-700 cursor-pointer"
+                        >
+                          ✓ Vald · ta bort
+                        </button>
+                      ) : owned ? (
+                        <button
+                          onClick={() => handleEquipEffect(e.id)}
+                          className="w-full py-2 rounded-xl font-bold text-sm text-white cursor-pointer"
+                          style={{ background: "linear-gradient(135deg, #006AA7, #004a75)", boxShadow: "0 3px 0 0 rgba(0,0,0,0.18)" }}
+                        >
+                          Använd
+                        </button>
+                      ) : affordable ? (
+                        <button
+                          onClick={() => handleBuyEffect(e.id, e.name)}
+                          className="w-full py-2 rounded-xl font-bold text-sm text-white cursor-pointer"
+                          style={{ background: "linear-gradient(135deg, #f97316, #ea6c0a)", boxShadow: "0 3px 0 0 rgba(234,108,10,0.4)" }}
+                        >
+                          Köp
+                        </button>
+                      ) : (
+                        <button disabled className="w-full py-2 rounded-xl font-bold text-sm bg-sv-100 dark:bg-gray-700 text-sv-400 dark:text-gray-500 cursor-not-allowed">
+                          För dyrt
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </BlurFade>
+        )}
+
         {/* ─── Mina köp ───────────────────────────────────────────────── */}
         {tab === "mina" && (
           <BlurFade>
@@ -292,7 +435,7 @@ export default function ButikPage() {
                     const equipped = student.avatar === a.id;
                     return (
                       <div key={a.id} className="card flex flex-col items-center text-center !p-4">
-                        <FramedAvatar avatar={a} frameId={student.equippedFrame} size={72} className="mb-2" />
+                        <FramedAvatar avatar={a} frameId={student.equippedFrame} effectId={student.equippedEffect} size={72} className="mb-2" />
                         <div className="font-black text-sm text-sv-900 dark:text-gray-100 leading-tight">{a.name}</div>
                         <div className="my-1.5"><RarityBadge rarity={a.rarity} /></div>
                         <div className="w-full mt-1">
@@ -344,6 +487,93 @@ export default function ButikPage() {
                             ) : (
                               <button
                                 onClick={() => handleEquipFrame(f.id)}
+                                className="w-full py-2 rounded-xl font-bold text-sm text-white cursor-pointer"
+                                style={{ background: "linear-gradient(135deg, #006AA7, #004a75)", boxShadow: "0 3px 0 0 rgba(0,0,0,0.18)" }}
+                              >
+                                Använd
+                              </button>
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+
+              <div>
+                <h2 className="text-xs font-black uppercase tracking-wider text-sv-400 dark:text-gray-500 mb-3">
+                  Mina teman ({ownedThemes.length})
+                </h2>
+                {ownedThemes.length === 0 ? (
+                  <p className="text-sm text-sv-400 dark:text-gray-500 bg-white dark:bg-gray-800 rounded-2xl border-2 border-dashed border-sv-200 dark:border-gray-600 px-4 py-6 text-center">
+                    Du äger inga teman ännu. Köp ett i fliken <strong>Teman</strong>! 🎨
+                  </p>
+                ) : (
+                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+                    {THEMES.filter((t) => ownedThemes.includes(t.id)).map((t) => {
+                      const equipped = student.equippedTheme === t.id;
+                      return (
+                        <div key={t.id} className="card flex flex-col items-center text-center !p-4">
+                          <div
+                            className="w-full h-14 rounded-xl mb-2 border-2 border-white/40"
+                            style={{ background: t.swatch, boxShadow: "inset 0 2px 4px 0 rgba(255,255,255,0.4)" }}
+                          />
+                          <div className="font-black text-sm text-sv-900 dark:text-gray-100 leading-tight">{t.name}</div>
+                          <div className="my-1.5"><RarityBadge rarity={t.rarity} /></div>
+                          <div className="w-full mt-1">
+                            {equipped ? (
+                              <button
+                                onClick={() => handleEquipTheme("")}
+                                className="w-full py-2 rounded-xl font-bold text-sm bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 border-2 border-emerald-300 dark:border-emerald-700 cursor-pointer"
+                              >
+                                ✓ Vald · ta bort
+                              </button>
+                            ) : (
+                              <button
+                                onClick={() => handleEquipTheme(t.id)}
+                                className="w-full py-2 rounded-xl font-bold text-sm text-white cursor-pointer"
+                                style={{ background: "linear-gradient(135deg, #006AA7, #004a75)", boxShadow: "0 3px 0 0 rgba(0,0,0,0.18)" }}
+                              >
+                                Använd
+                              </button>
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+
+              <div>
+                <h2 className="text-xs font-black uppercase tracking-wider text-sv-400 dark:text-gray-500 mb-3">
+                  Mina effekter ({ownedEffects.length})
+                </h2>
+                {ownedEffects.length === 0 ? (
+                  <p className="text-sm text-sv-400 dark:text-gray-500 bg-white dark:bg-gray-800 rounded-2xl border-2 border-dashed border-sv-200 dark:border-gray-600 px-4 py-6 text-center">
+                    Du äger inga effekter ännu. Köp en i fliken <strong>Effekter</strong>! ✨
+                  </p>
+                ) : (
+                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+                    {EFFECTS.filter((e) => ownedEffects.includes(e.id)).map((e) => {
+                      const equipped = student.equippedEffect === e.id;
+                      return (
+                        <div key={e.id} className="card flex flex-col items-center text-center !p-4">
+                          <FramedAvatar avatar={currentAvatar} frameId={student.equippedFrame} effectId={e.id} size={72} className="mb-2" />
+                          <div className="font-black text-sm text-sv-900 dark:text-gray-100 leading-tight">{e.name}</div>
+                          <div className="my-1.5"><RarityBadge rarity={e.rarity} /></div>
+                          <div className="w-full mt-1">
+                            {equipped ? (
+                              <button
+                                onClick={() => handleEquipEffect("")}
+                                className="w-full py-2 rounded-xl font-bold text-sm bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 border-2 border-emerald-300 dark:border-emerald-700 cursor-pointer"
+                              >
+                                ✓ Vald · ta bort
+                              </button>
+                            ) : (
+                              <button
+                                onClick={() => handleEquipEffect(e.id)}
                                 className="w-full py-2 rounded-xl font-bold text-sm text-white cursor-pointer"
                                 style={{ background: "linear-gradient(135deg, #006AA7, #004a75)", boxShadow: "0 3px 0 0 rgba(0,0,0,0.18)" }}
                               >

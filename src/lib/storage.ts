@@ -1,6 +1,6 @@
 import type { StudentData, StageId, ModuleProgress, StageProgress, HeroConfig, GamificationData, RetryItem } from "./types";
 import { defaultGamificationData, getPointsMultiplier } from "./gamification";
-import { getShopAvatar, getFrame } from "./shop";
+import { getShopAvatar, getFrame, getTheme, getEffect } from "./shop";
 
 // Legacy key (single student) – kept only for migration
 const LEGACY_KEY = "svenskajakten_student";
@@ -30,6 +30,8 @@ function defaultStudentData(name: string): StudentData {
     spentPoints: 0,
     ownedAvatars: [],
     ownedFrames: [],
+    ownedThemes: [],
+    ownedEffects: [],
     stages: {
       lagstadiet: emptyStageProgress("lagstadiet"),
       mellanstadiet: emptyStageProgress("mellanstadiet"),
@@ -358,6 +360,58 @@ export function equipAvatar(data: StudentData, avatarId: string): StudentData {
 export function equipFrame(data: StudentData, frameId: string): StudentData {
   if (frameId && !(data.ownedFrames ?? []).includes(frameId)) return data;
   const updated = { ...data, equippedFrame: frameId };
+  saveStudent(updated);
+  return updated;
+}
+
+/** Buy a theme. On success the theme is added to ownedThemes and equipped. */
+export function buyTheme(data: StudentData, themeId: string): PurchaseResult {
+  const item = getTheme(themeId);
+  if (!item) return { ok: false, reason: "missing" };
+  const owned = data.ownedThemes ?? [];
+  if (owned.includes(themeId)) return { ok: false, reason: "owned" };
+  if (getSpendable(data) < item.price) return { ok: false, reason: "broke" };
+
+  const updated: StudentData = {
+    ...data,
+    spentPoints: (data.spentPoints ?? 0) + item.price,
+    ownedThemes: [...owned, themeId],
+    equippedTheme: themeId, // auto-equip on purchase
+  };
+  saveStudent(updated);
+  return { ok: true, student: updated };
+}
+
+/** Equip an owned theme, or pass "" to go back to the standard background. */
+export function equipTheme(data: StudentData, themeId: string): StudentData {
+  if (themeId && !(data.ownedThemes ?? []).includes(themeId)) return data;
+  const updated = { ...data, equippedTheme: themeId };
+  saveStudent(updated);
+  return updated;
+}
+
+/** Buy an effect. On success the effect is added to ownedEffects and equipped. */
+export function buyEffect(data: StudentData, effectId: string): PurchaseResult {
+  const item = getEffect(effectId);
+  if (!item) return { ok: false, reason: "missing" };
+  const owned = data.ownedEffects ?? [];
+  if (owned.includes(effectId)) return { ok: false, reason: "owned" };
+  if (getSpendable(data) < item.price) return { ok: false, reason: "broke" };
+
+  const updated: StudentData = {
+    ...data,
+    spentPoints: (data.spentPoints ?? 0) + item.price,
+    ownedEffects: [...owned, effectId],
+    equippedEffect: effectId, // auto-equip on purchase
+  };
+  saveStudent(updated);
+  return { ok: true, student: updated };
+}
+
+/** Equip an owned effect, or pass "" to remove the current effect. */
+export function equipEffect(data: StudentData, effectId: string): StudentData {
+  if (effectId && !(data.ownedEffects ?? []).includes(effectId)) return data;
+  const updated = { ...data, equippedEffect: effectId };
   saveStudent(updated);
   return updated;
 }

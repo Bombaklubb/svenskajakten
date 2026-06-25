@@ -8,6 +8,7 @@ import { loadStudent } from "@/lib/storage";
 import { STAGES } from "@/lib/stages";
 import { ACHIEVEMENTS, ACHIEVEMENT_ICONS, isUnlocked } from "@/lib/achievements";
 import { getAvatar } from "@/lib/avatars";
+import { getThemeClassName } from "@/lib/shop";
 import FramedAvatar from "@/components/ui/FramedAvatar";
 import { NumberTicker } from "@/components/magicui/number-ticker";
 import { BlurFade } from "@/components/magicui/blur-fade";
@@ -54,7 +55,7 @@ export default function ProfilePage() {
   const av = getAvatar(student.avatar ?? "ninja");
 
   return (
-    <div className="min-h-screen bg-amber-50 dark:bg-gray-900">
+    <div className={`min-h-screen ${getThemeClassName(student.equippedTheme)}`}>
       <Header student={student} />
 
       <main className="max-w-3xl mx-auto px-4 py-8 space-y-6">
@@ -69,7 +70,7 @@ export default function ProfilePage() {
             }}
           >
             <div className="flex items-center gap-4 flex-wrap">
-              <FramedAvatar avatar={av} frameId={student.equippedFrame} size={80} className="flex-shrink-0" />
+              <FramedAvatar avatar={av} frameId={student.equippedFrame} effectId={student.equippedEffect} size={80} className="flex-shrink-0" />
               <div className="flex-1 min-w-0">
                 <h1 className="text-2xl font-black drop-shadow-sm">{student.name}</h1>
                 <p className="text-white/70 text-sm mt-0.5">Aktiv sedan {joinDate}</p>

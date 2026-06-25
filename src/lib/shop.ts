@@ -200,3 +200,67 @@ export function getFrame(id: string | undefined): Frame | undefined {
   if (!id) return undefined;
   return FRAMES.find((f) => f.id === id);
 }
+
+// ─── Themes (Teman) ──────────────────────────────────────────────────────────────
+// A theme changes the background colour scheme of the app's hub pages.
+
+export interface Theme {
+  id: string;
+  name: string;
+  rarity: Rarity;
+  price: number;
+  /** Tailwind classes for the page background, incl. dark mode variants */
+  className: string;
+  /** Small CSS gradient used for the preview swatch in the shop */
+  swatch: string;
+}
+
+const RAW_THEMES: Omit<Theme, "price">[] = [
+  { id: "skog",        name: "Skogstema",     rarity: "vanlig",      className: "bg-gradient-to-br from-emerald-50 to-green-100 dark:from-emerald-950 dark:to-gray-900",  swatch: "linear-gradient(135deg, #6ee7b7, #059669)" },
+  { id: "hav",         name: "Havstema",      rarity: "vanlig",      className: "bg-gradient-to-br from-sky-50 to-blue-100 dark:from-sky-950 dark:to-gray-900",          swatch: "linear-gradient(135deg, #7dd3fc, #2563eb)" },
+  { id: "vinter",      name: "Vintertema",    rarity: "vanlig",      className: "bg-gradient-to-br from-cyan-50 to-slate-100 dark:from-slate-900 dark:to-gray-900",      swatch: "linear-gradient(135deg, #cffafe, #94a3b8)" },
+  { id: "solnedgang",  name: "Solnedgångstema", rarity: "sallsynt",  className: "bg-gradient-to-br from-pink-50 to-orange-100 dark:from-pink-950 dark:to-gray-900",      swatch: "linear-gradient(135deg, #fbcfe8, #fb923c)" },
+  { id: "rymd",        name: "Rymdtema",      rarity: "sallsynt",    className: "bg-gradient-to-br from-indigo-50 to-violet-100 dark:from-indigo-950 dark:to-gray-900",   swatch: "linear-gradient(135deg, #a5b4fc, #7c3aed)" },
+  { id: "lava",        name: "Lavatema",      rarity: "episk",       className: "bg-gradient-to-br from-rose-50 to-red-100 dark:from-rose-950 dark:to-gray-900",        swatch: "linear-gradient(135deg, #fda4af, #dc2626)" },
+  { id: "galax",       name: "Galaxtema",     rarity: "legendarisk", className: "bg-gradient-to-br from-fuchsia-50 to-purple-100 dark:from-fuchsia-950 dark:to-gray-900", swatch: "linear-gradient(135deg, #f0abfc, #7c3aed, #1e1b4b)" },
+];
+
+export const THEMES: Theme[] = RAW_THEMES.map((t) => ({ ...t, price: RARITY_META[t.rarity].price }));
+
+export function getTheme(id: string | undefined): Theme | undefined {
+  if (!id) return undefined;
+  return THEMES.find((t) => t.id === id);
+}
+
+/** Background classes for the hub pages: the equipped theme, or the app default. */
+export function getThemeClassName(id: string | undefined): string {
+  return getTheme(id)?.className ?? "bg-amber-50 dark:bg-gray-900";
+}
+
+// ─── Effects (Effekter) ──────────────────────────────────────────────────────────
+// A visual effect animates particles around the student's avatar.
+
+export interface Effect {
+  id: string;
+  name: string;
+  rarity: Rarity;
+  price: number;
+  /** Emoji particles used to render the effect */
+  particles: string[];
+}
+
+const RAW_EFFECTS: Omit<Effect, "price">[] = [
+  { id: "stjarnor",  name: "Glittrande stjärnor", rarity: "vanlig",      particles: ["✨", "⭐", "✨"] },
+  { id: "snoflingor", name: "Snöflingor",         rarity: "vanlig",      particles: ["❄️", "❄️", "❄️"] },
+  { id: "blixtar",   name: "Blixtar",             rarity: "sallsynt",    particles: ["⚡", "⚡", "⚡"] },
+  { id: "eldlagor",  name: "Eldlågor",            rarity: "sallsynt",    particles: ["🔥", "🔥", "🔥"] },
+  { id: "regnbage",  name: "Regnbåge",            rarity: "episk",       particles: ["🌈"] },
+  { id: "konfetti",  name: "Konfetti",            rarity: "episk",       particles: ["🎉", "🎊", "🎉"] },
+];
+
+export const EFFECTS: Effect[] = RAW_EFFECTS.map((e) => ({ ...e, price: RARITY_META[e.rarity].price }));
+
+export function getEffect(id: string | undefined): Effect | undefined {
+  if (!id) return undefined;
+  return EFFECTS.find((e) => e.id === id);
+}

@@ -8,6 +8,7 @@ import ModuleCard from "@/components/ui/ModuleCard";
 import FinalTestCard from "@/components/ui/FinalTestCard";
 import { loadStudent, saveStudent, loadRetryQueue, removeFromRetryQueue } from "@/lib/storage";
 import { getStage } from "@/lib/stages";
+import { getThemeClassName } from "@/lib/shop";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import MultipleChoice from "@/components/exercises/MultipleChoice";
 import FillInBlank from "@/components/exercises/FillInBlank";
@@ -116,7 +117,7 @@ export default function WorldPage({ params }: Props) {
   }
 
   return (
-    <div className="min-h-screen bg-amber-50 dark:bg-gray-900">
+    <div className={`min-h-screen ${getThemeClassName(student?.equippedTheme)}`}>
       <Header student={student} />
 
       {/* Hero */}

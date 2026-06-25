@@ -175,6 +175,10 @@ export interface StudentData {
   ownedAvatars?: string[];    // avatar ids the student owns
   ownedFrames?: string[];     // frame ids the student owns
   equippedFrame?: string;     // currently equipped frame id ("" / undefined = none)
+  ownedThemes?: string[];     // theme ids the student owns
+  equippedTheme?: string;     // currently equipped background theme id ("" / undefined = standard)
+  ownedEffects?: string[];    // effect ids the student owns
+  equippedEffect?: string;    // currently equipped avatar effect id ("" / undefined = none)
 }
 
 // ─── Gamification ─────────────────────────────────────────────────────────────

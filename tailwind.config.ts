@@ -104,8 +104,19 @@ const config: Config = {
         "shimmer": "shimmer 2s linear infinite",
         "gradient": "gradient 6s linear infinite",
         "rainbow": "rainbow 2s linear infinite",
+        "twinkle": "twinkle 1.6s ease-in-out infinite",
+        "fall": "fall 2.5s ease-in-out infinite",
       },
       keyframes: {
+        twinkle: {
+          "0%, 100%": { opacity: "0.4", transform: "translate(-50%, -50%) scale(0.8)" },
+          "50%": { opacity: "1", transform: "translate(-50%, -50%) scale(1.15)" },
+        },
+        fall: {
+          "0%": { opacity: "0", transform: "translate(-50%, -50%) translateY(-4px)" },
+          "30%": { opacity: "1" },
+          "100%": { opacity: "0", transform: "translate(-50%, -50%) translateY(10px)" },
+        },
         fadeIn: {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
