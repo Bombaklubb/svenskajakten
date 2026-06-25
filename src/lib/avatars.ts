@@ -135,6 +135,17 @@ export const AVATARS: Avatar[] = [
   { id: "broccolihero",  emoji: "🥦",  name: "Broccolisuperhjälte",     category: "roligt" },
   { id: "ogremonster",   emoji: "👹",  name: "Toffelmonster",           category: "roligt" },
   { id: "coffeecup",     emoji: "☕",  name: "Kaffekopp med min",       category: "roligt" },
+  { id: "discoegg",      emoji: "🥚",  name: "Discoägg",                category: "roligt" },
+  { id: "sneakypizza",   emoji: "🍕",  name: "Smygande pizzabit",       category: "roligt" },
+  { id: "moodydonut",    emoji: "🍩",  name: "Sur munk",                category: "roligt" },
+  { id: "sleepysloth",   emoji: "🦥",  name: "Sömnig sengångare",       category: "roligt" },
+  { id: "partypoop",     emoji: "💩",  name: "Festbajset",              category: "roligt" },
+  { id: "screamingegg",  emoji: "🍳",  name: "Skrikande ägg",           category: "roligt" },
+  { id: "sassysushi",    emoji: "🍣",  name: "Sassig sushi",            category: "roligt" },
+  { id: "grumpycactus",  emoji: "🌵",  name: "Grinig kaktus",           category: "roligt" },
+  { id: "hotdogboss",    emoji: "🌭",  name: "Korvbossen",              category: "roligt" },
+  { id: "wobblyjelly",   emoji: "🍮",  name: "Vobblig pudding",         category: "roligt" },
+  { id: "spicypepper",   emoji: "🌶️", name: "Het chilipeppar",         category: "roligt" },
 
   // ─── Säsong ─────────────────────────────────────────────────────────────
   { id: "easterbunny",   emoji: "🐇",  name: "Påskhare",        category: "sasong" },

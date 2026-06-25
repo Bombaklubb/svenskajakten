@@ -109,6 +109,17 @@ const AVATAR_RARITY: Record<string, Rarity> = {
   broccolihero: "sallsynt",
   ogremonster: "sallsynt",
   coffeecup: "sallsynt",
+  discoegg: "sallsynt",
+  sneakypizza: "sallsynt",
+  moodydonut: "sallsynt",
+  sleepysloth: "sallsynt",
+  partypoop: "sallsynt",
+  screamingegg: "sallsynt",
+  sassysushi: "sallsynt",
+  grumpycactus: "sallsynt",
+  hotdogboss: "sallsynt",
+  wobblyjelly: "sallsynt",
+  spicypepper: "sallsynt",
 
   // Säsong
   easterbunny: "sallsynt",
