@@ -8,7 +8,7 @@ import { loadStudent } from "@/lib/storage";
 import { STAGES } from "@/lib/stages";
 import { ACHIEVEMENTS, ACHIEVEMENT_ICONS, isUnlocked } from "@/lib/achievements";
 import { getAvatar } from "@/lib/avatars";
-import { getThemeClassName } from "@/lib/shop";
+import { getThemeClassName, getThemeStyle } from "@/lib/shop";
 import FramedAvatar from "@/components/ui/FramedAvatar";
 import { NumberTicker } from "@/components/magicui/number-ticker";
 import { BlurFade } from "@/components/magicui/blur-fade";
@@ -55,7 +55,7 @@ export default function ProfilePage() {
   const av = getAvatar(student.avatar ?? "ninja");
 
   return (
-    <div className={`min-h-screen ${getThemeClassName(student.equippedTheme)}`}>
+    <div className={`min-h-screen ${getThemeClassName(student.equippedTheme)}`} style={getThemeStyle(student.equippedTheme)}>
       <Header student={student} />
 
       <main className="max-w-3xl mx-auto px-4 py-8 space-y-6">

@@ -209,13 +209,18 @@ export interface Theme {
   name: string;
   rarity: Rarity;
   price: number;
-  /** Tailwind classes for the page background, incl. dark mode variants */
+  /** Tailwind classes for the page background, incl. dark mode variants.
+   *  Empty for pattern themes that paint their background via `bg` instead. */
   className: string;
-  /** Small CSS gradient used for the preview swatch in the shop */
+  /** Small CSS background used for the preview swatch in the shop */
   swatch: string;
+  /** Full-page CSS `background` shorthand for pattern themes (stripes, dots …).
+   *  When set it takes precedence over `className`. */
+  bg?: string;
 }
 
 const RAW_THEMES: Omit<Theme, "price">[] = [
+  // ─── Solid gradient themes ───
   { id: "skog",        name: "Skogstema",     rarity: "vanlig",      className: "bg-gradient-to-br from-emerald-50 to-green-100 dark:from-emerald-950 dark:to-gray-900",  swatch: "linear-gradient(135deg, #6ee7b7, #059669)" },
   { id: "hav",         name: "Havstema",      rarity: "vanlig",      className: "bg-gradient-to-br from-sky-50 to-blue-100 dark:from-sky-950 dark:to-gray-900",          swatch: "linear-gradient(135deg, #7dd3fc, #2563eb)" },
   { id: "vinter",      name: "Vintertema",    rarity: "vanlig",      className: "bg-gradient-to-br from-cyan-50 to-slate-100 dark:from-slate-900 dark:to-gray-900",      swatch: "linear-gradient(135deg, #cffafe, #94a3b8)" },
@@ -223,6 +228,38 @@ const RAW_THEMES: Omit<Theme, "price">[] = [
   { id: "rymd",        name: "Rymdtema",      rarity: "sallsynt",    className: "bg-gradient-to-br from-indigo-50 to-violet-100 dark:from-indigo-950 dark:to-gray-900",   swatch: "linear-gradient(135deg, #a5b4fc, #7c3aed)" },
   { id: "lava",        name: "Lavatema",      rarity: "episk",       className: "bg-gradient-to-br from-rose-50 to-red-100 dark:from-rose-950 dark:to-gray-900",        swatch: "linear-gradient(135deg, #fda4af, #dc2626)" },
   { id: "galax",       name: "Galaxtema",     rarity: "legendarisk", className: "bg-gradient-to-br from-fuchsia-50 to-purple-100 dark:from-fuchsia-950 dark:to-gray-900", swatch: "linear-gradient(135deg, #f0abfc, #7c3aed, #1e1b4b)" },
+
+  // ─── Pattern themes (stripes, dots, animal prints …) ───
+  { id: "prickigt",    name: "Pricktema",       rarity: "vanlig",      className: "",
+    swatch: "radial-gradient(#ffffff 26%, transparent 27%) 0 0 / 16px 16px, radial-gradient(#ffffff 26%, transparent 27%) 8px 8px / 16px 16px, #60a5fa",
+    bg:     "radial-gradient(#ffffff 24%, transparent 25%) 0 0 / 30px 30px, radial-gradient(#ffffff 24%, transparent 25%) 15px 15px / 30px 30px, #60a5fa" },
+  { id: "godis",       name: "Godistema",       rarity: "ovanlig",     className: "",
+    swatch: "repeating-linear-gradient(45deg, #fb7185 0 8px, #ffffff 8px 16px)",
+    bg:     "repeating-linear-gradient(45deg, #fb7185 0 18px, #ffffff 18px 36px)" },
+  { id: "rutmonster",  name: "Rutmönstertema",  rarity: "ovanlig",     className: "",
+    swatch: "conic-gradient(#a78bfa 0 25%, #ffffff 0 50%, #a78bfa 0 75%, #ffffff 0) 0 0 / 20px 20px",
+    bg:     "conic-gradient(#a78bfa 0 25%, #ffffff 0 50%, #a78bfa 0 75%, #ffffff 0) 0 0 / 48px 48px" },
+  { id: "zebra",       name: "Zebratema",       rarity: "sallsynt",    className: "",
+    swatch: "repeating-linear-gradient(60deg, #334155 0 8px, #f8fafc 8px 16px)",
+    bg:     "repeating-linear-gradient(60deg, #334155 0 18px, #f8fafc 18px 36px)" },
+  { id: "kamouflage",  name: "Kamouflagetema",  rarity: "sallsynt",    className: "",
+    swatch: "radial-gradient(circle at 25% 30%, #1a2e05 18%, transparent 20%) 0 0 / 26px 26px, radial-gradient(circle at 70% 65%, #4d7c0f 16%, transparent 18%) 0 0 / 26px 26px, #3f6212",
+    bg:     "radial-gradient(circle at 25% 30%, #1a2e05 13px, transparent 14px) 0 0 / 100px 100px, radial-gradient(circle at 72% 62%, #4d7c0f 16px, transparent 17px) 0 0 / 100px 100px, radial-gradient(circle at 48% 85%, #65a30d 11px, transparent 12px) 0 0 / 100px 100px, #3f6212" },
+  { id: "regnbage",    name: "Regnbågstema",    rarity: "episk",       className: "",
+    swatch: "linear-gradient(135deg, #ff8fab, #ffd56b, #9ee493, #7ec8ff, #c39bf0)",
+    bg:     "linear-gradient(135deg, #ff8fab, #ffd56b 30%, #9ee493 50%, #7ec8ff 70%, #c39bf0)" },
+  { id: "tiger",       name: "Tigertema",       rarity: "episk",       className: "",
+    swatch: "repeating-linear-gradient(70deg, #f59e0b 0 14px, #7c2d12 14px 20px)",
+    bg:     "repeating-linear-gradient(72deg, #f59e0b 0 30px, #7c2d12 30px 44px)" },
+  { id: "leopard",     name: "Leopardtema",     rarity: "episk",       className: "",
+    swatch: "radial-gradient(#92400e 22%, transparent 24%) 0 0 / 20px 20px, radial-gradient(#92400e 22%, transparent 24%) 10px 10px / 20px 20px, #fcd9a8",
+    bg:     "radial-gradient(#92400e 20%, transparent 22%) 0 0 / 44px 44px, radial-gradient(#b45309 16%, transparent 18%) 22px 22px / 44px 44px, #fcd9a8" },
+  { id: "enhorning",   name: "Enhörningstema",  rarity: "legendarisk", className: "",
+    swatch: "repeating-linear-gradient(135deg, #fbcfe8 0 10px, #ddd6fe 10px 20px, #bfdbfe 20px 30px, #bbf7d0 30px 40px, #fef9c3 40px 50px)",
+    bg:     "repeating-linear-gradient(135deg, #fbcfe8 0 30px, #ddd6fe 30px 60px, #bfdbfe 60px 90px, #bbf7d0 90px 120px, #fef9c3 120px 150px)" },
+  { id: "stjarnhimmel", name: "Stjärnhimmel",   rarity: "legendarisk", className: "",
+    swatch: "radial-gradient(1.5px 1.5px at 25% 25%, #ffffff, transparent) 0 0 / 18px 18px, radial-gradient(1.5px 1.5px at 70% 60%, #fde68a, transparent) 0 0 / 28px 28px, linear-gradient(#0b1026, #1e1b4b)",
+    bg:     "radial-gradient(1.5px 1.5px at 25% 25%, #ffffff, transparent) 0 0 / 60px 60px, radial-gradient(2px 2px at 75% 55%, #ffffff, transparent) 0 0 / 90px 90px, radial-gradient(1.5px 1.5px at 50% 80%, #fde68a, transparent) 0 0 / 120px 120px, linear-gradient(#0b1026, #1e1b4b)" },
 ];
 
 export const THEMES: Theme[] = RAW_THEMES.map((t) => ({ ...t, price: RARITY_META[t.rarity].price }));
@@ -232,9 +269,18 @@ export function getTheme(id: string | undefined): Theme | undefined {
   return THEMES.find((t) => t.id === id);
 }
 
-/** Background classes for the hub pages: the equipped theme, or the app default. */
+/** Background classes for the hub pages: the equipped theme, or the app default.
+ *  Pattern themes return "" here and paint via getThemeStyle() instead. */
 export function getThemeClassName(id: string | undefined): string {
-  return getTheme(id)?.className ?? "bg-amber-50 dark:bg-gray-900";
+  const t = getTheme(id);
+  if (!t) return "bg-amber-50 dark:bg-gray-900";
+  return t.bg ? "" : t.className;
+}
+
+/** Inline background style for pattern themes; empty object for gradient/default themes. */
+export function getThemeStyle(id: string | undefined): { background?: string } {
+  const t = getTheme(id);
+  return t?.bg ? { background: t.bg } : {};
 }
 
 // ─── Effects (Effekter) ──────────────────────────────────────────────────────────

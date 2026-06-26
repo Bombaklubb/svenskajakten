@@ -19,7 +19,7 @@ import {
   equipEffect,
 } from "@/lib/storage";
 import { getAvatar, CATEGORY_LABELS } from "@/lib/avatars";
-import { SHOP_AVATARS, FRAMES, THEMES, EFFECTS, RARITY_META, groupAvatarsByCategory, getThemeClassName, type Rarity } from "@/lib/shop";
+import { SHOP_AVATARS, FRAMES, THEMES, EFFECTS, RARITY_META, groupAvatarsByCategory, getThemeClassName, getThemeStyle, type Rarity } from "@/lib/shop";
 import type { StudentData } from "@/lib/types";
 
 type Tab = "avatarer" | "ramar" | "teman" | "effekter" | "mina";
@@ -150,7 +150,7 @@ export default function ButikPage() {
   const avatarGroups = groupAvatarsByCategory(SHOP_AVATARS);
 
   return (
-    <div className={`min-h-screen ${getThemeClassName(student.equippedTheme)}`}>
+    <div className={`min-h-screen ${getThemeClassName(student.equippedTheme)}`} style={getThemeStyle(student.equippedTheme)}>
       <Header student={student} />
 
       {/* Banner */}
