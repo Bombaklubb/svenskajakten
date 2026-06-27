@@ -21,7 +21,7 @@ import type { ChestType, MysteryBoxReward } from "@/lib/types";
 import { getStage } from "@/lib/stages";
 import type { StudentData, StageContent, SpellingTimedModule } from "@/lib/types";
 
-const POINTS_PER_CORRECT = 10;
+const POINTS_PER_CORRECT = 15;
 const DEFAULT_TIME_LIMIT = 150;
 
 function getLetterHint(word: string): string {

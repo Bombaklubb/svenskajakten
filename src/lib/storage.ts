@@ -1,5 +1,5 @@
 import type { StudentData, StageId, ModuleProgress, StageProgress, HeroConfig, GamificationData, RetryItem } from "./types";
-import { defaultGamificationData, getPointsMultiplier } from "./gamification";
+import { defaultGamificationData, getPointsMultiplier, DAILY_LOGIN_BONUS } from "./gamification";
 import { getShopAvatar, getFrame, getTheme, getEffect } from "./shop";
 
 // Legacy key (single student) – kept only for migration
@@ -111,6 +111,13 @@ export function loadStudent(): StudentData | null {
     const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
     data.streak = data.lastStreakDate === yesterday ? (data.streak ?? 0) + 1 : 1;
     data.lastStreakDate = today;
+    // Daily bonus: reward the first activity of the day.
+    data.totalPoints += DAILY_LOGIN_BONUS;
+    try {
+      sessionStorage.setItem("dailyBonusAwarded", String(DAILY_LOGIN_BONUS));
+    } catch {
+      // ignore (sessionStorage unavailable)
+    }
     all[name] = data;
     saveAllStudents(all);
   }

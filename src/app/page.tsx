@@ -19,10 +19,20 @@ export default function HomePage() {
   const [selectedAvatar, setSelectedAvatar] = useState("ninja");
   const [loading, setLoading] = useState(true);
   const [isReturning, setIsReturning] = useState(false);
+  const [dailyBonus, setDailyBonus] = useState<number | null>(null);
 
   useEffect(() => {
     setStudent(loadStudent());
     setLoading(false);
+    try {
+      const bonus = sessionStorage.getItem("dailyBonusAwarded");
+      if (bonus) {
+        setDailyBonus(Number(bonus));
+        sessionStorage.removeItem("dailyBonusAwarded");
+      }
+    } catch {
+      // ignore
+    }
   }, []);
 
   function handleNameChange(value: string) {
@@ -158,6 +168,22 @@ export default function HomePage() {
       <Header student={student} onLogout={handleLogout} />
 
       <main className="max-w-5xl mx-auto px-4 py-4">
+        {dailyBonus !== null && (
+          <BlurFade delay={0} className="mb-4">
+            <div
+              className="flex items-center gap-3 rounded-2xl px-4 py-3 border-3 border-amber-300 dark:border-amber-600 bg-gradient-to-r from-amber-50 to-orange-100 dark:from-amber-900/40 dark:to-orange-900/30"
+              style={{ boxShadow: "0 4px 0 0 rgba(245,158,11,0.25)" }}
+            >
+              <span className="text-3xl">🎁</span>
+              <div>
+                <p className="font-black text-amber-800 dark:text-amber-300">Daglig bonus!</p>
+                <p className="text-sm font-bold text-amber-700 dark:text-amber-400">
+                  Du fick <span className="text-amber-600">⭐ {dailyBonus}</span> poäng för att du kom tillbaka idag. Bra jobbat! 🔥
+                </p>
+              </div>
+            </div>
+          </BlurFade>
+        )}
         <BlurFade delay={0} className="mb-4">
           <h2 className="text-2xl font-black text-sv-800 dark:text-gray-100">Välj din värld</h2>
           <p className="text-sv-500 dark:text-gray-400 font-semibold mt-0.5">

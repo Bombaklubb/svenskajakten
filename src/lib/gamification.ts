@@ -11,11 +11,15 @@ export const BOSS_UNLOCK_THRESHOLD = 5;
 export const MYSTERY_BOX_CHANCE = 0.15;
 export const MAX_CHESTS_PER_TYPE = 30;
 
+/** Points awarded for the first activity of each day (ties into the streak system). */
+export const DAILY_LOGIN_BONUS = 50;
+
 export function getPointsMultiplier(prevAttempts: number): number {
   if (prevAttempts === 0) return 1.0;
-  if (prevAttempts === 1) return 0.5;
-  if (prevAttempts === 2) return 0.25;
-  return 0;
+  if (prevAttempts === 1) return 0.7;
+  if (prevAttempts === 2) return 0.5;
+  if (prevAttempts === 3) return 0.3;
+  return 0.2;
 }
 
 export const POINT_CHEST_MILESTONES: { points: number; type: ChestType }[] = [

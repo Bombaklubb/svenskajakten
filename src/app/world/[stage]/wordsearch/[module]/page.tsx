@@ -15,7 +15,7 @@ import { getStage } from "@/lib/stages";
 import { getThemeClassName, getThemeStyle } from "@/lib/shop";
 import type { StudentData, StageContent, WordSearchModule, ChestType, MysteryBoxReward } from "@/lib/types";
 
-const POINTS_PER_WORD = 5;
+const POINTS_PER_WORD = 10;
 
 interface Props {
   params: Promise<{ stage: string; module: string }>;
