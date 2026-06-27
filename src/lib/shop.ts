@@ -298,6 +298,7 @@ export interface Effect {
 const RAW_EFFECTS: Omit<Effect, "price">[] = [
   { id: "stjarnor",  name: "Glittrande stjärnor", rarity: "vanlig",      particles: ["✨", "⭐", "✨"] },
   { id: "snoflingor", name: "Snöflingor",         rarity: "vanlig",      particles: ["❄️", "❄️", "❄️"] },
+  { id: "sapbubblor", name: "Såpbubblor",         rarity: "ovanlig",     particles: ["🫧", "🫧", "🫧"] },
   { id: "blixtar",   name: "Blixtar",             rarity: "sallsynt",    particles: ["⚡", "⚡", "⚡"] },
   { id: "eldlagor",  name: "Eldlågor",            rarity: "sallsynt",    particles: ["🔥", "🔥", "🔥"] },
   { id: "regnbage",  name: "Regnbåge",            rarity: "episk",       particles: ["🌈"] },

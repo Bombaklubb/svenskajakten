@@ -11,6 +11,7 @@ interface EffectOverlayProps {
 const ANIMATION_CLASS: Record<string, string> = {
   stjarnor: "animate-twinkle",
   snoflingor: "animate-fall",
+  sapbubblor: "animate-float",
   blixtar: "animate-wiggle",
   eldlagor: "animate-bounce-slow",
   regnbage: "animate-float",
