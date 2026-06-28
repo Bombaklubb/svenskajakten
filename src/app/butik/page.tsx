@@ -321,6 +321,37 @@ export default function ButikPage() {
           <BlurFade>
             <h2 className="text-xs font-black uppercase tracking-wider text-sv-400 dark:text-gray-500 mb-3">Bakgrundsteman för appen</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+              {/* Standard – återställ den ursprungliga startsidan (gratis) */}
+              {(() => {
+                const isStandard = !student.equippedTheme;
+                return (
+                  <div className="card flex flex-col items-center text-center !p-4">
+                    <div
+                      className="w-full h-14 rounded-xl mb-2 border-2 border-white/40 flex items-center justify-center"
+                      style={{ background: "linear-gradient(135deg, #fffbeb, #fde68a)", boxShadow: "inset 0 2px 4px 0 rgba(255,255,255,0.4)" }}
+                    >
+                      <span className="text-2xl">🏠</span>
+                    </div>
+                    <div className="font-black text-sm text-sv-900 dark:text-gray-100 leading-tight">Standard</div>
+                    <div className="my-1.5"><span className="text-[10px] font-black uppercase tracking-wider text-sv-400 dark:text-gray-500">Original</span></div>
+                    <div className="w-full mt-2">
+                      {isStandard ? (
+                        <button disabled className="w-full py-2 rounded-xl font-bold text-sm bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 border-2 border-emerald-300 dark:border-emerald-700 cursor-default">
+                          ✓ Vald
+                        </button>
+                      ) : (
+                        <button
+                          onClick={() => handleEquipTheme("")}
+                          className="w-full py-2 rounded-xl font-bold text-sm text-white cursor-pointer"
+                          style={{ background: "linear-gradient(135deg, #006AA7, #004a75)", boxShadow: "0 3px 0 0 rgba(0,0,0,0.18)" }}
+                        >
+                          Använd
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                );
+              })()}
               {THEMES.map((t) => {
                 const owned = ownedThemes.includes(t.id);
                 const equipped = student.equippedTheme === t.id;
@@ -514,6 +545,36 @@ export default function ButikPage() {
                   </p>
                 ) : (
                   <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+                    {(() => {
+                      const isStandard = !student.equippedTheme;
+                      return (
+                        <div className="card flex flex-col items-center text-center !p-4">
+                          <div
+                            className="w-full h-14 rounded-xl mb-2 border-2 border-white/40 flex items-center justify-center"
+                            style={{ background: "linear-gradient(135deg, #fffbeb, #fde68a)", boxShadow: "inset 0 2px 4px 0 rgba(255,255,255,0.4)" }}
+                          >
+                            <span className="text-2xl">🏠</span>
+                          </div>
+                          <div className="font-black text-sm text-sv-900 dark:text-gray-100 leading-tight">Standard</div>
+                          <div className="my-1.5"><span className="text-[10px] font-black uppercase tracking-wider text-sv-400 dark:text-gray-500">Original</span></div>
+                          <div className="w-full mt-1">
+                            {isStandard ? (
+                              <button disabled className="w-full py-2 rounded-xl font-bold text-sm bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 border-2 border-emerald-300 dark:border-emerald-700 cursor-default">
+                                ✓ Vald
+                              </button>
+                            ) : (
+                              <button
+                                onClick={() => handleEquipTheme("")}
+                                className="w-full py-2 rounded-xl font-bold text-sm text-white cursor-pointer"
+                                style={{ background: "linear-gradient(135deg, #006AA7, #004a75)", boxShadow: "0 3px 0 0 rgba(0,0,0,0.18)" }}
+                              >
+                                Använd
+                              </button>
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })()}
                     {THEMES.filter((t) => ownedThemes.includes(t.id)).map((t) => {
                       const equipped = student.equippedTheme === t.id;
                       return (
