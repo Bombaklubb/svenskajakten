@@ -7,6 +7,7 @@ import { useDarkMode } from "@/lib/useDarkMode";
 import { clearStudent, loadGamification, getSpendable } from "@/lib/storage";
 import { getAvatar } from "@/lib/avatars";
 import FramedAvatar from "@/components/ui/FramedAvatar";
+import EffectOverlay from "@/components/ui/EffectOverlay";
 import type { StudentData } from "@/lib/types";
 
 interface HeaderProps {
@@ -120,9 +121,10 @@ export default function Header({ student, onLogout }: HeaderProps) {
               return (
                 <Link
                   href="/profile"
-                  className="hidden sm:flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-sv-50 dark:hover:bg-gray-800 transition-all cursor-pointer border-2 border-transparent hover:border-sv-200"
+                  className="relative hidden sm:flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-sv-50 dark:hover:bg-gray-800 transition-all cursor-pointer border-2 border-transparent hover:border-sv-200"
                 >
-                  <FramedAvatar avatar={av} frameId={student.equippedFrame} effectId={student.equippedEffect} size={36} className="flex-shrink-0" />
+                  <EffectOverlay effectId={student.equippedEffect} size={40} count={6} />
+                  <FramedAvatar avatar={av} frameId={student.equippedFrame} size={36} className="flex-shrink-0" />
                   <span className="text-sm font-bold text-sv-700 dark:text-gray-200">{student.name}</span>
                 </Link>
               );

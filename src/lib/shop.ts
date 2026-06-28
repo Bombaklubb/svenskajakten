@@ -227,7 +227,9 @@ const RAW_THEMES: Omit<Theme, "price">[] = [
   { id: "solnedgang",  name: "Solnedgångstema", rarity: "sallsynt",  className: "bg-gradient-to-br from-pink-50 to-orange-100 dark:from-pink-950 dark:to-gray-900",      swatch: "linear-gradient(135deg, #fbcfe8, #fb923c)" },
   { id: "rymd",        name: "Rymdtema",      rarity: "sallsynt",    className: "bg-gradient-to-br from-indigo-50 to-violet-100 dark:from-indigo-950 dark:to-gray-900",   swatch: "linear-gradient(135deg, #a5b4fc, #7c3aed)" },
   { id: "lava",        name: "Lavatema",      rarity: "episk",       className: "bg-gradient-to-br from-rose-50 to-red-100 dark:from-rose-950 dark:to-gray-900",        swatch: "linear-gradient(135deg, #fda4af, #dc2626)" },
-  { id: "galax",       name: "Galaxtema",     rarity: "legendarisk", className: "bg-gradient-to-br from-fuchsia-50 to-purple-100 dark:from-fuchsia-950 dark:to-gray-900", swatch: "linear-gradient(135deg, #f0abfc, #7c3aed, #1e1b4b)" },
+  { id: "galax",       name: "Galaxtema",     rarity: "legendarisk", className: "",
+    swatch: "radial-gradient(1.2px 1.2px at 25% 25%, #fff, transparent) 0 0 / 16px 16px, radial-gradient(1.5px 1.5px at 70% 60%, #fde68a, transparent) 0 0 / 26px 26px, linear-gradient(135deg, #7c3aed, #4c1d95 60%, #1e1b4b)",
+    bg:     "radial-gradient(1.5px 1.5px at 20% 30%, #ffffff, transparent) 0 0 / 70px 70px, radial-gradient(2px 2px at 70% 60%, #ffffff, transparent) 0 0 / 100px 100px, radial-gradient(1.5px 1.5px at 45% 80%, #fde68a, transparent) 0 0 / 130px 130px, linear-gradient(135deg, #4c1d95, #7c3aed 50%, #1e1b4b)" },
 
   // ─── Pattern themes (stripes, dots, animal prints …) ───
   { id: "prickigt",    name: "Pricktema",       rarity: "vanlig",      className: "",
@@ -260,6 +262,15 @@ const RAW_THEMES: Omit<Theme, "price">[] = [
   { id: "stjarnhimmel", name: "Stjärnhimmel",   rarity: "legendarisk", className: "",
     swatch: "radial-gradient(1.5px 1.5px at 25% 25%, #ffffff, transparent) 0 0 / 18px 18px, radial-gradient(1.5px 1.5px at 70% 60%, #fde68a, transparent) 0 0 / 28px 28px, linear-gradient(#0b1026, #1e1b4b)",
     bg:     "radial-gradient(1.5px 1.5px at 25% 25%, #ffffff, transparent) 0 0 / 60px 60px, radial-gradient(2px 2px at 75% 55%, #ffffff, transparent) 0 0 / 90px 90px, radial-gradient(1.5px 1.5px at 50% 80%, #fde68a, transparent) 0 0 / 120px 120px, linear-gradient(#0b1026, #1e1b4b)" },
+  { id: "giraff",      name: "Giraffmönster",   rarity: "sallsynt",    className: "",
+    swatch: "radial-gradient(circle at 28% 28%, #a8631b 30%, transparent 33%) 0 0 / 22px 22px, radial-gradient(circle at 72% 70%, #a8631b 30%, transparent 33%) 0 0 / 22px 22px, #f3cd8b",
+    bg:     "radial-gradient(circle at 25% 25%, #a8631b 26%, transparent 30%) 0 0 / 92px 92px, radial-gradient(circle at 72% 62%, #a8631b 24%, transparent 28%) 0 0 / 92px 92px, radial-gradient(circle at 50% 90%, #a8631b 20%, transparent 24%) 0 0 / 92px 92px, #f3cd8b" },
+  { id: "disco",       name: "Discotema",       rarity: "episk",       className: "",
+    swatch: "repeating-linear-gradient(60deg, #8b5cf6 0 10px, #ec4899 10px 20px, #10b981 20px 30px)",
+    bg:     "repeating-linear-gradient(60deg, #8b5cf6 0 24px, #ec4899 24px 48px, #10b981 48px 72px)" },
+  { id: "bubbelhav",   name: "Bubbelhavstema",  rarity: "sallsynt",    className: "",
+    swatch: "radial-gradient(circle at 30% 70%, rgba(255,255,255,0.45) 0 5px, transparent 6px) 0 0 / 24px 24px, radial-gradient(circle at 75% 35%, rgba(255,255,255,0.35) 0 7px, transparent 8px) 0 0 / 30px 30px, linear-gradient(160deg, #38bdf8, #0369a1)",
+    bg:     "radial-gradient(circle at 30% 70%, rgba(255,255,255,0.4) 0 14px, transparent 15px) 0 0 / 120px 120px, radial-gradient(circle at 75% 40%, rgba(255,255,255,0.28) 0 20px, transparent 21px) 0 0 / 150px 150px, radial-gradient(circle at 55% 88%, rgba(255,255,255,0.22) 0 10px, transparent 11px) 0 0 / 100px 100px, linear-gradient(160deg, #38bdf8, #0369a1)" },
 ];
 
 export const THEMES: Theme[] = RAW_THEMES.map((t) => ({ ...t, price: RARITY_META[t.rarity].price }));
@@ -296,13 +307,18 @@ export interface Effect {
 }
 
 const RAW_EFFECTS: Omit<Effect, "price">[] = [
-  { id: "stjarnor",  name: "Glittrande stjärnor", rarity: "vanlig",      particles: ["✨", "⭐", "✨"] },
-  { id: "snoflingor", name: "Snöflingor",         rarity: "vanlig",      particles: ["❄️", "❄️", "❄️"] },
-  { id: "sapbubblor", name: "Såpbubblor",         rarity: "ovanlig",     particles: ["🫧", "🫧", "🫧"] },
-  { id: "blixtar",   name: "Blixtar",             rarity: "sallsynt",    particles: ["⚡", "⚡", "⚡"] },
-  { id: "eldlagor",  name: "Eldlågor",            rarity: "sallsynt",    particles: ["🔥", "🔥", "🔥"] },
-  { id: "regnbage",  name: "Regnbåge",            rarity: "episk",       particles: ["🌈"] },
-  { id: "konfetti",  name: "Konfetti",            rarity: "episk",       particles: ["🎉", "🎊", "🎉"] },
+  { id: "stjarnor",     name: "Glittrande stjärnor", rarity: "vanlig",   particles: ["✨", "⭐", "🌟"] },
+  { id: "snoflingor",   name: "Snöfall",             rarity: "vanlig",   particles: ["❄️", "❅", "❄️"] },
+  { id: "regn",         name: "Regn",                rarity: "vanlig",   particles: ["💧", "💧", "💧"] },
+  { id: "sapbubblor",   name: "Såpbubblor",          rarity: "ovanlig",  particles: ["🫧", "🫧", "🫧"] },
+  { id: "hjartan",      name: "Hjärtan",             rarity: "ovanlig",  particles: ["💖", "💕", "💗"] },
+  { id: "blixtar",      name: "Blixtar",             rarity: "sallsynt", particles: ["⚡", "⚡", "⚡"] },
+  { id: "eldlagor",     name: "Eldlågor",            rarity: "sallsynt", particles: ["🔥", "🔥", "🔥"] },
+  { id: "hostlov",      name: "Höstlöv",             rarity: "sallsynt", particles: ["🍂", "🍁", "🍂"] },
+  { id: "korsbarsblom", name: "Körsbärsblom",        rarity: "sallsynt", particles: ["🌸", "🌸", "🌼"] },
+  { id: "stjarnglitter", name: "Stjärnglitter",      rarity: "episk",    particles: ["⭐", "✨", "💫"] },
+  { id: "regnbage",     name: "Regnbåge",            rarity: "episk",    particles: ["🌈", "🌈", "🌈"] },
+  { id: "konfetti",     name: "Konfetti",            rarity: "episk",    particles: ["🎉", "🎊", "🎉"] },
 ];
 
 export const EFFECTS: Effect[] = RAW_EFFECTS.map((e) => ({ ...e, price: RARITY_META[e.rarity].price }));
