@@ -6,7 +6,7 @@ import Link from "next/link";
 import Header from "@/components/ui/Header";
 import { loadStudent, createStudent, clearStudent, studentExists } from "@/lib/storage";
 import { STAGES } from "@/lib/stages";
-import { AVATARS } from "@/lib/avatars";
+import { STARTER_AVATARS } from "@/lib/avatars";
 import { getThemeClassName, getThemeStyle } from "@/lib/shop";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { NumberTicker } from "@/components/magicui/number-ticker";
@@ -119,7 +119,7 @@ export default function HomePage() {
               <div>
                 <p className="text-sm font-bold mb-2" style={{ color: "#c2570a" }}>Välj din karaktär</p>
                 <div className="grid grid-cols-5 gap-2">
-                  {AVATARS.map((avatar) => (
+                  {STARTER_AVATARS.map((avatar) => (
                     <button
                       key={avatar.id}
                       type="button"
@@ -143,7 +143,7 @@ export default function HomePage() {
                   ))}
                 </div>
                 <p className="text-xs font-bold mt-2 text-center" style={{ color: "#f97316" }}>
-                  {AVATARS.find((a) => a.id === selectedAvatar)?.name}
+                  {STARTER_AVATARS.find((a) => a.id === selectedAvatar)?.name}
                 </p>
               </div>
 

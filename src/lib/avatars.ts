@@ -168,3 +168,7 @@ export const AVATARS: Avatar[] = [
 export function getAvatar(id: string): Avatar {
   return AVATARS.find((a) => a.id === id) ?? AVATARS[0];
 }
+
+/** The original illustrated avatars, shown for free on the login/signup screen.
+ *  Everything else is unlocked via Affären (the shop). */
+export const STARTER_AVATARS: Avatar[] = AVATARS.filter((a) => !a.category);
