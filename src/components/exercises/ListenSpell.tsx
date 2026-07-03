@@ -1,33 +1,62 @@
 "use client";
 
-import { useState, useRef } from "react";
-import type { WordCluesExercise } from "@/lib/types";
+import { useState, useEffect, useCallback } from "react";
+import type { ListenSpellExercise } from "@/lib/types";
 import { getCorrectMessage } from "@/lib/feedback";
 import { playCorrect, playWrong } from "@/lib/sound";
 
 interface Props {
-  exercise: WordCluesExercise;
+  exercise: ListenSpellExercise;
   onAnswer: (correct: boolean) => void;
   isLast?: boolean;
 }
 
-export default function WordClues({ exercise, onAnswer, isLast }: Props) {
+function speak(text: string, rate = 0.85) {
+  if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
+  window.speechSynthesis.cancel();
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.lang = "sv-SE";
+  utter.rate = rate;
+  const svVoice = window.speechSynthesis
+    .getVoices()
+    .find((v) => v.lang.toLowerCase().startsWith("sv"));
+  if (svVoice) utter.voice = svVoice;
+  window.speechSynthesis.speak(utter);
+}
+
+export default function ListenSpell({ exercise, onAnswer, isLast }: Props) {
   const [input, setInput] = useState("");
   const [state, setState] = useState<"idle" | "correct" | "wrong">("idle");
   const [correctMsg, setCorrectMsg] = useState("");
   const [showHint, setShowHint] = useState(false);
-  const inputRef = useRef<HTMLInputElement>(null);
+  const [hasSpoken, setHasSpoken] = useState(false);
+  const [supported, setSupported] = useState(true);
 
-  function normalize(s: string) {
-    return s.trim().toLowerCase();
-  }
+  useEffect(() => {
+    setSupported(typeof window !== "undefined" && "speechSynthesis" in window);
+    // Chrome loads voices asynchronously – warm the list up.
+    if (typeof window !== "undefined" && "speechSynthesis" in window) {
+      window.speechSynthesis.getVoices();
+    }
+    return () => {
+      if (typeof window !== "undefined" && "speechSynthesis" in window) {
+        window.speechSynthesis.cancel();
+      }
+    };
+  }, []);
+
+  const handleSpeak = useCallback(() => {
+    speak(exercise.word);
+    if (exercise.sentence) {
+      // Read the context sentence after a short pause
+      setTimeout(() => speak(exercise.sentence!, 0.95), 900);
+    }
+    setHasSpoken(true);
+  }, [exercise.word, exercise.sentence]);
 
   function handleSubmit() {
     if (state !== "idle" || !input.trim()) return;
-    const given = normalize(input);
-    const expected = normalize(exercise.answer);
-    const alternatives = (exercise.alternativeAnswers ?? []).map(normalize);
-    const correct = given === expected || alternatives.includes(given);
+    const correct = input.trim().toLowerCase() === exercise.word.trim().toLowerCase();
     if (correct) {
       setCorrectMsg(getCorrectMessage());
       playCorrect();
@@ -37,31 +66,32 @@ export default function WordClues({ exercise, onAnswer, isLast }: Props) {
     setState(correct ? "correct" : "wrong");
   }
 
-  function handleKeyDown(e: React.KeyboardEvent) {
-    if (e.key === "Enter") handleSubmit();
-  }
-
   return (
     <div className="space-y-5 animate-fade-in">
-      <div className="flex items-center gap-2 mb-1">
-        <span className="text-lg">🔍</span>
-        <span className="text-sm font-bold text-sv-600 dark:text-sv-300 uppercase tracking-wide">
-          Kluring – vad är det?
-        </span>
+      <p className="text-base sm:text-lg font-medium text-gray-800 dark:text-gray-100">
+        Lyssna på ordet och stava det rätt!
+      </p>
+
+      {/* Listen button */}
+      <div className="flex justify-center">
+        <button
+          type="button"
+          onClick={handleSpeak}
+          className="flex flex-col items-center gap-2 px-10 py-6 rounded-3xl border-3 border-sv-300 bg-gradient-to-b from-sky-50 to-blue-100 dark:from-sky-900/40 dark:to-blue-900/20 dark:border-sv-600 hover:scale-105 active:scale-95 transition-all cursor-pointer"
+          style={{ boxShadow: "0 5px 0 0 rgba(0,106,167,0.25), inset 0 2px 4px 0 rgba(255,255,255,0.7)" }}
+        >
+          <span className="text-5xl animate-pulse-slow">🔊</span>
+          <span className="font-black text-sv-700 dark:text-sv-300">
+            {hasSpoken ? "Lyssna igen" : "Lyssna på ordet"}
+          </span>
+        </button>
       </div>
 
-      {/* Clues */}
-      <div className="space-y-2">
-        {exercise.clues.map((clue, i) => (
-          <div
-            key={i}
-            className="flex items-start gap-3 bg-sv-50 dark:bg-sv-900/20 border border-sv-200 dark:border-sv-700 rounded-xl px-4 py-3"
-          >
-            <span className="text-sv-400 dark:text-sv-500 font-bold text-base mt-0.5 flex-shrink-0">→</span>
-            <span className="text-sv-900 dark:text-sv-100 text-base font-medium">{clue}</span>
-          </div>
-        ))}
-      </div>
+      {!supported && (
+        <p className="text-center text-sm font-bold text-red-500">
+          ⚠️ Din webbläsare stödjer tyvärr inte uppläsning.
+        </p>
+      )}
 
       {exercise.hint && (
         <div className="rounded-xl overflow-hidden border border-amber-200 dark:border-amber-700">
@@ -81,16 +111,14 @@ export default function WordClues({ exercise, onAnswer, isLast }: Props) {
       )}
 
       {state === "idle" && (
-        <div className={`flex gap-2 rounded-xl border-2 overflow-hidden transition-colors border-sv-300 bg-white dark:bg-gray-700 dark:border-sv-600 focus-within:border-sv-500`}>
+        <div className="flex gap-2 rounded-xl border-2 overflow-hidden transition-colors border-sv-300 bg-white dark:bg-gray-700 dark:border-sv-600 focus-within:border-sv-500">
           <input
-            ref={inputRef}
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            onKeyDown={handleKeyDown}
-            placeholder="Skriv ditt svar här..."
+            onKeyDown={(e) => { if (e.key === "Enter") handleSubmit(); }}
+            placeholder="Stava ordet här..."
             className="flex-1 px-4 py-3 text-lg bg-transparent outline-none text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500"
-            autoFocus
             autoComplete="off"
             autoCorrect="off"
             autoCapitalize="off"
@@ -116,7 +144,7 @@ export default function WordClues({ exercise, onAnswer, isLast }: Props) {
           }`}
         >
           <p className="font-semibold">
-            {state === "correct" ? correctMsg : `✗ Fel. Rätt svar: "${exercise.answer}"`}
+            {state === "correct" ? correctMsg : `✗ Fel. Rätt stavning: "${exercise.word}"`}
           </p>
           {exercise.explanation && (
             <p className="text-sm mt-1 opacity-80">💡 {exercise.explanation}</p>

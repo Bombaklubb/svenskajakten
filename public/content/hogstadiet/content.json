@@ -3009,6 +3009,68 @@
           "explanation": "'Handväska' – sammansatta ord skrivs ihop: hand + väska."
         }
       ]
+    },
+    {
+      "id": "lyssna-stava-1",
+      "title": "Lyssna och stava",
+      "description": "Träna stavning av vanliga men kluriga ord",
+      "icon": "🔊",
+      "bonusPoints": 30,
+      "helpText": [
+        "Tryck på högtalarknappen för att höra ordet.",
+        "Många av orden är lånord – fundera på hur de stavas i svenskan.",
+        "Tänk på dubbelteckning och ändelser."
+      ],
+      "exercises": [
+        {
+          "type": "listen-spell",
+          "word": "intressant",
+          "hint": "Något som väcker nyfikenhet är ...",
+          "explanation": "'Intressant' har dubbelt s men enkelt n i mitten."
+        },
+        {
+          "type": "listen-spell",
+          "word": "definitivt",
+          "hint": "Absolut, helt säkert.",
+          "explanation": "'Definitivt' – lägg märke till i:et efter n."
+        },
+        {
+          "type": "listen-spell",
+          "word": "medicin",
+          "hint": "Något man tar när man är sjuk.",
+          "explanation": "'Medicin' stavas med c."
+        },
+        {
+          "type": "listen-spell",
+          "word": "restaurang",
+          "hint": "En plats där man betalar för att äta.",
+          "explanation": "'Restaurang' slutar på -ang."
+        },
+        {
+          "type": "listen-spell",
+          "word": "aggressiv",
+          "hint": "Arg och hotfull.",
+          "explanation": "'Aggressiv' har dubbelt g och dubbelt s."
+        },
+        {
+          "type": "listen-spell",
+          "word": "konsekvens",
+          "hint": "Följden av ett handlande.",
+          "explanation": "'Konsekvens' stavas med kv."
+        },
+        {
+          "type": "listen-spell",
+          "word": "parallell",
+          "hint": "Två linjer som aldrig korsas är ...",
+          "explanation": "'Parallell' har en r, dubbelt l i mitten och dubbelt l på slutet."
+        },
+        {
+          "type": "listen-spell",
+          "word": "terrass",
+          "hint": "En uteplats vid ett hus.",
+          "explanation": "'Terrass' har dubbelt r och dubbelt s."
+        }
+      ]
     }
   ],
   "wordsearch": [

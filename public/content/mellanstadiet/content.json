@@ -6489,6 +6489,68 @@
           "explanation": "'Bokskrivare' – sammansatta ord med 'bok' som förled skrivs alltid ihop."
         }
       ]
+    },
+    {
+      "id": "lyssna-stava-1",
+      "title": "Lyssna och stava",
+      "description": "Lyssna noga och stava kluriga ord rätt",
+      "icon": "🔊",
+      "bonusPoints": 25,
+      "helpText": [
+        "Tryck på högtalarknappen för att höra ordet.",
+        "Lyssna extra noga på sje- och tje-ljud.",
+        "Tänk på dubbelteckning: kort vokal följs ofta av dubbel konsonant."
+      ],
+      "exercises": [
+        {
+          "type": "listen-spell",
+          "word": "cykel",
+          "hint": "Ett fordon med två hjul och pedaler.",
+          "explanation": "'Cykel' börjar med c fast det låter som s."
+        },
+        {
+          "type": "listen-spell",
+          "word": "choklad",
+          "hint": "En söt godsak gjord av kakao.",
+          "explanation": "'Choklad' börjar med ch."
+        },
+        {
+          "type": "listen-spell",
+          "word": "stjärna",
+          "hint": "Den lyser på natthimlen.",
+          "explanation": "'Stjärna' börjar med stj – ett av sje-ljudets stavningar."
+        },
+        {
+          "type": "listen-spell",
+          "word": "skjorta",
+          "hint": "Ett plagg med knappar och krage.",
+          "explanation": "'Skjorta' börjar med skj."
+        },
+        {
+          "type": "listen-spell",
+          "word": "ljus",
+          "hint": "Motsatsen till mörker.",
+          "explanation": "'Ljus' börjar med ett tyst l: l-j-u-s."
+        },
+        {
+          "type": "listen-spell",
+          "word": "känsla",
+          "hint": "Något du känner inuti, som glädje eller ilska.",
+          "explanation": "'Känsla' börjar med k fast det låter som tje-ljud."
+        },
+        {
+          "type": "listen-spell",
+          "word": "berätta",
+          "hint": "Att tala om vad som har hänt.",
+          "explanation": "'Berätta' har dubbelt t."
+        },
+        {
+          "type": "listen-spell",
+          "word": "nyckel",
+          "hint": "Den låser upp dörren.",
+          "explanation": "'Nyckel' stavas med ck."
+        }
+      ]
     }
   ],
   "wordsearch": [

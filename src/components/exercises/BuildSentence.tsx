@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { BuildSentenceExercise } from "@/lib/types";
 import { getCorrectMessage } from "@/lib/feedback";
+import { playCorrect, playWrong } from "@/lib/sound";
 
 function shuffle(arr: number[]): number[] {
   const a = [...arr];
@@ -45,7 +46,12 @@ export default function BuildSentence({ exercise, onAnswer, isLast }: Props) {
     const correct =
       placed.length === exercise.correctOrder.length &&
       placed.every((wordIdx, pos) => wordIdx === exercise.correctOrder[pos]);
-    if (correct) setCorrectMsg(getCorrectMessage());
+    if (correct) {
+      setCorrectMsg(getCorrectMessage());
+      playCorrect();
+    } else {
+      playWrong();
+    }
     setState(correct ? "correct" : "wrong");
   }
 

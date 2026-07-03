@@ -121,7 +121,7 @@ function SamlaMyntGame({ stageId, stage, student }: {
     if (isCorrect) {
       const newCoins = coins + 1;
       setCoins(newCoins);
-      setScore(s => s + 20);
+      setScore(s => s + 30);
       setFeedback("coin");
       feedbackTimeout.current = setTimeout(() => {
         setFeedback(null);

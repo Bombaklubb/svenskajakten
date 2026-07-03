@@ -61,11 +61,23 @@ export interface WordCluesExercise {
   explanation?: string;
 }
 
+export interface ListenSpellExercise {
+  id: string;
+  type: "listen-spell";
+  /** The word to be spoken aloud and spelled by the student */
+  word: string;
+  /** Optional sentence read after the word to give context */
+  sentence?: string;
+  hint?: string;
+  explanation?: string;
+}
+
 export type GrammarExercise =
   | MultipleChoiceExercise
   | FillInBlankExercise
   | BuildSentenceExercise
-  | WordCluesExercise;
+  | WordCluesExercise
+  | ListenSpellExercise;
 
 // ─── Module definitions ───────────────────────────────────────────────────────
 

@@ -9,6 +9,7 @@ import { STAGES } from "@/lib/stages";
 import { ACHIEVEMENTS, ACHIEVEMENT_ICONS, isUnlocked } from "@/lib/achievements";
 import { getAvatar } from "@/lib/avatars";
 import { getThemeClassName, getThemeStyle } from "@/lib/shop";
+import { getLevel, MAX_LEVEL } from "@/lib/levels";
 import FramedAvatar from "@/components/ui/FramedAvatar";
 import { NumberTicker } from "@/components/magicui/number-ticker";
 import { BlurFade } from "@/components/magicui/blur-fade";
@@ -73,7 +74,28 @@ export default function ProfilePage() {
               <FramedAvatar avatar={av} frameId={student.equippedFrame} effectId={student.equippedEffect} size={80} className="flex-shrink-0" />
               <div className="flex-1 min-w-0">
                 <h1 className="text-2xl font-black drop-shadow-sm">{student.name}</h1>
-                <p className="text-white/70 text-sm mt-0.5">Aktiv sedan {joinDate}</p>
+                {(() => {
+                  const lvl = getLevel(student.totalPoints);
+                  return (
+                    <div className="mt-1">
+                      <span className="inline-flex items-center gap-1.5 bg-white/20 border border-white/30 rounded-full px-3 py-0.5 text-sm font-black">
+                        🏅 Nivå {lvl.level} · {lvl.title}
+                      </span>
+                      {lvl.level < MAX_LEVEL && (
+                        <div className="flex items-center gap-2 mt-1.5 max-w-[240px]">
+                          <div className="flex-1 h-2 rounded-full bg-white/20 overflow-hidden">
+                            <div
+                              className="h-full rounded-full bg-gradient-to-r from-amber-300 to-yellow-400"
+                              style={{ width: `${Math.round(lvl.progress * 100)}%` }}
+                            />
+                          </div>
+                          <span className="text-white/80 text-xs font-bold whitespace-nowrap">{lvl.next - student.totalPoints} ⭐ kvar</span>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })()}
+                <p className="text-white/70 text-sm mt-1.5">Aktiv sedan {joinDate}</p>
                 <p className="text-white/70 text-sm">Senast aktiv: {lastActive}</p>
               </div>
               <div className="text-center bg-white/15 rounded-2xl px-5 py-3 border-2 border-white/20 flex-shrink-0">

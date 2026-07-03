@@ -1952,6 +1952,67 @@
           "explanation": "'Hälso vård' är felstavat – ska skrivas ihop: 'hälsovård'."
         }
       ]
+    },
+    {
+      "id": "lyssna-stava-1",
+      "title": "Lyssna och stava",
+      "description": "Avancerad stavning – lånord och formella ord",
+      "icon": "🔊",
+      "bonusPoints": 30,
+      "helpText": [
+        "Tryck på högtalarknappen för att höra ordet.",
+        "Orden är vanliga i formella texter – stavningen följer ofta ursprungsspråket."
+      ],
+      "exercises": [
+        {
+          "type": "listen-spell",
+          "word": "abonnemang",
+          "hint": "Ett löpande avtal, t.ex. för mobilen.",
+          "explanation": "'Abonnemang' har dubbelt n och slutar på -emang."
+        },
+        {
+          "type": "listen-spell",
+          "word": "professionell",
+          "hint": "Yrkesmässig och kunnig.",
+          "explanation": "'Professionell' har dubbelt s och dubbelt l."
+        },
+        {
+          "type": "listen-spell",
+          "word": "kommunikation",
+          "hint": "Utbyte av information mellan människor.",
+          "explanation": "'Kommunikation' har dubbelt m och enkelt n."
+        },
+        {
+          "type": "listen-spell",
+          "word": "prioritera",
+          "hint": "Att sätta något främst.",
+          "explanation": "'Prioritera' – i efter r båda gångerna."
+        },
+        {
+          "type": "listen-spell",
+          "word": "entusiasm",
+          "hint": "Stark iver och glädje inför något.",
+          "explanation": "'Entusiasm' slutar på -asm."
+        },
+        {
+          "type": "listen-spell",
+          "word": "kompetens",
+          "hint": "Skicklighet och kunnande.",
+          "explanation": "'Kompetens' slutar på -ens."
+        },
+        {
+          "type": "listen-spell",
+          "word": "auktoritet",
+          "hint": "Makt eller expertstatus.",
+          "explanation": "'Auktoritet' stavas med au."
+        },
+        {
+          "type": "listen-spell",
+          "word": "initiativ",
+          "hint": "Första steget till en handling.",
+          "explanation": "'Initiativ' har i-n-i-t-i-a-t-i-v – många i:n!"
+        }
+      ]
     }
   ],
   "wordsearch": [

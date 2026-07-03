@@ -144,7 +144,7 @@ function TidsattackGame({ stageId, stage, student }: {
     const isCorrect = idx === currentQ.correct;
     setFlash(isCorrect ? "correct" : "wrong");
     if (isCorrect) {
-      setScore(s => s + 10);
+      setScore(s => s + 15);
       setCorrect(c => c + 1);
     } else {
       setWrong(w => w + 1);
@@ -179,7 +179,7 @@ function TidsattackGame({ stageId, stage, student }: {
           <div className="text-7xl mb-4">⏱️</div>
           <h1 className="text-3xl font-black text-gray-900 dark:text-gray-100 mb-2">Tidsattack!</h1>
           <p className="text-gray-500 dark:text-gray-400 mb-2">60 sekunder – svara på så många frågor du hinner!</p>
-          <p className="text-gray-400 dark:text-gray-500 text-sm mb-8">Rätt svar = 10 poäng. Snabba reflexer lönar sig!</p>
+          <p className="text-gray-400 dark:text-gray-500 text-sm mb-8">Rätt svar = 15 poäng. Snabba reflexer lönar sig!</p>
           <button
             onClick={start}
             className={`w-full max-w-xs py-4 rounded-2xl font-black text-white text-xl cursor-pointer ${stage!.colorClass}`}

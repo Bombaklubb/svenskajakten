@@ -243,7 +243,7 @@ function MemoryGame({ stageId, stage, student }: {
   const mins = Math.floor(seconds / 60);
   const secs = seconds % 60;
   const timeStr = mins > 0 ? `${mins}:${secs.toString().padStart(2, "0")}` : `${secs}s`;
-  const score = Math.max(10, 200 - moves * 3 - Math.floor(seconds / 5));
+  const score = Math.max(15, 300 - moves * 4 - Math.floor(seconds / 4));
 
   const gridCols = difficulty === "hard" ? "grid-cols-3 sm:grid-cols-4" : "grid-cols-2 sm:grid-cols-4";
 

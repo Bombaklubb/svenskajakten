@@ -251,7 +251,7 @@ function SnogubbenGame({ stageId, stage, student, setStudent }: {
 
   useEffect(() => {
     if (isWon && phase === "playing") {
-      const pts = 50 + livesLeft * 10;
+      const pts = 75 + livesLeft * 15;
       setScore(s => s + pts);
       if (student) {
         const updated = { ...student, totalPoints: student.totalPoints + pts };

@@ -8387,6 +8387,68 @@
           "explanation": "'Tillsammans' stavas t-i-l-l-s-a-m-m-a-n-s. Dubbelt l och dubbelt m!"
         }
       ]
+    },
+    {
+      "id": "lyssna-stava-1",
+      "title": "Lyssna och stava",
+      "description": "Lyssna på ordet och stava det rätt",
+      "icon": "🔊",
+      "bonusPoints": 25,
+      "helpText": [
+        "Tryck på högtalarknappen för att höra ordet.",
+        "Du kan lyssna hur många gånger du vill.",
+        "Skriv ordet precis som det låter – tänk på å, ä och ö!"
+      ],
+      "exercises": [
+        {
+          "type": "listen-spell",
+          "word": "sol",
+          "hint": "Den lyser på himlen om dagen.",
+          "explanation": "'Sol' stavas med tre bokstäver: s-o-l."
+        },
+        {
+          "type": "listen-spell",
+          "word": "katt",
+          "hint": "Ett husdjur som säger mjau.",
+          "explanation": "'Katt' har dubbelt t på slutet."
+        },
+        {
+          "type": "listen-spell",
+          "word": "äpple",
+          "hint": "En rund frukt som kan vara röd eller grön.",
+          "explanation": "'Äpple' börjar med ä och har dubbelt p."
+        },
+        {
+          "type": "listen-spell",
+          "word": "fågel",
+          "hint": "Ett djur med vingar som kan flyga.",
+          "explanation": "'Fågel' stavas med å."
+        },
+        {
+          "type": "listen-spell",
+          "word": "sjö",
+          "hint": "Vatten man kan bada i på sommaren.",
+          "explanation": "'Sjö' stavas s-j-ö – sj-ljudet skrivs med sj här."
+        },
+        {
+          "type": "listen-spell",
+          "word": "räv",
+          "hint": "Ett rött skogsdjur med yvig svans.",
+          "explanation": "'Räv' stavas med ä och v."
+        },
+        {
+          "type": "listen-spell",
+          "word": "hjärta",
+          "hint": "Det slår i bröstet på dig.",
+          "explanation": "'Hjärta' börjar med ett tyst h: h-j-ä-r-t-a."
+        },
+        {
+          "type": "listen-spell",
+          "word": "skola",
+          "hint": "Hit går du för att lära dig saker.",
+          "explanation": "'Skola' stavas s-k-o-l-a."
+        }
+      ]
     }
   ],
   "wordsearch": [

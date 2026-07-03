@@ -6,6 +6,8 @@ import { useRouter } from "next/navigation";
 import { useDarkMode } from "@/lib/useDarkMode";
 import { clearStudent, loadGamification, getSpendable } from "@/lib/storage";
 import { getAvatar } from "@/lib/avatars";
+import { getLevel } from "@/lib/levels";
+import { isMuted, setMuted } from "@/lib/sound";
 import FramedAvatar from "@/components/ui/FramedAvatar";
 import EffectOverlay from "@/components/ui/EffectOverlay";
 import type { StudentData } from "@/lib/types";
@@ -19,12 +21,23 @@ export default function Header({ student, onLogout }: HeaderProps) {
   const router = useRouter();
   const { dark, toggle } = useDarkMode();
   const [unopenedChests, setUnopenedChests] = useState(0);
+  const [muted, setMutedState] = useState(false);
+
+  useEffect(() => {
+    setMutedState(isMuted());
+  }, []);
 
   useEffect(() => {
     if (!student) return;
     const gam = loadGamification();
     setUnopenedChests(gam.chests.filter((c) => !c.opened).length);
   }, [student]);
+
+  function toggleMute() {
+    const next = !muted;
+    setMuted(next);
+    setMutedState(next);
+  }
 
   function handleLogout() {
     if (onLogout) {
@@ -125,10 +138,36 @@ export default function Header({ student, onLogout }: HeaderProps) {
                 >
                   <EffectOverlay effectId={student.equippedEffect} size={40} count={6} />
                   <FramedAvatar avatar={av} frameId={student.equippedFrame} size={36} className="flex-shrink-0" />
-                  <span className="text-sm font-bold text-sv-700 dark:text-gray-200">{student.name}</span>
+                  {(() => {
+                    const lvl = getLevel(student.totalPoints);
+                    return (
+                      <span className="flex flex-col min-w-0" title={`Nivå ${lvl.level} · ${lvl.title}`}>
+                        <span className="text-sm font-bold text-sv-700 dark:text-gray-200 leading-tight">{student.name}</span>
+                        <span className="flex items-center gap-1.5">
+                          <span className="text-[10px] font-black text-amber-600 dark:text-amber-400 leading-none">Nv {lvl.level}</span>
+                          <span className="w-14 h-1.5 rounded-full bg-sv-100 dark:bg-gray-700 overflow-hidden">
+                            <span
+                              className="block h-full rounded-full bg-gradient-to-r from-amber-400 to-orange-500"
+                              style={{ width: `${Math.round(lvl.progress * 100)}%` }}
+                            />
+                          </span>
+                        </span>
+                      </span>
+                    );
+                  })()}
                 </Link>
               );
             })()}
+
+            {/* Ljud på/av */}
+            <button
+              onClick={toggleMute}
+              className="hidden sm:block p-2.5 rounded-xl text-sv-400 dark:text-gray-400 hover:bg-sv-50 dark:hover:bg-gray-800 hover:text-sv-600 transition-all touch-manipulation cursor-pointer border-2 border-transparent hover:border-sv-200"
+              aria-label={muted ? "Sätt på ljud" : "Stäng av ljud"}
+              title={muted ? "Sätt på ljud" : "Stäng av ljud"}
+            >
+              {muted ? "🔇" : "🔊"}
+            </button>
 
             {/* Dark mode */}
             <button

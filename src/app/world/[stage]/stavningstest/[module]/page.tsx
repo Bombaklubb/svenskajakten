@@ -19,6 +19,7 @@ import { ACHIEVEMENTS, isUnlocked } from "@/lib/achievements";
 import MysteryBoxPopup from "@/components/ui/MysteryBoxPopup";
 import type { ChestType, MysteryBoxReward } from "@/lib/types";
 import { getStage } from "@/lib/stages";
+import { playCorrect, playWrong } from "@/lib/sound";
 import type { StudentData, StageContent, SpellingTimedModule } from "@/lib/types";
 
 const POINTS_PER_CORRECT = 15;
@@ -197,6 +198,7 @@ export default function StavningstestPage({ params }: Props) {
   function handleSubmit() {
     if (!currentWord || feedback) return;
     const correct = input.trim().toLowerCase() === currentWord.word.toLowerCase();
+    if (correct) playCorrect(); else playWrong();
     setFeedback(correct ? "correct" : "wrong");
 
     setTimeout(() => {
