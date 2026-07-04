@@ -3,7 +3,6 @@
 import { useState, useRef } from "react";
 import type { WordCluesExercise } from "@/lib/types";
 import { getCorrectMessage } from "@/lib/feedback";
-import { playCorrect, playWrong } from "@/lib/sound";
 
 interface Props {
   exercise: WordCluesExercise;
@@ -28,12 +27,7 @@ export default function WordClues({ exercise, onAnswer, isLast }: Props) {
     const expected = normalize(exercise.answer);
     const alternatives = (exercise.alternativeAnswers ?? []).map(normalize);
     const correct = given === expected || alternatives.includes(given);
-    if (correct) {
-      setCorrectMsg(getCorrectMessage());
-      playCorrect();
-    } else {
-      playWrong();
-    }
+    if (correct) setCorrectMsg(getCorrectMessage());
     setState(correct ? "correct" : "wrong");
   }
 

@@ -5,7 +5,6 @@ import Link from "next/link";
 import Header from "@/components/ui/Header";
 import FramedAvatar from "@/components/ui/FramedAvatar";
 import EffectOverlay from "@/components/ui/EffectOverlay";
-import { playPurchase } from "@/lib/sound";
 import { NumberTicker } from "@/components/magicui/number-ticker";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import {
@@ -85,7 +84,6 @@ export default function ButikPage() {
     const res = buyAvatar(student, id);
     if (res.ok) {
       setStudent(res.student);
-      playPurchase();
       flash(`Du köpte ${name}! 🎉`);
     } else if (res.reason === "broke") {
       flash("Du har inte råd ännu!");
@@ -100,7 +98,6 @@ export default function ButikPage() {
     const res = buyFrame(student, id);
     if (res.ok) {
       setStudent(res.student);
-      playPurchase();
       flash(`Du köpte ${name}! 🎉`);
     } else if (res.reason === "broke") {
       flash("Du har inte råd ännu!");
@@ -115,7 +112,6 @@ export default function ButikPage() {
     const res = buyTheme(student, id);
     if (res.ok) {
       setStudent(res.student);
-      playPurchase();
       flash(`Du köpte ${name}! 🎉`);
     } else if (res.reason === "broke") {
       flash("Du har inte råd ännu!");
@@ -130,7 +126,6 @@ export default function ButikPage() {
     const res = buyEffect(student, id);
     if (res.ok) {
       setStudent(res.student);
-      playPurchase();
       flash(`Du köpte ${name}! 🎉`);
     } else if (res.reason === "broke") {
       flash("Du har inte råd ännu!");

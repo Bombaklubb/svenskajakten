@@ -3,7 +3,6 @@
 import { useState } from "react";
 import type { MultipleChoiceExercise } from "@/lib/types";
 import { getCorrectMessage } from "@/lib/feedback";
-import { playCorrect, playWrong } from "@/lib/sound";
 
 interface Props {
   exercise: MultipleChoiceExercise;
@@ -21,12 +20,7 @@ export default function MultipleChoice({ exercise, onAnswer, isLast }: Props) {
     if (revealed) return;
     setSelected(idx);
     setRevealed(true);
-    if (idx === exercise.correctIndex) {
-      setCorrectMsg(getCorrectMessage());
-      playCorrect();
-    } else {
-      playWrong();
-    }
+    if (idx === exercise.correctIndex) setCorrectMsg(getCorrectMessage());
   }
 
   function optionStyle(idx: number): string {

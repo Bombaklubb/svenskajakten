@@ -28,7 +28,6 @@ import {
   capNewChests,
 } from "@/lib/gamification";
 import { getThemeClassName, getThemeStyle } from "@/lib/shop";
-import { playFanfare } from "@/lib/sound";
 import type { StudentData, GamificationData, Chest, ChestType } from "@/lib/types";
 
 function ChestCard({ chest, onOpen }: { chest: Chest; onOpen: (id: string) => void }) {
@@ -301,7 +300,6 @@ export default function KistorPage() {
     if (!gam || !student) return;
     const chest = gam.chests.find((c) => c.id === chestId);
     if (!chest || chest.opened) return;
-    playFanfare();
 
     let result: { points: number; badge?: string; bonusChest?: Chest; description: string };
     if (chest.type === "wood") result = { ...openWoodChest(), badge: undefined, bonusChest: undefined };

@@ -7,7 +7,6 @@ import { useDarkMode } from "@/lib/useDarkMode";
 import { clearStudent, loadGamification, getSpendable } from "@/lib/storage";
 import { getAvatar } from "@/lib/avatars";
 import { getLevel } from "@/lib/levels";
-import { isMuted, setMuted } from "@/lib/sound";
 import FramedAvatar from "@/components/ui/FramedAvatar";
 import EffectOverlay from "@/components/ui/EffectOverlay";
 import type { StudentData } from "@/lib/types";
@@ -21,23 +20,12 @@ export default function Header({ student, onLogout }: HeaderProps) {
   const router = useRouter();
   const { dark, toggle } = useDarkMode();
   const [unopenedChests, setUnopenedChests] = useState(0);
-  const [muted, setMutedState] = useState(false);
-
-  useEffect(() => {
-    setMutedState(isMuted());
-  }, []);
 
   useEffect(() => {
     if (!student) return;
     const gam = loadGamification();
     setUnopenedChests(gam.chests.filter((c) => !c.opened).length);
   }, [student]);
-
-  function toggleMute() {
-    const next = !muted;
-    setMuted(next);
-    setMutedState(next);
-  }
 
   function handleLogout() {
     if (onLogout) {
@@ -158,16 +146,6 @@ export default function Header({ student, onLogout }: HeaderProps) {
                 </Link>
               );
             })()}
-
-            {/* Ljud på/av */}
-            <button
-              onClick={toggleMute}
-              className="hidden sm:block p-2.5 rounded-xl text-sv-400 dark:text-gray-400 hover:bg-sv-50 dark:hover:bg-gray-800 hover:text-sv-600 transition-all touch-manipulation cursor-pointer border-2 border-transparent hover:border-sv-200"
-              aria-label={muted ? "Sätt på ljud" : "Stäng av ljud"}
-              title={muted ? "Sätt på ljud" : "Stäng av ljud"}
-            >
-              {muted ? "🔇" : "🔊"}
-            </button>
 
             {/* Dark mode */}
             <button

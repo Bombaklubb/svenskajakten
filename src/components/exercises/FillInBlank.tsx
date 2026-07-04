@@ -3,7 +3,6 @@
 import { useState, useRef } from "react";
 import type { FillInBlankExercise } from "@/lib/types";
 import { getCorrectMessage } from "@/lib/feedback";
-import { playCorrect, playWrong } from "@/lib/sound";
 
 interface Props {
   exercise: FillInBlankExercise;
@@ -31,12 +30,7 @@ export default function FillInBlank({ exercise, onAnswer, isLast }: Props) {
     const expected = normalizeAnswer(exercise.answer);
     const alternatives = (exercise.alternativeAnswers ?? []).map(normalizeAnswer);
     const correct = given === expected || alternatives.includes(given);
-    if (correct) {
-      setCorrectMsg(getCorrectMessage());
-      playCorrect();
-    } else {
-      playWrong();
-    }
+    if (correct) setCorrectMsg(getCorrectMessage());
     setState(correct ? "correct" : "wrong");
   }
 

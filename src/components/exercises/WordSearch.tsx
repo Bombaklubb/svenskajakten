@@ -2,7 +2,6 @@
 
 import { useState, useMemo, useCallback } from "react";
 import type { WordSearchWord } from "@/lib/types";
-import { playCorrect } from "@/lib/sound";
 
 interface Cell { row: number; col: number }
 interface PlacedWord { word: string; cells: Cell[] }
@@ -135,7 +134,6 @@ export default function WordSearch({ words, onAllFound, pointsPerWord = 5 }: Wor
         const colorIdx = foundWords.length % FOUND_COLORS.length;
         const newFound = [...foundWords, { word: matchedPlaced.word, cells: matchedPlaced.cells, color: FOUND_COLORS[colorIdx] }];
         setFoundWords(newFound);
-        playCorrect();
         if (newFound.length === placed.length) {
           setTimeout(() => onAllFound(newFound.length * pointsPerWord), 600);
         }
