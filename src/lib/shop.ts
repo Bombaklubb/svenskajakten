@@ -271,6 +271,21 @@ const RAW_THEMES: Omit<Theme, "price">[] = [
   { id: "bubbelhav",   name: "Bubbelhavstema",  rarity: "sallsynt",    className: "",
     swatch: "radial-gradient(circle at 30% 70%, rgba(255,255,255,0.45) 0 5px, transparent 6px) 0 0 / 24px 24px, radial-gradient(circle at 75% 35%, rgba(255,255,255,0.35) 0 7px, transparent 8px) 0 0 / 30px 30px, linear-gradient(160deg, #38bdf8, #0369a1)",
     bg:     "radial-gradient(circle at 30% 70%, rgba(255,255,255,0.4) 0 14px, transparent 15px) 0 0 / 120px 120px, radial-gradient(circle at 75% 40%, rgba(255,255,255,0.28) 0 20px, transparent 21px) 0 0 / 150px 150px, radial-gradient(circle at 55% 88%, rgba(255,255,255,0.22) 0 10px, transparent 11px) 0 0 / 100px 100px, linear-gradient(160deg, #38bdf8, #0369a1)" },
+  { id: "tvspel",      name: "TV-spelstema",    rarity: "episk",       className: "",
+    swatch: "conic-gradient(rgba(255,255,255,0.14) 0 25%, transparent 0 50%, rgba(255,255,255,0.14) 0 75%, transparent 0) 0 0 / 14px 14px, linear-gradient(135deg, #312e81, #6d28d9 55%, #1e1b4b)",
+    bg:     "repeating-linear-gradient(0deg, rgba(0,0,0,0.18) 0 3px, transparent 3px 7px), conic-gradient(rgba(255,255,255,0.10) 0 25%, transparent 0 50%, rgba(255,255,255,0.10) 0 75%, transparent 0) 0 0 / 46px 46px, linear-gradient(135deg, #312e81, #6d28d9 55%, #1e1b4b)" },
+  { id: "dataspel",    name: "Dataspelstema",   rarity: "episk",       className: "",
+    swatch: "repeating-linear-gradient(0deg, rgba(34,211,238,0.5) 0 1.5px, transparent 1.5px 12px), repeating-linear-gradient(90deg, rgba(34,211,238,0.5) 0 1.5px, transparent 1.5px 12px), linear-gradient(180deg, #0f172a, #172554)",
+    bg:     "repeating-linear-gradient(0deg, rgba(34,211,238,0.35) 0 2px, transparent 2px 44px), repeating-linear-gradient(90deg, rgba(34,211,238,0.35) 0 2px, transparent 2px 44px), radial-gradient(circle at 50% 0%, rgba(236,72,153,0.35), transparent 60%), linear-gradient(180deg, #0f172a, #172554)" },
+  { id: "fotboll",     name: "Fotbollstema",    rarity: "ovanlig",     className: "",
+    swatch: "repeating-linear-gradient(90deg, #16a34a 0 12px, #15803d 12px 24px)",
+    bg:     "radial-gradient(circle at 50% 50%, rgba(255,255,255,0.55) 0 3px, transparent 4px) 0 0 / 100% 100%, repeating-linear-gradient(90deg, #16a34a 0 56px, #15803d 56px 112px)" },
+  { id: "dans",        name: "Danstema",        rarity: "sallsynt",    className: "",
+    swatch: "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.8) 0 2px, transparent 3px) 0 0 / 16px 16px, radial-gradient(circle at 70% 65%, rgba(253,224,71,0.8) 0 2px, transparent 3px) 0 0 / 22px 22px, linear-gradient(135deg, #db2777, #7c3aed)",
+    bg:     "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.75) 0 3px, transparent 4px) 0 0 / 70px 70px, radial-gradient(circle at 70% 60%, rgba(253,224,71,0.7) 0 3px, transparent 4px) 0 0 / 90px 90px, radial-gradient(circle at 50% 85%, rgba(103,232,249,0.6) 0 2.5px, transparent 3.5px) 0 0 / 110px 110px, linear-gradient(135deg, #db2777, #7c3aed)" },
+  { id: "hastar",      name: "Hästtema",        rarity: "sallsynt",    className: "",
+    swatch: "radial-gradient(ellipse 10px 7px at 30% 35%, rgba(120,53,15,0.5) 60%, transparent 65%) 0 0 / 26px 26px, radial-gradient(ellipse 8px 6px at 70% 70%, rgba(146,64,14,0.45) 60%, transparent 65%) 0 0 / 26px 26px, linear-gradient(135deg, #d6b088, #b07d4f)",
+    bg:     "radial-gradient(ellipse 26px 18px at 28% 32%, rgba(120,53,15,0.4) 60%, transparent 66%) 0 0 / 110px 110px, radial-gradient(ellipse 22px 15px at 72% 68%, rgba(146,64,14,0.35) 60%, transparent 66%) 0 0 / 110px 110px, radial-gradient(ellipse 18px 13px at 50% 92%, rgba(120,53,15,0.3) 60%, transparent 66%) 0 0 / 110px 110px, linear-gradient(135deg, #d6b088, #b07d4f)" },
 ];
 
 export const THEMES: Theme[] = RAW_THEMES.map((t) => ({ ...t, price: RARITY_META[t.rarity].price }));
