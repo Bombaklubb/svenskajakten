@@ -14,6 +14,18 @@ export const MAX_CHESTS_PER_TYPE = 30;
 /** Points awarded for the first activity of each day (ties into the streak system). */
 export const DAILY_LOGIN_BONUS = 50;
 
+/**
+ * Surprise points multiplier rolled when a module is completed.
+ * Pure chance (no pattern): ~4% triple points, ~8% double points, otherwise 1.
+ * Kept deliberately unpredictable so students can't game it.
+ */
+export function rollSurpriseMultiplier(): 1 | 2 | 3 {
+  const r = Math.random();
+  if (r < 0.04) return 3;
+  if (r < 0.12) return 2;
+  return 1;
+}
+
 export function getPointsMultiplier(prevAttempts: number): number {
   if (prevAttempts === 0) return 1.0;
   if (prevAttempts === 1) return 0.7;

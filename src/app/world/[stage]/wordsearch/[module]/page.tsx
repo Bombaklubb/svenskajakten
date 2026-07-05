@@ -7,7 +7,7 @@ import { notFound } from "next/navigation";
 import Header from "@/components/ui/Header";
 import WordSearch from "@/components/exercises/WordSearch";
 import { loadStudent, saveStudent, saveModuleProgress, loadGamification, saveGamification } from "@/lib/storage";
-import { chestsEarnedFromPoints, chestsEarnedFromExercises, chestsEarnedFromAchievements, rollMysteryBox, capNewChests, BOSS_UNLOCK_THRESHOLD, getPointsMultiplier } from "@/lib/gamification";
+import { chestsEarnedFromPoints, chestsEarnedFromExercises, chestsEarnedFromAchievements, rollMysteryBox, rollSurpriseMultiplier, capNewChests, BOSS_UNLOCK_THRESHOLD, getPointsMultiplier } from "@/lib/gamification";
 import { ACHIEVEMENTS, isUnlocked } from "@/lib/achievements";
 import MysteryBoxPopup from "@/components/ui/MysteryBoxPopup";
 import { BlurFade } from "@/components/magicui/blur-fade";
@@ -35,6 +35,7 @@ export default function WordSearchModulePage({ params }: Props) {
   const [bossJustUnlocked, setBossJustUnlocked] = useState(false);
   const [mysteryBox, setMysteryBox] = useState<MysteryBoxReward | null>(null);
   const [prevAttemptCount, setPrevAttemptCount] = useState(0);
+  const [surpriseMult, setSurpriseMult] = useState(1);
 
   useEffect(() => {
     const s = loadStudent();
@@ -64,13 +65,15 @@ export default function WordSearchModulePage({ params }: Props) {
   function handleAllFound(points: number) {
     const totalPoints = points + (mod?.bonusPoints ?? 0);
     setEarnedPoints(totalPoints);
+    const surprise = rollSurpriseMultiplier();
+    setSurpriseMult(surprise);
 
     if (!student) { setPhase("done"); return; }
 
     const wasAlreadyCompleted = student.stages[stage!.id]?.wordsearchModules?.[moduleId]?.completed ?? false;
     setPrevAttemptCount(student.stages[stage!.id]?.wordsearchModules?.[moduleId]?.attempts ?? 0);
     const oldPoints = student.totalPoints;
-    const updatedStudent = saveModuleProgress(student, stageId as any, "wordsearch", moduleId, totalPoints, true);
+    const updatedStudent = saveModuleProgress(student, stageId as any, "wordsearch", moduleId, totalPoints * surprise, true);
     setStudent(updatedStudent);
 
     const gam = loadGamification();
@@ -209,6 +212,24 @@ export default function WordSearchModulePage({ params }: Props) {
                 );
               })()}
 
+              {surpriseMult > 1 && (
+                <div
+                  className={`rounded-2xl p-4 mb-4 border-3 animate-pop ${
+                    surpriseMult === 3
+                      ? "bg-gradient-to-r from-fuchsia-100 to-purple-100 dark:from-fuchsia-900/40 dark:to-purple-900/40 border-fuchsia-400 dark:border-fuchsia-600"
+                      : "bg-gradient-to-r from-emerald-100 to-teal-100 dark:from-emerald-900/40 dark:to-teal-900/40 border-emerald-400 dark:border-emerald-600"
+                  }`}
+                  style={{ boxShadow: surpriseMult === 3 ? "0 4px 0 0 rgba(192,38,211,0.3)" : "0 4px 0 0 rgba(16,185,129,0.3)" }}
+                >
+                  <p className={`text-xl font-black ${surpriseMult === 3 ? "text-fuchsia-700 dark:text-fuchsia-300" : "text-emerald-700 dark:text-emerald-300"}`}>
+                    {surpriseMult === 3 ? "💥 JACKPOTT! TRIPPLA POÄNG! ×3" : "🍀 TUR! DUBBLA POÄNG! ×2"}
+                  </p>
+                  <p className={`text-sm font-bold mt-1 ${surpriseMult === 3 ? "text-fuchsia-600 dark:text-fuchsia-400" : "text-emerald-600 dark:text-emerald-400"}`}>
+                    En sällsynt överraskning – dina poäng multipliceras!
+                  </p>
+                </div>
+              )}
+
               <div
                 className="bg-gradient-to-b from-amber-50 to-amber-100 dark:bg-amber-900/30 border-3 border-amber-300 dark:border-amber-700 rounded-2xl p-5 mb-4"
                 style={{ boxShadow: "0 4px 0 0 rgba(245,158,11,0.25)" }}
@@ -216,12 +237,12 @@ export default function WordSearchModulePage({ params }: Props) {
                 <div className="flex items-center justify-center gap-3 text-amber-700 dark:text-amber-300">
                   <span className="text-3xl">⭐</span>
                   <div>
-                    <span className="text-3xl font-black">{Math.round(earnedPoints * getPointsMultiplier(prevAttemptCount))}</span>
+                    <span className="text-3xl font-black">{Math.round(earnedPoints * getPointsMultiplier(prevAttemptCount)) * surpriseMult}</span>
                     <span className="text-lg ml-1 font-bold">poäng</span>
                   </div>
                 </div>
                 <p className="text-sm text-amber-600 dark:text-amber-400 mt-1.5 font-semibold">
-                  inkl. {Math.round(mod.bonusPoints * getPointsMultiplier(prevAttemptCount))} bonuspoäng för att hitta alla ord!
+                  inkl. {Math.round(mod.bonusPoints * getPointsMultiplier(prevAttemptCount)) * surpriseMult} bonuspoäng för att hitta alla ord!
                 </p>
               </div>
 

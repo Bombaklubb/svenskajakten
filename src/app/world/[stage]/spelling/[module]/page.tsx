@@ -19,6 +19,7 @@ import {
   chestsEarnedFromExercises,
   chestsEarnedFromAchievements,
   rollMysteryBox,
+  rollSurpriseMultiplier,
   capNewChests,
   BOSS_UNLOCK_THRESHOLD,
 } from "@/lib/gamification";
@@ -56,6 +57,7 @@ export default function SpellingModulePage({ params }: Props) {
   const [bossJustUnlocked, setBossJustUnlocked] = useState(false);
   const [mysteryBox, setMysteryBox] = useState<MysteryBoxReward | null>(null);
   const [prevAttemptCount, setPrevAttemptCount] = useState(0);
+  const [surpriseMult, setSurpriseMult] = useState(1);
 
   useEffect(() => {
     const s = loadStudent();
@@ -133,6 +135,8 @@ export default function SpellingModulePage({ params }: Props) {
       const pts = totalCorrect * POINTS_PER_CORRECT;
       const passed = (totalCorrect / totalExercises) >= 0.6;
       const finalPts = passed ? pts + mod!.bonusPoints : pts;
+      const surprise = rollSurpriseMultiplier();
+      setSurpriseMult(surprise);
 
       if (student) {
         const wasAlreadyCompleted = student.stages[stage!.id]?.spellingModules?.[mod!.id]?.completed ?? false;
@@ -142,7 +146,7 @@ export default function SpellingModulePage({ params }: Props) {
           stage!.id,
           "spelling",
           mod!.id,
-          finalPts,
+          finalPts * surprise,
           passed
         );
         setStudent(updated);
@@ -403,6 +407,7 @@ export default function SpellingModulePage({ params }: Props) {
           onContinue={handleContinue}
           onRetry={handleRetry}
           prevAttempts={prevAttemptCount}
+          surpriseMultiplier={surpriseMult}
         />
       )}
 

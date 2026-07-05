@@ -12,6 +12,7 @@ import {
   chestsEarnedFromExercises,
   chestsEarnedFromAchievements,
   rollMysteryBox,
+  rollSurpriseMultiplier,
   capNewChests,
   BOSS_UNLOCK_THRESHOLD,
 } from "@/lib/gamification";
@@ -59,6 +60,7 @@ export default function StavningstestPage({ params }: Props) {
   const [bossJustUnlocked, setBossJustUnlocked] = useState(false);
   const [mysteryBox, setMysteryBox] = useState<MysteryBoxReward | null>(null);
   const [prevAttemptCount, setPrevAttemptCount] = useState(0);
+  const [surpriseMult, setSurpriseMult] = useState(1);
 
   const inputRef = useRef<HTMLInputElement>(null);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -134,11 +136,13 @@ export default function StavningstestPage({ params }: Props) {
     const totalCorrect = finalResults.filter(Boolean).length;
     const passed = totalCorrect === totalWords; // must get ALL correct
     const pts = passed ? totalCorrect * POINTS_PER_CORRECT + (mod?.bonusPoints ?? 0) : totalCorrect * POINTS_PER_CORRECT;
+    const surprise = rollSurpriseMultiplier();
+    setSurpriseMult(surprise);
 
     if (student && mod) {
       const wasAlreadyCompleted = student.stages[stage!.id]?.stavningstestModules?.[mod.id]?.completed ?? false;
       setPrevAttemptCount(student.stages[stage!.id]?.stavningstestModules?.[mod.id]?.attempts ?? 0);
-      const updated = saveModuleProgress(student, stage!.id, "stavningstest", mod.id, pts, passed);
+      const updated = saveModuleProgress(student, stage!.id, "stavningstest", mod.id, pts * surprise, passed);
       setStudent(updated);
 
       const gam = loadGamification();
@@ -488,6 +492,7 @@ export default function StavningstestPage({ params }: Props) {
           onRetry={handleRetry}
           passedOverride={totalCorrect === totalWords}
           prevAttempts={prevAttemptCount}
+          surpriseMultiplier={surpriseMult}
           subtitle={
             totalCorrect === totalWords
               ? "🎉 Perfekt! Alla ord rätt – testet klarat!"

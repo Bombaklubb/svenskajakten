@@ -35,6 +35,8 @@ interface ResultModalProps {
   passedOverride?: boolean;
   subtitle?: string;
   prevAttempts?: number;
+  /** Surprise bonus: 2 = double points, 3 = triple points (1/undefined = none) */
+  surpriseMultiplier?: number;
 }
 
 export default function ResultModal({
@@ -49,12 +51,14 @@ export default function ResultModal({
   passedOverride,
   subtitle,
   prevAttempts = 0,
+  surpriseMultiplier = 1,
 }: ResultModalProps) {
   const pct = Math.round((totalCorrect / totalQuestions) * 100);
   const passed = passedOverride !== undefined ? passedOverride : pct >= 60;
   const multiplier = getPointsMultiplier(prevAttempts);
-  const displayPoints = Math.round(points * multiplier);
-  const displayBonus = Math.round(bonusPoints * multiplier);
+  const surprise = surpriseMultiplier > 1 ? surpriseMultiplier : 1;
+  const displayPoints = Math.round(points * multiplier) * surprise;
+  const displayBonus = Math.round(bonusPoints * multiplier) * surprise;
 
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fade-in">
@@ -105,6 +109,25 @@ export default function ResultModal({
               {multiplier === 0
                 ? "ℹ️ Du har gjort denna övning flera gånger – du får inga fler poäng för den."
                 : `ℹ️ Du har gjort denna övning förut – du får ${Math.round(multiplier * 100)}% av poängen.`}
+            </p>
+          </div>
+        )}
+
+        {/* Surprise multiplier */}
+        {surprise > 1 && displayPoints > 0 && (
+          <div
+            className={`rounded-2xl p-4 mb-4 border-3 animate-pop ${
+              surprise === 3
+                ? "bg-gradient-to-r from-fuchsia-100 to-purple-100 dark:from-fuchsia-900/40 dark:to-purple-900/40 border-fuchsia-400 dark:border-fuchsia-600"
+                : "bg-gradient-to-r from-emerald-100 to-teal-100 dark:from-emerald-900/40 dark:to-teal-900/40 border-emerald-400 dark:border-emerald-600"
+            }`}
+            style={{ boxShadow: surprise === 3 ? "0 4px 0 0 rgba(192,38,211,0.3)" : "0 4px 0 0 rgba(16,185,129,0.3)" }}
+          >
+            <p className={`text-xl font-black ${surprise === 3 ? "text-fuchsia-700 dark:text-fuchsia-300" : "text-emerald-700 dark:text-emerald-300"}`}>
+              {surprise === 3 ? "💥 JACKPOTT! TRIPPLA POÄNG! ×3" : "🍀 TUR! DUBBLA POÄNG! ×2"}
+            </p>
+            <p className={`text-sm font-bold mt-1 ${surprise === 3 ? "text-fuchsia-600 dark:text-fuchsia-400" : "text-emerald-600 dark:text-emerald-400"}`}>
+              En sällsynt överraskning – dina poäng multipliceras!
             </p>
           </div>
         )}
