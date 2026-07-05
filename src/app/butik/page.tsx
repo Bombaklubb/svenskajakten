@@ -223,7 +223,7 @@ export default function ButikPage() {
                       const affordable = spendable >= a.price;
                       return (
                         <div key={a.id} className="card flex flex-col items-center text-center !p-4">
-                          <FramedAvatar avatar={a} frameId={student.equippedFrame} effectId={student.equippedEffect} size={72} className="mb-2" />
+                          <FramedAvatar avatar={a} frameId={student.equippedFrame} size={72} className="mb-2" />
                           <div className="font-black text-sm text-sv-900 dark:text-gray-100 leading-tight">{a.name}</div>
                           <div className="my-1.5"><RarityBadge rarity={a.rarity} /></div>
                           {!owned && <PriceTag price={a.price} />}
@@ -469,7 +469,7 @@ export default function ButikPage() {
                     const equipped = student.avatar === a.id;
                     return (
                       <div key={a.id} className="card flex flex-col items-center text-center !p-4">
-                        <FramedAvatar avatar={a} frameId={student.equippedFrame} effectId={student.equippedEffect} size={72} className="mb-2" />
+                        <FramedAvatar avatar={a} frameId={student.equippedFrame} size={72} className="mb-2" />
                         <div className="font-black text-sm text-sv-900 dark:text-gray-100 leading-tight">{a.name}</div>
                         <div className="my-1.5"><RarityBadge rarity={a.rarity} /></div>
                         <div className="w-full mt-1">

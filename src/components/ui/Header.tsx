@@ -105,17 +105,6 @@ export default function Header({ student, onLogout }: HeaderProps) {
               <span className="text-sm font-bold text-amber-700 dark:text-amber-400">{student.totalPoints}</span>
             </div>
 
-            {/* Streak */}
-            {(student.streak ?? 0) >= 2 && (
-              <div
-                className="hidden xs:flex items-center gap-1.5 bg-gradient-to-b from-orange-50 to-orange-100 dark:bg-orange-900/30 border-2 border-orange-300 dark:border-orange-700 px-3 py-1.5 rounded-xl cursor-default"
-                style={{ boxShadow: "0 3px 0 0 rgba(249, 115, 22, 0.25), inset 0 2px 4px 0 rgba(255, 255, 255, 0.8)" }}
-              >
-                <span className="text-base">🔥</span>
-                <span className="text-sm font-bold text-orange-700 dark:text-orange-400">{student.streak}</span>
-              </div>
-            )}
-
             {/* Avatar */}
             {(() => {
               const av = getAvatar(student.avatar ?? "ninja");
