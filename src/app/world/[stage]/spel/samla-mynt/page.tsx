@@ -17,7 +17,7 @@ const QUESTIONS: Record<string, { q: string; options: string[]; correct: number 
     { q: "Vad är ett ADJEKTIV?", options: ["Handlingsord", "Namn på saker", "Anger tid", "Beskriver hur något är"], correct: 3 },
     { q: "Vad sätts efter en FRÅGA?", options: ["Punkt", "Komma", "Frågetecken", "Utropstecken"], correct: 2 },
     { q: "Vad börjar varje mening med?", options: ["Liten bokstav", "Siffra", "Stor bokstav", "Punkt"], correct: 2 },
-    { q: "Vad är en VOKAL?", options: ["B, C, D, F", "A, E, I, O, U, Å, Ä, Ö", "Bara A och E", "Alla bokstäver"], correct: 1 },
+    { q: "Vad är en VOKAL?", options: ["B, C, D, F", "A, E, I, O, U, Y, Å, Ä, Ö", "Bara A och E", "Alla bokstäver"], correct: 1 },
     { q: "Vad är ett SYNONYM?", options: ["Motsatsord", "Ord med liknande betydelse", "Felstavat ord", "Frågeord"], correct: 1 },
     { q: "Vad är en MENING?", options: ["En bok", "En bokstav", "Ord som bildar en hel tanke", "En rubrik"], correct: 2 },
     { q: "Vad kallas textens TITEL?", options: ["Stycke", "Rubrik", "Dialog", "Paragraf"], correct: 1 },

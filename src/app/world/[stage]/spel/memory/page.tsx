@@ -66,7 +66,7 @@ const CONCEPT_PAIRS: Record<string, { term: string; def: string }[]> = {
     { term: "kongruens",     def: "böjningsöverensstämmelse i meningen" },
     { term: "nominalfras",   def: "substantiv med bestämningar" },
     { term: "preposition",   def: "anger relation i rum eller tid (på, i, av)" },
-    { term: "ordföljd",      def: "ordningens placering i meningen" },
+    { term: "ordföljd",      def: "ordens placering i meningen" },
     { term: "inversion",     def: "subjektet kommer efter predikatet" },
     { term: "syftningsfel",  def: "oklart vad ett pronomen syftar på" },
     { term: "formellt språk",def: "officiellt och neutralt språkbruk" },

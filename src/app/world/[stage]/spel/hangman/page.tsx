@@ -59,7 +59,7 @@ const WORDS: Record<string, { word: string; hint: string }[]> = {
     { word: "NOMINALFRAS",  hint: "Substantiv med bestämningar" },
     { word: "PASSIV",       hint: "Subjektet utsätts för handlingen" },
     { word: "AKTIV",        hint: "Subjektet utför handlingen" },
-    { word: "ORDFÖLJD",     hint: "Ordningens placering i meningen" },
+    { word: "ORDFÖLJD",     hint: "Ordens ordning i meningen" },
     { word: "SUBJUNKTION",  hint: "Ord som inleder bisats – att, om, när" },
   ],
   gymnasiet: [

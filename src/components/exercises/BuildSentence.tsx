@@ -42,9 +42,11 @@ export default function BuildSentence({ exercise, onAnswer, isLast }: Props) {
 
   function checkAnswer() {
     if (placed.length !== exercise.words.length) return;
+    // Compare the actual words at each position (not tile indices) so that
+    // sentences containing the same word twice accept either identical tile.
     const correct =
       placed.length === exercise.correctOrder.length &&
-      placed.every((wordIdx, pos) => wordIdx === exercise.correctOrder[pos]);
+      placed.every((wordIdx, pos) => exercise.words[wordIdx] === exercise.words[exercise.correctOrder[pos]]);
     if (correct) setCorrectMsg(getCorrectMessage());
     setState(correct ? "correct" : "wrong");
   }
