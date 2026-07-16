@@ -771,7 +771,7 @@
         "Adjektiv beskriver substantivet – hur något är eller ser ut.",
         "Exempel: Martin är lång. Bollen är röd. Huset är stort.",
         "Exempel på adjektiv: stor, liten, glad, söt, röd, snabb.",
-        "Fråga dig: Hur är det/hen/det? – Svaret är ett adjektiv!"
+        "Fråga dig: Hur är den/hen/det? – Svaret är ett adjektiv!"
       ],
       "exercises": [
         {
@@ -1058,7 +1058,11 @@
           "question": "Fyll i: '___ heter Maja och bor i Stockholm.' (börja meningen)",
           "answer": "Hon",
           "hint": "Det första ordet i en mening ska ha stor bokstav.",
-          "explanation": "Varje mening börjar med stor bokstav."
+          "explanation": "Varje mening börjar med stor bokstav.",
+          "alternativeAnswers": [
+            "Jag",
+            "Flickan"
+          ]
         },
         {
           "type": "multiple-choice",
@@ -1801,7 +1805,7 @@
         },
         {
           "type": "multiple-choice",
-          "question": "Vilket ord stavas rätt? (fordonet man cyklar på vägen med, har motor)",
+          "question": "Vilket ord stavas rätt? (fordonet man kör på vägen, har motor)",
           "options": [
             "dil",
             "bil",
@@ -1816,7 +1820,10 @@
           "question": "Fyll i rätt bokstav: '__röd' (matbröd man äter till frukost)",
           "answer": "b",
           "hint": "Bröd eller dröd? Tänk på b-ljudet med läpparna.",
-          "explanation": "'Bröd' börjar med b. Man gör b-ljudet genom att sluta och öppna läpparna."
+          "explanation": "'Bröd' börjar med b. Man gör b-ljudet genom att sluta och öppna läpparna.",
+          "alternativeAnswers": [
+            "bröd"
+          ]
         },
         {
           "type": "multiple-choice",
@@ -1880,11 +1887,14 @@
           "question": "Fyll i rätt bokstav: '__jur' (levande varelser som inte är människor, t.ex. räv och björn)",
           "answer": "d",
           "hint": "Börjar det med b-ljud eller d-ljud? Säg ordet högt!",
-          "explanation": "'Djur' börjar med d. Lyssna: D-JUR. Det låter inte som ett b!"
+          "explanation": "'Djur' börjar med d. Lyssna: D-JUR. Det låter inte som ett b!",
+          "alternativeAnswers": [
+            "djur"
+          ]
         },
         {
           "type": "multiple-choice",
-          "question": "Välj rätt ord: 'Klockan är tre på ___dagen.'",
+          "question": "Välj rätt ord: 'Klockan är tre på ___.'",
           "options": [
             "balten",
             "dagen",
@@ -1935,14 +1945,20 @@
           "question": "Fyll i rätt bokstav: '__rev' (ett papper man skriver och skickar till någon)",
           "answer": "b",
           "hint": "Brev eller drev? Tänk på b-ljudet med läpparna.",
-          "explanation": "'Brev' börjar med b. Man skriver ett brev till sin kompis – B-R-E-V."
+          "explanation": "'Brev' börjar med b. Man skriver ett brev till sin kompis – B-R-E-V.",
+          "alternativeAnswers": [
+            "brev"
+          ]
         },
         {
           "type": "fill-in-blank",
           "question": "Fyll i rätt bokstav: '__arn' (unga människor, t.ex. i skolan)",
           "answer": "b",
           "hint": "Barn eller darn? Säg ordet högt – börjar det med b-ljud eller d-ljud?",
-          "explanation": "'Barn' börjar med b. Man gör b-ljudet med läpparna: B-A-R-N."
+          "explanation": "'Barn' börjar med b. Man gör b-ljudet med läpparna: B-A-R-N.",
+          "alternativeAnswers": [
+            "barn"
+          ]
         },
         {
           "type": "multiple-choice",
@@ -1970,7 +1986,7 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Fyll i rätt bokstav: '__ol' (något runt man spelar med)",
+          "question": "Fyll i rätt bokstav: '__oll' (något runt man spelar med)",
           "answer": "b",
           "hint": "Bol eller dol? Tänk på b-ljudet!",
           "explanation": "'Boll' börjar med b. Man slår ihop läpparna för att göra b-ljud: B-O-L-L."
@@ -1992,7 +2008,10 @@
           "question": "Fyll i rätt bokstav: '__uva' (en fågel som kurrar)",
           "answer": "d",
           "hint": "Duva eller buva? Lyssna på begynnelseljudet.",
-          "explanation": "'Duva' börjar med d. D-U-V-A. Det är ett d-ljud, inte b-ljud!"
+          "explanation": "'Duva' börjar med d. D-U-V-A. Det är ett d-ljud, inte b-ljud!",
+          "alternativeAnswers": [
+            "duva"
+          ]
         },
         {
           "type": "multiple-choice",
@@ -2120,7 +2139,7 @@
           "question": "Välj rätt stavning: 'Jag ___ger mig tidigt.' (lägger sig för att sova)",
           "options": [
             "leger",
-            "läger",
+            "lägger",
             "leker",
             "lager"
           ],
@@ -2776,7 +2795,7 @@
       "exercises": [
         {
           "type": "multiple-choice",
-          "question": "Vilket tecken hör hemst i slutet av: 'Hej vad heter du___'",
+          "question": "Vilket tecken hör hemma i slutet av: 'Hej vad heter du___'",
           "options": [
             ".",
             "!",
@@ -2824,7 +2843,7 @@
             "Vi",
             "vann",
             "matchen",
-            "."
+            "!"
           ],
           "correctOrder": [
             0,
@@ -2919,13 +2938,13 @@
           "type": "multiple-choice",
           "question": "Vilken mening är rätt skriven?",
           "options": [
-            "kom hit sa mamma.",
-            "Kom hit sa mamma.",
-            "Kom hit! sa mamma.",
-            "Kom hit, sa mamma."
+            "– kom hit! sa mamma.",
+            "Kom hit! – sa mamma.",
+            "– Kom hit! sa mamma.",
+            "– Kom hit sa mamma!"
           ],
           "correctIndex": 2,
-          "explanation": "'Kom hit!' är ett utrop/kommando – det avslutas med utropstecken."
+          "explanation": "Repliken inleds med talstreck (–) och stor bokstav. 'Kom hit!' är ett utrop – det avslutas med utropstecken: – Kom hit! sa mamma."
         },
         {
           "type": "fill-in-blank",
@@ -3152,7 +3171,7 @@
           "question": "Vilket ord är en synonym till 'liten'?",
           "options": [
             "stor",
-            "winzig",
+            "smal",
             "pytteliten",
             "bred"
           ],
@@ -3217,7 +3236,7 @@
         {
           "type": "fill-in-blank",
           "question": "En synonym till 'titta' är 'se'. En synonym till 'kasta' är 'sl___nga'.",
-          "answer": "ä",
+          "answer": "u",
           "hint": "Slunga – att kasta något med kraft.",
           "explanation": "'Slunga' är en synonym till 'kasta' – att kasta med kraft."
         },
@@ -3503,8 +3522,7 @@
             "men",
             "myran",
             "är",
-            "liten",
-            "."
+            "liten."
           ],
           "correctOrder": [
             0,
@@ -3513,8 +3531,7 @@
             3,
             4,
             5,
-            6,
-            7
+            6
           ],
           "explanation": "'Stor' och 'liten' är motsatsord – elefanten är stor, myran är liten."
         },
@@ -3822,9 +3839,9 @@
         {
           "type": "fill-in-blank",
           "question": "Sätt ihop: 'sommar' + 'stuga' = ___",
-          "answer": "sommarsuga",
+          "answer": "sommarstuga",
           "hint": "En stuga man bor i på sommaren.",
-          "explanation": "'Sommarsuga' – sommar + stuga = en stuga för sommaren."
+          "explanation": "'Sommarstuga' – sommar + stuga = en stuga för sommaren."
         },
         {
           "type": "multiple-choice",
@@ -3840,7 +3857,7 @@
         },
         {
           "type": "multiple-choice",
-          "question": "Vad för slags föremål är en 'fågelbo'?",
+          "question": "Vad för slags föremål är ett 'fågelbo'?",
           "options": [
             "en fågel",
             "ett bo",
@@ -3930,7 +3947,7 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Sätt ihop: 'land' + 'väg' = ___",
+          "question": "Sätt ihop: 'lands' + 'väg' = ___",
           "answer": "landsväg",
           "hint": "En väg ute på landet.",
           "explanation": "'Landsväg' = lands + väg. En stor väg utanför staden."
@@ -4273,7 +4290,11 @@
           "question": "Fyll i rätt preposition: 'Kom och sätt dig ___ mig.'",
           "answer": "bredvid",
           "hint": "Du vill att personen sätter sig precis intill dig, på sidan om.",
-          "explanation": "'Bredvid' – att sitta bredvid någon är att sitta på sidan om dem."
+          "explanation": "'Bredvid' – att sitta bredvid någon är att sitta på sidan om dem.",
+          "alternativeAnswers": [
+            "intill",
+            "vid"
+          ]
         }
       ]
     },
@@ -4599,10 +4620,15 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Fyll i rätt form: 'Imorgon ___ vi till parken.' (verbet 'gå', framtid)",
-          "answer": "ska vi gå",
-          "hint": "Det händer imorgon – framtid. Använd 'ska' + verbet.",
-          "explanation": "'Ska gå' visar framtid. Imorgon ska vi gå till parken."
+          "question": "Fyll i rätt form: 'Imorgon ska vi ___ till parken.' (verbet 'gå', framtid)",
+          "answer": "gå",
+          "hint": "Det händer imorgon – framtid. Efter 'ska' kommer verbets grundform.",
+          "explanation": "'Ska gå' visar framtid. Imorgon ska vi gå till parken.",
+          "alternativeAnswers": [
+            "åka",
+            "cykla",
+            "springa"
+          ]
         },
         {
           "type": "multiple-choice",
@@ -5251,12 +5277,12 @@
           "question": "Vilken mening är rätt skriven med citattecken?",
           "options": [
             "\"Jag vill ha glass\" sa Maja.",
-            "\"Jag vill ha glass,\" sa Maja.",
+            "\"Jag vill ha glass\", sa Maja.",
             "Jag vill ha glass, \"sa Maja\".",
             "\"Jag vill ha glass sa\" Maja."
           ],
           "correctIndex": 1,
-          "explanation": "Repliken avslutas med kommatecken inuti citattecknen, sedan skriver man vem som sa det: sa Maja."
+          "explanation": "Repliken omges av citattecken, kommatecknet sätts EFTER citattecknet och sedan skriver man vem som sa det: \"Jag vill ha glass\", sa Maja."
         },
         {
           "type": "multiple-choice",
@@ -5345,8 +5371,8 @@
             "Jag är trött, \"suckade han.\"",
             "\"Jag är trött.\" suckade han."
           ],
-          "correctIndex": 1,
-          "explanation": "Kommatecknet sitter inuti citattecknen och sedan skriver man vem som sa det med litet begynnelsebokstav: suckade han."
+          "correctIndex": 0,
+          "explanation": "Kommatecknet sätts EFTER citattecknet: \"Jag är trött\", suckade han. Talverbet skrivs med liten bokstav."
         },
         {
           "type": "multiple-choice",
@@ -5377,12 +5403,12 @@
           "question": "Vilken mening är rätt skriven med citattecken?",
           "options": [
             "\"God natt\" viskade mamma.",
-            "\"God natt,\" viskade mamma.",
+            "\"God natt\", viskade mamma.",
             "God natt, \"viskade mamma.\"",
             "\"God natt\" viskade, mamma."
           ],
           "correctIndex": 1,
-          "explanation": "Kommatecknet sitter inuti citattecknen och 'viskade' börjar med liten bokstav: \"God natt,\" viskade mamma."
+          "explanation": "Kommatecknet sätts efter citattecknet och 'viskade' börjar med liten bokstav: \"God natt\", viskade mamma."
         },
         {
           "type": "fill-in-blank",
@@ -5431,8 +5457,8 @@
             "\"Jag vill ha mer mat.\" sa han.",
             "\"Jag vill ha mer mat\" sa han,"
           ],
-          "correctIndex": 1,
-          "explanation": "Kommat sitter INUTI citattecknen: \"...mat,\" sa han. Sedan skriver man vem som sa det med liten bokstav."
+          "correctIndex": 0,
+          "explanation": "Kommat sätts EFTER citattecknet: \"Jag vill ha mer mat\", sa han. Sedan skriver man vem som sa det med liten bokstav."
         },
         {
           "type": "multiple-choice",
@@ -5474,7 +5500,7 @@
           "question": "Vilken mening är FELAKTIGT skriven?",
           "options": [
             "\"Hej!\" sa hon.",
-            "\"God morgon,\" svarade han.",
+            "\"God morgon\", svarade han.",
             "\"Var är du\"? frågade hon.",
             "\"Titta på stjärnorna!\" viskade pappa."
           ],
@@ -5483,7 +5509,7 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Fyll i rätt bokstav: '\"Kan du hjälpa mig?\" ___ frågade Noa.'",
+          "question": "Fyll i rätt bokstav: '\"Kan du hjälpa mig?\" ___rågade Noa.'",
           "answer": "f",
           "hint": "Talverbet börjar med liten bokstav efter citattecknen.",
           "explanation": "'frågade' börjar med liten f efter citattecknen. Talverbet efter ett citat skrivs alltid med liten bokstav."
@@ -5756,15 +5782,15 @@
         },
         {
           "type": "multiple-choice",
-          "question": "Vad betyder 'Det är inte mitt fel att haren skrek'? Välj det närmaste alternativet.",
+          "question": "Vad betyder uttrycket 'Nu är goda råd dyra'? Välj det närmaste alternativet.",
           "options": [
-            "En hare skriker verkligen.",
-            "Att man inte är ansvarig för något.",
-            "Att man är rädd för harar.",
-            "Att man jagade en hare."
+            "Att det kostar pengar att få råd.",
+            "Att man snabbt behöver hitta en lösning på ett svårt problem.",
+            "Att man ska spara sina pengar.",
+            "Att man aldrig ska lyssna på råd."
           ],
           "correctIndex": 1,
-          "explanation": "Det är ett uttryck för att frånsäga sig ansvar – 'det är inte mitt fel'."
+          "explanation": "'Nu är goda råd dyra' säger man när man hamnat i en knepig situation och snabbt behöver komma på en lösning."
         },
         {
           "type": "multiple-choice",
@@ -5780,10 +5806,10 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Fyll i: 'Nu har du verkligen satt ___ i det!' betyder att du gjort något bra.",
+          "question": "Fyll i: 'Nu slog du verkligen huvudet på ___!' betyder att du sa precis rätt.",
           "answer": "spiken",
-          "hint": "Tänk på att slå en spik rakt in i väggen – rätt på målet!",
-          "explanation": "'Sätta spiken i det' (eller 'slå huvudet på spiken') betyder att göra eller säga precis rätt sak."
+          "hint": "Tänk på att träffa exakt rätt när man slår med hammaren.",
+          "explanation": "'Slå huvudet på spiken' betyder att säga eller träffa exakt rätt."
         },
         {
           "type": "multiple-choice",
@@ -5807,19 +5833,19 @@
             "Hen samlar på mynt."
           ],
           "correctIndex": 1,
-          "explanation": "'Inga fem ören kvar' är ett uttryck för att man har slut på pengar. Fem ören är den minsta myntenheten – har man inte ens det, är man pank."
+          "explanation": "'Inga fem ören kvar' är ett uttryck för att man har slut på pengar. Har man inte ens fem öre är man helt pank."
         },
         {
           "type": "multiple-choice",
-          "question": "Vad betyder uttrycket 'Sätta sig i blöt'?",
+          "question": "Vad betyder uttrycket 'Lägga näsan i blöt'?",
           "options": [
-            "Att bli våt i regnet.",
-            "Att hamna i en jobbig situation man orsakat själv.",
+            "Att doppa näsan i vatten.",
+            "Att lägga sig i andras angelägenheter.",
             "Att bada i ett badkar.",
-            "Att glömma paraplyet hemma."
+            "Att vara förkyld och snuvig."
           ],
           "correctIndex": 1,
-          "explanation": "'Sätta sig i blöt' betyder att man orsakat sig själv problem – man har hamnat i en besvärlig sits."
+          "explanation": "'Lägga näsan i blöt' betyder att man lägger sig i saker som man egentligen inte har med att göra."
         },
         {
           "type": "multiple-choice",
@@ -5847,10 +5873,10 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Fyll i: 'Nu har du verkligen klippt till ___.' Betyder att man gjort något modigt.",
-          "answer": "dig",
-          "hint": "Man klipper till – sig eller något annat?",
-          "explanation": "'Klippa till sig' betyder att göra något med kraft eller mod – ta för sig."
+          "question": "Fyll i: 'Nu får du bita i det sura ___.' Betyder att man gör något jobbigt fast man inte vill.",
+          "answer": "äpplet",
+          "hint": "Tänk på en sur frukt som man ändå måste ta en tugga av.",
+          "explanation": "'Bita i det sura äpplet' betyder att göra något tråkigt eller svårt för att man måste."
         },
         {
           "type": "multiple-choice",
@@ -6326,7 +6352,10 @@
           "question": "Fyll i O eller Å: 'r_s' (en blomma med taggar)",
           "answer": "O",
           "hint": "Tänk på en röd blomma – 'ros'. Vilken vokal hör du?",
-          "explanation": "'Ros' stavas med O."
+          "explanation": "'Ros' stavas med O.",
+          "alternativeAnswers": [
+            "ros"
+          ]
         },
         {
           "id": "o-aa-lag-1-6",
@@ -6334,7 +6363,10 @@
           "question": "Fyll i O eller Å: 'r_d' (nyttigt förslag man ger någon)",
           "answer": "Å",
           "hint": "Läraren ger dig ett ___ när du fastnar. Hör du O eller Å?",
-          "explanation": "'Råd' stavas med Å."
+          "explanation": "'Råd' stavas med Å.",
+          "alternativeAnswers": [
+            "råd"
+          ]
         },
         {
           "id": "o-aa-lag-1-7",
@@ -6394,7 +6426,10 @@
           "question": "Fyll i O eller Å: 'b_k' (du läser i den)",
           "answer": "O",
           "hint": "Tänk på din läsbok i skolan – hur stavas den?",
-          "explanation": "'Bok' stavas med O."
+          "explanation": "'Bok' stavas med O.",
+          "alternativeAnswers": [
+            "bok"
+          ]
         },
         {
           "id": "o-aa-lag-1-12",
@@ -6402,7 +6437,10 @@
           "question": "Fyll i O eller Å: 'h_l' (ett hål i strumpan)",
           "answer": "Å",
           "hint": "Strumpan gick sönder och det uppstod ett ___.",
-          "explanation": "'Hål' stavas med Å."
+          "explanation": "'Hål' stavas med Å.",
+          "alternativeAnswers": [
+            "hål"
+          ]
         },
         {
           "id": "o-aa-lag-1-13",
@@ -6449,7 +6487,10 @@
           "question": "Fyll i O eller Å: 's_l' (lyser på himlen)",
           "answer": "O",
           "hint": "Den lyser gult och ger värme. Hur stavas den?",
-          "explanation": "'Sol' stavas med O."
+          "explanation": "'Sol' stavas med O.",
+          "alternativeAnswers": [
+            "sol"
+          ]
         },
         {
           "id": "o-aa-lag-1-17",
@@ -6457,7 +6498,10 @@
           "question": "Fyll i O eller Å: 'g_rd' (bondgård med djur och åkrar)",
           "answer": "Å",
           "hint": "Dit åker man och ser kor och hästar.",
-          "explanation": "'Gård' stavas med Å."
+          "explanation": "'Gård' stavas med Å.",
+          "alternativeAnswers": [
+            "gård"
+          ]
         },
         {
           "id": "o-aa-lag-1-18",
@@ -6595,7 +6639,7 @@
             "pet"
           ],
           "correctIndex": 1,
-          "explanation": "'Bet' är rätt – det är dåtid av 'bita'. Katten bet (bitade på) musen."
+          "explanation": "'Bet' är rätt – det är dåtid av 'bita'. Katten bet musen."
         },
         {
           "type": "multiple-choice",
@@ -6829,15 +6873,15 @@
         },
         {
           "type": "multiple-choice",
-          "question": "Välj rätt preposition: 'Fågeln flyger ___ himlen.'",
+          "question": "Välj rätt preposition: 'Fågeln flyger högt uppe ___ himlen.'",
           "options": [
             "på",
-            "i",
+            "under",
             "ner",
             "om"
           ],
-          "correctIndex": 1,
-          "explanation": "Man flyger 'i himlen' – prepositioner visar var något är eller sker."
+          "correctIndex": 0,
+          "explanation": "Fågeln flyger högt uppe på himlen – prepositioner visar var något är eller sker."
         }
       ]
     },
@@ -7007,7 +7051,7 @@
             "sol sken",
             "solen sken",
             "solsken",
-            "solsken"
+            "sol-sken"
           ],
           "correctIndex": 2,
           "explanation": "'Solsken' skrivs ihop – sammansatta ord ska alltid skrivas utan mellanslag."
@@ -7263,7 +7307,7 @@
             "Jag kan stickas och gör honung"
           ],
           "answer": "bi",
-          "explanation": "Ett bi är ett insekt som samlar nektar och tillverkar honung."
+          "explanation": "Ett bi är en insekt som samlar nektar och tillverkar honung."
         }
       ]
     },
@@ -7306,7 +7350,7 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Fyll i rätt ord: 'Bakverksbilen säljer ___ (glassen som man slickar på)'",
+          "question": "Fyll i rätt ord: 'Glassbilen säljer ___ (glassen som man slickar på)'",
           "answer": "glass",
           "hint": "Söt, kall delikatess med kort a-ljud",
           "explanation": "'Glass' (glassen man äter) stavas med dubbel-s eftersom a-et är kort."
@@ -7325,7 +7369,7 @@
         },
         {
           "type": "multiple-choice",
-          "question": "Välj rätt ord: 'Han är inte ful – han är ___.' (så full som ett glas vatten)",
+          "question": "Välj rätt ord: 'Hinken är inte tom – den är ___.' (fylld ända upp)",
           "options": [
             "ful",
             "full",
@@ -7333,7 +7377,7 @@
             "fúll"
           ],
           "correctIndex": 1,
-          "explanation": "'Full' (fylld) har kort u och skrivs med dubbel-l. 'Ful' (ful/ful utseende) har lång u och ett l."
+          "explanation": "'Full' (fylld) har kort u och skrivs med dubbel-l. 'Ful' (inte fin) har lång u och ett l."
         }
       ]
     },
@@ -7588,7 +7632,7 @@
             "körsbär"
           ],
           "correctIndex": 1,
-          "explanation": "'Bär' kan betyda ett bär (frukt) eller presensformen av 'bära': 'Han bär väskan.' Det kallas ett homofont ord."
+          "explanation": "'Bär' kan betyda ett bär (frukt) eller presensformen av 'bära': 'Han bär väskan.' Det kallas en homonym (samma ord med flera betydelser)."
         },
         {
           "type": "multiple-choice",
@@ -7660,7 +7704,10 @@
           "question": "Fyll i rätt bokstav: 'B_rjan' (start på något)",
           "answer": "ö",
           "hint": "Ordet är 'början' – vilken specialbokstav fattas?",
-          "explanation": "'Början' stavas med ö: B-Ö-R-J-A-N."
+          "explanation": "'Början' stavas med ö: B-Ö-R-J-A-N.",
+          "alternativeAnswers": [
+            "början"
+          ]
         },
         {
           "type": "multiple-choice",
@@ -7684,7 +7731,7 @@
             "aor"
           ],
           "correctIndex": 1,
-          "explanation": "'År' stavas med å – ett av årets 12 månader tar ett år."
+          "explanation": "'År' stavas med å. Tolv månader är ett år."
         },
         {
           "type": "multiple-choice",
@@ -7887,7 +7934,7 @@
       "exercises": [
         {
           "type": "multiple-choice",
-          "question": "Hur stavas det kalla väderkortet på vintern?",
+          "question": "Hur stavas det hala och kalla som ligger på sjön på vintern?",
           "options": [
             "is",
             "iss",
@@ -8200,7 +8247,7 @@
           "type": "fill-in-blank",
           "question": "Den femte månaden heter 'maj'. Den sjätte månaden heter '___'.",
           "answer": "juni",
-          "hint": "Tänk på sommarens börjad – j, u, n...",
+          "hint": "Tänk på sommarens början – j, u, n...",
           "explanation": "'Juni' är den sjätte månaden – sommaren börjar!"
         },
         {
@@ -8213,7 +8260,7 @@
             "freidag"
           ],
           "correctIndex": 2,
-          "explanation": "'Fredag' stavas med liten bokstav och utan dubble d. FRE-DAG."
+          "explanation": "'Fredag' stavas med liten bokstav och utan dubbelt d. FRE-DAG."
         },
         {
           "type": "fill-in-blank",
@@ -8323,10 +8370,10 @@
         {
           "id": "hogfreq-5",
           "type": "fill-in-blank",
-          "question": "Stava rätt: 'Det är ___ kallt ute idag.' (ett ord som förstärker, börjar med 'j')",
-          "answer": "jättekallt",
+          "question": "Stava rätt: 'Det är ___kallt ute idag.' (en förstärkning som börjar med 'j')",
+          "answer": "jätte",
           "alternativeAnswers": [
-            "väldigt"
+            "jättekallt"
           ],
           "hint": "Barn säger ofta 'jätte-' framför adjektiv för att förstärka.",
           "explanation": "'Jättekallt' – 'jätte-' skrivs ihop med adjektivet utan bindestreck."
@@ -8461,7 +8508,7 @@
       "words": [
         {
           "word": "KATT",
-          "clue": "Mjällt sällskapsdjur som spinner"
+          "clue": "Mjukt sällskapsdjur som spinner"
         },
         {
           "word": "HUND",
@@ -8497,7 +8544,7 @@
         },
         {
           "word": "RÄV",
-          "clue": "Rödbrun och listig skogsdjur"
+          "clue": "Rödbrunt och listigt skogsdjur"
         }
       ]
     },
@@ -8615,7 +8662,7 @@
           "clue": "Man ser med det"
         },
         {
-          "word": "NÄS",
+          "word": "NÄSA",
           "clue": "Man andas och luktar med den"
         },
         {
@@ -8701,11 +8748,11 @@
         },
         {
           "word": "öga",
-          "clue": "Man ser med sina ___"
+          "clue": "Man ser med sitt ___"
         },
         {
           "word": "öra",
-          "clue": "Man hör med sina ___"
+          "clue": "Man hör med sitt ___"
         },
         {
           "word": "näsa",
@@ -8744,7 +8791,7 @@
       "words": [
         {
           "word": "äpple",
-          "clue": "Rött eller grönt frukt med kärnhus"
+          "clue": "Röd eller grön frukt med kärnhus"
         },
         {
           "word": "björn",
@@ -8890,12 +8937,12 @@
           "clue": "Skyddar händerna mot kylan"
         },
         {
-          "word": "klocka",
-          "clue": "Visar hur dags det är"
+          "word": "armbandsklocka",
+          "clue": "Klocka man bär på armen"
         },
         {
-          "word": "potatis",
-          "clue": "Brun knöl som kokas till middag"
+          "word": "potatismos",
+          "clue": "Mosad potatis man äter till middag"
         },
         {
           "word": "vindruva",
@@ -8911,14 +8958,14 @@
         },
         {
           "word": "lekplats",
-          "clue": "Ute­plats med rutschkana och gunga"
+          "clue": "Uteplats med rutschkana och gunga"
         }
       ]
     },
     {
       "id": "stavningstest-4",
       "title": "Stavningstest 4 – Knepig stavning",
-      "description": "Ord med dj, hj, lj, sj, tj och kn (Nivå 4)",
+      "description": "Kluriga ljud och bokstavskombinationer (Nivå 4)",
       "icon": "⭐⭐⭐⭐",
       "pointsRequired": 0,
       "bonusPoints": 45,
