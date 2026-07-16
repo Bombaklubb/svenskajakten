@@ -84,7 +84,7 @@
             "sover"
           ],
           "correctIndex": 2,
-          "explanation": "'Den gamla hunden' är hela subjektet – det är de som sover. Subjektet kan vara flera ord."
+          "explanation": "'Den gamla hunden' är hela subjektet – det är den som sover. Subjektet kan vara flera ord."
         },
         {
           "type": "multiple-choice",
@@ -138,7 +138,7 @@
         },
         {
           "type": "multiple-choice",
-          "question": "Vilken del av meningen är understruken? 'De två kattERna _sover_ på soffan.'",
+          "question": "Vilken del av meningen är understruken? 'De två katterna _sover_ på soffan.'",
           "options": [
             "Subjekt",
             "Predikat",
@@ -275,7 +275,7 @@
         },
         {
           "type": "multiple-choice",
-          "question": "Vilket pronomen ersätter 'boken och pennor'?",
+          "question": "Boken och pennorna ligger på bordet. Vilket pronomen kan ersätta 'boken och pennorna' som subjekt?",
           "options": [
             "den",
             "det",
@@ -283,7 +283,7 @@
             "dem"
           ],
           "correctIndex": 2,
-          "explanation": "Flera saker (bok och pennor) ersätts med 'de' som subjekt: 'De ligger på bordet.'"
+          "explanation": "Flera saker som subjekt ersätts med 'de': 'De ligger på bordet.'"
         },
         {
           "type": "fill-in-blank",
@@ -333,7 +333,7 @@
             "de och dem"
           ],
           "correctIndex": 1,
-          "explanation": "'Dem' är objektsformen – vi träffade DEM (de tar emot handlingen). Byt till 'oss': 'Vi träffade oss' → dem."
+          "explanation": "'Dem' är objektsformen – vi träffade DEM (de tar emot handlingen). Testa att byta mot vi/oss: 'oss' passar grammatiskt ('Vi träffade dem' ~ 'Vi träffade oss'), därför 'dem'."
         },
         {
           "type": "multiple-choice",
@@ -544,8 +544,8 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Skriv i framtid: 'Vi simmar i sjön.' → 'I sommar ___ vi i sjön.'",
-          "answer": "ska vi simma",
+          "question": "Skriv i framtid: 'Vi simmar i sjön.' → 'I sommar ___ vi simma i sjön.'",
+          "answer": "ska",
           "hint": "Framtid bildas med 'ska' + infinitiv.",
           "explanation": "'Ska simma' visar framtid. I sommar ska vi simma i sjön."
         },
@@ -596,7 +596,7 @@
         "Adjektiv beskriver substantivet – hur något eller någon är: Martin är lång. Den röda bilen.",
         "Adjektiv svarar på frågan: Hur är det/hen?",
         "Adverb beskriver verb och svarar på frågan: Hur görs det? – t.ex. springer snabbt.",
-        "Adverb slutar ofta på -t (snabbt, tyst, sakta)."
+        "Adverb slutar ofta på -t (snabbt, tyst, vackert)."
       ],
       "exercises": [
         {
@@ -829,15 +829,15 @@
         },
         {
           "type": "multiple-choice",
-          "question": "Hur stavas det omvända av att bry sig – att inte bry sig?",
+          "question": "Hur stavas det solen gör – att lysa starkt?",
           "options": [
-            "skita",
-            "sjita",
-            "skjita",
-            "schita"
+            "skina",
+            "sjina",
+            "skjina",
+            "schina"
           ],
           "correctIndex": 0,
-          "explanation": "'Skita' stavas sk + i – sk följt av i ger sj-ljud. s-k-i-t-a."
+          "explanation": "'Skina' stavas sk + i – sk följt av i ger sj-ljud. s-k-i-n-a."
         },
         {
           "type": "build-sentence",
@@ -886,7 +886,7 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Fyll i rätt stavning: '___öldpadda' (reptil med hårdt skal)",
+          "question": "Fyll i rätt stavning: '___öldpadda' (reptil med hårt skal)",
           "answer": "sk",
           "hint": "Sk + ö ger sj-ljud. Tänk: sk följt av ö.",
           "explanation": "'Sköldpadda' stavas sk + ö – sk följt av ö ger sj-ljud."
@@ -1023,7 +1023,7 @@
         },
         {
           "type": "multiple-choice",
-          "question": "Vilket ord är rätt stavat? (fågeln som pickar i trädstammar)",
+          "question": "Vilket ord är rätt stavat? (den stora skogshönsfågeln som spelar i skogen på våren)",
           "options": [
             "tjäder",
             "käder",
@@ -1070,7 +1070,7 @@
         },
         {
           "type": "multiple-choice",
-          "question": "Hur stavas fågeln med lång hals som bor i Afrika?",
+          "question": "Hur stavas djuret med lång hals som bor i Afrika?",
           "options": [
             "kjirraf",
             "giraff",
@@ -1116,7 +1116,7 @@
             "tj, sj, kj"
           ],
           "correctIndex": 0,
-          "explanation": "Tj-ljud kan skrivas: tj (tjugo), kj (kjol), k före e/i/y/ä/ö (kär, kyla, kek=kex)."
+          "explanation": "Tj-ljud kan skrivas: tj (tjugo), kj (kjol), k före e/i/y/ä/ö (kär, kyla)."
         },
         {
           "type": "multiple-choice",
@@ -1128,7 +1128,7 @@
             "chex"
           ],
           "correctIndex": 2,
-          "explanation": "'Kex' stavas k-e-x. K följt av e ger tj-ljud – men vi hör faktiskt 'kjex' i uttalet!"
+          "explanation": "'Kex' stavas k-e-x. Kex är ett undantag – det kan uttalas med både k-ljud och tj-ljud."
         },
         {
           "type": "multiple-choice",
@@ -1186,8 +1186,8 @@
       "icon": "🔤",
       "bonusPoints": 25,
       "helpText": [
-        "Kort betonad vokal följs av dubbel konsonant: hammer, vänner, gubbe.",
-        "Lång vokal ger enkel konsonant: hamer → fel! hammer → rätt.",
+        "Kort betonad vokal följs av dubbel konsonant: hammare, vänner, gubbe.",
+        "Lång vokal ger enkel konsonant: hamare → fel! hammare → rätt.",
         "Testtrick: säg ordet långsamt – är vokalen kort och tryckstark?"
       ],
       "exercises": [
@@ -1195,13 +1195,13 @@
           "type": "multiple-choice",
           "question": "Vilket ord är rätt stavat? (verktyget man slår spikar med)",
           "options": [
-            "hamer",
-            "hammer",
+            "hamare",
+            "hammare",
             "hammar",
-            "hamar"
+            "hamarre"
           ],
           "correctIndex": 1,
-          "explanation": "'Hammer' – kort betonat a kräver dubbelt m: h-a-mm-e-r."
+          "explanation": "'Hammare' – kort betonat a kräver dubbelt m: h-a-mm-a-r-e."
         },
         {
           "type": "multiple-choice",
@@ -1217,7 +1217,7 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Rätt stavning: 'Katten sitter på ta___et.' (tak, plural bestämd form)",
+          "question": "Rätt stavning: 'Katten sitter på ta___et.' (tak, bestämd form singular)",
           "answer": "k",
           "hint": "Taket eller takket? Är a-et i 'tak' långt eller kort?",
           "explanation": "'Taket' – a-et i 'tak' är långt, därför enkelt k: t-a-k-e-t. Ingen dubbelkonsonant."
@@ -1269,7 +1269,7 @@
         },
         {
           "type": "multiple-choice",
-          "question": "Vilket ord är rätt stavat? (en liten söt kattunge)",
+          "question": "Vilket ord är rätt stavat? (en liten söt getunge)",
           "options": [
             "kiling",
             "killing",
@@ -1300,7 +1300,7 @@
         },
         {
           "type": "multiple-choice",
-          "question": "Vilket ord är rätt stavat? (ett träd med röda bär)",
+          "question": "Vilket ord är rätt stavat? (en blomma med taggar)",
           "options": [
             "ros",
             "ross",
@@ -1312,7 +1312,7 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Rätt stavning: 'Han la___de sig tidigt.' (verbet 'lägga', dåtid)",
+          "question": "Rätt stavning: 'Han la___e sig tidigt.' (verbet 'lägga', dåtid)",
           "answer": "d",
           "hint": "Lade eller ladde? Är a-et i 'lade' kort eller långt?",
           "explanation": "'Lade' – a-et är långt i denna form, därför enkelt d: l-a-d-e."
@@ -1327,7 +1327,7 @@
             "hasssta"
           ],
           "correctIndex": 0,
-          "explanation": "'Hasta' – a-et är långt, därför enkelt s: h-a-s-t-a."
+          "explanation": "'Hasta' – a:et är kort men följs av två olika konsonanter (st), därför inget dubbelt s: h-a-s-t-a."
         },
         {
           "type": "multiple-choice",
@@ -1414,7 +1414,7 @@
           "question": "Fyll i rätt form: 'Jag känner ___ sedan länge.' (de/dem)",
           "answer": "dem",
           "hint": "Byt ut mot 'oss' eller 'vi' – vilket passar bäst?",
-          "explanation": "'Jag känner dem' – 'dem' är objekt. 'Jag känner oss' låter rätt, så det ska vara 'dem'."
+          "explanation": "'Jag känner dem' – 'dem' är objekt. Testa att byta mot vi/oss: 'oss' passar grammatiskt ('Jag känner dem' ~ 'Jag känner oss'), därför ska det vara 'dem'."
         },
         {
           "type": "multiple-choice",
@@ -1471,7 +1471,7 @@
             "di"
           ],
           "correctIndex": 1,
-          "explanation": "'Jag såg dem' – dem är objekt. Byt till 'oss': 'Jag såg oss' – stämmer! Skriv 'dem'."
+          "explanation": "'Jag såg dem' – dem är objekt. Testa att byta mot vi/oss: 'oss' passar grammatiskt här ('Jag såg dem' ~ 'Jag såg oss'), därför 'dem'."
         },
         {
           "type": "fill-in-blank",
@@ -1533,7 +1533,7 @@
             "di"
           ],
           "correctIndex": 1,
-          "explanation": "'Vi bjöd dem' – dem är objekt. Byt till 'oss': 'Vi bjöd oss' – stämmer! Skriv 'dem'."
+          "explanation": "'Vi bjöd dem' – dem är objekt. Testa att byta mot vi/oss: 'oss' passar grammatiskt här ('Vi bjöd dem' ~ 'Vi bjöd oss'), därför 'dem'."
         },
         {
           "type": "build-sentence",
@@ -1562,8 +1562,8 @@
           "type": "fill-in-blank",
           "question": "Fyll i rätt form: 'Vi mötte ___ utanför biblioteket.' (de/dem)",
           "answer": "dem",
-          "hint": "Vi mötte – vem mötte vi? Byt till 'oss': Vi mötte oss.",
-          "explanation": "'Vi mötte dem' – dem är objekt. 'Vi mötte oss' låter rätt → skriv 'dem'."
+          "hint": "Testa att byta mot vi/oss – passar 'oss' grammatiskt ska det vara 'dem'.",
+          "explanation": "'Vi mötte dem' – dem är objekt. Testa att byta mot vi/oss: 'oss' passar grammatiskt ('Vi mötte dem' ~ 'Vi mötte oss'), därför 'dem'."
         }
       ]
     },
@@ -1869,8 +1869,8 @@
             "Om det regnar stannar, vi hemma.",
             "Inget komma behövs."
           ],
-          "correctIndex": 0,
-          "explanation": "Komma sätts efter en inledande bisats: 'Om det regnar, stannar vi hemma.'"
+          "correctIndex": 3,
+          "explanation": "Inget komma behövs: 'Om det regnar stannar vi hemma.' Komma efter inledande bisats är valfritt och ålderdomligt – modern rekommendation är att skriva utan."
         },
         {
           "type": "multiple-choice",
@@ -1912,8 +1912,8 @@
             "Eftersom jag var trött gick jag, och lade mig.",
             "Inget komma behövs."
           ],
-          "correctIndex": 0,
-          "explanation": "Komma efter inledande bisats: 'Eftersom jag var trött, gick jag och lade mig.'"
+          "correctIndex": 3,
+          "explanation": "Inget komma behövs: 'Eftersom jag var trött gick jag och lade mig.' Komma efter inledande bisats är valfritt och ålderdomligt – modern rekommendation är att skriva utan."
         },
         {
           "type": "fill-in-blank",
@@ -2062,7 +2062,7 @@
           "question": "Vilket ord har ett konsonantkluster i MITTEN av ordet?",
           "options": [
             "strand",
-            "äpple",
+            "sola",
             "blomma",
             "skriva"
           ],
@@ -2123,13 +2123,13 @@
           "type": "multiple-choice",
           "question": "Vilket ord har exakt 4 stavelser?",
           "options": [
-            "bibliotek",
+            "strand",
             "matematik",
-            "fantastisk",
-            "chokladkaka"
+            "blomma",
+            "hunden"
           ],
           "correctIndex": 1,
-          "explanation": "'Matematik' = ma-te-ma-tik = 4 stavelser. Bibliotek = bib-li-o-tek = 4 stavelser. Hmm, båda har 4. Men 'matematik' är standardsvaret här."
+          "explanation": "'Matematik' = ma-te-ma-tik = 4 stavelser. Strand har 1 stavelse, blomma och hunden har 2."
         },
         {
           "type": "build-sentence",
@@ -2195,7 +2195,10 @@
           "question": "Fyll i rätt bokstav: 'Vi klättrade upp på __erget.' (högt naturligt stenblock)",
           "answer": "b",
           "hint": "Berg eller derg? Känn om du sluter läpparna eller rör tungan mot tänderna.",
-          "explanation": "'Berget' börjar med b – man sluter läpparna för b-ljud. b-e-r-g."
+          "explanation": "'Berget' börjar med b – man sluter läpparna för b-ljud. b-e-r-g.",
+          "alternativeAnswers": [
+            "berget"
+          ]
         },
         {
           "type": "multiple-choice",
@@ -2236,7 +2239,7 @@
         },
         {
           "type": "multiple-choice",
-          "question": "Välj rätt stavning: 'Jag ___ om att bli astronaut.' (drömmade)",
+          "question": "Välj rätt stavning: 'Jag ___ om att bli astronaut.' (dåtid av 'drömma')",
           "options": [
             "brömde",
             "dömde",
@@ -2251,14 +2254,20 @@
           "question": "Fyll i rätt bokstav: 'Vi måste __etala för biljetten.' (ge pengar)",
           "answer": "b",
           "hint": "Betala eller detala? Känn: sluter du läpparna i början?",
-          "explanation": "'Betala' börjar med b – man sluter läpparna för b-ljud. b-e-t-a-l-a."
+          "explanation": "'Betala' börjar med b – man sluter läpparna för b-ljud. b-e-t-a-l-a.",
+          "alternativeAnswers": [
+            "betala"
+          ]
         },
         {
           "type": "fill-in-blank",
           "question": "Fyll i rätt bokstav: 'Vi hittade ett __o i skogen.' (fågelns hem)",
           "answer": "b",
           "hint": "Bo eller do? Fågelns hem kallas ett bo.",
-          "explanation": "'Bo' börjar med b – man sluter läpparna. b-o."
+          "explanation": "'Bo' börjar med b – man sluter läpparna. b-o.",
+          "alternativeAnswers": [
+            "bo"
+          ]
         },
         {
           "type": "multiple-choice",
@@ -2277,11 +2286,14 @@
           "question": "Fyll i rätt bokstav: 'Hunden __ricker vatten ur skålen.' (tar in vätska)",
           "answer": "d",
           "hint": "Dricker eller bricker? Lyssna på begynnelseljudet.",
-          "explanation": "'Dricker' börjar med d. Tungan nuddar tänderna: d-r-i-c-k-e-r."
+          "explanation": "'Dricker' börjar med d. Tungan nuddar tänderna: d-r-i-c-k-e-r.",
+          "alternativeAnswers": [
+            "dricker"
+          ]
         },
         {
           "type": "multiple-choice",
-          "question": "Välj rätt stavning: 'Vägen var full av ___.' (gropar)",
+          "question": "Välj rätt stavning: 'Vägen var full av ___.' (upphöjningar, knölar)",
           "options": [
             "dulor",
             "bulor",
@@ -2308,7 +2320,10 @@
           "question": "Fyll i rätt bokstav: 'Elefanten är ett stort __jur.' (levande varelse)",
           "answer": "d",
           "hint": "Djur eller bjur? Lyssna på konsonantljudet.",
-          "explanation": "'Djur' börjar med d. d-j-u-r – d-ljudet görs med tungan mot tänderna."
+          "explanation": "'Djur' börjar med d. d-j-u-r – d-ljudet görs med tungan mot tänderna.",
+          "alternativeAnswers": [
+            "djur"
+          ]
         },
         {
           "type": "multiple-choice",
@@ -2782,7 +2797,7 @@
             "snabb – kvick"
           ],
           "correctIndex": 3,
-          "explanation": "'Snabb' och 'kvick' är synonymer (lika bedeutelse), inte motsatsord!"
+          "explanation": "'Snabb' och 'kvick' är synonymer (liknande betydelse), inte motsatsord!"
         },
         {
           "id": "mot-mel-3",
@@ -2925,8 +2940,7 @@
             "men",
             "hon",
             "var",
-            "feg",
-            "."
+            "feg."
           ],
           "correctOrder": [
             0,
@@ -2935,8 +2949,7 @@
             3,
             4,
             5,
-            6,
-            7
+            6
           ],
           "explanation": "'Modig' och 'feg' är motsatsord – modig = inte rädd, feg = rädd och undvikande."
         },
@@ -3160,7 +3173,7 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Verbet 'ta' i dåtid: Hon ___ av sig jackан.",
+          "question": "Verbet 'ta' i dåtid: Hon ___ av sig jackan.",
           "answer": "tog",
           "hint": "Oregelbundet verb",
           "explanation": "'Ta' böjs: tar (nutid) → tog (dåtid).",
@@ -3431,7 +3444,7 @@
       "bonusPoints": 30,
       "helpText": [
         "Citattecken (\"...\") omger exakt det talaren säger.",
-        "Komma, frågetecken och utropstecken sitter INUTI citattecknen.",
+        "Frågetecken och utropstecken som hör till repliken sitter inuti citattecknen. Kommat sätts EFTER citattecknet: \"Det regnar\", konstaterade Emma.",
         "Talverbet (sa, frågade, ropade, svarade) skrivs med liten bokstav efter citattecknen.",
         "Varje ny talare börjar på en ny rad. Citattecken och talstreck kan båda användas – välj konsekvent."
       ],
@@ -3440,13 +3453,13 @@
           "type": "multiple-choice",
           "question": "Vilken mening är korrekt skriven?",
           "options": [
+            "\"Det regnar\", konstaterade Emma.",
             "\"Det regnar,\" konstaterade Emma.",
-            "\"Det regnar\" konstaterade, Emma.",
             "Det regnar, \"konstaterade Emma.\"",
             "\"Det regnar.\" Konstaterade Emma."
           ],
           "correctIndex": 0,
-          "explanation": "Kommatecknet sitter inuti citattecknen, talverbet börjar med liten bokstav: \"Det regnar,\" konstaterade Emma."
+          "explanation": "Kommat sätts efter citattecknet och talverbet börjar med liten bokstav: \"Det regnar\", konstaterade Emma."
         },
         {
           "type": "multiple-choice",
@@ -3482,7 +3495,7 @@
             "Jag tänkte att vi kunde, \"sa Ali och tystnade.\""
           ],
           "correctIndex": 0,
-          "explanation": "När repliken avbryts men meningsfragmentet är ofullständigt används komma inuti citattecknen: \"...,\" sa X."
+          "explanation": "När repliken avbryts sätts komma efter citattecknet, före talverbet: \"Jag tänkte att vi kunde\", sa Ali."
         },
         {
           "type": "fill-in-blank",
@@ -3513,19 +3526,19 @@
             "Man byter till talstreck om repliken är lång."
           ],
           "correctIndex": 1,
-          "explanation": "En och samma talares replik, hur lång den än är, omges av ett enda par citattecken: \"Mening ett. Mening två. Mening tre,\" sa hon."
+          "explanation": "En och samma talares replik, hur lång den än är, omges av ett enda par citattecken: \"Mening ett. Mening två. Mening tre\", sa hon."
         },
         {
           "type": "multiple-choice",
           "question": "Vilken mening är FEL?",
           "options": [
-            "\"Vi ses imorgon,\" lovade han.",
+            "\"Vi ses imorgon\", lovade han.",
             "\"Vi ses imorgon!\" ropade han.",
             "\"Vi ses imorgon?\" undrade han.",
             "\"Vi ses imorgon\". Sa han."
           ],
           "correctIndex": 3,
-          "explanation": "Fel: punkten ska sitta inuti citattecknen och 'sa' ska skrivas med liten bokstav: \"Vi ses imorgon.\" sa han – eller bättre: \"Vi ses imorgon,\" sa han."
+          "explanation": "Fel: 'Sa' ska skrivas med liten bokstav och kommat sätts efter citattecknet: \"Vi ses imorgon\", sa han."
         },
         {
           "type": "build-sentence",
@@ -3567,10 +3580,10 @@
             "\"text\"",
             "'text'",
             "„text“",
-            "“text”"
+            "”text”"
           ],
           "correctIndex": 3,
-          "explanation": "Svenska citattecken är “text” – öppnas med “ och stängs med ”.",
+          "explanation": "Svenska citattecken är ” både före och efter: ”text”.",
           "points": 10
         },
         {
@@ -3637,22 +3650,25 @@
           "type": "multiple-choice",
           "question": "Vilken mening är FEL?",
           "options": [
-            "“Jag är trött,” sa hon.",
+            "“Jag är trött”, sa hon.",
             "“Kom nu!” ropade han.",
             "“Vad heter du?” frågade flickan.",
             "“Det är kallt.” Sa han med darrande röst."
           ],
           "correctIndex": 3,
-          "explanation": "Talverbet 'sa' ska ha liten bokstav: “Det är kallt,” sa han med darrande röst.",
+          "explanation": "Talverbet 'sa' ska ha liten bokstav och kommat sättas efter citattecknet: “Det är kallt”, sa han med darrande röst.",
           "points": 10
         },
         {
           "type": "fill-in-blank",
           "question": "Komplettera med rätt interpunktion: “Jag kommer imorgon___ lovade Anton.",
-          "answer": ",",
-          "hint": "Vad sätts efter en påståendereplik, innan talverbet?",
-          "explanation": "Efter en påståendereplik sätts komma innan talverbet: “Jag kommer imorgon,” lovade Anton.",
-          "points": 10
+          "answer": "”,",
+          "hint": "Stäng citattecknet och sätt kommat efter det, innan talverbet.",
+          "explanation": "Efter en påståendereplik sätts kommat efter citattecknet: “Jag kommer imorgon”, lovade Anton.",
+          "points": 10,
+          "alternativeAnswers": [
+            "\","
+          ]
         },
         {
           "type": "multiple-choice",
@@ -3834,7 +3850,7 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "I en handskriven text markerar man nytt stycke med ett ___ i.",
+          "question": "I en handskriven text markerar man nytt stycke med ett ___.",
           "answer": "indrag",
           "hint": "Man flyttar in texten lite från vänster kant",
           "explanation": "Indrag (att börja lite inåt på raden) är ett klassiskt sätt att markera nytt stycke.",
@@ -4264,13 +4280,13 @@
           "type": "multiple-choice",
           "question": "Vilken mening innehåller en metafor?",
           "options": [
-            "Ordena var vapen i debatten.",
+            "Orden var vapen i debatten.",
             "Ordena var skarpa som knivar.",
             "Han använde många ord i debatten.",
             "Debatten handlade om viktiga ämnen."
           ],
           "correctIndex": 0,
-          "explanation": "'Ordena var vapen' är en metafor – orden kallas direkt för vapen, vilket betonar deras skadliga kraft."
+          "explanation": "'Orden var vapen' är en metafor – orden kallas direkt för vapen, vilket betonar deras skadliga kraft."
         },
         {
           "type": "multiple-choice",
@@ -4303,7 +4319,12 @@
           "answer": "pilar",
           "hint": "Vad kan ord jämföras med som sticker?",
           "explanation": "'Hennes ord var pilar som stack djupt' – orden jämförs direkt med pilar.",
-          "points": 10
+          "points": 10,
+          "alternativeAnswers": [
+            "knivar",
+            "taggar",
+            "nålar"
+          ]
         },
         {
           "type": "multiple-choice",
@@ -4430,7 +4451,7 @@
       "exercises": [
         {
           "type": "multiple-choice",
-          "question": "Vad betyder idiomen 'Bita ihop'?",
+          "question": "Vad betyder idiomet 'Bita ihop'?",
           "options": [
             "Att man biter på något hårt.",
             "Att man håller ut och inte ger upp trots svårigheter.",
@@ -4442,7 +4463,7 @@
         },
         {
           "type": "multiple-choice",
-          "question": "Vad betyder 'Sitta i knipan'?",
+          "question": "Vad betyder 'Sitta i knipa'?",
           "options": [
             "Att sitta på en knippa.",
             "Att vara i en svår eller besvärlig situation.",
@@ -4450,7 +4471,7 @@
             "Att sitta och nypa sig."
           ],
           "correctIndex": 1,
-          "explanation": "'Sitta i knipan' betyder att befinna sig i trubbel eller en besvärlig situation som är svår att ta sig ur."
+          "explanation": "'Sitta i knipa' betyder att befinna sig i trubbel eller en besvärlig situation som är svår att ta sig ur."
         },
         {
           "type": "multiple-choice",
@@ -4466,10 +4487,10 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Fyll i: 'Nu är katten ___ om svansen' – det betyder att det blivit svårt att komma runt problemet.",
-          "answer": "ute",
-          "hint": "Katten är ute på ett smalt ställe och kan inte vända.",
-          "explanation": "'Katten är ute om svansen' betyder att situationen blivit komplicerad och svår att ta sig ur."
+          "question": "Fyll i: 'Nu är goda råd ___' – det betyder att man är i en svår situation och verkligen behöver en bra lösning.",
+          "answer": "dyra",
+          "hint": "Motsatsen till 'billiga'.",
+          "explanation": "'Nu är goda råd dyra' betyder att läget är svårt och att det verkligen behövs en bra lösning."
         },
         {
           "type": "multiple-choice",
@@ -4529,7 +4550,7 @@
             "Att man rör sig i cirklar."
           ],
           "correctIndex": 1,
-          "explanation": "Katten lockas av grötens doft men undviker det heta. Idiomen beskriver någon som kretsar runt ett ämne utan att ta tag i det."
+          "explanation": "Katten lockas av grötens doft men undviker det heta. Idiomet beskriver någon som kretsar runt ett ämne utan att ta tag i det."
         },
         {
           "type": "multiple-choice",
@@ -4545,7 +4566,7 @@
         },
         {
           "type": "multiple-choice",
-          "question": "Vad betyder idiomen 'Hålla tummarna'?",
+          "question": "Vad betyder idiomet 'Hålla tummarna'?",
           "options": [
             "Hålla händerna i fickorna",
             "Önska någon lycka eller hoppas att något ska gå bra",
@@ -4579,15 +4600,15 @@
         },
         {
           "type": "multiple-choice",
-          "question": "Vad betyder 'Ha isen' i uttrycket 'Han hade isen' på matchen?",
+          "question": "Vad betyder idiomet 'ha is i magen'?",
           "options": [
-            "Han var mycket kall",
-            "Han var lugn och behärskad i avgörande lägen",
-            "Han åkte skridskor bra",
-            "Han var rädd"
+            "Att man är mycket kall om magen",
+            "Att man behåller lugnet och inte agerar förhastat",
+            "Att man har ätit för mycket glass",
+            "Att man är rädd"
           ],
           "correctIndex": 1,
-          "explanation": "'Ha isen' eller 'hålla isen' betyder att vara lugn och cool i press-situationer.",
+          "explanation": "'Ha is i magen' betyder att behålla lugnet och våga vänta i pressade situationer.",
           "points": 10
         },
         {
@@ -4710,7 +4731,10 @@
           "question": "Fyll i O eller Å: 'b_rd' – 'Vi åt middag vid bordet.'",
           "answer": "O",
           "hint": "Möbeln du sitter vid och äter vid – hur stavas den?",
-          "explanation": "'Bord' (möbeln) stavas med O."
+          "explanation": "'Bord' (möbeln) stavas med O.",
+          "alternativeAnswers": [
+            "bord"
+          ]
         },
         {
           "id": "o-aa-mel-1-4",
@@ -4718,7 +4742,10 @@
           "question": "Fyll i O eller Å: 'f_lk' – 'Det var mycket folk på torget.'",
           "answer": "O",
           "hint": "Många människor på ett ställe – vilket ord är det?",
-          "explanation": "'Folk' (människor) stavas med O."
+          "explanation": "'Folk' (människor) stavas med O.",
+          "alternativeAnswers": [
+            "folk"
+          ]
         },
         {
           "id": "o-aa-mel-1-5",
@@ -4726,7 +4753,10 @@
           "question": "Fyll i O eller Å: 'g_rd' – 'Familjen bor på en liten bondgård.'",
           "answer": "Å",
           "hint": "Platsen med ladugård, åkrar och djur.",
-          "explanation": "'Gård' (bondgård) stavas med Å."
+          "explanation": "'Gård' (bondgård) stavas med Å.",
+          "alternativeAnswers": [
+            "gård"
+          ]
         },
         {
           "id": "o-aa-mel-1-6",
@@ -4786,7 +4816,10 @@
           "question": "Fyll i O eller Å: 'l_g' – 'Hon log när hon fick beröm.'",
           "answer": "O",
           "hint": "Det är dåtid av 'le' – att le/skratta tyst.",
-          "explanation": "'Log' (dåtid av le) stavas med O."
+          "explanation": "'Log' (dåtid av le) stavas med O.",
+          "alternativeAnswers": [
+            "log"
+          ]
         },
         {
           "id": "o-aa-mel-1-11",
@@ -4794,7 +4827,10 @@
           "question": "Fyll i O eller Å: 'l_g' – 'Hunden låg still under bordet.'",
           "answer": "Å",
           "hint": "Det är dåtid av 'ligga' – att befinna sig liggandes.",
-          "explanation": "'Låg' (dåtid av ligga) stavas med Å."
+          "explanation": "'Låg' (dåtid av ligga) stavas med Å.",
+          "alternativeAnswers": [
+            "låg"
+          ]
         },
         {
           "id": "o-aa-mel-1-12",
@@ -4867,7 +4903,10 @@
           "question": "Fyll i O eller Å: 'm_rd' – 'Polisen utredde mordet noggrant.'",
           "answer": "O",
           "hint": "Det allvarligaste brottet – hur stavas det?",
-          "explanation": "'Mord' (brottet) stavas med O."
+          "explanation": "'Mord' (brottet) stavas med O.",
+          "alternativeAnswers": [
+            "mord"
+          ]
         },
         {
           "id": "o-aa-mel-1-18",
@@ -4885,15 +4924,15 @@
         {
           "id": "o-aa-mel-1-19",
           "type": "multiple-choice",
-          "question": "'Kåren' och 'koren' – vilket ord syftar på en grupp/organisation?",
+          "question": "'Kåren' och 'kören' – vilket ord syftar på en grupp/organisation?",
           "options": [
             "kåren",
-            "koren",
+            "kören",
             "båda betyder samma sak",
             "ingendera"
           ],
           "correctIndex": 0,
-          "explanation": "'Kår' (med Å) = grupp/organisation (t.ex. militärkår). 'Kor' (med O) = plural av ko (djuret)."
+          "explanation": "'Kår' (med Å) = grupp/organisation (t.ex. militärkår). 'Kör' (med Ö) = sånggrupp."
         },
         {
           "id": "o-aa-mel-1-20",
@@ -5133,7 +5172,7 @@
           "options": [
             "stark",
             "feg",
-            "rädd",
+            "hungrig",
             "svag"
           ],
           "correctIndex": 1,
@@ -5357,7 +5396,7 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Idiom: 'Kostar ___ och pantalonger.' (kostar väldigt mycket)",
+          "question": "Idiom: 'Det kostar ___.' (kostar väldigt mycket)",
           "answer": "skjortan",
           "hint": "Det handlar om ett klädesplagg.",
           "explanation": "'Kosta skjortan' är ett idiom som betyder att något är väldigt dyrt."
@@ -5635,7 +5674,8 @@
           "clues": [
             "Jag är ett verb",
             "Jag beskriver en handling",
-            "Jag börjar på S"
+            "Jag börjar på S",
+            "Man gör mig med penna eller tangentbord"
           ],
           "answer": "skriva",
           "alternativeAnswers": [
@@ -5720,7 +5760,7 @@
           "options": [
             "halen",
             "hallen",
-            "hallen",
+            "hälen",
             "haalen"
           ],
           "correctIndex": 1,
@@ -5779,7 +5819,7 @@
       "bonusPoints": 25,
       "helpText": [
         "Sammansatta ord bildas av två eller fler ord: sol + glasögon = solglasögon.",
-        "Ibland fogas orden samman med ett -s-: hunds + koppel = hundkoppel (fognings-s).",
+        "Ibland fogas orden samman med ett -s-: fotboll + s + plan = fotbollsplan (foge-s).",
         "Det sista ledet (grundordet) bestämmer ordklassen: 'barnbok' är en typ av bok.",
         "Skriv alltid ihop – 'bil kö' är FEL, 'bilkö' är RÄTT!"
       ],
@@ -5957,7 +5997,7 @@
           "options": [
             "med fler",
             "med flera",
-            "mycker fler",
+            "mycket fler",
             "mer för lite"
           ],
           "correctIndex": 1,
@@ -6026,15 +6066,15 @@
         },
         {
           "type": "multiple-choice",
-          "question": "Vilket ord kan betyda BÅDE 'att framföra musik' OCH 'en sånggrupp'?",
+          "question": "Vilket ord uttalas likadant som 'jul' (högtiden) men stavas annorlunda?",
           "options": [
-            "spela",
-            "kör",
-            "sjunga",
-            "band"
+            "hjul",
+            "kul",
+            "gul",
+            "djul"
           ],
-          "correctIndex": 1,
-          "explanation": "'Kör' är ett homofont ord: 'Vi körde bil' (presens av köra) och 'Skolans kör sjunger' (sångkör). Samma uttal, olika betydelser."
+          "correctIndex": 0,
+          "explanation": "'Hjul' och 'jul' är homofoner – de uttalas likadant men stavas olika och betyder olika saker."
         },
         {
           "type": "multiple-choice",
@@ -6046,7 +6086,7 @@
             "dom"
           ],
           "correctIndex": 1,
-          "explanation": "'Dem' = objekt. 'Vi hjälpte oss' → Ja, 'oss' passar → skriv 'dem'."
+          "explanation": "'Dem' = objekt. Testa att byta mot vi/oss: 'oss' passar grammatiskt ('Vi hjälpte dem' ~ 'Vi hjälpte oss'), därför 'dem'."
         },
         {
           "type": "multiple-choice",
@@ -6072,7 +6112,7 @@
       "bonusPoints": 25,
       "helpText": [
         "En kort vokal (betonad) följs oftast av dubbel konsonant.",
-        "Exempel: 'katt' (kort a), 'hatt' (kort a), 'gulle' (kort u).",
+        "Exempel: 'katt' (kort a), 'hatt' (kort a), 'bulle' (kort u).",
         "Jämför: 'mat' (lång a) vs 'matt' (kort a)."
       ],
       "exercises": [
@@ -6098,14 +6138,17 @@
             "huund"
           ],
           "correctIndex": 0,
-          "explanation": "'Hund' – här är u-et långt, därför ingen dubbelkonsonant."
+          "explanation": "'Hund' – u:et är kort, men nd är redan två konsonanter – därför ingen dubbelteckning."
         },
         {
           "type": "fill-in-blank",
           "question": "Stavning: 'Han bär en ha_.' (något man har på huvudet)",
           "answer": "tt",
           "hint": "Hat eller hatt? Tänk på om vokalen är lång eller kort.",
-          "explanation": "'Hatt' – kort a-ljud kräver dubbelt t. 'Hat' (med långt a) betyder något annat!"
+          "explanation": "'Hatt' – kort a-ljud kräver dubbelt t. 'Hat' (med långt a) betyder något annat!",
+          "alternativeAnswers": [
+            "hatt"
+          ]
         },
         {
           "type": "multiple-choice",
@@ -6209,7 +6252,7 @@
       "bonusPoints": 25,
       "helpText": [
         "Tj-ljud kan skrivas: tj, k (före e,i,y,ä,ö), kj",
-        "Ex: tjuv, kyckling, kyss, tjäna, kinda"
+        "Ex: tjuv, kyckling, kyss, tjäna, kind"
       ],
       "exercises": [
         {
@@ -6277,7 +6320,7 @@
       "bonusPoints": 25,
       "helpText": [
         "Ng-ljud skrivs 'ng': sång, ring, lång",
-        "Observera: 'ngt' i ord som 'ingenting', 'något'"
+        "Observera: 'ngt' i ord som 'ingenting'"
       ],
       "exercises": [
         {
@@ -6325,15 +6368,15 @@
         },
         {
           "type": "multiple-choice",
-          "question": "Hur stavas ordet för 'en viss mängd'?",
+          "question": "Hur stavas ordet som betyder 'en stor samling eller ett stort antal av något'?",
           "options": [
-            "något",
-            "nåt",
-            "nångot",
-            "nåhot"
+            "mängd",
+            "mänd",
+            "mengd",
+            "männgd"
           ],
           "correctIndex": 0,
-          "explanation": "'Något' – innehåller ng-ljud: n-å-g-o-t."
+          "explanation": "'Mängd' har ng-ljud som stavas ng: m-ä-n-g-d."
         }
       ]
     },
@@ -6374,16 +6417,14 @@
             "computor"
           ],
           "correctIndex": 3,
-          "explanation": "'Computor' är fel – på svenska skriver vi 'dator' (eller 'komputer' i nödfall)."
+          "explanation": "'Computor' är fel – på svenska skriver vi 'dator'."
         },
         {
           "id": "lanord-3",
           "type": "fill-in-blank",
           "question": "Det engelska ordet 'check' stavas på svenska '___'.",
           "answer": "check",
-          "alternativeAnswers": [
-            "schack"
-          ],
+          "alternativeAnswers": [],
           "hint": "I banken använder man en 'c...'",
           "explanation": "'Check' (bankinstrument) behåller sin engelska stavning på svenska."
         },
@@ -6425,7 +6466,7 @@
       "helpText": [
         "På svenska skrivs sammansatta ord ihop: 'fotboll', 'dagbok', 'skolbuss'.",
         "På engelska skrivs de ofta isär: 'foot ball', 'day book', 'school bus'.",
-        "Särsksrivning är ett vanligt fel: 'sol ljus' ska vara 'solljus'."
+        "Särskrivning är ett vanligt fel: 'sol ljus' ska vara 'solljus'."
       ],
       "exercises": [
         {
@@ -6465,15 +6506,15 @@
         {
           "id": "sammord-4",
           "type": "multiple-choice",
-          "question": "Vilket ord behöver ett foge-s i mitten?",
+          "question": "Vilket sammansatt ord är rätt skrivet med foge-s?",
           "options": [
-            "hundhus",
-            "katthus",
-            "hundshus",
-            "kattshus"
+            "fotbollsplan",
+            "fotbollplan",
+            "fotbollssplan",
+            "fotbolplan"
           ],
           "correctIndex": 0,
-          "explanation": "Hmm – det heter faktiskt 'hundkoja' eller 'hundkur', men 'hundhus' är rätt. Foge-s används inte alltid."
+          "explanation": "'Fotbollsplan' har ett foge-s mellan leden: fotboll + s + plan."
         },
         {
           "id": "sammord-5",
@@ -6694,11 +6735,11 @@
         },
         {
           "word": "LEJON",
-          "clue": "Lejongårdens konung"
+          "clue": "Djungelns konung"
         },
         {
           "word": "ZEBRA",
-          "clue": "Svartvitrandig hästliknande djur"
+          "clue": "Svartvitrandigt hästliknande djur"
         },
         {
           "word": "GEPARD",
@@ -6714,7 +6755,7 @@
         },
         {
           "word": "ÖRN",
-          "clue": "Stort rovfågel som flyger högt"
+          "clue": "Stor rovfågel som flyger högt"
         },
         {
           "word": "GORILLA",
@@ -6846,7 +6887,7 @@
         },
         {
           "word": "rörelse",
-          "clue": "Förflyttning i rymden"
+          "clue": "Förflyttning från en plats till en annan"
         },
         {
           "word": "hastighet",
@@ -6866,14 +6907,14 @@
         },
         {
           "word": "gravitation",
-          "clue": "Kraftens som drar saker mot jordens centrum"
+          "clue": "Kraften som drar saker mot jordens centrum"
         },
         {
           "word": "reaktion",
           "clue": "Vad som händer när ämnen blandas"
         },
         {
-          "word": "fotosyntesen",
+          "word": "fotosyntes",
           "clue": "Hur växter gör mat av ljus och koldioxid"
         },
         {
@@ -6953,7 +6994,7 @@
         },
         {
           "word": "nationalism",
-          "clue": "Starkt kärlekskänsla för sitt eget land"
+          "clue": "Stark kärlek till det egna landet"
         },
         {
           "word": "industrialism",
@@ -7115,7 +7156,7 @@
         },
         {
           "word": "generalisera",
-          "clue": "Dra brett gällande slutsatser"
+          "clue": "Dra allmänna slutsatser utifrån enskilda fall"
         },
         {
           "word": "konkretisera",
