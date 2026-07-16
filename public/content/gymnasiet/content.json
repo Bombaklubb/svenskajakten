@@ -53,7 +53,11 @@
           "question": "En retorisk fråga är en fråga som inte förväntar sig ett svar utan syftar till att ___.",
           "answer": "övertala",
           "hint": "Vad vill talaren uppnå med frågan?",
-          "explanation": "Retoriska frågor används för att övertala och engagera, inte för att få ett faktiskt svar."
+          "explanation": "Retoriska frågor används för att övertala och engagera, inte för att få ett faktiskt svar.",
+          "alternativeAnswers": [
+            "påverka",
+            "engagera"
+          ]
         },
         {
           "type": "multiple-choice",
@@ -114,7 +118,7 @@
           "question": "I vilket syfte används klimax i ett politiskt tal?",
           "options": [
             "För att minska spänningen hos publiken.",
-            "För att bygga upp känslomässig intensitet och leda publiken mot ett höjdpunkt.",
+            "För att bygga upp känslomässig intensitet och leda publiken mot en höjdpunkt.",
             "För att citera forskning.",
             "För att visa talarens ödmjukhet."
           ],
@@ -341,7 +345,11 @@
           "question": "Skriv om till formellt språk: 'Vi tar upp det på mötet.' → '___ kommer att behandlas vid kommande möte.'",
           "answer": "Frågan",
           "hint": "Nominalisera – gör om 'det' till ett substantiv.",
-          "explanation": "'Frågan kommer att behandlas' – formellt språk nominaliserar och undviker 'vi'."
+          "explanation": "'Frågan kommer att behandlas' – formellt språk nominaliserar och undviker 'vi'.",
+          "alternativeAnswers": [
+            "Ärendet",
+            "Saken"
+          ]
         },
         {
           "type": "multiple-choice",
@@ -495,7 +503,7 @@
           "question": "Vad bör man UNDVIKA i formellt skriftspråk?",
           "options": [
             "Passiva konstruktioner",
-            "Nominalisieringar",
+            "Nominaliseringar",
             "Förkortningar som 'bl.a.' och 'osv.'",
             "Formella konjunktioner"
           ],
@@ -843,7 +851,7 @@
         },
         {
           "type": "multiple-choice",
-          "question": "I Churchills tal: 'Vi ska kämpa på stränderna, vi ska kämpa … vi ska aldrig ge upp' – om man skulle lägga till 'som en kustfort som vägrar falla' – vilken retorisk funktion skulle liknelsen fylla?",
+          "question": "I Churchills tal: 'Vi ska kämpa på stränderna, vi ska kämpa … vi ska aldrig ge upp' – om man skulle lägga till 'som ett kustfort som vägrar falla' – vilken retorisk funktion skulle liknelsen fylla?",
           "options": [
             "Logos – ge ett logiskt argument för kriget.",
             "Pathos – förstärka känslan av uthållighet och beslutsamhet.",
@@ -867,9 +875,9 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "I Kafkas Förvandlingen beskrivs Gregor som ett insekt. Om texten istället hade skrivit 'han kände sig lik ett insekt' hade det varit en ___ istället för metafor.",
+          "question": "I Kafkas Förvandlingen beskrivs Gregor som en insekt. Om texten istället hade skrivit 'han kände sig lik en insekt' hade det varit en ___ istället för metafor.",
           "answer": "liknelse",
-          "explanation": "Kafka väljer medvetet metaforen (han ÄR ett insekt) snarare än liknelsen – det skapar en starkare känsla av faktisk förvandling."
+          "explanation": "Kafka väljer medvetet metaforen (han ÄR en insekt) snarare än liknelsen – det skapar en starkare känsla av faktisk förvandling."
         },
         {
           "type": "multiple-choice",
@@ -905,7 +913,7 @@
             "Att bra liknelser alltid är långa."
           ],
           "correctIndex": 1,
-          "explanation": "En stark liknelse har en viss semantisk avstånd mellan tenor och fordon. Om de är för lika tappar liknelsen kraft; om de är totalt orelaterade tappar den relevans."
+          "explanation": "En stark liknelse har ett visst semantiskt avstånd mellan tenor och fordon. Om de är för lika tappar liknelsen kraft; om de är totalt orelaterade tappar den relevans."
         },
         {
           "type": "multiple-choice",
@@ -1025,7 +1033,7 @@
             "Metaforer som används av vita filosofer."
           ],
           "correctIndex": 1,
-          "explanation": "Derrida: Begrepp som 'begreppet själv' (begrippa = ta med handen) är metaforer vars ursprung glömts. Filosofin tror sig tala rent, men talar alltid bildligt."
+          "explanation": "Derrida: Begrepp som 'begreppet själv' (begripa = ta med handen) är metaforer vars ursprung glömts. Filosofin tror sig tala rent, men talar alltid bildligt."
         },
         {
           "type": "multiple-choice",
@@ -1108,12 +1116,12 @@
           "question": "Vad skiljer ett idiom från en kollokation?",
           "options": [
             "Kollokationer är längre än idiom.",
-            "Kollokationer är statistiskt frekventa ordpar med delvis förutsägbar betydelse (stark kaffe); idiom har fullständigt lexikaliserad, icke-kompositionell betydelse.",
+            "Kollokationer är statistiskt frekventa ordpar med delvis förutsägbar betydelse (starkt kaffe); idiom har fullständigt lexikaliserad, icke-kompositionell betydelse.",
             "Idiom finns bara i tal, kollokationer bara i skrift.",
             "Det är ingen skillnad – de är synonyma termer."
           ],
           "correctIndex": 1,
-          "explanation": "'Stark kaffe' är en kollokation – stark är förutsägbart med kaffe. 'Kalla handen' är ett idiom – man kan inte förstå det från 'kall' + 'hand'."
+          "explanation": "'Starkt kaffe' är en kollokation – starkt är förutsägbart med kaffe. 'Kalla handen' är ett idiom – man kan inte förstå det från 'kall' + 'hand'."
         },
         {
           "type": "multiple-choice",
@@ -1125,7 +1133,7 @@
             "Att idiomets ursprung är okänt."
           ],
           "correctIndex": 1,
-          "explanation": "'Bita ihop' är frostat – man kan inte säga 'bita samman' eller 'tugga ihop' och behålla idiomets innebörd. Hög frozenness = lite flexibilitet."
+          "explanation": "'Bita ihop' är fixerat (fruset) – man kan inte säga 'bita samman' eller 'tugga ihop' och behålla idiomets innebörd. Hög frozenness = lite flexibilitet."
         },
         {
           "type": "fill-in-blank",
@@ -1168,15 +1176,15 @@
           "options": [
             "Falsk vän.",
             "Idiom-transfer-fel – man applicerar L1-kompositionell tolkningsstrategi på L2-idiom.",
-            "Interferens.",
+            "Kodväxling av prestigeskäl.",
             "Malapropism."
           ],
           "correctIndex": 1,
-          "explanation": "En inlärare av svenska som hör 'sitta i knipan' och tolkar det bokstavligt gör ett idiom-transfer-fel – L1-strategin (bokstavlig tolkning) fungerar inte för L2-idiom."
+          "explanation": "En inlärare av svenska som hör 'sitta i knipa' och tolkar det bokstavligt gör ett idiom-transfer-fel – L1-strategin (bokstavlig tolkning) fungerar inte för L2-idiom."
         },
         {
           "type": "multiple-choice",
-          "question": "Idiomen 'Det är ingen ko på isen' har ett konkret ursprung. Vilket?",
+          "question": "Idiomet 'Det är ingen ko på isen' har ett konkret ursprung. Vilket?",
           "options": [
             "Bondelivets oro när kor faktiskt hamnade på is och riskerade att falla och skada sig.",
             "En känd folksaga om en ko.",
@@ -1184,7 +1192,7 @@
             "Ursprunget är okänt."
           ],
           "correctIndex": 0,
-          "explanation": "Idiomen kommer från bondelivets verklighet – en ko på hal is var en allvarlig risk. Ingen ko på isen = ingen fara, ingen risk."
+          "explanation": "Idiomet kommer från bondelivets verklighet – en ko på hal is var en allvarlig risk. Ingen ko på isen = ingen fara, ingen risk."
         },
         {
           "type": "multiple-choice",
@@ -1371,7 +1379,7 @@
         },
         {
           "type": "multiple-choice",
-          "question": "Vilket alternativ är korrekt i formell skriven text?",
+          "question": "Vilket alternativ passar bäst i formell skriven text?",
           "options": [
             "Man bör ej använda negationer i formell text.",
             "Negationer bör undvikas i formell text.",
@@ -1561,7 +1569,10 @@
           "question": "Vilket retoriskt begrepp beskriver en fråga som inte förväntar sig ett svar?",
           "answer": "retorisk fråga",
           "hint": "Talaren ställer den för att påverka, inte för att få ett faktiskt svar.",
-          "explanation": "En retorisk fråga är ett stilistiskt grepp för att övertala och engagera publiken."
+          "explanation": "En retorisk fråga är ett stilistiskt grepp för att övertala och engagera publiken.",
+          "alternativeAnswers": [
+            "erotema"
+          ]
         },
         {
           "type": "multiple-choice",
@@ -1608,7 +1619,7 @@
         },
         {
           "type": "multiple-choice",
-          "question": "Vad kallas ett idiom vars bildliga ursprung förlorat sin kraft och upplevs som bokstavlig, t.ex. 'benet på stolen'?",
+          "question": "Vad kallas en metafor vars bildliga ursprung förlorat sin kraft och upplevs som bokstavligt, t.ex. 'benet på stolen'?",
           "options": [
             "Levande metafor",
             "Anafor",
@@ -1687,7 +1698,10 @@
             "Aristoteles kallade mig ett av tre övertalningsmedel"
           ],
           "answer": "etos",
-          "explanation": "Etos handlar om talarens trovärdighet. En talare med högt etos upplevs som pålitlig och kunnig."
+          "explanation": "Etos handlar om talarens trovärdighet. En talare med högt etos upplevs som pålitlig och kunnig.",
+          "alternativeAnswers": [
+            "ethos"
+          ]
         },
         {
           "id": "gym-kluring-3",
@@ -1712,7 +1726,10 @@
             "Aristoteles listade mig som ett av tre övertalningsmedel"
           ],
           "answer": "patos",
-          "explanation": "Patos handlar om att väcka känslor hos publiken, t.ex. med berörande berättelser eller starka bilder."
+          "explanation": "Patos handlar om att väcka känslor hos publiken, t.ex. med berörande berättelser eller starka bilder.",
+          "alternativeAnswers": [
+            "pathos"
+          ]
         },
         {
           "id": "gym-kluring-5",
@@ -1801,12 +1818,12 @@
             "Jonas' bok",
             "Jonases bok"
           ],
-          "correctIndex": 2,
-          "explanation": "När ett namn slutar på s, x eller z skrivs genitiv med bara apostrof: Jonas' bok."
+          "correctIndex": 1,
+          "explanation": "Namn som slutar på s får ingen extra ändelse i genitiv: Jonas bok. Apostrof (Jonas' bok) är endast en nödlösning – den rekommenderade formen är utan ändelse."
         },
         {
           "type": "multiple-choice",
-          "question": "Vad kallas utelämning av bokstäver i tal? Ex: 'dom' istället för 'de/dem'",
+          "question": "Vad kallas utelämning av bokstäver i tal? Ex: 'nån' istället för 'någon'",
           "options": [
             "Elision",
             "Apostrof",
@@ -2180,7 +2197,7 @@
         },
         {
           "word": "plagiat",
-          "clue": "Att använda andras verk utan tillstånd"
+          "clue": "Att utge andras verk eller idéer för sina egna"
         },
         {
           "word": "kohesion",
@@ -2362,7 +2379,7 @@
         },
         {
           "word": "homodiegetisk",
-          "clue": "Berättare som är karaktär i egna historia"
+          "clue": "Berättare som är karaktär i sin egen historia"
         },
         {
           "word": "heterodiegetisk",
@@ -2394,7 +2411,7 @@
         },
         {
           "word": "palimpsest",
-          "clue": "Text skriven ovan en annan, nu synlig äldre"
+          "clue": "Text skriven ovanpå en äldre text som skymtar fram"
         },
         {
           "word": "intertextuell",
@@ -2406,7 +2423,7 @@
         },
         {
           "word": "hyperdiegesis",
-          "clue": "Detaljrik världsskapande i en berättelse"
+          "clue": "Detaljrikt världsskapande i en berättelse"
         },
         {
           "word": "postkolonialt",
@@ -2592,7 +2609,7 @@
         },
         {
           "word": "paradigm",
-          "clue": "Kuhns begrepp för vetenskapens normalfas"
+          "clue": "Kuhns begrepp för vetenskapens rådande tankemönster"
         },
         {
           "word": "falsifikation",
