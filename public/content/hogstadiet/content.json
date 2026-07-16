@@ -108,7 +108,12 @@
           "question": "Fyll i ett bindeord: 'Vi åkte hem ___ vi var trötta.'",
           "answer": "eftersom",
           "hint": "Bisatsen anger orsaken.",
-          "explanation": "'Eftersom' inleder en bisats som anger orsak."
+          "explanation": "'Eftersom' inleder en bisats som anger orsak.",
+          "alternativeAnswers": [
+            "därför att",
+            "för att",
+            "för"
+          ]
         },
         {
           "type": "multiple-choice",
@@ -269,7 +274,7 @@
         "Svenska ord kan sättas ihop till sammansatta ord.",
         "Exempel: hus + dörr = husdörr.",
         "Det sista ledet anger vad det är, det första preciserar.",
-        "Fogevokal s används ibland: lands + väg = landsväg."
+        "Foge-s används ibland: lands + väg = landsväg."
       ],
       "exercises": [
         {
@@ -355,15 +360,15 @@
         },
         {
           "type": "multiple-choice",
-          "question": "Vilket sammansatt ord har fogevokal 's'?",
+          "question": "Vilket sammansatt ord har foge-s?",
           "options": [
             "fotboll",
             "nyckelring",
-            "landskap",
+            "landsväg",
             "blåbär"
           ],
           "correctIndex": 2,
-          "explanation": "'Landskap' = land + s + kap. Fogevokalen 's' binder ihop de två leden."
+          "explanation": "'Landsväg' = land + s + väg. Foge-s binder ihop de två leden."
         },
         {
           "type": "multiple-choice",
@@ -413,7 +418,7 @@
           "question": "Bilda ett sammansatt ord: 'sommar' + 'stuga' = ___",
           "answer": "sommarstuga",
           "hint": "En stuga man bor i på sommaren.",
-          "explanation": "'Sommarstuga' = sommar + stuga. Prefixledet 'sommar' preciserar vilken typ av stuga det är."
+          "explanation": "'Sommarstuga' = sommar + stuga. Förledet 'sommar' preciserar vilken typ av stuga det är."
         },
         {
           "type": "multiple-choice",
@@ -530,8 +535,8 @@
             "I slutet",
             "Det behövs inget komma"
           ],
-          "correctIndex": 1,
-          "explanation": "Vid uppräkning används komma: 'äpplen, päron och bananer'."
+          "correctIndex": 0,
+          "explanation": "Vid uppräkning sätts komma mellan leden men inte före 'och': 'äpplen, päron och bananer'. Alltså bara ett komma – efter 'äpplen'."
         },
         {
           "type": "fill-in-blank",
@@ -549,8 +554,8 @@
             "Inget komma behövs",
             "Komma i slutet"
           ],
-          "correctIndex": 0,
-          "explanation": "Komma används ofta före bisatsen: 'Jag köpte bröd, eftersom jag var hungrig.'"
+          "correctIndex": 2,
+          "explanation": "Enligt moderna svenska skrivregler sätts normalt inget komma före 'eftersom': 'Jag köpte bröd eftersom jag var hungrig.'"
         },
         {
           "type": "multiple-choice",
@@ -604,10 +609,13 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Sätt in rätt ordföljd: 'Idag ___ vi till skolan.' (verb + subjekt)",
+          "question": "Sätt in rätt verbform: 'Idag ___ vi till skolan.' (verbet: att cykla)",
           "answer": "cyklar",
           "hint": "Adverbialet 'Idag' är först – vad ska komma härnäst?",
-          "explanation": "När 'Idag' inleder meningen, ska predikatet (verbet) komma före subjektet: Idag + cyklar + vi."
+          "explanation": "När 'Idag' inleder meningen, ska predikatet (verbet) komma före subjektet: Idag + cyklar + vi.",
+          "alternativeAnswers": [
+            "cyklade"
+          ]
         },
         {
           "type": "multiple-choice",
@@ -658,15 +666,15 @@
       "exercises": [
         {
           "type": "multiple-choice",
-          "question": "Vilket adjektiv passar? '___ hus är gammalt.'",
+          "question": "Vilket ord passar? '___ huset är gammalt.'",
           "options": [
-            "en",
-            "ett",
+            "Den",
             "Det",
-            "Den"
+            "En",
+            "Ett"
           ],
-          "correctIndex": 2,
-          "explanation": "'Hus' är ett n-ord (neutrum) – artikeln 'ett' och pronomenet 'det' passar."
+          "correctIndex": 1,
+          "explanation": "'Hus' är ett ett-ord (neutrum) – därför heter det 'det huset', inte 'den huset'."
         },
         {
           "type": "multiple-choice",
@@ -684,7 +692,7 @@
           "type": "fill-in-blank",
           "question": "Fyll i rätt adjektivform: 'Jag bor i ett ___ hus.' (stor)",
           "answer": "stort",
-          "hint": "Hus är ett n-ord (neutrum) – adjektiv + t.",
+          "hint": "Hus är ett ett-ord (neutrum) – adjektiv + t.",
           "explanation": "'Stort hus' – adjektiv i neutrum singular tar -t: stor → stort."
         },
         {
@@ -1124,7 +1132,7 @@
             "Han svarade: \"Nej, tack.\""
           ],
           "correctIndex": 1,
-          "explanation": "Punkt saknas inuti citattecknen: det ska vara \"Det är klart.\" sa han."
+          "explanation": "Komma saknas efter citattecknet: det ska vara \"Det är klart\", sa han. När anföringssatsen kommer efter repliken sätts kommat efter citattecknet."
         },
         {
           "id": "dc-hog-9",
@@ -1288,7 +1296,7 @@
         },
         {
           "type": "multiple-choice",
-          "question": "Vilken liknelse skapar starkast känsla av ensamhet och kyla?",
+          "question": "Vilken liknelse skapar starkast känsla av ensamhet och utsatthet?",
           "options": [
             "Han stod ensam som en stjärna på himlen.",
             "Han stod ensam som ett träd mitt i en öken.",
@@ -1412,7 +1420,7 @@
           "type": "multiple-choice",
           "question": "I Shakespeares 'Hela världen är en scen' – vilken är metaforens viktigaste implikation?",
           "options": [
-            "Att världen är ett teater­hus.",
+            "Att världen är ett teaterhus.",
             "Att livet är ett spel med roller, manus och akter vi spelar upp.",
             "Att skådespelare är viktigare än andra.",
             "Att Shakespeare gillade teater."
@@ -1464,7 +1472,7 @@
             "skyddet",
             "vapnet",
             "värnet",
-            "bulvarket"
+            "bålverket"
           ],
           "hint": "Tänk på något som skyddar mot något farligt.",
           "explanation": "Metaforer med krig/försvar är vanliga för att beskriva inre psykologiska tillstånd."
@@ -1514,7 +1522,7 @@
           "options": [
             "Att äta ett äpple man inte tycker om.",
             "Att göra något obehagligt som ändå är nödvändigt.",
-            "Att ta en svår beslut om frukt.",
+            "Att ta ett svårt beslut om frukt.",
             "Att vara sur och arg."
           ],
           "correctIndex": 1,
@@ -1534,10 +1542,10 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Fyll i: 'Han är inte den som ___ i rosorna' – idiom för att inte vara konflikträdd.",
-          "answer": "sover",
-          "hint": "Det är ett uttryck för att vara vaksam och handlingskraftig.",
-          "explanation": "'Sova i rosorna' betyder att vara slarvig och inte ta tillvara på möjligheter eller vara vaksam."
+          "question": "Fyll i: 'Han är inte den som ___ under stol med sin åsikt.'",
+          "answer": "sticker",
+          "hint": "Idiomet 'sticka under stol med något' betyder att dölja eller förtiga något.",
+          "explanation": "'Sticka under stol med något' betyder att dölja eller förtiga något. Den som inte sticker under stol med sin åsikt säger den rakt ut."
         },
         {
           "type": "multiple-choice",
@@ -1556,12 +1564,12 @@
           "question": "Vad betyder 'Ligga i lä'?",
           "options": [
             "Att sova på en speciell plats.",
-            "Att befinna sig i en skyddad position utan att behöva anstränga sig.",
+            "Att vara i underläge eller i en sämre position än andra.",
             "Att simma nära stranden.",
             "Att ligga på en lädersoffa."
           ],
           "correctIndex": 1,
-          "explanation": "'Lä' är sjöfartstermin för den sida av båten som är skyddad från vinden. 'Ligga i lä' betyder att ha det bekvämt och skyddat."
+          "explanation": "'Lä' är en sjöfartsterm för den sida som är skyddad från vinden och därmed får sämre fart. 'Ligga i lä' betyder att vara i underläge eller i en sämre position än andra."
         },
         {
           "type": "multiple-choice",
@@ -1827,7 +1835,7 @@
         },
         {
           "type": "multiple-choice",
-          "question": "Välj rätt adjektivform: '___ hus är gammalt.' (hus = ett-ord)",
+          "question": "Välj rätt ord: '___ huset är gammalt.' (hus = ett-ord)",
           "options": [
             "En",
             "Ett",
@@ -1835,7 +1843,7 @@
             "Den"
           ],
           "correctIndex": 2,
-          "explanation": "'Det' används med ett-ord. Hus är ett ett-ord: 'ett hus' → 'det huset'."
+          "explanation": "'Det' används med ett-ord: 'ett hus' → 'det huset'. 'Den huset', 'En huset' och 'Ett huset' är fel."
         },
         {
           "type": "multiple-choice",
@@ -1899,7 +1907,7 @@
         },
         {
           "type": "multiple-choice",
-          "question": "Välj rätt form: '___ film var lång.' (en-ord)",
+          "question": "Välj rätt form: '___ filmen var lång.' (en-ord)",
           "options": [
             "Den gamla",
             "Det gamla",
@@ -1907,7 +1915,7 @@
             "Det gammalt"
           ],
           "correctIndex": 0,
-          "explanation": "Film är ett en-ord. Med bestämd form: den gamla filmen → Den gamla film(en)."
+          "explanation": "Film är ett en-ord. Vid dubbel bestämdhet används 'den' + adjektiv i bestämd form + substantiv i bestämd form: 'Den gamla filmen var lång.'"
         },
         {
           "type": "multiple-choice",
@@ -2021,10 +2029,10 @@
           "type": "multiple-choice",
           "question": "Välj rätt mening med omvänd ordföljd:",
           "options": [
-            "Igår, när det regnade, stannade vi inne.",
+            "Vi stannade inne när det regnade igår.",
             "Igår stannade vi inne, när det regnade.",
             "Vi stannade inne igår när det regnade.",
-            "Stannade vi inne igår, när det regnade?"
+            "Vi stannade inne hela dagen eftersom det regnade."
           ],
           "correctIndex": 1,
           "explanation": "Igår (adv) stannade (verb) vi (subj) inne – omvänd ordföljd. Bisatsen 'när det regnade' kommer efter."
@@ -2386,13 +2394,13 @@
           "type": "multiple-choice",
           "question": "Varför heter det 'springer' och inte 'springger'?",
           "options": [
-            "Vokalen i är lång, ett g räcker",
+            "Vokalen är kort men följs av konsonantförbindelsen ng",
             "Vokalen i är kort men regeln gäller inte verb",
             "Det är ett historiskt undantag",
             "Man har tagit bort ett g för enkelhetens skull"
           ],
           "correctIndex": 0,
-          "explanation": "'Springer' har lång i-vokal (spriiinger) + ng-kluster. Lång vokal = ingen dubbelkonsonant behövs."
+          "explanation": "I 'springer' är i:et kort, men det följs av konsonantförbindelsen ng som redan sluter stavelsen – därför behövs ingen dubbelteckning."
         },
         {
           "type": "multiple-choice",
@@ -2411,7 +2419,7 @@
           "question": "Verbformen av 'att simma' i presens är ___.",
           "answer": "simmar",
           "hint": "Dubbel-m bevaras i presens",
-          "explanation": "'Simma' → 'simmar'. Dubbel-m bevaras när verbet böjs eftersom o-et är kort."
+          "explanation": "'Simma' → 'simmar'. Dubbel-m bevaras när verbet böjs eftersom i:et är kort."
         },
         {
           "type": "multiple-choice",
@@ -2435,7 +2443,7 @@
             "ramlede"
           ],
           "correctIndex": 1,
-          "explanation": "'Ramla' → 'ramlade' – l-et fördubblas inte i preteritum. 'Ramla' har lång a + l, inte kort vokal."
+          "explanation": "'Ramla' → 'ramlade' – l-et fördubblas inte i preteritum. 'Ramla' har kort a följt av konsonantklustret ml – därför dubblas inte l:et."
         }
       ]
     },
@@ -2476,7 +2484,7 @@
         },
         {
           "type": "multiple-choice",
-          "question": "Vilket sammansatt ord är FELAKTIGT stavet (fel foge)?",
+          "question": "Vilket sammansatt ord är FELAKTIGT stavat (fel foge)?",
           "options": [
             "barnbok",
             "bokshylla",
@@ -2670,7 +2678,7 @@
         "Homofoner: samma uttal, olika stavning och betydelse.",
         "'De'/'dem' = /dom/: 'De' (subjekt), 'Dem' (objekt). Tips: byt ut mot 'vi'/'oss'.",
         "Passar 'vi'? → Skriv 'de'. Passar 'oss'? → Skriv 'dem'.",
-        "Ord som 'kör', 'bär', 'väcker' är polysema (ett ord, flera betydelser) men inte homofonpar."
+        "Ord som 'kör' (musikgrupp) och 'kör' (framför ett fordon) är homografer (stavas lika men uttalas olika) – inte homofonpar."
       ],
       "exercises": [
         {
@@ -2725,13 +2733,13 @@
           "type": "multiple-choice",
           "question": "Vilken mening är korrekt skriven?",
           "options": [
-            "Det var de som vi pratade med.",
-            "Det var dem som vi pratade med.",
-            "Det var di som vi pratade med.",
-            "Det var dom som vi pratade med."
+            "Vi pratade med de igår.",
+            "Vi pratade med dem igår.",
+            "Vi pratade med di igår.",
+            "Vi pratade med dom igår."
           ],
           "correctIndex": 1,
-          "explanation": "'Dem' = objekt efter 'med'. 'Vi pratade med oss' → oss passar → skriv 'dem'. Alltså: 'dem som vi pratade med'."
+          "explanation": "'Dem' är objektsform och används efter prepositionen 'med'. Test: passar 'oss'? ('Vi pratade med oss') → skriv 'dem'."
         }
       ]
     }
@@ -2745,7 +2753,7 @@
       "bonusPoints": 30,
       "helpText": [
         "Homofoner är ord som låter likadant men har olika stavning och betydelse.",
-        "Exempel: 'de' / 'dem', 'av' / 'af', 'ord' / 'årt'.",
+        "Exempel: 'gott' / 'gått', 'hjul' / 'jul', 'kål' / 'kol'.",
         "Vanliga förväxlingar: 'de/dem', 'sin/sig', 'honom/han'."
       ],
       "exercises": [
@@ -2813,7 +2821,7 @@
       "icon": "📚",
       "bonusPoints": 30,
       "helpText": [
-        "Observera: 'klistra' inte 'klibba', 'ryggsäck' inte 'ryggsäck', 'februari' inte 'febrari'"
+        "Observera: 'klistra' inte 'klibba', 'ryggsäck' inte 'rygsäck', 'februari' inte 'febrari'"
       ],
       "exercises": [
         {
@@ -2826,7 +2834,7 @@
             "februrari"
           ],
           "correctIndex": 1,
-          "explanation": "'Februari' – fe-bru-a-ri. Tänk på 'febrer' (feber). Det är lätt att glömma det andra u."
+          "explanation": "'Februari' – fe-bru-a-ri. Det är lätt att glömma första r:et: det heter februari, inte 'febuari'."
         },
         {
           "type": "multiple-choice",
@@ -3181,7 +3189,7 @@
         },
         {
           "word": "IMPERIUM",
-          "clue": "Stor rike som kontrollerar många länder"
+          "clue": "Stort rike som kontrollerar många länder"
         },
         {
           "word": "REPUBLIK",
@@ -3432,7 +3440,7 @@
           "clue": "Kroppens alla kemiska processer sammantaget"
         },
         {
-          "word": "osmosis",
+          "word": "osmos",
           "clue": "Vatten rör sig genom ett halvgenomträngligt membran"
         },
         {
@@ -3460,7 +3468,7 @@
           "clue": "Einsteins teori om rum, tid och gravitation"
         },
         {
-          "word": "termoynamik",
+          "word": "termodynamik",
           "clue": "Läran om värme och energiomvandling"
         },
         {
@@ -3473,7 +3481,7 @@
         },
         {
           "word": "radioaktivitet",
-          "clue": "Instabila atomkärnors spontana sönderfallning"
+          "clue": "Instabila atomkärnors spontana sönderfall"
         },
         {
           "word": "partikelfysik",
@@ -3551,7 +3559,7 @@
           "clue": "Användning av symboler för djupare mening"
         },
         {
-          "word": "ironik",
+          "word": "ironi",
           "clue": "Säger det motsatta av vad man menar"
         },
         {
@@ -3560,7 +3568,7 @@
         },
         {
           "word": "paradox",
-          "clue": "Påstående som tycks självmotsträgande men är sant"
+          "clue": "Påstående som tycks självmotsägande men är sant"
         },
         {
           "word": "eufemism",
@@ -3575,15 +3583,15 @@
           "clue": "Underdrift för att framhäva"
         },
         {
-          "word": "anafora",
+          "word": "anafor",
           "clue": "Upprepning av ord i inledningen av meningar"
         },
         {
-          "word": "epifora",
+          "word": "epifor",
           "clue": "Upprepning av ord i slutet av meningar"
         },
         {
-          "word": "chiasm",
+          "word": "kiasm",
           "clue": "Korsvis växling av grammatiska mönster"
         },
         {
@@ -3651,7 +3659,7 @@
         },
         {
           "word": "existentialism",
-          "clue": "Filosfi om individens frihet och ansvar"
+          "clue": "Filosofi om individens frihet och ansvar"
         },
         {
           "word": "strukturalism",
