@@ -2731,6 +2731,890 @@
           "explanation": "'Dem' är objektsform och används efter prepositionen 'med'. Test: passar 'oss'? ('Vi pratade med oss') → skriv 'dem'."
         }
       ]
+    },
+    {
+      "id": "sprakhistoria-1",
+      "title": "Språkhistoria – svenskan genom tiderna",
+      "description": "Från runstenar till dagens svenska",
+      "icon": "📜",
+      "pointsRequired": 0,
+      "bonusPoints": 35,
+      "helpText": [
+        "Svenskans historia delas in i runsvenska, fornsvenska, nysvenska och nusvenska.",
+        "Gustav Vasas bibel 1541 gav svenskan ett mer enhetligt skriftspråk.",
+        "Stavningsreformen 1906 räknas som starten på nusvenskan.",
+        "Lågtyska, franska och engelska har lånat ut mängder av ord till svenskan.",
+        "Ord kan byta betydelse med tiden."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilken av dessa perioder i svenskans historia kommer först?",
+          "options": [
+            "Fornsvenska",
+            "Runsvenska",
+            "Nysvenska",
+            "Nusvenska"
+          ],
+          "correctIndex": 1,
+          "explanation": "Runsvenskan (ca 800–1225) är den äldsta perioden. Vi känner den framför allt från inskrifterna på runstenar."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket år trycktes Gustav Vasas bibel, alltså hela Bibeln på svenska?",
+          "options": [
+            "1451",
+            "1526",
+            "1541",
+            "1611"
+          ],
+          "correctIndex": 2,
+          "hint": "Det var några år efter att Nya testamentet kommit på svenska.",
+          "explanation": "Gustav Vasas bibel kom 1541. Nya testamentet hade getts ut på svenska redan 1526."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad innebar 1906 års stavningsreform?",
+          "options": [
+            "Att 'hv' byttes mot 'v' och 'dt' mot 't' eller 'tt'",
+            "Att bokstäverna ä och ö infördes i alfabetet",
+            "Att alla substantiv började skrivas med stor bokstav",
+            "Att verben slutade böjas i plural"
+          ],
+          "correctIndex": 0,
+          "explanation": "Efter reformen skrev man 'vad' i stället för 'hvad' och 'rött' i stället för 'rödt'. Verbens pluralformer försvann först senare, i mitten av 1900-talet."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Från vilket språk lånade svenskan in ord som 'betala', 'fönster' och 'borgmästare'?",
+          "options": [
+            "Franska",
+            "Lågtyska",
+            "Latin",
+            "Engelska"
+          ],
+          "correctIndex": 1,
+          "explanation": "Orden kom in under medeltiden, när Hansans köpmän och hantverkare verkade i svenska städer. Lågtyskan påverkade svenskan starkt på 1200–1500-talen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Under vilket århundrade lånade svenskan in flest franska ord, som 'balkong', 'garderob' och 'parfym'?",
+          "options": [
+            "1500-talet",
+            "1600-talet",
+            "1700-talet",
+            "1900-talet"
+          ],
+          "correctIndex": 2,
+          "explanation": "På 1700-talet var franskan Europas modespråk. Då kom många franska ord för mode, mat och möbler in i svenskan."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad betydde ordet 'rolig' i äldre svenska?",
+          "options": [
+            "Lugn",
+            "Rik",
+            "Dum",
+            "Snabb"
+          ],
+          "correctIndex": 0,
+          "explanation": "'Rolig' hör ihop med ordet 'ro' och betydde 'lugn'. Den betydelsen finns kvar i danskans och norskans 'rolig'."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Den period som börjar med stavningsreformen 1906 och sträcker sig fram till i dag kallas ___.",
+          "answer": "nusvenska",
+          "alternativeAnswers": [
+            "nusvenskan"
+          ],
+          "hint": "Perioden handlar om det språk vi använder just nu.",
+          "explanation": "Nusvenskan räknas från 1906 och framåt. Perioden före den kallas nysvenska."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Den äldsta perioden i svenskans historia, ungefär 800–1225, kallas ___.",
+          "answer": "runsvenska",
+          "alternativeAnswers": [
+            "runsvenskan"
+          ],
+          "hint": "Tänk på vilket slags skrifttecken vikingarna ristade i sten.",
+          "explanation": "Runsvenska användes under vikingatid och tidig medeltid. Den är känd från runstenarnas inskrifter."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Perioden mellan runsvenskan och nysvenskan, ungefär 1225–1526, kallas ___.",
+          "answer": "fornsvenska",
+          "alternativeAnswers": [
+            "fornsvenskan"
+          ],
+          "hint": "Förledet betyder 'gammal' och finns också i ordet fornlämning.",
+          "explanation": "Fornsvenskan brukar räknas från Äldre Västgötalagen omkring 1225 fram till 1526, då Nya testamentet kom ut på svenska."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Förändringen på 1960-talet, då svenskar började säga 'du' till varandra i stället för att använda 'ni' och titlar, kallas ___.",
+          "answer": "du-reformen",
+          "alternativeAnswers": [
+            "dureformen",
+            "du reformen"
+          ],
+          "hint": "Den handlar om ett kort tilltalsord på två bokstäver.",
+          "explanation": "Under 1960-talet försvann tilltal med titlar. När Bror Rexed 1967 började dua sin personal på Medicinalstyrelsen blev det en symbol för förändringen."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Ord som 'kyrka', 'präst' och 'altare' kom in i svenskan tillsammans med ___.",
+          "answer": "kristendomen",
+          "alternativeAnswers": [
+            "kristendom"
+          ],
+          "hint": "Det handlar om den religion som spreds i Norden för ungefär tusen år sedan.",
+          "explanation": "Med den nya religionen följde kyrkans ord, som oftast har sitt ursprung i latin och grekiska."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Ord som 'jobb', 'tejp' och 'dejt' är lånord från ___.",
+          "answer": "engelskan",
+          "alternativeAnswers": [
+            "engelska"
+          ],
+          "hint": "Språket som blev världens viktigaste efter andra världskriget.",
+          "explanation": "Under 1900-talet ökade lånen från detta språk kraftigt. 'Jobb', 'tejp' och 'dejt' har dessutom anpassats till svensk stavning."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg en mening om Gustav Vasas bibel.",
+          "words": [
+            "Gustav",
+            "Vasas",
+            "bibel",
+            "gav",
+            "svenskan",
+            "ett",
+            "enhetligt",
+            "skriftspråk."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "explanation": "Bibeln från 1541 spreds i hela riket och bidrog till en gemensam stavning."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg en mening om lånord från lågtyskan.",
+          "words": [
+            "Under",
+            "medeltiden",
+            "lånade",
+            "svenskan",
+            "många",
+            "ord",
+            "från",
+            "lågtyskan."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "explanation": "Hansans köpmän och hantverkare förde med sig lågtyska ord till svenska städer."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg en mening om stavningsreformen.",
+          "words": [
+            "Stavningsreformen",
+            "1906",
+            "räknas",
+            "som",
+            "början",
+            "på",
+            "nusvenskan."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "explanation": "Efter reformen skrev man 'vad' i stället för 'hvad', och nusvenskan tog vid."
+        }
+      ]
+    },
+    {
+      "id": "dialekter-sociolekter-1",
+      "title": "Dialekter och sociolekter",
+      "description": "Hur språket varierar mellan platser och grupper",
+      "icon": "🗣️",
+      "pointsRequired": 0,
+      "bonusPoints": 35,
+      "helpText": [
+        "En dialekt är en språklig variant som hör ihop med en plats.",
+        "En sociolekt hör ihop med en grupp, till exempel ett yrke.",
+        "Din alldeles egna variant av språket kallas idiolekt.",
+        "Talspråk är spontant, skriftspråk är planerat.",
+        "Alla varianter fungerar lika bra – men attityderna till dem skiljer sig."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vad kallas en språklig variant som hör ihop med en viss plats?",
+          "options": [
+            "Sociolekt",
+            "Dialekt",
+            "Idiolekt",
+            "Kronolekt"
+          ],
+          "correctIndex": 1,
+          "explanation": "En sådan variant är knuten till ett geografiskt område, till exempel Skåne eller Dalarna."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad kallas en enskild persons alldeles egna sätt att prata?",
+          "options": [
+            "Idiolekt",
+            "Dialekt",
+            "Sociolekt",
+            "Slang"
+          ],
+          "correctIndex": 0,
+          "explanation": "Idiolekten är individens eget språk: ordval, tonfall och favorituttryck som ingen annan har exakt likadana."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket uttalsdrag är typiskt för sydsvenska dialekter, till exempel i Skåne?",
+          "options": [
+            "Bakre r som skorrar",
+            "Tjockt l",
+            "Bortfall av slutvokal",
+            "Betoning på sista stavelsen i alla ord"
+          ],
+          "correctIndex": 0,
+          "explanation": "Det bakre r-ljudet bildas långt bak i munnen och är ett tydligt sydsvenskt drag. Det finns även i danskan."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "I norrländska dialekter faller slutvokalen ofta bort. Vad kan 'att kasta' bli?",
+          "options": [
+            "att kast",
+            "att kasto",
+            "att kaste",
+            "att kastar"
+          ],
+          "correctIndex": 0,
+          "explanation": "Bortfall av slutvokal kallas apokope. 'Kasta' blir 'kast' och 'gata' blir 'gat'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket av följande är ett exempel på en sociolekt?",
+          "options": [
+            "Gotländska",
+            "Läkares fackspråk på jobbet",
+            "Skånska",
+            "Norrländska"
+          ],
+          "correctIndex": 1,
+          "explanation": "En sociolekt hör ihop med en social grupp, till exempel ett yrke. De övriga alternativen är dialekter och hör ihop med platser."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad menas med kodväxling?",
+          "options": [
+            "Att byta mellan språk eller språkvarianter i samma samtal",
+            "Att skriva ett hemligt meddelande",
+            "Att prata så tyst som möjligt",
+            "Att alltid använda exakt samma dialekt"
+          ],
+          "correctIndex": 0,
+          "explanation": "Kodväxling är när en talare växlar mellan till exempel svenska och ett annat språk, eller mellan dialekt och standardsvenska, under ett och samma samtal."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Språkliga varianter som hör ihop med en social grupp, till exempel ett yrke eller en samhällsklass, kallas ___.",
+          "answer": "sociolekter",
+          "alternativeAnswers": [
+            "sociolekt"
+          ],
+          "hint": "Förledet handlar om samhället och grupper av människor.",
+          "explanation": "Sådana varianter skiljer sig åt beroende på grupptillhörighet, medan dialekter skiljer sig åt beroende på plats."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Gotländskan är känd för sina ___, till exempel 'stain' i stället för 'sten'.",
+          "answer": "diftonger",
+          "alternativeAnswers": [
+            "diftong"
+          ],
+          "hint": "Det handlar om två vokalljud som glider ihop i samma stavelse.",
+          "explanation": "Gotländskan har bevarat gamla vokalglidningar som försvunnit i standardsvenskan."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Språk som används spontant, med pauser och avbrutna meningar, kallas ___.",
+          "answer": "talspråk",
+          "alternativeAnswers": [
+            "talat språk",
+            "talspråket"
+          ],
+          "hint": "Motsatsen är det man planerar och skriver ner.",
+          "explanation": "Det spontana språket stöds av tonfall, gester och miner. Skriftspråket är mer genomtänkt och följer skrivregler."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Nya, lekfulla ord som ofta används av unga och som snabbt kan bli omoderna kallas ___.",
+          "answer": "slang",
+          "alternativeAnswers": [
+            "slangord"
+          ],
+          "hint": "Ett kort låneord från engelskan för informella modeord.",
+          "explanation": "Sådana ord byts ut snabbt och skapar gemenskap i en grupp. Det som är inne i dag kan låta gammalmodigt om några år."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Den variant av svenskan som används i nyhetssändningar och skolböcker kallas ___.",
+          "answer": "standardsvenska",
+          "alternativeAnswers": [
+            "rikssvenska",
+            "standardspråk",
+            "standardsvenskan"
+          ],
+          "hint": "Den fungerar som norm och är inte knuten till ett särskilt landskap.",
+          "explanation": "Den neutrala varianten kallas också rikssvenska. Den har hög status i formella sammanhang, men är inte språkligt bättre än en dialekt."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Att någon tycker att en dialekt låter 'bondsk' eller 'fin' beror på ___ till språk, inte på språket i sig.",
+          "answer": "attityder",
+          "alternativeAnswers": [
+            "fördomar",
+            "attityd"
+          ],
+          "hint": "Det handlar om inställningar och värderingar som lyssnaren bär med sig.",
+          "explanation": "Språkvetenskapligt fungerar alla dialekter lika bra. Det som skiljer dem åt är hur människor värderar dem."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg en mening om dialekter.",
+          "words": [
+            "Varje",
+            "dialekt",
+            "hör",
+            "ihop",
+            "med",
+            "ett",
+            "geografiskt",
+            "område."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "explanation": "Dialekter varierar geografiskt, till exempel mellan Skåne och Norrland."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg en mening om ungdomsspråk.",
+          "words": [
+            "Ungdomsspråk",
+            "innehåller",
+            "ofta",
+            "slang",
+            "som",
+            "byts",
+            "ut",
+            "snabbt."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "explanation": "Slangord är färskvara – de kommer och går fort i ungdomsgrupper."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg en mening om talspråk.",
+          "words": [
+            "Talspråket",
+            "har",
+            "kortare",
+            "meningar",
+            "än",
+            "skriftspråket."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "explanation": "När vi pratar hinner vi inte planera, så meningarna blir korta och ibland ofullständiga."
+        }
+      ]
+    },
+    {
+      "id": "grannsprak-minoritetssprak-1",
+      "title": "Nordiska grannspråk och minoritetsspråk",
+      "description": "Nordens språk och Sveriges fem minoritetsspråk",
+      "icon": "🌍",
+      "pointsRequired": 0,
+      "bonusPoints": 35,
+      "helpText": [
+        "Sverige har fem nationella minoritetsspråk sedan år 2000.",
+        "De är finska, meänkieli, samiska, romani chib och jiddisch.",
+        "Svenska, danska och norska är så lika att vi ofta förstår varandra.",
+        "Isländskan har förändrats minst av de nordiska språken.",
+        "Falska vänner är ord som ser lika ut men betyder olika saker."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Hur många nationella minoritetsspråk har Sverige?",
+          "options": [
+            "Tre",
+            "Fyra",
+            "Fem",
+            "Sex"
+          ],
+          "correctIndex": 2,
+          "explanation": "Sedan år 2000 är finska, meänkieli, samiska, romani chib och jiddisch nationella minoritetsspråk."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket av dessa språk är INTE ett nationellt minoritetsspråk i Sverige?",
+          "options": [
+            "Meänkieli",
+            "Jiddisch",
+            "Arabiska",
+            "Romani chib"
+          ],
+          "correctIndex": 2,
+          "explanation": "Arabiska talas av många i Sverige i dag, men ett nationellt minoritetsspråk ska ha talats här under mycket lång tid."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket minoritetsspråk talas framför allt i Tornedalen i norra Sverige?",
+          "options": [
+            "Meänkieli",
+            "Jiddisch",
+            "Samiska",
+            "Romani chib"
+          ],
+          "correctIndex": 0,
+          "explanation": "Språkets namn betyder 'vårt språk'. Det är nära släkt med finskan och talas i Tornedalen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket av de nordiska språken är INTE ett germanskt språk?",
+          "options": [
+            "Danska",
+            "Finska",
+            "Norska",
+            "Isländska"
+          ],
+          "correctIndex": 1,
+          "explanation": "Finskan tillhör den finsk-ugriska språkfamiljen. Danska, norska och isländska är nordgermanska språk, precis som svenskan."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Danskan har ordet 'by'. Vad betyder det?",
+          "options": [
+            "Liten samling gårdar",
+            "Stad",
+            "Buss",
+            "Bygga"
+          ],
+          "correctIndex": 1,
+          "explanation": "'By' betyder stad på både danska och norska. Det är en falsk vän: ordet ser bekant ut men betyder något annat."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket nordiskt språk brukar svenskar ha lättast att förstå när det talas?",
+          "options": [
+            "Isländska",
+            "Finska",
+            "Norska",
+            "Färöiska"
+          ],
+          "correctIndex": 2,
+          "explanation": "Uttalet ligger nära svenskan, så det språket är oftast lättast att höra. Danska är svårare att uppfatta i tal, men lättare att läsa."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Ordet 'rolig' betyder på danska och norska ___.",
+          "answer": "lugn",
+          "alternativeAnswers": [
+            "lugnt",
+            "stillsam"
+          ],
+          "hint": "Tänk på svenskans ord 'ro' – att inte vara stressad.",
+          "explanation": "'Rolig' hör ihop med 'ro'. Grannspråken har kvar den gamla betydelsen, medan svenskan har fått betydelsen 'kul'."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Ord som ser lika ut i två språk men betyder olika saker kallas falska ___.",
+          "answer": "vänner",
+          "alternativeAnswers": [
+            "kompisar"
+          ],
+          "hint": "Man tror att de står på ens sida, men de lurar en.",
+          "explanation": "Exempel är danskans 'by', som betyder stad, och norskans 'rar', som betyder konstig."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Svenskan tillhör den ___ grenen av de indoeuropeiska språken.",
+          "answer": "germanska",
+          "alternativeAnswers": [
+            "nordgermanska"
+          ],
+          "hint": "Samma grupp som engelska, tyska och nederländska hör till.",
+          "explanation": "Svenskan är närmare bestämt nordgermansk, tillsammans med danska, norska, isländska och färöiska."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Det språk som judar i Centraleuropa talat under lång tid och som är ett av Sveriges minoritetsspråk heter ___.",
+          "answer": "jiddisch",
+          "alternativeAnswers": [
+            "jiddish"
+          ],
+          "hint": "Det är i grunden ett germanskt språk, men det skrivs med hebreiska bokstäver.",
+          "explanation": "Språket växte fram bland judar i Centraleuropa och fick ställning som nationellt minoritetsspråk i Sverige år 2000."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Det nordiska språk som har förändrats minst sedan vikingatiden är ___.",
+          "answer": "isländska",
+          "alternativeAnswers": [
+            "isländskan"
+          ],
+          "hint": "Språket talas på en ö långt ute i Atlanten.",
+          "explanation": "Där har gamla ordformer och kasusböjningar bevarats. Därför kan invånarna läsa medeltida sagor ganska lätt."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "På danska betyder 'frokost' inte frukost utan ___.",
+          "answer": "lunch",
+          "alternativeAnswers": [
+            "lunchen"
+          ],
+          "hint": "Det är måltiden mitt på dagen.",
+          "explanation": "Danskans 'frokost' är alltså måltiden mitt på dagen, medan norskans 'frokost' verkligen betyder frukost. Danskarnas frukost heter 'morgenmad'."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg en mening om minoritetsspråken.",
+          "words": [
+            "Sverige",
+            "har",
+            "fem",
+            "nationella",
+            "minoritetsspråk."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "explanation": "Finska, meänkieli, samiska, romani chib och jiddisch fick den ställningen år 2000."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg en mening om grannspråken.",
+          "words": [
+            "Danska",
+            "och",
+            "norska",
+            "är",
+            "nära",
+            "släkt",
+            "med",
+            "svenskan."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "explanation": "De tre språken kallas skandinaviska och är så lika att talarna ofta förstår varandra."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg en mening om samiskan.",
+          "words": [
+            "Samiska",
+            "talas",
+            "av",
+            "urfolket",
+            "i",
+            "norra",
+            "Skandinavien."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "explanation": "Samerna är ett urfolk, och samiskan finns i flera varieteter, till exempel nordsamiska och sydsamiska."
+        }
+      ]
+    },
+    {
+      "id": "texttyper-genrer-1",
+      "title": "Texttyper och genrer",
+      "description": "Känna igen och skriva olika slags texter",
+      "icon": "📝",
+      "pointsRequired": 0,
+      "bonusPoints": 35,
+      "helpText": [
+        "Texttypen bestäms av vad texten ska åstadkomma – dess syfte.",
+        "Berättande text underhåller, beskrivande text informerar.",
+        "Instruerande text styr en handling och använder imperativ.",
+        "Argumenterande text ska övertyga och bygger på en tes.",
+        "Utredande text undersöker en fråga från flera håll."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilken texttyp har som främsta syfte att övertyga läsaren?",
+          "options": [
+            "Berättande text",
+            "Argumenterande text",
+            "Instruerande text",
+            "Beskrivande text"
+          ],
+          "correctIndex": 1,
+          "explanation": "En sådan text driver en tes och stöder den med argument, till exempel i en insändare eller en debattartikel."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket språkdrag är typiskt för en instruerande text?",
+          "options": [
+            "Verb i imperativ, som 'vispa' och 'häll'",
+            "Många liknelser och metaforer",
+            "Långa skildringar av personers känslor",
+            "Tes och bemötta motargument"
+          ],
+          "correctIndex": 0,
+          "explanation": "Recept och bruksanvisningar ger uppmaningar steg för steg, och då används verb i imperativform."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "En text berättar sakligt hur en groda ser ut och hur den lever. Vilken texttyp är det?",
+          "options": [
+            "Berättande",
+            "Beskrivande",
+            "Argumenterande",
+            "Instruerande"
+          ],
+          "correctIndex": 1,
+          "explanation": "Texten informerar om hur något är. Sådana texter står ofta i presens och använder fackord."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken tempusform är vanligast i berättande text?",
+          "options": [
+            "Presens",
+            "Preteritum",
+            "Futurum",
+            "Imperativ"
+          ],
+          "correctIndex": 1,
+          "explanation": "Berättelser skrivs oftast i dåtid: 'Han gick', 'hon såg'. Presens förekommer också, men är mindre vanligt."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad kallas det huvudpåstående som en argumenterande text ska övertyga läsaren om?",
+          "options": [
+            "Tesen",
+            "Rubriken",
+            "Källan",
+            "Sammanfattningen"
+          ],
+          "correctIndex": 0,
+          "explanation": "Argumenten ska stödja huvudpåståendet, och slutsatsen knyter ihop texten."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad skiljer en utredande text från en argumenterande text?",
+          "options": [
+            "Den utredande texten belyser frågan från flera håll, den argumenterande driver en åsikt",
+            "Den utredande texten är alltid kortare",
+            "Den utredande texten saknar rubrik",
+            "Den utredande texten skrivs alltid i jag-form"
+          ],
+          "correctIndex": 0,
+          "explanation": "En utredande text undersöker och jämför olika perspektiv. En argumenterande text vill få läsaren att hålla med."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "En text som ska underhålla och som handlar om personer, miljöer och händelser i en viss ordning är ___.",
+          "answer": "berättande",
+          "alternativeAnswers": [
+            "narrativ",
+            "en berättande text"
+          ],
+          "hint": "Tänk på sagor, noveller och romaner.",
+          "explanation": "Sådana texter har ofta en inledning, ett problem och en lösning, och de drivs framåt av händelser."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Ett recept och en bruksanvisning tillhör texttypen ___ text.",
+          "answer": "instruerande",
+          "alternativeAnswers": [
+            "instruktion"
+          ],
+          "hint": "Den talar om vad man ska göra, steg för steg.",
+          "explanation": "Sådan text styr mottagarens handlande och är ordnad kronologiskt, ofta i numrerade steg."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "I en argumenterande text kallas ett påstående som talar emot tesen för ett ___.",
+          "answer": "motargument",
+          "alternativeAnswers": [
+            "motskäl"
+          ],
+          "hint": "Förledet betyder 'emot'.",
+          "explanation": "Invändningen är alltså det som talar emot tesen. En stark text tar upp sådana invändningar och bemöter dem."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Ordet ___ används om en typ av text som läsaren känner igen, till exempel deckare, insändare eller recept.",
+          "answer": "genre",
+          "alternativeAnswers": [
+            "genrer"
+          ],
+          "hint": "Ett franskt låneord som också används om musik och film.",
+          "explanation": "Begreppet handlar om form och sammanhang som läsaren känner igen. En och samma sådan text kan innehålla flera texttyper."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Att skriva på olika sätt beroende på om man vänder sig till en kompis eller till rektorn kallas ___.",
+          "answer": "mottagaranpassning",
+          "alternativeAnswers": [
+            "anpassning till mottagaren"
+          ],
+          "hint": "Man tänker på vem som ska läsa texten och väljer språk efter det.",
+          "explanation": "Det betyder att tilltal, ordval och grad av formalitet väljs efter den som ska läsa texten."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "En text som förklarar orsakerna till andra världskriget och jämför olika förklaringar är en ___ text.",
+          "answer": "utredande",
+          "alternativeAnswers": [
+            "undersökande"
+          ],
+          "hint": "Den undersöker en fråga sakligt utan att driva en egen åsikt.",
+          "explanation": "Sådan text reder ut en fråga med hjälp av källor och jämförelser, och avslutas ofta med en sammanfattande slutsats."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg en mening om hur man väljer texttyp.",
+          "words": [
+            "Syftet",
+            "styr",
+            "vilken",
+            "texttyp",
+            "man",
+            "väljer."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "explanation": "Vill du övertyga skriver du argumenterande, vill du underhålla skriver du berättande."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg en mening om instruerande text.",
+          "words": [
+            "En",
+            "instruerande",
+            "text",
+            "använder",
+            "verb",
+            "i",
+            "imperativ."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "explanation": "'Skala potatisen' och 'koka upp vattnet' är uppmaningar i imperativ."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg en mening om argumenterande text.",
+          "words": [
+            "Argumenterande",
+            "texter",
+            "inleds",
+            "ofta",
+            "med",
+            "en",
+            "tydlig",
+            "tes."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "explanation": "Tesen visar direkt vad skribenten vill att läsaren ska tycka."
+        }
+      ]
     }
   ],
   "spelling": [
