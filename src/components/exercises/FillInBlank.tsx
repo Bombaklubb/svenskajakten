@@ -47,26 +47,34 @@ export default function FillInBlank({ exercise, onAnswer, isLast }: Props) {
 
   return (
     <div className="space-y-5 animate-fade-in">
+      {/* A question may contain several ___ gaps (e.g. a quotation mark before
+          and after a phrase). The same answer fills every gap, and every text
+          segment is rendered so nothing after the second gap is lost. */}
       <div className="text-base sm:text-xl font-medium text-gray-800 dark:text-gray-100 leading-relaxed flex flex-wrap items-center gap-x-2 gap-y-2">
-        <span>{parts[0]}</span>
-        <span
-          className={`inline-flex items-center border-b-4 px-1 min-w-[80px] transition-colors duration-300 ${
-            state === "correct"
-              ? "border-green-400 text-green-700"
-              : state === "wrong"
-              ? "border-red-400 text-red-700"
-              : "border-sv-400 text-sv-700"
-          }`}
-        >
-          {state !== "idle" ? (
-            <span className="font-bold">
-              {state === "correct" ? input : exercise.answer}
-            </span>
-          ) : (
-            <span className="text-gray-400 text-sm italic">svar</span>
-          )}
-        </span>
-        {parts[1] && <span>{parts[1]}</span>}
+        {parts.map((part, i) => (
+          <span key={i} className="contents">
+            {part && <span>{part}</span>}
+            {i < parts.length - 1 && (
+              <span
+                className={`inline-flex items-center border-b-4 px-1 min-w-[80px] justify-center transition-colors duration-300 ${
+                  state === "correct"
+                    ? "border-green-400 text-green-700"
+                    : state === "wrong"
+                    ? "border-red-400 text-red-700"
+                    : "border-sv-400 text-sv-700"
+                }`}
+              >
+                {state !== "idle" ? (
+                  <span className="font-bold">
+                    {state === "correct" ? input : exercise.answer}
+                  </span>
+                ) : (
+                  <span className="text-gray-400 text-sm italic">svar</span>
+                )}
+              </span>
+            )}
+          </span>
+        ))}
       </div>
 
       {exercise.hint && (
