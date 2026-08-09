@@ -1756,6 +1756,826 @@
           "explanation": "En argumenterande text presenterar en tes och stödjer den med argument för att övertala läsaren."
         }
       ]
+    },
+    {
+      "id": "sprakhistoria-gym-1",
+      "title": "Språkhistoria – från runsvenska till nusvenska",
+      "description": "Svenskans utveckling genom perioderna: språkfamiljer, ljudförändringar, lånord och språkvård",
+      "icon": "📜",
+      "bonusPoints": 45,
+      "helpText": [
+        "Periodindelningen: runsvenska (ca 800–1225), fornsvenska (1225–1526), äldre nysvenska (1526–1732), yngre nysvenska (1732–1900) och nusvenska (från 1900).",
+        "Gränsåren knyts till texthändelser: 1526 kom Nya testamentet på svenska och 1732 började Olof von Dalin ge ut tidskriften Then Swänska Argus.",
+        "Svenskan tillhör den nordiska grenen av de germanska språken, som i sin tur ingår i den indoeuropeiska språkfamiljen.",
+        "Fornsvenskan hade fyra kasus och böjde verben efter person och numerus. I dag finns bara genitivens -s kvar av kasusböjningen.",
+        "Lånorden speglar samhället: latinet kom med kyrkan, lågtyskan med Hansans handel, franskan med hovkulturen och engelskan med 1900-talets teknik och populärkultur.",
+        "Språkvetenskapen beskriver hur språket faktiskt används (deskriptivt), medan språkvården också ger råd om hur det bör användas (normativt)."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilken tidsperiod brukar kallas runsvenska?",
+          "options": [
+            "Ca 800–1225",
+            "Ca 1225–1526",
+            "Ca 1526–1732",
+            "Ca 1732–1900"
+          ],
+          "correctIndex": 0,
+          "hint": "Tänk på vilken skrift perioden har fått sitt namn av och när den skriften användes.",
+          "explanation": "Runsvenskan är den period vi känner främst genom runinskrifter på stenar, ungefär från vikingatidens början till 1200-talets första hälft."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken händelse brukar markera övergången från fornsvenska till äldre nysvenska?",
+          "options": [
+            "Gustav Vasas bibel trycktes 1541",
+            "Nya testamentet gavs ut på svenska 1526",
+            "Then Swänska Argus började ges ut 1732",
+            "Stavningsreformen genomfördes 1906"
+          ],
+          "correctIndex": 1,
+          "explanation": "Perioderna avgränsas med hjälp av viktiga texter. 1526 års översättning av Nya testamentet är den första stora tryckta texten på svenska och får markera nysvenskans början."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken språkfamilj tillhör svenskan?",
+          "options": [
+            "Den finsk-ugriska",
+            "Den indoeuropeiska",
+            "Den semitiska",
+            "Den sinotibetanska"
+          ],
+          "correctIndex": 1,
+          "explanation": "Svenskan är ett germanskt språk och de germanska språken är en gren av den indoeuropeiska språkfamiljen. Finskan hör däremot till den finsk-ugriska familjen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad kännetecknar fornsvenskans grammatik jämfört med dagens svenska?",
+          "options": [
+            "Den hade fyra kasus och böjde verben efter person och numerus",
+            "Den saknade helt böjningsändelser på substantiv",
+            "Den hade fast ordföljd och inga ändelser alls",
+            "Den använde bara ett enda genus för alla substantiv"
+          ],
+          "correctIndex": 0,
+          "explanation": "Fornsvenskan böjde substantiven i nominativ, genitiv, dativ och ackusativ och hade dessutom personböjda verb. När ändelserna föll bort fick ordföljden bära allt mer av betydelsen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket ordpar kom in i svenskan med Hansans lågtyska under medeltiden?",
+          "options": [
+            "arbete och betala",
+            "restaurang och parfym",
+            "altare och mässa",
+            "webb och mejl"
+          ],
+          "correctIndex": 0,
+          "hint": "Vilka ord hör hemma i köpmännens och hantverkarnas vardag?",
+          "explanation": "Lågtyskan lånade in ord för handel, hantverk och stadsliv, till exempel arbete och betala. Restaurang och parfym är franska lån, altare och mässa kyrkliga latinlån och webb och mejl moderna engelska lån."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad innebär det att en ordbok har en deskriptiv syn på språket?",
+          "options": [
+            "Den beskriver hur språket faktiskt används av språkbrukarna",
+            "Den bestämmer vilka former som är de enda tillåtna",
+            "Den rensar bort alla lånord ur språket",
+            "Den återger bara hur språket såg ut på 1700-talet"
+          ],
+          "correctIndex": 0,
+          "explanation": "Ett deskriptivt arbetssätt registrerar det bruk som finns, medan ett normativt arbetssätt talar om vad som bör gälla. Svensk språkvård kombinerar ofta båda perspektiven."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Den första fullständiga bibelöversättningen till svenska, Gustav Vasas bibel, kom ut år ___.",
+          "answer": "1541",
+          "hint": "Femton år efter att Nya testamentet hade kommit på svenska var hela verket färdigt.",
+          "explanation": "Gustav Vasas bibel (1541) spreds över hela riket och blev en språklig norm som bidrog till en enhetlig svensk skriftspråksform."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Genom 1906 års stavningsreform ändrades stavningen av ordet 'hvad' till ___.",
+          "answer": "vad",
+          "hint": "Ett stumt h i början av ordet ströks.",
+          "explanation": "Reformen ersatte stavningarna 'hv' och 'fv' med 'v' och 'dt' med 't' eller 'tt'. Därför blev 'hvad' till 'vad' och 'godt' till 'gott'."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Under 1960- och 1970-talen ersatte tilltalet du de gamla titlarna i svenskan. Denna förändring kallas ___.",
+          "answer": "du-reformen",
+          "alternativeAnswers": [
+            "dureformen"
+          ],
+          "hint": "Ett tilltalsord fick ge namn åt hela förändringen.",
+          "explanation": "Du-reformen gjorde duandet allmänt och trängde undan titlar och niande. Bror Rexed, generaldirektör för Medicinalstyrelsen, blev en symbol för förändringen när han 1967 duade sin personal."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Svenska, danska, norska, isländska och färöiska bildar tillsammans den ___ grenen av de germanska språken.",
+          "answer": "nordiska",
+          "alternativeAnswers": [
+            "nordgermanska"
+          ],
+          "hint": "Grenen har fått namn efter den del av Europa där språken talas.",
+          "explanation": "De nordiska (nordgermanska) språken går tillbaka på ett gemensamt urnordiskt språk. Tyska och engelska hör till andra grenar av germanskan."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "I ordparet bok – böcker förändras stamvokalen på grund av en ändelse som funnits i ett äldre språkskede. Ljudförändringen kallas ___.",
+          "answer": "omljud",
+          "hint": "En vokal i stammen läggs på ett nytt sätt när ändelsen påverkar den.",
+          "explanation": "Omljud innebär att en vokal i stammen dras mot ändelsens vokal. I bok – böcker har ett gammalt i i pluraländelsen förskjutit o till ö, ett så kallat i-omljud."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Ord som mode, parfym och balkong lånades in på 1600- och 1700-talen från ___.",
+          "answer": "franskan",
+          "alternativeAnswers": [
+            "franska"
+          ],
+          "hint": "Det språk som talades vid Europas mest tongivande hov blev även de svenska ståndspersonernas modespråk.",
+          "explanation": "Under 1600- och 1700-talen var detta Europas prestigespråk, och lånorden rör därför ofta hovliv, mode, mat, konst och militärväsen."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen om språkhistoriens perioder!",
+          "words": [
+            "Runsvenskan",
+            "avlöstes",
+            "av",
+            "fornsvenskan",
+            "omkring",
+            "år",
+            "1225."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "explanation": "Runsvenskan räknas till omkring 1225, då de äldsta landskapslagarna skrivs ned och fornsvenskan tar vid."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen om lånord!",
+          "words": [
+            "Lågtyska",
+            "ord",
+            "kom",
+            "in",
+            "med",
+            "Hansans",
+            "handel."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "explanation": "Under medeltiden dominerade Hansan handeln kring Östersjön, och lågtyskan lämnade tusentals ord efter sig i svenskan."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen om språkvård!",
+          "words": [
+            "Språkrådet",
+            "ger",
+            "rekommendationer",
+            "om",
+            "hur",
+            "svenskan",
+            "bör",
+            "användas."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "explanation": "Språkrådet är Sveriges officiella organ för språkvård. Att ge rekommendationer om vad som bör gälla är ett normativt arbetssätt."
+        }
+      ]
+    },
+    {
+      "id": "referat-kallhanvisning-1",
+      "title": "Referat och källhänvisning",
+      "description": "Att återge andras texter sakligt, använda referatmarkörer och redovisa sina källor",
+      "icon": "📚",
+      "bonusPoints": 40,
+      "helpText": [
+        "Ett referat återger huvudinnehållet i en annan text med dina egna ord, sakligt och utan dina egna åsikter.",
+        "Referatmarkörer visar var källans röst tar vid: 'Enligt Andersson …', 'Författaren hävdar att …', 'Hon framhåller …'.",
+        "Ett citat återger texten ordagrant inom citattecken och används när själva formuleringen är viktig.",
+        "Att använda någon annans text eller idéer utan att ange källan är plagiat – även när meningarna är omskrivna.",
+        "I Harvardsystemet står hänvisningen i en parentes i den löpande texten, i Oxfordsystemet i en fotnot. Alla källor samlas dessutom i en källförteckning."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vad är det främsta syftet med ett referat?",
+          "options": [
+            "Att sakligt återge huvudinnehållet i en annan text med egna ord",
+            "Att argumentera mot den text som återges",
+            "Att återge texten ordagrant så att ingenting går förlorat",
+            "Att bedöma textens språkliga kvalitet"
+          ],
+          "correctIndex": 0,
+          "explanation": "Referatet ska ge läsaren källans innehåll i komprimerad form. Värderingar och egna argument hör hemma i andra texttyper."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening innehåller en referatmarkör?",
+          "options": [
+            "Skolan borde införa mobilförbud på alla lektioner.",
+            "Mobiltelefoner stör undervisningen varje dag.",
+            "Larsson hävdar att mobiltelefoner stör undervisningen.",
+            "Mobilförbud är den enda rimliga lösningen."
+          ],
+          "correctIndex": 2,
+          "hint": "Leta efter en mening som talar om vems åsikt det är.",
+          "explanation": "Referatmarkören består här av namnet plus verbet 'hävdar', som visar att påståendet kommer från källan och inte från skribenten själv."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "När är det motiverat att citera i stället för att referera?",
+          "options": [
+            "När den exakta formuleringen är viktig, till exempel i en definition eller ett träffande uttryck",
+            "När källan är för lång för att sammanfattas",
+            "Alltid när man använder en tryckt källa",
+            "När man inte hinner läsa hela källan"
+          ],
+          "correctIndex": 0,
+          "explanation": "Citatet bevarar ordalydelsen och används sparsamt. Är det bara innehållet som behövs väljer man referat."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad räknas som plagiat?",
+          "options": [
+            "Att byta ut några ord i en annans text och presentera resultatet som sitt eget",
+            "Att citera med citattecken och tydlig källhänvisning",
+            "Att referera en artikel med egna ord och ange författare och år",
+            "Att hänvisa till samma källa flera gånger i en text"
+          ],
+          "correctIndex": 0,
+          "explanation": "Plagiat handlar om att källan inte redovisas. Omskrivning hjälper inte om läsaren inte får veta varifrån innehållet kommer."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad kännetecknar en hänvisning enligt Harvardsystemet?",
+          "options": [
+            "Källan anges i en parentes i den löpande texten, till exempel (Andersson 2019, s. 45)",
+            "Källan anges i en fotnot längst ned på sidan",
+            "Källan anges enbart i källförteckningen sist i arbetet",
+            "Källan anges med en siffra inom hakparentes i rubriken"
+          ],
+          "correctIndex": 0,
+          "explanation": "Harvard är ett parentessystem med författare, årtal och eventuell sida i texten. Fotnoter hör i stället till Oxfordsystemet."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur ordnas källorna i en källförteckning som följer Harvardsystemet?",
+          "options": [
+            "I bokstavsordning efter författarens efternamn",
+            "I den ordning de nämns i den löpande texten",
+            "Efter hur långa källorna är",
+            "Efter hur pålitliga skribenten anser att de är"
+          ],
+          "correctIndex": 0,
+          "explanation": "Eftersom hänvisningarna i texten består av efternamn och årtal måste förteckningen vara alfabetisk för att läsaren snabbt ska hitta rätt post."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Uttryck som 'hävdar', 'menar' och 'framhåller' kallas med ett gemensamt namn för ___.",
+          "answer": "referatmarkörer",
+          "hint": "De markerar var källans röst tar vid i texten.",
+          "explanation": "Sådana uttryck signalerar tydligt att innehållet hämtas från källan, så att läsaren aldrig blandar ihop källans uppfattning med skribentens."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Ett ___ återger källans ord exakt och sätts inom citattecken.",
+          "answer": "citat",
+          "hint": "Motsatsen till att skriva om innehållet med egna ord.",
+          "explanation": "Ordagrann återgivning kräver citattecken och sidhänvisning, medan referatet formuleras om språkligt."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Att använda någon annans text eller idéer utan att ange varifrån de kommer kallas ___.",
+          "answer": "plagiat",
+          "hint": "En form av stöld där andras tankar presenteras som egna.",
+          "explanation": "Det avgörande är den uteblivna källredovisningen. Även omskrivna meningar räknas hit när källan saknas."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "I Oxfordsystemet placeras källhänvisningen i en ___ längst ned på sidan.",
+          "answer": "fotnot",
+          "alternativeAnswers": [
+            "not"
+          ],
+          "hint": "En upphöjd siffra i texten leder läsaren nedåt på sidan.",
+          "explanation": "Oxfordsystemet är ett notsystem: siffran i den löpande texten hör ihop med en not som innehåller källuppgifterna."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Ett referat ska vara ___, alltså återge källans innehåll utan att skribentens egna värderingar syns.",
+          "answer": "objektivt",
+          "alternativeAnswers": [
+            "sakligt",
+            "neutralt"
+          ],
+          "hint": "Skribentens tyckande ska hållas utanför.",
+          "explanation": "Läsaren ska kunna se vad källan säger, inte vad du tycker om den. Egna omdömen hör hemma i en analys eller en argumenterande text."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Alla källor som används i ett arbete samlas i en ___ sist i texten.",
+          "answer": "källförteckning",
+          "alternativeAnswers": [
+            "litteraturlista",
+            "referenslista"
+          ],
+          "hint": "En lista som gör det möjligt för läsaren att hitta tillbaka till materialet.",
+          "explanation": "Förteckningen gör hänvisningarna kontrollerbara: läsaren ska kunna leta upp exakt de källor som har använts."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med en referatmarkör!",
+          "words": [
+            "Enligt",
+            "Nilsson",
+            "påverkar",
+            "sömnbrist",
+            "elevernas",
+            "resultat."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "explanation": "'Enligt Nilsson' är referatmarkören. Den visar att påståendet hämtas ur källan och inte är skribentens eget."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen om referatteknik!",
+          "words": [
+            "Ett",
+            "referat",
+            "skrivs",
+            "alltid",
+            "med",
+            "egna",
+            "ord."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "explanation": "Referatet ska formuleras om språkligt. Annars blir det ett citat utan citattecken, vilket räknas som plagiat."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen om källhänvisning!",
+          "words": [
+            "Varje",
+            "påstående",
+            "bör",
+            "kunna",
+            "spåras",
+            "till",
+            "sin",
+            "källa."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "explanation": "Spårbarheten är hela poängen med källhänvisningar: läsaren ska kunna kontrollera varifrån uppgiften kommer."
+        }
+      ]
+    },
+    {
+      "id": "litteraturhistoria-1",
+      "title": "Litteraturhistoriska epoker",
+      "description": "Från antiken till modernismen – epokernas idéer, typiska drag och centrala verk",
+      "icon": "🏛️",
+      "bonusPoints": 45,
+      "helpText": [
+        "Ordningen är antiken, medeltiden, renässansen, upplysningen, romantiken, realismen och modernismen.",
+        "Varje epok svarar på den föregående: upplysningens förnuftstro möts av romantikens känsla, romantikens drömmar av realismens vardag.",
+        "Leta efter epokdragen i själva texten – natur, längtan och känsla pekar mot romantiken, sociala missförhållanden och vardagsmiljöer mot realismen.",
+        "Svenska hållpunkter: Strindbergs Röda rummet (1879), Selma Lagerlöfs Gösta Berlings saga (1891) och Edith Södergrans Dikter (1916).",
+        "Modernismen bryter medvetet mot traditionen med fri vers, splittrad form och inre perspektiv i stället för sammanhängande handling."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vilken uppräkning följer epokernas kronologiska ordning?",
+          "options": [
+            "Antiken – medeltiden – renässansen – upplysningen – romantiken",
+            "Antiken – renässansen – medeltiden – romantiken – upplysningen",
+            "Medeltiden – antiken – upplysningen – renässansen – romantiken",
+            "Renässansen – antiken – medeltiden – romantiken – upplysningen"
+          ],
+          "correctIndex": 0,
+          "explanation": "Antiken kommer först, därefter medeltiden och renässansen. Upplysningens 1700-tal följs av romantiken kring år 1800."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket av verken skrevs under antiken?",
+          "options": [
+            "Den gudomliga komedin",
+            "Odysséen",
+            "Hamlet",
+            "Candide"
+          ],
+          "correctIndex": 1,
+          "hint": "Vilket verk är äldst av de fyra?",
+          "explanation": "Odysséen tillskrivs Homeros och hör till den grekiska antiken. Dantes Den gudomliga komedin är medeltida, Shakespeares Hamlet hör till renässansen och Voltaires Candide till upplysningen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad kännetecknar upplysningens litteratur?",
+          "options": [
+            "Tro på förnuftet och vetenskapen samt kritik mot auktoriteter",
+            "Dyrkan av känslan, naturen och det översinnliga",
+            "Utförliga skildringar av fattigdom i industristäderna",
+            "Splittrad form och inre monolog"
+          ],
+          "correctIndex": 0,
+          "explanation": "1700-talets författare ville sprida kunskap och pröva allt med förnuftet. Satiren blev ett vapen mot kyrkans och kungamaktens anspråk."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Ett textutdrag skildrar en ensam vandrare som gripen av vördnad ser ut över en storslagen bergstrakt och längtar tillbaka till en svunnen tid. Vilken epok pekar dragen mot?",
+          "options": [
+            "Romantiken",
+            "Realismen",
+            "Upplysningen",
+            "Antiken"
+          ],
+          "correctIndex": 0,
+          "hint": "Vilken epok satte känslan och naturupplevelsen framför förnuftet?",
+          "explanation": "Den ensamma individen, den mäktiga naturen och längtan bort i tid eller rum är typiska romantiska motiv."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket påstående om Selma Lagerlöf är riktigt?",
+          "options": [
+            "Hon debuterade med Gösta Berlings saga och blev 1909 den första kvinnan som fick Nobelpriset i litteratur",
+            "Hon skrev Röda rummet, som räknas som realismens genombrott i Sverige",
+            "Hon var finlandssvensk modernist och gav ut samlingen Dikter 1916",
+            "Hon skrev dramat Ett drömspel och förnyade den svenska teatern"
+          ],
+          "correctIndex": 0,
+          "explanation": "Gösta Berlings saga kom 1891 och Nobelpriset 1909. De övriga påståendena beskriver August Strindberg respektive Edith Södergran."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är typiskt för modernistisk lyrik?",
+          "options": [
+            "Fri vers utan fast rim och meter, ofta med djärva bilder",
+            "Sträng sonettform på fjorton rader",
+            "Genomgående hexameter som i de antika hjältedikterna",
+            "Regelbundna fyrradiga strofer med korsrim"
+          ],
+          "correctIndex": 0,
+          "explanation": "Modernisterna övergav de bundna versmåtten för att kunna följa tanken och känslan fritt. Bildspråket blir samtidigt mer överraskande."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Epoken som återupptäckte antikens ideal och satte människans möjligheter i centrum kallas ___.",
+          "answer": "renässansen",
+          "hint": "Namnet betyder pånyttfödelse.",
+          "explanation": "Under denna epok (ca 1400–1600) väcktes antikens konst och tankar till liv igen, och humanismen lyfte fram människans förmåga och värde."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "August Strindbergs roman Röda rummet kom ut år ___ och brukar räknas som det moderna genombrottets början i Sverige.",
+          "answer": "1879",
+          "hint": "Samma år hade Henrik Ibsens Ett dockhem premiär.",
+          "explanation": "Röda rummet (1879) skildrar Stockholms samhällsliv satiriskt och realistiskt och markerar realismens genombrott i svensk litteratur."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Den finlandssvenska poeten Edith ___ gav 1916 ut samlingen Dikter och blev en av modernismens pionjärer i Norden.",
+          "answer": "Södergran",
+          "hint": "Poeten dog i tuberkulos redan 1923 och fick sitt stora erkännande först efter sin död.",
+          "explanation": "Samlingen Dikter (1916) förde in fri vers och ett starkt, expressivt diktjag i svenskspråkig lyrik och blev banbrytande för modernismen."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Under ___ stod kyrkan och den kristna världsbilden i centrum, och riddardiktning och helgonlegender var vanliga genrer.",
+          "answer": "medeltiden",
+          "hint": "Perioden ligger mellan antiken och renässansen.",
+          "explanation": "Epoken (ca 500–1500) präglades av kyrkans makt. Texterna skrevs ofta på latin och handlade om tro, helgon och riddarideal."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Den litterära riktning som skildrar vanliga människors vardag och samhällets problem så trovärdigt som möjligt kallas ___.",
+          "answer": "realism",
+          "alternativeAnswers": [
+            "realismen"
+          ],
+          "hint": "Riktningen ville visa livet precis som det faktiskt är.",
+          "explanation": "Riktningen växte fram vid mitten av 1800-talet och satte samhällsskildring och trovärdighet före romantikens ideal och drömmar."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "I verket Poetiken beskriver Aristoteles hur en ___ ska byggas upp för att väcka fruktan och medlidande hos publiken.",
+          "answer": "tragedi",
+          "alternativeAnswers": [
+            "tragedin"
+          ],
+          "hint": "Dramaformen som slutar olyckligt.",
+          "explanation": "Aristoteles analyserar dramaformen och begreppet katharsis, åskådarens rening genom fruktan och medlidande."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen om romantiken!",
+          "words": [
+            "Romantikerna",
+            "hyllade",
+            "känslan",
+            "framför",
+            "förnuftet."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "explanation": "Romantiken var en reaktion mot upplysningens förnuftstro och lyfte i stället fram känsla, fantasi och natur."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen om modernismen!",
+          "words": [
+            "Modernisterna",
+            "bröt",
+            "medvetet",
+            "mot",
+            "traditionella",
+            "former."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "explanation": "Modernismen kring sekelskiftet 1900 sökte nya uttryck – fri vers, montage och inre perspektiv – i stället för klassiska mönster."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen om upplysningen!",
+          "words": [
+            "Upplysningens",
+            "författare",
+            "litade",
+            "på",
+            "förnuftet."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "explanation": "1700-talets upplysning satte förnuft, vetenskap och kritiskt tänkande i centrum och ifrågasatte gamla auktoriteter."
+        }
+      ]
+    },
+    {
+      "id": "texttyper-sakprosa-1",
+      "title": "Texttyper och genrer i sakprosa",
+      "description": "Utredande, argumenterande, beskrivande och recenserande text – syfte, disposition och språkdrag",
+      "icon": "📝",
+      "bonusPoints": 40,
+      "helpText": [
+        "Fråga alltid först: vad är textens syfte? Att utreda, övertyga, beskriva eller värdera?",
+        "Den argumenterande texten byggs kring en tes, stödjande argument och bemötta motargument.",
+        "Ett PM är en utredande text med frågeställning, redovisade källor och en sammanfattande avslutning.",
+        "Debattartikeln skrivs av en part i debatten, insändaren av en läsare och ledaren uttrycker tidningens egen linje.",
+        "Värdeladdade ord avslöjar skribentens hållning. I en saklig text väljs neutrala uttryck i stället."
+      ],
+      "exercises": [
+        {
+          "type": "multiple-choice",
+          "question": "Vad är det huvudsakliga syftet med en utredande text?",
+          "options": [
+            "Att undersöka en frågeställning och redovisa vad källorna säger",
+            "Att övertyga läsaren om en bestämd åsikt",
+            "Att underhålla läsaren med en spännande handling",
+            "Att sätta betyg på ett konstverk"
+          ],
+          "correctIndex": 0,
+          "explanation": "Den utredande texten utgår från en fråga och belyser den med hjälp av källor. Skribentens egen ståndpunkt står inte i centrum."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilka delar bygger normalt upp en argumenterande text?",
+          "options": [
+            "Tes, argument, motargument med bemötande och avslutning",
+            "Frågeställning, metod, resultat och diskussion",
+            "Rubrik, ingress, brödtext och faktaruta",
+            "Anslag, fördjupning, konflikt och upplösning"
+          ],
+          "correctIndex": 0,
+          "explanation": "Tesen anger ståndpunkten, argumenten stöder den och de bemötta motargumenten visar att skribenten har prövat andra perspektiv."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad skiljer en ledare från en debattartikel?",
+          "options": [
+            "Ledaren uttrycker tidningens egen linje, medan debattartikeln skrivs av en utomstående part i debatten",
+            "Ledaren är alltid objektiv, medan debattartikeln är personlig",
+            "Ledaren måste ha källhänvisningar, medan debattartikeln aldrig får ha det",
+            "Ledaren skrivs av läsarna, medan debattartikeln skrivs av redaktionen"
+          ],
+          "correctIndex": 0,
+          "hint": "Fundera på vem som står bakom texten i respektive fall.",
+          "explanation": "Båda är åsiktstexter, men avsändaren skiljer dem åt: ledarsidan är tidningens egen röst, debattsidan upplåts åt andra."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är mest saklig och fri från värdeladdade ord?",
+          "options": [
+            "Kommunen har beslutat att bygga sextio nya lägenheter i området.",
+            "Kommunen har klämt in ytterligare sextio lägenheter i det redan överfulla området.",
+            "Kommunen skänker äntligen området sextio efterlängtade lägenheter.",
+            "Kommunen tvingar på området sextio lägenheter till."
+          ],
+          "correctIndex": 0,
+          "explanation": "Endast det första alternativet redovisar beslutet utan att samtidigt värdera det. De övriga färgar innehållet med ord som överfulla, efterlängtade och tvingar."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad kännetecknar en recension?",
+          "options": [
+            "Den kombinerar en kort presentation av verket med en motiverad värdering",
+            "Den återger hela handlingen utan att värdera något",
+            "Den innehåller bara skribentens känslor, utan exempel ur verket",
+            "Den följer mallen frågeställning, metod och resultat"
+          ],
+          "correctIndex": 0,
+          "explanation": "Recensionen är både beskrivande och värderande. Omdömet ska stödjas med exempel, och slutet ska inte avslöjas för läsaren."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad innebär mottagaranpassning?",
+          "options": [
+            "Att språk, ordval och förklaringar väljs utifrån vem som ska läsa texten",
+            "Att texten alltid görs så kort som möjligt",
+            "Att skribenten undviker alla fackord oavsett läsare",
+            "Att texten skrivs om tills avsändaren inte längre syns"
+          ],
+          "correctIndex": 0,
+          "explanation": "En text till experter kan använda fackspråk utan förklaring, medan samma innehåll till en bred publik kräver enklare ord och fler exempel."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "En kort utredande text med frågeställning, källor och sammanfattning kallas i skolan ofta för ett ___.",
+          "answer": "PM",
+          "alternativeAnswers": [
+            "promemoria"
+          ],
+          "hint": "Förkortningen består av två bokstäver och kommer av ett latinskt uttryck som betyder ungefär 'för att minnas'.",
+          "explanation": "PM är en förkortning av promemoria. Ett gymnasie-PM utgår från en frågeställning, refererar källor och avslutas med en sammanfattande slutsats."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "En text som förklarar hur något ser ut eller fungerar, utan att argumentera, är ___.",
+          "answer": "beskrivande",
+          "hint": "Texttypen svarar på frågan hur något är.",
+          "explanation": "Denna texttyp presenterar egenskaper och samband sakligt, ofta i presens och med en tematisk disposition."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Det påstående som skribenten vill övertyga läsaren om kallas textens ___.",
+          "answer": "tes",
+          "hint": "Den formuleras ofta redan i inledningen och återkommer på slutet.",
+          "explanation": "Hela argumentationen ska stödja denna ståndpunkt, och argumenten är de skäl som gör den trovärdig."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "En kort åsiktstext som skickas in till en tidning av en läsare kallas ___.",
+          "answer": "insändare",
+          "hint": "Texten kommer utifrån, från publiken själv.",
+          "explanation": "Detta är läsarnas kanal för åsikter, oftast kort och undertecknad med namn eller signatur, till skillnad från ledaren som är redaktionens röst."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Ord som skandalös och fantastisk är ___ och avslöjar skribentens hållning.",
+          "answer": "värdeladdade",
+          "hint": "Orden bär med sig ett omdöme utöver sin sakinnebörd.",
+          "explanation": "Sådana ord uttrycker beröm eller kritik. I en saklig text byts de mot neutrala uttryck så att läsaren själv kan bedöma fakta."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "I vetenskapliga texter används ofta passiva former, som i 'undersökningen genomfördes', för att stilen ska bli ___ och saklig.",
+          "answer": "opersonlig",
+          "hint": "Skribentens eget jag hålls i bakgrunden.",
+          "explanation": "Passiva konstruktioner flyttar fokus från forskaren till det som undersöks, vilket ger en neutral och saklig framställning."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen om argumenterande text!",
+          "words": [
+            "Tesen",
+            "bör",
+            "framgå",
+            "redan",
+            "i",
+            "inledningen."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "explanation": "Läsaren ska tidigt veta vad skribenten vill hävda. Argumenten byggs sedan upp kring tesen."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen om mottagaranpassning!",
+          "words": [
+            "Fackord",
+            "måste",
+            "förklaras",
+            "för",
+            "en",
+            "ovan",
+            "läsare."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "explanation": "Mottagaranpassning innebär att ordval och förklaringar anpassas efter läsarens förkunskaper."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen om recensionen!",
+          "words": [
+            "Recensenten",
+            "motiverar",
+            "sitt",
+            "omdöme",
+            "med",
+            "exempel."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "explanation": "En recension nöjer sig inte med tyckande – värderingen ska stödjas av konkreta exempel ur verket."
+        }
+      ]
     }
   ],
   "spelling": [
