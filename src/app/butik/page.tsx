@@ -20,7 +20,7 @@ import {
   equipEffect,
 } from "@/lib/storage";
 import { getAvatar, CATEGORY_LABELS } from "@/lib/avatars";
-import { SHOP_AVATARS, FRAMES, THEMES, EFFECTS, RARITY_META, groupAvatarsByCategory, getThemeClassName, getThemeStyle, type Rarity } from "@/lib/shop";
+import { SHOP_AVATARS, FRAMES, THEMES, EFFECTS, RARITY_META, groupAvatarsByCategory, getThemeClassName, getThemeStyle, getThemeWrapperClass, type Rarity } from "@/lib/shop";
 import type { StudentData } from "@/lib/types";
 
 type Tab = "avatarer" | "ramar" | "teman" | "effekter" | "mina";
@@ -151,7 +151,7 @@ export default function ButikPage() {
   const avatarGroups = groupAvatarsByCategory(SHOP_AVATARS);
 
   return (
-    <div className={`min-h-screen ${getThemeClassName(student.equippedTheme)}`} style={getThemeStyle(student.equippedTheme)}>
+    <div className={`min-h-screen ${getThemeClassName(student.equippedTheme)} ${getThemeWrapperClass(student.equippedTheme)}`} style={getThemeStyle(student.equippedTheme)}>
       <Header student={student} />
 
       {/* Banner */}
@@ -213,7 +213,7 @@ export default function ButikPage() {
             <div className="space-y-7">
               {avatarGroups.map(({ category, items }) => (
                 <div key={category}>
-                  <h2 className="text-xs font-black uppercase tracking-wider text-sv-400 dark:text-gray-500 mb-3">
+                  <h2 className="on-theme-muted text-xs font-black uppercase tracking-wider text-sv-400 dark:text-gray-500 mb-3">
                     {CATEGORY_LABELS[category]}
                   </h2>
                   <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
@@ -267,7 +267,7 @@ export default function ButikPage() {
         {/* ─── Ramar ──────────────────────────────────────────────────── */}
         {tab === "ramar" && (
           <BlurFade>
-            <h2 className="text-xs font-black uppercase tracking-wider text-sv-400 dark:text-gray-500 mb-3">Ramar runt din avatar</h2>
+            <h2 className="on-theme-muted text-xs font-black uppercase tracking-wider text-sv-400 dark:text-gray-500 mb-3">Ramar runt din avatar</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
               {FRAMES.map((f) => {
                 const owned = ownedFrames.includes(f.id);
@@ -319,7 +319,7 @@ export default function ButikPage() {
         {/* ─── Teman ──────────────────────────────────────────────────── */}
         {tab === "teman" && (
           <BlurFade>
-            <h2 className="text-xs font-black uppercase tracking-wider text-sv-400 dark:text-gray-500 mb-3">Bakgrundsteman för appen</h2>
+            <h2 className="on-theme-muted text-xs font-black uppercase tracking-wider text-sv-400 dark:text-gray-500 mb-3">Bakgrundsteman för appen</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
               {/* Standard – återställ den ursprungliga startsidan (gratis) */}
               {(() => {
@@ -405,7 +405,7 @@ export default function ButikPage() {
         {/* ─── Effekter ───────────────────────────────────────────────── */}
         {tab === "effekter" && (
           <BlurFade>
-            <h2 className="text-xs font-black uppercase tracking-wider text-sv-400 dark:text-gray-500 mb-3">Effekter runt din avatar</h2>
+            <h2 className="on-theme-muted text-xs font-black uppercase tracking-wider text-sv-400 dark:text-gray-500 mb-3">Effekter runt din avatar</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
               {EFFECTS.map((e) => {
                 const owned = ownedEffects.includes(e.id);
@@ -461,7 +461,7 @@ export default function ButikPage() {
           <BlurFade>
             <div className="space-y-6">
               <div>
-                <h2 className="text-xs font-black uppercase tracking-wider text-sv-400 dark:text-gray-500 mb-3">
+                <h2 className="on-theme-muted text-xs font-black uppercase tracking-wider text-sv-400 dark:text-gray-500 mb-3">
                   Mina avatarer ({ownedAvatars.length})
                 </h2>
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
@@ -494,7 +494,7 @@ export default function ButikPage() {
               </div>
 
               <div>
-                <h2 className="text-xs font-black uppercase tracking-wider text-sv-400 dark:text-gray-500 mb-3">
+                <h2 className="on-theme-muted text-xs font-black uppercase tracking-wider text-sv-400 dark:text-gray-500 mb-3">
                   Mina ramar ({ownedFrames.length})
                 </h2>
                 {ownedFrames.length === 0 ? (
@@ -536,7 +536,7 @@ export default function ButikPage() {
               </div>
 
               <div>
-                <h2 className="text-xs font-black uppercase tracking-wider text-sv-400 dark:text-gray-500 mb-3">
+                <h2 className="on-theme-muted text-xs font-black uppercase tracking-wider text-sv-400 dark:text-gray-500 mb-3">
                   Mina teman ({ownedThemes.length})
                 </h2>
                 {ownedThemes.length === 0 ? (
@@ -611,7 +611,7 @@ export default function ButikPage() {
               </div>
 
               <div>
-                <h2 className="text-xs font-black uppercase tracking-wider text-sv-400 dark:text-gray-500 mb-3">
+                <h2 className="on-theme-muted text-xs font-black uppercase tracking-wider text-sv-400 dark:text-gray-500 mb-3">
                   Mina effekter ({ownedEffects.length})
                 </h2>
                 {ownedEffects.length === 0 ? (

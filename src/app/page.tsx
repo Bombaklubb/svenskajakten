@@ -7,7 +7,7 @@ import Header from "@/components/ui/Header";
 import { loadStudent, createStudent, clearStudent, studentExists } from "@/lib/storage";
 import { STAGES } from "@/lib/stages";
 import { STARTER_AVATARS } from "@/lib/avatars";
-import { getThemeClassName, getThemeStyle } from "@/lib/shop";
+import { getThemeClassName, getThemeStyle, getThemeWrapperClass } from "@/lib/shop";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { NumberTicker } from "@/components/magicui/number-ticker";
 import type { StudentData, StageId } from "@/lib/types";
@@ -164,7 +164,7 @@ export default function HomePage() {
 
   // ─── Logged in – stage selection ────────────────────────────────────────────
   return (
-    <div className={`min-h-screen ${getThemeClassName(student.equippedTheme)}`} style={getThemeStyle(student.equippedTheme)}>
+    <div className={`min-h-screen ${getThemeClassName(student.equippedTheme)} ${getThemeWrapperClass(student.equippedTheme)}`} style={getThemeStyle(student.equippedTheme)}>
       <Header student={student} onLogout={handleLogout} />
 
       <main className="max-w-5xl mx-auto px-4 py-4">
@@ -185,8 +185,8 @@ export default function HomePage() {
           </BlurFade>
         )}
         <BlurFade delay={0} className="mb-4">
-          <h2 className="text-2xl font-black text-sv-800 dark:text-gray-100">Välj din värld</h2>
-          <p className="text-sv-500 dark:text-gray-400 font-semibold mt-0.5">
+          <h2 className="on-theme text-2xl font-black text-sv-800 dark:text-gray-100">Välj din värld</h2>
+          <p className="on-theme-muted text-sv-500 dark:text-gray-400 font-semibold mt-0.5">
             Välkommen tillbaka, <span className="text-sv-600 font-black">{student.name}</span>! Totalt{" "}
             <span className="text-amber-600 font-black">⭐ <NumberTicker value={student.totalPoints} className="text-amber-600" /></span> poäng.
           </p>

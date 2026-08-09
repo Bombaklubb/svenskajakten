@@ -217,6 +217,9 @@ export interface Theme {
   /** Full-page CSS `background` shorthand for pattern themes (stripes, dots …).
    *  When set it takes precedence over `className`. */
   bg?: string;
+  /** True when the background is dark or high-contrast, so text placed directly
+   *  on it (page headings, section labels) must switch to a light colour. */
+  isDark?: boolean;
 }
 
 const RAW_THEMES: Omit<Theme, "price">[] = [
@@ -229,7 +232,7 @@ const RAW_THEMES: Omit<Theme, "price">[] = [
   { id: "lava",        name: "Lavatema",      rarity: "episk",       className: "bg-gradient-to-br from-rose-50 to-red-100 dark:from-rose-950 dark:to-gray-900",        swatch: "linear-gradient(135deg, #fda4af, #dc2626)" },
   { id: "galax",       name: "Galaxtema",     rarity: "legendarisk", className: "",
     swatch: "radial-gradient(1.2px 1.2px at 25% 25%, #fff, transparent) 0 0 / 16px 16px, radial-gradient(1.5px 1.5px at 70% 60%, #fde68a, transparent) 0 0 / 26px 26px, linear-gradient(135deg, #7c3aed, #4c1d95 60%, #1e1b4b)",
-    bg:     "radial-gradient(1.5px 1.5px at 20% 30%, #ffffff, transparent) 0 0 / 70px 70px, radial-gradient(2px 2px at 70% 60%, #ffffff, transparent) 0 0 / 100px 100px, radial-gradient(1.5px 1.5px at 45% 80%, #fde68a, transparent) 0 0 / 130px 130px, linear-gradient(135deg, #4c1d95, #7c3aed 50%, #1e1b4b)" },
+    bg:     "radial-gradient(1.5px 1.5px at 20% 30%, #ffffff, transparent) 0 0 / 70px 70px, radial-gradient(2px 2px at 70% 60%, #ffffff, transparent) 0 0 / 100px 100px, radial-gradient(1.5px 1.5px at 45% 80%, #fde68a, transparent) 0 0 / 130px 130px, linear-gradient(135deg, #4c1d95, #7c3aed 50%, #1e1b4b)", isDark: true },
 
   // ─── Pattern themes (stripes, dots, animal prints …) ───
   { id: "prickigt",    name: "Pricktema",       rarity: "vanlig",      className: "",
@@ -243,16 +246,16 @@ const RAW_THEMES: Omit<Theme, "price">[] = [
     bg:     "conic-gradient(#a78bfa 0 25%, #ffffff 0 50%, #a78bfa 0 75%, #ffffff 0) 0 0 / 48px 48px" },
   { id: "zebra",       name: "Zebratema",       rarity: "sallsynt",    className: "",
     swatch: "repeating-linear-gradient(60deg, #334155 0 8px, #f8fafc 8px 16px)",
-    bg:     "repeating-linear-gradient(60deg, #334155 0 18px, #f8fafc 18px 36px)" },
+    bg:     "repeating-linear-gradient(60deg, #334155 0 18px, #f8fafc 18px 36px)", isDark: true },
   { id: "kamouflage",  name: "Kamouflagetema",  rarity: "sallsynt",    className: "",
     swatch: "radial-gradient(circle at 25% 30%, #1a2e05 18%, transparent 20%) 0 0 / 26px 26px, radial-gradient(circle at 70% 65%, #4d7c0f 16%, transparent 18%) 0 0 / 26px 26px, #3f6212",
-    bg:     "radial-gradient(circle at 25% 30%, #1a2e05 13px, transparent 14px) 0 0 / 100px 100px, radial-gradient(circle at 72% 62%, #4d7c0f 16px, transparent 17px) 0 0 / 100px 100px, radial-gradient(circle at 48% 85%, #65a30d 11px, transparent 12px) 0 0 / 100px 100px, #3f6212" },
+    bg:     "radial-gradient(circle at 25% 30%, #1a2e05 13px, transparent 14px) 0 0 / 100px 100px, radial-gradient(circle at 72% 62%, #4d7c0f 16px, transparent 17px) 0 0 / 100px 100px, radial-gradient(circle at 48% 85%, #65a30d 11px, transparent 12px) 0 0 / 100px 100px, #3f6212", isDark: true },
   { id: "regnbage",    name: "Regnbågstema",    rarity: "episk",       className: "",
     swatch: "linear-gradient(135deg, #ff8fab, #ffd56b, #9ee493, #7ec8ff, #c39bf0)",
     bg:     "linear-gradient(135deg, #ff8fab, #ffd56b 30%, #9ee493 50%, #7ec8ff 70%, #c39bf0)" },
   { id: "tiger",       name: "Tigertema",       rarity: "episk",       className: "",
     swatch: "repeating-linear-gradient(70deg, #f59e0b 0 14px, #7c2d12 14px 20px)",
-    bg:     "repeating-linear-gradient(72deg, #f59e0b 0 30px, #7c2d12 30px 44px)" },
+    bg:     "repeating-linear-gradient(72deg, #f59e0b 0 30px, #7c2d12 30px 44px)", isDark: true },
   { id: "leopard",     name: "Leopardtema",     rarity: "episk",       className: "",
     swatch: "radial-gradient(#92400e 22%, transparent 24%) 0 0 / 20px 20px, radial-gradient(#92400e 22%, transparent 24%) 10px 10px / 20px 20px, #fcd9a8",
     bg:     "radial-gradient(#92400e 20%, transparent 22%) 0 0 / 44px 44px, radial-gradient(#b45309 16%, transparent 18%) 22px 22px / 44px 44px, #fcd9a8" },
@@ -261,22 +264,22 @@ const RAW_THEMES: Omit<Theme, "price">[] = [
     bg:     "repeating-linear-gradient(135deg, #fbcfe8 0 30px, #ddd6fe 30px 60px, #bfdbfe 60px 90px, #bbf7d0 90px 120px, #fef9c3 120px 150px)" },
   { id: "stjarnhimmel", name: "Stjärnhimmel",   rarity: "legendarisk", className: "",
     swatch: "radial-gradient(1.5px 1.5px at 25% 25%, #ffffff, transparent) 0 0 / 18px 18px, radial-gradient(1.5px 1.5px at 70% 60%, #fde68a, transparent) 0 0 / 28px 28px, linear-gradient(#0b1026, #1e1b4b)",
-    bg:     "radial-gradient(1.5px 1.5px at 25% 25%, #ffffff, transparent) 0 0 / 60px 60px, radial-gradient(2px 2px at 75% 55%, #ffffff, transparent) 0 0 / 90px 90px, radial-gradient(1.5px 1.5px at 50% 80%, #fde68a, transparent) 0 0 / 120px 120px, linear-gradient(#0b1026, #1e1b4b)" },
+    bg:     "radial-gradient(1.5px 1.5px at 25% 25%, #ffffff, transparent) 0 0 / 60px 60px, radial-gradient(2px 2px at 75% 55%, #ffffff, transparent) 0 0 / 90px 90px, radial-gradient(1.5px 1.5px at 50% 80%, #fde68a, transparent) 0 0 / 120px 120px, linear-gradient(#0b1026, #1e1b4b)", isDark: true },
   { id: "giraff",      name: "Giraffmönster",   rarity: "sallsynt",    className: "",
     swatch: "radial-gradient(circle at 28% 28%, #a8631b 30%, transparent 33%) 0 0 / 22px 22px, radial-gradient(circle at 72% 70%, #a8631b 30%, transparent 33%) 0 0 / 22px 22px, #f3cd8b",
     bg:     "radial-gradient(circle at 25% 25%, #a8631b 26%, transparent 30%) 0 0 / 92px 92px, radial-gradient(circle at 72% 62%, #a8631b 24%, transparent 28%) 0 0 / 92px 92px, radial-gradient(circle at 50% 90%, #a8631b 20%, transparent 24%) 0 0 / 92px 92px, #f3cd8b" },
   { id: "disco",       name: "Discotema",       rarity: "episk",       className: "",
     swatch: "repeating-linear-gradient(60deg, #8b5cf6 0 10px, #ec4899 10px 20px, #10b981 20px 30px)",
-    bg:     "repeating-linear-gradient(60deg, #8b5cf6 0 24px, #ec4899 24px 48px, #10b981 48px 72px)" },
+    bg:     "repeating-linear-gradient(60deg, #8b5cf6 0 24px, #ec4899 24px 48px, #10b981 48px 72px)", isDark: true },
   { id: "bubbelhav",   name: "Bubbelhavstema",  rarity: "sallsynt",    className: "",
     swatch: "radial-gradient(circle at 30% 70%, rgba(255,255,255,0.45) 0 5px, transparent 6px) 0 0 / 24px 24px, radial-gradient(circle at 75% 35%, rgba(255,255,255,0.35) 0 7px, transparent 8px) 0 0 / 30px 30px, linear-gradient(160deg, #38bdf8, #0369a1)",
-    bg:     "radial-gradient(circle at 30% 70%, rgba(255,255,255,0.4) 0 14px, transparent 15px) 0 0 / 120px 120px, radial-gradient(circle at 75% 40%, rgba(255,255,255,0.28) 0 20px, transparent 21px) 0 0 / 150px 150px, radial-gradient(circle at 55% 88%, rgba(255,255,255,0.22) 0 10px, transparent 11px) 0 0 / 100px 100px, linear-gradient(160deg, #38bdf8, #0369a1)" },
+    bg:     "radial-gradient(circle at 30% 70%, rgba(255,255,255,0.4) 0 14px, transparent 15px) 0 0 / 120px 120px, radial-gradient(circle at 75% 40%, rgba(255,255,255,0.28) 0 20px, transparent 21px) 0 0 / 150px 150px, radial-gradient(circle at 55% 88%, rgba(255,255,255,0.22) 0 10px, transparent 11px) 0 0 / 100px 100px, linear-gradient(160deg, #38bdf8, #0369a1)", isDark: true },
   { id: "tvspel",      name: "TV-spelstema",    rarity: "episk",       className: "",
     swatch: "conic-gradient(rgba(255,255,255,0.14) 0 25%, transparent 0 50%, rgba(255,255,255,0.14) 0 75%, transparent 0) 0 0 / 14px 14px, linear-gradient(135deg, #312e81, #6d28d9 55%, #1e1b4b)",
-    bg:     "repeating-linear-gradient(0deg, rgba(0,0,0,0.18) 0 3px, transparent 3px 7px), conic-gradient(rgba(255,255,255,0.10) 0 25%, transparent 0 50%, rgba(255,255,255,0.10) 0 75%, transparent 0) 0 0 / 46px 46px, linear-gradient(135deg, #312e81, #6d28d9 55%, #1e1b4b)" },
+    bg:     "repeating-linear-gradient(0deg, rgba(0,0,0,0.18) 0 3px, transparent 3px 7px), conic-gradient(rgba(255,255,255,0.10) 0 25%, transparent 0 50%, rgba(255,255,255,0.10) 0 75%, transparent 0) 0 0 / 46px 46px, linear-gradient(135deg, #312e81, #6d28d9 55%, #1e1b4b)", isDark: true },
   { id: "dataspel",    name: "Dataspelstema",   rarity: "episk",       className: "",
     swatch: "repeating-linear-gradient(0deg, rgba(34,211,238,0.5) 0 1.5px, transparent 1.5px 12px), repeating-linear-gradient(90deg, rgba(34,211,238,0.5) 0 1.5px, transparent 1.5px 12px), linear-gradient(180deg, #0f172a, #172554)",
-    bg:     "repeating-linear-gradient(0deg, rgba(34,211,238,0.35) 0 2px, transparent 2px 44px), repeating-linear-gradient(90deg, rgba(34,211,238,0.35) 0 2px, transparent 2px 44px), radial-gradient(circle at 50% 0%, rgba(236,72,153,0.35), transparent 60%), linear-gradient(180deg, #0f172a, #172554)" },
+    bg:     "repeating-linear-gradient(0deg, rgba(34,211,238,0.35) 0 2px, transparent 2px 44px), repeating-linear-gradient(90deg, rgba(34,211,238,0.35) 0 2px, transparent 2px 44px), radial-gradient(circle at 50% 0%, rgba(236,72,153,0.35), transparent 60%), linear-gradient(180deg, #0f172a, #172554)", isDark: true },
   { id: "fotboll",     name: "Fotbollstema",    rarity: "ovanlig",     className: "",
     swatch: "repeating-linear-gradient(90deg, #16a34a 0 12px, #15803d 12px 24px)",
     bg:     "radial-gradient(circle at 50% 50%, rgba(255,255,255,0.55) 0 3px, transparent 4px) 0 0 / 100% 100%, repeating-linear-gradient(90deg, #16a34a 0 56px, #15803d 56px 112px)" },
@@ -307,6 +310,17 @@ export function getThemeClassName(id: string | undefined): string {
 export function getThemeStyle(id: string | undefined): { background?: string } {
   const t = getTheme(id);
   return t?.bg ? { background: t.bg } : {};
+}
+
+/**
+ * Class for the themed page wrapper. Dark themes get "theme-dark", which makes
+ * text sitting directly on the background (marked with "on-theme") switch to a
+ * light colour so it stays readable — see globals.css.
+ */
+export function getThemeWrapperClass(id: string | undefined): string {
+  const t = getTheme(id);
+  if (!t?.bg) return "";               // plain gradient or default background
+  return t.isDark ? "theme-dark" : "theme-pattern";
 }
 
 // ─── Effects (Effekter) ──────────────────────────────────────────────────────────
