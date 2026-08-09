@@ -41,20 +41,55 @@ function defaultStudentData(name: string): StudentData {
   };
 }
 
+/**
+ * Write to localStorage without ever throwing.
+ *
+ * setItem raises QuotaExceededError when storage is full (and in Safari's
+ * private mode it throws for every write). An uncaught error here would crash
+ * the page mid-exercise, so failures are reported through the return value and
+ * surfaced to the pupil by the caller instead.
+ */
+function safeSetItem(key: string, value: string): boolean {
+  if (typeof window === "undefined") return false;
+  try {
+    localStorage.setItem(key, value);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+/** Set when a save fails, so the UI can warn that progress is not being stored. */
+let lastSaveFailed = false;
+
+/** True when the most recent save to localStorage could not be completed. */
+export function hasSaveFailed(): boolean {
+  return lastSaveFailed;
+}
+
 function getAllStudents(): Record<string, StudentData> {
   if (typeof window === "undefined") return {};
   try {
     const raw = localStorage.getItem(STUDENTS_KEY);
     if (!raw) return {};
-    return JSON.parse(raw) as Record<string, StudentData>;
+    const parsed = JSON.parse(raw) as Record<string, StudentData>;
+    // A corrupt blob must not silently wipe every pupil on the device: keep a
+    // copy so the data can be recovered by hand instead of being overwritten.
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
+      safeSetItem(`${STUDENTS_KEY}_corrupt_backup`, raw);
+      return {};
+    }
+    return parsed;
   } catch {
+    const raw = localStorage.getItem(STUDENTS_KEY);
+    if (raw) safeSetItem(`${STUDENTS_KEY}_corrupt_backup`, raw);
     return {};
   }
 }
 
 function saveAllStudents(all: Record<string, StudentData>): void {
   if (typeof window === "undefined") return;
-  localStorage.setItem(STUDENTS_KEY, JSON.stringify(all));
+  lastSaveFailed = !safeSetItem(STUDENTS_KEY, JSON.stringify(all));
 }
 
 function getCurrentName(): string | null {
@@ -83,7 +118,7 @@ function migrateIfNeeded(): void {
       // Migrate gamification too
       const legacyGam = localStorage.getItem(LEGACY_GAMIFICATION_KEY);
       if (legacyGam) {
-        localStorage.setItem(`${LEGACY_GAMIFICATION_KEY}_${data.name}`, legacyGam);
+        safeSetItem(`${LEGACY_GAMIFICATION_KEY}_${data.name}`, legacyGam);
       }
     }
     localStorage.removeItem(LEGACY_KEY);
@@ -130,7 +165,7 @@ export function saveStudent(data: StudentData): void {
   const all = getAllStudents();
   all[data.name] = data;
   saveAllStudents(all);
-  localStorage.setItem(CURRENT_KEY, data.name);
+  safeSetItem(CURRENT_KEY, data.name);
 }
 
 export function createStudent(name: string, avatar?: string): StudentData {
@@ -239,7 +274,7 @@ export function loadGamification(): GamificationData {
 
 export function saveGamification(data: GamificationData): void {
   if (typeof window === "undefined") return;
-  localStorage.setItem(getGamificationKey(), JSON.stringify(data));
+  safeSetItem(getGamificationKey(), JSON.stringify(data));
 }
 
 export function clearGamification(): void {
@@ -258,14 +293,59 @@ export function exportProgress(data: StudentData): void {
   URL.revokeObjectURL(url);
 }
 
-export function importProgress(file: File): Promise<StudentData> {
+const ALL_STAGES: StageId[] = ["lagstadiet", "mellanstadiet", "hogstadiet", "gymnasiet"];
+
+/**
+ * Repair an imported file into a complete StudentData.
+ * A backup from an older version can be missing stages or newer fields, and
+ * reading those later would crash the page, so everything is filled in here.
+ */
+function normaliseImported(raw: unknown): StudentData | null {
+  if (!raw || typeof raw !== "object" || Array.isArray(raw)) return null;
+  const data = raw as Partial<StudentData>;
+  if (typeof data.name !== "string" || !data.name.trim()) return null;
+
+  const stages = {} as StudentData["stages"];
+  for (const id of ALL_STAGES) {
+    const existing = (data.stages as Partial<Record<StageId, StageProgress>> | undefined)?.[id];
+    stages[id] = {
+      stageId: id,
+      grammarModules: existing?.grammarModules ?? {},
+      spellingModules: existing?.spellingModules ?? {},
+      wordsearchModules: existing?.wordsearchModules ?? {},
+      stavningstestModules: existing?.stavningstestModules ?? {},
+    };
+  }
+
+  const now = new Date().toISOString();
+  return {
+    ...data,
+    name: data.name.trim(),
+    createdAt: typeof data.createdAt === "string" ? data.createdAt : now,
+    lastActive: now,
+    totalPoints: Number.isFinite(data.totalPoints) ? Number(data.totalPoints) : 0,
+    spentPoints: Number.isFinite(data.spentPoints) ? Number(data.spentPoints) : 0,
+    ownedAvatars: Array.isArray(data.ownedAvatars) ? data.ownedAvatars : [],
+    ownedFrames: Array.isArray(data.ownedFrames) ? data.ownedFrames : [],
+    ownedThemes: Array.isArray(data.ownedThemes) ? data.ownedThemes : [],
+    ownedEffects: Array.isArray(data.ownedEffects) ? data.ownedEffects : [],
+    stages,
+  };
+}
+
+/**
+ * Read a backup file and return the student it contains, WITHOUT saving it.
+ * The caller shows the pupil what the file holds and asks for confirmation
+ * before it replaces the progress already on the device.
+ */
+export function readProgressFile(file: File): Promise<StudentData> {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
     reader.onload = (e) => {
       try {
-        const data = JSON.parse(e.target?.result as string) as StudentData;
-        if (!data.name || !data.stages) throw new Error("Ogiltig fil");
-        saveStudent(data);
+        const parsed = JSON.parse(e.target?.result as string);
+        const data = normaliseImported(parsed);
+        if (!data) throw new Error("Ogiltig fil");
         resolve(data);
       } catch {
         reject(new Error("Kunde inte läsa filen. Kontrollera att det är rätt fil."));
@@ -273,6 +353,19 @@ export function importProgress(file: File): Promise<StudentData> {
     };
     reader.onerror = () => reject(new Error("Filläsning misslyckades."));
     reader.readAsText(file);
+  });
+}
+
+/** Progress already stored for this name, so the caller can warn before overwriting. */
+export function getExistingProgress(name: string): StudentData | null {
+  if (typeof window === "undefined") return null;
+  return getAllStudents()[name.trim()] ?? null;
+}
+
+export function importProgress(file: File): Promise<StudentData> {
+  return readProgressFile(file).then((data) => {
+    saveStudent(data);
+    return data;
   });
 }
 
@@ -294,18 +387,23 @@ export function loadRetryQueue(stageId: string): RetryItem[] {
   }
 }
 
+/** Upper bound per stage – each item stores a whole exercise, so this can't grow forever. */
+const MAX_RETRY_ITEMS = 60;
+
 export function addToRetryQueue(item: RetryItem): void {
   if (typeof window === "undefined") return;
   const queue = loadRetryQueue(item.stageId);
   if (queue.some((q) => q.key === item.key)) return; // no duplicates
   queue.push(item);
-  localStorage.setItem(getRetryKey(item.stageId), JSON.stringify(queue));
+  // Keep the most recent mistakes if the queue is at capacity.
+  const trimmed = queue.length > MAX_RETRY_ITEMS ? queue.slice(-MAX_RETRY_ITEMS) : queue;
+  safeSetItem(getRetryKey(item.stageId), JSON.stringify(trimmed));
 }
 
 export function removeFromRetryQueue(stageId: string, key: string): void {
   if (typeof window === "undefined") return;
   const queue = loadRetryQueue(stageId).filter((q) => q.key !== key);
-  localStorage.setItem(getRetryKey(stageId), JSON.stringify(queue));
+  safeSetItem(getRetryKey(stageId), JSON.stringify(queue));
 }
 
 // ─── Shop (Affären) ───────────────────────────────────────────────────────────

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Header from "@/components/ui/Header";
 import ProgressBar from "@/components/ui/ProgressBar";
-import { loadStudent } from "@/lib/storage";
+import { loadStudent, saveStudent, exportProgress, readProgressFile, getExistingProgress } from "@/lib/storage";
 import { STAGES } from "@/lib/stages";
 import { ACHIEVEMENTS, ACHIEVEMENT_ICONS, isUnlocked } from "@/lib/achievements";
 import { getAvatar } from "@/lib/avatars";
@@ -17,6 +17,7 @@ import type { StudentData, StageId } from "@/lib/types";
 
 export default function ProfilePage() {
   const [student, setStudent] = useState<StudentData | null>(null);
+  const [importMsg, setImportMsg] = useState<string | null>(null);
 
   useEffect(() => {
     setStudent(loadStudent());
@@ -258,6 +259,65 @@ export default function ProfilePage() {
                 </div>
               </div>
             </div>
+          </div>
+        </BlurFade>
+
+        {/* Backup – all progress lives in this browser only */}
+        <BlurFade delay={0.25}>
+          <div className="card mt-6">
+            <h2 className="text-lg font-bold text-sv-900 dark:text-gray-100 mb-1">💾 Säkerhetskopia</h2>
+            <p className="text-sm text-sv-500 dark:text-gray-400 mb-4">
+              Dina poäng sparas bara i den här webbläsaren. Om skoldatorn rensas försvinner de.
+              Spara en kopia då och då – du kan läsa in den igen på en annan dator.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <button
+                onClick={() => exportProgress(student)}
+                className="px-4 py-2.5 rounded-xl font-bold text-sm text-white cursor-pointer"
+                style={{ background: "linear-gradient(135deg, #006AA7, #004a75)", boxShadow: "0 3px 0 0 rgba(0,0,0,0.18)" }}
+              >
+                ⬇️ Spara kopia
+              </button>
+              <label
+                className="px-4 py-2.5 rounded-xl font-bold text-sm cursor-pointer border-2 border-sv-200 dark:border-gray-600 text-sv-600 dark:text-gray-300 hover:bg-sv-50 dark:hover:bg-gray-700"
+              >
+                ⬆️ Läs in kopia
+                <input
+                  type="file"
+                  accept="application/json,.json"
+                  className="hidden"
+                  onChange={async (e) => {
+                    const file = e.target.files?.[0];
+                    e.target.value = "";
+                    if (!file) return;
+                    setImportMsg(null);
+                    try {
+                      const incoming = await readProgressFile(file);
+                      const existing = getExistingProgress(incoming.name);
+                      if (
+                        existing &&
+                        existing.totalPoints > incoming.totalPoints &&
+                        !window.confirm(
+                          `${incoming.name} har redan ${existing.totalPoints} poäng på den här datorn, ` +
+                          `men filen innehåller ${incoming.totalPoints}. Vill du ersätta det som finns?`
+                        )
+                      ) {
+                        setImportMsg("Inläsningen avbröts – inget ändrades.");
+                        return;
+                      }
+                      saveStudent(incoming);
+                      setStudent(incoming);
+                      setImportMsg(`✅ Läste in framstegen för ${incoming.name}.`);
+                    } catch (err) {
+                      setImportMsg(err instanceof Error ? err.message : "Kunde inte läsa filen.");
+                    }
+                  }}
+                />
+              </label>
+            </div>
+            {importMsg && (
+              <p className="text-sm font-bold text-sv-600 dark:text-gray-300 mt-3">{importMsg}</p>
+            )}
           </div>
         </BlurFade>
       </main>
