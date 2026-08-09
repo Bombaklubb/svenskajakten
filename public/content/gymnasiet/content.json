@@ -440,16 +440,14 @@
             "utredning",
             "av",
             "ärendet",
-            "krävs",
-            "."
+            "krävs."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4,
-            5
+            4
           ],
           "explanation": "'Utredning' är en nominalisering av 'utreda' – verb→substantiv med -ning."
         }
@@ -518,16 +516,14 @@
             "påvisar",
             "ett",
             "signifikant",
-            "samband",
-            "."
+            "samband."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4,
-            5
+            4
           ],
           "explanation": "'Påvisar' och 'signifikant' är formella akademiska ord som kännetecknar vetenskapligt skrivande."
         }
@@ -536,291 +532,291 @@
     {
       "id": "grammatik-oversikt-1",
       "title": "Grammatik – vad är det?",
-      "description": "Lär dig de viktigaste begreppen i grammatiken.",
+      "description": "Analysera ordklassernas syntaktiska funktion och grammatiska gränsfall.",
       "icon": "📚",
       "bonusPoints": 25,
       "helpText": [
-        "Grammatik handlar om hur vi bygger upp språket.",
-        "Substantiv = namn på saker, djur, personer (hus, hund, Lisa).",
-        "Verb = ord som beskriver handlingar (hoppa, läsa, äta).",
-        "Adjektiv = ord som beskriver hur något är (stor, glad, blå)."
+        "Ordklass är vad ett ord ÄR; satsdel är vad ordet GÖR i satsen.",
+        "En och samma fras kan fylla olika funktioner: subjekt, objekt, predikativ eller adverbial.",
+        "Många ord är gränsfall: 'som' kan vara relativt pronomen eller jämförande subjunktion, 'på' kan vara preposition eller verbpartikel.",
+        "Perfektparticip böjs som adjektiv och kan stå som attribut (den stängda dörren) eller predikativ (dörren är stängd).",
+        "Formellt subjekt ('det regnar', 'det kom en man') saknar egen betydelse men krävs av satsens struktur."
       ],
       "exercises": [
         {
           "type": "multiple-choice",
-          "question": "Vad är ett substantiv?",
+          "question": "Vilken satsdel utgör frasen 'Att läsa romaner' i meningen 'Att läsa romaner tar tid'?",
           "options": [
-            "Ett ord som beskriver en handling",
-            "Ett ord som namnger saker, djur eller personer",
-            "Ett ord som beskriver hur något är",
-            "Ett ord som kopplar ihop meningar"
+            "Subjekt",
+            "Objekt",
+            "Adverbial",
+            "Predikativ"
           ],
-          "correctIndex": 1,
-          "explanation": "Substantiv är namn på saker, djur och personer, t.ex. 'boll', 'katt', 'Lisa'."
+          "correctIndex": 0,
+          "explanation": "Infinitivfrasen svarar på frågan 'vad tar tid?' och fungerar därmed som subjekt, trots att den är uppbyggd kring ett verb."
         },
         {
           "type": "multiple-choice",
-          "question": "Vilket ord är ett verb?",
+          "question": "Vilken funktion har 'som' i meningen 'Boken som jag lånade var tjock'?",
           "options": [
-            "röd",
-            "stol",
-            "springer",
-            "snabbt"
-          ],
-          "correctIndex": 2,
-          "explanation": "'Springer' är ett verb – det beskriver en handling."
-        },
-        {
-          "type": "multiple-choice",
-          "question": "Vilket ord är ett adjektiv?",
-          "options": [
-            "hoppa",
-            "blå",
-            "boken",
-            "och"
+            "Samordnande konjunktion",
+            "Relativt pronomen som inleder en attributiv bisats",
+            "Jämförande subjunktion",
+            "Adverb"
           ],
           "correctIndex": 1,
-          "explanation": "'Blå' är ett adjektiv – det beskriver hur något ser ut."
+          "explanation": "'Som' syftar tillbaka på 'boken' och inleder en relativ bisats som bestämmer substantivet. I 'stark som en björn' är samma ord i stället en jämförande subjunktion."
         },
         {
           "type": "fill-in-blank",
-          "question": "I meningen 'Den lilla hunden springer fort' är 'springer' ett ___.",
-          "answer": "verb",
-          "hint": "Det är ett handlingsord.",
-          "explanation": "'Springer' beskriver vad hunden gör – det är ett verb."
+          "question": "I frasen 'de nyanlända eleverna' är perfektparticipet 'nyanlända' böjt som ett adjektiv och fungerar syntaktiskt som ___ till huvudordet.",
+          "answer": "attribut",
+          "alternativeAnswers": [
+            "adjektivattribut",
+            "attributet"
+          ],
+          "hint": "Funktionen som en bestämning framför sitt huvudord inne i nominalfrasen.",
+          "explanation": "Participet står framför sitt huvudord inne i nominalfrasen och bestämmer det – det är alltså ett attribut. Hade det stått efter kopulaverbet ('eleverna är nyanlända') vore det ett predikativ."
         },
         {
           "type": "multiple-choice",
-          "question": "Vilket alternativ innehåller tre SUBSTANTIV?",
+          "question": "I vilken mening är 'på' en verbpartikel och inte en preposition?",
           "options": [
-            "springer, hoppar, simmar",
-            "stor, liten, glad",
-            "bok, boll, hund",
-            "fort, snabbt, sakta"
+            "Boken ligger på bordet.",
+            "Vi väntade på bussen.",
+            "Hon satte på radion.",
+            "Han tänkte på semestern."
           ],
           "correctIndex": 2,
-          "explanation": "'Bok', 'boll' och 'hund' är alla substantiv – de namnger saker och djur."
+          "explanation": "I 'satte på' är 'på' betonat och ingår i partikelverbet, som betyder något annat än verbet ensamt. I de övriga inleder 'på' en prepositionsfras och är obetonat."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken analys är riktig för 'det' i meningen 'Det regnar'?",
+          "options": [
+            "Bestämd artikel till ett underförstått substantiv",
+            "Adverb med platsbetydelse",
+            "Subjunktion",
+            "Pronomen som fungerar som formellt subjekt"
+          ],
+          "correctIndex": 3,
+          "explanation": "Verbet 'regna' saknar en egentlig aktör, men svenskan kräver ett subjekt. Pronomenet 'det' fyller platsen utan att ha egen referens – ett formellt (opersonligt) subjekt."
         }
       ]
     },
     {
       "id": "tempus-tidsformer-1",
       "title": "Tempus – tidsformer (nutid-dåtid)",
-      "description": "Öva på att skriva verb i rätt tid.",
+      "description": "Analysera tempusharmoni, historiskt presens, futurum preteriti och aspekt.",
       "icon": "⏳",
       "bonusPoints": 30,
       "helpText": [
-        "Tempus visar när något händer.",
-        "Nutid (presens): Något händer NU. Exempel: 'Jag äter.'",
-        "Dåtid (preteritum): Något hände FÖRR. Exempel: 'Jag åt.'",
-        "Tips: dåtid slutar ofta på -ade, -de eller -te."
+        "Tempusharmoni: verben inom samma tidsplan ska stå i samma tempussystem.",
+        "Historiskt presens används för att göra en dåtida skildring närvarande och dramatisk.",
+        "Futurum preteriti (skulle + infinitiv) uttrycker framtid sedd från en tidpunkt i det förflutna.",
+        "Svenskan saknar grammatisk aspekt, men perifrastiska konstruktioner som 'hålla på att' uttrycker pågående handling.",
+        "Presens kan uttrycka framtid när ett tidsadverbial anger tidpunkten: 'Tåget går klockan sju imorgon.'"
       ],
       "exercises": [
         {
           "type": "multiple-choice",
-          "question": "Vilken form är i NUTID?",
+          "question": "Vad kallas bruket av presens för att återge dåtida händelser, som i 'År 1789 stormar folket Bastiljen'?",
           "options": [
-            "spelade",
-            "spelar",
-            "spelat",
-            "spelades"
+            "Futurum preteriti",
+            "Historiskt presens",
+            "Pluskvamperfekt",
+            "Konjunktiv"
           ],
           "correctIndex": 1,
-          "explanation": "'Spelar' är nutidsform – det händer nu."
+          "explanation": "Historiskt (dramatiskt) presens flyttar läsaren in i händelsen och skapar närvaro, trots att skeendet ligger i det förflutna."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening bryter mot tempusharmonin?",
+          "options": [
+            "Vi packade väskorna och åkte till stationen.",
+            "Vi packade väskorna och åker till stationen.",
+            "Vi packar väskorna och åker till stationen.",
+            "Vi hade packat väskorna innan vi åkte."
+          ],
+          "correctIndex": 1,
+          "explanation": "De två samordnade huvudsatserna hör till samma tidsplan, men den ena står i preteritum och den andra i presens. Det bryter tempusharmonin."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad uttrycker 'skulle resa' i meningen 'Hon sa att hon skulle resa nästa dag'?",
+          "options": [
+            "Perfekt",
+            "Konjunktiv",
+            "Futurum preteriti – framtid sedd från en tidpunkt i det förflutna",
+            "Pluskvamperfekt"
+          ],
+          "correctIndex": 2,
+          "explanation": "Resan låg i framtiden räknat från hennes yttrande, men hela yttrandet ligger i dåtid. 'Skulle' + infinitiv uttrycker denna framtid i det förflutna."
         },
         {
           "type": "fill-in-blank",
-          "question": "Skriv i dåtid: 'Varje dag leker hon' → 'Igår ___ hon.'",
-          "answer": "lekte",
-          "hint": "Böj verbet 'leka' i dåtid (preteritum).",
-          "explanation": "'Leka' böjs till 'lekte' i dåtid (preteritum)."
+          "question": "Konstruktionen i 'hon höll på att laga mat' framhäver att handlingen var ___ vid den aktuella tidpunkten.",
+          "answer": "pågående",
+          "hint": "Handlingen var varken avslutad eller ännu inte påbörjad – den var i full gång.",
+          "explanation": "Svenskan saknar grammatisk aspekt, men perifrasen 'hålla på att' fyller samma funktion som engelskans progressiva form och markerar att handlingen var i förlopp."
         },
         {
           "type": "multiple-choice",
-          "question": "Vilket ord visar att meningen är i dåtid?",
+          "question": "Vilken funktion har presensformen i meningen 'Tåget går klockan sju imorgon'?",
           "options": [
-            "nu",
-            "idag",
-            "igår",
-            "snart"
+            "Uttrycker en handling som pågår just nu",
+            "Uttrycker historiskt presens",
+            "Uttrycker en allmängiltig sanning",
+            "Uttrycker framtid med stöd av ett tidsadverbial"
           ],
-          "correctIndex": 2,
-          "explanation": "'Igår' pekar tillbaka i tiden och signalerar dåtid."
-        },
-        {
-          "type": "multiple-choice",
-          "question": "Vad är dåtidsformen av 'skriver'?",
-          "options": [
-            "skriva",
-            "skrivit",
-            "skrev",
-            "skribent"
-          ],
-          "correctIndex": 2,
-          "explanation": "'Skrev' är dåtidsform av 'skriver/skriva'."
-        },
-        {
-          "type": "build-sentence",
-          "instruction": "Sätt ihop en mening i dåtid!",
-          "words": [
-            "Förra",
-            "veckan",
-            "läste",
-            "vi",
-            "en",
-            "bok",
-            "."
-          ],
-          "correctOrder": [
-            0,
-            1,
-            2,
-            3,
-            4,
-            5,
-            6
-          ],
-          "explanation": "'Förra veckan' och 'läste' visar att det hände i dåtid."
+          "correctIndex": 3,
+          "explanation": "Presens är omarkerat i svenskan och kan uttrycka framtid när tidsadverbialet 'imorgon' anger tidpunkten. Ingen futurumkonstruktion behövs."
         }
       ]
     },
     {
       "id": "dialoger-talstreck-1",
       "title": "Skriva dialoger – använda talstreck",
-      "description": "Lär dig hur man skriver samtal med talstreck.",
+      "description": "Analysera anföringsteknik, tankeåtergivning och skriftspråkliga konventioner.",
       "icon": "💬",
       "bonusPoints": 30,
       "helpText": [
-        "Talstreck (–) används när man skriver vad någon säger i en berättelse.",
-        "Talstrecket sätts i början av repliken: – Hej! sa Lisa.",
-        "Ny replik = ny rad med nytt talstreck.",
-        "Tankstreck (–) är längre än bindestreck (-)."
+        "Anföringssatsen kan stå efter repliken, skjutas in mitt i den eller utelämnas helt.",
+        "Inskjuten anföringssats ramas in av kommatecken när repliken fortsätter efteråt.",
+        "Indirekt anföring återger innehållet i en att-sats; fri indirekt anföring blandar berättarröst och figurens medvetande utan anföringsverb.",
+        "Direkt återgivna tankar markeras inte med talstreck – talstrecket är reserverat för hörbart tal.",
+        "Utelämnade anföringssatser höjer tempot men kräver att läsaren själv håller reda på talarna."
       ],
       "exercises": [
         {
           "type": "multiple-choice",
-          "question": "Hur ska en replik börja i en dialog?",
+          "question": "Vilken interpunktion är korrekt när anföringssatsen skjuts in i en replik som fortsätter efteråt?",
           "options": [
-            "Med citattecken: \"Hej!\"",
-            "Med talstreck: – Hej!",
-            "Med kolon: Hej:",
-            "Med parentes: (Hej!)"
+            "– Jag tror – sa hon – att vi hinner.",
+            "– Jag tror: sa hon: att vi hinner.",
+            "– Jag tror, sa hon, att vi hinner.",
+            "– Jag tror. Sa hon. Att vi hinner."
           ],
-          "correctIndex": 1,
-          "explanation": "I svenska texter används talstreck (–) i stället för citattecken för att markera repliker."
+          "correctIndex": 2,
+          "explanation": "Den inskjutna anföringssatsen ramas in av kommatecken, och repliken fortsätter med liten bokstav eftersom den utgör en enda mening."
         },
         {
           "type": "multiple-choice",
-          "question": "Vilket alternativ är RÄTT skrivet?",
+          "question": "Vad kännetecknar fri indirekt anföring?",
           "options": [
-            "\"Vad heter du?\" frågade hon.",
-            "– Vad heter du? frågade hon.",
-            "Vad heter du? frågade hon.",
-            "-Vad heter du? frågade hon."
+            "Berättarrösten och figurens tankar smälter samman utan anföringsverb och utan citattecken",
+            "Repliken markeras alltid med citattecken",
+            "Tankarna återges i presens med talstreck",
+            "Anföringssatsen står först i meningen"
           ],
-          "correctIndex": 1,
-          "explanation": "I svenska berättelser inleds repliker med talstreck (–), inte med citattecken."
+          "correctIndex": 0,
+          "explanation": "Vid fri indirekt anföring behålls berättarens tredje person och dåtid, men ordval och värderingar är figurens. Något inledande 'hon tänkte att' finns inte."
         },
         {
           "type": "fill-in-blank",
-          "question": "Fyll i rätt tecken: '___ Kom hit!' ropade han.",
-          "answer": "–",
-          "hint": "Det är ett talstreck (ett långt streck).",
-          "explanation": "Talstrecket (–) markerar att någon pratar."
-        },
-        {
-          "type": "multiple-choice",
-          "question": "Vad gör man när en ny person börjar prata i en dialog?",
-          "options": [
-            "Fortsätter på samma rad",
-            "Börjar på en ny rad med talstreck",
-            "Sätter komma och fortsätter",
-            "Skriver personens namn med stora bokstäver"
+          "question": "Direkt återgivna tankar i en roman markeras ofta typografiskt med ___ stil, eftersom talstrecket är reserverat för hörbart tal.",
+          "answer": "kursiv",
+          "alternativeAnswers": [
+            "kursiverad"
           ],
-          "correctIndex": 1,
-          "explanation": "Varje ny replik börjar på en ny rad med ett talstreck."
+          "hint": "En typografisk markering där bokstäverna lutar.",
+          "explanation": "Eftersom talstrecket signalerar att någon talar högt behövs en annan markör för inre tal. Kursivering är den vanligaste konventionen, ibland används ingen markering alls."
         },
         {
           "type": "multiple-choice",
-          "question": "Vilken mening visar ett korrekt användande av talstreck?",
+          "question": "Vilket alternativ följer svensk skriftspråkskonvention för repliker i skönlitteratur?",
           "options": [
-            "– Jag är trött, sa Emma.",
-            "–Jag är trött sa Emma",
-            "- Jag är trött, sa Emma.",
-            "Jag är trött – sa Emma."
+            "Enkla citattecken runt varje replik",
+            "Kolon före varje replik",
+            "Dubbla citattecken som i engelskan, med alla repliker i löpande text",
+            "Talstreck med efterföljande mellanslag och ny rad för varje talare"
+          ],
+          "correctIndex": 3,
+          "explanation": "Svensk skönlitterär tradition använder talstreck och radbyte per talare. Engelskans citattecken förekommer främst i översättningar, sakprosa och ordagranna citat."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken effekt får en dialog där anföringssatserna helt utelämnas?",
+          "options": [
+            "Tempot ökar, men läsaren måste själv hålla reda på vem som talar",
+            "Repliken övergår automatiskt till indirekt anföring",
+            "Meningarna blir grammatiskt felaktiga",
+            "Talstrecken måste ersättas med citattecken"
           ],
           "correctIndex": 0,
-          "explanation": "Talstrecket följs av ett mellanslag och repliken avslutas med komma före 'sa Emma'."
+          "explanation": "Utan 'sa han' och 'svarade hon' blir repliksekvensen snabb och scenisk, men den bygger på att talarna växlar regelbundet så att läsaren kan följa turordningen."
         }
       ]
     },
     {
       "id": "styckesindelning-1",
       "title": "Styckesindelning",
-      "description": "Lär dig att dela upp en text i stycken.",
+      "description": "Analysera styckets funktion i argumenterande text, temameningar och kohesion.",
       "icon": "📄",
       "bonusPoints": 25,
       "helpText": [
-        "Ett stycke handlar om ETT ämne eller EN tanke.",
-        "Nytt stycke = ny rad + indragning eller blankrad.",
-        "Varje stycke börjar med en inledning och avslutas med en avslutning.",
-        "Bra styckeindelning gör texten lättare att läsa."
+        "I argumenterande text bär varje stycke ett argument: påstående, motivering och belägg.",
+        "Temameningen står oftast först (deduktivt stycke) men kan placeras sist i ett induktivt uppbyggt stycke.",
+        "Kohesion = de språkliga bindningarna i ytan (referenter, konnektorer, tematisk fortsättning).",
+        "Koherens = att innehållet hänger ihop logiskt och begripligt för läsaren.",
+        "Styckesindelningen är ett argumentativt verktyg: den visar hur många och hur självständiga argumenten är."
       ],
       "exercises": [
         {
           "type": "multiple-choice",
-          "question": "Vad är ett stycke i en text?",
+          "question": "Vilken funktion har ett stycke i en argumenterande text?",
           "options": [
-            "En enskild mening",
-            "En grupp meningar som handlar om samma sak",
-            "En rubrik",
-            "En hel berättelse"
+            "Att ge läsarens öga en paus",
+            "Att presentera och utveckla ett argument med motivering och belägg",
+            "Att markera att texten byter talare",
+            "Att avsluta varje mening"
           ],
           "correctIndex": 1,
-          "explanation": "Ett stycke består av meningar som hör ihop och handlar om samma ämne eller tanke."
+          "explanation": "I argumenterande text är stycket argumentets enhet. Att pausa ögat är en typografisk bieffekt, inte styckets funktion."
         },
         {
           "type": "multiple-choice",
-          "question": "När ska man börja ett nytt stycke?",
+          "question": "Vad avses med kohesion i en text?",
           "options": [
-            "Efter varje mening",
-            "När man byter ämne eller tanke",
-            "Bara i böcker",
-            "Aldrig – text ska flöda ihop"
+            "Att texten är korrekt stavad och interpunkterad",
+            "Att alla stycken är ungefär lika långa",
+            "De språkliga bindningarna i texten: referenter, konnektorer och tematisk fortsättning",
+            "Att texten har informativa rubriker"
           ],
-          "correctIndex": 1,
-          "explanation": "Nytt stycke används när man övergår till ett nytt ämne, en ny tanke eller en ny händelse."
+          "correctIndex": 2,
+          "explanation": "Kohesion är de synliga språkliga banden mellan meningar och stycken. Koherens är i stället att innehållet hänger ihop logiskt för läsaren."
         },
         {
           "type": "fill-in-blank",
-          "question": "Varje stycke ska handla om ___ ämne.",
-          "answer": "ett",
-          "hint": "Ett stycke = en tanke eller ett ämne.",
-          "explanation": "Principen för styckeindelning är att hålla sig till ett ämne per stycke."
+          "question": "Kohesion gäller textens språkliga bindningar, medan ___ gäller att innehållet hänger ihop logiskt för läsaren.",
+          "answer": "koherens",
+          "hint": "Termen ligger nära ordet i frågans första del men avser textens innehållsliga och tankemässiga sammanhang.",
+          "explanation": "Koherens är textens innehållsliga sammanhang. En text kan ha många sambandsord (hög kohesion) och ändå vara osammanhängande (låg koherens)."
         },
         {
           "type": "multiple-choice",
-          "question": "Hur markerar man ofta ett nytt stycke i handskriven text?",
+          "question": "Vilket är det tydligaste tecknet på att ett stycke i ett PM bör delas i två?",
           "options": [
-            "Med en stor bokstav mitt i raden",
-            "Med indragning på första raden eller en blankrad",
-            "Med ett utropstecken",
-            "Med fet stil"
+            "Stycket rymmer två självständiga argument med varsitt belägg",
+            "Stycket är längre än fem rader",
+            "Stycket innehåller ett citat",
+            "Stycket inleds med ett sambandsord"
           ],
-          "correctIndex": 1,
-          "explanation": "Nytt stycke markeras med indragning (indenterad första rad) eller en blankrad."
+          "correctIndex": 0,
+          "explanation": "Det är innehållets struktur och inte längden som avgör. Två självständiga argument kräver varsin temamening och därmed varsitt stycke."
         },
         {
           "type": "multiple-choice",
-          "question": "Varför är styckeindelning viktigt?",
+          "question": "Var placeras temameningen vanligast i utredande och akademisk prosa?",
           "options": [
-            "Det gör texten längre",
-            "Det gör texten lättare att läsa och förstå",
-            "Det är ett krav i alla språk",
-            "Det minskar antalet meningar"
+            "Först i stycket",
+            "Sist i stycket",
+            "Mitt i stycket",
+            "Temameningen utelämnas alltid"
           ],
-          "correctIndex": 1,
-          "explanation": "Styckeindelning hjälper läsaren att följa med i texten och förstå dess struktur."
+          "correctIndex": 0,
+          "explanation": "Den deduktiva styckestrukturen är norm: temameningen först, därefter utvecklingen. Placering sist förekommer i induktivt uppbyggda stycken där slutsatsen växer fram."
         }
       ]
     },
@@ -1593,15 +1589,13 @@
             "Rapporten",
             "har",
             "granskats",
-            "noggrant",
-            "."
+            "noggrant."
           ],
           "correctOrder": [
             0,
             1,
             2,
-            3,
-            4
+            3
           ],
           "explanation": "Rapporten (subjekt) har granskats (passiv form av 'granska') noggrant (adverbial). Passiv ger formell, opersonlig ton."
         },

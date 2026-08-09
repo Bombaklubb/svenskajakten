@@ -62,14 +62,23 @@ function checkFillInBlank(ex, where) {
   const alts = (ex.alternativeAnswers ?? []).map(norm);
   if (alts.includes(norm(answer))) warn(where, "answer finns även i alternativeAnswers");
 
-  // Inserting the answer must not repeat a word already next to the blank.
-  // Parentheticals are stripped first — they restate words on purpose.
-  const filled = norm(question.replace(/\([^)]*\)/g, "").replace("___", answer));
-  const words = filled.split(/[^a-zåäöé]+/).filter(Boolean);
-  for (let i = 1; i < words.length; i++) {
-    if (words[i] === words[i - 1] && words[i].length > 2) {
-      err(where, `insatt svar ger dubblerat ord "${words[i]}": ${filled.slice(0, 70)}`);
-      break;
+  // Inserting the answer must not repeat the word already next to the gap.
+  // Only duplication caused by the answer itself counts — a question may well
+  // repeat a word on purpose ("substantivet 'fara'? fara + ___").
+  // Parentheticals are stripped first; they restate words by design.
+  const stripped = question.replace(/\([^)]*\)/g, "");
+  const toWords = (s) => norm(s).split(/[^a-zåäöé]+/).filter(Boolean);
+  const answerWords = toWords(answer);
+  if (answerWords.length) {
+    const [before, after = ""] = stripped.split("___");
+    const wordBefore = toWords(before).at(-1);
+    const wordAfter = toWords(after)[0];
+    const firstAnswer = answerWords[0];
+    const lastAnswer = answerWords.at(-1);
+    if (firstAnswer.length > 2 && wordBefore === firstAnswer) {
+      err(where, `insatt svar dubblerar ordet före luckan: "${wordBefore} ${firstAnswer}"`);
+    } else if (lastAnswer.length > 2 && wordAfter === lastAnswer) {
+      err(where, `insatt svar dubblerar ordet efter luckan: "${lastAnswer} ${wordAfter}"`);
     }
   }
 
@@ -172,11 +181,13 @@ for (const stage of STAGES) {
   for (const kind of ["grammar", "spelling"]) {
     for (const mod of data[kind] ?? []) {
       for (const ex of mod.exercises ?? []) {
+        // Include the options/answer: generic stems such as "Vilken mening är
+        // rätt skriven?" recur legitimately with completely different content.
         const key =
           ex.type === "multiple-choice"
-            ? `mc|${norm(ex.question)}`
+            ? `mc|${norm(ex.question)}|${(ex.options ?? []).map(norm).sort().join("|")}`
             : ex.type === "fill-in-blank"
-              ? `fib|${norm(ex.question)}`
+              ? `fib|${norm(ex.question)}|${norm(ex.answer)}`
               : ex.type === "build-sentence"
                 ? `bs|${(ex.words ?? []).map(norm).join(" ")}`
                 : null;

@@ -65,8 +65,7 @@
             "att",
             "du",
             "har",
-            "rätt",
-            "."
+            "rätt."
           ],
           "correctOrder": [
             0,
@@ -74,8 +73,7 @@
             2,
             3,
             4,
-            5,
-            6
+            5
           ],
           "explanation": "'Jag vet' är huvudsatsen, 'att du har rätt' är bisatsen."
         },
@@ -188,12 +186,10 @@
           "words": [
             "Eftersom",
             "det",
-            "regnade",
-            ",",
+            "regnade,",
             "stannade",
             "vi",
-            "hemma",
-            "."
+            "hemma."
           ],
           "correctOrder": [
             0,
@@ -201,9 +197,7 @@
             2,
             3,
             4,
-            5,
-            6,
-            7
+            5
           ],
           "explanation": "'Eftersom det regnade' är bisatsen i början. Komma före huvudsatsen 'stannade vi hemma'."
         },
@@ -327,15 +321,13 @@
             "Busschauffören",
             "körde",
             "till",
-            "centralstationen",
-            "."
+            "centralstationen."
           ],
           "correctOrder": [
             0,
             1,
             2,
-            3,
-            4
+            3
           ],
           "explanation": "'Busschauffören' och 'centralstationen' är sammansatta ord."
         },
@@ -465,8 +457,7 @@
             "eleverna",
             "hitta",
             "rätt",
-            "böcker",
-            "."
+            "böcker."
           ],
           "correctOrder": [
             0,
@@ -474,16 +465,15 @@
             2,
             3,
             4,
-            5,
-            6
+            5
           ],
           "explanation": "'Skolbibliotekarien' är ett sammansatt ord: skol + bibliotekarie + n (bestämd form)."
         },
         {
           "type": "fill-in-blank",
-          "question": "Vilket suffix bildar ett adjektiv av substantivet 'fara'? fara + ___ = farlig",
+          "question": "Vilket suffix bildar ett adjektiv av substantivet 'fara'? fara + ___",
           "answer": "-lig",
-          "hint": "Tänk på adjektiv som 'farlig', 'lycklig', 'trevlig'.",
+          "hint": "Samma ändelse används i 'lycklig' och 'trevlig'.",
           "explanation": "Suffixet '-lig' läggs till substantiv eller verb för att bilda adjektiv: fara → farlig, lycka → lycklig."
         },
         {
@@ -637,16 +627,14 @@
             "reser",
             "vi",
             "till",
-            "Paris",
-            "."
+            "Paris."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4,
-            5
+            4
           ],
           "explanation": "'Imorgon' (adverbial) + 'reser' (predikat) + 'vi' (subjekt) = omvänd ordföljd."
         }
@@ -715,16 +703,14 @@
             "gamla",
             "huset",
             "är",
-            "vackert",
-            "."
+            "vackert."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4,
-            5
+            4
           ],
           "explanation": "'Det gamla huset' – bestämd form + -a på adjektivet. 'Vackert' i predikativ ställning."
         }
@@ -791,15 +777,13 @@
             "Himlen",
             "är",
             "klarblå",
-            "idag",
-            "."
+            "idag."
           ],
           "correctOrder": [
             0,
             1,
             2,
-            3,
-            4
+            3
           ],
           "explanation": "'Klarblå' är predikativ – det hör till 'himlen' via 'är'."
         }
@@ -808,140 +792,141 @@
     {
       "id": "grammatik-oversikt-1",
       "title": "Grammatik – vad är det?",
-      "description": "Lär dig de viktigaste begreppen i grammatiken.",
+      "description": "Fördjupa dig i particip, pronomentyper och hjälpverb.",
       "icon": "📚",
       "bonusPoints": 25,
       "helpText": [
-        "Grammatik handlar om hur vi bygger upp språket.",
-        "Substantiv = namn på saker, djur, personer (hus, hund, Lisa).",
-        "Verb = ord som beskriver handlingar (hoppa, läsa, äta).",
-        "Adjektiv = ord som beskriver hur något är (stor, glad, blå)."
+        "Pronomen delas in i typer: personliga (hon, honom), possessiva (hennes, sin), relativa (som), demonstrativa (denna) och indefinita (någon).",
+        "Hjälpverb (har, hade, ska, kan, måste) står tillsammans med ett huvudverb: hon har skrivit.",
+        "Efter har/hade står huvudverbet i supinum: skrivit, sprungit, ätit.",
+        "Particip är verbformer som beter sig som adjektiv: presens particip (springande) och perfektparticip (stängd, stängda)."
       ],
       "exercises": [
         {
           "type": "multiple-choice",
-          "question": "Vad är ett substantiv?",
+          "question": "Vilken typ av pronomen är 'sin' i meningen 'Han tog sin jacka'?",
           "options": [
-            "Ett ord som beskriver en handling",
-            "Ett ord som namnger saker, djur eller personer",
-            "Ett ord som beskriver hur något är",
-            "Ett ord som kopplar ihop meningar"
+            "Personligt pronomen",
+            "Reflexivt possessivt pronomen",
+            "Relativt pronomen",
+            "Demonstrativt pronomen"
           ],
           "correctIndex": 1,
-          "explanation": "Substantiv är namn på saker, djur och personer, t.ex. 'boll', 'katt', 'Lisa'."
+          "explanation": "'Sin' syftar tillbaka på satsens eget subjekt och uttrycker ägande. Hade jackan tillhört någon annan hade det hetat 'hans jacka'."
         },
         {
           "type": "multiple-choice",
-          "question": "Vilket ord är ett verb?",
+          "question": "Vilket ord är hjälpverb i meningen 'Hon har skrivit ett brev'?",
           "options": [
-            "röd",
-            "stol",
-            "springer",
-            "snabbt"
+            "Hon",
+            "har",
+            "skrivit",
+            "brev"
           ],
-          "correctIndex": 2,
-          "explanation": "'Springer' är ett verb – det beskriver en handling."
+          "correctIndex": 1,
+          "explanation": "'Har' är hjälpverb och bildar tempuset tillsammans med huvudverbet 'skrivit', som står i supinum."
         },
         {
           "type": "multiple-choice",
-          "question": "Vilket ord är ett adjektiv?",
+          "question": "Vilken av formerna är ett presens particip?",
           "options": [
-            "hoppa",
-            "blå",
-            "boken",
-            "och"
+            "sprungit",
+            "springande",
+            "sprang",
+            "springa"
           ],
           "correctIndex": 1,
-          "explanation": "'Blå' är ett adjektiv – det beskriver hur något ser ut."
+          "explanation": "Presens particip bildas på -ande/-ende och uttrycker pågående handling: ett springande barn. 'Sprungit' är supinum och 'sprang' preteritum."
         },
         {
           "type": "fill-in-blank",
-          "question": "I meningen 'Den lilla hunden springer fort' är 'springer' ett ___.",
-          "answer": "verb",
-          "hint": "Det är ett handlingsord.",
-          "explanation": "'Springer' beskriver vad hunden gör – det är ett verb."
+          "question": "I meningen 'Den stängda dörren gnisslade' fungerar perfektparticipet 'stängda' som ett ___.",
+          "answer": "adjektiv",
+          "hint": "Ordet står framför substantivet och böjs efter det.",
+          "explanation": "Perfektparticip böjs som adjektiv (stängd – stängt – stängda) och beskriver här substantivet 'dörren'. Det är alltså inte satsens verb – det är 'gnisslade'."
         },
         {
           "type": "multiple-choice",
-          "question": "Vilket alternativ innehåller tre SUBSTANTIV?",
+          "question": "Vilket ord är ett relativt pronomen?",
           "options": [
-            "springer, hoppar, simmar",
-            "stor, liten, glad",
-            "bok, boll, hund",
-            "fort, snabbt, sakta"
+            "som",
+            "denna",
+            "något",
+            "hon"
           ],
-          "correctIndex": 2,
-          "explanation": "'Bok', 'boll' och 'hund' är alla substantiv – de namnger saker och djur."
+          "correctIndex": 0,
+          "explanation": "'Som' inleder en relativ bisats och syftar tillbaka på ett ord i huvudsatsen: 'Boken som jag lånade.' 'Denna' är demonstrativt, 'något' indefinit och 'hon' personligt."
         }
       ]
     },
     {
       "id": "tempus-tidsformer-1",
       "title": "Tempus – tidsformer (nutid-dåtid)",
-      "description": "Öva på att skriva verb i rätt tid.",
+      "description": "Öva på perfekt, pluskvamperfekt och supinum.",
       "icon": "⏳",
       "bonusPoints": 30,
       "helpText": [
-        "Tempus visar när något händer.",
-        "Nutid (presens): Något händer NU. Exempel: 'Jag äter.'",
-        "Dåtid (preteritum): Något hände FÖRR. Exempel: 'Jag åt.'",
-        "Tips: dåtid slutar ofta på -ade, -de eller -te."
+        "Perfekt: har + supinum (jag har läst). Knyter en avslutad handling till nuet.",
+        "Pluskvamperfekt: hade + supinum (jag hade läst). Något som hände före en annan händelse i dåtid.",
+        "Supinum är formen efter har/hade: läst, skrivit, ätit, sprungit.",
+        "Förväxla inte supinum (har skrivit) med perfektparticip (ett skrivet brev)."
       ],
       "exercises": [
         {
           "type": "multiple-choice",
-          "question": "Vilken form är i NUTID?",
+          "question": "Vilket tempus används i meningen 'Hon hade redan gått när vi kom'?",
           "options": [
-            "spelade",
-            "spelar",
-            "spelat",
-            "spelades"
+            "perfekt",
+            "pluskvamperfekt",
+            "preteritum",
+            "presens"
           ],
           "correctIndex": 1,
-          "explanation": "'Spelar' är nutidsform – det händer nu."
+          "explanation": "'Hade' + supinum ('gått') är pluskvamperfekt. Det visar att hon gick FÖRE den andra dåtidshändelsen ('när vi kom')."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken form är SUPINUM av verbet 'skriva'?",
+          "options": [
+            "skrev",
+            "skriven",
+            "skrivit",
+            "skrivande"
+          ],
+          "correctIndex": 2,
+          "explanation": "Supinum är formen som står efter har/hade: 'har skrivit'. 'Skriven' är perfektparticip (ett skrivet brev) och 'skrivande' presens particip."
         },
         {
           "type": "fill-in-blank",
-          "question": "Skriv i dåtid: 'Varje dag leker hon' → 'Igår ___ hon.'",
-          "answer": "lekte",
-          "hint": "Böj verbet 'leka' i dåtid (preteritum).",
-          "explanation": "'Leka' böjs till 'lekte' i dåtid (preteritum)."
+          "question": "Skriv i perfekt: 'Jag läste boken igår.' → 'Jag ___ boken tre gånger.'",
+          "answer": "har läst",
+          "hint": "Perfekt bildas av två delar: ett hjälpverb i presens och huvudverbet i supinum.",
+          "explanation": "Perfekt bildas med 'har' + supinum: 'har läst'. Formen knyter de tre läsningarna till nuet i stället för till en bestämd tidpunkt."
         },
         {
           "type": "multiple-choice",
-          "question": "Vilket ord visar att meningen är i dåtid?",
+          "question": "Vad är skillnaden mellan perfekt och preteritum?",
           "options": [
-            "nu",
-            "idag",
-            "igår",
-            "snart"
+            "Perfekt används bara i skriftspråk",
+            "Preteritum knyter händelsen till en avslutad tidpunkt, medan perfekt knyter den till nuet",
+            "Preteritum bildas alltid med hjälpverb",
+            "Det finns ingen betydelseskillnad"
           ],
-          "correctIndex": 2,
-          "explanation": "'Igår' pekar tillbaka i tiden och signalerar dåtid."
-        },
-        {
-          "type": "multiple-choice",
-          "question": "Vad är dåtidsformen av 'skriver'?",
-          "options": [
-            "skriva",
-            "skrivit",
-            "skrev",
-            "skribent"
-          ],
-          "correctIndex": 2,
-          "explanation": "'Skrev' är dåtidsform av 'skriver/skriva'."
+          "correctIndex": 1,
+          "explanation": "'Jag läste boken igår' anger en avslutad tidpunkt, medan 'jag har läst boken' säger något om hur det är nu – jag känner till innehållet."
         },
         {
           "type": "build-sentence",
-          "instruction": "Sätt ihop en mening i dåtid!",
+          "instruction": "Bygg meningen i PLUSKVAMPERFEKT!",
           "words": [
-            "Förra",
-            "veckan",
-            "läste",
+            "När",
             "vi",
-            "en",
-            "bok",
-            "."
+            "kom",
+            "hem",
+            "hade",
+            "gästerna",
+            "redan",
+            "ätit."
           ],
           "correctOrder": [
             0,
@@ -950,79 +935,80 @@
             3,
             4,
             5,
-            6
+            6,
+            7
           ],
-          "explanation": "'Förra veckan' och 'läste' visar att det hände i dåtid."
+          "explanation": "Bisatsen 'När vi kom hem' står i preteritum, och huvudsatsen använder 'hade' + supinum ('ätit') för att visa att ätandet skedde ännu tidigare."
         }
       ]
     },
     {
       "id": "dialoger-talstreck-1",
       "title": "Skriva dialoger – använda talstreck",
-      "description": "Lär dig hur man skriver samtal med talstreck.",
+      "description": "Öva på anföringssatser, direkt och indirekt anföring samt avbrutna repliker.",
       "icon": "💬",
       "bonusPoints": 30,
       "helpText": [
-        "Talstreck (–) används när man skriver vad någon säger i en berättelse.",
-        "Talstrecket sätts i början av repliken: – Hej! sa Lisa.",
-        "Ny replik = ny rad med nytt talstreck.",
-        "Tankstreck (–) är längre än bindestreck (-)."
+        "Direkt anföring återger de exakta orden: '– Jag är trött, sa Ali.'",
+        "Indirekt anföring återger innehållet i en att-sats utan talstreck: 'Ali sa att han var trött.'",
+        "Anföringssatsen kan skjutas in mitt i repliken och ramas då in av kommatecken.",
+        "Ett tvärt avbrott markeras med tankstreck, medan tre punkter visar att någon tystnar eller tvekar."
       ],
       "exercises": [
         {
           "type": "multiple-choice",
-          "question": "Hur ska en replik börja i en dialog?",
+          "question": "Vilket alternativ har korrekt inskjuten anföringssats?",
           "options": [
-            "Med citattecken: \"Hej!\"",
-            "Med talstreck: – Hej!",
-            "Med kolon: Hej:",
-            "Med parentes: (Hej!)"
+            "– Jag vet, sa hon, men jag vill ändå försöka.",
+            "– Jag vet. Sa hon. Men jag vill ändå försöka.",
+            "– Jag vet, sa hon; men jag vill ändå försöka.",
+            "– Jag vet: sa hon: men jag vill ändå försöka."
           ],
-          "correctIndex": 1,
-          "explanation": "I svenska texter används talstreck (–) i stället för citattecken för att markera repliker."
+          "correctIndex": 0,
+          "explanation": "När anföringssatsen skjuts in mitt i en replik som fortsätter ramas den in av kommatecken, och repliken fortsätter med liten bokstav."
         },
         {
           "type": "multiple-choice",
-          "question": "Vilket alternativ är RÄTT skrivet?",
+          "question": "Vilken mening är indirekt anföring?",
           "options": [
-            "\"Vad heter du?\" frågade hon.",
-            "– Vad heter du? frågade hon.",
-            "Vad heter du? frågade hon.",
-            "-Vad heter du? frågade hon."
+            "– Jag är trött, sa Ali.",
+            "\"Jag är trött\", sa Ali.",
+            "Ali sa att han var trött.",
+            "– Jag är trött!"
           ],
-          "correctIndex": 1,
-          "explanation": "I svenska berättelser inleds repliker med talstreck (–), inte med citattecken."
+          "correctIndex": 2,
+          "explanation": "Indirekt anföring saknar talstreck och citattecken. Innehållet återges i en att-sats, och tempus och pronomen anpassas till berättarens perspektiv."
         },
         {
           "type": "fill-in-blank",
-          "question": "Fyll i rätt tecken: '___ Kom hit!' ropade han.",
-          "answer": "–",
-          "hint": "Det är ett talstreck (ett långt streck).",
-          "explanation": "Talstrecket (–) markerar att någon pratar."
+          "question": "I meningen 'Ali sa att han var trött' kallas återgivningen ___ anföring.",
+          "answer": "indirekt",
+          "hint": "Motsatsen till att citera någon ordagrant.",
+          "explanation": "Vid indirekt anföring återges innehållet, inte de exakta orden. Därför byts 'jag' mot 'han' och presens mot preteritum."
         },
         {
           "type": "multiple-choice",
-          "question": "Vad gör man när en ny person börjar prata i en dialog?",
+          "question": "När används citattecken i stället för talstreck i svensk text?",
           "options": [
-            "Fortsätter på samma rad",
-            "Börjar på en ny rad med talstreck",
-            "Sätter komma och fortsätter",
-            "Skriver personens namn med stora bokstäver"
+            "Alltid när barn talar",
+            "Vid citat ur andra texter, eller när en replik står inne i löpande text",
+            "När repliken är en fråga",
+            "Citattecken används aldrig i svenska"
           ],
           "correctIndex": 1,
-          "explanation": "Varje ny replik börjar på en ny rad med ett talstreck."
+          "explanation": "Talstreck är standard för repliker i svensk skönlitteratur, medan citattecken används för ordagranna citat och för korta repliker inne i löpande text."
         },
         {
           "type": "multiple-choice",
-          "question": "Vilken mening visar ett korrekt användande av talstreck?",
+          "question": "Hur markeras det att en replik avbryts tvärt?",
           "options": [
-            "– Jag är trött, sa Emma.",
-            "–Jag är trött sa Emma",
-            "- Jag är trött, sa Emma.",
-            "Jag är trött – sa Emma."
+            "Med versaler",
+            "Med parentes",
+            "Med kolon",
+            "Med ett tankstreck: – Men jag ville bara –"
           ],
-          "correctIndex": 0,
-          "explanation": "Talstrecket följs av ett mellanslag och repliken avslutas med komma före 'sa Emma'."
+          "correctIndex": 3,
+          "explanation": "Ett tankstreck visar att talaren avbryts mitt i. Tre punkter används i stället när någon tystnar eller tvekar: '– Jag vet inte riktigt …'"
         }
       ]
     },
@@ -1160,70 +1146,75 @@
     {
       "id": "styckesindelning-1",
       "title": "Styckesindelning",
-      "description": "Lär dig att dela upp en text i stycken.",
+      "description": "Öva på temameningar, sambandsord och stycken i utredande text.",
       "icon": "📄",
       "bonusPoints": 25,
       "helpText": [
-        "Ett stycke handlar om ETT ämne eller EN tanke.",
-        "Nytt stycke = ny rad + indragning eller blankrad.",
-        "Varje stycke börjar med en inledning och avslutas med en avslutning.",
-        "Bra styckeindelning gör texten lättare att läsa."
+        "Temameningen (kärnmeningen) anger styckets huvudinnehåll och står oftast först.",
+        "Resten av stycket utvecklar temameningen med förklaring, exempel eller belägg.",
+        "Sambandsord som 'däremot', 'följaktligen' och 'dessutom' visar hur styckena förhåller sig till varandra.",
+        "Ett stycke som rymmer två självständiga tankar bör delas i två."
       ],
       "exercises": [
         {
           "type": "multiple-choice",
-          "question": "Vad är ett stycke i en text?",
+          "question": "Vad kallas den mening som anger styckets huvudinnehåll?",
           "options": [
-            "En enskild mening",
-            "En grupp meningar som handlar om samma sak",
-            "En rubrik",
-            "En hel berättelse"
+            "Temamening",
+            "Bisats",
+            "Anföringssats",
+            "Slutkläm"
           ],
-          "correctIndex": 1,
-          "explanation": "Ett stycke består av meningar som hör ihop och handlar om samma ämne eller tanke."
+          "correctIndex": 0,
+          "explanation": "Temameningen (även kallad kärnmening) sammanfattar vad stycket ska handla om, så att läsaren direkt förstår styckets ärende."
         },
         {
           "type": "multiple-choice",
-          "question": "När ska man börja ett nytt stycke?",
+          "question": "Vad bör ett stycke i en utredande text innehålla?",
           "options": [
-            "Efter varje mening",
-            "När man byter ämne eller tanke",
-            "Bara i böcker",
-            "Aldrig – text ska flöda ihop"
+            "Så många ämnen som möjligt",
+            "Endast en enda mening",
+            "En tanke som utvecklas med förklaring och exempel",
+            "Enbart citat från källor"
           ],
-          "correctIndex": 1,
-          "explanation": "Nytt stycke används när man övergår till ett nytt ämne, en ny tanke eller en ny händelse."
+          "correctIndex": 2,
+          "explanation": "Ett stycke i utredande text driver en tanke: påstående, förklaring och belägg. Utan utveckling blir stycket bara ett löst påstående."
         },
         {
           "type": "fill-in-blank",
-          "question": "Varje stycke ska handla om ___ ämne.",
-          "answer": "ett",
-          "hint": "Ett stycke = en tanke eller ett ämne.",
-          "explanation": "Principen för styckeindelning är att hålla sig till ett ämne per stycke."
+          "question": "Ord som 'däremot', 'följaktligen' och 'dessutom' skapar ___ mellan meningar och stycken.",
+          "answer": "sammanhang",
+          "alternativeAnswers": [
+            "samband",
+            "kohesion",
+            "sambandet"
+          ],
+          "hint": "De hjälper läsaren se hur textens delar hör ihop.",
+          "explanation": "Sådana ord kallas konnektorer eller sambandsord. De signalerar motsats, orsak eller tillägg och skapar sammanhang i texten."
         },
         {
           "type": "multiple-choice",
-          "question": "Hur markerar man ofta ett nytt stycke i handskriven text?",
+          "question": "Vilken mening fungerar bäst som temamening i ett stycke om skoluniform?",
           "options": [
-            "Med en stor bokstav mitt i raden",
-            "Med indragning på första raden eller en blankrad",
-            "Med ett utropstecken",
-            "Med fet stil"
+            "Min kusin har skoluniform i sin skola.",
+            "Skoluniform kan minska mobbning som handlar om kläder.",
+            "Kläder kostar ganska mycket pengar.",
+            "Jag tycker att skoluniform är helt okej."
           ],
           "correctIndex": 1,
-          "explanation": "Nytt stycke markeras med indragning (indenterad första rad) eller en blankrad."
+          "explanation": "Meningen formulerar ett påstående som går att utveckla med förklaring och exempel i resten av stycket. De andra är för smala eller för lösa."
         },
         {
           "type": "multiple-choice",
-          "question": "Varför är styckeindelning viktigt?",
+          "question": "Ett stycke i din text tar upp både miljöpåverkan och ekonomi. Vad är bäst?",
           "options": [
-            "Det gör texten längre",
-            "Det gör texten lättare att läsa och förstå",
-            "Det är ett krav i alla språk",
-            "Det minskar antalet meningar"
+            "Låta det vara som det är",
+            "Sätta in en rubrik mitt i stycket",
+            "Dela upp det i två stycken",
+            "Byta ut punkterna mot semikolon"
           ],
-          "correctIndex": 1,
-          "explanation": "Styckeindelning hjälper läsaren att följa med i texten och förstå dess struktur."
+          "correctIndex": 2,
+          "explanation": "Två självständiga argument förtjänar varsitt stycke med varsin temamening. Då blir strukturen tydlig för läsaren."
         }
       ]
     },
@@ -2097,15 +2088,13 @@
             "Igår",
             "spelade",
             "han",
-            "fotboll",
-            "."
+            "fotboll."
           ],
           "correctOrder": [
             0,
             1,
             2,
-            3,
-            4
+            3
           ],
           "explanation": "Igår (adverbial) spelade (verb) han (subjekt) fotboll (objekt). Det är omvänd ordföljd."
         },

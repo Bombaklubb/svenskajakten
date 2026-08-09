@@ -307,15 +307,13 @@
             "Hunden",
             "leker",
             "i",
-            "trädgården",
-            "."
+            "trädgården."
           ],
           "correctOrder": [
             0,
             1,
             2,
-            3,
-            4
+            3
           ],
           "explanation": "'Hunden' och 'trädgården' är substantiv i meningen."
         },
@@ -369,15 +367,13 @@
             "Katten",
             "sover",
             "på",
-            "soffan",
-            "."
+            "soffan."
           ],
           "correctOrder": [
             0,
             1,
             2,
-            3,
-            4
+            3
           ],
           "explanation": "'Katten' och 'soffan' är substantiven i meningen."
         },
@@ -476,8 +472,7 @@
             "hunden",
             "springer",
             "i",
-            "skogen",
-            "."
+            "skogen."
           ],
           "correctOrder": [
             0,
@@ -485,8 +480,7 @@
             2,
             3,
             4,
-            5,
-            6
+            5
           ],
           "explanation": "'Pojken', 'hunden' och 'skogen' är alla substantiv i meningen."
         },
@@ -566,15 +560,13 @@
             "Pojken",
             "cyklar",
             "till",
-            "skolan",
-            "."
+            "skolan."
           ],
           "correctOrder": [
             0,
             1,
             2,
-            3,
-            4
+            3
           ],
           "explanation": "'Cyklar' är verbet i meningen."
         },
@@ -628,15 +620,13 @@
             "Katten",
             "sover",
             "i",
-            "solen",
-            "."
+            "solen."
           ],
           "correctOrder": [
             0,
             1,
             2,
-            3,
-            4
+            3
           ],
           "explanation": "'Sover' är verbet – det berättar vad katten gör."
         },
@@ -734,16 +724,14 @@
             "klättrar",
             "upp",
             "i",
-            "trädet",
-            "."
+            "trädet."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4,
-            5
+            4
           ],
           "explanation": "'Klättrar' är verbet – det berättar vad katten gör."
         },
@@ -824,15 +812,13 @@
             "Den",
             "lilla",
             "hunden",
-            "skäller",
-            "."
+            "skäller."
           ],
           "correctOrder": [
             0,
             1,
             2,
-            3,
-            4
+            3
           ],
           "explanation": "'Lilla' är adjektivet som beskriver hunden."
         },
@@ -888,8 +874,7 @@
             "röda",
             "äpplet",
             "är",
-            "gott",
-            "."
+            "gott."
           ],
           "correctOrder": [
             0,
@@ -897,8 +882,7 @@
             2,
             3,
             4,
-            5,
-            6
+            5
           ],
           "explanation": "'Stora' och 'röda' är adjektiven som beskriver äpplet."
         },
@@ -984,16 +968,14 @@
             "varma",
             "soppan",
             "smakar",
-            "gott",
-            "."
+            "gott."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4,
-            5
+            4
           ],
           "explanation": "'Varma' är adjektivet som beskriver soppan. 'Gott' beskriver hur soppan smakar."
         },
@@ -1083,15 +1065,13 @@
             "Anna",
             "bor",
             "i",
-            "Göteborg",
-            "."
+            "Göteborg."
           ],
           "correctOrder": [
             0,
             1,
             2,
-            3,
-            4
+            3
           ],
           "explanation": "'Anna' (namn) och 'Göteborg' (plats) börjar med stor bokstav. Meningen börjar med 'Anna'."
         },
@@ -1147,8 +1127,7 @@
             "Maja",
             "bor",
             "i",
-            "Malmö",
-            "."
+            "Malmö."
           ],
           "correctOrder": [
             0,
@@ -1156,8 +1135,7 @@
             2,
             3,
             4,
-            5,
-            6
+            5
           ],
           "explanation": "'Erik', 'Maja' (personnamn) och 'Malmö' (stad) börjar alla med stor bokstav."
         },
@@ -1245,8 +1223,7 @@
             "Uppsala",
             "med",
             "sin",
-            "familj",
-            "."
+            "familj."
           ],
           "correctOrder": [
             0,
@@ -1255,8 +1232,7 @@
             3,
             4,
             5,
-            6,
-            7
+            6
           ],
           "explanation": "'Lina' (personnamn) och 'Uppsala' (stadsnamn) börjar med stor bokstav."
         },
@@ -1396,14 +1372,12 @@
           "words": [
             "Var",
             "bor",
-            "du",
-            "?"
+            "du?"
           ],
           "correctOrder": [
             0,
             1,
-            2,
-            3
+            2
           ],
           "explanation": "'Var bor du?' – en fråga om plats, avslutas med frågetecken."
         },
@@ -1488,15 +1462,13 @@
             "Hunden",
             "sover",
             "på",
-            "mattan",
-            "."
+            "mattan."
           ],
           "correctOrder": [
             0,
             1,
             2,
-            3,
-            4
+            3
           ],
           "explanation": "'Hunden sover på mattan.' är ett påstående – det avslutas med punkt."
         },
@@ -1584,16 +1556,14 @@
             "e",
             "i",
             "o",
-            "u",
-            "."
+            "u."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4,
-            5
+            4
           ],
           "explanation": "De fem grundvokalerna i ordning: a, e, i, o, u. Plus y, å, ä, ö!"
         },
@@ -1845,16 +1815,14 @@
             "dricker",
             "vatten",
             "ur",
-            "bäcken",
-            "."
+            "bäcken."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4,
-            5
+            4
           ],
           "explanation": "'Dricker' börjar med d och 'bäcken' börjar med b – två olika ljud!"
         },
@@ -2090,16 +2058,14 @@
             "ser",
             "att",
             "eleven",
-            "läser",
-            "."
+            "läser."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4,
-            5
+            4
           ],
           "explanation": "'Läraren' och 'läser' har ä, medan 'ser' och 'eleven' har e. Lyssna på skillnaden!"
         },
@@ -2255,8 +2221,7 @@
             "och",
             "äter",
             "ett",
-            "äpple",
-            "."
+            "äpple."
           ],
           "correctOrder": [
             0,
@@ -2266,8 +2231,7 @@
             4,
             5,
             6,
-            7,
-            8
+            7
           ],
           "explanation": "'Läser' och 'äter' stavas med ä. 'En' och 'ett' stavas med e."
         },
@@ -2344,8 +2308,7 @@
             "och",
             "jag",
             "ser",
-            "dem",
-            "."
+            "dem."
           ],
           "correctOrder": [
             0,
@@ -2353,8 +2316,7 @@
             2,
             3,
             4,
-            5,
-            6
+            5
           ],
           "explanation": "'De leker' – de gör något (skriv 'de'). 'Jag ser dem' – de blir sedda (skriv 'dem')."
         },
@@ -2408,15 +2370,13 @@
             "De",
             "skrattar",
             "åt",
-            "dem",
-            "."
+            "dem."
           ],
           "correctOrder": [
             0,
             1,
             2,
-            3,
-            4
+            3
           ],
           "explanation": "'De skrattar' – de gör något (subjekt). 'Åt dem' – de tar emot skrattet (objekt)."
         },
@@ -2503,8 +2463,7 @@
             "när",
             "jag",
             "såg",
-            "dem",
-            "."
+            "dem."
           ],
           "correctOrder": [
             0,
@@ -2512,8 +2471,7 @@
             2,
             3,
             4,
-            5,
-            6
+            5
           ],
           "explanation": "'De vinkade' – de gör något (subjekt → 'de'). 'Jag såg dem' – de blir sedda (objekt → 'dem')."
         },
@@ -2600,15 +2558,13 @@
             "Var",
             "är",
             "katten",
-            "nu",
-            "?"
+            "nu?"
           ],
           "correctOrder": [
             0,
             1,
             2,
-            3,
-            4
+            3
           ],
           "explanation": "'Var är katten nu?' – vi frågar om en plats. Katten sitter eller ligger någonstans."
         },
@@ -2755,15 +2711,13 @@
             "Var",
             "är",
             "min",
-            "cykel",
-            "?"
+            "cykel?"
           ],
           "correctOrder": [
             0,
             1,
             2,
-            3,
-            4
+            3
           ],
           "explanation": "'Var är min cykel?' – cykeln står stilla. Var = plats/läge."
         },
@@ -2842,14 +2796,12 @@
           "words": [
             "Vi",
             "vann",
-            "matchen",
-            "!"
+            "matchen!"
           ],
           "correctOrder": [
             0,
             1,
-            2,
-            3
+            2
           ],
           "explanation": "'Vi vann matchen!' – man jublar och är glad, därför utropstecken i slutet."
         },
@@ -2903,15 +2855,13 @@
             "Vad",
             "heter",
             "din",
-            "hund",
-            "?"
+            "hund?"
           ],
           "correctOrder": [
             0,
             1,
             2,
-            3,
-            4
+            3
           ],
           "explanation": "'Vad heter din hund?' – det är en fråga, så frågetecken i slutet."
         },
@@ -2984,15 +2934,13 @@
             "Hur",
             "gammal",
             "är",
-            "du",
-            "?"
+            "du?"
           ],
           "correctOrder": [
             0,
             1,
             2,
-            3,
-            4
+            3
           ],
           "explanation": "'Hur gammal är du?' – det är en fråga, så frågetecken i slutet."
         },
@@ -3153,16 +3101,14 @@
             "enorma",
             "hunden",
             "skäller",
-            "högt",
-            "."
+            "högt."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4,
-            5
+            4
           ],
           "explanation": "'Enorm' är en synonym till 'stor' – båda betyder att något är mycket stort."
         },
@@ -3260,16 +3206,14 @@
             "enorme",
             "elefanten",
             "drack",
-            "vatten",
-            "."
+            "vatten."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4,
-            5
+            4
           ],
           "explanation": "'Enorme' är en synonym till 'stor' – den enorme elefanten = den stora elefanten."
         },
@@ -3663,8 +3607,7 @@
             "en",
             "bok",
             "i",
-            "klassrummet",
-            "."
+            "klassrummet."
           ],
           "correctOrder": [
             0,
@@ -3672,8 +3615,7 @@
             2,
             3,
             4,
-            5,
-            6
+            5
           ],
           "explanation": "'Klassrummet' är ett sammansatt ord (klass + rum) skrivet ihop."
         },
@@ -3784,8 +3726,7 @@
             "till",
             "simhallen",
             "på",
-            "lördagar",
-            "."
+            "lördagar."
           ],
           "correctOrder": [
             0,
@@ -3793,8 +3734,7 @@
             2,
             3,
             4,
-            5,
-            6
+            5
           ],
           "explanation": "'Simhallen' är ett sammansatt ord (sim + hall) skrivet ihop."
         }
@@ -3919,8 +3859,7 @@
             "handlar",
             "om",
             "en",
-            "isbjörn",
-            "."
+            "isbjörn."
           ],
           "correctOrder": [
             0,
@@ -3928,8 +3867,7 @@
             2,
             3,
             4,
-            5,
-            6
+            5
           ],
           "explanation": "'Favoritbok' (favorit+bok) och 'isbjörn' (is+björn) är båda sammansatta ord."
         },
@@ -4035,8 +3973,7 @@
             "frukost",
             "och",
             "dricker",
-            "apelsinjuice",
-            "."
+            "apelsinjuice."
           ],
           "correctOrder": [
             0,
@@ -4044,8 +3981,7 @@
             2,
             3,
             4,
-            5,
-            6
+            5
           ],
           "explanation": "'Apelsinjuice' = apelsin + juice. Ett sammansatt ord skrivet ihop."
         }
@@ -4168,15 +4104,13 @@
             "Katten",
             "sover",
             "under",
-            "bordet",
-            "."
+            "bordet."
           ],
           "correctOrder": [
             0,
             1,
             2,
-            3,
-            4
+            3
           ],
           "explanation": "'Under' är prepositionen – den berättar var katten sover."
         },
@@ -4273,15 +4207,13 @@
             "Bollen",
             "rullade",
             "under",
-            "sängen",
-            "."
+            "sängen."
           ],
           "correctOrder": [
             0,
             1,
             2,
-            3,
-            4
+            3
           ],
           "explanation": "'Under' är prepositionen – den berättar vart bollen rullade."
         },
@@ -4416,16 +4348,14 @@
             "snälla",
             "läraren",
             "pratar",
-            "lugnt",
-            "."
+            "lugnt."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4,
-            5
+            4
           ],
           "explanation": "'Snälla' (adjektiv) beskriver läraren. 'Lugnt' (adverb) beskriver hur hon pratar."
         },
@@ -4523,16 +4453,14 @@
             "söta",
             "katten",
             "sover",
-            "djupt",
-            "."
+            "djupt."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4,
-            5
+            4
           ],
           "explanation": "'Söta' (adjektiv) beskriver katten. 'Djupt' (adverb) beskriver hur den sover."
         },
@@ -4675,8 +4603,7 @@
             "vi",
             "fotboll",
             "i",
-            "parken",
-            "."
+            "parken."
           ],
           "correctOrder": [
             0,
@@ -4684,8 +4611,7 @@
             2,
             3,
             4,
-            5,
-            6
+            5
           ],
           "explanation": "'Spelade' är preteritum (dåtid) av 'spelar' – det hände igår."
         },
@@ -4783,16 +4709,14 @@
             "ska",
             "vi",
             "äta",
-            "pizza",
-            "."
+            "pizza."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4,
-            5
+            4
           ],
           "explanation": "'Imorgon' och 'ska' visar framtid – det händer inte än."
         },
@@ -4945,8 +4869,7 @@
             "läste",
             "vi",
             "en",
-            "bok",
-            "."
+            "bok."
           ],
           "correctOrder": [
             0,
@@ -4954,8 +4877,7 @@
             2,
             3,
             4,
-            5,
-            6
+            5
           ],
           "explanation": "'Förra veckan' och 'läste' visar att det hände i dåtid."
         },
@@ -5048,16 +4970,14 @@
             "leker",
             "i",
             "trädgården",
-            "nu",
-            "."
+            "nu."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4,
-            5
+            4
           ],
           "explanation": "'Leker' är nutidsform och 'nu' visar att det händer just nu."
         },
@@ -5225,16 +5145,14 @@
             "God",
             "morgon!",
             "sa",
-            "läraren",
-            "."
+            "läraren."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4,
-            5
+            4
           ],
           "explanation": "'– God morgon! sa läraren.' – talstreck + replik + talverb med liten bokstav."
         },
@@ -5338,15 +5256,13 @@
             "\"Kom",
             "hit!\"",
             "ropade",
-            "pappa",
-            "."
+            "pappa."
           ],
           "correctOrder": [
             0,
             1,
             2,
-            3,
-            4
+            3
           ],
           "explanation": "\"Kom hit!\" ropade pappa. Utropstecknet sitter inuti citattecknen."
         },
@@ -5481,8 +5397,7 @@
             "sa",
             "läraren",
             "och",
-            "log",
-            "."
+            "log."
           ],
           "correctOrder": [
             0,
@@ -5490,8 +5405,7 @@
             2,
             3,
             4,
-            5,
-            6
+            5
           ],
           "explanation": "\"Välkommen hit!\" sa läraren och log. Utropstecknet sitter inuti citattecknen."
         },
@@ -5679,8 +5593,7 @@
             "handlar",
             "om",
             "ett",
-            "ämne",
-            "."
+            "ämne."
           ],
           "correctOrder": [
             0,
@@ -5688,8 +5601,7 @@
             2,
             3,
             4,
-            5,
-            6
+            5
           ],
           "explanation": "Principen för styckeindelning: varje stycke = ett ämne eller en tanke."
         },
@@ -6929,15 +6841,13 @@
             "Barnen",
             "leker",
             "ute",
-            "idag",
-            "."
+            "idag."
           ],
           "correctOrder": [
             0,
             1,
             2,
-            3,
-            4
+            3
           ],
           "explanation": "'Barnen' är substantivet/subjektet. 'Leker' är verbet. 'Ute idag' berättar var och när."
         },
@@ -7851,16 +7761,14 @@
             "och",
             "du",
             "är",
-            "kompisar",
-            "."
+            "kompisar."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4,
-            5
+            4
           ],
           "explanation": "'Jag', 'och', 'är' är alla vanliga ord som är viktiga att kunna stava."
         },
@@ -8037,15 +7945,13 @@
             "Katten",
             "sitter",
             "på",
-            "kudden",
-            "."
+            "kudden."
           ],
           "correctOrder": [
             0,
             1,
             2,
-            3,
-            4
+            3
           ],
           "explanation": "'Kudden' har dubbelt d – kort u-ljud. KUD-DEN. Jämför med 'kuden' som är fel."
         }
@@ -8113,15 +8019,13 @@
             "Min",
             "skolväska",
             "är",
-            "röd",
-            "."
+            "röd."
           ],
           "correctOrder": [
             0,
             1,
             2,
-            3,
-            4
+            3
           ],
           "explanation": "'Skolväska' är ett sammansatt ord: skol + väska."
         },

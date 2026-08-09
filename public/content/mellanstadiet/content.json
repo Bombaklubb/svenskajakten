@@ -62,15 +62,13 @@
             "Maja",
             "åt",
             "ett",
-            "äpple",
-            "."
+            "äpple."
           ],
           "correctOrder": [
             0,
             1,
             2,
-            3,
-            4
+            3
           ],
           "explanation": "'Maja' är subjektet, 'åt' är predikatet, 'ett äpple' är objektet."
         },
@@ -169,8 +167,7 @@
             "i",
             "parken",
             "varje",
-            "dag",
-            "."
+            "dag."
           ],
           "correctOrder": [
             0,
@@ -178,8 +175,7 @@
             2,
             3,
             4,
-            5,
-            6
+            5
           ],
           "explanation": "'Hunden' = subjekt, 'springer' = predikat, 'i parken varje dag' = adverbial."
         },
@@ -260,16 +256,14 @@
             "och",
             "jag",
             "är",
-            "kompisar",
-            "."
+            "kompisar."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4,
-            5
+            4
           ],
           "explanation": "'Hon och jag' – man sätter alltid den andra personen före 'jag'."
         },
@@ -362,16 +356,14 @@
             "gav",
             "henne",
             "en",
-            "blomma",
-            "."
+            "blomma."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4,
-            5
+            4
           ],
           "explanation": "'Han' = subjekt (nominativ), 'henne' = objekt (objektsform av hon)."
         },
@@ -454,8 +446,7 @@
             "cyklade",
             "vi",
             "till",
-            "sjön",
-            "."
+            "sjön."
           ],
           "correctOrder": [
             0,
@@ -463,8 +454,7 @@
             2,
             3,
             4,
-            5,
-            6
+            5
           ],
           "explanation": "'Förra veckan' och 'cyklade' visar att det hände i dåtid."
         },
@@ -558,8 +548,7 @@
             "redan",
             "läst",
             "den",
-            "boken",
-            "."
+            "boken."
           ],
           "correctOrder": [
             0,
@@ -567,8 +556,7 @@
             2,
             3,
             4,
-            5,
-            6
+            5
           ],
           "explanation": "'Har läst' är perfekt – handlingen är avslutad men relevant nu ('redan')."
         },
@@ -650,16 +638,14 @@
             "stora",
             "hunden",
             "skällde",
-            "högt",
-            "."
+            "högt."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4,
-            5
+            4
           ],
           "explanation": "'Stora' (adjektiv) beskriver hunden, 'högt' (adverb) beskriver skällde."
         },
@@ -757,16 +743,14 @@
             "trötta",
             "eleven",
             "svarade",
-            "sakta",
-            "."
+            "sakta."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4,
-            5
+            4
           ],
           "explanation": "'Trötta' (adjektiv) beskriver eleven, 'sakta' (adverb) beskriver hur eleven svarade."
         },
@@ -847,16 +831,14 @@
             "sjunger",
             "och",
             "skjuter",
-            "pil",
-            "."
+            "pil."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4,
-            5
+            4
           ],
           "explanation": "'Sjunger' har sj-stavning, 'skjuter' har skj-stavning – båda ger sj-ljud!"
         },
@@ -962,8 +944,7 @@
             "nedför",
             "den",
             "sköna",
-            "backen",
-            "."
+            "backen."
           ],
           "correctOrder": [
             0,
@@ -971,8 +952,7 @@
             2,
             3,
             4,
-            5,
-            6
+            5
           ],
           "explanation": "'Skidade' (sk+i=sj-ljud) och 'sköna' (sk+ö=sj-ljud) – båda har sj-ljud med sk-stavning."
         }
@@ -1042,8 +1022,7 @@
             "vänner",
             "kom",
             "på",
-            "fest",
-            "."
+            "fest."
           ],
           "correctOrder": [
             0,
@@ -1051,8 +1030,7 @@
             2,
             3,
             4,
-            5,
-            6
+            5
           ],
           "explanation": "'Tjugo' (tj-stavning) och 'kära' (k + ä = tj-ljud) – samma ljud, olika stavning!"
         },
@@ -1163,8 +1141,7 @@
             "körsbär",
             "låg",
             "i",
-            "skålen",
-            "."
+            "skålen."
           ],
           "correctOrder": [
             0,
@@ -1172,8 +1149,7 @@
             2,
             3,
             4,
-            5,
-            6
+            5
           ],
           "explanation": "'Tjugo' (tj), 'kylda' (k+y=tj-ljud), 'körsbär' (k+ö=tj-ljud) – alla har tj-ljud!"
         }
@@ -1242,16 +1218,14 @@
             "hittade",
             "en",
             "gammal",
-            "kanna",
-            "."
+            "kanna."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4,
-            5
+            4
           ],
           "explanation": "'Gubben' (dubbelt b) och 'kanna' (dubbelt n) – båda har kort vokal och dubbelkonsonant."
         },
@@ -1357,8 +1331,7 @@
             "vill",
             "ha",
             "en",
-            "bulle",
-            "."
+            "bulle."
           ],
           "correctOrder": [
             0,
@@ -1366,8 +1339,7 @@
             2,
             3,
             4,
-            5,
-            6
+            5
           ],
           "explanation": "'Lille' (ll), 'Kalle' (ll) och 'bulle' (ll) – alla tre har dubbelt l och kort vokal."
         }
@@ -1436,16 +1408,14 @@
             "gav",
             "dem",
             "en",
-            "present",
-            "."
+            "present."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4,
-            5
+            4
           ],
           "explanation": "'De' är subjekt (de som ger), 'dem' är objekt (de som tar emot presenten)."
         },
@@ -1544,8 +1514,7 @@
             "dem",
             "som",
             "behövde",
-            "det",
-            "."
+            "det."
           ],
           "correctOrder": [
             0,
@@ -1553,8 +1522,7 @@
             2,
             3,
             4,
-            5,
-            6
+            5
           ],
           "explanation": "'De' är subjekt (de som hjälper), 'dem' är objekt (de som får hjälp)."
         },
@@ -1631,8 +1599,7 @@
             "vi",
             "åka",
             "i",
-            "sommar",
-            "?"
+            "sommar?"
           ],
           "correctOrder": [
             0,
@@ -1640,8 +1607,7 @@
             2,
             3,
             4,
-            5,
-            6
+            5
           ],
           "explanation": "'Vart ska vi åka?' – frågar om destination (vi ska åka någonstans). Rätt ord är 'vart'."
         },
@@ -1740,8 +1706,7 @@
             "du",
             "sitta",
             "i",
-            "klassrummet",
-            "?"
+            "klassrummet?"
           ],
           "correctOrder": [
             0,
@@ -1749,8 +1714,7 @@
             2,
             3,
             4,
-            5,
-            6
+            5
           ],
           "explanation": "'Var brukar du sitta?' – sitter är att befinna sig stilla. Var = plats."
         },
@@ -1823,21 +1787,17 @@
           "instruction": "Bygg meningen med skiljetecken på rätt ställe!",
           "words": [
             "Hunden",
-            "skäller",
-            ",",
+            "skäller,",
             "katten",
             "springer",
-            "bort",
-            "."
+            "bort."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4,
-            5,
-            6
+            4
           ],
           "explanation": "Kommat separerar de två satserna: 'Hunden skäller, katten springer bort.'"
         },
@@ -1929,12 +1889,10 @@
             "Jag",
             "gillar",
             "att",
-            "läsa",
-            ",",
+            "läsa,",
             "skriva",
             "och",
-            "rita",
-            "."
+            "rita."
           ],
           "correctOrder": [
             0,
@@ -1943,9 +1901,7 @@
             3,
             4,
             5,
-            6,
-            7,
-            8
+            6
           ],
           "explanation": "Komma vid uppräkning: 'läsa, skriva och rita' – komma efter varje element utom det sista."
         },
@@ -2025,16 +1981,14 @@
             "brusade",
             "kraftfullt",
             "förbi",
-            "stranden",
-            "."
+            "stranden."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4,
-            5
+            4
           ],
           "explanation": "'Strömmen' (str+mm), 'kraftfullt' (kr+ftf+llt) och 'stranden' (str+nd) har alla konsonantkluster. Meningen visar hur konsonantrika ord kan staplas."
         },
@@ -2139,16 +2093,14 @@
             "studerade",
             "matematik",
             "hemma",
-            "ikväll",
-            "."
+            "ikväll."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4,
-            5
+            4
           ],
           "explanation": "El-ev-en (3), stu-de-ra-de (4), ma-te-ma-tik (4), hem-ma (2), i-kväll (2) – alla har 2+ stavelser!"
         }
@@ -2222,8 +2174,7 @@
             "vid",
             "bäcken",
             "i",
-            "dalen",
-            "."
+            "dalen."
           ],
           "correctOrder": [
             0,
@@ -2232,8 +2183,7 @@
             3,
             4,
             5,
-            6,
-            7
+            6
           ],
           "explanation": "'Björnen' och 'bäcken' börjar med b (läppljud). 'Drack' och 'dalen' börjar med d (tungljud). Hör skillnaden!"
         },
@@ -2348,8 +2298,7 @@
             "blå",
             "drake",
             "på",
-            "natten",
-            "."
+            "natten."
           ],
           "correctOrder": [
             0,
@@ -2359,8 +2308,7 @@
             4,
             5,
             6,
-            7,
-            8
+            7
           ],
           "explanation": "'Barnet' och 'blå' börjar med b (läppljud). 'Drömde' och 'drake' börjar med d (tungljud)."
         }
@@ -2430,8 +2378,7 @@
             "att",
             "vädret",
             "är",
-            "vackert",
-            "."
+            "vackert."
           ],
           "correctOrder": [
             0,
@@ -2439,8 +2386,7 @@
             2,
             3,
             4,
-            5,
-            6
+            5
           ],
           "explanation": "'Läraren' (ä), 'säger' (ä), 'vädret' (ä) – alla tre stavas med ä. 'Vackert' stavas med e: v-a-ck-e-r-t."
         },
@@ -2534,8 +2480,7 @@
             "om",
             "vi",
             "förstår",
-            "texten",
-            "."
+            "texten."
           ],
           "correctOrder": [
             0,
@@ -2543,8 +2488,7 @@
             2,
             3,
             4,
-            5,
-            6
+            5
           ],
           "explanation": "'Läraren' (ä), 'frågade' (å+a), 'förstår' (ö+å) – ingen ä eller e-förväxling här, men vänj dig vid att läsa noggrant!"
         },
@@ -2731,8 +2675,7 @@
             "allting",
             "skulle",
             "bli",
-            "bra",
-            "."
+            "bra."
           ],
           "correctOrder": [
             0,
@@ -2741,8 +2684,7 @@
             3,
             4,
             5,
-            6,
-            7
+            6
           ],
           "explanation": "'Viskade' är en synonym till 'sa' som visar att hon pratade tyst och försiktigt – mer nyanserat än 'sa'."
         },
@@ -2965,140 +2907,140 @@
     {
       "id": "grammatik-oversikt-1",
       "title": "Grammatik – vad är det?",
-      "description": "Lär dig de viktigaste begreppen i grammatiken.",
+      "description": "Öva på ordklasser och hur orden böjs.",
       "icon": "📚",
       "bonusPoints": 25,
       "helpText": [
-        "Grammatik handlar om hur vi bygger upp språket.",
-        "Substantiv = namn på saker, djur, personer (hus, hund, Lisa).",
-        "Verb = ord som beskriver handlingar (hoppa, läsa, äta).",
-        "Adjektiv = ord som beskriver hur något är (stor, glad, blå)."
+        "Ordklasser talar om vilken sorts ord ett ord är.",
+        "Substantiv böjs i singular/plural och obestämd/bestämd form: en bok – boken – böcker – böckerna.",
+        "Adjektiv kompareras i tre steg: positiv – komparativ – superlativ (glad – gladare – gladast).",
+        "Adjektiv beskriver ett substantiv (en snabb bil), medan adverb beskriver ett verb (hon springer snabbt)."
       ],
       "exercises": [
         {
           "type": "multiple-choice",
-          "question": "Vad är ett substantiv?",
+          "question": "Vilken form av ordet 'hus' är bestämd form singular?",
           "options": [
-            "Ett ord som beskriver en handling",
-            "Ett ord som namnger saker, djur eller personer",
-            "Ett ord som beskriver hur något är",
-            "Ett ord som kopplar ihop meningar"
-          ],
-          "correctIndex": 1,
-          "explanation": "Substantiv är namn på saker, djur och personer, t.ex. 'boll', 'katt', 'Lisa'."
-        },
-        {
-          "type": "multiple-choice",
-          "question": "Vilket ord är ett verb?",
-          "options": [
-            "röd",
-            "stol",
-            "springer",
-            "snabbt"
+            "hus",
+            "husen",
+            "huset",
+            "husets"
           ],
           "correctIndex": 2,
-          "explanation": "'Springer' är ett verb – det beskriver en handling."
+          "explanation": "Bestämd form singular av 'hus' är 'huset'. 'Hus' är obestämd form, 'husen' är bestämd form plural och 'husets' är genitiv."
         },
         {
           "type": "multiple-choice",
-          "question": "Vilket ord är ett adjektiv?",
+          "question": "Vilken är superlativformen av adjektivet 'stor'?",
           "options": [
-            "hoppa",
-            "blå",
-            "boken",
-            "och"
+            "större",
+            "storast",
+            "störst",
+            "stora"
           ],
-          "correctIndex": 1,
-          "explanation": "'Blå' är ett adjektiv – det beskriver hur något ser ut."
+          "correctIndex": 2,
+          "explanation": "Adjektivet kompareras stor – större – störst. 'Störst' är superlativ, alltså den högsta graden."
         },
         {
           "type": "fill-in-blank",
-          "question": "I meningen 'Den lilla hunden springer fort' är 'springer' ett ___.",
-          "answer": "verb",
-          "hint": "Det är ett handlingsord.",
-          "explanation": "'Springer' beskriver vad hunden gör – det är ett verb."
+          "question": "Adjektivet 'gammal' heter ___ i komparativ.",
+          "answer": "äldre",
+          "hint": "Formen används när man jämför två saker med varandra – och den ser inte alls ut som grundformen.",
+          "explanation": "'Gammal' kompareras oregelbundet: gammal – äldre – äldst. Komparativformen är alltså 'äldre'."
         },
         {
           "type": "multiple-choice",
-          "question": "Vilket alternativ innehåller tre SUBSTANTIV?",
+          "question": "Vilken ordklass tillhör ordet 'långsamt' i meningen 'Vi gick långsamt hem'?",
           "options": [
-            "springer, hoppar, simmar",
-            "stor, liten, glad",
-            "bok, boll, hund",
-            "fort, snabbt, sakta"
+            "adjektiv",
+            "verb",
+            "adverb",
+            "preposition"
           ],
           "correctIndex": 2,
-          "explanation": "'Bok', 'boll' och 'hund' är alla substantiv – de namnger saker och djur."
+          "explanation": "Ordet beskriver HUR verbet 'gick' utfördes, och då är det ett adverb. Hade det beskrivit ett substantiv (en långsam promenad) hade det varit ett adjektiv."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket alternativ visar rätt pluralform?",
+          "options": [
+            "en bok – två bokar",
+            "en bok – två böcker",
+            "en bok – två boker",
+            "en bok – två bocker"
+          ],
+          "correctIndex": 1,
+          "explanation": "'Bok' böjs med omljud i plural: en bok – två böcker. Vokalen o byts mot ö och ändelsen blir -er."
         }
       ]
     },
     {
       "id": "tempus-tidsformer-1",
       "title": "Tempus – tidsformer (nutid-dåtid)",
-      "description": "Öva på att skriva verb i rätt tid.",
+      "description": "Öva på presens, preteritum, futurum och oregelbundna verb.",
       "icon": "⏳",
       "bonusPoints": 30,
       "helpText": [
         "Tempus visar när något händer.",
-        "Nutid (presens): Något händer NU. Exempel: 'Jag äter.'",
-        "Dåtid (preteritum): Något hände FÖRR. Exempel: 'Jag åt.'",
-        "Tips: dåtid slutar ofta på -ade, -de eller -te."
+        "Presens (nutid): jag cyklar. Preteritum (dåtid): jag cyklade.",
+        "Futurum (framtid): jag ska cykla / jag kommer att cykla.",
+        "Oregelbundna verb byter vokal i stället för att få ändelse: springa – sprang, dricka – drack, flyga – flög.",
+        "Infinitiv är verbets grundform, den som passar efter 'att': att cykla, att springa."
       ],
       "exercises": [
         {
           "type": "multiple-choice",
-          "question": "Vilken form är i NUTID?",
+          "question": "Vilken tempusform används i meningen 'Jag ska resa till Spanien i sommar'?",
           "options": [
-            "spelade",
-            "spelar",
-            "spelat",
-            "spelades"
+            "presens",
+            "preteritum",
+            "futurum",
+            "perfekt"
           ],
-          "correctIndex": 1,
-          "explanation": "'Spelar' är nutidsform – det händer nu."
+          "correctIndex": 2,
+          "explanation": "'Ska' plus infinitiven 'resa' uttrycker något som ännu inte har hänt. Det är futurum, alltså framtid."
         },
         {
           "type": "fill-in-blank",
-          "question": "Skriv i dåtid: 'Varje dag leker hon' → 'Igår ___ hon.'",
-          "answer": "lekte",
-          "hint": "Böj verbet 'leka' i dåtid (preteritum).",
-          "explanation": "'Leka' böjs till 'lekte' i dåtid (preteritum)."
+          "question": "Skriv i preteritum: 'Hon väljer en tröja.' → 'Igår ___ hon en tröja.'",
+          "answer": "valde",
+          "hint": "Verbet 'välja' är oregelbundet och byter både vokal och konsonant i dåtid.",
+          "explanation": "'Välja' böjs välja – valde – valt. Preteritumformen är 'valde'."
         },
         {
           "type": "multiple-choice",
-          "question": "Vilket ord visar att meningen är i dåtid?",
+          "question": "Vilken är preteritumformen av 'går'?",
           "options": [
-            "nu",
-            "idag",
-            "igår",
-            "snart"
+            "gådde",
+            "gick",
+            "gått",
+            "gående"
           ],
-          "correctIndex": 2,
-          "explanation": "'Igår' pekar tillbaka i tiden och signalerar dåtid."
+          "correctIndex": 1,
+          "explanation": "'Gå' är oregelbundet: gå – gick – gått. 'Gått' är supinum (har gått) och 'gående' är presens particip."
         },
         {
           "type": "multiple-choice",
-          "question": "Vad är dåtidsformen av 'skriver'?",
+          "question": "Vilket av dessa verb är OREGELBUNDET?",
           "options": [
-            "skriva",
-            "skrivit",
-            "skrev",
-            "skribent"
+            "målar",
+            "cyklar",
+            "dricker",
+            "pratar"
           ],
           "correctIndex": 2,
-          "explanation": "'Skrev' är dåtidsform av 'skriver/skriva'."
+          "explanation": "'Dricka' böjs dricker – drack – druckit och byter vokal. De andra är regelbundna -ar-verb: målade, cyklade, pratade."
         },
         {
           "type": "build-sentence",
-          "instruction": "Sätt ihop en mening i dåtid!",
+          "instruction": "Bygg en mening i FUTURUM!",
           "words": [
-            "Förra",
-            "veckan",
-            "läste",
+            "I",
+            "morgon",
+            "ska",
             "vi",
-            "en",
-            "bok",
-            "."
+            "besöka",
+            "museet."
           ],
           "correctOrder": [
             0,
@@ -3106,321 +3048,218 @@
             2,
             3,
             4,
-            5,
-            6
+            5
           ],
-          "explanation": "'Förra veckan' och 'läste' visar att det hände i dåtid."
+          "explanation": "'Ska' tillsammans med infinitiven 'besöka' uttrycker framtid, och tidsuttrycket 'i morgon' förstärker det."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Skriv i presens: 'Igår sov hon länge.' → 'Nu ___ hon länge.'",
+          "answer": "sover",
+          "hint": "Böj verbet så att handlingen sker just nu.",
+          "explanation": "Presensformen av 'sova' är 'sover'. Preteritum är 'sov'."
         },
         {
           "type": "multiple-choice",
-          "question": "Vilket alternativ är rätt DÅTID av verbet 'gå'?",
+          "question": "Vilken mening står i futurum?",
           "options": [
-            "gådde",
-            "gick",
-            "gåde",
-            "gått"
+            "Jag åker buss varje dag.",
+            "Jag åkte buss igår.",
+            "Jag kommer att åka buss imorgon.",
+            "Jag har åkt buss förut."
+          ],
+          "correctIndex": 2,
+          "explanation": "'Kommer att åka' pekar framåt i tiden och är futurum. De andra är presens, preteritum och perfekt."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken är preteritumformen av 'ser'?",
+          "options": [
+            "sedde",
+            "såg",
+            "sett",
+            "seende"
           ],
           "correctIndex": 1,
-          "explanation": "'Gå' är ett oregelbundet verb. Dåtid heter 'gick'.",
-          "points": 10
+          "explanation": "'Se' böjs ser – såg – sett. 'Sett' är supinum (har sett) och 'seende' är presens particip."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Skriv i preteritum: 'Vi ger honom en present.' → 'Förra året ___ vi honom en present.'",
+          "answer": "gav",
+          "hint": "Verbet 'ge' böjs oregelbundet och blir bara ett kort ord i dåtid.",
+          "explanation": "'Ge' böjs ger – gav – gett/givit. Preteritumformen är 'gav'."
         },
         {
           "type": "multiple-choice",
-          "question": "Vilket alternativ är rätt NUTID av verbet 'springa'?",
+          "question": "Vilket uttryck i meningen visar att den handlar om framtiden? 'Nästa vecka reser vi till Norge.'",
           "options": [
-            "sprunger",
-            "sprang",
+            "Nästa vecka",
+            "reser",
+            "vi",
+            "till Norge"
+          ],
+          "correctIndex": 0,
+          "explanation": "Verbet står i presens ('reser'), men tidsuttrycket 'nästa vecka' visar att händelsen ligger i framtiden. Presens kan alltså uttrycka framtid när ett tidsuttryck styr tolkningen."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken form är INFINITIV?",
+          "options": [
             "springer",
-            "springde"
+            "sprang",
+            "springa",
+            "sprungit"
           ],
           "correctIndex": 2,
-          "explanation": "'Springa' böjs: springer (nutid), sprang (dåtid).",
-          "points": 10
-        },
-        {
-          "type": "multiple-choice",
-          "question": "Vilken mening är skriven i FRAMTID?",
-          "options": [
-            "Hon läste en bok.",
-            "Hon läser en bok.",
-            "Hon kommer att läsa en bok.",
-            "Hon har läst en bok."
-          ],
-          "correctIndex": 2,
-          "explanation": "'Kommer att läsa' uttrycker framtid.",
-          "points": 10
-        },
-        {
-          "type": "multiple-choice",
-          "question": "Vilken mening innehåller PERFEKT tempus?",
-          "options": [
-            "Jag åt lunch.",
-            "Jag har ätit lunch.",
-            "Jag äter lunch.",
-            "Jag ska äta lunch."
-          ],
-          "correctIndex": 1,
-          "explanation": "Perfekt bildas med 'har' + supinum: 'har ätit'.",
-          "points": 10
-        },
-        {
-          "type": "fill-in-blank",
-          "question": "Verbet 'komma' i dåtid: Han ___ sent till skolan igår.",
-          "answer": "kom",
-          "hint": "Oregelbundet verb – inte 'kommade'",
-          "explanation": "'Komma' är oregelbundet: kommer (nutid) → kom (dåtid).",
-          "points": 10
-        },
-        {
-          "type": "fill-in-blank",
-          "question": "Verbet 'ta' i dåtid: Hon ___ av sig jackan.",
-          "answer": "tog",
-          "hint": "Oregelbundet verb",
-          "explanation": "'Ta' böjs: tar (nutid) → tog (dåtid).",
-          "points": 10
-        },
-        {
-          "type": "fill-in-blank",
-          "question": "Fyll i rätt form: Imorgon ___ vi resa till farmor. (framtid)",
-          "answer": "ska",
-          "hint": "Framtid bildas med ett hjälpverb följt av infinitiv.",
-          "explanation": "'Imorgon ska vi resa' – ska + infinitiv uttrycker framtid.",
-          "points": 10
-        },
-        {
-          "type": "multiple-choice",
-          "question": "Vilket tidsuttryck hör ihop med DÅTID?",
-          "options": [
-            "imorgon",
-            "just nu",
-            "förra veckan",
-            "om en stund"
-          ],
-          "correctIndex": 2,
-          "explanation": "'Förra veckan' pekar bakåt i tid och hör ihop med dåtid.",
-          "points": 10
-        },
-        {
-          "type": "multiple-choice",
-          "question": "Vilket tidsuttryck hör ihop med FRAMTID?",
-          "options": [
-            "igår",
-            "nyss",
-            "för länge sedan",
-            "nästa år"
-          ],
-          "correctIndex": 3,
-          "explanation": "'Nästa år' pekar framåt och hör ihop med framtid.",
-          "points": 10
+          "explanation": "Infinitiv är grundformen som passar efter 'att': att springa. 'Springer' är presens, 'sprang' preteritum och 'sprungit' supinum."
         },
         {
           "type": "build-sentence",
-          "instruction": "Bygg en mening i PERFEKT tempus med orden:",
+          "instruction": "Bygg meningen i PRETERITUM!",
           "words": [
-            "Vi",
-            "har",
-            "vunnit",
-            "matchen",
-            "!"
+            "Förra",
+            "sommaren",
+            "flög",
+            "vi",
+            "till",
+            "Island."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4
+            4,
+            5
           ],
-          "explanation": "Perfekt: 'har' + supinum ('vunnit'). Vi har vunnit matchen!",
-          "points": 10
+          "explanation": "'Flög' är preteritum av det oregelbundna verbet 'flyga', och 'förra sommaren' placerar händelsen i dåtid."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Skriv i preteritum: 'Han bär väskan.' → 'Igår ___ han väskan.'",
+          "answer": "bar",
+          "hint": "Verbet 'bära' byter vokal i dåtid i stället för att få ändelse.",
+          "explanation": "'Bära' böjs bär – bar – burit. Preteritumformen är 'bar'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken är preteritumformen av 'ligger'?",
+          "options": [
+            "legat",
+            "lade",
+            "låg",
+            "liggde"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Ligga' böjs ligger – låg – legat. 'Legat' är supinum och 'lade' är preteritum av det helt andra verbet 'lägga'."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "I vilken mening står verbet i FEL tempus?",
+          "options": [
+            "Igår spelade vi fotboll.",
+            "Imorgon ska vi spela fotboll.",
+            "Igår spelar vi fotboll.",
+            "Nu spelar vi fotboll."
+          ],
+          "correctIndex": 2,
+          "explanation": "'Igår' pekar bakåt i tiden och kräver preteritum: 'Igår spelade vi fotboll.' Tidsuttrycket och tempuset måste stämma överens."
         }
       ]
     },
     {
       "id": "dialoger-talstreck-1",
       "title": "Skriva dialoger – använda talstreck",
-      "description": "Lär dig hur man skriver samtal med talstreck.",
+      "description": "Öva på talstreck, anföringssatser och skiljetecken i dialog.",
       "icon": "💬",
       "bonusPoints": 30,
       "helpText": [
-        "Talstreck (–) används när man skriver vad någon säger i en berättelse.",
-        "Talstrecket sätts i början av repliken: – Hej! sa Lisa.",
-        "Ny replik = ny rad med nytt talstreck.",
-        "Tankstreck (–) är längre än bindestreck (-)."
+        "Repliken inleds med talstreck (–) följt av mellanslag och stor bokstav.",
+        "Satsen som talar om vem som säger något kallas anföringssats: '– Kom nu, sa Ali.'",
+        "Slutar repliken med punkt byts punkten mot komma före anföringssatsen. Frågetecken och utropstecken står kvar.",
+        "Anföringssatsen börjar alltid med liten bokstav: '– Kommer du? frågade Ida.'",
+        "Ny talare = ny rad med nytt talstreck."
       ],
       "exercises": [
         {
           "type": "multiple-choice",
-          "question": "Hur ska en replik börja i en dialog?",
+          "question": "Vilken replik har rätt skiljetecken före anföringssatsen?",
           "options": [
-            "Med citattecken: \"Hej!\"",
-            "Med talstreck: – Hej!",
-            "Med kolon: Hej:",
-            "Med parentes: (Hej!)"
-          ],
-          "correctIndex": 1,
-          "explanation": "I svenska texter används talstreck (–) i stället för citattecken för att markera repliker."
-        },
-        {
-          "type": "multiple-choice",
-          "question": "Vilket alternativ är RÄTT skrivet?",
-          "options": [
-            "\"Vad heter du?\" frågade hon.",
-            "– Vad heter du? frågade hon.",
-            "Vad heter du? frågade hon.",
-            "-Vad heter du? frågade hon."
-          ],
-          "correctIndex": 1,
-          "explanation": "I svenska berättelser inleds repliker med talstreck (–), inte med citattecken."
-        },
-        {
-          "type": "fill-in-blank",
-          "question": "Fyll i rätt tecken: '___ Kom hit!' ropade han.",
-          "answer": "–",
-          "hint": "Det är ett talstreck (ett långt streck).",
-          "explanation": "Talstrecket (–) markerar att någon pratar."
-        },
-        {
-          "type": "multiple-choice",
-          "question": "Vad gör man när en ny person börjar prata i en dialog?",
-          "options": [
-            "Fortsätter på samma rad",
-            "Börjar på en ny rad med talstreck",
-            "Sätter komma och fortsätter",
-            "Skriver personens namn med stora bokstäver"
-          ],
-          "correctIndex": 1,
-          "explanation": "Varje ny replik börjar på en ny rad med ett talstreck."
-        },
-        {
-          "type": "multiple-choice",
-          "question": "Vilken mening visar ett korrekt användande av talstreck?",
-          "options": [
-            "– Jag är trött, sa Emma.",
-            "–Jag är trött sa Emma",
-            "- Jag är trött, sa Emma.",
-            "Jag är trött – sa Emma."
+            "– Jag kommer strax, sa Nils.",
+            "– Jag kommer strax. sa Nils.",
+            "– Jag kommer strax sa Nils.",
+            "– Jag kommer strax, Sa Nils."
           ],
           "correctIndex": 0,
-          "explanation": "Talstrecket följs av ett mellanslag och repliken avslutas med komma före 'sa Emma'."
+          "explanation": "Punkten i repliken byts mot komma före anföringssatsen, och 'sa' skrivs med liten bokstav eftersom anföringssatsen inte är en ny mening."
         },
         {
           "type": "multiple-choice",
-          "question": "Hur skriver man talstreck rätt i en dialog?",
+          "question": "Repliken är en fråga. Vilket alternativ är rätt skrivet?",
           "options": [
-            "–Hej, sa han.",
-            "– Hej, sa han.",
-            "- Hej, sa han.",
-            "— Hej, sa han."
+            "– Kommer du? Frågade Ida.",
+            "– Kommer du? frågade Ida.",
+            "– Kommer du, frågade Ida?",
+            "– Kommer du? frågade Ida"
           ],
           "correctIndex": 1,
-          "explanation": "Talstreck är ett tankstreck (–) följt av ett mellanslag före repliken.",
-          "points": 10
-        },
-        {
-          "type": "multiple-choice",
-          "question": "Vad är skillnaden på bindestreck (-) och talstreck (–)?",
-          "options": [
-            "Det är samma tecken",
-            "Bindestreck är kortare och används i ord; talstreck är längre och inleder repliker",
-            "Talstreck används i ord; bindestreck inleder repliker",
-            "Talstreck används bara i poesi"
-          ],
-          "correctIndex": 1,
-          "explanation": "Bindestreck (-) används i sammansatta ord. Talstreck (–) är längre och inleder repliker i dialog.",
-          "points": 10
+          "explanation": "Frågetecknet hör till repliken och står kvar. Anföringssatsen fortsätter ändå med liten bokstav och avslutas med punkt."
         },
         {
           "type": "fill-in-blank",
-          "question": "Vilket skiljetecken fattas? ___ Vad vill du ha? frågade expediten.",
-          "answer": "–",
-          "hint": "Tankstreck som inleder en replik",
-          "explanation": "Repliker i dialog inleds med talstreck (–).",
-          "points": 10
+          "question": "Fyll i rätt skiljetecken: '– Vi ses imorgon___ sa Amir.'",
+          "answer": ",",
+          "hint": "Repliken är ett påstående och anföringssatsen ska hänga ihop med den utan att bli en ny mening.",
+          "explanation": "Punkt byts mot komma när en anföringssats följer efter repliken: '– Vi ses imorgon, sa Amir.'"
         },
         {
           "type": "multiple-choice",
-          "question": "Hur ska talverbet (sa, frågade, svarade) skrivas efter en replik?",
+          "question": "Vad kallas delen 'sa Amir' i meningen '– Vi ses imorgon, sa Amir.'?",
           "options": [
-            "Med stor bokstav: – Hej! Sa Emma.",
-            "Med liten bokstav: – Hej! sa Emma.",
-            "Utan komma: – Hej sa Emma.",
-            "På ny rad: – Hej!\n sa Emma."
+            "Replik",
+            "Anföringssats",
+            "Bisats",
+            "Rubrik"
           ],
           "correctIndex": 1,
-          "explanation": "Talverbet efter repliken skrivs med liten bokstav: – Hej! sa Emma.",
-          "points": 10
+          "explanation": "Anföringssatsen talar om vem som säger repliken och ofta hur. Repliken är det som faktiskt sägs."
         },
         {
           "type": "multiple-choice",
-          "question": "Vilken dialog är korrekt skriven?",
+          "question": "Vilket talverb passar bäst i '– Sluta genast! ___ läraren.'?",
           "options": [
-            "– Kan vi leka? frågade Liam. – Ja visst svarade Nora.",
-            "– Kan vi leka? frågade Liam.\n– Ja visst, svarade Nora.",
-            "– Kan vi leka? Frågade Liam. – Ja visst, Svarade Nora.",
-            "–Kan vi leka frågade Liam. –Ja visst svarade Nora."
+            "viskade",
+            "röt",
+            "mumlade",
+            "gäspade"
           ],
           "correctIndex": 1,
-          "explanation": "Varje ny talare börjar på ny rad, talstreck följs av mellanslag, och talverb skrivs med liten bokstav.",
-          "points": 10
+          "explanation": "Utropstecknet visar att repliken sägs högt och argt, och då passar 'röt'. 'Gäspade' är inget talverb alls."
         },
         {
           "type": "multiple-choice",
-          "question": "Var placeras kommatecknet i meningen: – Det snöar ___ sa Erik glatt.",
+          "question": "Hur visar man att den andra personen tar över ordet?",
           "options": [
-            "Inget komma behövs",
-            "– Det snöar! sa Erik glatt.",
-            "– Det snöar, sa Erik glatt.",
-            "– Det snöar. Sa Erik glatt."
+            "Man börjar på ny rad med nytt talstreck",
+            "Man skriver namnet med versaler",
+            "Man sätter dubbla talstreck",
+            "Man byter till kursiv stil"
           ],
-          "correctIndex": 2,
-          "explanation": "När repliken slutar med ett påstående sätts komma före talverbet: – Det snöar, sa Erik glatt.",
-          "points": 10
-        },
-        {
-          "type": "fill-in-blank",
-          "question": "Fyll i rätt interpunktion: – Är du hungrig___ frågade mamma.",
-          "answer": "?",
-          "hint": "Repliken är en fråga",
-          "explanation": "En frågereplik avslutas med frågetecken: – Är du hungrig? frågade mamma.",
-          "points": 10
-        },
-        {
-          "type": "multiple-choice",
-          "question": "Vilken mening visar RÄTT användning av talstreck?",
-          "options": [
-            "Emma sa –Jag är glad.",
-            "Emma sa: – Jag är glad.",
-            "– Jag är glad sa Emma",
-            "– Jag är glad, sa Emma."
-          ],
-          "correctIndex": 3,
-          "explanation": "Korrekt: – Jag är glad, sa Emma. Talstreck inleder repliken och komma sätts före talverbet.",
-          "points": 10
-        },
-        {
-          "type": "multiple-choice",
-          "question": "Varför börjar varje replik i en dialog på en ny rad?",
-          "options": [
-            "Det är bara en gammal regel utan syfte",
-            "För att det ser snyggt ut",
-            "För att läsaren lätt ska se vem som talar",
-            "Bara om dialogen är lång"
-          ],
-          "correctIndex": 2,
-          "explanation": "Ny rad för varje talare gör det enkelt att följa vem som säger vad.",
-          "points": 10
+          "correctIndex": 0,
+          "explanation": "Varje ny talare får en egen rad med eget talstreck. Då slipper läsaren gissa vem som säger vad."
         },
         {
           "type": "build-sentence",
-          "instruction": "Sätt orden i rätt ordning för att skapa en korrekt dialograd:",
+          "instruction": "Bygg repliken i rätt ordning!",
           "words": [
             "–",
-            "Kom",
-            "hit",
-            "!",
-            "ropade",
-            "pappa",
-            "."
+            "Var",
+            "har",
+            "du",
+            "varit?",
+            "undrade",
+            "mamma."
           ],
           "correctOrder": [
             0,
@@ -3431,8 +3270,106 @@
             5,
             6
           ],
-          "explanation": "Korrekt: – Kom hit! ropade pappa. Talstreck, replik med utropstecken, sedan talverb med liten bokstav och punkt.",
-          "points": 10
+          "explanation": "Talstreck + mellanslag + replik med stor bokstav, och därefter anföringssatsen med liten bokstav: '– Var har du varit? undrade mamma.'"
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Efter en replik som slutar med frågetecken skrivs talverbet i anföringssatsen med ___ bokstav.",
+          "answer": "liten",
+          "hint": "Anföringssatsen räknas inte som en ny mening, trots tecknet före.",
+          "explanation": "Anföringssatsen hör ihop med repliken och inleds därför med liten bokstav: '– Kommer du? frågade Ida.'"
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad är felet i '– Hej, sa Ali. – Hej, svarade Nour.' när allt står på samma rad?",
+          "options": [
+            "Talstrecken är fel tecken",
+            "Nours replik borde stå på en ny rad",
+            "Kommatecknen ska vara punkter",
+            "Ingenting är fel"
+          ],
+          "correctIndex": 1,
+          "explanation": "Skiljetecknen är rätt, men varje ny talare ska ha en egen rad. Annars blir det svårt att se vem som säger vad."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vad ska stå direkt efter talstrecket?",
+          "options": [
+            "Repliken direkt utan mellanslag",
+            "Ett mellanslag och sedan repliken med stor bokstav",
+            "Ett kommatecken",
+            "Talarens namn"
+          ],
+          "correctIndex": 1,
+          "explanation": "Talstrecket följs alltid av ett mellanslag, och repliken börjar med stor bokstav eftersom den är en ny mening."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Skriv rätt tecken före repliken: '___ Nu går vi, sa pappa.'",
+          "answer": "–",
+          "hint": "Ett långt streck används i svensk skönlitteratur för att markera att någon talar.",
+          "explanation": "Talstrecket (–) är ett långt streck och markerar början på en replik. Det är inte samma tecken som bindestrecket (-)."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket alternativ använder BINDESTRECK i stället för talstreck?",
+          "options": [
+            "– Vänta!",
+            "- Vänta!",
+            "– Vänta på mig!",
+            "–Vänta!"
+          ],
+          "correctIndex": 1,
+          "explanation": "Bindestrecket (-) är kort och används i sammansättningar, inte i dialog. Alternativ 4 har rätt tecken men saknar mellanslag."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilket av orden är INTE ett talverb?",
+          "options": [
+            "viskade",
+            "svarade",
+            "sprang",
+            "mumlade"
+          ],
+          "correctIndex": 2,
+          "explanation": "'Sprang' beskriver en handling, inte hur något sägs. Ett talverb i anföringssatsen måste beskriva själva talandet."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen med replik och anföringssats!",
+          "words": [
+            "–",
+            "Kan",
+            "du",
+            "hjälpa",
+            "mig?",
+            "frågade",
+            "Elin",
+            "tyst."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "explanation": "Repliken slutar med frågetecken, och anföringssatsen 'frågade Elin tyst' följer med liten bokstav och beskriver hur det sägs."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening är helt korrekt?",
+          "options": [
+            "– Vart ska du? undrade Sam.",
+            "– Vart ska du, undrade Sam?",
+            "– Var ska du? undrade Sam.",
+            "– Vart ska du? Undrade Sam."
+          ],
+          "correctIndex": 0,
+          "explanation": "'Vart' används om riktning (dit man ska), frågetecknet hör till repliken och anföringssatsen börjar med liten bokstav."
         }
       ]
     },
@@ -3548,16 +3485,14 @@
             "en",
             "regnbåge!\"",
             "utbrast",
-            "Sofia",
-            "."
+            "Sofia."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4,
-            5
+            4
           ],
           "explanation": "\"Titta, en regnbåge!\" utbrast Sofia. Hela repliken är inom citattecknen, utropstecknet inuti."
         },
@@ -3614,11 +3549,15 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Lägg till citattecken rätt: Hon visade skylten som det stod ___ Stängt ___ på.",
-          "answer": "“Stängt”",
-          "hint": "Öppna med “ och stäng med ”",
-          "explanation": "Citattecken används kring det exakta innehållet: “Stängt”.",
-          "points": 10
+          "question": "Lägg till citattecken rätt: På skylten stod det ___ Stängt ___.",
+          "answer": "”",
+          "hint": "Svenska citattecken ser likadana ut både före och efter det citerade.",
+          "explanation": "I svenskan används ” både vid inledning och avslutning: ”Stängt”.",
+          "points": 10,
+          "alternativeAnswers": [
+            "\"",
+            "“"
+          ]
         },
         {
           "type": "multiple-choice",
@@ -3687,22 +3626,18 @@
           "type": "build-sentence",
           "instruction": "Sätt orden i rätt ordning för en korrekt mening med citattecken:",
           "words": [
-            "“Vi",
-            "vinner",
-            "!”",
+            "”Vi",
+            "vinner!”",
             "jublade",
-            "laget",
-            "."
+            "laget."
           ],
           "correctOrder": [
             0,
             1,
             2,
-            3,
-            4,
-            5
+            3
           ],
-          "explanation": "Korrekt: “Vi vinner!” jublade laget. Utropstecknet inuti citattecknen, talverb med liten bokstav.",
+          "explanation": "Korrekt: ”Vi vinner!” jublade laget. Utropstecknet står inuti citattecknen och talverbet skrivs med liten bokstav.",
           "points": 10
         }
       ]
@@ -3710,190 +3645,195 @@
     {
       "id": "styckesindelning-1",
       "title": "Styckesindelning",
-      "description": "Lär dig att dela upp en text i stycken.",
+      "description": "Öva på att bygga stycken som hänger ihop och att binda ihop texten.",
       "icon": "📄",
       "bonusPoints": 25,
       "helpText": [
-        "Ett stycke handlar om ETT ämne eller EN tanke.",
-        "Nytt stycke = ny rad + indragning eller blankrad.",
-        "Varje stycke börjar med en inledning och avslutas med en avslutning.",
-        "Bra styckeindelning gör texten lättare att läsa."
+        "Ett stycke är en grupp meningar som hör ihop kring EN tanke.",
+        "Nytt stycke när du byter ämne, tid, plats eller talare.",
+        "En text har ofta inledning, huvuddel och avslutning – huvuddelen består av flera stycken.",
+        "Sambandsord som 'därefter', 'dessutom' och 'till slut' hjälper läsaren att följa med mellan stycken."
       ],
       "exercises": [
         {
           "type": "multiple-choice",
-          "question": "Vad är ett stycke i en text?",
+          "question": "I din berättelse går du från att beskriva skogen till att berätta vad huvudpersonen tänker. Vad gör du?",
           "options": [
-            "En enskild mening",
-            "En grupp meningar som handlar om samma sak",
-            "En rubrik",
-            "En hel berättelse"
+            "Sätter semikolon och fortsätter",
+            "Börjar ett nytt stycke",
+            "Skriver en rubrik",
+            "Sätter tre punkter"
           ],
           "correctIndex": 1,
-          "explanation": "Ett stycke består av meningar som hör ihop och handlar om samma ämne eller tanke."
+          "explanation": "Du byter innehåll – från miljöbeskrivning till tankar – och då börjar du ett nytt stycke."
         },
         {
           "type": "multiple-choice",
-          "question": "När ska man börja ett nytt stycke?",
+          "question": "Vilket av följande är INTE en anledning att börja ett nytt stycke?",
           "options": [
-            "Efter varje mening",
-            "När man byter ämne eller tanke",
-            "Bara i böcker",
-            "Aldrig – text ska flöda ihop"
+            "Du byter plats i berättelsen",
+            "Du hoppar framåt i tiden",
+            "En ny person börjar tala",
+            "Meningen har blivit lång"
+          ],
+          "correctIndex": 3,
+          "explanation": "En lång mening ska delas upp i flera meningar, inte i nya stycken. Nytt stycke handlar om att innehållet byter spår."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "En text om ditt husdjur har stycken om utseende, mat och lekar. Vilken mening hör hemma i stycket om MAT?",
+          "options": [
+            "Han har vit päls på magen.",
+            "Han äter torrfoder två gånger om dagen.",
+            "Han älskar att jaga en boll.",
+            "Han sover alltid i min säng."
           ],
           "correctIndex": 1,
-          "explanation": "Nytt stycke används när man övergår till ett nytt ämne, en ny tanke eller en ny händelse."
+          "explanation": "Bara meningen om torrfoder handlar om mat. De andra hör hemma i styckena om utseende, lekar och vanor."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Hur är en välskriven faktatext oftast uppbyggd?",
+          "options": [
+            "Bara en lång huvuddel",
+            "Inledning, huvuddel och avslutning",
+            "Avslutning, inledning och huvuddel",
+            "En rubrik och en enda lång mening"
+          ],
+          "correctIndex": 1,
+          "explanation": "Inledningen presenterar ämnet, huvuddelens stycken utvecklar det och avslutningen sammanfattar. Varje del består av ett eller flera stycken."
         },
         {
           "type": "fill-in-blank",
-          "question": "Varje stycke ska handla om ___ ämne.",
-          "answer": "ett",
-          "hint": "Ett stycke = en tanke eller ett ämne.",
-          "explanation": "Principen för styckeindelning är att hålla sig till ett ämne per stycke."
+          "question": "När du skriver på dator markerar du oftast ett nytt stycke med en tom rad, en så kallad ___.",
+          "answer": "blankrad",
+          "hint": "Raden innehåller ingen text alls – vad kallas en sådan rad med ett enda ord?",
+          "explanation": "En blankrad är en tom rad mellan två stycken. I handskrift används i stället indrag på första raden."
         },
         {
           "type": "multiple-choice",
-          "question": "Hur markerar man ofta ett nytt stycke i handskriven text?",
+          "question": "Hur långt bör ett stycke i en skoluppsats vanligtvis vara?",
           "options": [
-            "Med en stor bokstav mitt i raden",
-            "Med indragning på första raden eller en blankrad",
-            "Med ett utropstecken",
-            "Med fet stil"
+            "Exakt en mening",
+            "Några meningar som hör ihop",
+            "Minst en hel sida",
+            "Så långt som möjligt"
           ],
           "correctIndex": 1,
-          "explanation": "Nytt stycke markeras med indragning (indenterad första rad) eller en blankrad."
+          "explanation": "Ett stycke ska rymma en tanke som hinner utvecklas. Ett par–några meningar räcker oftast; en enda mening blir för tunt och en hel sida blir svår att följa."
         },
         {
           "type": "multiple-choice",
-          "question": "Varför är styckeindelning viktigt?",
+          "question": "Vilken mening passar BÄST för att inleda ett nytt stycke där tiden byts?",
           "options": [
-            "Det gör texten längre",
-            "Det gör texten lättare att läsa och förstå",
-            "Det är ett krav i alla språk",
-            "Det minskar antalet meningar"
+            "Han var glad.",
+            "Några timmar senare kom bussen äntligen.",
+            "Bussen var röd.",
+            "Och sedan då?"
           ],
           "correctIndex": 1,
-          "explanation": "Styckeindelning hjälper läsaren att följa med i texten och förstå dess struktur."
+          "explanation": "'Några timmar senare' är ett tidsuttryck som signalerar att berättelsen hoppar framåt – perfekt start på ett nytt stycke."
+        },
+        {
+          "type": "fill-in-blank",
+          "question": "Ord som 'därefter', 'till slut' och 'dessutom' binder ihop texten och kallas ___.",
+          "answer": "sambandsord",
+          "alternativeAnswers": [
+            "bindeord",
+            "sambandsmarkörer"
+          ],
+          "hint": "De visar hur meningar och stycken hänger ihop med varandra.",
+          "explanation": "Sambandsord (även kallade bindeord) visar hur delarna i texten förhåller sig till varandra: i tid, i tillägg eller i motsats."
         },
         {
           "type": "multiple-choice",
-          "question": "Vilket exempel visar RÄTT styckeindelning när ämnet byter?",
+          "question": "Vad blir problemet om varje mening får bli ett eget stycke?",
           "options": [
-            "Vi åkte till sjön. Det var soligt. Plötsligt hittade vi en grotta. Den var mörk och mystisk. Vi letade efter skatter.",
-            "Vi åkte till sjön. Det var soligt.\n\nPlötsligt hittade vi en grotta. Den var mörk och mystisk. Vi letade efter skatter.",
-            "Vi åkte till sjön. Det var soligt. Plötsligt hittade\nvi en grotta. Den var mörk och mystisk.",
-            "Vi åkte till sjön.\nDet var soligt.\nPlötsligt hittade vi en grotta."
+            "Texten blir för kort",
+            "Läsaren ser inte vilka tankar som hör ihop",
+            "Det blir för många rubriker",
+            "Man får inte längre använda punkt"
           ],
           "correctIndex": 1,
-          "explanation": "Nytt ämne (resan → grottan) markeras med ett nytt stycke – en blank rad emellan.",
-          "points": 10
+          "explanation": "Styckeindelningen är en signal om vad som hör ihop. Om allt delas upp försvinner den signalen och texten blir hackig."
         },
         {
           "type": "multiple-choice",
-          "question": "Hur långt bör ett stycke vara?",
+          "question": "I din berättelse är ni först hemma och åker sedan till stranden. Vad gör du när platsen byts?",
           "options": [
-            "Alltid exakt tre meningar",
-            "Alltid en mening",
-            "Så långt som behövs – ett stycke täcker ett sammanhängande ämne",
-            "Minst tio meningar"
+            "Börjar ett nytt stycke",
+            "Börjar ett nytt kapitel",
+            "Sätter in en rubrik",
+            "Fortsätter utan att markera något"
+          ],
+          "correctIndex": 0,
+          "explanation": "Platsbyte är en klassisk anledning till nytt stycke – läsaren behöver se att berättelsen flyttar sig."
+        },
+        {
+          "type": "build-sentence",
+          "instruction": "Bygg meningen om när ett nytt stycke ska börja!",
+          "words": [
+            "Ett",
+            "nytt",
+            "stycke",
+            "börjar",
+            "när",
+            "ämnet",
+            "byts."
+          ],
+          "correctOrder": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "explanation": "Meningen sammanfattar huvudregeln: det är innehållet som styr var ett nytt stycke ska börja."
+        },
+        {
+          "type": "multiple-choice",
+          "question": "Vilken mening hör INTE hemma i ett stycke om vintersport?",
+          "options": [
+            "Många åker skidor i fjällen.",
+            "Skridskoåkning är populärt på sjöar.",
+            "På sommaren badar vi i havet.",
+            "Snöbollskrig är kul på rasten."
           ],
           "correctIndex": 2,
-          "explanation": "Det finns ingen fast regel. Ett stycke bör täcka ett sammanhängande ämne eller tanke.",
-          "points": 10
+          "explanation": "Meningen om att bada på sommaren bryter mot styckets ämne. Den hör hemma i ett annat stycke."
         },
         {
           "type": "fill-in-blank",
-          "question": "Det första stycket i en text kallas ofta för ___.",
-          "answer": "inledning",
-          "hint": "Vilket ord beskriver textens start?",
-          "explanation": "En texts uppbyggnad brukar vara: inledning – handling/mittdel – avslutning.",
-          "points": 10
+          "question": "Den första meningen i ett stycke ska visa vad stycket ska ___ om.",
+          "answer": "handla",
+          "hint": "Verbet betyder 'ha som ämne'.",
+          "explanation": "Den inledande meningen berättar för läsaren vilket ämne stycket tar upp, så att resten av meningarna kan utveckla det."
         },
         {
           "type": "multiple-choice",
-          "question": "Vilken av dessa är ett BRA skäl att börja ett nytt stycke?",
+          "question": "En faktatext om Sverige tar upp geografi, klimat och befolkning. Hur många stycken bör huvuddelen minst ha?",
           "options": [
-            "Meningen är för lång",
-            "En ny person börjar tala eller agera i berättelsen",
-            "Man har skrivit tre meningar i rad",
-            "Det är slutet av sidan"
-          ],
-          "correctIndex": 1,
-          "explanation": "Nytt stycke när en ny person träder in, ämnet byter eller handlingen hoppar i tid/rum.",
-          "points": 10
-        },
-        {
-          "type": "multiple-choice",
-          "question": "Vad kallas det sista stycket i en text?",
-          "options": [
-            "Inledning",
-            "Klimax",
-            "Avslutning",
-            "Strofslut"
+            "1",
+            "2",
+            "3",
+            "6"
           ],
           "correctIndex": 2,
-          "explanation": "Textens uppbyggnad: inledning – mittdel – avslutning. Det sista stycket kallas avslutning.",
-          "points": 10
+          "explanation": "Tre delämnen kräver minst tre stycken – ett per ämne. Fler går bra om något ämne behöver delas upp."
         },
         {
           "type": "multiple-choice",
-          "question": "Varför är det fel att ha ett stycke per mening i hela texten?",
+          "question": "Vad är en bra avslutning på ett stycke?",
           "options": [
-            "Det är aldrig fel",
-            "Det bryter upp texten så att samhörande tankar splittras och texten blir hackig",
-            "Man får inte ha fler än 5 stycken",
-            "Stycken måste alltid vara minst 5 meningar"
+            "En mening som sammanfattar eller leder vidare",
+            "En helt ny fråga som inte besvaras",
+            "Ett ensamt utropstecken",
+            "En rubrik"
           ],
-          "correctIndex": 1,
-          "explanation": "Meningar som hör ihop ska vara i samma stycke. Annars blir texten splittrad och svår att följa.",
-          "points": 10
-        },
-        {
-          "type": "fill-in-blank",
-          "question": "I en handskriven text markerar man nytt stycke med ett ___.",
-          "answer": "indrag",
-          "hint": "Man flyttar in texten lite från vänster kant",
-          "explanation": "Indrag (att börja lite inåt på raden) är ett klassiskt sätt att markera nytt stycke.",
-          "points": 10
-        },
-        {
-          "type": "multiple-choice",
-          "question": "Vilken signal visar att ett nytt stycke bör börja?",
-          "options": [
-            "Nästa mening handlar om exakt samma sak",
-            "Texten byter plats, tid eller ämne",
-            "Man har nått mitten av sidan",
-            "Man använder ett nytt adjektiv"
-          ],
-          "correctIndex": 1,
-          "explanation": "Nytt stycke markerar övergång: ny plats, ny tid, nytt ämne eller ny person.",
-          "points": 10
-        },
-        {
-          "type": "multiple-choice",
-          "question": "Hur markeras ett nytt stycke i digitala texter (t.ex. i Word)?",
-          "options": [
-            "Med ett indrag och ingen blank rad",
-            "Antingen med indrag ELLER med en blank rad mellan styckena",
-            "Alltid med tre blanka rader",
-            "Med ett asterisktecken (*)"
-          ],
-          "correctIndex": 1,
-          "explanation": "I digitala texter används antingen indrag eller blank rad – men oftast inte båda samtidigt.",
-          "points": 10
-        },
-        {
-          "type": "multiple-choice",
-          "question": "En elev skriver en berättelse om en resa. Hon har ett stycke om packning, ett om bussresan och ett om hotellet. Vad är bra med det?",
-          "options": [
-            "Ingenting – det är för många stycken",
-            "Varje stycke täcker ett eget ämne vilket gör texten lätt att följa",
-            "Det är bra om varje stycke har precis 3 meningar",
-            "Det är bra om styckena är lika långa"
-          ],
-          "correctIndex": 1,
-          "explanation": "Bra styckeindelning innebär att varje stycke har ett tydligt ämne – det gör texten lätt att följa.",
-          "points": 10
+          "correctIndex": 0,
+          "explanation": "Slutmeningen ska knyta ihop styckets tanke eller peka framåt mot nästa stycke, så att texten flyter."
         }
       ]
     },
@@ -4002,16 +3942,14 @@
             "ögon",
             "glittrade",
             "som",
-            "stjärnor",
-            "."
+            "stjärnor."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4,
-            5
+            4
           ],
           "explanation": "'Hennes ögon glittrade som stjärnor' är en liknelse – ögonen jämförs med stjärnors glitter."
         },
@@ -4142,16 +4080,14 @@
             "var",
             "svart",
             "som",
-            "kol",
-            "."
+            "kol."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4,
-            5
+            4
           ],
           "explanation": "'Natten var svart som kol' – en liknelse där nattens svärta jämförs med kolets.",
           "points": 10
@@ -4263,16 +4199,14 @@
             "är",
             "en",
             "lång",
-            "resa",
-            "."
+            "resa."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4,
-            5
+            4
           ],
           "explanation": "'Livet är en lång resa' är en metafor – livet jämförs direkt med en resa utan 'som'."
         },
@@ -4420,16 +4354,14 @@
             "är",
             "ett",
             "kunskapens",
-            "tempel",
-            "."
+            "tempel."
           ],
           "correctOrder": [
             0,
             1,
             2,
             3,
-            4,
-            5
+            4
           ],
           "explanation": "'Skolan är ett kunskapens tempel' – en metafor som liknar skolan vid ett heligt rum för lärande.",
           "points": 10
@@ -5322,15 +5254,13 @@
             "Maja",
             "läste",
             "boken",
-            "igår",
-            "."
+            "igår."
           ],
           "correctOrder": [
             0,
             1,
             2,
-            3,
-            4
+            3
           ],
           "explanation": "Maja (subjekt) läste (predikat) boken (objekt) igår (adverbial)."
         },
