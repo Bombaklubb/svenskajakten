@@ -632,7 +632,7 @@
           "type": "fill-in-blank",
           "question": "Skriv i dåtid: 'Varje dag leker hon' → 'Igår ___ hon.'",
           "answer": "lekte",
-          "hint": "Leka → lekte i dåtid.",
+          "hint": "Böj verbet 'leka' i dåtid (preteritum).",
           "explanation": "'Leka' böjs till 'lekte' i dåtid (preteritum)."
         },
         {

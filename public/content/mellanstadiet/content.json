@@ -320,7 +320,7 @@
           "type": "fill-in-blank",
           "question": "Fyll i rätt pronomen: 'Huset är gammalt. ___ har stora fönster.'",
           "answer": "Det",
-          "hint": "Huset är ett n-ord (ett hus) – vilket pronomen ersätter det?",
+          "hint": "'Hus' är ett ett-ord. Vilket pronomen ersätter ett ett-ord?",
           "explanation": "'Det' ersätter ett neutralt ord (n-ord) som 'huset'. Jämför: 'bilen → den', 'huset → det'."
         },
         {
@@ -484,7 +484,7 @@
           "type": "fill-in-blank",
           "question": "Skriv i dåtid: 'Jag sitter och läser.' → 'Igår ___ jag och läste.'",
           "answer": "satt",
-          "hint": "Sitter → satt i dåtid. Oregelbundet verb!",
+          "hint": "Verbet 'sitta' är oregelbundet – dåtidsformen har bara en stavelse.",
           "explanation": "'Satt' är dåtidsform av 'sitter/sitta'. Oregelbundet verb."
         },
         {
@@ -515,7 +515,7 @@
           "type": "fill-in-blank",
           "question": "Skriv i dåtid: 'Hon ser filmen.' → 'Igår ___ hon filmen.'",
           "answer": "såg",
-          "hint": "Ser → såg i dåtid. Oregelbundet verb!",
+          "hint": "Verbet 'se' är oregelbundet – vokalen ändras i dåtid.",
           "explanation": "'Såg' är dåtidsform av 'ser/se'. Oregelbundet verb: ser → såg."
         },
         {
@@ -546,7 +546,7 @@
           "type": "fill-in-blank",
           "question": "Skriv i framtid: 'Vi simmar i sjön.' → 'I sommar ___ vi simma i sjön.'",
           "answer": "ska",
-          "hint": "Framtid bildas med 'ska' + infinitiv.",
+          "hint": "Framtid bildas med ett hjälpverb följt av infinitiv.",
           "explanation": "'Ska simma' visar framtid. I sommar ska vi simma i sjön."
         },
         {
@@ -1562,7 +1562,7 @@
           "type": "fill-in-blank",
           "question": "Fyll i rätt form: 'Vi mötte ___ utanför biblioteket.' (de/dem)",
           "answer": "dem",
-          "hint": "Testa att byta mot vi/oss – passar 'oss' grammatiskt ska det vara 'dem'.",
+          "hint": "Testa att byta ut ordet mot 'vi' eller 'oss' och lyssna vilket som passar.",
           "explanation": "'Vi mötte dem' – dem är objekt. Testa att byta mot vi/oss: 'oss' passar grammatiskt ('Vi mötte dem' ~ 'Vi mötte oss'), därför 'dem'."
         }
       ]
@@ -2804,7 +2804,7 @@
           "type": "fill-in-blank",
           "question": "Motsatsen till 'abstrakt' är '___'.",
           "answer": "konkret",
-          "hint": "Abstrakt betyder svårgreppbart. Konkret betyder...?",
+          "hint": "Abstrakt betyder svårgreppbart. Motsatsen beskriver något påtagligt.",
           "explanation": "'Konkret' är motsatsen till 'abstrakt' – något konkret är tydligt och verkligt."
         },
         {
@@ -3061,7 +3061,7 @@
           "type": "fill-in-blank",
           "question": "Skriv i dåtid: 'Varje dag leker hon' → 'Igår ___ hon.'",
           "answer": "lekte",
-          "hint": "Leka → lekte i dåtid.",
+          "hint": "Böj verbet 'leka' i dåtid (preteritum).",
           "explanation": "'Leka' böjs till 'lekte' i dåtid (preteritum)."
         },
         {
@@ -3181,9 +3181,9 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Fyll i rätt form: Imorgon ___ vi resa till farmor. (framtid med 'ska')",
+          "question": "Fyll i rätt form: Imorgon ___ vi resa till farmor. (framtid)",
           "answer": "ska",
-          "hint": "Framtid med hjälpverbet ska + infinitiv",
+          "hint": "Framtid bildas med ett hjälpverb följt av infinitiv.",
           "explanation": "'Imorgon ska vi resa' – ska + infinitiv uttrycker framtid.",
           "points": 10
         },
@@ -4078,7 +4078,7 @@
           "type": "fill-in-blank",
           "question": "Skapa en liknelse: 'Hennes leende var varmt ___ solen.'",
           "answer": "som",
-          "hint": "Vilket ord kopplar ihop de två sakerna som jämförs?",
+          "hint": "Liknelser byggs med ett litet jämförelseord på tre bokstäver.",
           "explanation": "'Varmt som solen' – en liknelse som beskriver värmen i hennes leende.",
           "points": 10
         },
@@ -4628,7 +4628,7 @@
           "type": "fill-in-blank",
           "question": "Idiom: 'Ta bladet från ___ och säga vad man tycker' – tala öppet och ärligt.",
           "answer": "munnen",
-          "hint": "Vad täcker man munnen med?",
+          "hint": "Uttrycket handlar om att sluta dölja vad man tycker – bladet tas bort från något.",
           "explanation": "'Ta bladet från munnen' betyder att tala öppet och direkt utan att dölja sina tankar.",
           "points": 10
         },
@@ -6215,7 +6215,7 @@
           "type": "fill-in-blank",
           "question": "Fyll i rätt stavning: '___ärna lyser på natthimlen.' (himmelskroppar)",
           "answer": "stj",
-          "hint": "Stjärna börjar med stj-.",
+          "hint": "Sje-ljudet kan skrivas på flera sätt. Här inleds ordet med tre konsonanter.",
           "explanation": "'Stjärna' – sj-ljudet skrivs 'stj' i det här ordet."
         },
         {

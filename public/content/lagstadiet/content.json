@@ -1011,7 +1011,7 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Fyll i ett adjektiv: 'Min hund är väldigt ___.' (om hunden är snäll mot alla)",
+          "question": "Fyll i ett adjektiv: 'Min hund är väldigt ___.' (motsatsen till elak)",
           "answer": "snäll",
           "hint": "Hur är en hund som aldrig biter och alltid är vänlig?",
           "explanation": "'Snäll' är ett adjektiv som beskriver hundens personlighet."
@@ -4379,7 +4379,7 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Fyll i adjektivet: 'Jag har en ___ bil.' (om bilen är röd)",
+          "question": "Fyll i adjektivet: 'Jag har en ___ bil.' (färgen på en mogen tomat)",
           "answer": "röd",
           "hint": "Vilket ord beskriver bilens färg?",
           "explanation": "'Röd' är ett adjektiv – det beskriver hur bilen ser ut."
@@ -4717,7 +4717,7 @@
           "type": "fill-in-blank",
           "question": "Fyll i rätt form: 'Imorgon ___ vi baka bullar.' (framtid)",
           "answer": "ska",
-          "hint": "Framtid bildas med 'ska' + verb.",
+          "hint": "Framtid bildas med ett hjälpverb följt av verbet i grundform.",
           "explanation": "'Ska baka' visar framtid. Imorgon ska vi baka bullar."
         },
         {
@@ -4909,7 +4909,7 @@
           "type": "fill-in-blank",
           "question": "Skriv i dåtid: 'Varje dag leker hon' → 'Igår ___ hon.'",
           "answer": "lekte",
-          "hint": "Leka → lekte i dåtid.",
+          "hint": "Böj verbet 'leka' i dåtid (preteritum).",
           "explanation": "'Leka' böjs till 'lekte' i dåtid (preteritum)."
         },
         {
@@ -4975,7 +4975,7 @@
           "type": "fill-in-blank",
           "question": "Skriv i dåtid: 'Hon dansar varje dag.' → 'Igår ___ hon.'",
           "answer": "dansade",
-          "hint": "Dansa → dansade i dåtid.",
+          "hint": "Böj verbet 'dansa' i dåtid (preteritum).",
           "explanation": "'Dansade' är dåtidsform (preteritum) av 'dansar/dansa'."
         },
         {
@@ -5025,7 +5025,7 @@
           "type": "fill-in-blank",
           "question": "Skriv i nutid: 'Igår sjöng hon.' → 'Nu ___ hon.'",
           "answer": "sjunger",
-          "hint": "Sjöng → sjunger i nutid.",
+          "hint": "Böj verbet i nutid (presens) – grundformen är 'sjunga'.",
           "explanation": "'Sjunger' är nutidsformen av 'sjöng/sjunga'."
         },
         {
@@ -8375,7 +8375,7 @@
           "alternativeAnswers": [
             "jättekallt"
           ],
-          "hint": "Barn säger ofta 'jätte-' framför adjektiv för att förstärka.",
+          "hint": "Förstärkningsordet börjar på j och betyder 'väldigt mycket'.",
           "explanation": "'Jättekallt' – 'jätte-' skrivs ihop med adjektivet utan bindestreck."
         },
         {
@@ -8394,7 +8394,7 @@
           "type": "fill-in-blank",
           "question": "Stava rätt: '___ dag är det idag?' (man frågar vilket datum/dag)",
           "answer": "Vilken",
-          "hint": "Vilket/Vilken används för att fråga. Börjar med V-i-l...",
+          "hint": "Frågeordet böjs efter en-ord och ett-ord. 'Dag' är ett en-ord.",
           "explanation": "'Vilken dag är det idag?' – Vilken stavas v-i-l-k-e-n."
         },
         {

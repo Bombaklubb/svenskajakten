@@ -904,7 +904,7 @@
           "type": "fill-in-blank",
           "question": "Skriv i dåtid: 'Varje dag leker hon' → 'Igår ___ hon.'",
           "answer": "lekte",
-          "hint": "Leka → lekte i dåtid.",
+          "hint": "Böj verbet 'leka' i dåtid (preteritum).",
           "explanation": "'Leka' böjs till 'lekte' i dåtid (preteritum)."
         },
         {
@@ -2783,7 +2783,7 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Välj rätt: 'Kalle tvättade ___ händer.' (Kalle tvättade sina egna händer)",
+          "question": "Välj rätt: 'Kalle tvättade ___ händer.' (händerna tillhör Kalle själv)",
           "answer": "sina",
           "hint": "Reflexivt ägande – Kalle tvättade HANS EGNA händer.",
           "explanation": "'Sina' används reflexivt när ägaren är subjektet i meningen."
@@ -2850,7 +2850,7 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Fyll i rätt stavning: 'Jag lånade en bok på ___et.' (bibliotek)",
+          "question": "Fyll i rätt stavning: 'Jag lånade en bok på ___et.' (byggnaden där man lånar böcker)",
           "answer": "bibliotek",
           "hint": "bibl-i-o-tek",
           "explanation": "'Bibliotek' – bi-b-li-o-tek. Lånord med o inuti."
@@ -2919,7 +2919,7 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Fyll i rätt stavning: 'Hon är ___ för avdelningen.' (ledare, från franska 'chef')",
+          "question": "Fyll i rätt stavning: 'Hon är ___ för avdelningen.' (ledare – ordet kommer från franskan)",
           "answer": "chef",
           "hint": "Franskt lånord med ch som sj-ljud.",
           "explanation": "'Chef' – franskt lånord. Ch uttalas som sj i svenska."
