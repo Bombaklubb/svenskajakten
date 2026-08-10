@@ -17,10 +17,10 @@ interface Stats {
 }
 
 const STAGES = [
-  { id: "lagstadiet",    label: "Nivå 1–3",  subtitle: "Nivå 1–3", color: "#f59e0b", bg: "bg-amber-50 dark:bg-amber-900/20", border: "border-amber-200 dark:border-amber-700", text: "text-amber-700 dark:text-amber-300" },
-  { id: "mellanstadiet", label: "Nivå 4–6",  subtitle: "Nivå 4–6", color: "#22c55e", bg: "bg-green-50 dark:bg-green-900/20",  border: "border-green-200 dark:border-green-700",  text: "text-green-700 dark:text-green-300" },
-  { id: "hogstadiet",    label: "Nivå 7–9",  subtitle: "Nivå 7–9", color: "#3b82f6", bg: "bg-blue-50 dark:bg-blue-900/20",    border: "border-blue-200 dark:border-blue-700",    text: "text-blue-700 dark:text-blue-300" },
-  { id: "gymnasiet",     label: "Nivå 10",   subtitle: "Nivå 10",  color: "#a855f7", bg: "bg-purple-50 dark:bg-purple-900/20", border: "border-purple-200 dark:border-purple-700", text: "text-purple-700 dark:text-purple-300" },
+  { id: "lagstadiet",    label: "Nivå 1–3",  subtitle: "Ordängen", color: "#f59e0b", bg: "bg-amber-50 dark:bg-amber-900/20", border: "border-amber-200 dark:border-amber-700", text: "text-amber-700 dark:text-amber-300" },
+  { id: "mellanstadiet", label: "Nivå 4–6",  subtitle: "Berättelseskogen", color: "#22c55e", bg: "bg-green-50 dark:bg-green-900/20",  border: "border-green-200 dark:border-green-700",  text: "text-green-700 dark:text-green-300" },
+  { id: "hogstadiet",    label: "Nivå 7–9",  subtitle: "Texthavet", color: "#3b82f6", bg: "bg-blue-50 dark:bg-blue-900/20",    border: "border-blue-200 dark:border-blue-700",    text: "text-blue-700 dark:text-blue-300" },
+  { id: "gymnasiet",     label: "Nivå 10",   subtitle: "Skrivakademin",  color: "#a855f7", bg: "bg-purple-50 dark:bg-purple-900/20", border: "border-purple-200 dark:border-purple-700", text: "text-purple-700 dark:text-purple-300" },
 ];
 
 function formatDuration(seconds: number): string {
@@ -217,11 +217,24 @@ export default function LararePage() {
             {/* Totals cards */}
             <section>
               <h2 className="font-black text-gray-800 dark:text-gray-100 mb-3 text-sm uppercase tracking-wider">Översikt</h2>
-              <div className="grid grid-cols-3 gap-3 max-w-lg">
+              <div className="grid grid-cols-3 gap-3 max-w-3xl">
                 {[
                   { label: "Inloggade nu", value: String(stats.totals.onlineNow), icon: "🟢", highlight: stats.totals.onlineNow > 0 },
                   { label: "Inloggade idag", value: stats.totals.todayDevices.toLocaleString("sv-SE"), icon: "📅", highlight: stats.totals.todayDevices > 0 },
                   { label: "Unika enheter", value: stats.totals.uniqueDevices.toLocaleString("sv-SE"), icon: "💻", highlight: false },
+                  { label: "Övningar klarade", value: stats.totals.exercises.toLocaleString("sv-SE"), icon: "✅", highlight: false },
+                  {
+                    // Share of answered exercises that were wrong – the signal a
+                    // teacher actually acts on, so show it as a rate, not a count.
+                    label: "Andel fel",
+                    value:
+                      stats.totals.exercises + stats.totals.wrong > 0
+                        ? `${Math.round((stats.totals.wrong / (stats.totals.exercises + stats.totals.wrong)) * 100)} %`
+                        : "–",
+                    icon: "✏️",
+                    highlight: false,
+                  },
+                  { label: "Total tid", value: stats.totals.durationSeconds > 0 ? formatDuration(stats.totals.durationSeconds) : "–", icon: "⏱️", highlight: false },
                 ].map(({ label, value, icon, highlight }) => (
                   <div
                     key={label}
