@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback, useRef, use } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/ui/Header";
-import { loadStudent } from "@/lib/storage";
+import { loadStudent, awardPoints } from "@/lib/storage";
 import { getStage } from "@/lib/stages";
 import type { StudentData } from "@/lib/types";
 
@@ -102,13 +102,14 @@ export default function TidsattackPage({ params }: Props) {
   const [student, setStudent] = useState<StudentData | null>(null);
   useEffect(() => { setStudent(loadStudent()); }, []);
   if (!stage) return notFound();
-  return <TidsattackGame stageId={stageId} stage={stage} student={student} />;
+  return <TidsattackGame stageId={stageId} stage={stage} student={student} onStudentChange={setStudent} />;
 }
 
-function TidsattackGame({ stageId, stage, student }: {
+function TidsattackGame({ stageId, stage, student, onStudentChange }: {
   stageId: string;
   stage: ReturnType<typeof getStage> & object;
   student: StudentData | null;
+  onStudentChange: (s: StudentData) => void;
 }) {
   const [phase, setPhase] = useState<"ready" | "playing" | "done">("ready");
   const [questions] = useState(() => shuffle(QUESTIONS[stageId] ?? QUESTIONS.lagstadiet));
@@ -121,6 +122,16 @@ function TidsattackGame({ stageId, stage, student }: {
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const currentQ = questions[qIndex % questions.length];
+
+  // Bank the score once the game is over. Guarded by a ref because the phase is
+  // state: without it a re-render before the flag settles would pay out twice.
+  const awardedRef = useRef(false);
+  useEffect(() => {
+    if (phase !== "done" || awardedRef.current) return;
+    awardedRef.current = true;
+    const updated = awardPoints(score);
+    if (updated) onStudentChange(updated);
+  }, [phase, score, onStudentChange]);
 
   const endGame = useCallback(() => {
     if (timerRef.current) clearInterval(timerRef.current);

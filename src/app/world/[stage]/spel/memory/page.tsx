@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback, useRef, use } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/ui/Header";
-import { loadStudent } from "@/lib/storage";
+import { loadStudent, awardPoints } from "@/lib/storage";
 import { getStage } from "@/lib/stages";
 import type { StudentData } from "@/lib/types";
 
@@ -156,15 +156,16 @@ export default function MemoryGamePage({ params }: Props) {
 
   if (!stage) return notFound();
 
-  return <MemoryGame stageId={stageId} stage={stage} student={student} />;
+  return <MemoryGame stageId={stageId} stage={stage} student={student} onStudentChange={setStudent} />;
 }
 
 // ── Spelkomponent ─────────────────────────────────────────────────────────────
 
-function MemoryGame({ stageId, stage, student }: {
+function MemoryGame({ stageId, stage, student, onStudentChange }: {
   stageId: string;
   stage: ReturnType<typeof getStage> & object;
   student: StudentData | null;
+  onStudentChange: (s: StudentData) => void;
 }) {
   const [phase, setPhase]           = useState<Phase>("select");
   const [difficulty, setDifficulty] = useState<Difficulty>("easy");
@@ -244,6 +245,16 @@ function MemoryGame({ stageId, stage, student }: {
   const secs = seconds % 60;
   const timeStr = mins > 0 ? `${mins}:${secs.toString().padStart(2, "0")}` : `${secs}s`;
   const score = Math.max(15, 300 - moves * 4 - Math.floor(seconds / 4));
+
+  // Bank the score once the game is over. Guarded by a ref because the phase is
+  // state: without it a re-render before the flag settles would pay out twice.
+  const awardedRef = useRef(false);
+  useEffect(() => {
+    if (!(phase === "victory") || awardedRef.current) return;
+    awardedRef.current = true;
+    const updated = awardPoints(score);
+    if (updated) onStudentChange(updated);
+  }, [phase, score, onStudentChange]);
 
   const gridCols = difficulty === "hard" ? "grid-cols-3 sm:grid-cols-4" : "grid-cols-2 sm:grid-cols-4";
 

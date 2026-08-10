@@ -175,6 +175,27 @@ export function saveStudent(data: StudentData): void {
   safeSetItem(CURRENT_KEY, data.name);
 }
 
+/**
+ * Add points earned outside a module — the mini-games — to the current pupil.
+ *
+ * Reads the stored pupil rather than taking one as an argument so a stale copy
+ * held in component state cannot overwrite progress saved elsewhere. Returns
+ * the updated pupil, or null when there is nobody logged in or nothing to add.
+ */
+export function awardPoints(points: number): StudentData | null {
+  if (typeof window === "undefined") return null;
+  const rounded = Math.max(0, Math.round(points));
+  if (rounded === 0) return null;
+  const name = getCurrentName();
+  if (!name) return null;
+  const all = getAllStudents();
+  const current = all[name];
+  if (!current) return null;
+  const updated = { ...current, totalPoints: current.totalPoints + rounded };
+  saveStudent(updated);
+  return updated;
+}
+
 export function createStudent(name: string, avatar?: string): StudentData {
   const trimmed = name.trim();
   migrateIfNeeded();
