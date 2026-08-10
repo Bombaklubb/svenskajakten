@@ -20,6 +20,7 @@ import { ACHIEVEMENTS, isUnlocked } from "@/lib/achievements";
 import MysteryBoxPopup from "@/components/ui/MysteryBoxPopup";
 import type { ChestType, MysteryBoxReward } from "@/lib/types";
 import { getStage } from "@/lib/stages";
+import { loadStageContent } from "@/lib/content";
 import type { StudentData, StageContent, SpellingTimedModule } from "@/lib/types";
 
 const POINTS_PER_CORRECT = 15;
@@ -72,8 +73,7 @@ export default function StavningstestPage({ params }: Props) {
   useEffect(() => {
     const s = loadStudent();
     setStudent(s);
-    fetch(`/content/${stageId}/content.json`)
-      .then((r) => r.json())
+    loadStageContent(stageId)
       .then((data: StageContent) => {
         const found = (data.stavningstest ?? []).find((m) => m.id === moduleId);
         if (found) {

@@ -27,6 +27,7 @@ import { ACHIEVEMENTS, isUnlocked } from "@/lib/achievements";
 import MysteryBoxPopup from "@/components/ui/MysteryBoxPopup";
 import type { ChestType, MysteryBoxReward } from "@/lib/types";
 import { getStage } from "@/lib/stages";
+import { loadStageContent } from "@/lib/content";
 import type {
   StudentData,
   StageContent,
@@ -65,8 +66,7 @@ export default function GrammarModulePage({ params }: Props) {
   useEffect(() => {
     const s = loadStudent();
     setStudent(s);
-    fetch(`/content/${stageId}/content.json`)
-      .then((r) => r.json())
+    loadStageContent(stageId)
       .then((data: StageContent) => {
         const found = data.grammar.find((m) => m.id === moduleId);
         if (found) setMod(found);

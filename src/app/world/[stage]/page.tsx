@@ -8,6 +8,7 @@ import ModuleCard from "@/components/ui/ModuleCard";
 import FinalTestCard from "@/components/ui/FinalTestCard";
 import { loadStudent, saveStudent, loadRetryQueue, removeFromRetryQueue } from "@/lib/storage";
 import { getStage } from "@/lib/stages";
+import { loadStageContent } from "@/lib/content";
 import { getThemeClassName, getThemeStyle, getThemeWrapperClass } from "@/lib/shop";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import MultipleChoice from "@/components/exercises/MultipleChoice";
@@ -55,8 +56,7 @@ export default function WorldPage({ params }: Props) {
   useEffect(() => {
     const s = loadStudent();
     setStudent(s);
-    fetch(`/content/${stageId}/content.json`)
-      .then((r) => r.json())
+    loadStageContent(stageId)
       .then((data: StageContent) => setContent(data))
       .catch(() => setContent(null))
       .finally(() => setLoading(false));

@@ -12,6 +12,7 @@ import { ACHIEVEMENTS, isUnlocked } from "@/lib/achievements";
 import MysteryBoxPopup from "@/components/ui/MysteryBoxPopup";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { getStage } from "@/lib/stages";
+import { loadStageContent } from "@/lib/content";
 import { getThemeClassName, getThemeStyle, getThemeWrapperClass } from "@/lib/shop";
 import type { StudentData, StageContent, WordSearchModule, ChestType, MysteryBoxReward } from "@/lib/types";
 
@@ -40,8 +41,7 @@ export default function WordSearchModulePage({ params }: Props) {
   useEffect(() => {
     const s = loadStudent();
     setStudent(s);
-    fetch(`/content/${stageId}/content.json`)
-      .then((r) => r.json())
+    loadStageContent(stageId)
       .then((data: StageContent) => {
         const found = (data.wordsearch ?? []).find((m) => m.id === moduleId);
         if (found) setMod(found);
