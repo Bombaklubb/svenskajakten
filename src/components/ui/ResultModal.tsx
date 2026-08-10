@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import type { ChestType } from "@/lib/types";
 import { getPointsMultiplier } from "@/lib/gamification";
 import { Button } from "@/components/ui/button";
@@ -53,6 +54,13 @@ export default function ResultModal({
   prevAttempts = 0,
   surpriseMultiplier = 1,
 }: ResultModalProps) {
+  // Escape closes the dialog the same way "Fortsätt" does.
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onContinue(); };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onContinue]);
+
   const pct = Math.round((totalCorrect / totalQuestions) * 100);
   const passed = passedOverride !== undefined ? passedOverride : pct >= 60;
   const multiplier = getPointsMultiplier(prevAttempts);
@@ -61,7 +69,12 @@ export default function ResultModal({
   const displayBonus = Math.round(bonusPoints * multiplier) * surprise;
 
   return (
-    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fade-in">
+    <div
+      className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fade-in"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="resultat-rubrik"
+    >
       <div
         className="bg-white dark:bg-gray-800 rounded-4xl p-8 max-w-md w-full text-center animate-slide-up border-3 border-sv-100 dark:border-gray-700"
         style={{
@@ -70,7 +83,7 @@ export default function ResultModal({
       >
         <div className="text-7xl mb-4 animate-bounce-slow">{passed ? "🎉" : "💪"}</div>
 
-        <h2 className="text-3xl font-black text-sv-900 dark:text-gray-100 mb-2">
+        <h2 id="resultat-rubrik" className="text-3xl font-black text-sv-900 dark:text-gray-100 mb-2">
           {passed ? "Bra jobbat!" : "Försök igen!"}
         </h2>
         <p className="text-sv-400 dark:text-gray-400 mb-6 text-base font-medium">

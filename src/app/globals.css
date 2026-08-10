@@ -155,6 +155,21 @@
   75% { transform: translateX(6px); }
 }
 
+/* ─── Reduced motion ─────────────────────────────────────────────────── */
+/* The app animates constantly – floating avatars, particle effects, bouncing
+   icons. For pupils who find movement distracting or nauseating, honour the
+   system setting: everything still appears, it just stops moving. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* ─── Dark background themes (Teman) ─────────────────────────────────── */
 /* Text placed directly on the page background is marked with "on-theme".
    On a dark or high-contrast theme it switches to a light colour with a soft

@@ -120,6 +120,7 @@ export default function ListenSpell({ exercise, onAnswer, isLast }: Props) {
           />
           <button
             onClick={handleSubmit}
+            aria-label="Svara"
             disabled={!input.trim()}
             className="px-5 py-3 disabled:bg-gray-200 text-white font-semibold transition-colors"
             style={{ background: input.trim() ? "#006AA7" : undefined }}

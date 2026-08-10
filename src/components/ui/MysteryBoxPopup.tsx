@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import type { MysteryBoxReward } from "@/lib/types";
 
 interface MysteryBoxPopupProps {
@@ -21,6 +21,13 @@ const CHEST_IMAGES: Record<string, string> = {
 };
 
 export default function MysteryBoxPopup({ reward, onClose }: MysteryBoxPopupProps) {
+  // Escape closes the popup, same as the button.
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onClose]);
+
   const [opened, setOpened] = useState(false);
 
   const chestImage = reward.type === "chest" && reward.chestType
@@ -29,7 +36,11 @@ export default function MysteryBoxPopup({ reward, onClose }: MysteryBoxPopupProp
   const icon = chestImage ? null : REWARD_ICONS[reward.type];
 
   return (
-    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[60] p-4 animate-fade-in">
+    <div
+      className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[60] p-4 animate-fade-in"
+      role="dialog"
+      aria-modal="true"
+    >
       <div
         className="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-8 max-w-sm w-full text-center"
         style={{
