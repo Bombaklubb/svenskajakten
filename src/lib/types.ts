@@ -216,6 +216,8 @@ export interface MysteryBoxReward {
 }
 
 export interface GamificationData {
+  /** Bumped when the chest milestone scale changes, so old saves can be migrated. */
+  milestoneScale?: number;
   chests: Chest[];
   badges: string[];
   exercisesCompleted: number;

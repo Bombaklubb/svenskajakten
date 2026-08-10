@@ -1,5 +1,12 @@
 import type { StudentData, StageId, ModuleProgress, StageProgress, HeroConfig, GamificationData, RetryItem } from "./types";
-import { defaultGamificationData, getPointsMultiplier, DAILY_LOGIN_BONUS } from "./gamification";
+import {
+  defaultGamificationData,
+  getPointsMultiplier,
+  DAILY_LOGIN_BONUS,
+  MILESTONE_SCALE,
+  POINT_CHEST_MILESTONES,
+  EXERCISE_CHEST_MILESTONES,
+} from "./gamification";
 import { getShopAvatar, getFrame, getTheme, getEffect } from "./shop";
 
 // Legacy key (single student) – kept only for migration
@@ -266,6 +273,31 @@ export function loadGamification(): GamificationData {
     const data = JSON.parse(raw) as GamificationData;
     // Migration: ensure new fields exist for existing users
     if (!data.achievementsRewarded) data.achievementsRewarded = [];
+
+    // The chest milestones were rebalanced for the current points economy. A
+    // pupil who already has points would otherwise count every new milestone
+    // below their total as "missed" and be handed a pile of chests at once, so
+    // mark everything they have already passed as rewarded and let only future
+    // progress pay out.
+    if ((data.milestoneScale ?? 1) < MILESTONE_SCALE) {
+      const name = getCurrentName();
+      const points = name ? (getAllStudents()[name]?.totalPoints ?? 0) : 0;
+      data.pointsMilestonesRewarded = [
+        ...new Set([
+          ...(data.pointsMilestonesRewarded ?? []),
+          ...POINT_CHEST_MILESTONES.filter((m) => m.points <= points).map((m) => m.points),
+        ]),
+      ];
+      data.exerciseMilestonesRewarded = [
+        ...new Set([
+          ...(data.exerciseMilestonesRewarded ?? []),
+          ...EXERCISE_CHEST_MILESTONES.filter((m) => m.exercises <= (data.exercisesCompleted ?? 0))
+            .map((m) => m.exercises),
+        ]),
+      ];
+      data.milestoneScale = MILESTONE_SCALE;
+      safeSetItem(getGamificationKey(), JSON.stringify(data));
+    }
     return data;
   } catch {
     return defaultGamificationData();

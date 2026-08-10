@@ -11,6 +11,10 @@ export const BOSS_UNLOCK_THRESHOLD = 5;
 export const MYSTERY_BOX_CHANCE = 0.15;
 export const MAX_CHESTS_PER_TYPE = 30;
 
+/** Version of the chest milestone scale. Bump when the milestones change so
+ *  existing saves get migrated instead of paying out everything retroactively. */
+export const MILESTONE_SCALE = 2;
+
 /** Points awarded for the first activity of each day (ties into the streak system). */
 export const DAILY_LOGIN_BONUS = 50;
 
@@ -35,43 +39,34 @@ export function getPointsMultiplier(prevAttempts: number): number {
 }
 
 export const POINT_CHEST_MILESTONES: { points: number; type: ChestType }[] = [
-  { points: 10,    type: "wood" },
-  { points: 20,    type: "wood" },
-  { points: 30,    type: "wood" },
-  { points: 50,    type: "wood" },
-  { points: 75,    type: "wood" },
-  { points: 100,   type: "wood" },
-  { points: 200,   type: "wood" },
-  { points: 300,   type: "silver" },
-  { points: 400,   type: "wood" },
-  { points: 500,   type: "silver" },
-  { points: 600,   type: "wood" },
-  { points: 700,   type: "silver" },
-  { points: 750,   type: "silver" },
-  { points: 850,   type: "wood" },
-  { points: 1000,  type: "gold" },
-  { points: 1250,  type: "silver" },
-  { points: 1500,  type: "silver" },
-  { points: 2000,  type: "silver" },
-  { points: 2500,  type: "gold" },
-  { points: 3000,  type: "silver" },
-  { points: 3500,  type: "gold" },
-  { points: 4000,  type: "silver" },
-  { points: 5000,  type: "gold" },
-  { points: 6000,  type: "gold" },
-  { points: 7000,  type: "gold" },
-  { points: 8000,  type: "emerald" },
-  { points: 10000, type: "emerald" },
-  { points: 12000, type: "emerald" },
-  { points: 15000, type: "ruby" },
-  { points: 18000, type: "ruby" },
-  { points: 20000, type: "ruby" },
-  { points: 25000, type: "diamond" },
-  { points: 30000, type: "diamond" },
-  { points: 40000, type: "diamond" },
-  { points: 60000, type: "hemlig" },
-  { points: 80000, type: "hemlig" },
-  { points: 100000, type: "hemlig" },
+  { points: 300,    type: "wood" },
+  { points: 500,    type: "wood" },
+  { points: 750,    type: "wood" },
+  { points: 1000,   type: "wood" },
+  { points: 1400,   type: "silver" },
+  { points: 1800,   type: "silver" },
+  { points: 2300,   type: "wood" },
+  { points: 2900,   type: "silver" },
+  { points: 3600,   type: "gold" },
+  { points: 4400,   type: "silver" },
+  { points: 5300,   type: "gold" },
+  { points: 6300,   type: "silver" },
+  { points: 7500,   type: "gold" },
+  { points: 9000,   type: "emerald" },
+  { points: 10500,  type: "gold" },
+  { points: 12500,  type: "emerald" },
+  { points: 14500,  type: "gold" },
+  { points: 17000,  type: "emerald" },
+  { points: 19500,  type: "ruby" },
+  { points: 22500,  type: "emerald" },
+  { points: 26000,  type: "ruby" },
+  { points: 29500,  type: "diamond" },
+  { points: 33500,  type: "ruby" },
+  { points: 38000,  type: "diamond" },
+  { points: 43000,  type: "ruby" },
+  { points: 48000,  type: "diamond" },
+  { points: 55000,  type: "hemlig" },
+  { points: 65000,  type: "hemlig" },
 ];
 
 export const EXERCISE_CHEST_MILESTONES: { exercises: number; type: ChestType }[] = [
@@ -102,12 +97,12 @@ export const EXERCISE_CHEST_MILESTONES: { exercises: number; type: ChestType }[]
   { exercises: 150, type: "emerald" },
   { exercises: 175, type: "emerald" },
   { exercises: 200, type: "emerald" },
+  { exercises: 225, type: "ruby" },
   { exercises: 250, type: "ruby" },
-  { exercises: 300, type: "ruby" },
-  { exercises: 400, type: "diamond" },
-  { exercises: 500, type: "diamond" },
-  { exercises: 750, type: "hemlig" },
-  { exercises: 1000, type: "hemlig" },
+  { exercises: 275, type: "diamond" },
+  { exercises: 300, type: "diamond" },
+  { exercises: 350, type: "hemlig" },
+  { exercises: 400, type: "hemlig" },
 ];
 
 // ─── Achievement → chest rewards ─────────────────────────────────────────────
