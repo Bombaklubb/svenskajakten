@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, use } from "react";
+import { useState, useEffect, useRef, use } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -58,6 +58,9 @@ export default function GrammarModulePage({ params }: Props) {
   const [mysteryBox, setMysteryBox] = useState<MysteryBoxReward | null>(null);
   const [prevAttemptCount, setPrevAttemptCount] = useState(0);
   const [surpriseMult, setSurpriseMult] = useState(1);
+  // Guards the completion block: the "Visa resultat" button has no disabled
+  // state, so a double click would otherwise award points and chests twice.
+  const finishedRef = useRef(false);
 
   useEffect(() => {
     const s = loadStudent();
@@ -131,6 +134,8 @@ export default function GrammarModulePage({ params }: Props) {
     }
 
     if (currentIndex + 1 >= totalExercises) {
+      if (finishedRef.current) return;
+      finishedRef.current = true;
       const totalCorrect = newResults.filter(Boolean).length;
       const pts = totalCorrect * POINTS_PER_CORRECT;
       const passed = (totalCorrect / totalExercises) >= 0.6;
@@ -212,6 +217,7 @@ export default function GrammarModulePage({ params }: Props) {
   }
 
   function handleRetry() {
+    finishedRef.current = false;
     setCurrentIndex(0);
     setResults([]);
     setShowResult(false);

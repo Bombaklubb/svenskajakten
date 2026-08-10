@@ -61,6 +61,10 @@ export default function StavningstestPage({ params }: Props) {
   const [mysteryBox, setMysteryBox] = useState<MysteryBoxReward | null>(null);
   const [prevAttemptCount, setPrevAttemptCount] = useState(0);
   const [surpriseMult, setSurpriseMult] = useState(1);
+  // "phase" is state, so submitting the last word at the exact moment the timer
+  // expires could run finishTest twice before the re-render. A ref settles it
+  // synchronously.
+  const finishedRef = useRef(false);
 
   const inputRef = useRef<HTMLInputElement>(null);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -131,7 +135,8 @@ export default function StavningstestPage({ params }: Props) {
   const currentWord = mod.words[currentIndex];
 
   function finishTest(finalResults: boolean[]) {
-    if (phase === "done") return;
+    if (phase === "done" || finishedRef.current) return;
+    finishedRef.current = true;
     setPhase("done");
     const totalCorrect = finalResults.filter(Boolean).length;
     const passed = totalCorrect === totalWords; // must get ALL correct
@@ -224,6 +229,7 @@ export default function StavningstestPage({ params }: Props) {
   }
 
   function handleRetry() {
+    finishedRef.current = false;
     setCurrentIndex(0);
     setResults([]);
     setInput("");
