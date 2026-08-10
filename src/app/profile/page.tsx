@@ -27,7 +27,7 @@ export default function ProfilePage() {
     return (
       <div className="min-h-screen bg-amber-50 dark:bg-gray-900 flex items-center justify-center">
         <div className="text-center">
-          <p className="text-sv-700 dark:text-gray-400 mb-4">Du är inte inloggad.</p>
+          <p className="text-sv-800 dark:text-gray-400 mb-4">Du är inte inloggad.</p>
           <Link
             href="/"
             className="btn-primary border-3 border-sv-400"
@@ -127,11 +127,11 @@ export default function ProfilePage() {
                           <span className="text-2xl">{stage.emoji}</span>
                           <div className="flex-1">
                             <h3 className="font-bold text-sv-900 dark:text-gray-100">{stage.name}</h3>
-                            <p className="text-sm text-sv-700 dark:text-gray-400">{stage.grades}</p>
+                            <p className="text-sm text-sv-800 dark:text-gray-400">{stage.grades}</p>
                           </div>
                           <div className="text-right">
-                            <div className="font-bold text-amber-600 dark:text-amber-400">⭐ {totalPoints}</div>
-                            <div className="text-xs text-sv-700 dark:text-gray-500">
+                            <div className="font-bold text-amber-700 dark:text-amber-400">⭐ {totalPoints}</div>
+                            <div className="text-xs text-sv-800 dark:text-gray-500">
                               {completed}/{total === 0 ? "?" : total} moduler
                             </div>
                           </div>
@@ -156,7 +156,7 @@ export default function ProfilePage() {
                                 <div className="font-bold text-sv-800 dark:text-gray-100">
                                   {mods.filter((m) => m.completed).length}/{mods.length}
                                 </div>
-                                <div className="text-sv-700 dark:text-gray-400">{label}</div>
+                                <div className="text-sv-800 dark:text-gray-400">{label}</div>
                               </div>
                             ))}
                           </div>
@@ -183,7 +183,7 @@ export default function ProfilePage() {
                     <div className="flex items-center gap-2 mb-3">
                       <span className="text-xl">{stage.emoji}</span>
                       <h3 className="font-bold text-sv-900 dark:text-gray-100">{stage.name}</h3>
-                      <span className="ml-auto text-xs font-bold px-2 py-0.5 rounded-full bg-sv-100 dark:bg-gray-700 text-sv-600 dark:text-gray-400">
+                      <span className="ml-auto text-xs font-bold px-2 py-0.5 rounded-full bg-sv-100 dark:bg-gray-700 text-sv-800 dark:text-gray-400">
                         {unlockedCount}/{stageAchievements.length}
                       </span>
                     </div>
@@ -202,14 +202,14 @@ export default function ProfilePage() {
                             {(() => {
                               const Icon = ACHIEVEMENT_ICONS[a.id];
                               return unlocked && Icon
-                                ? <Icon size={22} className="flex-shrink-0 text-amber-600 dark:text-amber-400" />
+                                ? <Icon size={22} className="flex-shrink-0 text-amber-700 dark:text-amber-400" />
                                 : <span className="text-xl flex-shrink-0">{unlocked ? a.icon : "🔒"}</span>;
                             })()}
                             <div className="min-w-0">
-                              <p className={`text-xs font-bold leading-tight ${unlocked ? "text-sv-900 dark:text-gray-100" : "text-sv-700 dark:text-gray-500"}`}>
+                              <p className={`text-xs font-bold leading-tight ${unlocked ? "text-sv-900 dark:text-gray-100" : "text-sv-800 dark:text-gray-500"}`}>
                                 {a.title}
                               </p>
-                              <p className="text-xs text-sv-700 dark:text-gray-500 leading-tight truncate">{a.description}</p>
+                              <p className="text-xs text-sv-800 dark:text-gray-500 leading-tight truncate">{a.description}</p>
                             </div>
                           </div>
                         );
@@ -224,7 +224,7 @@ export default function ProfilePage() {
                 <div className="flex items-center gap-2 mb-3">
                   <span className="text-xl">🇸🇪</span>
                   <h3 className="font-bold text-sv-900 dark:text-gray-100">Globala utmärkelser</h3>
-                  <span className="ml-auto text-xs font-bold px-2 py-0.5 rounded-full bg-sv-100 dark:bg-gray-700 text-sv-600 dark:text-gray-400">
+                  <span className="ml-auto text-xs font-bold px-2 py-0.5 rounded-full bg-sv-100 dark:bg-gray-700 text-sv-800 dark:text-gray-400">
                     {ACHIEVEMENTS.filter((a) => a.stageId === "global" && isUnlocked(a, student!)).length}/
                     {ACHIEVEMENTS.filter((a) => a.stageId === "global").length}
                   </span>
@@ -244,14 +244,14 @@ export default function ProfilePage() {
                         {(() => {
                           const Icon = ACHIEVEMENT_ICONS[a.id];
                           return unlocked && Icon
-                            ? <Icon size={22} className="flex-shrink-0 text-amber-600 dark:text-amber-400" />
+                            ? <Icon size={22} className="flex-shrink-0 text-amber-700 dark:text-amber-400" />
                             : <span className="text-xl flex-shrink-0">{unlocked ? a.icon : "🔒"}</span>;
                         })()}
                         <div className="min-w-0">
-                          <p className={`text-xs font-bold leading-tight ${unlocked ? "text-sv-900 dark:text-gray-100" : "text-sv-700 dark:text-gray-500"}`}>
+                          <p className={`text-xs font-bold leading-tight ${unlocked ? "text-sv-900 dark:text-gray-100" : "text-sv-800 dark:text-gray-500"}`}>
                             {a.title}
                           </p>
-                          <p className="text-xs text-sv-700 dark:text-gray-500 leading-tight truncate">{a.description}</p>
+                          <p className="text-xs text-sv-800 dark:text-gray-500 leading-tight truncate">{a.description}</p>
                         </div>
                       </div>
                     );
@@ -266,7 +266,7 @@ export default function ProfilePage() {
         <BlurFade delay={0.25}>
           <div className="card mt-6">
             <h2 className="text-lg font-bold text-sv-900 dark:text-gray-100 mb-1">💾 Säkerhetskopia</h2>
-            <p className="text-sm text-sv-700 dark:text-gray-400 mb-4">
+            <p className="text-sm text-sv-800 dark:text-gray-400 mb-4">
               Dina poäng sparas bara i den här webbläsaren. Om skoldatorn rensas försvinner de.
               Spara en kopia då och då – du kan läsa in den igen på en annan dator.
             </p>
@@ -279,7 +279,7 @@ export default function ProfilePage() {
                 ⬇️ Spara kopia
               </button>
               <label
-                className="px-4 py-2.5 rounded-xl font-bold text-sm cursor-pointer border-2 border-sv-200 dark:border-gray-600 text-sv-600 dark:text-gray-300 hover:bg-sv-50 dark:hover:bg-gray-700"
+                className="px-4 py-2.5 rounded-xl font-bold text-sm cursor-pointer border-2 border-sv-200 dark:border-gray-600 text-sv-800 dark:text-gray-300 hover:bg-sv-50 dark:hover:bg-gray-700"
               >
                 ⬆️ Läs in kopia
                 <input
@@ -316,7 +316,7 @@ export default function ProfilePage() {
               </label>
             </div>
             {importMsg && (
-              <p className="text-sm font-bold text-sv-600 dark:text-gray-300 mt-3">{importMsg}</p>
+              <p className="text-sm font-bold text-sv-800 dark:text-gray-300 mt-3">{importMsg}</p>
             )}
           </div>
         </BlurFade>

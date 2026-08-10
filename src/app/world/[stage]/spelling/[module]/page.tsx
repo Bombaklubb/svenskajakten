@@ -276,7 +276,7 @@ export default function SpellingModulePage({ params }: Props) {
                     key={i}
                     className="flex items-start gap-2.5 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-700 rounded-xl px-3 py-2.5 sm:px-4 sm:py-3 text-amber-900 dark:text-amber-200 text-sm leading-relaxed"
                   >
-                    <span className="text-amber-500 mt-0.5 flex-shrink-0">💡</span>
+                    <span className="text-amber-700 mt-0.5 flex-shrink-0">💡</span>
                     <span>{tip}</span>
                   </li>
                 ))}
@@ -284,7 +284,7 @@ export default function SpellingModulePage({ params }: Props) {
             ) : (
               <div className="bg-sv-50 dark:bg-sv-900/30 border border-sv-200 dark:border-sv-700 rounded-xl p-3 sm:p-4 text-sv-800 dark:text-sv-200 text-sm">
                 <p>{mod.description}</p>
-                <p className="mt-2 text-sv-600 dark:text-sv-300 text-xs">
+                <p className="mt-2 text-sv-800 dark:text-sv-300 text-xs">
                   Övningen innehåller {totalExercises} frågor. Läs varje fråga noga innan du svarar!
                 </p>
               </div>
@@ -336,11 +336,11 @@ export default function SpellingModulePage({ params }: Props) {
       <main className="max-w-3xl mx-auto px-3 sm:px-4 py-4 sm:py-8">
         <div className="card min-h-[260px] sm:min-h-[300px]">
           <div className="flex items-center justify-between mb-6">
-            <span className="text-sm text-gray-400 dark:text-gray-500 font-medium">
+            <span className="text-sm text-gray-600 dark:text-gray-500 font-medium">
               {currentIndex + 1} / {totalExercises}
             </span>
             {currentExercise && (
-              <span className="badge bg-sv-100 dark:bg-sv-900/40 text-sv-700 dark:text-sv-300 text-xs">
+              <span className="badge bg-sv-100 dark:bg-sv-900/40 text-sv-800 dark:text-sv-300 text-xs">
                 {currentExercise.type === "multiple-choice"
                   ? "🔘 Flerval"
                   : currentExercise.type === "fill-in-blank"
@@ -398,7 +398,7 @@ export default function SpellingModulePage({ params }: Props) {
         <div className="mt-4 flex justify-center gap-4 text-sm text-gray-500 dark:text-gray-400">
           <span>✓ {results.filter(Boolean).length} rätt</span>
           <span>✗ {results.filter((r) => !r).length} fel</span>
-          <span className="text-amber-600">⭐ {earnedPoints} poäng</span>
+          <span className="text-amber-700">⭐ {earnedPoints} poäng</span>
         </div>
       </main>
 

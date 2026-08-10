@@ -293,7 +293,7 @@ function SnogubbenGame({ stageId, stage, student, setStudent }: {
           <Link href={`/world/${stageId}`} className="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 text-sm font-semibold">
             ← Avsluta
           </Link>
-          <span className="text-sm font-black text-amber-500">⭐ {score}p</span>
+          <span className="text-sm font-black text-amber-700">⭐ {score}p</span>
         </div>
 
         {/* Lives as snowflakes */}
@@ -321,11 +321,11 @@ function SnogubbenGame({ stageId, stage, student, setStudent }: {
                 : isLost
                   ? <span className="text-orange-500">Snögubben smälte... ☀️</span>
                   : wrongCount === 0
-                    ? <span className="text-sky-500">Snögubben är hel! ❄️</span>
+                    ? <span className="text-sky-700">Snögubben är hel! ❄️</span>
                     : wrongCount <= 2
                       ? <span className="text-blue-500">Snögubben tappar delar...</span>
                       : wrongCount <= 4
-                        ? <span className="text-amber-500">Snögubben håller på att smälta! 🌡️</span>
+                        ? <span className="text-amber-700">Snögubben håller på att smälta! 🌡️</span>
                         : <span className="text-orange-500">Snögubben smälter snabbt! 🔥</span>
               }
             </p>
@@ -351,7 +351,7 @@ function SnogubbenGame({ stageId, stage, student, setStudent }: {
         {/* Hint */}
         <div className="mb-3 text-center">
           {!showHint ? (
-            <button onClick={() => setShowHint(true)} className="text-xs text-amber-500 hover:text-amber-600 font-semibold underline">
+            <button onClick={() => setShowHint(true)} className="text-xs text-amber-700 hover:text-amber-700 font-semibold underline">
               💡 Visa ledtråd
             </button>
           ) : (

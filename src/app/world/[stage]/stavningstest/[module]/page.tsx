@@ -308,7 +308,7 @@ export default function StavningstestPage({ params }: Props) {
                   key={i}
                   className="flex items-start gap-2.5 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-700 rounded-xl px-3 py-2.5 text-amber-900 dark:text-amber-200 text-sm leading-relaxed"
                 >
-                  <span className="text-amber-500 mt-0.5 flex-shrink-0">💡</span>
+                  <span className="text-amber-700 mt-0.5 flex-shrink-0">💡</span>
                   <span>{tip}</span>
                 </li>
               ))}
@@ -370,7 +370,7 @@ export default function StavningstestPage({ params }: Props) {
             </span>
             <span
               className={`text-xl font-black tabular-nums ${
-                timeLeft <= 10 ? "text-red-500 animate-pulse" : timeLeft <= 20 ? "text-amber-500" : "text-emerald-600"
+                timeLeft <= 10 ? "text-red-500 animate-pulse" : timeLeft <= 20 ? "text-amber-700" : "text-emerald-600"
               }`}
             >
               {timeLeft}s
@@ -395,7 +395,7 @@ export default function StavningstestPage({ params }: Props) {
           }`}
         >
           <div className="flex items-center justify-between mb-4">
-            <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">
+            <span className="text-xs font-bold text-gray-600 uppercase tracking-wider">
               Stavningstest – Ord {currentIndex + 1}/{totalWords}
             </span>
             <div className="flex gap-1">
@@ -410,7 +410,7 @@ export default function StavningstestPage({ params }: Props) {
 
           {/* Clue */}
           <div className="text-center mb-4">
-            <p className="text-xs text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-2 font-semibold">
+            <p className="text-xs text-gray-600 dark:text-gray-500 uppercase tracking-wider mb-2 font-semibold">
               Ledtråd
             </p>
             <p className="text-lg sm:text-xl font-semibold text-gray-800 dark:text-gray-100 leading-relaxed">
@@ -423,7 +423,7 @@ export default function StavningstestPage({ params }: Props) {
             <div className="text-center mb-5">
               {hintUsed ? (
                 <div className="inline-flex flex-col items-center gap-1 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-700 rounded-xl px-5 py-2.5">
-                  <span className="text-xs text-amber-600 dark:text-amber-400 font-bold uppercase tracking-wider">Bokstavsledtråd</span>
+                  <span className="text-xs text-amber-700 dark:text-amber-400 font-bold uppercase tracking-wider">Bokstavsledtråd</span>
                   <span className="text-xl font-black tracking-[0.25em] text-amber-700 dark:text-amber-300 font-mono">
                     {getLetterHint(currentWord?.word ?? "")}
                   </span>
@@ -431,7 +431,7 @@ export default function StavningstestPage({ params }: Props) {
               ) : (
                 <button
                   onClick={() => setHintUsed(true)}
-                  className="text-sm font-semibold text-amber-600 dark:text-amber-400 hover:text-amber-800 dark:hover:text-amber-200 border border-amber-300 dark:border-amber-600 rounded-xl px-4 py-1.5 transition-colors hover:bg-amber-50 dark:hover:bg-amber-900/20"
+                  className="text-sm font-semibold text-amber-700 dark:text-amber-400 hover:text-amber-800 dark:hover:text-amber-200 border border-amber-300 dark:border-amber-600 rounded-xl px-4 py-1.5 transition-colors hover:bg-amber-50 dark:hover:bg-amber-900/20"
                 >
                   💡 Visa ledtråd
                 </button>

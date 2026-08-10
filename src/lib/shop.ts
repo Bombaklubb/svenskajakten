@@ -13,12 +13,12 @@ export interface RarityMeta {
 }
 
 export const RARITY_META: Record<Rarity, RarityMeta> = {
-  vanlig:       { id: "vanlig",       label: "VANLIG",       price: 100,  badgeClass: "bg-slate-200 text-slate-600 dark:bg-slate-700 dark:text-slate-300" },
-  ovanlig:      { id: "ovanlig",      label: "OVANLIG",      price: 250,  badgeClass: "bg-emerald-200 text-emerald-700 dark:bg-emerald-800/60 dark:text-emerald-300" },
-  sallsynt:     { id: "sallsynt",     label: "SÄLLSYNT",     price: 400,  badgeClass: "bg-sky-200 text-sky-700 dark:bg-sky-800/60 dark:text-sky-300" },
-  episk:        { id: "episk",        label: "EPISK",        price: 1000, badgeClass: "bg-fuchsia-200 text-fuchsia-700 dark:bg-fuchsia-800/60 dark:text-fuchsia-300" },
-  legendarisk:  { id: "legendarisk",  label: "LEGENDARISK",  price: 2500, badgeClass: "bg-amber-200 text-amber-700 dark:bg-amber-800/60 dark:text-amber-300" },
-  mytisk:       { id: "mytisk",       label: "MYTISK",       price: 5000, badgeClass: "bg-purple-200 text-purple-700 dark:bg-purple-800/60 dark:text-purple-300" },
+  vanlig:       { id: "vanlig",       label: "VANLIG",       price: 100,  badgeClass: "bg-slate-200 text-slate-800 dark:bg-slate-700 dark:text-slate-300" },
+  ovanlig:      { id: "ovanlig",      label: "OVANLIG",      price: 250,  badgeClass: "bg-emerald-200 text-emerald-900 dark:bg-emerald-800/60 dark:text-emerald-300" },
+  sallsynt:     { id: "sallsynt",     label: "SÄLLSYNT",     price: 400,  badgeClass: "bg-sky-200 text-sky-900 dark:bg-sky-800/60 dark:text-sky-300" },
+  episk:        { id: "episk",        label: "EPISK",        price: 1000, badgeClass: "bg-fuchsia-200 text-fuchsia-900 dark:bg-fuchsia-800/60 dark:text-fuchsia-300" },
+  legendarisk:  { id: "legendarisk",  label: "LEGENDARISK",  price: 2500, badgeClass: "bg-amber-200 text-amber-900 dark:bg-amber-800/60 dark:text-amber-300" },
+  mytisk:       { id: "mytisk",       label: "MYTISK",       price: 5000, badgeClass: "bg-purple-200 text-purple-900 dark:bg-purple-800/60 dark:text-purple-300" },
 };
 
 // ─── Avatar shop items ───────────────────────────────────────────────────────────

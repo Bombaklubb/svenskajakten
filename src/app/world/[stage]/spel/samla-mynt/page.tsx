@@ -171,8 +171,8 @@ function SamlaMyntGame({ stageId, stage, student }: {
           <div className="text-7xl mb-4">🪙</div>
           <h1 className="text-3xl font-black text-gray-900 dark:text-gray-100 mb-2">Samla mynt!</h1>
           <p className="text-gray-500 dark:text-gray-400 mb-2">Svara rätt = samla mynt 🪙 · Svara fel = hinder 🚧</p>
-          <p className="text-gray-400 dark:text-gray-500 text-sm mb-8">
-            Samla <span className="font-black text-amber-500">{TOTAL_COINS} mynt</span> utan att träffa <span className="font-black text-red-500">{WRONG_LIMIT} hinder</span>!
+          <p className="text-gray-600 dark:text-gray-500 text-sm mb-8">
+            Samla <span className="font-black text-amber-700">{TOTAL_COINS} mynt</span> utan att träffa <span className="font-black text-red-500">{WRONG_LIMIT} hinder</span>!
           </p>
           <button
             onClick={start}
@@ -202,15 +202,15 @@ function SamlaMyntGame({ stageId, stage, student }: {
               style={{ boxShadow: "0 4px 0 0 rgba(0,0,0,0.08)" }}>
               <div>
                 <p className={`text-2xl font-black ${stage!.textClass}`}>{score}</p>
-                <p className="text-gray-400 dark:text-gray-500 text-xs">Poäng</p>
+                <p className="text-gray-600 dark:text-gray-500 text-xs">Poäng</p>
               </div>
               <div>
-                <p className="text-2xl font-black text-amber-500">🪙 {coins}</p>
-                <p className="text-gray-400 dark:text-gray-500 text-xs">Mynt</p>
+                <p className="text-2xl font-black text-amber-700">🪙 {coins}</p>
+                <p className="text-gray-600 dark:text-gray-500 text-xs">Mynt</p>
               </div>
               <div>
                 <p className="text-2xl font-black text-red-500">🚧 {obstacles}</p>
-                <p className="text-gray-400 dark:text-gray-500 text-xs">Hinder</p>
+                <p className="text-gray-600 dark:text-gray-500 text-xs">Hinder</p>
               </div>
             </div>
             <div className="flex flex-col gap-3">
@@ -240,7 +240,7 @@ function SamlaMyntGame({ stageId, stage, student }: {
       <div className="flex-1 max-w-lg mx-auto w-full px-4 py-4 pt-20">
         {/* HUD */}
         <div className="flex items-center justify-between mb-4">
-          <button onClick={() => setPhase("done")} className="text-gray-400 hover:text-gray-600 text-sm font-semibold cursor-pointer">
+          <button onClick={() => setPhase("done")} className="text-gray-600 hover:text-gray-600 text-sm font-semibold cursor-pointer">
             ← Avsluta
           </button>
           <span className={`font-black text-sm ${stage!.textClass}`}>⭐ {score}p</span>
@@ -314,7 +314,7 @@ function SamlaMyntGame({ stageId, stage, student }: {
         {/* Question */}
         <div className="rounded-2xl border-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-4 mb-4"
           style={{ boxShadow: "0 2px 8px -2px rgba(0,0,0,0.06)" }}>
-          <p className="text-sm text-amber-500 font-bold mb-1">🪙 Mynt {coins + 1} av {TOTAL_COINS}</p>
+          <p className="text-sm text-amber-700 font-bold mb-1">🪙 Mynt {coins + 1} av {TOTAL_COINS}</p>
           <p className="text-base sm:text-lg font-black text-gray-900 dark:text-gray-100">{currentQ.q}</p>
         </div>
 
@@ -331,7 +331,7 @@ function SamlaMyntGame({ stageId, stage, student }: {
                 }`}
               style={{ boxShadow: "0 2px 0 0 rgba(0,0,0,0.06)" }}
             >
-              <span className="text-gray-400 dark:text-gray-500 mr-2 text-xs font-black">{String.fromCharCode(65 + i)}</span>
+              <span className="text-gray-600 dark:text-gray-500 mr-2 text-xs font-black">{String.fromCharCode(65 + i)}</span>
               {opt}
             </button>
           ))}

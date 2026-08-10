@@ -35,7 +35,7 @@ export default function MultipleChoice({ exercise, onAnswer, isLast }: Props) {
     if (idx === selected && selected !== exercise.correctIndex) {
       return base + "border-red-400 bg-red-50 dark:bg-red-900/30 text-red-800 dark:text-red-300 animate-shake";
     }
-    return base + "border-gray-100 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-400 dark:text-gray-500";
+    return base + "border-gray-100 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-gray-600 dark:text-gray-500";
   }
 
   return (
@@ -51,7 +51,7 @@ export default function MultipleChoice({ exercise, onAnswer, isLast }: Props) {
             className="w-full flex items-center justify-between px-4 py-2.5 bg-amber-50 dark:bg-amber-900/20 text-amber-800 dark:text-amber-300 text-sm font-medium hover:bg-amber-100 dark:hover:bg-amber-900/30 transition-colors"
           >
             <span className="flex items-center gap-2"><span>💡</span><span>Tips</span></span>
-            <span className="text-amber-500 text-xs">{showHint ? "▲" : "▼"}</span>
+            <span className="text-amber-700 text-xs">{showHint ? "▲" : "▼"}</span>
           </button>
           {showHint && (
             <div className="px-4 py-3 text-sm text-amber-900 dark:text-amber-200 bg-amber-50/60 dark:bg-amber-900/10 border-t border-amber-200 dark:border-amber-700">

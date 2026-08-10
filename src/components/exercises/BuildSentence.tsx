@@ -69,7 +69,7 @@ export default function BuildSentence({ exercise, onAnswer, isLast }: Props) {
             className="w-full flex items-center justify-between px-4 py-2.5 bg-amber-50 dark:bg-amber-900/20 text-amber-800 dark:text-amber-300 text-sm font-medium hover:bg-amber-100 dark:hover:bg-amber-900/30 transition-colors"
           >
             <span className="flex items-center gap-2"><span>💡</span><span>Tips</span></span>
-            <span className="text-amber-500 text-xs">{showHint ? "▲" : "▼"}</span>
+            <span className="text-amber-700 text-xs">{showHint ? "▲" : "▼"}</span>
           </button>
           {showHint && (
             <div className="px-4 py-3 text-sm text-amber-900 dark:text-amber-200 bg-amber-50/60 dark:bg-amber-900/10 border-t border-amber-200 dark:border-amber-700">
@@ -90,7 +90,7 @@ export default function BuildSentence({ exercise, onAnswer, isLast }: Props) {
         }`}
       >
         {placed.length === 0 && state === "idle" && (
-          <span className="text-gray-400 text-sm italic self-center">
+          <span className="text-gray-600 text-sm italic self-center">
             Klicka på ord nedan för att bygga meningen...
           </span>
         )}
@@ -138,7 +138,7 @@ export default function BuildSentence({ exercise, onAnswer, isLast }: Props) {
           <button
             onClick={checkAnswer}
             disabled={placed.length !== exercise.words.length}
-            className="btn-primary disabled:bg-gray-200 disabled:text-gray-400 text-sm"
+            className="btn-primary disabled:bg-gray-200 disabled:text-gray-600 text-sm"
             style={{ background: placed.length === exercise.words.length ? "linear-gradient(135deg, #006AA7, #004a75)" : undefined }}
           >
             Kontrollera ✓

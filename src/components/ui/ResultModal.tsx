@@ -86,7 +86,7 @@ export default function ResultModal({
         <h2 id="resultat-rubrik" className="text-3xl font-black text-sv-900 dark:text-gray-100 mb-2">
           {passed ? "Bra jobbat!" : "Försök igen!"}
         </h2>
-        <p className="text-sv-700 dark:text-gray-400 mb-6 text-base font-medium">
+        <p className="text-sv-800 dark:text-gray-400 mb-6 text-base font-medium">
           {subtitle ?? (passed
             ? "Du klarade övningen med godkänt resultat."
             : "Du är nästan framme – öva lite till!")}
@@ -106,10 +106,10 @@ export default function ResultModal({
                 : "0 6px 0 0 rgba(249,115,22,0.2), inset 0 4px 8px 0 rgba(255,255,255,0.8)"
             }}
           >
-            <span className={`text-4xl font-black ${passed ? "text-emerald-600 dark:text-emerald-400" : "text-sv-700"}`}>
+            <span className={`text-4xl font-black ${passed ? "text-emerald-600 dark:text-emerald-400" : "text-sv-800"}`}>
               {pct}%
             </span>
-            <span className="text-sm text-sv-700 dark:text-gray-400 mt-1 font-bold">
+            <span className="text-sm text-sv-800 dark:text-gray-400 mt-1 font-bold">
               {totalCorrect}/{totalQuestions}
             </span>
           </div>
@@ -158,7 +158,7 @@ export default function ResultModal({
             </div>
           </div>
           {displayBonus > 0 && passed && (
-            <p className="text-sm text-amber-600 dark:text-amber-400 mt-2 font-bold">
+            <p className="text-sm text-amber-700 dark:text-amber-400 mt-2 font-bold">
               + {displayBonus} bonuspoäng för godkänt! 🏆
             </p>
           )}
@@ -171,7 +171,7 @@ export default function ResultModal({
               <p className="text-sm font-bold text-amber-800 dark:text-amber-300">
                 Du fick en {CHEST_LABELS[chestEarned]}!
               </p>
-              <p className="text-xs text-amber-600 dark:text-amber-400">
+              <p className="text-xs text-amber-700 dark:text-amber-400">
                 Öppna den på Hemliga kistor-sidan.
               </p>
             </div>
@@ -189,7 +189,7 @@ export default function ResultModal({
         )}
 
         <div className="flex gap-3 mt-6">
-          <Button variant="outline" onClick={onRetry} className="flex-1 border-sv-200 text-sv-600">
+          <Button variant="outline" onClick={onRetry} className="flex-1 border-sv-200 text-sv-800">
             🔄 Försök igen
           </Button>
           <button

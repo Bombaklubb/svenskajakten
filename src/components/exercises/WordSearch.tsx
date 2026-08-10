@@ -179,13 +179,13 @@ export default function WordSearch({ words, onAllFound, pointsPerWord = 5 }: Wor
             style={{ width: `${(foundWords.length / placed.length) * 100}%` }}
           />
         </div>
-        <span className="text-sm font-bold text-sv-600 dark:text-gray-300 flex-shrink-0">
+        <span className="text-sm font-bold text-sv-800 dark:text-gray-300 flex-shrink-0">
           {foundWords.length}/{placed.length} hittade
         </span>
       </div>
 
       {/* Hint */}
-      <p className="text-xs text-sv-700 dark:text-gray-400 mb-3 font-medium">
+      <p className="text-xs text-sv-800 dark:text-gray-400 mb-3 font-medium">
         {start ? "🎯 Klicka på sista bokstaven i ordet!" : "👆 Klicka på en bokstav för att börja"}
       </p>
 
@@ -208,7 +208,7 @@ export default function WordSearch({ words, onAllFound, pointsPerWord = 5 }: Wor
                     ${foundColor ? foundColor + " text-white" : ""}
                     ${inPreview && !foundColor ? "bg-sv-200 dark:bg-sv-700 text-sv-900 dark:text-white scale-105" : ""}
                     ${isStart && !foundColor ? "bg-sv-400 text-white ring-2 ring-sv-600 scale-105" : ""}
-                    ${!foundColor && !inPreview && !isStart ? "bg-white dark:bg-gray-800 text-sv-700 dark:text-gray-200 hover:bg-sv-50 dark:hover:bg-gray-700" : ""}
+                    ${!foundColor && !inPreview && !isStart ? "bg-white dark:bg-gray-800 text-sv-800 dark:text-gray-200 hover:bg-sv-50 dark:hover:bg-gray-700" : ""}
                     border border-sv-50 dark:border-gray-700`}
                   style={{ width: cellSize, height: cellSize, fontSize: Math.max(10, cellSize - 10) }}
                   onMouseEnter={() => start && setHover({ row: r, col: c })}

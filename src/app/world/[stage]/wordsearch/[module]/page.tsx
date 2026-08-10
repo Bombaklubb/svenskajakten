@@ -146,11 +146,11 @@ export default function WordSearchModulePage({ params }: Props) {
             >
               <div className="text-6xl mb-4 animate-bounce-slow">{mod.icon}</div>
               <h2 className="text-2xl font-black text-sv-900 dark:text-gray-100 mb-2">{mod.title}</h2>
-              <p className="text-sv-700 dark:text-gray-400 mb-6 font-medium">{mod.description}</p>
+              <p className="text-sv-800 dark:text-gray-400 mb-6 font-medium">{mod.description}</p>
 
               <div className="bg-sv-50 dark:bg-gray-700 rounded-2xl p-4 mb-6 text-left border-2 border-sv-100 dark:border-gray-600">
                 <p className="font-bold text-sv-800 dark:text-gray-100 mb-2 flex items-center gap-1.5">🔍 Hur man spelar</p>
-                <ul className="space-y-1.5 text-sm text-sv-600 dark:text-gray-300 font-medium">
+                <ul className="space-y-1.5 text-sm text-sv-800 dark:text-gray-300 font-medium">
                   <li>• Hitta alla <strong>{mod.words.length} ord</strong> i bokstavsrutnätet</li>
                   <li>• Klicka på <strong>första bokstaven</strong>, sedan på <strong>sista bokstaven</strong></li>
                   <li>• Orden kan gå åt höger, ner eller diagonalt</li>
@@ -160,7 +160,7 @@ export default function WordSearchModulePage({ params }: Props) {
 
               <div className="flex flex-wrap justify-center gap-2 mb-6">
                 {mod.words.map((w) => (
-                  <div key={w.word} className="px-3 py-1.5 bg-white dark:bg-gray-700 border-2 border-sv-200 dark:border-gray-600 rounded-xl text-sm font-bold text-sv-700 dark:text-gray-200">
+                  <div key={w.word} className="px-3 py-1.5 bg-white dark:bg-gray-700 border-2 border-sv-200 dark:border-gray-600 rounded-xl text-sm font-bold text-sv-800 dark:text-gray-200">
                     {w.word}
                   </div>
                 ))}
@@ -197,7 +197,7 @@ export default function WordSearchModulePage({ params }: Props) {
             >
               <div className="text-7xl mb-4 animate-bounce-slow">🎉</div>
               <h2 className="text-3xl font-black text-sv-900 dark:text-gray-100 mb-2">Alla ord hittade!</h2>
-              <p className="text-sv-700 dark:text-gray-400 mb-6 font-medium">Fantastiskt jobbat – du hittade alla {mod.words.length} ord!</p>
+              <p className="text-sv-800 dark:text-gray-400 mb-6 font-medium">Fantastiskt jobbat – du hittade alla {mod.words.length} ord!</p>
 
               {prevAttemptCount > 0 && (() => {
                 const m = getPointsMultiplier(prevAttemptCount);
@@ -241,7 +241,7 @@ export default function WordSearchModulePage({ params }: Props) {
                     <span className="text-lg ml-1 font-bold">poäng</span>
                   </div>
                 </div>
-                <p className="text-sm text-amber-600 dark:text-amber-400 mt-1.5 font-semibold">
+                <p className="text-sm text-amber-700 dark:text-amber-400 mt-1.5 font-semibold">
                   inkl. {Math.round(mod.bonusPoints * getPointsMultiplier(prevAttemptCount)) * surpriseMult} bonuspoäng för att hitta alla ord!
                 </p>
               </div>
@@ -251,7 +251,7 @@ export default function WordSearchModulePage({ params }: Props) {
                   <img src={chestEarned === "gold" ? "/content/guldkista.png" : chestEarned === "silver" ? "/content/silverkista.png" : "/content/bronskista.png"} alt="kista" className="w-10 h-10 object-contain" />
                   <div>
                     <p className="text-sm font-bold text-amber-800 dark:text-amber-300">Du fick en {chestEarned === "gold" ? "Guldkista" : chestEarned === "silver" ? "Silverkista" : "Bronskista"}!</p>
-                    <p className="text-xs text-amber-600 dark:text-amber-400">Öppna den på Hemliga kistor-sidan.</p>
+                    <p className="text-xs text-amber-700 dark:text-amber-400">Öppna den på Hemliga kistor-sidan.</p>
                   </div>
                 </div>
               )}

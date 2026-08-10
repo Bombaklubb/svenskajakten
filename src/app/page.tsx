@@ -93,7 +93,7 @@ export default function HomePage() {
             style={{ boxShadow: "0 8px 0 0 rgba(249,115,22,0.12), 0 16px 32px -8px rgba(249,115,22,0.18), inset 0 4px 8px 0 rgba(255,255,255,0.8)" }}
           >
             <h2 className="text-xl font-black mb-0.5" style={{ color: "#7c2d12" }}>Välkommen!</h2>
-            <p className="text-sv-700 text-sm mb-4 font-medium">
+            <p className="text-sv-800 text-sm mb-4 font-medium">
               Skriv ditt namn för att börja eller fortsätta.
             </p>
 
@@ -150,7 +150,7 @@ export default function HomePage() {
               <button
                 type="submit"
                 disabled={!nameInput.trim()}
-                className="w-full btn-primary text-base py-3 rounded-xl border-3 border-sv-400 disabled:from-gray-200 disabled:to-gray-300 disabled:text-gray-400 disabled:border-gray-200"
+                className="w-full btn-primary text-base py-3 rounded-xl border-3 border-sv-400 disabled:from-gray-200 disabled:to-gray-300 disabled:text-gray-600 disabled:border-gray-200"
                 style={{ background: nameInput.trim() ? "linear-gradient(135deg, #f97316, #ea6c0a)" : undefined }}
               >
                 {isReturning ? "Fortsätt jakten! 🏆" : "Starta jakten! 🚀"}
@@ -178,7 +178,7 @@ export default function HomePage() {
               <div>
                 <p className="font-black text-amber-800 dark:text-amber-300">Daglig bonus!</p>
                 <p className="text-sm font-bold text-amber-700 dark:text-amber-400">
-                  Du fick <span className="text-amber-600">⭐ {dailyBonus}</span> poäng för att du kom tillbaka idag. Bra jobbat! 🔥
+                  Du fick <span className="text-amber-700">⭐ {dailyBonus}</span> poäng för att du kom tillbaka idag. Bra jobbat! 🔥
                 </p>
               </div>
             </div>
@@ -186,9 +186,9 @@ export default function HomePage() {
         )}
         <BlurFade delay={0} className="mb-4">
           <h2 className="on-theme text-2xl font-black text-sv-800 dark:text-gray-100">Välj din värld</h2>
-          <p className="on-theme-muted text-sv-700 dark:text-gray-400 font-semibold mt-0.5">
-            Välkommen tillbaka, <span className="text-sv-600 font-black">{student.name}</span>! Totalt{" "}
-            <span className="text-amber-600 font-black">⭐ <NumberTicker value={student.totalPoints} className="text-amber-600" /></span> poäng.
+          <p className="on-theme-muted text-sv-800 dark:text-gray-400 font-semibold mt-0.5">
+            Välkommen tillbaka, <span className="text-sv-800 font-black">{student.name}</span>! Totalt{" "}
+            <span className="text-amber-700 font-black">⭐ <NumberTicker value={student.totalPoints} className="text-amber-700" /></span> poäng.
           </p>
         </BlurFade>
 
@@ -239,12 +239,12 @@ export default function HomePage() {
                         {/* Footer */}
                         <div className="bg-white dark:bg-gray-800 px-5 py-3.5 flex items-center justify-between">
                           {totalCompleted > 0 ? (
-                            <span className="text-sm font-bold text-sv-600 dark:text-gray-300 flex items-center gap-1.5">
+                            <span className="text-sm font-bold text-sv-800 dark:text-gray-300 flex items-center gap-1.5">
                               <span className="w-2 h-2 rounded-full bg-emerald-400 inline-block" />
                               {totalCompleted} modul{totalCompleted !== 1 ? "er" : ""} klarade
                             </span>
                           ) : (
-                            <span className="text-sm font-semibold text-sv-700 dark:text-gray-500">
+                            <span className="text-sm font-semibold text-sv-800 dark:text-gray-500">
                               Inte börjat än
                             </span>
                           )}

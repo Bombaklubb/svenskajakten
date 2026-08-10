@@ -39,7 +39,7 @@ export default function WordClues({ exercise, onAnswer, isLast }: Props) {
     <div className="space-y-5 animate-fade-in">
       <div className="flex items-center gap-2 mb-1">
         <span className="text-lg">🔍</span>
-        <span className="text-sm font-bold text-sv-600 dark:text-sv-300 uppercase tracking-wide">
+        <span className="text-sm font-bold text-sv-800 dark:text-sv-300 uppercase tracking-wide">
           Kluring – vad är det?
         </span>
       </div>
@@ -51,7 +51,7 @@ export default function WordClues({ exercise, onAnswer, isLast }: Props) {
             key={i}
             className="flex items-start gap-3 bg-sv-50 dark:bg-sv-900/20 border border-sv-200 dark:border-sv-700 rounded-xl px-4 py-3"
           >
-            <span className="text-sv-700 dark:text-sv-700 font-bold text-base mt-0.5 flex-shrink-0">→</span>
+            <span className="text-sv-800 dark:text-sv-700 font-bold text-base mt-0.5 flex-shrink-0">→</span>
             <span className="text-sv-900 dark:text-sv-100 text-base font-medium">{clue}</span>
           </div>
         ))}
@@ -64,7 +64,7 @@ export default function WordClues({ exercise, onAnswer, isLast }: Props) {
             className="w-full flex items-center justify-between px-4 py-2.5 bg-amber-50 dark:bg-amber-900/20 text-amber-800 dark:text-amber-300 text-sm font-medium hover:bg-amber-100 dark:hover:bg-amber-900/30 transition-colors"
           >
             <span className="flex items-center gap-2"><span>💡</span><span>Tips</span></span>
-            <span className="text-amber-500 text-xs">{showHint ? "▲" : "▼"}</span>
+            <span className="text-amber-700 text-xs">{showHint ? "▲" : "▼"}</span>
           </button>
           {showHint && (
             <div className="px-4 py-3 text-sm text-amber-900 dark:text-amber-200 bg-amber-50/60 dark:bg-amber-900/10 border-t border-amber-200 dark:border-amber-700">
@@ -83,7 +83,7 @@ export default function WordClues({ exercise, onAnswer, isLast }: Props) {
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
             placeholder="Skriv ditt svar här..."
-            className="flex-1 px-4 py-3 text-lg bg-transparent outline-none text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500"
+            className="flex-1 px-4 py-3 text-lg bg-transparent outline-none text-gray-900 dark:text-gray-100 placeholder:text-gray-600 dark:placeholder:text-gray-500"
             autoFocus
             autoComplete="off"
             autoCorrect="off"

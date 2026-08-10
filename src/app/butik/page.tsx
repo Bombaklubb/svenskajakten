@@ -36,7 +36,7 @@ function RarityBadge({ rarity }: { rarity: Rarity }) {
 
 function PriceTag({ price }: { price: number }) {
   return (
-    <span className="inline-flex items-center gap-1 text-sm font-black text-amber-600 dark:text-amber-400">
+    <span className="inline-flex items-center gap-1 text-sm font-black text-amber-700 dark:text-amber-400">
       <span>⭐</span>
       {price}
     </span>
@@ -61,7 +61,7 @@ export default function ButikPage() {
     return (
       <div className="min-h-screen bg-amber-50 dark:bg-gray-900 flex items-center justify-center">
         <div className="text-center">
-          <p className="text-sv-700 dark:text-gray-400 mb-4">Du är inte inloggad.</p>
+          <p className="text-sv-800 dark:text-gray-400 mb-4">Du är inte inloggad.</p>
           <Link
             href="/"
             className="btn-primary border-3 border-sv-400"
@@ -197,8 +197,8 @@ export default function ButikPage() {
                 onClick={() => setTab(t.id)}
                 className={`px-4 py-2 rounded-xl font-bold text-xs sm:text-sm whitespace-nowrap transition-all duration-200 cursor-pointer ${
                   tab === t.id
-                    ? "bg-gradient-to-b from-orange-400 to-orange-500 text-white shadow-md scale-[1.02]"
-                    : "text-sv-700 dark:text-gray-400 hover:bg-sv-50 dark:hover:bg-gray-700"
+                    ? "bg-gradient-to-b from-orange-600 to-orange-700 text-white shadow-md scale-[1.02]"
+                    : "text-sv-800 dark:text-gray-400 hover:bg-sv-50 dark:hover:bg-gray-700"
                 }`}
               >
                 {t.label}
@@ -213,7 +213,7 @@ export default function ButikPage() {
             <div className="space-y-7">
               {avatarGroups.map(({ category, items }) => (
                 <div key={category}>
-                  <h2 className="on-theme-muted text-xs font-black uppercase tracking-wider text-sv-700 dark:text-gray-500 mb-3">
+                  <h2 className="on-theme-muted text-xs font-black uppercase tracking-wider text-sv-800 dark:text-gray-500 mb-3">
                     {CATEGORY_LABELS[category]}
                   </h2>
                   <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
@@ -249,7 +249,7 @@ export default function ButikPage() {
                                 Köp
                               </button>
                             ) : (
-                              <button disabled className="w-full py-2 rounded-xl font-bold text-sm bg-sv-100 dark:bg-gray-700 text-sv-700 dark:text-gray-500 cursor-not-allowed">
+                              <button disabled className="w-full py-2 rounded-xl font-bold text-sm bg-sv-100 dark:bg-gray-700 text-sv-800 dark:text-gray-500 cursor-not-allowed">
                                 För dyrt
                               </button>
                             )}
@@ -267,7 +267,7 @@ export default function ButikPage() {
         {/* ─── Ramar ──────────────────────────────────────────────────── */}
         {tab === "ramar" && (
           <BlurFade>
-            <h2 className="on-theme-muted text-xs font-black uppercase tracking-wider text-sv-700 dark:text-gray-500 mb-3">Ramar runt din avatar</h2>
+            <h2 className="on-theme-muted text-xs font-black uppercase tracking-wider text-sv-800 dark:text-gray-500 mb-3">Ramar runt din avatar</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
               {FRAMES.map((f) => {
                 const owned = ownedFrames.includes(f.id);
@@ -304,7 +304,7 @@ export default function ButikPage() {
                           Köp
                         </button>
                       ) : (
-                        <button disabled className="w-full py-2 rounded-xl font-bold text-sm bg-sv-100 dark:bg-gray-700 text-sv-700 dark:text-gray-500 cursor-not-allowed">
+                        <button disabled className="w-full py-2 rounded-xl font-bold text-sm bg-sv-100 dark:bg-gray-700 text-sv-800 dark:text-gray-500 cursor-not-allowed">
                           För dyrt
                         </button>
                       )}
@@ -319,7 +319,7 @@ export default function ButikPage() {
         {/* ─── Teman ──────────────────────────────────────────────────── */}
         {tab === "teman" && (
           <BlurFade>
-            <h2 className="on-theme-muted text-xs font-black uppercase tracking-wider text-sv-700 dark:text-gray-500 mb-3">Bakgrundsteman för appen</h2>
+            <h2 className="on-theme-muted text-xs font-black uppercase tracking-wider text-sv-800 dark:text-gray-500 mb-3">Bakgrundsteman för appen</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
               {/* Standard – återställ den ursprungliga startsidan (gratis) */}
               {(() => {
@@ -333,7 +333,7 @@ export default function ButikPage() {
                       <span className="text-2xl">🏠</span>
                     </div>
                     <div className="font-black text-sm text-sv-900 dark:text-gray-100 leading-tight">Standard</div>
-                    <div className="my-1.5"><span className="text-[10px] font-black uppercase tracking-wider text-sv-700 dark:text-gray-500">Original</span></div>
+                    <div className="my-1.5"><span className="text-[10px] font-black uppercase tracking-wider text-sv-800 dark:text-gray-500">Original</span></div>
                     <div className="w-full mt-2">
                       {isStandard ? (
                         <button disabled className="w-full py-2 rounded-xl font-bold text-sm bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 border-2 border-emerald-300 dark:border-emerald-700 cursor-default">
@@ -390,7 +390,7 @@ export default function ButikPage() {
                           Köp
                         </button>
                       ) : (
-                        <button disabled className="w-full py-2 rounded-xl font-bold text-sm bg-sv-100 dark:bg-gray-700 text-sv-700 dark:text-gray-500 cursor-not-allowed">
+                        <button disabled className="w-full py-2 rounded-xl font-bold text-sm bg-sv-100 dark:bg-gray-700 text-sv-800 dark:text-gray-500 cursor-not-allowed">
                           För dyrt
                         </button>
                       )}
@@ -405,7 +405,7 @@ export default function ButikPage() {
         {/* ─── Effekter ───────────────────────────────────────────────── */}
         {tab === "effekter" && (
           <BlurFade>
-            <h2 className="on-theme-muted text-xs font-black uppercase tracking-wider text-sv-700 dark:text-gray-500 mb-3">Effekter runt din avatar</h2>
+            <h2 className="on-theme-muted text-xs font-black uppercase tracking-wider text-sv-800 dark:text-gray-500 mb-3">Effekter runt din avatar</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
               {EFFECTS.map((e) => {
                 const owned = ownedEffects.includes(e.id);
@@ -444,7 +444,7 @@ export default function ButikPage() {
                           Köp
                         </button>
                       ) : (
-                        <button disabled className="w-full py-2 rounded-xl font-bold text-sm bg-sv-100 dark:bg-gray-700 text-sv-700 dark:text-gray-500 cursor-not-allowed">
+                        <button disabled className="w-full py-2 rounded-xl font-bold text-sm bg-sv-100 dark:bg-gray-700 text-sv-800 dark:text-gray-500 cursor-not-allowed">
                           För dyrt
                         </button>
                       )}
@@ -461,7 +461,7 @@ export default function ButikPage() {
           <BlurFade>
             <div className="space-y-6">
               <div>
-                <h2 className="on-theme-muted text-xs font-black uppercase tracking-wider text-sv-700 dark:text-gray-500 mb-3">
+                <h2 className="on-theme-muted text-xs font-black uppercase tracking-wider text-sv-800 dark:text-gray-500 mb-3">
                   Mina avatarer ({ownedAvatars.length})
                 </h2>
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
@@ -494,11 +494,11 @@ export default function ButikPage() {
               </div>
 
               <div>
-                <h2 className="on-theme-muted text-xs font-black uppercase tracking-wider text-sv-700 dark:text-gray-500 mb-3">
+                <h2 className="on-theme-muted text-xs font-black uppercase tracking-wider text-sv-800 dark:text-gray-500 mb-3">
                   Mina ramar ({ownedFrames.length})
                 </h2>
                 {ownedFrames.length === 0 ? (
-                  <p className="text-sm text-sv-700 dark:text-gray-500 bg-white dark:bg-gray-800 rounded-2xl border-2 border-dashed border-sv-200 dark:border-gray-600 px-4 py-6 text-center">
+                  <p className="text-sm text-sv-800 dark:text-gray-500 bg-white dark:bg-gray-800 rounded-2xl border-2 border-dashed border-sv-200 dark:border-gray-600 px-4 py-6 text-center">
                     Du äger inga ramar ännu. Köp en i fliken <strong>Ramar</strong>! 🖼️
                   </p>
                 ) : (
@@ -536,11 +536,11 @@ export default function ButikPage() {
               </div>
 
               <div>
-                <h2 className="on-theme-muted text-xs font-black uppercase tracking-wider text-sv-700 dark:text-gray-500 mb-3">
+                <h2 className="on-theme-muted text-xs font-black uppercase tracking-wider text-sv-800 dark:text-gray-500 mb-3">
                   Mina teman ({ownedThemes.length})
                 </h2>
                 {ownedThemes.length === 0 ? (
-                  <p className="text-sm text-sv-700 dark:text-gray-500 bg-white dark:bg-gray-800 rounded-2xl border-2 border-dashed border-sv-200 dark:border-gray-600 px-4 py-6 text-center">
+                  <p className="text-sm text-sv-800 dark:text-gray-500 bg-white dark:bg-gray-800 rounded-2xl border-2 border-dashed border-sv-200 dark:border-gray-600 px-4 py-6 text-center">
                     Du äger inga teman ännu. Köp ett i fliken <strong>Teman</strong>! 🎨
                   </p>
                 ) : (
@@ -556,7 +556,7 @@ export default function ButikPage() {
                             <span className="text-2xl">🏠</span>
                           </div>
                           <div className="font-black text-sm text-sv-900 dark:text-gray-100 leading-tight">Standard</div>
-                          <div className="my-1.5"><span className="text-[10px] font-black uppercase tracking-wider text-sv-700 dark:text-gray-500">Original</span></div>
+                          <div className="my-1.5"><span className="text-[10px] font-black uppercase tracking-wider text-sv-800 dark:text-gray-500">Original</span></div>
                           <div className="w-full mt-1">
                             {isStandard ? (
                               <button disabled className="w-full py-2 rounded-xl font-bold text-sm bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 border-2 border-emerald-300 dark:border-emerald-700 cursor-default">
@@ -611,11 +611,11 @@ export default function ButikPage() {
               </div>
 
               <div>
-                <h2 className="on-theme-muted text-xs font-black uppercase tracking-wider text-sv-700 dark:text-gray-500 mb-3">
+                <h2 className="on-theme-muted text-xs font-black uppercase tracking-wider text-sv-800 dark:text-gray-500 mb-3">
                   Mina effekter ({ownedEffects.length})
                 </h2>
                 {ownedEffects.length === 0 ? (
-                  <p className="text-sm text-sv-700 dark:text-gray-500 bg-white dark:bg-gray-800 rounded-2xl border-2 border-dashed border-sv-200 dark:border-gray-600 px-4 py-6 text-center">
+                  <p className="text-sm text-sv-800 dark:text-gray-500 bg-white dark:bg-gray-800 rounded-2xl border-2 border-dashed border-sv-200 dark:border-gray-600 px-4 py-6 text-center">
                     Du äger inga effekter ännu. Köp en i fliken <strong>Effekter</strong>! ✨
                   </p>
                 ) : (

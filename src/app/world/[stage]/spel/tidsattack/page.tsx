@@ -179,7 +179,7 @@ function TidsattackGame({ stageId, stage, student }: {
           <div className="text-7xl mb-4">⏱️</div>
           <h1 className="text-3xl font-black text-gray-900 dark:text-gray-100 mb-2">Tidsattack!</h1>
           <p className="text-gray-500 dark:text-gray-400 mb-2">60 sekunder – svara på så många frågor du hinner!</p>
-          <p className="text-gray-400 dark:text-gray-500 text-sm mb-8">Rätt svar = 15 poäng. Snabba reflexer lönar sig!</p>
+          <p className="text-gray-600 dark:text-gray-500 text-sm mb-8">Rätt svar = 15 poäng. Snabba reflexer lönar sig!</p>
           <button
             onClick={start}
             className={`w-full max-w-xs py-4 rounded-2xl font-black text-white text-xl cursor-pointer ${stage!.colorClass}`}
@@ -208,15 +208,15 @@ function TidsattackGame({ stageId, stage, student }: {
               style={{ boxShadow: "0 4px 0 0 rgba(0,0,0,0.08)" }}>
               <div>
                 <p className={`text-2xl font-black ${stage!.textClass}`}>{score}</p>
-                <p className="text-gray-400 dark:text-gray-500 text-xs">Poäng</p>
+                <p className="text-gray-600 dark:text-gray-500 text-xs">Poäng</p>
               </div>
               <div>
                 <p className="text-2xl font-black text-green-600">✓ {correct}</p>
-                <p className="text-gray-400 dark:text-gray-500 text-xs">Rätt</p>
+                <p className="text-gray-600 dark:text-gray-500 text-xs">Rätt</p>
               </div>
               <div>
                 <p className="text-2xl font-black text-red-500">✗ {wrong}</p>
-                <p className="text-gray-400 dark:text-gray-500 text-xs">Fel</p>
+                <p className="text-gray-600 dark:text-gray-500 text-xs">Fel</p>
               </div>
             </div>
             <div className="flex flex-col gap-3">
@@ -248,7 +248,7 @@ function TidsattackGame({ stageId, stage, student }: {
       <div className="flex-1 max-w-lg mx-auto w-full px-4 py-4 pt-20">
         {/* HUD */}
         <div className="flex items-center justify-between mb-3">
-          <button onClick={endGame} className="text-gray-400 hover:text-gray-600 text-sm font-semibold cursor-pointer">
+          <button onClick={endGame} className="text-gray-600 hover:text-gray-600 text-sm font-semibold cursor-pointer">
             ← Avsluta
           </button>
           <div className="flex items-center gap-3">
@@ -277,7 +277,7 @@ function TidsattackGame({ stageId, stage, student }: {
           : flash === "wrong" ? "border-red-400 bg-red-50 dark:bg-red-900/30"
           : "border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800"
         }`} style={{ boxShadow: "0 2px 8px -2px rgba(0,0,0,0.06)" }}>
-          <p className="text-sm text-gray-400 dark:text-gray-500 mb-2 font-semibold">Fråga {qIndex + 1}</p>
+          <p className="text-sm text-gray-600 dark:text-gray-500 mb-2 font-semibold">Fråga {qIndex + 1}</p>
           <p className="text-base sm:text-lg font-black text-gray-900 dark:text-gray-100">{currentQ.q}</p>
         </div>
 
@@ -294,7 +294,7 @@ function TidsattackGame({ stageId, stage, student }: {
                 }`}
               style={{ boxShadow: "0 2px 0 0 rgba(0,0,0,0.05)" }}
             >
-              <span className="text-gray-400 dark:text-gray-500 mr-3 font-black">{String.fromCharCode(65 + i)}.</span>
+              <span className="text-gray-600 dark:text-gray-500 mr-3 font-black">{String.fromCharCode(65 + i)}.</span>
               {opt}
             </button>
           ))}

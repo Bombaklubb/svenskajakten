@@ -75,11 +75,11 @@ function ChestCard({ chest, onOpen }: { chest: Chest; onOpen: (id: string) => vo
 
       {/* Text */}
       <div className="flex-1 min-w-0">
-        <p className={`font-bold text-base leading-tight ${chest.opened ? "text-gray-400 dark:text-gray-500" : "text-white"}`}>
+        <p className={`font-bold text-base leading-tight ${chest.opened ? "text-gray-600 dark:text-gray-500" : "text-white"}`}>
           {meta.label}
         </p>
         {chest.opened ? (
-          <p className="text-xs text-gray-400 dark:text-gray-500 mt-0.5">Öppnad</p>
+          <p className="text-xs text-gray-600 dark:text-gray-500 mt-0.5">Öppnad</p>
         ) : (
           <p className="text-sm text-white/80 mt-0.5">{meta.description}</p>
         )}
@@ -149,7 +149,7 @@ const SHELF_STYLES: Record<ChestType, { bg: string; plank: string; count: string
   ruby: {
     bg: "linear-gradient(135deg, rgba(252,165,165,0.2), rgba(220,38,38,0.1))",
     plank: "linear-gradient(180deg, #b91c1c, #7f1d1d)",
-    count: "bg-red-500 text-white",
+    count: "bg-red-700 text-white",
     label: "text-red-700 dark:text-red-400",
   },
   emerald: {
@@ -429,7 +429,7 @@ export default function KistorPage() {
             <h2 className="text-lg font-black text-sv-900 dark:text-gray-100 mb-4 flex items-center gap-2">
               🎁 Oöppnade kistor
               {unopened.length > 0 && (
-                <span className="px-2 py-0.5 text-xs font-bold bg-sv-500 text-white rounded-full">
+                <span className="px-2 py-0.5 text-xs font-bold bg-sv-700 text-white rounded-full">
                   {unopened.length}
                 </span>
               )}
@@ -437,7 +437,7 @@ export default function KistorPage() {
             {unopened.length === 0 ? (
               <div className="rounded-3xl p-8 text-center border-2 border-dashed border-sv-200 dark:border-gray-600 bg-white dark:bg-gray-800">
                 <p className="text-4xl mb-3">🏅</p>
-                <p className="text-sv-700 dark:text-gray-300 text-sm font-medium">
+                <p className="text-sv-800 dark:text-gray-300 text-sm font-medium">
                   Inga kistor just nu. Slutför övningar för att tjäna kistor!
                 </p>
               </div>
@@ -512,7 +512,7 @@ export default function KistorPage() {
             <h3 className="font-bold text-sv-900 dark:text-sv-100 mb-3 flex items-center gap-2">
               💡 Hur tjänar man kistor?
             </h3>
-            <p className="text-xs font-bold text-sv-700 dark:text-sv-300 uppercase tracking-wide mb-2">Poängmilstolpar</p>
+            <p className="text-xs font-bold text-sv-800 dark:text-sv-300 uppercase tracking-wide mb-2">Poängmilstolpar</p>
             <ul className="space-y-2 text-sm text-sv-800 dark:text-sv-100 mb-4">
               <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/bronskista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Bronskista:</strong> 10 – 200 poäng</span></li>
               <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/silverkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Silverkista:</strong> 300 – 4 000 poäng</span></li>
@@ -522,7 +522,7 @@ export default function KistorPage() {
               <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/diamantkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Diamantkista:</strong> 25 000 – 40 000 poäng</span></li>
               <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/hemligkista.png" alt="" className="w-6 h-6 object-contain scale-[1.55]" /></div><span><strong>Hemliga kistan:</strong> 60 000 – 100 000 poäng 🔒</span></li>
             </ul>
-            <p className="text-xs font-bold text-sv-700 dark:text-sv-300 uppercase tracking-wide mb-2">Övningsmilstolpar</p>
+            <p className="text-xs font-bold text-sv-800 dark:text-sv-300 uppercase tracking-wide mb-2">Övningsmilstolpar</p>
             <ul className="space-y-2 text-sm text-sv-800 dark:text-sv-100 mb-4">
               <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/bronskista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Bronskista:</strong> 1 – 55 övningar</span></li>
               <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/silverkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Silverkista:</strong> 12 – 90 övningar</span></li>

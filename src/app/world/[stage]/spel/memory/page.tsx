@@ -309,15 +309,15 @@ function MemoryGame({ stageId, stage, student }: {
             >
               <div>
                 <p className={`text-2xl font-black ${stage!.textClass}`}>{score}</p>
-                <p className="text-gray-400 dark:text-gray-500 text-xs">Poäng</p>
+                <p className="text-gray-600 dark:text-gray-500 text-xs">Poäng</p>
               </div>
               <div>
                 <p className="text-2xl font-black text-gray-900 dark:text-gray-100">{moves}</p>
-                <p className="text-gray-400 dark:text-gray-500 text-xs">Försök</p>
+                <p className="text-gray-600 dark:text-gray-500 text-xs">Försök</p>
               </div>
               <div>
                 <p className="text-2xl font-black text-gray-900 dark:text-gray-100">{timeStr}</p>
-                <p className="text-gray-400 dark:text-gray-500 text-xs">Tid</p>
+                <p className="text-gray-600 dark:text-gray-500 text-xs">Tid</p>
               </div>
             </div>
 
@@ -377,7 +377,7 @@ function MemoryGame({ stageId, stage, student }: {
         </div>
 
         {/* Förklaring av kortfärger */}
-        <div className="flex gap-4 mb-3 justify-center text-xs text-gray-400 dark:text-gray-500 font-semibold">
+        <div className="flex gap-4 mb-3 justify-center text-xs text-gray-600 dark:text-gray-500 font-semibold">
           <span className="flex items-center gap-1">
             <span className="w-3 h-3 rounded-sm bg-violet-200 dark:bg-violet-800 inline-block" />
             📖 Begrepp

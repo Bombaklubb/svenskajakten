@@ -162,8 +162,8 @@ export default function WorldPage({ params }: Props) {
                   style={done ? { boxShadow: "0 2px 0 0 rgba(249,115,22,0.15)" } : {}}
                 >
                   <div className="text-base leading-none mb-0.5">{icon}</div>
-                  <div className={`text-base font-black leading-none ${done ? stage.textClass : "text-sv-700 dark:text-gray-100"}`}>{count}/{total}</div>
-                  <div className="text-xs text-sv-700 dark:text-gray-400 mt-0.5 font-medium">{label}</div>
+                  <div className={`text-base font-black leading-none ${done ? stage.textClass : "text-sv-800 dark:text-gray-100"}`}>{count}/{total}</div>
+                  <div className="text-xs text-sv-800 dark:text-gray-400 mt-0.5 font-medium">{label}</div>
                 </div>
               );
             })}
@@ -182,7 +182,7 @@ export default function WorldPage({ params }: Props) {
                 className={`px-4 py-2 rounded-xl font-bold text-xs sm:text-sm whitespace-nowrap transition-all duration-200 cursor-pointer ${
                   activeTab === tab.id
                     ? `${stage.colorClass} text-white shadow-md scale-[1.02]`
-                    : "text-sv-700 dark:text-gray-400 hover:text-sv-700 dark:hover:text-gray-200 hover:bg-sv-50 dark:hover:bg-gray-700"
+                    : "text-sv-800 dark:text-gray-400 hover:text-sv-800 dark:hover:text-gray-200 hover:bg-sv-50 dark:hover:bg-gray-700"
                 }`}
                 style={activeTab === tab.id ? { boxShadow: "0 2px 0 0 rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.2)" } : {}}
               >
@@ -275,14 +275,14 @@ export default function WorldPage({ params }: Props) {
               <div>
                 <button
                   onClick={() => { setRetryItem(null); setRetryResult(null); }}
-                  className="inline-flex items-center gap-1.5 text-sv-600 dark:text-sv-700 hover:text-sv-800 dark:hover:text-sv-200 text-sm font-medium mb-4 transition-colors"
+                  className="inline-flex items-center gap-1.5 text-sv-800 dark:text-sv-700 hover:text-sv-800 dark:hover:text-sv-200 text-sm font-medium mb-4 transition-colors"
                 >
                   ← Tillbaka till listan
                 </button>
                 <div className="flex items-center gap-2 mb-4">
                   <span className="text-2xl">{retryItem.moduleIcon}</span>
                   <div>
-                    <div className="text-xs text-gray-400 dark:text-gray-500 uppercase tracking-wide font-semibold">
+                    <div className="text-xs text-gray-600 dark:text-gray-500 uppercase tracking-wide font-semibold">
                       {retryItem.kind === "grammar" ? "Grammatik" : "Stavning"}
                     </div>
                     <div className="font-bold text-gray-800 dark:text-gray-100">{retryItem.moduleTitle}</div>
@@ -296,7 +296,7 @@ export default function WorldPage({ params }: Props) {
                       {retryResult === "correct" ? "Rätt! Uppgiften är klar!" : "Fel – försök igen nästa gång!"}
                     </p>
                     {retryResult === "correct" && (
-                      <p className="text-amber-600 dark:text-amber-400 font-black text-xl mt-2">
+                      <p className="text-amber-700 dark:text-amber-400 font-black text-xl mt-2">
                         +{retryPoints} ⭐
                       </p>
                     )}
@@ -345,7 +345,7 @@ export default function WorldPage({ params }: Props) {
                   <div className="card text-center py-12">
                     <div className="text-5xl mb-3">🌟</div>
                     <p className="font-black text-gray-800 dark:text-gray-100 text-lg">Bra jobbat!</p>
-                    <p className="text-gray-400 dark:text-gray-500 text-sm mt-1">Inga uppgifter att repetera just nu.</p>
+                    <p className="text-gray-600 dark:text-gray-500 text-sm mt-1">Inga uppgifter att repetera just nu.</p>
                   </div>
                 ) : (
                   <div className="space-y-2">
@@ -371,14 +371,14 @@ export default function WorldPage({ params }: Props) {
                                 <span className="text-xs font-bold text-red-500 dark:text-red-400 uppercase tracking-wide">
                                   {item.kind === "grammar" ? "Grammatik" : "Stavning"}
                                 </span>
-                                <span className="text-xs text-gray-400 dark:text-gray-500">·</span>
+                                <span className="text-xs text-gray-600 dark:text-gray-500">·</span>
                                 <span className="text-xs text-gray-500 dark:text-gray-400">{item.moduleTitle}</span>
                               </div>
                               <p className="text-sm text-gray-800 dark:text-gray-200 font-medium truncate">
                                 {preview}
                               </p>
                             </div>
-                            <span className="text-sv-700 group-hover:text-sv-600 transition-colors flex-shrink-0">→</span>
+                            <span className="text-sv-800 group-hover:text-sv-800 transition-colors flex-shrink-0">→</span>
                           </div>
                         </button>
                       );
@@ -393,14 +393,14 @@ export default function WorldPage({ params }: Props) {
         activeTab === "regler" ? (
           <div className="space-y-4">
             {rules.length === 0 ? (
-              <div className="card text-center py-8 text-gray-400">Laddar regler...</div>
+              <div className="card text-center py-8 text-gray-600">Laddar regler...</div>
             ) : (
               rules.map((section) => (
                 <details key={section.id} className="card group" open>
                   <summary className="flex items-center gap-3 cursor-pointer list-none select-none">
                     <span className="text-2xl">{section.icon}</span>
                     <h2 className="font-bold text-gray-900 dark:text-gray-100 text-base flex-1">{section.title}</h2>
-                    <span className="text-gray-400 text-sm group-open:rotate-180 transition-transform duration-200">▼</span>
+                    <span className="text-gray-600 text-sm group-open:rotate-180 transition-transform duration-200">▼</span>
                   </summary>
                   <div className="mt-4 space-y-3 pt-3 border-t border-gray-100 dark:border-gray-700">
                     {section.content.map((item, i) => (
@@ -427,7 +427,7 @@ export default function WorldPage({ params }: Props) {
           </div>
 
         ) : !content ? (
-          <div className="card text-center py-12 text-gray-400">
+          <div className="card text-center py-12 text-gray-600">
             <div className="text-4xl mb-3">📭</div>
             <p>Kunde inte ladda innehåll.</p>
           </div>
@@ -484,7 +484,7 @@ export default function WorldPage({ params }: Props) {
             )}
 
             {(content.spelling ?? []).length === 0 && (content.stavningstest ?? []).length === 0 && (
-              <div className="card text-center py-10 text-gray-400">
+              <div className="card text-center py-10 text-gray-600">
                 <div className="text-3xl mb-2">✏️</div>
                 <p>Inga stavningsövningar tillgängliga ännu.</p>
               </div>
@@ -532,7 +532,7 @@ export default function WorldPage({ params }: Props) {
               );
             })}
             {activeTab === "wordsearch" && (content.wordsearch ?? []).length === 0 && (
-              <div className="card text-center py-10 text-gray-400 col-span-1 sm:col-span-2">
+              <div className="card text-center py-10 text-gray-600 col-span-1 sm:col-span-2">
                 <div className="text-3xl mb-2">🔍</div>
                 <p>Inga moduler tillgängliga ännu.</p>
               </div>
