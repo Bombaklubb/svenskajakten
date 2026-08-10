@@ -146,7 +146,7 @@ export default function WordSearchModulePage({ params }: Props) {
             >
               <div className="text-6xl mb-4 animate-bounce-slow">{mod.icon}</div>
               <h2 className="text-2xl font-black text-sv-900 dark:text-gray-100 mb-2">{mod.title}</h2>
-              <p className="text-sv-400 dark:text-gray-400 mb-6 font-medium">{mod.description}</p>
+              <p className="text-sv-700 dark:text-gray-400 mb-6 font-medium">{mod.description}</p>
 
               <div className="bg-sv-50 dark:bg-gray-700 rounded-2xl p-4 mb-6 text-left border-2 border-sv-100 dark:border-gray-600">
                 <p className="font-bold text-sv-800 dark:text-gray-100 mb-2 flex items-center gap-1.5">🔍 Hur man spelar</p>
@@ -197,7 +197,7 @@ export default function WordSearchModulePage({ params }: Props) {
             >
               <div className="text-7xl mb-4 animate-bounce-slow">🎉</div>
               <h2 className="text-3xl font-black text-sv-900 dark:text-gray-100 mb-2">Alla ord hittade!</h2>
-              <p className="text-sv-400 dark:text-gray-400 mb-6 font-medium">Fantastiskt jobbat – du hittade alla {mod.words.length} ord!</p>
+              <p className="text-sv-700 dark:text-gray-400 mb-6 font-medium">Fantastiskt jobbat – du hittade alla {mod.words.length} ord!</p>
 
               {prevAttemptCount > 0 && (() => {
                 const m = getPointsMultiplier(prevAttemptCount);

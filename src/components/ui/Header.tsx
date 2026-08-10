@@ -92,7 +92,7 @@ export default function Header({ student, onLogout }: HeaderProps) {
               style={{ boxShadow: "0 3px 0 0 rgba(249, 115, 22, 0.2), inset 0 2px 4px 0 rgba(255, 255, 255, 0.8)" }}
             >
               <span className="text-base leading-none select-none">🛒</span>
-              <span className="text-sm font-bold text-orange-700 dark:text-orange-400">{getSpendable(student)}</span>
+              <span className="text-sm font-bold text-orange-900 dark:text-orange-300">{getSpendable(student)}</span>
             </Link>
 
             {/* Totala poäng */}
@@ -102,7 +102,7 @@ export default function Header({ student, onLogout }: HeaderProps) {
               style={{ boxShadow: "0 3px 0 0 rgba(245, 158, 11, 0.25), inset 0 2px 4px 0 rgba(255, 255, 255, 0.8)" }}
             >
               <span className="text-amber-500 text-base">⭐</span>
-              <span className="text-sm font-bold text-amber-700 dark:text-amber-400">{student.totalPoints}</span>
+              <span className="text-sm font-bold text-amber-900 dark:text-amber-300">{student.totalPoints}</span>
             </div>
 
             {/* Avatar */}
@@ -139,7 +139,7 @@ export default function Header({ student, onLogout }: HeaderProps) {
             {/* Dark mode */}
             <button
               onClick={toggle}
-              className="p-2.5 rounded-xl text-sv-400 dark:text-gray-400 hover:bg-sv-50 dark:hover:bg-gray-800 hover:text-sv-600 transition-all touch-manipulation cursor-pointer border-2 border-transparent hover:border-sv-200"
+              className="p-2.5 rounded-xl text-sv-700 dark:text-gray-400 hover:bg-sv-50 dark:hover:bg-gray-800 hover:text-sv-600 transition-all touch-manipulation cursor-pointer border-2 border-transparent hover:border-sv-200"
               aria-label={dark ? "Ljust läge" : "Mörkt läge"}
             >
               {dark ? "☀️" : "🌙"}
@@ -148,7 +148,7 @@ export default function Header({ student, onLogout }: HeaderProps) {
             {/* Logout */}
             <button
               onClick={handleLogout}
-              className="px-3 sm:px-4 py-2 rounded-xl text-sm font-bold text-sv-400 dark:text-gray-300 hover:bg-red-50 dark:hover:bg-red-900/20 hover:text-red-500 dark:hover:text-red-400 transition-all touch-manipulation cursor-pointer border-2 border-transparent hover:border-red-200"
+              className="px-3 sm:px-4 py-2 rounded-xl text-sm font-bold text-sv-700 dark:text-gray-300 hover:bg-red-50 dark:hover:bg-red-900/20 hover:text-red-500 dark:hover:text-red-400 transition-all touch-manipulation cursor-pointer border-2 border-transparent hover:border-red-200"
             >
               Logga ut
             </button>
@@ -158,7 +158,7 @@ export default function Header({ student, onLogout }: HeaderProps) {
         {!student && (
           <button
             onClick={toggle}
-            className="p-2.5 rounded-xl text-sv-400 dark:text-gray-400 hover:bg-sv-50 dark:hover:bg-gray-800 transition-all cursor-pointer"
+            className="p-2.5 rounded-xl text-sv-700 dark:text-gray-400 hover:bg-sv-50 dark:hover:bg-gray-800 transition-all cursor-pointer"
             aria-label={dark ? "Ljust läge" : "Mörkt läge"}
           >
             {dark ? "☀️" : "🌙"}

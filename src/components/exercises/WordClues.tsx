@@ -51,7 +51,7 @@ export default function WordClues({ exercise, onAnswer, isLast }: Props) {
             key={i}
             className="flex items-start gap-3 bg-sv-50 dark:bg-sv-900/20 border border-sv-200 dark:border-sv-700 rounded-xl px-4 py-3"
           >
-            <span className="text-sv-400 dark:text-sv-500 font-bold text-base mt-0.5 flex-shrink-0">→</span>
+            <span className="text-sv-700 dark:text-sv-700 font-bold text-base mt-0.5 flex-shrink-0">→</span>
             <span className="text-sv-900 dark:text-sv-100 text-base font-medium">{clue}</span>
           </div>
         ))}

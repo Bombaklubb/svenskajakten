@@ -86,7 +86,7 @@ export default function ResultModal({
         <h2 id="resultat-rubrik" className="text-3xl font-black text-sv-900 dark:text-gray-100 mb-2">
           {passed ? "Bra jobbat!" : "Försök igen!"}
         </h2>
-        <p className="text-sv-400 dark:text-gray-400 mb-6 text-base font-medium">
+        <p className="text-sv-700 dark:text-gray-400 mb-6 text-base font-medium">
           {subtitle ?? (passed
             ? "Du klarade övningen med godkänt resultat."
             : "Du är nästan framme – öva lite till!")}
@@ -106,10 +106,10 @@ export default function ResultModal({
                 : "0 6px 0 0 rgba(249,115,22,0.2), inset 0 4px 8px 0 rgba(255,255,255,0.8)"
             }}
           >
-            <span className={`text-4xl font-black ${passed ? "text-emerald-600 dark:text-emerald-400" : "text-sv-500"}`}>
+            <span className={`text-4xl font-black ${passed ? "text-emerald-600 dark:text-emerald-400" : "text-sv-700"}`}>
               {pct}%
             </span>
-            <span className="text-sm text-sv-400 dark:text-gray-400 mt-1 font-bold">
+            <span className="text-sm text-sv-700 dark:text-gray-400 mt-1 font-bold">
               {totalCorrect}/{totalQuestions}
             </span>
           </div>

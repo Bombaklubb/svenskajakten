@@ -163,7 +163,7 @@ export default function WorldPage({ params }: Props) {
                 >
                   <div className="text-base leading-none mb-0.5">{icon}</div>
                   <div className={`text-base font-black leading-none ${done ? stage.textClass : "text-sv-700 dark:text-gray-100"}`}>{count}/{total}</div>
-                  <div className="text-xs text-sv-400 dark:text-gray-400 mt-0.5 font-medium">{label}</div>
+                  <div className="text-xs text-sv-700 dark:text-gray-400 mt-0.5 font-medium">{label}</div>
                 </div>
               );
             })}
@@ -182,7 +182,7 @@ export default function WorldPage({ params }: Props) {
                 className={`px-4 py-2 rounded-xl font-bold text-xs sm:text-sm whitespace-nowrap transition-all duration-200 cursor-pointer ${
                   activeTab === tab.id
                     ? `${stage.colorClass} text-white shadow-md scale-[1.02]`
-                    : "text-sv-400 dark:text-gray-400 hover:text-sv-700 dark:hover:text-gray-200 hover:bg-sv-50 dark:hover:bg-gray-700"
+                    : "text-sv-700 dark:text-gray-400 hover:text-sv-700 dark:hover:text-gray-200 hover:bg-sv-50 dark:hover:bg-gray-700"
                 }`}
                 style={activeTab === tab.id ? { boxShadow: "0 2px 0 0 rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.2)" } : {}}
               >
@@ -275,7 +275,7 @@ export default function WorldPage({ params }: Props) {
               <div>
                 <button
                   onClick={() => { setRetryItem(null); setRetryResult(null); }}
-                  className="inline-flex items-center gap-1.5 text-sv-600 dark:text-sv-400 hover:text-sv-800 dark:hover:text-sv-200 text-sm font-medium mb-4 transition-colors"
+                  className="inline-flex items-center gap-1.5 text-sv-600 dark:text-sv-700 hover:text-sv-800 dark:hover:text-sv-200 text-sm font-medium mb-4 transition-colors"
                 >
                   ← Tillbaka till listan
                 </button>
@@ -378,7 +378,7 @@ export default function WorldPage({ params }: Props) {
                                 {preview}
                               </p>
                             </div>
-                            <span className="text-sv-400 group-hover:text-sv-600 transition-colors flex-shrink-0">→</span>
+                            <span className="text-sv-700 group-hover:text-sv-600 transition-colors flex-shrink-0">→</span>
                           </div>
                         </button>
                       );

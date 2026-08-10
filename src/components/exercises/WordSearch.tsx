@@ -185,7 +185,7 @@ export default function WordSearch({ words, onAllFound, pointsPerWord = 5 }: Wor
       </div>
 
       {/* Hint */}
-      <p className="text-xs text-sv-400 dark:text-gray-400 mb-3 font-medium">
+      <p className="text-xs text-sv-700 dark:text-gray-400 mb-3 font-medium">
         {start ? "🎯 Klicka på sista bokstaven i ordet!" : "👆 Klicka på en bokstav för att börja"}
       </p>
 

@@ -437,7 +437,7 @@ export default function KistorPage() {
             {unopened.length === 0 ? (
               <div className="rounded-3xl p-8 text-center border-2 border-dashed border-sv-200 dark:border-gray-600 bg-white dark:bg-gray-800">
                 <p className="text-4xl mb-3">🏅</p>
-                <p className="text-sv-500 dark:text-gray-300 text-sm font-medium">
+                <p className="text-sv-700 dark:text-gray-300 text-sm font-medium">
                   Inga kistor just nu. Slutför övningar för att tjäna kistor!
                 </p>
               </div>
@@ -512,7 +512,7 @@ export default function KistorPage() {
             <h3 className="font-bold text-sv-900 dark:text-sv-100 mb-3 flex items-center gap-2">
               💡 Hur tjänar man kistor?
             </h3>
-            <p className="text-xs font-bold text-sv-500 dark:text-sv-300 uppercase tracking-wide mb-2">Poängmilstolpar</p>
+            <p className="text-xs font-bold text-sv-700 dark:text-sv-300 uppercase tracking-wide mb-2">Poängmilstolpar</p>
             <ul className="space-y-2 text-sm text-sv-800 dark:text-sv-100 mb-4">
               <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/bronskista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Bronskista:</strong> 10 – 200 poäng</span></li>
               <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/silverkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Silverkista:</strong> 300 – 4 000 poäng</span></li>
@@ -522,7 +522,7 @@ export default function KistorPage() {
               <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/diamantkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Diamantkista:</strong> 25 000 – 40 000 poäng</span></li>
               <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/hemligkista.png" alt="" className="w-6 h-6 object-contain scale-[1.55]" /></div><span><strong>Hemliga kistan:</strong> 60 000 – 100 000 poäng 🔒</span></li>
             </ul>
-            <p className="text-xs font-bold text-sv-500 dark:text-sv-300 uppercase tracking-wide mb-2">Övningsmilstolpar</p>
+            <p className="text-xs font-bold text-sv-700 dark:text-sv-300 uppercase tracking-wide mb-2">Övningsmilstolpar</p>
             <ul className="space-y-2 text-sm text-sv-800 dark:text-sv-100 mb-4">
               <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/bronskista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Bronskista:</strong> 1 – 55 övningar</span></li>
               <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/silverkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Silverkista:</strong> 12 – 90 övningar</span></li>
