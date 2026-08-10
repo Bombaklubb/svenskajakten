@@ -290,10 +290,10 @@ function SnogubbenGame({ stageId, stage, student, setStudent }: {
       <div className="flex-1 max-w-lg mx-auto w-full px-4 py-4 pt-20">
         {/* Top bar */}
         <div className="flex items-center justify-between mb-4">
-          <Link href={`/world/${stageId}`} className="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 text-sm font-semibold">
+          <Link href={`/world/${stageId}`} className="text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-200 text-sm font-semibold">
             ← Avsluta
           </Link>
-          <span className="text-sm font-black text-amber-700">⭐ {score}p</span>
+          <span className="text-sm font-black text-amber-700 dark:text-amber-300">⭐ {score}p</span>
         </div>
 
         {/* Lives as snowflakes */}
@@ -321,11 +321,11 @@ function SnogubbenGame({ stageId, stage, student, setStudent }: {
                 : isLost
                   ? <span className="text-orange-500">Snögubben smälte... ☀️</span>
                   : wrongCount === 0
-                    ? <span className="text-sky-700">Snögubben är hel! ❄️</span>
+                    ? <span className="text-sky-700 dark:text-sky-300">Snögubben är hel! ❄️</span>
                     : wrongCount <= 2
                       ? <span className="text-blue-500">Snögubben tappar delar...</span>
                       : wrongCount <= 4
-                        ? <span className="text-amber-700">Snögubben håller på att smälta! 🌡️</span>
+                        ? <span className="text-amber-700 dark:text-amber-300">Snögubben håller på att smälta! 🌡️</span>
                         : <span className="text-orange-500">Snögubben smälter snabbt! 🔥</span>
               }
             </p>
@@ -351,7 +351,7 @@ function SnogubbenGame({ stageId, stage, student, setStudent }: {
         {/* Hint */}
         <div className="mb-3 text-center">
           {!showHint ? (
-            <button onClick={() => setShowHint(true)} className="text-xs text-amber-700 hover:text-amber-700 font-semibold underline">
+            <button onClick={() => setShowHint(true)} className="text-xs text-amber-700 hover:text-amber-700 font-semibold underline dark:text-amber-300">
               💡 Visa ledtråd
             </button>
           ) : (

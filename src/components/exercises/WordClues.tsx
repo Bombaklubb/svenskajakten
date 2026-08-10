@@ -64,7 +64,7 @@ export default function WordClues({ exercise, onAnswer, isLast }: Props) {
             className="w-full flex items-center justify-between px-4 py-2.5 bg-amber-50 dark:bg-amber-900/20 text-amber-800 dark:text-amber-300 text-sm font-medium hover:bg-amber-100 dark:hover:bg-amber-900/30 transition-colors"
           >
             <span className="flex items-center gap-2"><span>💡</span><span>Tips</span></span>
-            <span className="text-amber-700 text-xs">{showHint ? "▲" : "▼"}</span>
+            <span className="text-amber-700 text-xs dark:text-amber-300">{showHint ? "▲" : "▼"}</span>
           </button>
           {showHint && (
             <div className="px-4 py-3 text-sm text-amber-900 dark:text-amber-200 bg-amber-50/60 dark:bg-amber-900/10 border-t border-amber-200 dark:border-amber-700">

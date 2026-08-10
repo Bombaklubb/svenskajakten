@@ -52,9 +52,9 @@ export default function ModuleCard({
             🔒
           </div>
           <div className="flex-1 min-w-0">
-            <h3 className="font-bold text-sv-300 dark:text-gray-400 text-sm">{title}</h3>
+            <h3 className="font-bold text-sv-300 dark:text-gray-300 text-sm">{title}</h3>
             {prevModuleTitle && (
-              <p className="text-xs text-sv-300 dark:text-gray-500 mt-0.5 font-medium">
+              <p className="text-xs text-sv-300 dark:text-gray-300 mt-0.5 font-medium">
                 Klara &quot;{prevModuleTitle}&quot; först
               </p>
             )}
@@ -118,7 +118,7 @@ export default function ModuleCard({
             <div className="flex-1 min-w-0">
               <div className="flex items-start justify-between gap-2">
                 <h3 className="font-bold text-sv-900 dark:text-gray-100 text-base leading-snug">{title}</h3>
-                <span className="badge bg-sv-50 dark:bg-gray-700 text-sv-800 dark:text-gray-400 text-xs flex-shrink-0 border-2 border-sv-100 dark:border-gray-600">
+                <span className="badge bg-sv-50 dark:bg-gray-700 text-sv-800 dark:text-gray-300 text-xs flex-shrink-0 border-2 border-sv-100 dark:border-gray-600">
                   {KIND_LABEL[kind]}
                 </span>
               </div>
@@ -128,7 +128,7 @@ export default function ModuleCard({
                 </span>
               )}
 
-              <p className="text-sm text-sv-800 dark:text-gray-400 mt-1 line-clamp-1 font-medium">{description}</p>
+              <p className="text-sm text-sv-800 dark:text-gray-300 mt-1 line-clamp-1 font-medium">{description}</p>
 
               <div className="mt-3 flex items-center gap-3">
                 <div className="flex-1">
@@ -139,7 +139,7 @@ export default function ModuleCard({
                     ⭐ {progress.points}p
                   </span>
                 ) : (
-                  <span className="text-sm font-bold flex-shrink-0 text-sv-800 dark:text-gray-500 group-hover:text-sv-800 transition-colors">
+                  <span className="text-sm font-bold flex-shrink-0 text-sv-800 dark:text-gray-300 group-hover:text-sv-800 transition-colors">
                     Starta →
                   </span>
                 )}

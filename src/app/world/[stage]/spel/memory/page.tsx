@@ -255,7 +255,7 @@ function MemoryGame({ stageId, stage, student }: {
         <div className="flex-1 max-w-md mx-auto w-full px-4 py-8 pt-24">
           <Link
             href={`/world/${stageId}`}
-            className="inline-flex items-center gap-1.5 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 text-sm mb-6"
+            className="inline-flex items-center gap-1.5 text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-200 text-sm mb-6"
           >
             ← Tillbaka till Spel
           </Link>
@@ -263,7 +263,7 @@ function MemoryGame({ stageId, stage, student }: {
           <div className="text-center mb-8">
             <div className="text-6xl mb-3">🃏</div>
             <h1 className="text-3xl font-black text-gray-900 dark:text-gray-100 mb-1">Memory</h1>
-            <p className="text-gray-500 dark:text-gray-400 text-sm">Para ihop grammatikbegrepp med rätt förklaring!</p>
+            <p className="text-gray-500 dark:text-gray-300 text-sm">Para ihop grammatikbegrepp med rätt förklaring!</p>
           </div>
 
           <div className="space-y-3">
@@ -279,7 +279,7 @@ function MemoryGame({ stageId, stage, student }: {
                     <span className="text-2xl">{DIFF_EMOJIS[diff]}</span>
                     <div>
                       <p className="font-black text-gray-900 dark:text-gray-100 text-base">{DIFF_LABELS[diff]}</p>
-                      <p className="text-gray-500 dark:text-gray-400 text-xs">{PAIR_COUNTS[diff] * 2} kort – {PAIR_COUNTS[diff]} par att hitta</p>
+                      <p className="text-gray-500 dark:text-gray-300 text-xs">{PAIR_COUNTS[diff] * 2} kort – {PAIR_COUNTS[diff]} par att hitta</p>
                     </div>
                   </div>
                   <span className="text-gray-300 dark:text-gray-600 text-xl">→</span>
@@ -301,7 +301,7 @@ function MemoryGame({ stageId, stage, student }: {
           <div className="max-w-sm w-full text-center">
             <div className="text-7xl mb-4 animate-bounce">🎉</div>
             <h1 className="text-3xl font-black text-gray-900 dark:text-gray-100 mb-1">Grattis!</h1>
-            <p className="text-gray-500 dark:text-gray-400 mb-6">Du hittade alla {totalPairs} par!</p>
+            <p className="text-gray-500 dark:text-gray-300 mb-6">Du hittade alla {totalPairs} par!</p>
 
             <div
               className={`border-3 ${stage!.borderClass} rounded-2xl p-5 mb-6 grid grid-cols-3 gap-3 text-center`}
@@ -309,15 +309,15 @@ function MemoryGame({ stageId, stage, student }: {
             >
               <div>
                 <p className={`text-2xl font-black ${stage!.textClass}`}>{score}</p>
-                <p className="text-gray-600 dark:text-gray-500 text-xs">Poäng</p>
+                <p className="text-gray-600 dark:text-gray-300 text-xs">Poäng</p>
               </div>
               <div>
                 <p className="text-2xl font-black text-gray-900 dark:text-gray-100">{moves}</p>
-                <p className="text-gray-600 dark:text-gray-500 text-xs">Försök</p>
+                <p className="text-gray-600 dark:text-gray-300 text-xs">Försök</p>
               </div>
               <div>
                 <p className="text-2xl font-black text-gray-900 dark:text-gray-100">{timeStr}</p>
-                <p className="text-gray-600 dark:text-gray-500 text-xs">Tid</p>
+                <p className="text-gray-600 dark:text-gray-300 text-xs">Tid</p>
               </div>
             </div>
 
@@ -377,7 +377,7 @@ function MemoryGame({ stageId, stage, student }: {
         </div>
 
         {/* Förklaring av kortfärger */}
-        <div className="flex gap-4 mb-3 justify-center text-xs text-gray-600 dark:text-gray-500 font-semibold">
+        <div className="flex gap-4 mb-3 justify-center text-xs text-gray-600 dark:text-gray-300 font-semibold">
           <span className="flex items-center gap-1">
             <span className="w-3 h-3 rounded-sm bg-violet-200 dark:bg-violet-800 inline-block" />
             📖 Begrepp

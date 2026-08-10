@@ -308,7 +308,7 @@ export default function StavningstestPage({ params }: Props) {
                   key={i}
                   className="flex items-start gap-2.5 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-700 rounded-xl px-3 py-2.5 text-amber-900 dark:text-amber-200 text-sm leading-relaxed"
                 >
-                  <span className="text-amber-700 mt-0.5 flex-shrink-0">💡</span>
+                  <span className="text-amber-700 mt-0.5 flex-shrink-0 dark:text-amber-300">💡</span>
                   <span>{tip}</span>
                 </li>
               ))}
@@ -395,7 +395,7 @@ export default function StavningstestPage({ params }: Props) {
           }`}
         >
           <div className="flex items-center justify-between mb-4">
-            <span className="text-xs font-bold text-gray-600 uppercase tracking-wider">
+            <span className="text-xs font-bold text-gray-600 uppercase tracking-wider dark:text-gray-300">
               Stavningstest – Ord {currentIndex + 1}/{totalWords}
             </span>
             <div className="flex gap-1">
@@ -410,7 +410,7 @@ export default function StavningstestPage({ params }: Props) {
 
           {/* Clue */}
           <div className="text-center mb-4">
-            <p className="text-xs text-gray-600 dark:text-gray-500 uppercase tracking-wider mb-2 font-semibold">
+            <p className="text-xs text-gray-600 dark:text-gray-300 uppercase tracking-wider mb-2 font-semibold">
               Ledtråd
             </p>
             <p className="text-lg sm:text-xl font-semibold text-gray-800 dark:text-gray-100 leading-relaxed">
@@ -480,7 +480,7 @@ export default function StavningstestPage({ params }: Props) {
         </div>
 
         {/* Score so far */}
-        <div className="flex justify-center gap-6 text-sm text-gray-500 dark:text-gray-400">
+        <div className="flex justify-center gap-6 text-sm text-gray-500 dark:text-gray-300">
           <span>✓ {results.filter(Boolean).length} rätt</span>
           <span>✗ {results.filter((r) => !r).length} fel</span>
         </div>

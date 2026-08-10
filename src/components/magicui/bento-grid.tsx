@@ -50,13 +50,13 @@ export function BentoCard({
     >
       <div>{background}</div>
       <div className="pointer-events-none z-10 flex flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-10">
-        <Icon className="h-8 w-8 text-sv-800 transition-all duration-300 group-hover:scale-75" />
+        <Icon className="h-8 w-8 text-sv-800 transition-all duration-300 group-hover:scale-75 dark:text-gray-200" />
         <h3 className="text-xl font-black text-sv-800 dark:text-white">{name}</h3>
-        <p className="text-sm text-sv-800 dark:text-gray-400">{description}</p>
+        <p className="text-sm text-sv-800 dark:text-gray-300">{description}</p>
       </div>
       {href && (
         <div className="pointer-events-none absolute bottom-0 flex w-full translate-y-10 flex-row items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-          <a href={href} className="pointer-events-auto text-sm font-bold text-sv-800 hover:underline">
+          <a href={href} className="pointer-events-auto text-sm font-bold text-sv-800 hover:underline dark:text-gray-200">
             {cta ?? "Öppna →"}
           </a>
         </div>

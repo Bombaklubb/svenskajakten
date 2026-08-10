@@ -276,7 +276,7 @@ export default function SpellingModulePage({ params }: Props) {
                     key={i}
                     className="flex items-start gap-2.5 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-700 rounded-xl px-3 py-2.5 sm:px-4 sm:py-3 text-amber-900 dark:text-amber-200 text-sm leading-relaxed"
                   >
-                    <span className="text-amber-700 mt-0.5 flex-shrink-0">💡</span>
+                    <span className="text-amber-700 mt-0.5 flex-shrink-0 dark:text-amber-300">💡</span>
                     <span>{tip}</span>
                   </li>
                 ))}
@@ -336,7 +336,7 @@ export default function SpellingModulePage({ params }: Props) {
       <main className="max-w-3xl mx-auto px-3 sm:px-4 py-4 sm:py-8">
         <div className="card min-h-[260px] sm:min-h-[300px]">
           <div className="flex items-center justify-between mb-6">
-            <span className="text-sm text-gray-600 dark:text-gray-500 font-medium">
+            <span className="text-sm text-gray-600 dark:text-gray-300 font-medium">
               {currentIndex + 1} / {totalExercises}
             </span>
             {currentExercise && (
@@ -395,10 +395,10 @@ export default function SpellingModulePage({ params }: Props) {
           )}
         </div>
 
-        <div className="mt-4 flex justify-center gap-4 text-sm text-gray-500 dark:text-gray-400">
+        <div className="mt-4 flex justify-center gap-4 text-sm text-gray-500 dark:text-gray-300">
           <span>✓ {results.filter(Boolean).length} rätt</span>
           <span>✗ {results.filter((r) => !r).length} fel</span>
-          <span className="text-amber-700">⭐ {earnedPoints} poäng</span>
+          <span className="text-amber-700 dark:text-amber-300">⭐ {earnedPoints} poäng</span>
         </div>
       </main>
 

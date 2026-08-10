@@ -56,7 +56,7 @@ export default function MysteryBoxPopup({ reward, onClose }: MysteryBoxPopupProp
             <h2 className="text-2xl font-black mb-2" style={{ color: "#006AA7" }}>
               Mysterykista!
             </h2>
-            <p className="text-gray-500 dark:text-gray-400 mb-6 text-sm">
+            <p className="text-gray-500 dark:text-gray-300 mb-6 text-sm">
               Du hittade en mysterykista! Klicka för att öppna den.
             </p>
             <button

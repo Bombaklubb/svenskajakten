@@ -101,7 +101,7 @@ export default function Header({ student, onLogout }: HeaderProps) {
               title="Totala poäng du samlat"
               style={{ boxShadow: "0 3px 0 0 rgba(245, 158, 11, 0.25), inset 0 2px 4px 0 rgba(255, 255, 255, 0.8)" }}
             >
-              <span className="text-amber-700 text-base">⭐</span>
+              <span className="text-amber-700 text-base dark:text-amber-300">⭐</span>
               <span className="text-sm font-bold text-amber-900 dark:text-amber-300">{student.totalPoints}</span>
             </div>
 
@@ -139,7 +139,7 @@ export default function Header({ student, onLogout }: HeaderProps) {
             {/* Dark mode */}
             <button
               onClick={toggle}
-              className="p-2.5 rounded-xl text-sv-800 dark:text-gray-400 hover:bg-sv-50 dark:hover:bg-gray-800 hover:text-sv-800 transition-all touch-manipulation cursor-pointer border-2 border-transparent hover:border-sv-200"
+              className="p-2.5 rounded-xl text-sv-800 dark:text-gray-300 hover:bg-sv-50 dark:hover:bg-gray-800 hover:text-sv-800 transition-all touch-manipulation cursor-pointer border-2 border-transparent hover:border-sv-200"
               aria-label={dark ? "Ljust läge" : "Mörkt läge"}
             >
               {dark ? "☀️" : "🌙"}
@@ -158,7 +158,7 @@ export default function Header({ student, onLogout }: HeaderProps) {
         {!student && (
           <button
             onClick={toggle}
-            className="p-2.5 rounded-xl text-sv-800 dark:text-gray-400 hover:bg-sv-50 dark:hover:bg-gray-800 transition-all cursor-pointer"
+            className="p-2.5 rounded-xl text-sv-800 dark:text-gray-300 hover:bg-sv-50 dark:hover:bg-gray-800 transition-all cursor-pointer"
             aria-label={dark ? "Ljust läge" : "Mörkt läge"}
           >
             {dark ? "☀️" : "🌙"}

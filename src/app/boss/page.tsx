@@ -204,7 +204,7 @@ export default function BossPage() {
                     <span>📝 {boss.questions.length} frågor</span>
                     <span>🏆 +{boss.bonusPoints} poäng</span>
                   </div>
-                  <span className="font-bold text-gray-500 dark:text-gray-400 text-sm">Utmana →</span>
+                  <span className="font-bold text-gray-500 dark:text-gray-300 text-sm">Utmana →</span>
                 </div>
               </button>
             );
@@ -245,7 +245,7 @@ export default function BossPage() {
             <div className="text-center">
               <div className="text-7xl mb-3 drop-shadow-lg">{activeBoss.emoji}</div>
               <h2 className="text-xl font-black text-gray-900 dark:text-gray-100 mb-2">Möt {activeBoss.name}!</h2>
-              <p className="text-gray-500 dark:text-gray-400 text-sm">{activeBoss.description}</p>
+              <p className="text-gray-500 dark:text-gray-300 text-sm">{activeBoss.description}</p>
             </div>
 
             <div className="grid grid-cols-3 gap-3 text-center">
@@ -366,7 +366,7 @@ export default function BossPage() {
                     className={btnClass}
                     style={btnStyle}
                   >
-                    <span className="font-bold text-gray-500 dark:text-gray-400 mr-2">{["A", "B", "C", "D"][idx]}.</span>
+                    <span className="font-bold text-gray-500 dark:text-gray-300 mr-2">{["A", "B", "C", "D"][idx]}.</span>
                     {opt}
                   </button>
                 );

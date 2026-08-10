@@ -128,7 +128,7 @@ export default function LararePage() {
           <div className="text-center mb-8">
             <div className="text-5xl mb-3">🏫</div>
             <h1 className="text-2xl font-black text-gray-900 dark:text-gray-100">Lärarvy</h1>
-            <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">Svenskajakten – Anonymiserad statistik</p>
+            <p className="text-gray-500 dark:text-gray-300 text-sm mt-1">Svenskajakten – Anonymiserad statistik</p>
           </div>
           <form
             onSubmit={handleLogin}
@@ -177,7 +177,7 @@ export default function LararePage() {
             <span className="text-2xl">🏫</span>
             <div>
               <h1 className="font-black text-gray-900 dark:text-gray-100 text-lg">Lärarvy – Svenskajakten</h1>
-              <p className="text-xs text-gray-600 dark:text-gray-500">Anonymiserad aggregerad statistik · GDPR-säkrad</p>
+              <p className="text-xs text-gray-600 dark:text-gray-300">Anonymiserad aggregerad statistik · GDPR-säkrad</p>
             </div>
           </div>
           <div className="flex items-center gap-3">
@@ -206,7 +206,7 @@ export default function LararePage() {
         )}
 
         {statsLoading && !stats && (
-          <div className="text-center py-16 text-gray-600">
+          <div className="text-center py-16 text-gray-600 dark:text-gray-300">
             <div className="text-4xl animate-pulse mb-3">📊</div>
             <p>Hämtar statistik…</p>
           </div>
@@ -233,7 +233,7 @@ export default function LararePage() {
                   >
                     <div className="text-2xl mb-1">{icon}</div>
                     <div className="text-2xl font-black text-gray-900 dark:text-gray-100">{value}</div>
-                    <div className="text-xs text-gray-500 dark:text-gray-400 mt-0.5 font-medium">{label}</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-300 mt-0.5 font-medium">{label}</div>
                   </div>
                 ))}
               </div>
@@ -258,11 +258,11 @@ export default function LararePage() {
                           <div className="flex items-center gap-2">
                             <span className="font-bold text-gray-800 dark:text-gray-100 text-sm">{s.label}</span>
                             {s.subtitle && (
-                              <span className="text-xs text-gray-600 dark:text-gray-500">{s.subtitle}</span>
+                              <span className="text-xs text-gray-600 dark:text-gray-300">{s.subtitle}</span>
                             )}
                           </div>
                           <div className="flex items-center gap-3">
-                            <span className="text-xs text-gray-500 dark:text-gray-400 font-medium">
+                            <span className="text-xs text-gray-500 dark:text-gray-300 font-medium">
                               {count.toLocaleString("sv-SE")} uppgifter
                             </span>
                             <span className={`text-xs font-bold px-2 py-0.5 rounded-full border ${s.bg} ${s.border} ${s.text}`}>
@@ -281,7 +281,7 @@ export default function LararePage() {
                   });
                 })()}
                 {STAGES.every((s) => (stats.stageExercises[s.id] ?? 0) === 0) && (
-                  <p className="text-center text-gray-600 text-sm py-4">Inga uppgifter registrerade ännu.</p>
+                  <p className="text-center text-gray-600 text-sm py-4 dark:text-gray-300">Inga uppgifter registrerade ännu.</p>
                 )}
               </div>
             </section>

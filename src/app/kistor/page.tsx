@@ -75,16 +75,16 @@ function ChestCard({ chest, onOpen }: { chest: Chest; onOpen: (id: string) => vo
 
       {/* Text */}
       <div className="flex-1 min-w-0">
-        <p className={`font-bold text-base leading-tight ${chest.opened ? "text-gray-600 dark:text-gray-500" : "text-white"}`}>
+        <p className={`font-bold text-base leading-tight ${chest.opened ? "text-gray-600 dark:text-gray-300" : "text-white"}`}>
           {meta.label}
         </p>
         {chest.opened ? (
-          <p className="text-xs text-gray-600 dark:text-gray-500 mt-0.5">Öppnad</p>
+          <p className="text-xs text-gray-600 dark:text-gray-300 mt-0.5">Öppnad</p>
         ) : (
           <p className="text-sm text-white/80 mt-0.5">{meta.description}</p>
         )}
         {chest.opened && chest.openedReward && (
-          <p className="text-xs text-gray-500 dark:text-gray-400 leading-snug mt-0.5">{chest.openedReward}</p>
+          <p className="text-xs text-gray-500 dark:text-gray-300 leading-snug mt-0.5">{chest.openedReward}</p>
         )}
       </div>
 
@@ -219,7 +219,7 @@ function TrophyShelf({ chests }: { chests: Chest[] }) {
                   <div key={chest.id} className="flex flex-col items-center gap-1 w-14">
                     <img src={meta.openImage} alt={meta.label} className={`w-8 h-8 object-contain drop-shadow ${meta.imageClass ?? ""}`} />
                     {chest.openedReward && (
-                      <span className="text-[10px] text-center text-gray-500 dark:text-gray-400 leading-tight line-clamp-2">
+                      <span className="text-[10px] text-center text-gray-500 dark:text-gray-300 leading-tight line-clamp-2">
                         {chest.openedReward}
                       </span>
                     )}

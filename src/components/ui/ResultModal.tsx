@@ -86,7 +86,7 @@ export default function ResultModal({
         <h2 id="resultat-rubrik" className="text-3xl font-black text-sv-900 dark:text-gray-100 mb-2">
           {passed ? "Bra jobbat!" : "Försök igen!"}
         </h2>
-        <p className="text-sv-800 dark:text-gray-400 mb-6 text-base font-medium">
+        <p className="text-sv-800 dark:text-gray-300 mb-6 text-base font-medium">
           {subtitle ?? (passed
             ? "Du klarade övningen med godkänt resultat."
             : "Du är nästan framme – öva lite till!")}
@@ -109,7 +109,7 @@ export default function ResultModal({
             <span className={`text-4xl font-black ${passed ? "text-emerald-600 dark:text-emerald-400" : "text-sv-800"}`}>
               {pct}%
             </span>
-            <span className="text-sm text-sv-800 dark:text-gray-400 mt-1 font-bold">
+            <span className="text-sm text-sv-800 dark:text-gray-300 mt-1 font-bold">
               {totalCorrect}/{totalQuestions}
             </span>
           </div>
@@ -189,7 +189,7 @@ export default function ResultModal({
         )}
 
         <div className="flex gap-3 mt-6">
-          <Button variant="outline" onClick={onRetry} className="flex-1 border-sv-200 text-sv-800">
+          <Button variant="outline" onClick={onRetry} className="flex-1 border-sv-200 text-sv-800 dark:text-gray-200">
             🔄 Försök igen
           </Button>
           <button
