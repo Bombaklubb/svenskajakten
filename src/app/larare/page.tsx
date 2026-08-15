@@ -23,14 +23,6 @@ const STAGES = [
   { id: "gymnasiet",     label: "Nivå 10",   subtitle: "Skrivakademin",  color: "#a855f7", bg: "bg-purple-50 dark:bg-purple-900/20", border: "border-purple-200 dark:border-purple-700", text: "text-purple-700 dark:text-purple-300" },
 ];
 
-function formatDuration(seconds: number): string {
-  if (seconds < 60) return `${seconds} sek`;
-  const h = Math.floor(seconds / 3600);
-  const m = Math.floor((seconds % 3600) / 60);
-  if (h === 0) return `${m} min`;
-  return `${h}h ${m}m`;
-}
-
 function formatStartDate(iso: string): string {
   return new Date(iso).toLocaleDateString("sv-SE", {
     year: "numeric",
@@ -221,7 +213,7 @@ export default function LararePage() {
                 {[
                   { label: "Inloggade nu", value: String(stats.totals.onlineNow), icon: "🟢", highlight: stats.totals.onlineNow > 0 },
                   { label: "Inloggade idag", value: stats.totals.todayDevices.toLocaleString("sv-SE"), icon: "📅", highlight: stats.totals.todayDevices > 0 },
-                  { label: "Unika enheter", value: stats.totals.uniqueDevices.toLocaleString("sv-SE"), icon: "💻", highlight: false },
+                  { label: "Enheter sedan start", value: stats.totals.uniqueDevices.toLocaleString("sv-SE"), icon: "💻", highlight: false },
                   { label: "Övningar klarade", value: stats.totals.exercises.toLocaleString("sv-SE"), icon: "✅", highlight: false },
                   {
                     // Share of answered exercises that were wrong – the signal a
@@ -234,7 +226,6 @@ export default function LararePage() {
                     icon: "✏️",
                     highlight: false,
                   },
-                  { label: "Total tid", value: stats.totals.durationSeconds > 0 ? formatDuration(stats.totals.durationSeconds) : "–", icon: "⏱️", highlight: false },
                 ].map(({ label, value, icon, highlight }) => (
                   <div
                     key={label}
@@ -250,6 +241,11 @@ export default function LararePage() {
                   </div>
                 ))}
               </div>
+              <p className="text-xs text-gray-600 dark:text-gray-300 mt-2 max-w-3xl leading-relaxed">
+                &quot;Enheter sedan start&quot; räknar webbläsarprofiler som kört appen, inte fysiska datorer –
+                en rensad Chromebook eller ett gästläge räknas som en ny. Siffran växer alltid och
+                säger inget om hur många som använder appen just nu.
+              </p>
             </section>
 
             {/* Per-stage usage */}
