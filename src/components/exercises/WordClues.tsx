@@ -3,6 +3,7 @@
 import { useState, useRef } from "react";
 import type { WordCluesExercise } from "@/lib/types";
 import { getCorrectMessage } from "@/lib/feedback";
+import { isAnswerCorrect } from "@/lib/answers";
 
 interface Props {
   exercise: WordCluesExercise;
@@ -17,16 +18,9 @@ export default function WordClues({ exercise, onAnswer, isLast }: Props) {
   const [showHint, setShowHint] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  function normalize(s: string) {
-    return s.trim().toLowerCase();
-  }
-
   function handleSubmit() {
     if (state !== "idle" || !input.trim()) return;
-    const given = normalize(input);
-    const expected = normalize(exercise.answer);
-    const alternatives = (exercise.alternativeAnswers ?? []).map(normalize);
-    const correct = given === expected || alternatives.includes(given);
+    const correct = isAnswerCorrect(input, exercise.answer, exercise.alternativeAnswers);
     if (correct) setCorrectMsg(getCorrectMessage());
     setState(correct ? "correct" : "wrong");
   }

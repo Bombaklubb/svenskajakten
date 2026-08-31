@@ -3,6 +3,7 @@
 import { useState, useRef } from "react";
 import type { FillInBlankExercise } from "@/lib/types";
 import { getCorrectMessage } from "@/lib/feedback";
+import { isAnswerCorrect } from "@/lib/answers";
 
 interface Props {
   exercise: FillInBlankExercise;
@@ -19,17 +20,9 @@ export default function FillInBlank({ exercise, onAnswer, isLast }: Props) {
 
   const parts = exercise.question.split("___");
 
-  function normalizeAnswer(s: string) {
-    return s.trim().toLowerCase()
-      .replace(/[\u2018\u2019\u201A\u201B\u2032\u02BC]/g, "'");
-  }
-
   function handleSubmit() {
     if (state !== "idle" || !input.trim()) return;
-    const given = normalizeAnswer(input);
-    const expected = normalizeAnswer(exercise.answer);
-    const alternatives = (exercise.alternativeAnswers ?? []).map(normalizeAnswer);
-    const correct = given === expected || alternatives.includes(given);
+    const correct = isAnswerCorrect(input, exercise.answer, exercise.alternativeAnswers, exercise.caseSensitive);
     if (correct) setCorrectMsg(getCorrectMessage());
     setState(correct ? "correct" : "wrong");
   }
@@ -65,9 +58,10 @@ export default function FillInBlank({ exercise, onAnswer, isLast }: Props) {
                 }`}
               >
                 {state !== "idle" ? (
-                  <span className="font-bold">
-                    {state === "correct" ? input : exercise.answer}
-                  </span>
+                  // Always the pupil's own words. Showing the facit here made a
+                  // wrong answer look like a correct one being rejected; the
+                  // right answer is stated in the feedback box below instead.
+                  <span className="font-bold">{input}</span>
                 ) : (
                   <span className="text-gray-600 text-sm italic dark:text-gray-300">svar</span>
                 )}

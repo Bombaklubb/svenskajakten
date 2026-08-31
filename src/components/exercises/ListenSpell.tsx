@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import type { ListenSpellExercise } from "@/lib/types";
 import { getCorrectMessage } from "@/lib/feedback";
+import { isAnswerCorrect } from "@/lib/answers";
 
 interface Props {
   exercise: ListenSpellExercise;
@@ -55,7 +56,7 @@ export default function ListenSpell({ exercise, onAnswer, isLast }: Props) {
 
   function handleSubmit() {
     if (state !== "idle" || !input.trim()) return;
-    const correct = input.trim().toLowerCase() === exercise.word.trim().toLowerCase();
+    const correct = isAnswerCorrect(input, exercise.word);
     if (correct) setCorrectMsg(getCorrectMessage());
     setState(correct ? "correct" : "wrong");
   }

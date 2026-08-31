@@ -1044,7 +1044,8 @@
           "alternativeAnswers": [
             "Jag",
             "Flickan"
-          ]
+          ],
+          "caseSensitive": true
         },
         {
           "type": "multiple-choice",
@@ -1092,7 +1093,8 @@
           "question": "Fyll i rätt: '___ väcker mig varje morgon.' (börja med 'mamma')",
           "answer": "Mamma",
           "hint": "Det första ordet i en mening ska ha stor bokstav.",
-          "explanation": "Meningen börjar med 'Mamma' – stor M eftersom det är första ordet."
+          "explanation": "Meningen börjar med 'Mamma' – stor M eftersom det är första ordet.",
+          "caseSensitive": true
         },
         {
           "type": "multiple-choice",
@@ -1137,7 +1139,10 @@
             4,
             5
           ],
-          "explanation": "'Erik', 'Maja' (personnamn) och 'Malmö' (stad) börjar alla med stor bokstav."
+          "explanation": "Namn skrivs alltid med stor bokstav: Erik, Maja och Malmö. Ordningen på namnen spelar ingen roll – både 'Erik och Maja' och 'Maja och Erik' är rätt.",
+          "alternativeSentences": [
+            "Maja och Erik bor i Malmö."
+          ]
         },
         {
           "type": "multiple-choice",
@@ -1156,7 +1161,8 @@
           "question": "Skriv rätt: 'Vi åkte till ___.' (staden i västra Sverige, börjar med G)",
           "answer": "Göteborg",
           "hint": "Stadsnamn börjar alltid med stor bokstav.",
-          "explanation": "'Göteborg' börjar med stor G – det är ett platsnamn."
+          "explanation": "'Göteborg' börjar med stor G – det är ett platsnamn.",
+          "caseSensitive": true
         },
         {
           "type": "multiple-choice",
@@ -1187,7 +1193,8 @@
           "question": "Korrigera: 'min kompis heter nova.' → '___'",
           "answer": "Min kompis heter Nova.",
           "hint": "Tänk på stor bokstav i början av meningen och på personnamnet.",
-          "explanation": "Rätt: 'Min kompis heter Nova.' – stor M i början, stor N i namnet Nova."
+          "explanation": "Rätt: 'Min kompis heter Nova.' – stor M i början, stor N i namnet Nova.",
+          "caseSensitive": true
         },
         {
           "type": "multiple-choice",
@@ -1253,7 +1260,8 @@
           "question": "Fyll i rätt: '___ spelar fotboll.' (börja med pojknamnet 'omar')",
           "answer": "Omar",
           "hint": "Personnamn börjar alltid med stor bokstav.",
-          "explanation": "'Omar' börjar med stor O – det är ett personnamn."
+          "explanation": "'Omar' börjar med stor O – det är ett personnamn.",
+          "caseSensitive": true
         }
       ]
     },

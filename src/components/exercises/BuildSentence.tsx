@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { BuildSentenceExercise } from "@/lib/types";
 import { getCorrectMessage } from "@/lib/feedback";
+import { isSentenceCorrect } from "@/lib/answers";
 
 function shuffle(arr: number[]): number[] {
   const a = [...arr];
@@ -40,13 +41,21 @@ export default function BuildSentence({ exercise, onAnswer, isLast }: Props) {
     setPlaced((prev) => prev.filter((_, i) => i !== posInPlaced));
   }
 
+  /** The sentence as text, so wording is compared rather than tile positions. */
+  function sentenceFrom(order: number[]): string {
+    return order.map((i) => exercise.words[i]).join(" ").replace(/\s+/g, " ").trim();
+  }
+
   function checkAnswer() {
     if (placed.length !== exercise.words.length) return;
-    // Compare the actual words at each position (not tile indices) so that
-    // sentences containing the same word twice accept either identical tile.
-    const correct =
-      placed.length === exercise.correctOrder.length &&
-      placed.every((wordIdx, pos) => exercise.words[wordIdx] === exercise.words[exercise.correctOrder[pos]]);
+    // Compared as text, not as tile indices, for two reasons: a sentence can
+    // contain the same word twice (either tile should count), and some
+    // sentences have more than one correct order — "Erik och Maja" and "Maja
+    // och Erik" are both right when the exercise is about capital letters.
+    const correct = isSentenceCorrect(sentenceFrom(placed), [
+      sentenceFrom(exercise.correctOrder),
+      ...(exercise.alternativeSentences ?? []),
+    ]);
     if (correct) setCorrectMsg(getCorrectMessage());
     setState(correct ? "correct" : "wrong");
   }

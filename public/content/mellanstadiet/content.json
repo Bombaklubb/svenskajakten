@@ -41,7 +41,12 @@
           "question": "Subjektet i 'De tre pojkarna spelar fotboll' är ___.",
           "answer": "De tre pojkarna",
           "hint": "Vem spelar fotboll?",
-          "explanation": "'De tre pojkarna' är subjektet – de är de som spelar."
+          "explanation": "Hela ordgruppen 'De tre pojkarna' är subjektet – det är de som spelar. Kärnan i gruppen är substantivet 'pojkarna'.",
+          "alternativeAnswers": [
+            "pojkarna",
+            "de 3 pojkarna",
+            "tre pojkarna"
+          ]
         },
         {
           "type": "multiple-choice",

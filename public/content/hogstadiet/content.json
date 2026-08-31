@@ -268,7 +268,7 @@
         "Svenska ord kan sättas ihop till sammansatta ord.",
         "Exempel: hus + dörr = husdörr.",
         "Det sista ledet anger vad det är, det första preciserar.",
-        "Foge-s används ibland: lands + väg = landsväg."
+        "Ibland binds leden ihop av ett extra s – ett foge-s: land + s + väg = landsväg."
       ],
       "exercises": [
         {
@@ -352,15 +352,16 @@
         },
         {
           "type": "multiple-choice",
-          "question": "Vilket sammansatt ord har foge-s?",
+          "question": "Dela upp orden i två led. I vilket ord binds leden ihop av ett extra s?",
           "options": [
-            "fotboll",
-            "nyckelring",
-            "landsväg",
-            "blåbär"
+            "fot + boll",
+            "nyckel + ring",
+            "land + s + väg",
+            "blå + bär"
           ],
           "correctIndex": 2,
-          "explanation": "'Landsväg' = land + s + väg. Foge-s binder ihop de två leden."
+          "explanation": "'Landsväg' = land + s + väg. Det extra s:et kallas foge-s och binder ihop leden. I fotboll, nyckelring och blåbär sitter leden ihop utan foge-s.",
+          "hint": "Leta efter ett s som inte hör till något av de två orden var för sig."
         },
         {
           "type": "multiple-choice",

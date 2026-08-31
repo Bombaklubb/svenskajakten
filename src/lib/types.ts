@@ -37,6 +37,9 @@ export interface FillInBlankExercise {
   question: string;
   answer: string;
   alternativeAnswers?: string[];
+  /** Set when the capital letter is the point of the exercise, so that
+   *  "mamma" is not accepted for "Mamma". */
+  caseSensitive?: boolean;
   hint?: string;
   explanation?: string;
 }
@@ -47,6 +50,9 @@ export interface BuildSentenceExercise {
   instruction: string;
   words: string[];
   correctOrder: number[];
+  /** Other word orders that are equally correct, e.g. two coordinated names
+   *  swapped ("Erik och Maja" / "Maja och Erik"). Given as full sentences. */
+  alternativeSentences?: string[];
   hint?: string;
   explanation?: string;
 }
