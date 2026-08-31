@@ -13,6 +13,10 @@ import assert from "node:assert/strict";
 
 import {
   getPointsMultiplier,
+  getGamePointsMultiplier,
+  computeGameAward,
+  MINIGAME_DAILY_CAP,
+  RETRY_CORRECT_POINTS,
   rollSurpriseMultiplier,
   POINT_CHEST_MILESTONES,
   EXERCISE_CHEST_MILESTONES,
@@ -190,5 +194,103 @@ describe("spenderbara poäng", () => {
   test("klarar att spentPoints saknas i gamla sparfiler", () => {
     const legacy = { name: "T", totalPoints: 500 } as unknown as StudentData;
     assert.equal(getSpendable(legacy), 500);
+  });
+});
+
+describe("minispelens poäng", () => {
+  // The mini-games can be restarted for ever, so they need a ceiling that the
+  // modules do not: without one, replaying Tidsattack was the fastest way to
+  // earn points in the whole app.
+
+  test("första omgången för dagen ger full poäng", () => {
+    assert.deepEqual(computeGameAward(200, 0, 0), {
+      awarded: 200,
+      multiplier: 1,
+      capped: false,
+    });
+  });
+
+  test("ett omspel ger mindre än första gången", () => {
+    const first = computeGameAward(200, 0, 0).awarded;
+    const second = computeGameAward(200, 1, first).awarded;
+    const third = computeGameAward(200, 2, first + second).awarded;
+    assert.ok(second < first, `omspel ${second} borde vara mindre än ${first}`);
+    assert.ok(third < second, `tredje ${third} borde vara mindre än ${second}`);
+  });
+
+  test("rabatten planar ut men når aldrig noll", () => {
+    for (let plays = 0; plays < 40; plays++) {
+      const m = getGamePointsMultiplier(plays);
+      assert.ok(m > 0 && m <= 1, `multiplikator ${m} vid ${plays} spel`);
+    }
+    assert.equal(getGamePointsMultiplier(4), getGamePointsMultiplier(40));
+  });
+
+  test("rabatten är mildare än modulernas – spelen ger nya ord varje gång", () => {
+    for (let n = 1; n < 10; n++) {
+      assert.ok(
+        getGamePointsMultiplier(n) >= getPointsMultiplier(n),
+        `spelrabatt vid ${n} omspel borde vara mildare än modulrabatten`
+      );
+    }
+  });
+
+  test("ett spel kan aldrig ge mer än dagsgränsen", () => {
+    // The exploit: grind one game all afternoon. Whatever the raw score and
+    // however many rounds, the day's total for that game stops at the cap.
+    let earnedToday = 0;
+    for (let round = 0; round < 200; round++) {
+      earnedToday += computeGameAward(1000, round, earnedToday).awarded;
+    }
+    assert.equal(earnedToday, MINIGAME_DAILY_CAP);
+  });
+
+  test("sista poängen fram till taket betalas ut, resten kapas", () => {
+    const result = computeGameAward(1000, 0, MINIGAME_DAILY_CAP - 25);
+    assert.equal(result.awarded, 25);
+    assert.equal(result.capped, true);
+  });
+
+  test("inget delas ut när taket redan är nått", () => {
+    const result = computeGameAward(500, 0, MINIGAME_DAILY_CAP);
+    assert.equal(result.awarded, 0);
+    assert.equal(result.capped, true);
+  });
+
+  test("noll eller negativ råpoäng ger aldrig poäng", () => {
+    assert.equal(computeGameAward(0, 0, 0).awarded, 0);
+    assert.equal(computeGameAward(-500, 0, 0).awarded, 0);
+  });
+
+  test("ett spel ger högst lika mycket per dag som ett par moduler", () => {
+    // A finished module pays roughly 15 points x 20 exercises plus a bonus.
+    // The cap keeps a whole day of one game in the same range, so no single
+    // activity dwarfs the rest.
+    const wellPlayedModule = 15 * 20 + 50;
+    assert.ok(MINIGAME_DAILY_CAP <= wellPlayedModule * 1.5);
+  });
+});
+
+describe("ingen genväg ger mer än att kunna svaret", () => {
+  /** What a module pays for one correct answer the first time round. */
+  const POINTS_PER_CORRECT = 15;
+
+  test("att rätta ett fel ger mindre än att ha rätt direkt", () => {
+    // The "Försök igen" queue is filled by wrong answers. When clearing it paid
+    // more than a correct answer (it used to pay a random 25–50), the cheapest
+    // route through the app was to answer badly on purpose and then fix it.
+    assert.ok(
+      RETRY_CORRECT_POINTS < POINTS_PER_CORRECT,
+      `omspelspoäng ${RETRY_CORRECT_POINTS} måste vara lägre än ${POINTS_PER_CORRECT}`
+    );
+  });
+
+  test("att rätta ett fel ger fortfarande något", () => {
+    // Redoing a mistake should still be worth the pupil's time.
+    assert.ok(RETRY_CORRECT_POINTS > 0);
+  });
+
+  test("ett fel följt av en rättning slår inte ett rätt svar direkt", () => {
+    assert.ok(0 + RETRY_CORRECT_POINTS < POINTS_PER_CORRECT);
   });
 });

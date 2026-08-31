@@ -197,6 +197,13 @@ export interface StudentData {
   equippedTheme?: string;     // currently equipped background theme id ("" / undefined = standard)
   ownedEffects?: string[];    // effect ids the student owns
   equippedEffect?: string;    // currently equipped avatar effect id ("" / undefined = none)
+  // ─── Mini-games ─────────────────────────────────────────
+  /** Today's mini-game payouts, used to decay replays and cap the daily total.
+   *  Reset whenever `date` (YYYY-MM-DD) is no longer today. */
+  gamePlays?: {
+    date: string;
+    games: Record<string, { plays: number; points: number }>;
+  };
 }
 
 // ─── Gamification ─────────────────────────────────────────────────────────────

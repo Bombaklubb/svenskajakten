@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useEffect, useCallback, use } from "react";
+import { useState, useEffect, useCallback, useRef, use } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/ui/Header";
-import { loadStudent, saveStudent } from "@/lib/storage";
+import { loadStudent, awardGamePoints, type GameAward } from "@/lib/storage";
 import { getStage } from "@/lib/stages";
 import type { StudentData } from "@/lib/types";
 
@@ -237,7 +237,11 @@ function SnogubbenGame({ stageId, stage, student, setStudent }: {
   const [guessed, setGuessed] = useState<Set<string>>(new Set());
   const [phase, setPhase] = useState<"playing" | "won" | "lost">("playing");
   const [score, setScore] = useState(0);
+  const [award, setAward] = useState<GameAward | null>(null);
   const [showHint, setShowHint] = useState(false);
+  // Each solved word is banked immediately, so this ref only guards against the
+  // effect firing twice for the same word before the phase state settles.
+  const awardedRef = useRef(false);
 
   const current = wordList[wordIndex % wordList.length];
   const wordLetters = current.word.replace(/\s/g, "").split("");
@@ -251,13 +255,16 @@ function SnogubbenGame({ stageId, stage, student, setStudent }: {
 
   useEffect(() => {
     if (isWon && phase === "playing") {
-      const pts = 75 + livesLeft * 15;
-      setScore(s => s + pts);
-      if (student) {
-        const updated = { ...student, totalPoints: student.totalPoints + pts };
-        saveStudent(updated);
-        setStudent(updated);
-      }
+      if (awardedRef.current) return;
+      awardedRef.current = true;
+      // This game banks per solved word and the word list never runs out, so
+      // it was by far the fastest way to farm points. awardGamePoints applies
+      // the replay decay and the daily ceiling; it also reads the stored pupil
+      // instead of the copy in state, which could be stale by now.
+      const result = awardGamePoints("hangman", 30 + livesLeft * 5);
+      setAward(result);
+      setScore(s => s + result.awarded);
+      if (result.student) setStudent(result.student);
       setPhase("won");
     } else if (isLost && phase === "playing") {
       setPhase("lost");
@@ -270,6 +277,8 @@ function SnogubbenGame({ stageId, stage, student, setStudent }: {
   }, [phase, guessed]);
 
   const nextWord = useCallback(() => {
+    awardedRef.current = false;
+    setAward(null);
     setWordIndex(i => i + 1);
     setGuessed(new Set());
     setPhase("playing");
@@ -370,8 +379,17 @@ function SnogubbenGame({ stageId, stage, student, setStudent }: {
           }`}>
             <div className="text-3xl mb-1">{phase === "won" ? "🎉" : "☀️"}</div>
             <p className="font-black text-gray-900 dark:text-gray-100 text-base">
-              {phase === "won" ? `Rätt! +${50 + livesLeft * 10}p` : `Ordet var: ${current.word}`}
+              {phase === "won"
+                ? award && award.awarded === 0
+                  ? "Rätt! (dagens poäng för spelet är slut)"
+                  : `Rätt! +${award?.awarded ?? 0}p`
+                : `Ordet var: ${current.word}`}
             </p>
+            {phase === "won" && award && award.multiplier < 1 && award.awarded > 0 && (
+              <p className="text-xs text-gray-600 dark:text-gray-300 mt-1">
+                Omspel – {Math.round(award.multiplier * 100)}% poäng
+              </p>
+            )}
             <div className="flex gap-2 justify-center mt-3">
               <button
                 onClick={nextWord}

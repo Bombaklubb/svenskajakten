@@ -65,8 +65,10 @@ export default function ResultModal({
   const passed = passedOverride !== undefined ? passedOverride : pct >= 60;
   const multiplier = getPointsMultiplier(prevAttempts);
   const surprise = surpriseMultiplier > 1 ? surpriseMultiplier : 1;
-  const displayPoints = Math.round(points * multiplier) * surprise;
-  const displayBonus = Math.round(bonusPoints * multiplier) * surprise;
+  // Rounded the same way and in the same order as saveModuleProgress saves it,
+  // so the number on screen is exactly the number added to the total.
+  const displayPoints = Math.round(points * surprise * multiplier);
+  const displayBonus = Math.round(bonusPoints * surprise * multiplier);
 
   return (
     <div

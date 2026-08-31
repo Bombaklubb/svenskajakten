@@ -4,7 +4,8 @@ import { useState, useEffect, useCallback, useRef, use } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/ui/Header";
-import { loadStudent, awardPoints } from "@/lib/storage";
+import { loadStudent, awardGamePoints, type GameAward } from "@/lib/storage";
+import GameAwardNote from "@/components/ui/GameAwardNote";
 import { getStage } from "@/lib/stages";
 import type { StudentData } from "@/lib/types";
 
@@ -191,6 +192,11 @@ function MemoryGame({ stageId, stage, student, onStudentChange }: {
   }, [phase]);
 
   const startGame = useCallback((diff: Difficulty) => {
+    // Cleared so a replay banks its (reduced) score too. Leaving it set meant a
+    // pupil who pressed "Spela igen" earned nothing, while one who reloaded the
+    // page got full points for the very same round.
+    awardedRef.current = false;
+    setAward(null);
     setDifficulty(diff);
     setCards(buildCards(stageId, diff));
     setFlippedUids([]);
@@ -244,16 +250,18 @@ function MemoryGame({ stageId, stage, student, onStudentChange }: {
   const mins = Math.floor(seconds / 60);
   const secs = seconds % 60;
   const timeStr = mins > 0 ? `${mins}:${secs.toString().padStart(2, "0")}` : `${secs}s`;
-  const score = Math.max(15, 300 - moves * 4 - Math.floor(seconds / 4));
+  const score = Math.max(10, 180 - moves * 3 - Math.floor(seconds / 4));
 
   // Bank the score once the game is over. Guarded by a ref because the phase is
   // state: without it a re-render before the flag settles would pay out twice.
   const awardedRef = useRef(false);
+  const [award, setAward] = useState<GameAward | null>(null);
   useEffect(() => {
     if (!(phase === "victory") || awardedRef.current) return;
     awardedRef.current = true;
-    const updated = awardPoints(score);
-    if (updated) onStudentChange(updated);
+    const result = awardGamePoints("memory", score);
+    setAward(result);
+    if (result.student) onStudentChange(result.student);
   }, [phase, score, onStudentChange]);
 
   const gridCols = difficulty === "hard" ? "grid-cols-3 sm:grid-cols-4" : "grid-cols-2 sm:grid-cols-4";
@@ -331,6 +339,8 @@ function MemoryGame({ stageId, stage, student, onStudentChange }: {
                 <p className="text-gray-600 dark:text-gray-300 text-xs">Tid</p>
               </div>
             </div>
+
+            <GameAwardNote award={award} />
 
             <div className="flex flex-col gap-3">
               <button

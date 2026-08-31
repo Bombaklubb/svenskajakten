@@ -2,6 +2,7 @@ import type { StudentData, StageId, ModuleProgress, StageProgress, HeroConfig, G
 import {
   defaultGamificationData,
   getPointsMultiplier,
+  computeGameAward,
   DAILY_LOGIN_BONUS,
   MILESTONE_SCALE,
   POINT_CHEST_MILESTONES,
@@ -175,25 +176,55 @@ export function saveStudent(data: StudentData): void {
   safeSetItem(CURRENT_KEY, data.name);
 }
 
+export interface GameAward {
+  /** The saved pupil, or null when nobody is logged in. */
+  student: StudentData | null;
+  /** Points actually added, after the replay decay and the daily cap. */
+  awarded: number;
+  /** The decay applied to this round (1 for the first play of the day). */
+  multiplier: number;
+  /** True when the daily cap swallowed part or all of the round. */
+  capped: boolean;
+}
+
 /**
- * Add points earned outside a module — the mini-games — to the current pupil.
+ * Add points earned in a mini-game to the current pupil.
+ *
+ * The games can be restarted for ever, so unlike a module they cannot simply
+ * pay their score out every time — that would make replaying one game the
+ * fastest way to earn points in the whole app. Each round is therefore worth
+ * less than the last (see getGamePointsMultiplier) and every game stops paying
+ * once it has given MINIGAME_DAILY_CAP points today. Both reset at midnight.
  *
  * Reads the stored pupil rather than taking one as an argument so a stale copy
- * held in component state cannot overwrite progress saved elsewhere. Returns
- * the updated pupil, or null when there is nobody logged in or nothing to add.
+ * held in component state cannot overwrite progress saved elsewhere.
  */
-export function awardPoints(points: number): StudentData | null {
-  if (typeof window === "undefined") return null;
-  const rounded = Math.max(0, Math.round(points));
-  if (rounded === 0) return null;
+export function awardGamePoints(gameId: string, rawPoints: number): GameAward {
+  const empty: GameAward = { student: null, awarded: 0, multiplier: 1, capped: false };
+  if (typeof window === "undefined") return empty;
   const name = getCurrentName();
-  if (!name) return null;
-  const all = getAllStudents();
-  const current = all[name];
-  if (!current) return null;
-  const updated = { ...current, totalPoints: current.totalPoints + rounded };
+  if (!name) return empty;
+  const current = getAllStudents()[name];
+  if (!current) return empty;
+  // A round worth nothing must not burn a step of the replay decay, or a pupil
+  // who has a bad first go would earn less for the good round that follows.
+  if (Math.round(Math.max(0, rawPoints)) === 0) return { ...empty, student: current };
+
+  const today = new Date().toISOString().slice(0, 10);
+  const sameDay = current.gamePlays?.date === today;
+  const games = sameDay ? { ...current.gamePlays!.games } : {};
+  const record = games[gameId] ?? { plays: 0, points: 0 };
+
+  const { awarded, multiplier, capped } = computeGameAward(rawPoints, record.plays, record.points);
+
+  games[gameId] = { plays: record.plays + 1, points: record.points + awarded };
+  const updated: StudentData = {
+    ...current,
+    totalPoints: current.totalPoints + awarded,
+    gamePlays: { date: today, games },
+  };
   saveStudent(updated);
-  return updated;
+  return { student: updated, awarded, multiplier, capped };
 }
 
 export function createStudent(name: string, avatar?: string): StudentData {

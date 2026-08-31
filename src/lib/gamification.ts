@@ -19,6 +19,16 @@ export const MILESTONE_SCALE = 2;
 export const DAILY_LOGIN_BONUS = 50;
 
 /**
+ * Points for clearing an item from the "Försök igen" queue.
+ *
+ * Deliberately below what a first-time correct answer pays (15). The queue is
+ * filled by getting something wrong, so a larger reward would mean answering
+ * badly on purpose and then fixing it was worth more than knowing the answer —
+ * which is what the old random 25–50 did.
+ */
+export const RETRY_CORRECT_POINTS = 10;
+
+/**
  * Surprise points multiplier rolled when a module is completed.
  * Pure chance (no pattern): ~4% triple points, ~8% double points, otherwise 1.
  * Kept deliberately unpredictable so students can't game it.
@@ -36,6 +46,47 @@ export function getPointsMultiplier(prevAttempts: number): number {
   if (prevAttempts === 2) return 0.5;
   if (prevAttempts === 3) return 0.3;
   return 0.2;
+}
+
+/**
+ * Most points a single mini-game may pay out to one pupil in one day.
+ *
+ * The mini-games can be restarted endlessly, so without a ceiling they are a
+ * faster way to earn points than doing the exercises. The cap is set a little
+ * above what a finished module pays so a game is worth playing, but grinding
+ * one all afternoon is not the shortest route to the shop.
+ */
+export const MINIGAME_DAILY_CAP = 400;
+
+/**
+ * Replay decay for the mini-games, milder than the one modules use.
+ *
+ * A module is the same twenty questions every time, so its points fall away
+ * quickly. A mini-game deals new words each round, so a pupil who keeps
+ * playing is still practising — the curve flattens at 40% rather than 20%.
+ */
+export function getGamePointsMultiplier(prevPlays: number): number {
+  if (prevPlays <= 0) return 1.0;
+  if (prevPlays === 1) return 0.8;
+  if (prevPlays === 2) return 0.6;
+  if (prevPlays === 3) return 0.5;
+  return 0.4;
+}
+
+/**
+ * What one mini-game round is worth, given how much that game has already paid
+ * out today. Kept separate from storage so the rule can be tested on its own.
+ */
+export function computeGameAward(
+  rawPoints: number,
+  prevPlays: number,
+  pointsToday: number
+): { awarded: number; multiplier: number; capped: boolean } {
+  const multiplier = getGamePointsMultiplier(prevPlays);
+  const wanted = Math.max(0, Math.round(Math.max(0, rawPoints) * multiplier));
+  const room = Math.max(0, MINIGAME_DAILY_CAP - Math.max(0, pointsToday));
+  const awarded = Math.min(wanted, room);
+  return { awarded, multiplier, capped: awarded < wanted };
 }
 
 export const POINT_CHEST_MILESTONES: { points: number; type: ChestType }[] = [

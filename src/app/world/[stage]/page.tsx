@@ -10,6 +10,7 @@ import { loadStudent, saveStudent, loadRetryQueue, removeFromRetryQueue } from "
 import { getStage } from "@/lib/stages";
 import { loadStageContent } from "@/lib/content";
 import { getThemeClassName, getThemeStyle, getThemeWrapperClass } from "@/lib/shop";
+import { RETRY_CORRECT_POINTS } from "@/lib/gamification";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import MultipleChoice from "@/components/exercises/MultipleChoice";
 import FillInBlank from "@/components/exercises/FillInBlank";
@@ -103,7 +104,9 @@ export default function WorldPage({ params }: Props) {
     if (correct) {
       removeFromRetryQueue(stageId, retryItem.key);
       setRetryQueue((q) => q.filter((r) => r.key !== retryItem.key));
-      const pts = Math.floor(Math.random() * 26) + 25; // 25–50
+      // Fixed, and lower than a first-time correct answer: the queue is filled
+      // by mistakes, so paying more here rewarded answering wrong on purpose.
+      const pts = RETRY_CORRECT_POINTS;
       setRetryPoints(pts);
       if (student) {
         const updated = { ...student, totalPoints: student.totalPoints + pts };

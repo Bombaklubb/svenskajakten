@@ -237,12 +237,12 @@ export default function WordSearchModulePage({ params }: Props) {
                 <div className="flex items-center justify-center gap-3 text-amber-700 dark:text-amber-300">
                   <span className="text-3xl">⭐</span>
                   <div>
-                    <span className="text-3xl font-black">{Math.round(earnedPoints * getPointsMultiplier(prevAttemptCount)) * surpriseMult}</span>
+                    <span className="text-3xl font-black">{Math.round(earnedPoints * surpriseMult * getPointsMultiplier(prevAttemptCount))}</span>
                     <span className="text-lg ml-1 font-bold">poäng</span>
                   </div>
                 </div>
                 <p className="text-sm text-amber-700 dark:text-amber-400 mt-1.5 font-semibold">
-                  inkl. {Math.round(mod.bonusPoints * getPointsMultiplier(prevAttemptCount)) * surpriseMult} bonuspoäng för att hitta alla ord!
+                  inkl. {Math.round(mod.bonusPoints * surpriseMult * getPointsMultiplier(prevAttemptCount))} bonuspoäng för att hitta alla ord!
                 </p>
               </div>
 

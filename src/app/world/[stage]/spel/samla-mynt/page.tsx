@@ -4,7 +4,8 @@ import { useState, useEffect, useCallback, useRef, use } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/ui/Header";
-import { loadStudent, awardPoints } from "@/lib/storage";
+import { loadStudent, awardGamePoints, type GameAward } from "@/lib/storage";
+import GameAwardNote from "@/components/ui/GameAwardNote";
 import { getStage } from "@/lib/stages";
 import type { StudentData } from "@/lib/types";
 
@@ -118,11 +119,13 @@ function SamlaMyntGame({ stageId, stage, student, onStudentChange }: {
   // Bank the score once the game is over. Guarded by a ref because the phase is
   // state: without it a re-render before the flag settles would pay out twice.
   const awardedRef = useRef(false);
+  const [award, setAward] = useState<GameAward | null>(null);
   useEffect(() => {
     if (phase !== "done" || awardedRef.current) return;
     awardedRef.current = true;
-    const updated = awardPoints(score);
-    if (updated) onStudentChange(updated);
+    const result = awardGamePoints("samla-mynt", score);
+    setAward(result);
+    if (result.student) onStudentChange(result.student);
   }, [phase, score, onStudentChange]);
 
   const handleAnswer = useCallback((idx: number) => {
@@ -132,7 +135,7 @@ function SamlaMyntGame({ stageId, stage, student, onStudentChange }: {
     if (isCorrect) {
       const newCoins = coins + 1;
       setCoins(newCoins);
-      setScore(s => s + 30);
+      setScore(s => s + 15);
       setFeedback("coin");
       feedbackTimeout.current = setTimeout(() => {
         setFeedback(null);
@@ -158,6 +161,11 @@ function SamlaMyntGame({ stageId, stage, student, onStudentChange }: {
   }, [phase, feedback, currentQ, coins, obstacles]);
 
   const start = () => {
+    // Cleared so a replay banks its (reduced) score too. Leaving it set meant a
+    // pupil who pressed "Spela igen" earned nothing, while one who reloaded the
+    // page got full points for the very same round.
+    awardedRef.current = false;
+    setAward(null);
     setPhase("playing");
     setQIndex(0);
     setCoins(0);
@@ -224,6 +232,7 @@ function SamlaMyntGame({ stageId, stage, student, onStudentChange }: {
                 <p className="text-gray-600 dark:text-gray-300 text-xs">Hinder</p>
               </div>
             </div>
+            <GameAwardNote award={award} />
             <div className="flex flex-col gap-3">
               <button
                 onClick={start}
