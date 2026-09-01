@@ -11,6 +11,7 @@
 import { test, describe } from "node:test";
 import assert from "node:assert/strict";
 
+import { localDayKey, previousLocalDayKey } from "../src/lib/dates.ts";
 import {
   getPointsMultiplier,
   getGamePointsMultiplier,
@@ -292,5 +293,46 @@ describe("ingen genväg ger mer än att kunna svaret", () => {
 
   test("ett fel följt av en rättning slår inte ett rätt svar direkt", () => {
     assert.ok(0 + RETRY_CORRECT_POINTS < POINTS_PER_CORRECT);
+  });
+});
+
+describe("dagsgränser följer elevens klocka", () => {
+  test("dagsnyckeln är lokal tid, inte UTC", () => {
+    // 00:30 local time on the 2nd. In UTC that is still the 1st for anyone
+    // east of Greenwich – which is what toISOString() used to give us.
+    const d = new Date(2026, 8, 2, 0, 30);
+    assert.equal(localDayKey(d), "2026-09-02");
+  });
+
+  test("gårdagen räknas ut över månads- och årsskiften", () => {
+    assert.equal(previousLocalDayKey(new Date(2026, 8, 1, 12)), "2026-08-31");
+    assert.equal(previousLocalDayKey(new Date(2026, 0, 1, 12)), "2025-12-31");
+  });
+
+  test("nyckeln är alltid YYYY-MM-DD med nollutfyllnad", () => {
+    assert.equal(localDayKey(new Date(2026, 0, 5)), "2026-01-05");
+  });
+});
+
+describe("omspelskön följer modulens rabatt", () => {
+  const retryReward = (attempts: number) =>
+    Math.max(1, Math.round(RETRY_CORRECT_POINTS * getPointsMultiplier(Math.max(0, attempts - 1))));
+
+  test("första gången ger hela omspelspoängen", () => {
+    assert.equal(retryReward(1), RETRY_CORRECT_POINTS);
+  });
+
+  test("fel-plus-rättning slår aldrig rätt svar, oavsett antal omspel", () => {
+    // Per question in a module: answer right = 15 × decay; answer wrong then
+    // fix it in the queue = 0 + retry reward. The second must always be less.
+    for (let attempts = 1; attempts <= 10; attempts++) {
+      const right = 15 * getPointsMultiplier(attempts - 1);
+      const wrongThenFix = retryReward(attempts);
+      assert.ok(wrongThenFix < right, `vid ${attempts} försök: ${wrongThenFix} ≥ ${right}`);
+    }
+  });
+
+  test("en rättning är alltid värd minst en poäng", () => {
+    assert.ok(retryReward(50) >= 1);
   });
 });

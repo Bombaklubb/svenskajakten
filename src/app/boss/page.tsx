@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Header from "@/components/ui/Header";
-import { loadStudent, saveStudent, loadGamification, saveGamification } from "@/lib/storage";
+import { loadStudent, addPointsToStored, loadGamification, saveGamification } from "@/lib/storage";
 import { BOSSES, getBadge, capNewChests, CHEST_META } from "@/lib/gamification";
 import type { StudentData, GamificationData, Chest, ChestType } from "@/lib/types";
 
@@ -109,9 +109,8 @@ export default function BossPage() {
           saveGamification(newGam);
           setGam(newGam);
           setAwardedBonus(actualBonus);
-          const updatedStudent: StudentData = { ...student!, totalPoints: student!.totalPoints + actualBonus };
-          saveStudent(updatedStudent);
-          setStudent(updatedStudent);
+          const updatedStudent = addPointsToStored(actualBonus);
+          if (updatedStudent) setStudent(updatedStudent);
         } else {
           const newGam: GamificationData = {
             ...gam!,

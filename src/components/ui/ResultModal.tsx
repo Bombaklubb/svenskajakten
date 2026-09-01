@@ -68,7 +68,11 @@ export default function ResultModal({
   // Rounded the same way and in the same order as saveModuleProgress saves it,
   // so the number on screen is exactly the number added to the total.
   const displayPoints = Math.round(points * surprise * multiplier);
-  const displayBonus = Math.round(bonusPoints * surprise * multiplier);
+  // The bonus is shown as the remainder so the two lines add up to exactly the
+  // saved total; rounding each part separately could leave them one apart.
+  const displayBonus = passed
+    ? Math.round((points + bonusPoints) * surprise * multiplier) - displayPoints
+    : 0;
 
   return (
     <div

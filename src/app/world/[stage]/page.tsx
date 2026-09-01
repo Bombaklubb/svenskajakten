@@ -6,11 +6,11 @@ import { notFound } from "next/navigation";
 import Header from "@/components/ui/Header";
 import ModuleCard from "@/components/ui/ModuleCard";
 import FinalTestCard from "@/components/ui/FinalTestCard";
-import { loadStudent, saveStudent, loadRetryQueue, removeFromRetryQueue } from "@/lib/storage";
+import { loadStudent, loadRetryQueue, removeFromRetryQueue, addPointsToStored } from "@/lib/storage";
 import { getStage } from "@/lib/stages";
 import { loadStageContent } from "@/lib/content";
 import { getThemeClassName, getThemeStyle, getThemeWrapperClass } from "@/lib/shop";
-import { RETRY_CORRECT_POINTS } from "@/lib/gamification";
+import { RETRY_CORRECT_POINTS, getPointsMultiplier } from "@/lib/gamification";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import MultipleChoice from "@/components/exercises/MultipleChoice";
 import FillInBlank from "@/components/exercises/FillInBlank";
@@ -104,15 +104,18 @@ export default function WorldPage({ params }: Props) {
     if (correct) {
       removeFromRetryQueue(stageId, retryItem.key);
       setRetryQueue((q) => q.filter((r) => r.key !== retryItem.key));
-      // Fixed, and lower than a first-time correct answer: the queue is filled
-      // by mistakes, so paying more here rewarded answering wrong on purpose.
-      const pts = RETRY_CORRECT_POINTS;
+      // Lower than a first-time correct answer, and it falls with the module's
+      // replay count. The queue is filled by mistakes: with a flat reward, a
+      // pupil replaying a module for the fifth time earned more by answering
+      // every question wrong and then clearing the queue than by getting them
+      // right (20 × 10 against 20 × 15 × 20%). Tied to the same decay, a
+      // corrected mistake is always worth less than a correct answer.
+      const progress = getModuleProgress(retryItem.kind, retryItem.moduleId);
+      const prevAttempts = Math.max(0, (progress?.attempts ?? 1) - 1);
+      const pts = Math.max(1, Math.round(RETRY_CORRECT_POINTS * getPointsMultiplier(prevAttempts)));
       setRetryPoints(pts);
-      if (student) {
-        const updated = { ...student, totalPoints: student.totalPoints + pts };
-        saveStudent(updated);
-        setStudent(updated);
-      }
+      const updated = addPointsToStored(pts);
+      if (updated) setStudent(updated);
       setRetryResult("correct");
     } else {
       setRetryResult("wrong");

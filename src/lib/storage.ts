@@ -9,6 +9,7 @@ import {
   EXERCISE_CHEST_MILESTONES,
 } from "./gamification";
 import { getShopAvatar, getFrame, getTheme, getEffect } from "./shop";
+import { localDayKey, previousLocalDayKey } from "./dates";
 
 // Legacy key (single student) – kept only for migration
 const LEGACY_KEY = "svenskajakten_student";
@@ -149,9 +150,9 @@ export function loadStudent(): StudentData | null {
   } else if (data.avatar && !data.ownedAvatars.includes(data.avatar)) {
     data.ownedAvatars.push(data.avatar);
   }
-  const today = new Date().toISOString().slice(0, 10);
+  const today = localDayKey();
   if (data.lastStreakDate !== today) {
-    const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
+    const yesterday = previousLocalDayKey();
     data.streak = data.lastStreakDate === yesterday ? (data.streak ?? 0) + 1 : 1;
     data.lastStreakDate = today;
     // Daily bonus: reward the first activity of the day.
@@ -174,6 +175,28 @@ export function saveStudent(data: StudentData): void {
   all[data.name] = data;
   saveAllStudents(all);
   safeSetItem(CURRENT_KEY, data.name);
+}
+
+/**
+ * Add points to the pupil as stored on the device and return the result.
+ *
+ * Every screen that pays out — chests, the boss, the retry queue — used to do
+ * `{ ...student, totalPoints: student.totalPoints + n }` on the copy it held in
+ * component state. That copy is whatever was loaded when the page opened, so a
+ * save from anywhere else in between was silently overwritten. Reading the
+ * stored pupil at the moment of paying out removes that whole class of bug.
+ */
+export function addPointsToStored(points: number): StudentData | null {
+  if (typeof window === "undefined") return null;
+  const name = getCurrentName();
+  if (!name) return null;
+  const current = getAllStudents()[name];
+  if (!current) return null;
+  const rounded = Math.max(0, Math.round(points));
+  if (rounded === 0) return current;
+  const updated = { ...current, totalPoints: current.totalPoints + rounded };
+  saveStudent(updated);
+  return updated;
 }
 
 export interface GameAward {
@@ -210,7 +233,7 @@ export function awardGamePoints(gameId: string, rawPoints: number): GameAward {
   // who has a bad first go would earn less for the good round that follows.
   if (Math.round(Math.max(0, rawPoints)) === 0) return { ...empty, student: current };
 
-  const today = new Date().toISOString().slice(0, 10);
+  const today = localDayKey();
   const sameDay = current.gamePlays?.date === today;
   const games = sameDay ? { ...current.gamePlays!.games } : {};
   const record = games[gameId] ?? { plays: 0, points: 0 };

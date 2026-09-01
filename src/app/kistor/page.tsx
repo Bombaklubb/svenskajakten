@@ -7,7 +7,7 @@ import Header from "@/components/ui/Header";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import {
   loadStudent,
-  saveStudent,
+  addPointsToStored,
   loadGamification,
   saveGamification,
 } from "@/lib/storage";
@@ -324,9 +324,8 @@ export default function KistorPage() {
     saveGamification(newGam);
     setGam({ ...newGam });
 
-    const updatedStudent = { ...student, totalPoints: student.totalPoints + result.points };
-    saveStudent(updatedStudent);
-    setStudent(updatedStudent);
+    const updatedStudent = addPointsToStored(result.points);
+    if (updatedStudent) setStudent(updatedStudent);
     setRewardResult({ description: result.description, points: result.points });
   }
 
