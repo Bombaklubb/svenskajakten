@@ -3,7 +3,9 @@ import type {
   Chest,
   MysteryBoxReward,
   GamificationData,
+  StudentData,
 } from "./types";
+import { localDayKey } from "./dates";
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -71,6 +73,12 @@ export function getGamePointsMultiplier(prevPlays: number): number {
   if (prevPlays === 2) return 0.6;
   if (prevPlays === 3) return 0.5;
   return 0.4;
+}
+
+/** Points one mini-game has paid this pupil so far today (0 when none, or another day). */
+export function getGamePointsToday(student: StudentData | null, gameId: string): number {
+  if (!student?.gamePlays || student.gamePlays.date !== localDayKey()) return 0;
+  return student.gamePlays.games[gameId]?.points ?? 0;
 }
 
 /**

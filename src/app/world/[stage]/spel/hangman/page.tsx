@@ -5,6 +5,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/ui/Header";
 import { loadStudent, awardGamePoints, type GameAward } from "@/lib/storage";
+import { loadStageContent } from "@/lib/content";
+import { hangmanWordsFromContent, mergeUnique, type HangmanWord } from "@/lib/gameContent";
 import { getStage } from "@/lib/stages";
 import type { StudentData } from "@/lib/types";
 
@@ -101,9 +103,26 @@ export default function SnogubbenPage({ params }: Props) {
   const { stage: stageId } = use(params);
   const stage = getStage(stageId);
   const [student, setStudent] = useState<StudentData | null>(null);
-  useEffect(() => { setStudent(loadStudent()); }, []);
+  // The game's own words plus every word-with-a-hint from the stage's content:
+  // listen-and-spell words, word riddles and the word-search clues. Fixed
+  // before the game mounts so the list cannot change mid-word.
+  const [words, setWords] = useState<HangmanWord[] | null>(null);
+  useEffect(() => {
+    setStudent(loadStudent());
+    const seed = WORDS[stageId] ?? WORDS.lagstadiet;
+    loadStageContent(stageId)
+      .then((content) => setWords(mergeUnique(seed, hangmanWordsFromContent(content), (w) => w.word.toUpperCase())))
+      .catch(() => setWords(seed));
+  }, [stageId]);
   if (!stage) return notFound();
-  return <SnogubbenGame stageId={stageId} stage={stage} student={student} setStudent={setStudent} />;
+  if (!words) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-900">
+        <div className="text-4xl animate-bounce-slow">⛄</div>
+      </div>
+    );
+  }
+  return <SnogubbenGame stageId={stageId} stage={stage} student={student} setStudent={setStudent} deck={words} />;
 }
 
 // ── Snowman SVG ───────────────────────────────────────────────────────────────
@@ -226,13 +245,14 @@ function Snowman({ wrongCount, isWon }: { wrongCount: number; isWon: boolean }) 
   );
 }
 
-function SnogubbenGame({ stageId, stage, student, setStudent }: {
+function SnogubbenGame({ stageId, stage, student, setStudent, deck }: {
   stageId: string;
   stage: ReturnType<typeof getStage> & object;
   student: StudentData | null;
   setStudent: (s: StudentData) => void;
+  deck: HangmanWord[];
 }) {
-  const [wordList] = useState(() => shuffle(WORDS[stageId] ?? WORDS.lagstadiet));
+  const [wordList] = useState(() => shuffle(deck));
   const [wordIndex, setWordIndex] = useState(0);
   const [guessed, setGuessed] = useState<Set<string>>(new Set());
   const [phase, setPhase] = useState<"playing" | "won" | "lost">("playing");

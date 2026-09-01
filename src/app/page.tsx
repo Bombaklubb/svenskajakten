@@ -4,13 +4,13 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Header from "@/components/ui/Header";
-import { loadStudent, createStudent, clearStudent, studentExists } from "@/lib/storage";
-import { STAGES } from "@/lib/stages";
+import { loadStudent, createStudent, clearStudent, studentExists, loadLastVisited } from "@/lib/storage";
+import { STAGES, getStage } from "@/lib/stages";
 import { STARTER_AVATARS } from "@/lib/avatars";
 import { getThemeClassName, getThemeStyle, getThemeWrapperClass } from "@/lib/shop";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { NumberTicker } from "@/components/magicui/number-ticker";
-import type { StudentData, StageId } from "@/lib/types";
+import type { StudentData, StageId, LastVisited } from "@/lib/types";
 
 
 export default function HomePage() {
@@ -20,9 +20,11 @@ export default function HomePage() {
   const [loading, setLoading] = useState(true);
   const [isReturning, setIsReturning] = useState(false);
   const [dailyBonus, setDailyBonus] = useState<number | null>(null);
+  const [lastVisited, setLastVisited] = useState<LastVisited | null>(null);
 
   useEffect(() => {
     setStudent(loadStudent());
+    setLastVisited(loadLastVisited());
     setLoading(false);
     try {
       const bonus = sessionStorage.getItem("dailyBonusAwarded");
@@ -184,6 +186,7 @@ export default function HomePage() {
             </div>
           </BlurFade>
         )}
+        <ResumeCard student={student} last={lastVisited} />
         <BlurFade delay={0} className="mb-4">
           <h2 className="on-theme text-2xl font-black text-sv-800 dark:text-gray-100">Välj din värld</h2>
           <p className="on-theme-muted text-sv-800 dark:text-gray-300 font-semibold mt-0.5">
@@ -263,5 +266,49 @@ export default function HomePage() {
         </div>
       </main>
     </div>
+  );
+}
+
+/**
+ * "Fortsätt där du var" – one click back into the module the pupil last opened.
+ *
+ * If that module has since been completed the card points at its stage instead,
+ * so the pupil is never sent back into something already finished.
+ */
+function ResumeCard({ student, last }: { student: StudentData; last: LastVisited | null }) {
+  if (!last) return null;
+  const stage = getStage(last.stageId);
+  if (!stage) return null;
+  const progress = student.stages[last.stageId];
+  const map =
+    last.kind === "grammar" ? progress?.grammarModules
+    : last.kind === "spelling" ? progress?.spellingModules
+    : last.kind === "wordsearch" ? progress?.wordsearchModules
+    : progress?.stavningstestModules;
+  const done = map?.[last.moduleId]?.completed ?? false;
+  const href = done ? `/world/${last.stageId}` : `/world/${last.stageId}/${last.kind}/${last.moduleId}`;
+
+  return (
+    <BlurFade delay={0} className="mb-4">
+      <Link
+        href={href}
+        className="group flex items-center gap-3 rounded-2xl px-4 py-3 border-3 border-sv-300 dark:border-sv-700 bg-white dark:bg-gray-800 transition-all hover:-translate-y-0.5 hover:shadow-lg"
+        style={{ boxShadow: "0 4px 0 0 rgba(0,106,167,0.2)" }}
+      >
+        <span className="text-3xl">{done ? stage.emoji : last.icon}</span>
+        <div className="min-w-0 flex-1">
+          <p className="text-xs font-bold uppercase tracking-wide text-sv-800 dark:text-sv-300">
+            {done ? "Fortsätt i" : "Fortsätt där du var"}
+          </p>
+          <p className="font-black text-gray-900 dark:text-gray-100 truncate">
+            {done ? stage.name : last.title}
+            <span className="ml-2 text-sm font-semibold text-gray-500 dark:text-gray-300">
+              {done ? `${last.title} är klar ✓` : stage.name}
+            </span>
+          </p>
+        </div>
+        <span className="text-sv-800 dark:text-sv-300 font-black group-hover:translate-x-0.5 transition-transform">→</span>
+      </Link>
+    </BlurFade>
   );
 }

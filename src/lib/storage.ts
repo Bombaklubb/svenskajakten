@@ -1,4 +1,4 @@
-import type { StudentData, StageId, ModuleProgress, StageProgress, HeroConfig, GamificationData, RetryItem } from "./types";
+import type { StudentData, StageId, ModuleProgress, StageProgress, HeroConfig, GamificationData, RetryItem, LastVisited } from "./types";
 import {
   defaultGamificationData,
   getPointsMultiplier,
@@ -511,6 +511,32 @@ export function removeFromRetryQueue(stageId: string, key: string): void {
   if (typeof window === "undefined") return;
   const queue = loadRetryQueue(stageId).filter((q) => q.key !== key);
   safeSetItem(getRetryKey(stageId), JSON.stringify(queue));
+}
+
+// ─── Fortsätt där du var ──────────────────────────────────────────────────────
+
+function getLastVisitedKey(): string {
+  return `svenskajakten_last_${getCurrentName() ?? "anon"}`;
+}
+
+/** Remember the module the pupil just opened. Called when a module page loads. */
+export function recordLastVisited(item: Omit<LastVisited, "at">): void {
+  if (typeof window === "undefined") return;
+  if (!getCurrentName()) return;
+  safeSetItem(getLastVisitedKey(), JSON.stringify({ ...item, at: new Date().toISOString() }));
+}
+
+export function loadLastVisited(): LastVisited | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const raw = localStorage.getItem(getLastVisitedKey());
+    if (!raw) return null;
+    const data = JSON.parse(raw) as LastVisited;
+    if (!data || typeof data.moduleId !== "string" || typeof data.stageId !== "string") return null;
+    return data;
+  } catch {
+    return null;
+  }
 }
 
 // ─── Shop (Affären) ───────────────────────────────────────────────────────────

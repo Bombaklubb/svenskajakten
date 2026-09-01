@@ -5,6 +5,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/ui/Header";
 import { loadStudent, awardGamePoints, type GameAward } from "@/lib/storage";
+import { loadStageContent } from "@/lib/content";
+import { quizQuestionsFromContent, mergeUnique, type QuizQuestion } from "@/lib/gameContent";
 import GameAwardNote from "@/components/ui/GameAwardNote";
 import { getStage } from "@/lib/stages";
 import type { StudentData } from "@/lib/types";
@@ -82,21 +84,38 @@ export default function SamlaMyntPage({ params }: Props) {
   const { stage: stageId } = use(params);
   const stage = getStage(stageId);
   const [student, setStudent] = useState<StudentData | null>(null);
-  useEffect(() => { setStudent(loadStudent()); }, []);
+  // Own questions plus the stage's short multiple-choice exercises; see Tidsattack.
+  const [questions, setQuestions] = useState<QuizQuestion[] | null>(null);
+  useEffect(() => {
+    setStudent(loadStudent());
+    const seed = QUESTIONS[stageId] ?? QUESTIONS.lagstadiet;
+    loadStageContent(stageId)
+      .then((content) => setQuestions(mergeUnique(seed, quizQuestionsFromContent(content), (q) => q.q.toLowerCase())))
+      .catch(() => setQuestions(seed));
+  }, [stageId]);
   if (!stage) return notFound();
-  return <SamlaMyntGame stageId={stageId} stage={stage} student={student} onStudentChange={setStudent} />;
+  if (!questions) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-900">
+        <div className="text-4xl animate-bounce-slow">🪙</div>
+      </div>
+    );
+  }
+  return <SamlaMyntGame stageId={stageId} stage={stage} student={student} onStudentChange={setStudent} deck={questions} />;
 }
 
 type Feedback = "coin" | "obstacle" | null;
 
-function SamlaMyntGame({ stageId, stage, student, onStudentChange }: {
+function SamlaMyntGame({ stageId, stage, student, onStudentChange, deck }: {
   stageId: string;
   stage: ReturnType<typeof getStage> & object;
   student: StudentData | null;
   onStudentChange: (s: StudentData) => void;
+  deck: QuizQuestion[];
 }) {
   const [phase, setPhase] = useState<"ready" | "playing" | "done">("ready");
-  const [questions] = useState(() => shuffle(QUESTIONS[stageId] ?? QUESTIONS.lagstadiet));
+  const [questions, setQuestions] = useState(() => shuffle(deck));
+  const [picked, setPicked] = useState<number | null>(null);
   const [qIndex, setQIndex] = useState(0);
   const [coins, setCoins] = useState(0);
   const [obstacles, setObstacles] = useState(0);
@@ -131,6 +150,7 @@ function SamlaMyntGame({ stageId, stage, student, onStudentChange }: {
   const handleAnswer = useCallback((idx: number) => {
     if (phase !== "playing" || feedback !== null) return;
     const isCorrect = idx === currentQ.correct;
+    setPicked(idx);
 
     if (isCorrect) {
       const newCoins = coins + 1;
@@ -139,6 +159,7 @@ function SamlaMyntGame({ stageId, stage, student, onStudentChange }: {
       setFeedback("coin");
       feedbackTimeout.current = setTimeout(() => {
         setFeedback(null);
+        setPicked(null);
         if (newCoins >= TOTAL_COINS) {
           setPhase("done");
         } else {
@@ -149,14 +170,16 @@ function SamlaMyntGame({ stageId, stage, student, onStudentChange }: {
       const newObstacles = obstacles + 1;
       setObstacles(newObstacles);
       setFeedback("obstacle");
+      // Long enough to read which answer was right, not just that this one was wrong.
       feedbackTimeout.current = setTimeout(() => {
         setFeedback(null);
+        setPicked(null);
         if (newObstacles >= WRONG_LIMIT) {
           setPhase("done");
         } else {
           setQIndex(i => i + 1);
         }
-      }, 800);
+      }, 1300);
     }
   }, [phase, feedback, currentQ, coins, obstacles]);
 
@@ -167,6 +190,8 @@ function SamlaMyntGame({ stageId, stage, student, onStudentChange }: {
     awardedRef.current = false;
     setAward(null);
     setPhase("playing");
+    setQuestions(shuffle(deck)); // a fresh order every round
+    setPicked(null);
     setQIndex(0);
     setCoins(0);
     setObstacles(0);
@@ -347,12 +372,19 @@ function SamlaMyntGame({ stageId, stage, student, onStudentChange }: {
               onClick={() => handleAnswer(i)}
               disabled={feedback !== null}
               className={`py-3 px-4 rounded-xl border-2 font-bold text-sm transition-all duration-100 cursor-pointer text-left
-                ${feedback !== null ? "opacity-50 cursor-not-allowed"
-                  : "bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-800 dark:text-gray-200 hover:border-gray-400 active:scale-95"
+                ${feedback === null
+                  ? "bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-800 dark:text-gray-200 hover:border-gray-400 active:scale-95"
+                  : i === currentQ.correct
+                  ? "bg-green-100 dark:bg-green-900/40 border-green-500 text-green-900 dark:text-green-200 cursor-not-allowed"
+                  : i === picked
+                  ? "bg-red-100 dark:bg-red-900/40 border-red-400 text-red-900 dark:text-red-200 cursor-not-allowed"
+                  : "opacity-40 cursor-not-allowed"
                 }`}
               style={{ boxShadow: "0 2px 0 0 rgba(0,0,0,0.06)" }}
             >
-              <span className="text-gray-600 dark:text-gray-300 mr-2 text-xs font-black">{String.fromCharCode(65 + i)}</span>
+              <span className="text-gray-600 dark:text-gray-300 mr-2 text-xs font-black">
+                {feedback !== null && i === currentQ.correct ? "✓" : feedback !== null && i === picked ? "✗" : String.fromCharCode(65 + i)}
+              </span>
               {opt}
             </button>
           ))}

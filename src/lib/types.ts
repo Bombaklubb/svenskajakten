@@ -257,6 +257,16 @@ export interface RetryItem {
   addedAt: string;
 }
 
+/** The module a pupil most recently opened, so the start page can offer to resume it. */
+export interface LastVisited {
+  stageId: StageId;
+  kind: "grammar" | "spelling" | "wordsearch" | "stavningstest";
+  moduleId: string;
+  title: string;
+  icon: string;
+  at: string; // ISO timestamp
+}
+
 // ─── Exercise session (in-memory, not persisted) ──────────────────────────────
 
 export interface ExerciseResult {

@@ -10,7 +10,7 @@ import { loadStudent, loadRetryQueue, removeFromRetryQueue, addPointsToStored } 
 import { getStage } from "@/lib/stages";
 import { loadStageContent } from "@/lib/content";
 import { getThemeClassName, getThemeStyle, getThemeWrapperClass } from "@/lib/shop";
-import { RETRY_CORRECT_POINTS, getPointsMultiplier } from "@/lib/gamification";
+import { RETRY_CORRECT_POINTS, getPointsMultiplier, getGamePointsToday, MINIGAME_DAILY_CAP } from "@/lib/gamification";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import MultipleChoice from "@/components/exercises/MultipleChoice";
 import FillInBlank from "@/components/exercises/FillInBlank";
@@ -206,6 +206,15 @@ export default function WorldPage({ params }: Props) {
               <h2 className="text-xl font-black text-gray-900 dark:text-gray-100">Spel</h2>
               <p className="text-gray-500 dark:text-gray-300 text-sm mt-1">Träna svenska och grammatik med roliga spel!</p>
             </div>
+            {/* The payout rule, stated before the pupil plays rather than
+                discovered after a round paid out less than the scoreboard said. */}
+            <div className="mb-5 rounded-2xl border-2 border-amber-200 dark:border-amber-700 bg-amber-50 dark:bg-amber-900/20 px-4 py-3 text-sm text-amber-900 dark:text-amber-200">
+              <p className="font-bold">⭐ Så funkar spelpoängen</p>
+              <p className="mt-0.5">
+                Varje spel kan ge högst <strong>{MINIGAME_DAILY_CAP} poäng per dag</strong>. Första omgången ger mest,
+                sedan lite mindre för varje omspel. Imorgon börjar räkningen om.
+              </p>
+            </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Memory */}
               <Link href={`/world/${stageId}/spel/memory`} className="block group rounded-3xl overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-xl"
@@ -219,6 +228,7 @@ export default function WorldPage({ params }: Props) {
                     </div>
                   </div>
                   <p className="text-white/90 text-sm font-medium">Lätt (8 kort) • Medel (12 kort) • Svår (18 kort). Hitta alla par!</p>
+                  <GamePointsToday points={getGamePointsToday(student, "memory")} />
                   <span className="inline-block mt-3 text-xs font-bold text-white/70 group-hover:text-white transition-colors">Spela nu →</span>
                 </div>
               </Link>
@@ -235,6 +245,7 @@ export default function WorldPage({ params }: Props) {
                     </div>
                   </div>
                   <p className="text-white/90 text-sm font-medium">Gissa grammatikord bokstav för bokstav. Fel svar smälter snögubben!</p>
+                  <GamePointsToday points={getGamePointsToday(student, "hangman")} />
                   <span className="inline-block mt-3 text-xs font-bold text-white/70 group-hover:text-white transition-colors">Spela nu →</span>
                 </div>
               </Link>
@@ -251,6 +262,7 @@ export default function WorldPage({ params }: Props) {
                     </div>
                   </div>
                   <p className="text-white/90 text-sm font-medium">Grammatikfrågor i rask takt. Snabb som blixten!</p>
+                  <GamePointsToday points={getGamePointsToday(student, "tidsattack")} />
                   <span className="inline-block mt-3 text-xs font-bold text-white/70 group-hover:text-white transition-colors">Spela nu →</span>
                 </div>
               </Link>
@@ -267,6 +279,7 @@ export default function WorldPage({ params }: Props) {
                     </div>
                   </div>
                   <p className="text-white/90 text-sm font-medium">Spring och samla mynt genom att svara rätt på grammatikfrågor!</p>
+                  <GamePointsToday points={getGamePointsToday(student, "samla-mynt")} />
                   <span className="inline-block mt-3 text-xs font-bold text-white/70 group-hover:text-white transition-colors">Spela nu →</span>
                 </div>
               </Link>
@@ -547,5 +560,16 @@ export default function WorldPage({ params }: Props) {
         )}
       </main>
     </div>
+  );
+}
+
+/** "Idag: 220/400 ⭐" on a game card. Silent until the pupil has earned something today. */
+function GamePointsToday({ points }: { points: number }) {
+  if (points <= 0) return null;
+  const full = points >= MINIGAME_DAILY_CAP;
+  return (
+    <p className="mt-2 inline-flex items-center gap-1 rounded-full bg-black/25 px-2.5 py-1 text-xs font-bold text-white">
+      {full ? "🏁 Dagens gräns nådd" : `⭐ Idag: ${points}/${MINIGAME_DAILY_CAP}`}
+    </p>
   );
 }

@@ -5,6 +5,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/ui/Header";
 import { loadStudent, awardGamePoints, type GameAward } from "@/lib/storage";
+import { loadStageContent } from "@/lib/content";
+import { quizQuestionsFromContent, mergeUnique, type QuizQuestion } from "@/lib/gameContent";
 import GameAwardNote from "@/components/ui/GameAwardNote";
 import { getStage } from "@/lib/stages";
 import type { StudentData } from "@/lib/types";
@@ -101,25 +103,45 @@ export default function TidsattackPage({ params }: Props) {
   const { stage: stageId } = use(params);
   const stage = getStage(stageId);
   const [student, setStudent] = useState<StudentData | null>(null);
-  useEffect(() => { setStudent(loadStudent()); }, []);
+  // The game's own questions plus every short multiple-choice exercise from the
+  // stage's modules, so the pupil is not shown the same fifteen every round.
+  // Fixed before the game mounts so the deck cannot change mid-round.
+  const [questions, setQuestions] = useState<QuizQuestion[] | null>(null);
+  useEffect(() => {
+    setStudent(loadStudent());
+    const seed = QUESTIONS[stageId] ?? QUESTIONS.lagstadiet;
+    loadStageContent(stageId)
+      .then((content) => setQuestions(mergeUnique(seed, quizQuestionsFromContent(content), (q) => q.q.toLowerCase())))
+      .catch(() => setQuestions(seed));
+  }, [stageId]);
   if (!stage) return notFound();
-  return <TidsattackGame stageId={stageId} stage={stage} student={student} onStudentChange={setStudent} />;
+  if (!questions) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-900">
+        <div className="text-4xl animate-bounce-slow">⏱️</div>
+      </div>
+    );
+  }
+  return <TidsattackGame stageId={stageId} stage={stage} student={student} onStudentChange={setStudent} deck={questions} />;
 }
 
-function TidsattackGame({ stageId, stage, student, onStudentChange }: {
+function TidsattackGame({ stageId, stage, student, onStudentChange, deck }: {
   stageId: string;
   stage: ReturnType<typeof getStage> & object;
   student: StudentData | null;
   onStudentChange: (s: StudentData) => void;
+  deck: QuizQuestion[];
 }) {
   const [phase, setPhase] = useState<"ready" | "playing" | "done">("ready");
-  const [questions] = useState(() => shuffle(QUESTIONS[stageId] ?? QUESTIONS.lagstadiet));
+  const [questions, setQuestions] = useState(() => shuffle(deck));
   const [qIndex, setQIndex] = useState(0);
   const [timeLeft, setTimeLeft] = useState(GAME_DURATION);
   const [score, setScore] = useState(0);
   const [correct, setCorrect] = useState(0);
   const [wrong, setWrong] = useState(0);
   const [flash, setFlash] = useState<"correct" | "wrong" | null>(null);
+  /** The option the pupil pressed, so a miss can be shown next to the right one. */
+  const [picked, setPicked] = useState<number | null>(null);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const currentQ = questions[qIndex % questions.length];
@@ -157,16 +179,20 @@ function TidsattackGame({ stageId, stage, student, onStudentChange }: {
     if (phase !== "playing") return;
     const isCorrect = idx === currentQ.correct;
     setFlash(isCorrect ? "correct" : "wrong");
+    setPicked(idx);
     if (isCorrect) {
       setScore(s => s + 10);
       setCorrect(c => c + 1);
     } else {
       setWrong(w => w + 1);
     }
+    // A miss lingers long enough to read the right answer — otherwise the game
+    // only tells the pupil they were wrong, never what was right.
     setTimeout(() => {
       setFlash(null);
+      setPicked(null);
       setQIndex(i => i + 1);
-    }, 400);
+    }, isCorrect ? 400 : 1300);
   }, [phase, currentQ]);
 
   const start = () => {
@@ -176,12 +202,14 @@ function TidsattackGame({ stageId, stage, student, onStudentChange }: {
     awardedRef.current = false;
     setAward(null);
     setPhase("playing");
+    setQuestions(shuffle(deck)); // a fresh order every round
     setQIndex(0);
     setTimeLeft(GAME_DURATION);
     setScore(0);
     setCorrect(0);
     setWrong(0);
     setFlash(null);
+    setPicked(null);
   };
 
   const timerPct = (timeLeft / GAME_DURATION) * 100;
@@ -309,12 +337,19 @@ function TidsattackGame({ stageId, stage, student, onStudentChange }: {
               onClick={() => answer(i)}
               disabled={flash !== null}
               className={`w-full py-3.5 px-5 rounded-xl border-2 font-bold text-left text-sm transition-all duration-100 cursor-pointer
-                ${flash !== null ? "opacity-50 cursor-not-allowed"
-                  : "bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-800 dark:text-gray-200 hover:border-gray-400 active:scale-98"
+                ${flash === null
+                  ? "bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-800 dark:text-gray-200 hover:border-gray-400 active:scale-98"
+                  : i === currentQ.correct
+                  ? "bg-green-100 dark:bg-green-900/40 border-green-500 text-green-900 dark:text-green-200 cursor-not-allowed"
+                  : i === picked
+                  ? "bg-red-100 dark:bg-red-900/40 border-red-400 text-red-900 dark:text-red-200 cursor-not-allowed"
+                  : "opacity-40 cursor-not-allowed"
                 }`}
               style={{ boxShadow: "0 2px 0 0 rgba(0,0,0,0.05)" }}
             >
-              <span className="text-gray-600 dark:text-gray-300 mr-3 font-black">{String.fromCharCode(65 + i)}.</span>
+              <span className="text-gray-600 dark:text-gray-300 mr-3 font-black">
+                {flash !== null && i === currentQ.correct ? "✓" : flash !== null && i === picked ? "✗" : `${String.fromCharCode(65 + i)}.`}
+              </span>
               {opt}
             </button>
           ))}

@@ -12,7 +12,7 @@ import FillInBlank from "@/components/exercises/FillInBlank";
 import BuildSentence from "@/components/exercises/BuildSentence";
 import WordClues from "@/components/exercises/WordClues";
 import ListenSpell from "@/components/exercises/ListenSpell";
-import { loadStudent, saveStudent, saveModuleProgress, loadGamification, saveGamification, addToRetryQueue } from "@/lib/storage";
+import { loadStudent, saveStudent, saveModuleProgress, loadGamification, saveGamification, addToRetryQueue, recordLastVisited } from "@/lib/storage";
 import { trackEvent } from "@/lib/analytics";
 import {
   chestsEarnedFromPoints,
@@ -69,7 +69,10 @@ export default function GrammarModulePage({ params }: Props) {
     loadStageContent(stageId)
       .then((data: StageContent) => {
         const found = data.grammar.find((m) => m.id === moduleId);
-        if (found) setMod(found);
+        if (found) {
+          setMod(found);
+          recordLastVisited({ stageId: stage!.id, kind: "grammar", moduleId, title: found.title, icon: found.icon ?? "📝" });
+        }
       })
       .catch(() => {})
       .finally(() => setLoading(false));

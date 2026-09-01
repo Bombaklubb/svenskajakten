@@ -6,7 +6,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/ui/Header";
 import WordSearch from "@/components/exercises/WordSearch";
-import { loadStudent, saveStudent, saveModuleProgress, loadGamification, saveGamification } from "@/lib/storage";
+import { loadStudent, saveStudent, saveModuleProgress, loadGamification, saveGamification, recordLastVisited } from "@/lib/storage";
 import { chestsEarnedFromPoints, chestsEarnedFromExercises, chestsEarnedFromAchievements, rollMysteryBox, rollSurpriseMultiplier, capNewChests, BOSS_UNLOCK_THRESHOLD, getPointsMultiplier } from "@/lib/gamification";
 import { ACHIEVEMENTS, isUnlocked } from "@/lib/achievements";
 import MysteryBoxPopup from "@/components/ui/MysteryBoxPopup";
@@ -44,7 +44,10 @@ export default function WordSearchModulePage({ params }: Props) {
     loadStageContent(stageId)
       .then((data: StageContent) => {
         const found = (data.wordsearch ?? []).find((m) => m.id === moduleId);
-        if (found) setMod(found);
+        if (found) {
+          setMod(found);
+          recordLastVisited({ stageId: stage!.id, kind: "wordsearch", moduleId, title: found.title, icon: found.icon ?? "🔍" });
+        }
       })
       .catch(() => {})
       .finally(() => setLoading(false));

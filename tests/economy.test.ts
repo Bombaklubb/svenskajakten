@@ -12,6 +12,7 @@ import { test, describe } from "node:test";
 import assert from "node:assert/strict";
 
 import { localDayKey, previousLocalDayKey } from "../src/lib/dates.ts";
+import { quizQuestionsFromContent, hangmanWordsFromContent, mergeUnique } from "../src/lib/gameContent.ts";
 import {
   getPointsMultiplier,
   getGamePointsMultiplier,
@@ -29,7 +30,7 @@ import {
 } from "../src/lib/gamification.ts";
 import { getLevel, MAX_LEVEL } from "../src/lib/levels.ts";
 import { getSpendable } from "../src/lib/storage.ts";
-import type { Chest, StudentData } from "../src/lib/types.ts";
+import type { Chest, StudentData, StageContent } from "../src/lib/types.ts";
 
 /** Points a pupil banks for a typical completed module, used to sanity-check pacing. */
 const POINTS_PER_MODULE = 20 * 15 + 30; // 20 correct answers plus a pass bonus
@@ -334,5 +335,48 @@ describe("omspelskön följer modulens rabatt", () => {
 
   test("en rättning är alltid värd minst en poäng", () => {
     assert.ok(retryReward(50) >= 1);
+  });
+});
+
+describe("minispelens innehåll hämtas från övningarna", () => {
+  const content = {
+    grammar: [{
+      id: "m", title: "M", description: "", icon: "", pointsRequired: 0, bonusPoints: 0,
+      exercises: [
+        { id: "a", type: "multiple-choice", question: "Vilket ord är ett verb?", options: ["hund", "springer", "glad"], correctIndex: 1 },
+        { id: "b", type: "multiple-choice", question: "Vilket ord är ett verb?", options: ["katt", "hoppar"], correctIndex: 1 }, // dubblett
+        { id: "c", type: "multiple-choice", question: "Läs texten nedan och avgör vilket påstående som bäst sammanfattar författarens huvudsakliga argument i det andra stycket av texten", options: ["A", "B"], correctIndex: 0 },
+        { id: "d", type: "multiple-choice", question: "Kort?", options: ["Ett väldigt långt svarsalternativ som inte hinner läsas", "B"], correctIndex: 0 },
+        { id: "e", type: "multiple-choice", question: "Trasig?", options: ["A", "B"], correctIndex: 5 },
+        { id: "f", type: "fill-in-blank", question: "Hon ___ .", answer: "går" },
+        { id: "g", type: "listen-spell", word: "sol", hint: "Den lyser på himlen om dagen." },
+        { id: "h", type: "listen-spell", word: "is", hint: "Fruset vatten." }, // för kort
+        { id: "i", type: "listen-spell", word: "hund", hint: "En hund är ett husdjur." }, // ledtråden avslöjar
+        { id: "j", type: "word-clues", clues: ["Jag är ett djur", "Jag bor i havet", "Jag har fenor"], answer: "fisk" },
+      ],
+    }],
+    wordsearch: [{
+      id: "w", title: "Djur", description: "", icon: "", pointsRequired: 0, bonusPoints: 0,
+      words: [{ word: "citron", clue: "Sur gul frukt" }, { word: "två ord", clue: "mellanslag" }],
+    }],
+  } as unknown as StageContent;
+
+  test("bara korta flervalsfrågor med giltigt facit, utan dubbletter", () => {
+    const qs = quizQuestionsFromContent(content);
+    assert.deepEqual(qs.map((q) => q.q), ["Vilket ord är ett verb?"]);
+    assert.equal(qs[0].correct, 1);
+  });
+
+  test("ord med ledtråd från lyssna-och-stava, kluringar och ordsökning", () => {
+    const words = hangmanWordsFromContent(content);
+    assert.deepEqual(words.map((w) => w.word), ["SOL", "FISK", "CITRON"]);
+    assert.equal(words[1].hint, "Jag är ett djur · Jag bor i havet");
+  });
+
+  test("spelets egna lista kommer först och dubbletter från innehållet hoppas över", () => {
+    const seed = [{ word: "SOL", hint: "egen" }, { word: "VERB", hint: "egen" }];
+    const merged = mergeUnique(seed, hangmanWordsFromContent(content), (w) => w.word);
+    assert.deepEqual(merged.map((w) => w.word), ["SOL", "VERB", "FISK", "CITRON"]);
+    assert.equal(merged[0].hint, "egen");
   });
 });

@@ -6,7 +6,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/ui/Header";
 import ResultModal from "@/components/ui/ResultModal";
-import { loadStudent, saveStudent, saveModuleProgress, loadGamification, saveGamification } from "@/lib/storage";
+import { loadStudent, saveStudent, saveModuleProgress, loadGamification, saveGamification, recordLastVisited } from "@/lib/storage";
 import {
   chestsEarnedFromPoints,
   chestsEarnedFromExercises,
@@ -79,6 +79,7 @@ export default function StavningstestPage({ params }: Props) {
         if (found) {
           setMod(found);
           setTimeLeft(found.timeLimit ?? DEFAULT_TIME_LIMIT);
+          recordLastVisited({ stageId: stage!.id, kind: "stavningstest", moduleId, title: found.title, icon: found.icon ?? "⌨️" });
         }
       })
       .catch(() => {})
