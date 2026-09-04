@@ -168,6 +168,28 @@ function bareMarkAnswer(ex) {
   return a.length > 0 && a.length <= 2 && !/[\p{L}\p{N}]/u.test(a) ? a : null;
 }
 
+/**
+ * The two letters a title like "E eller Ä?" promises to tell apart.
+ *
+ * Nine exercises in the two e/ä modules asked for a different letter
+ * altogether — ö in "löper", å in "frågar", i in "sitter" — so a pupil
+ * practising one decision was graded on another.
+ */
+function promisedLetters(title) {
+  const m = (title ?? "").match(/^([a-zåäöA-ZÅÄÖ])\s*eller\s*([a-zåäöA-ZÅÄÖ])\s*\?/);
+  return m ? [m[1].toLowerCase(), m[2].toLowerCase()] : null;
+}
+
+/** The answer as plain text, whatever the exercise type. */
+function answerText(ex) {
+  const a =
+    ex.type === "multiple-choice" ? (ex.options ?? [])[ex.correctIndex]
+    : ex.type === "fill-in-blank" ? ex.answer
+    : ex.type === "build-sentence" ? (ex.correctOrder ?? []).map((j) => ex.words?.[j]).join(" ")
+    : ex.answer ?? ex.word;
+  return String(a ?? "").trim();
+}
+
 for (const stage of STAGES) {
   const path = `public/content/${stage}/content.json`;
   let data;
@@ -185,6 +207,7 @@ for (const stage of STAGES) {
       ids.add(mod.id);
 
       const promised = promisedMarks(mod.title ?? "");
+      const letters = promisedLetters(mod.title);
 
       const stems = new Map();
       (mod.exercises ?? []).forEach((ex, i) => {
@@ -195,6 +218,19 @@ for (const stage of STAGES) {
           const mark = bareMarkAnswer(ex);
           if (mark && ![...mark].every((ch) => promised.has(ch))) {
             err(where, `facit är "${mark}" men modulen heter "${mod.title}" och lovar bara ${[...promised].map((m) => `"${m}"`).join(", ")}`);
+          }
+        }
+
+        if (letters) {
+          const a = answerText(ex).toLowerCase();
+          // A bare letter that is not one of the two is simply the wrong task.
+          if (a.length === 1 && /[a-zåäö]/.test(a) && !letters.includes(a)) {
+            err(where, `facit är "${a}" men modulen heter "${mod.title}" och övar ${letters.join(" mot ")}`);
+          } else if (a.length > 1 && !letters.some((l) => a.includes(l))) {
+            // A word without either letter may still belong — several modules
+            // teach on purpose that neither letter fits ("säng", "skog") — so
+            // this is for a human to look at, not a failure.
+            warn(where, `facit "${a}" innehåller varken ${letters.join(" eller ")} i modulen "${mod.title}"`);
           }
         }
 

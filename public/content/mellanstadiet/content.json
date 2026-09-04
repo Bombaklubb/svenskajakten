@@ -2364,15 +2364,15 @@
         },
         {
           "type": "multiple-choice",
-          "question": "Vilket adjektiv är rätt stavat? (om temperaturen är låg)",
+          "question": "Vilket adjektiv är rätt stavat? (som stämmer med verkligheten)",
           "options": [
-            "kelt",
-            "käld",
-            "kall",
-            "käll"
+            "värklig",
+            "verklig",
+            "verklik",
+            "värklik"
           ],
-          "correctIndex": 2,
-          "explanation": "'Kall' stavas med a – k-a-l-l. Varken e eller ä. Kall → kallare → kallast."
+          "correctIndex": 1,
+          "explanation": "'Verklig' stavas med e, trots att många hör ett ä-ljud. Jämför med 'verklighet'."
         },
         {
           "type": "build-sentence",
@@ -2397,15 +2397,15 @@
         },
         {
           "type": "multiple-choice",
-          "question": "Välj rätt stavning: 'Hon ___ alltid på sina löften.' (håller)",
+          "question": "Välj rätt stavning: 'Hon ___ på mig varje morgon.' (säger hej)",
           "options": [
-            "heller",
-            "häller",
-            "håller",
-            "haller"
+            "helsar",
+            "hälsar",
+            "hellsar",
+            "hällsar"
           ],
-          "correctIndex": 2,
-          "explanation": "'Håller' stavas med å – h-å-l-l-e-r. Varken e eller ä här, utan å!"
+          "correctIndex": 1,
+          "explanation": "'Hälsar' stavas med ä – h-ä-l-s-a-r. Jämför med 'hälsning'."
         },
         {
           "type": "multiple-choice",
@@ -2421,22 +2421,22 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Fyll i rätt bokstav: 'Det är sv___rt att lära sig.' (inte lätt)",
-          "answer": "å",
-          "hint": "Svårt eller svärt? Hör du ett å-ljud eller ä-ljud?",
-          "explanation": "'Svårt' stavas med å – s-v-å-r-t. Svårt = inte lätt."
+          "question": "Fyll i rätt bokstav: 'Vi ses tyvärr alldeles för s___llan.' (inte ofta)",
+          "answer": "ä",
+          "hint": "Sällan eller sellan? Lyssna på vokalljudet.",
+          "explanation": "'Sällan' stavas med ä – s-ä-l-l-a-n. Motsatsen är 'ofta'."
         },
         {
           "type": "multiple-choice",
-          "question": "Välj rätt stavning: 'Vi ___ i söndags.' (träffades)",
+          "question": "Välj rätt stavning: 'Han ___ posten på vägen hem.' (går och tar med sig)",
           "options": [
-            "mötes",
-            "möttes",
-            "mättes",
-            "metes"
+            "hemtar",
+            "hämtar",
+            "hemmtar",
+            "hämmtar"
           ],
           "correctIndex": 1,
-          "explanation": "'Möttes' stavas med ö – m-ö-t-t-e-s. Dåtidsformen av 'mötas'."
+          "explanation": "'Hämtar' stavas med ä – h-ä-m-t-a-r. Jämför med 'hämtning'."
         },
         {
           "type": "fill-in-blank",
@@ -2480,12 +2480,12 @@
           "type": "build-sentence",
           "instruction": "Bygg meningen – var noga med e och ä!",
           "words": [
-            "Läraren",
-            "frågade",
-            "om",
-            "vi",
-            "förstår",
-            "texten."
+            "Min",
+            "vän",
+            "berättade",
+            "en",
+            "spännande",
+            "historia."
           ],
           "correctOrder": [
             0,
@@ -2495,7 +2495,7 @@
             4,
             5
           ],
-          "explanation": "'Läraren' (ä), 'frågade' (å+a), 'förstår' (ö+å) – ingen ä eller e-förväxling här, men vänj dig vid att läsa noggrant!"
+          "explanation": "'Vän', 'berättade' och 'spännande' stavas med ä, 'en' med e."
         },
         {
           "type": "multiple-choice",

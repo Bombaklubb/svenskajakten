@@ -2048,7 +2048,7 @@
         },
         {
           "type": "multiple-choice",
-          "question": "Hur stavas aktiviteten man gör på is med skridskor?",
+          "question": "Välj rätt stavning: 'Hon ___ skridskor på isen.' (glider fram på isen)",
           "options": [
             "åker",
             "åkir",
@@ -2056,7 +2056,7 @@
             "åkär"
           ],
           "correctIndex": 0,
-          "explanation": "'Åker' stavas med e – å-k-e-r."
+          "explanation": "'Åker' slutar på -er. Hon åker skridskor."
         },
         {
           "type": "build-sentence",
@@ -2091,22 +2091,22 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Fyll i rätt bokstav: 'Hunden l___per i parken.' (springer snabbt)",
-          "answer": "ö",
-          "hint": "Är det löper (med ö) eller leper (med e)?",
-          "explanation": "'Löper' stavas med ö. Det är ett ord för att springa fort."
+          "question": "Fyll i rätt bokstav: 'Jag rider på en h___st.' (djuret man rider på)",
+          "answer": "ä",
+          "hint": "Häst eller hest? Lyssna på vokalljudet.",
+          "explanation": "'Häst' stavas med ä – H-Ä-S-T. Lyssna: det är ett ä-ljud."
         },
         {
           "type": "multiple-choice",
-          "question": "Hur stavas familjens mamma?",
+          "question": "Vilket ord stavas rätt? (det gröna som växer på marken)",
           "options": [
-            "mor",
-            "mär",
-            "mör",
-            "more"
+            "gres",
+            "gräs",
+            "grese",
+            "gräse"
           ],
-          "correctIndex": 0,
-          "explanation": "'Mor' stavas med o. Det är ett annat ord för mamma."
+          "correctIndex": 1,
+          "explanation": "'Gräs' stavas med ä. Lyssna på vokalljudet – det är ett ä-ljud."
         },
         {
           "type": "multiple-choice",
@@ -2189,22 +2189,22 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Fyll i rätt bokstav: 'Läraren fr___gar eleverna.' (ställer en fråga)",
-          "answer": "å",
-          "hint": "Frågar eller fregor? Hör du ett å-ljud eller e-ljud?",
-          "explanation": "'Frågar' stavas med å – F-R-Å-G-A-R. Lyssna noga på vokalljudet."
+          "question": "Fyll i rätt bokstav: 'Jag hittade en st___n på stranden.' (hård bit av berg)",
+          "answer": "e",
+          "hint": "Sten eller stän? Lyssna på vokalljudet.",
+          "explanation": "'Sten' stavas med e – S-T-E-N. Här är det ett e-ljud, inte ä."
         },
         {
           "type": "multiple-choice",
-          "question": "Välj rätt stavning: 'Jag ___ på stolen.' (sitter)",
+          "question": "Välj rätt stavning: 'Min bästa ___ heter Alma.' (kompis)",
           "options": [
-            "seter",
-            "sitter",
-            "sätter",
-            "setter"
+            "ven",
+            "vän",
+            "venn",
+            "vänn"
           ],
           "correctIndex": 1,
-          "explanation": "'Sitter' stavas med i och e – S-I-T-T-E-R. Inte ä eller e i förstavelsen."
+          "explanation": "'Vän' stavas med ä. En vän är en kompis."
         },
         {
           "type": "multiple-choice",
