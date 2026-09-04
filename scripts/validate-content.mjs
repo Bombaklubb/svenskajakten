@@ -113,6 +113,61 @@ function checkBuildSentence(ex, where) {
   }
 }
 
+/**
+ * Punctuation marks a module title promises to cover.
+ *
+ * A module called "Punkt och frågetecken" had four exercises whose answer was
+ * "!" — a mark it never teaches and whose help text never mentions it. A pupil
+ * doing that module first met a right answer they had not been shown.
+ *
+ * Only titles that are nothing but a list of marks are held to this ("Punkt
+ * och frågetecken", "Punkt, komma och frågetecken"). A title with any other
+ * word in it — "Skiljetecken", "Avancerad interpunktion", "Skriva dialoger –
+ * citattecken" — promises a topic rather than a closed set, and a topic may
+ * fairly need companion marks such as the colon before a line of speech.
+ */
+const MARK_NAMES = {
+  "punkt": [".", "…"],
+  "frågetecken": ["?"],
+  "utropstecken": ["!"],
+  "komma": [","],
+  "kolon": [":"],
+  "semikolon": [";"],
+  "citattecken": ['"', "\u201d", "\u201c", "\u00bb", "\u00ab"],
+  "tankstreck": ["\u2013", "\u2014", "-"],
+  "apostrof": ["'", "\u2019"],
+};
+
+/** Words that may join mark names without making the title a topic. */
+const CONNECTIVES = /\b(och|samt|eller)\b|[,\-\u2013\u2014&]/g;
+
+function promisedMarks(title) {
+  let rest = title.toLowerCase();
+  const found = new Set();
+  // Longest first: "semikolon" contains "kolon", "utropstecken" contains none
+  // but the principle holds for any future additions.
+  for (const name of Object.keys(MARK_NAMES).sort((a, b) => b.length - a.length)) {
+    const word = new RegExp(`\\b${name}(er|en|et)?\\b`, "g");
+    if (word.test(rest)) {
+      for (const m of MARK_NAMES[name]) found.add(m);
+      rest = rest.replace(word, " ");
+    }
+  }
+  // Anything left over means the title names a topic, not a closed set.
+  const leftover = rest.replace(CONNECTIVES, " ").replace(/\s+/g, "").trim();
+  return leftover.length === 0 ? found : new Set();
+}
+
+/** The answer, when it is a bare punctuation mark rather than a word or sentence. */
+function bareMarkAnswer(ex) {
+  const answer =
+    ex.type === "multiple-choice" ? (ex.options ?? [])[ex.correctIndex]
+    : ex.type === "fill-in-blank" ? ex.answer
+    : null;
+  const a = String(answer ?? "").trim();
+  return a.length > 0 && a.length <= 2 && !/[\p{L}\p{N}]/u.test(a) ? a : null;
+}
+
 for (const stage of STAGES) {
   const path = `public/content/${stage}/content.json`;
   let data;
@@ -129,10 +184,19 @@ for (const stage of STAGES) {
       if (ids.has(mod.id)) err(`${stage}/${kind}`, `modul-id "${mod.id}" förekommer flera gånger`);
       ids.add(mod.id);
 
+      const promised = promisedMarks(mod.title ?? "");
+
       const stems = new Map();
       (mod.exercises ?? []).forEach((ex, i) => {
         const where = `${stage}/${mod.id}#${i}`;
         if (!String(ex.explanation ?? "").trim()) warn(where, "saknar explanation");
+
+        if (promised.size) {
+          const mark = bareMarkAnswer(ex);
+          if (mark && ![...mark].every((ch) => promised.has(ch))) {
+            err(where, `facit är "${mark}" men modulen heter "${mod.title}" och lovar bara ${[...promised].map((m) => `"${m}"`).join(", ")}`);
+          }
+        }
 
         if (ex.type === "multiple-choice") {
           checkMultipleChoice(ex, where);

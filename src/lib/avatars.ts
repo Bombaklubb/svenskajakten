@@ -82,9 +82,9 @@ export const AVATARS: Avatar[] = [
   { id: "cyborg",      emoji: "🦾",  name: "Cyborgen",         category: "utvalda" },
   { id: "pixelhero",   emoji: "🎮",  name: "Pixelhjälten",     category: "utvalda" },
   { id: "retrofigure", emoji: "👾",  name: "Retrofiguren",     category: "utvalda" },
-  { id: "hero",        emoji: "🦸",  name: "Hjälten",          category: "utvalda" },
-  { id: "megabot",     emoji: "🤖",  name: "Megaboten",        category: "utvalda" },
-  { id: "eightbit",    emoji: "👾",  name: "8-bitaren",        category: "utvalda" },
+  { id: "hero",        emoji: "🛡️",  name: "Hjälten",          category: "utvalda" },
+  { id: "megabot",     emoji: "🛸",  name: "Rymdboten",        category: "utvalda" },
+  { id: "eightbit",    emoji: "🕹️",  name: "8-bitaren",        category: "utvalda" },
 
   // ─── Djur ───────────────────────────────────────────────────────────────
   { id: "puppy",       emoji: "🐶",  name: "Valpen",     category: "djur" },
@@ -150,7 +150,7 @@ export const AVATARS: Avatar[] = [
   // ─── Säsong ─────────────────────────────────────────────────────────────
   { id: "easterbunny",   emoji: "🐇",  name: "Påskhare",        category: "sasong" },
   { id: "summerpirate",  emoji: "🏴‍☠️", name: "Sommarpirat",     category: "sasong" },
-  { id: "halloween",     emoji: "👻",  name: "Halloween-spöke", category: "sasong" },
+  { id: "halloween",     emoji: "🎃",  name: "Halloweenpumpa",  category: "sasong" },
   { id: "santa",         emoji: "🎅",  name: "Jultomte",        category: "sasong" },
   { id: "snowman",       emoji: "⛄",  name: "Snögubbe",        category: "sasong" },
   { id: "midsummer",     emoji: "💐",  name: "Midsommarfirare", category: "sasong" },

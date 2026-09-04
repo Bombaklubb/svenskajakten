@@ -1391,22 +1391,22 @@
         },
         {
           "type": "multiple-choice",
-          "question": "Vilket tecken passar? 'Åh, vad roligt___'",
+          "question": "Vilket tecken passar? 'Vi bakar bullar idag___'",
           "options": [
             ".",
             "?",
             "!",
             ","
           ],
-          "correctIndex": 2,
-          "explanation": "'Åh, vad roligt!' – man utropar något med glädje. Utropstecken visar stark känsla."
+          "correctIndex": 0,
+          "explanation": "'Vi bakar bullar idag.' är ett påstående – det avslutas med punkt."
         },
         {
           "type": "fill-in-blank",
-          "question": "Vilket tecken fattas? 'Titta, en fjäril___'",
-          "answer": "!",
-          "hint": "Man är glad och förvånad när man ser en fjäril.",
-          "explanation": "Utropstecken (!) används när man ropar eller är förvånad: 'Titta, en fjäril!'"
+          "question": "Vilket tecken fattas? 'Vill du leka med mig___'",
+          "answer": "?",
+          "hint": "Någon undrar något.",
+          "explanation": "'Vill du leka med mig?' är en fråga – den avslutas med frågetecken."
         },
         {
           "type": "multiple-choice",
@@ -1441,15 +1441,15 @@
         },
         {
           "type": "multiple-choice",
-          "question": "Välj rätt: 'Stopp___ Du ska inte springa inomhus.'",
+          "question": "Välj rätt: 'Vi går till skolan varje dag___'",
           "options": [
             ".",
             "?",
             "!",
             ","
           ],
-          "correctIndex": 2,
-          "explanation": "'Stopp!' – det är ett rop/kommando. Utropstecken används."
+          "correctIndex": 0,
+          "explanation": "'Vi går till skolan varje dag.' är ett påstående – det avslutas med punkt."
         },
         {
           "type": "multiple-choice",
@@ -1482,15 +1482,15 @@
         },
         {
           "type": "multiple-choice",
-          "question": "Vilket tecken passar i slutet av: 'Hjälp, jag kan inte hitta hem___'",
+          "question": "Vilket tecken passar i slutet av: 'När börjar filmen___'",
           "options": [
             ".",
             ",",
             "?",
             "!"
           ],
-          "correctIndex": 3,
-          "explanation": "'Hjälp, jag kan inte hitta hem!' – det är ett rop och uttrycker stark känsla – utropstecken."
+          "correctIndex": 2,
+          "explanation": "'När börjar filmen?' frågar om en tid – frågor avslutas med frågetecken."
         },
         {
           "type": "fill-in-blank",
