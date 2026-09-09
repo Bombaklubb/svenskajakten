@@ -2618,7 +2618,7 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Vilket tecken markerar ett inskott/parentes i meningen: 'Sverige _landet i norr_ är känt för sin natur'?",
+          "question": "Vilket tecken markerar ett inskott/parentes i meningen: 'Sverige ___landet i norr___ är känt för sin natur'?",
           "answer": "–",
           "hint": "Det är ett tankstreck.",
           "explanation": "Tankstreck (–) används för att rama in ett inskott."

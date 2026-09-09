@@ -2149,7 +2149,7 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Fyll i rätt bokstav: 'Vi klättrade upp på __erget.' (högt naturligt stenblock)",
+          "question": "Fyll i rätt bokstav: 'Vi klättrade upp på ___erget.' (högt naturligt stenblock)",
           "answer": "b",
           "hint": "Berg eller derg? Känn om du sluter läpparna eller rör tungan mot tänderna.",
           "explanation": "'Berget' börjar med b – man sluter läpparna för b-ljud. b-e-r-g.",
@@ -2206,7 +2206,7 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Fyll i rätt bokstav: 'Vi måste __etala för biljetten.' (ge pengar)",
+          "question": "Fyll i rätt bokstav: 'Vi måste ___etala för biljetten.' (ge pengar)",
           "answer": "b",
           "hint": "Betala eller detala? Känn: sluter du läpparna i början?",
           "explanation": "'Betala' börjar med b – man sluter läpparna för b-ljud. b-e-t-a-l-a.",
@@ -2216,7 +2216,7 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Fyll i rätt bokstav: 'Vi hittade ett __o i skogen.' (fågelns hem)",
+          "question": "Fyll i rätt bokstav: 'Vi hittade ett ___o i skogen.' (fågelns hem)",
           "answer": "b",
           "hint": "Bo eller do? Fågelns hem kallas ett bo.",
           "explanation": "'Bo' börjar med b – man sluter läpparna. b-o.",
@@ -2238,7 +2238,7 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Fyll i rätt bokstav: 'Hunden __ricker vatten ur skålen.' (tar in vätska)",
+          "question": "Fyll i rätt bokstav: 'Hunden ___ricker vatten ur skålen.' (tar in vätska)",
           "answer": "d",
           "hint": "Dricker eller bricker? Lyssna på begynnelseljudet.",
           "explanation": "'Dricker' börjar med d. Tungan nuddar tänderna: d-r-i-c-k-e-r.",
@@ -2272,7 +2272,7 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Fyll i rätt bokstav: 'Elefanten är ett stort __jur.' (levande varelse)",
+          "question": "Fyll i rätt bokstav: 'Elefanten är ett stort ___jur.' (levande varelse)",
           "answer": "d",
           "hint": "Djur eller bjur? Lyssna på konsonantljudet.",
           "explanation": "'Djur' börjar med d. d-j-u-r – d-ljudet görs med tungan mot tänderna.",
@@ -4665,7 +4665,7 @@
         {
           "id": "o-aa-mel-1-3",
           "type": "fill-in-blank",
-          "question": "Fyll i O eller Å: 'b_rd' – 'Vi åt middag vid bordet.'",
+          "question": "Fyll i O eller Å: 'b___rd' – 'Vi åt middag vid bordet.'",
           "answer": "O",
           "hint": "Möbeln du sitter vid och äter vid – hur stavas den?",
           "explanation": "'Bord' (möbeln) stavas med O.",
@@ -4676,7 +4676,7 @@
         {
           "id": "o-aa-mel-1-4",
           "type": "fill-in-blank",
-          "question": "Fyll i O eller Å: 'f_lk' – 'Det var mycket folk på torget.'",
+          "question": "Fyll i O eller Å: 'f___lk' – 'Det var mycket folk på torget.'",
           "answer": "O",
           "hint": "Många människor på ett ställe – vilket ord är det?",
           "explanation": "'Folk' (människor) stavas med O.",
@@ -4687,7 +4687,7 @@
         {
           "id": "o-aa-mel-1-5",
           "type": "fill-in-blank",
-          "question": "Fyll i O eller Å: 'g_rd' – 'Familjen bor på en liten bondgård.'",
+          "question": "Fyll i O eller Å: 'g___rd' – 'Familjen bor på en liten bondgård.'",
           "answer": "Å",
           "hint": "Platsen med ladugård, åkrar och djur.",
           "explanation": "'Gård' (bondgård) stavas med Å.",
@@ -4750,7 +4750,7 @@
         {
           "id": "o-aa-mel-1-10",
           "type": "fill-in-blank",
-          "question": "Fyll i O eller Å: 'l_g' – 'Hon log när hon fick beröm.'",
+          "question": "Fyll i O eller Å: 'l___g' – 'Hon log när hon fick beröm.'",
           "answer": "O",
           "hint": "Det är dåtid av 'le' – att le/skratta tyst.",
           "explanation": "'Log' (dåtid av le) stavas med O.",
@@ -4761,7 +4761,7 @@
         {
           "id": "o-aa-mel-1-11",
           "type": "fill-in-blank",
-          "question": "Fyll i O eller Å: 'l_g' – 'Hunden låg still under bordet.'",
+          "question": "Fyll i O eller Å: 'l___g' – 'Hunden låg still under bordet.'",
           "answer": "Å",
           "hint": "Det är dåtid av 'ligga' – att befinna sig liggandes.",
           "explanation": "'Låg' (dåtid av ligga) stavas med Å.",
@@ -4837,7 +4837,7 @@
         {
           "id": "o-aa-mel-1-17",
           "type": "fill-in-blank",
-          "question": "Fyll i O eller Å: 'm_rd' – 'Polisen utredde mordet noggrant.'",
+          "question": "Fyll i O eller Å: 'm___rd' – 'Polisen utredde mordet noggrant.'",
           "answer": "O",
           "hint": "Det allvarligaste brottet – hur stavas det?",
           "explanation": "'Mord' (brottet) stavas med O.",
@@ -6077,7 +6077,7 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Stavning: 'Han bär en ha_.' (något man har på huvudet)",
+          "question": "Stavning: 'Han bär en ha___.' (något man har på huvudet)",
           "answer": "tt",
           "hint": "Hat eller hatt? Tänk på om vokalen är lång eller kort.",
           "explanation": "'Hatt' – kort a-ljud kräver dubbelt t. 'Hat' (med långt a) betyder något annat!",

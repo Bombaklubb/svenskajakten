@@ -1795,7 +1795,7 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Fyll i rätt bokstav: '__röd' (matbröd man äter till frukost)",
+          "question": "Fyll i rätt bokstav: '___röd' (matbröd man äter till frukost)",
           "answer": "b",
           "hint": "Bröd eller dröd? Tänk på b-ljudet med läpparna.",
           "explanation": "'Bröd' börjar med b. Man gör b-ljudet genom att sluta och öppna läpparna.",
@@ -1860,7 +1860,7 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Fyll i rätt bokstav: '__jur' (levande varelser som inte är människor, t.ex. räv och björn)",
+          "question": "Fyll i rätt bokstav: '___jur' (levande varelser som inte är människor, t.ex. räv och björn)",
           "answer": "d",
           "hint": "Börjar det med b-ljud eller d-ljud? Säg ordet högt!",
           "explanation": "'Djur' börjar med d. Lyssna: D-JUR. Det låter inte som ett b!",
@@ -1918,7 +1918,7 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Fyll i rätt bokstav: '__rev' (ett papper man skriver och skickar till någon)",
+          "question": "Fyll i rätt bokstav: '___rev' (ett papper man skriver och skickar till någon)",
           "answer": "b",
           "hint": "Brev eller drev? Tänk på b-ljudet med läpparna.",
           "explanation": "'Brev' börjar med b. Man skriver ett brev till sin kompis – B-R-E-V.",
@@ -1928,7 +1928,7 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Fyll i rätt bokstav: '__arn' (unga människor, t.ex. i skolan)",
+          "question": "Fyll i rätt bokstav: '___arn' (unga människor, t.ex. i skolan)",
           "answer": "b",
           "hint": "Barn eller darn? Säg ordet högt – börjar det med b-ljud eller d-ljud?",
           "explanation": "'Barn' börjar med b. Man gör b-ljudet med läpparna: B-A-R-N.",
@@ -1962,10 +1962,13 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Fyll i rätt bokstav: '__oll' (något runt man spelar med)",
+          "question": "Fyll i rätt bokstav: '___oll' (något runt man spelar med)",
           "answer": "b",
           "hint": "Bol eller dol? Tänk på b-ljudet!",
-          "explanation": "'Boll' börjar med b. Man slår ihop läpparna för att göra b-ljud: B-O-L-L."
+          "explanation": "'Boll' börjar med b. Man slår ihop läpparna för att göra b-ljud: B-O-L-L.",
+          "alternativeAnswers": [
+            "boll"
+          ]
         },
         {
           "type": "multiple-choice",
@@ -1981,7 +1984,7 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Fyll i rätt bokstav: '__uva' (en fågel som kurrar)",
+          "question": "Fyll i rätt bokstav: '___uva' (en fågel som kurrar)",
           "answer": "d",
           "hint": "Duva eller buva? Lyssna på begynnelseljudet.",
           "explanation": "'Duva' börjar med d. D-U-V-A. Det är ett d-ljud, inte b-ljud!",
@@ -6269,7 +6272,7 @@
         {
           "id": "o-aa-lag-1-5",
           "type": "fill-in-blank",
-          "question": "Fyll i O eller Å: 'r_s' (en blomma med taggar)",
+          "question": "Fyll i O eller Å: 'r___s' (en blomma med taggar)",
           "answer": "O",
           "hint": "Tänk på en röd blomma – 'ros'. Vilken vokal hör du?",
           "explanation": "'Ros' stavas med O.",
@@ -6280,7 +6283,7 @@
         {
           "id": "o-aa-lag-1-6",
           "type": "fill-in-blank",
-          "question": "Fyll i O eller Å: 'r_d' (nyttigt förslag man ger någon)",
+          "question": "Fyll i O eller Å: 'r___d' (nyttigt förslag man ger någon)",
           "answer": "Å",
           "hint": "Läraren ger dig ett ___ när du fastnar. Hör du O eller Å?",
           "explanation": "'Råd' stavas med Å.",
@@ -6343,7 +6346,7 @@
         {
           "id": "o-aa-lag-1-11",
           "type": "fill-in-blank",
-          "question": "Fyll i O eller Å: 'b_k' (du läser i den)",
+          "question": "Fyll i O eller Å: 'b___k' (du läser i den)",
           "answer": "O",
           "hint": "Tänk på din läsbok i skolan – hur stavas den?",
           "explanation": "'Bok' stavas med O.",
@@ -6354,7 +6357,7 @@
         {
           "id": "o-aa-lag-1-12",
           "type": "fill-in-blank",
-          "question": "Fyll i O eller Å: 'h_l' (ett hål i strumpan)",
+          "question": "Fyll i O eller Å: 'h___l' (ett hål i strumpan)",
           "answer": "Å",
           "hint": "Strumpan gick sönder och det uppstod ett ___.",
           "explanation": "'Hål' stavas med Å.",
@@ -6404,7 +6407,7 @@
         {
           "id": "o-aa-lag-1-16",
           "type": "fill-in-blank",
-          "question": "Fyll i O eller Å: 's_l' (lyser på himlen)",
+          "question": "Fyll i O eller Å: 's___l' (lyser på himlen)",
           "answer": "O",
           "hint": "Den lyser gult och ger värme. Hur stavas den?",
           "explanation": "'Sol' stavas med O.",
@@ -6415,7 +6418,7 @@
         {
           "id": "o-aa-lag-1-17",
           "type": "fill-in-blank",
-          "question": "Fyll i O eller Å: 'g_rd' (bondgård med djur och åkrar)",
+          "question": "Fyll i O eller Å: 'g___rd' (bondgård med djur och åkrar)",
           "answer": "Å",
           "hint": "Dit åker man och ser kor och hästar.",
           "explanation": "'Gård' stavas med Å.",
@@ -7619,7 +7622,7 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Fyll i rätt bokstav: 'B_rjan' (start på något)",
+          "question": "Fyll i rätt bokstav: 'B___rjan' (start på något)",
           "answer": "ö",
           "hint": "Ordet är 'början' – vilken specialbokstav fattas?",
           "explanation": "'Början' stavas med ö: B-Ö-R-J-A-N.",

@@ -18,10 +18,14 @@ export function normalizeAnswer(value: string, caseSensitive = false): string {
   const tidied = value
     .replace(FANCY_QUOTES, "'")
     .replace(/\s+/g, " ")        // collapse double spaces and stray tabs
-    .trim()
-    .replace(TRAILING_PUNCTUATION, "")
     .trim();
-  return caseSensitive ? tidied : tidied.toLowerCase();
+  // Strip the trailing full stop only when an answer remains in front of it.
+  // Some exercises ask for the punctuation mark itself — "Vilket tecken
+  // fattas? 'Hur gammal är du ___'" — and stripping there left nothing at all,
+  // so the pupil typed the right mark and was marked wrong every time.
+  const stripped = tidied.replace(TRAILING_PUNCTUATION, "").trim();
+  const result = stripped.length > 0 ? stripped : tidied;
+  return caseSensitive ? result : result.toLowerCase();
 }
 
 /**

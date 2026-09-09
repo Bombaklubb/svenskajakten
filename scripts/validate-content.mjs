@@ -12,6 +12,8 @@
  */
 
 import { readFileSync } from "fs";
+// The very same matcher the app grades with, so the two cannot drift apart.
+import { isAnswerCorrect } from "../src/lib/answers.ts";
 
 const STAGES = ["lagstadiet", "mellanstadiet", "hogstadiet", "gymnasiet"];
 const errors = [];
@@ -52,11 +54,24 @@ function checkFillInBlank(ex, where) {
   const answer = String(ex.answer ?? "").trim();
 
   if (!answer) return err(where, "tomt answer");
-  if (!question.includes("___")) {
-    // Some letter exercises mark the gap inline as "__röd"; that still renders
-    // sensibly, so it is a style note rather than a broken exercise.
-    // Rendered as the question followed by the input box, which is fine.
+
+  // The gap the pupil fills is drawn where the question says "___" — exactly
+  // three underscores, because that is what FillInBlank splits on. Written
+  // with one or two ("__oll") the underscores are printed as text, no gap is
+  // drawn, and the pupil has to guess whether to type the letter or the word.
+  if (/_/.test(question) && !question.includes("___")) {
+    err(where, `luckan är markerad med färre än tre understreck: "${question.slice(0, 60)}"`);
+  } else if (!question.includes("___")) {
+    // No gap at all is fine: the question is shown with the input box below it.
     warn(where, `saknar ___ i frågan: "${question.slice(0, 60)}"`);
+  }
+
+  // The exercise must accept its own facit. Answers that are a bare
+  // punctuation mark stopped doing so for a while — normalizeAnswer stripped
+  // the mark and left nothing — so 19 exercises could not be answered
+  // correctly at all. This is the invariant that catches that class outright.
+  if (!isAnswerCorrect(answer, answer, ex.alternativeAnswers, ex.caseSensitive)) {
+    err(where, `facit ${JSON.stringify(answer)} godkänns inte av svarskontrollen – övningen går inte att klara`);
   }
 
   const alts = (ex.alternativeAnswers ?? []).map(norm);

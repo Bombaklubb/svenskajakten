@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "node --experimental-strip-types --import ./tests/register.mjs --test tests/*.test.ts",
-    "validate-content": "node scripts/validate-content.mjs"
+    "validate-content": "node --experimental-strip-types --no-warnings --import ./tests/register.mjs scripts/validate-content.mjs"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.11",

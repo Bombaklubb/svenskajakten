@@ -112,3 +112,62 @@ describe("meningsbygge", () => {
     assert.equal(isSentenceCorrect("   ", [facit, alt]), false);
   });
 });
+
+describe("svar som själva är skiljetecken", () => {
+  // "Vilket tecken fattas? 'Hur gammal är du ___'" — the answer is the mark
+  // itself. Stripping trailing punctuation left nothing to compare, so 19
+  // exercises across five modules could not be answered correctly at all.
+  test("frågetecken godkänns som svar", () => {
+    assert.ok(isAnswerCorrect("?", "?"));
+  });
+
+  test("punkt, utropstecken, komma och kolon godkänns", () => {
+    for (const mark of [".", "!", ",", ":", ";"]) {
+      assert.ok(isAnswerCorrect(mark, mark), `"${mark}" borde godkännas`);
+    }
+  });
+
+  test("fel tecken är fortfarande fel", () => {
+    assert.equal(isAnswerCorrect("!", "?"), false);
+    assert.equal(isAnswerCorrect(".", "?"), false);
+    assert.equal(isAnswerCorrect("hund", "?"), false);
+  });
+
+  test("tomt svar godkänns fortfarande inte", () => {
+    assert.equal(isAnswerCorrect("", "?"), false);
+    assert.equal(isAnswerCorrect("   ", "?"), false);
+  });
+
+  test("mellanslag runt tecknet spelar ingen roll", () => {
+    assert.ok(isAnswerCorrect(" ? ", "?"));
+  });
+
+  test("avslutande punkt förlåts fortfarande i vanliga svar", () => {
+    // The reason the stripping exists in the first place – it must survive.
+    assert.ok(isAnswerCorrect("De tre pojkarna.", "De tre pojkarna"));
+    assert.ok(isAnswerCorrect("hund!", "hund"));
+  });
+
+  test("varje facit i innehållet godkänner sig självt", async () => {
+    // The invariant validate-content enforces, asserted here too so a change
+    // to the matcher fails the test run and not only the content gate.
+    const { readFileSync } = await import("node:fs");
+    let checked = 0;
+    for (const stage of ["lagstadiet", "mellanstadiet", "hogstadiet", "gymnasiet"]) {
+      const data = JSON.parse(readFileSync(`public/content/${stage}/content.json`, "utf8"));
+      for (const kind of ["grammar", "spelling", "stavningstest"]) {
+        for (const mod of data[kind] ?? []) {
+          for (const ex of mod.exercises ?? []) {
+            if (ex.type !== "fill-in-blank") continue;
+            checked++;
+            assert.ok(
+              isAnswerCorrect(ex.answer, ex.answer, ex.alternativeAnswers, ex.caseSensitive),
+              `${stage}/${mod.id}: facit "${ex.answer}" godkänns inte`
+            );
+          }
+        }
+      }
+    }
+    assert.ok(checked > 300, `granskade bara ${checked} övningar`);
+  });
+});
