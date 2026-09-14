@@ -61,14 +61,17 @@ export default function Header({ student, onLogout }: HeaderProps) {
             <rect y="15" width="40" height="10" fill="#FECC02" />
             <rect x="13" y="0" width="10" height="40" fill="#FECC02" />
           </svg>
-          <span className="font-black text-xl text-sv-800 dark:text-white hidden sm:block tracking-tight">
+          {/* The name waits for a wide screen. Shown from sm it arrived at the
+              same moment as the points and avatar chips, and the header row
+              grew to 817px inside a 640px window. */}
+          <span className="font-black text-xl text-sv-800 dark:text-white hidden lg:block tracking-tight">
             Svenskajakten
           </span>
         </Link>
 
         {/* Nav */}
         {student && (
-          <nav className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+          <nav className="flex items-center gap-1.5 sm:gap-2 md:gap-3 flex-shrink-0">
             {/* Kistor */}
             <Link
               href="/kistor"
@@ -97,7 +100,7 @@ export default function Header({ student, onLogout }: HeaderProps) {
 
             {/* Totala poäng */}
             <div
-              className="hidden xs:flex items-center gap-1.5 min-h-[44px] bg-gradient-to-b from-amber-50 to-amber-100 dark:bg-amber-900/30 border-2 border-amber-300 dark:border-amber-700 px-3 py-1.5 rounded-xl cursor-default"
+              className="hidden sm:flex items-center gap-1.5 min-h-[44px] bg-gradient-to-b from-amber-50 to-amber-100 dark:bg-amber-900/30 border-2 border-amber-300 dark:border-amber-700 px-3 py-1.5 rounded-xl cursor-default"
               title="Totala poäng du samlat"
               style={{ boxShadow: "0 3px 0 0 rgba(245, 158, 11, 0.25), inset 0 2px 4px 0 rgba(255, 255, 255, 0.8)" }}
             >
@@ -111,7 +114,7 @@ export default function Header({ student, onLogout }: HeaderProps) {
               return (
                 <Link
                   href="/profile"
-                  className="relative hidden sm:flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-sv-50 dark:hover:bg-gray-800 transition-all cursor-pointer border-2 border-transparent hover:border-sv-200"
+                  className="relative hidden md:flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-sv-50 dark:hover:bg-gray-800 transition-all cursor-pointer border-2 border-transparent hover:border-sv-200"
                 >
                   <EffectOverlay effectId={student.equippedEffect} size={40} count={6} />
                   <FramedAvatar avatar={av} frameId={student.equippedFrame} size={36} className="flex-shrink-0" />
@@ -145,12 +148,30 @@ export default function Header({ student, onLogout }: HeaderProps) {
               {dark ? "☀️" : "🌙"}
             </button>
 
+            {/* Om Svenskajakten */}
+            <Link
+              href="/om"
+              title="Om Svenskajakten – så fungerar appen"
+              aria-label="Om Svenskajakten"
+              // Below 400px the row is full without it, and a page that
+              // scrolls sideways is worse than a button one step further away:
+              // there the About page is still reached from the start screen.
+              className="hidden xs:flex items-center justify-center gap-1.5 min-w-[44px] min-h-[44px] px-2.5 rounded-xl text-sv-800 dark:text-gray-300 hover:bg-sv-50 dark:hover:bg-gray-800 transition-all touch-manipulation cursor-pointer border-2 border-transparent hover:border-sv-200"
+            >
+              <span aria-hidden="true">❓</span>
+              {/* The label is long, so it waits for a wide screen. The header is
+                  capped at max-w-5xl and already carries five items before it. */}
+              <span className="hidden xl:inline text-sm font-bold">Om Svenskajakten</span>
+            </Link>
+
             {/* Logout */}
             <button
               onClick={handleLogout}
-              className="px-3 sm:px-4 py-2 min-h-[44px] rounded-xl text-sm font-bold text-sv-800 dark:text-gray-300 hover:bg-red-50 dark:hover:bg-red-900/20 hover:text-red-500 dark:hover:text-red-400 transition-all touch-manipulation cursor-pointer border-2 border-transparent hover:border-red-200"
+              aria-label="Logga ut"
+              className="flex items-center justify-center min-w-[44px] min-h-[44px] px-2.5 sm:px-4 rounded-xl text-sm font-bold text-sv-800 dark:text-gray-300 hover:bg-red-50 dark:hover:bg-red-900/20 hover:text-red-500 dark:hover:text-red-400 transition-all touch-manipulation cursor-pointer border-2 border-transparent hover:border-red-200"
             >
-              Logga ut
+              <span className="hidden sm:inline">Logga ut</span>
+              <span className="sm:hidden" aria-hidden="true">🚪</span>
             </button>
           </nav>
         )}

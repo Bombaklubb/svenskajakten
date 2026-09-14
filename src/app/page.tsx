@@ -158,6 +158,19 @@ export default function HomePage() {
                 {isReturning ? "Fortsätt jakten! 🏆" : "Starta jakten! 🚀"}
               </button>
             </form>
+
+            {/* Om Svenskajakten – reachable before logging in. Kept inside the
+                white card: below it the link would sit behind the fixed contact
+                bar on a short screen. */}
+            <div className="text-center mt-4 pt-4 border-t border-sv-100 dark:border-gray-700">
+              <Link
+                href="/om"
+                className="inline-flex items-center gap-1.5 text-sm font-bold text-sv-700 hover:text-sv-800 hover:underline underline-offset-4 transition-colors dark:text-sv-300 dark:hover:text-sv-200"
+              >
+                <span aria-hidden="true">❓</span>
+                Om Svenskajakten – så fungerar appen
+              </Link>
+            </div>
           </div>
         </BlurFade>
       </div>
