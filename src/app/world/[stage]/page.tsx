@@ -6,18 +6,28 @@ import { notFound } from "next/navigation";
 import Header from "@/components/ui/Header";
 import ModuleCard from "@/components/ui/ModuleCard";
 import FinalTestCard from "@/components/ui/FinalTestCard";
-import { loadStudent, loadRetryQueue, removeFromRetryQueue, addPointsToStored } from "@/lib/storage";
+import { loadStudent, loadRetryQueue, removeFromRetryQueue, addPointsToStored, hasDoneModuleToday, loadGamification } from "@/lib/storage";
 import { getStage } from "@/lib/stages";
 import { loadStageContent } from "@/lib/content";
 import { getThemeClassName, getThemeStyle, getThemeWrapperClass } from "@/lib/shop";
-import { RETRY_CORRECT_POINTS, getPointsMultiplier, getGamePointsToday, MINIGAME_DAILY_CAP } from "@/lib/gamification";
+import {
+  RETRY_CORRECT_POINTS,
+  getPointsMultiplier,
+  getGamePointsToday,
+  MINIGAME_DAILY_CAP,
+  BOSS_MODULES_PER_FIGHT,
+  completedModulesInStage,
+  bossWinsInStage,
+  getBossGate,
+  nextBossForStage,
+} from "@/lib/gamification";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import MultipleChoice from "@/components/exercises/MultipleChoice";
 import FillInBlank from "@/components/exercises/FillInBlank";
 import BuildSentence from "@/components/exercises/BuildSentence";
 import WordClues from "@/components/exercises/WordClues";
 import ListenSpell from "@/components/exercises/ListenSpell";
-import type { StudentData, StageContent, RetryItem } from "@/lib/types";
+import type { StudentData, StageContent, RetryItem, StageId } from "@/lib/types";
 
 interface RuleItem {
   term: string;
@@ -155,6 +165,7 @@ export default function WorldPage({ params }: Props) {
               { label: "Grammatik", icon: "📝", count: Object.values(stageProgress.grammarModules).filter((m) => m.completed).length, total: content?.grammar.length ?? 0 },
               { label: "Stavning",  icon: "✏️", count: Object.values(stageProgress.spellingModules ?? {}).filter((m) => m.completed).length, total: content?.spelling?.length ?? 0 },
               { label: "Ordsök.",   icon: "🔍", count: Object.values(stageProgress.wordsearchModules ?? {}).filter((m) => m.completed).length, total: content?.wordsearch?.length ?? 0 },
+              { label: "Stavtest",  icon: "⏱️", count: Object.values(stageProgress.stavningstestModules ?? {}).filter((m) => m.completed).length, total: content?.stavningstest?.length ?? 0 },
             ].map(({ label, icon, count, total }) => {
               const done = total > 0 && count === total;
               return (
@@ -206,6 +217,9 @@ export default function WorldPage({ params }: Props) {
               <h2 className="text-xl font-black text-gray-900 dark:text-gray-100">Spel</h2>
               <p className="text-gray-500 dark:text-gray-300 text-sm mt-1">Träna svenska och grammatik med roliga spel!</p>
             </div>
+            {/* The boss belongs to this world and costs chapters in this world. */}
+            <BossTeaser stageId={stage.id} student={student} />
+
             {/* The payout rule, stated before the pupil plays rather than
                 discovered after a round paid out less than the scoreboard said. */}
             <div className="mb-5 rounded-2xl border-2 border-amber-200 dark:border-amber-700 bg-amber-50 dark:bg-amber-900/20 px-4 py-3 text-sm text-amber-900 dark:text-amber-200">
@@ -215,6 +229,27 @@ export default function WorldPage({ params }: Props) {
                 sedan lite mindre för varje omspel. Imorgon börjar räkningen om.
               </p>
             </div>
+
+            {!hasDoneModuleToday(student) ? (
+              // Locked outright rather than quietly paying nothing — a game that
+              // silently stopped giving points would read as a bug.
+              <div className="rounded-3xl border-3 border-dashed border-sv-200 dark:border-gray-600 bg-white dark:bg-gray-800 px-5 py-8 text-center">
+                <div className="text-5xl mb-2">🔒</div>
+                <h3 className="text-lg font-black text-gray-800 dark:text-gray-100 mb-1">
+                  Spelen öppnar efter dagens första kapitel
+                </h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300 mb-5">
+                  Klara ett kapitel i dag, så är alla fyra spelen öppna resten av dagen.
+                </p>
+                <button
+                  onClick={() => setActiveTab("grammar")}
+                  className="btn-primary text-sm"
+                  style={{ background: "linear-gradient(135deg, #006AA7, #004a75)" }}
+                >
+                  Till kapitlen →
+                </button>
+              </div>
+            ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Memory */}
               <Link href={`/world/${stageId}/spel/memory`} className="block group rounded-3xl overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-xl"
@@ -284,6 +319,7 @@ export default function WorldPage({ params }: Props) {
                 </div>
               </Link>
             </div>
+            )}
           </div>
 
         ) : activeTab === "retry" ? (
@@ -571,5 +607,49 @@ function GamePointsToday({ points }: { points: number }) {
     <p className="mt-2 inline-flex items-center gap-1 rounded-full bg-black/25 px-2.5 py-1 text-xs font-bold text-white">
       {full ? "🏁 Dagens gräns nådd" : `⭐ Idag: ${points}/${MINIGAME_DAILY_CAP}`}
     </p>
+  );
+}
+
+/**
+ * The boss, as seen from its world: how many chapters are left before the next
+ * fight, or an invitation when one has been earned.
+ */
+function BossTeaser({ stageId, student }: { stageId: StageId; student: StudentData | null }) {
+  const [gam, setGam] = useState<ReturnType<typeof loadGamification> | null>(null);
+  useEffect(() => { setGam(loadGamification()); }, []);
+
+  const done = completedModulesInStage(student, stageId);
+  const wins = bossWinsInStage(gam, stageId);
+  const gate = getBossGate(done, wins);
+  const boss = nextBossForStage(stageId, wins);
+  if (!boss) return null;
+
+  return (
+    <Link
+      href={`/boss?stage=${stageId}`}
+      className="mb-5 block rounded-3xl overflow-hidden transition-all hover:-translate-y-0.5"
+      style={{ border: "3px solid", borderColor: gate.unlocked ? "#ef4444" : "#d1d5db", boxShadow: "0 4px 16px rgba(0,0,0,0.1)" }}
+    >
+      <div className="flex items-center gap-3 px-5 py-4" style={{ background: boss.gradient }}>
+        <span className="text-4xl drop-shadow">{gate.unlocked ? boss.emoji : "🔒"}</span>
+        <div className="min-w-0">
+          <h3 className="font-black text-white text-lg leading-tight">{boss.name}</h3>
+          <p className="text-white/80 text-xs">
+            {gate.unlocked
+              ? "Matchen är upplåst – utmana bossen!"
+              : `Öppnar om ${gate.remaining} kapitel`}
+          </p>
+        </div>
+      </div>
+      <div className="bg-white dark:bg-gray-800 px-5 py-2.5 flex items-center justify-between gap-3">
+        <span className="text-xs font-bold text-gray-600 dark:text-gray-300">
+          {gate.unlocked ? `${gate.completed} kapitel klara` : `${gate.completed} / ${gate.needed} kapitel`}
+          {wins > 0 && <span className="ml-2 text-gray-500 dark:text-gray-400">{wins}× vunnen</span>}
+        </span>
+        <span className={`text-xs font-bold ${gate.unlocked ? "text-red-600 dark:text-red-400" : "text-gray-500 dark:text-gray-400"}`}>
+          {gate.unlocked ? "Utmana →" : `var ${BOSS_MODULES_PER_FIGHT}:e kapitel`}
+        </span>
+      </div>
+    </Link>
   );
 }

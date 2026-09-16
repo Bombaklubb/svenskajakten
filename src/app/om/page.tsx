@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import Header from "@/components/ui/Header";
 import { loadStudent } from "@/lib/storage";
 import { STAGES } from "@/lib/stages";
-import { CHEST_META } from "@/lib/gamification";
+import { CHEST_META, BOSS_MODULES_PER_FIGHT } from "@/lib/gamification";
 import { MAX_LEVEL } from "@/lib/levels";
 import type { StudentData, ChestType } from "@/lib/types";
 
@@ -220,9 +220,11 @@ export default function OmPage() {
             ))}
           </ul>
           <p className="text-sm">
-            Frågorna och orden hämtas ur världens egna kapitel, så de byts ut efter hand. Varje spel ger
-            som mest <strong>400 poäng per dag</strong>, och varje ny omgång samma dag ger lite mindre:
-            100, 80, 60, 50 och sedan 40 procent. Spelen är ett komplement till kapitlen, inte en genväg.
+            <strong>Spelen öppnar när du klarat dagens första kapitel</strong> och står sedan öppna
+            resten av dagen. Frågorna och orden hämtas ur världens egna kapitel, så de byts ut efter
+            hand. Varje spel ger som mest <strong>400 poäng per dag</strong>, och varje ny omgång samma
+            dag ger lite mindre: 100, 80, 60, 50 och sedan 40 procent. Spelen är ett komplement till
+            kapitlen, inte en genväg.
           </p>
         </Section>
 
@@ -303,9 +305,14 @@ export default function OmPage() {
 
         <Section emoji="⚔️" title="Bossen">
           <p>
-            Efter fem avklarade kapitel låses <strong>bossutmaningen</strong> upp. Den är en snabb
-            frågeomgång som ger extrapoäng och märket Bossbesegrare. Första segern ger mest, den andra
-            mindre, och därefter är det äran som återstår.
+            Varje värld har sin egen <strong>boss</strong>, och du tjänar en match för varje{" "}
+            <strong>{BOSS_MODULES_PER_FIGHT} kapitel</strong> du klarar i den världen. Tio kapitel i
+            Ordängen ger en match mot Ordängens boss – kapitel i en annan värld räknas inte dit.
+          </p>
+          <p>
+            Matchen är en snabb frågeomgång som ger extrapoäng, en kista och märket Bossbesegrare.
+            Den betalar lika mycket varje gång: det är kapitlen som är priset, inte segern.
+            Bossen finns under fliken <strong>Spel</strong> i varje värld.
           </p>
         </Section>
 

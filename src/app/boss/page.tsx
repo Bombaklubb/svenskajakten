@@ -1,12 +1,26 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Header from "@/components/ui/Header";
+import { useSearchParams } from "next/navigation";
 import { loadStudent, addPointsToStored, loadGamification, saveGamification } from "@/lib/storage";
-import { BOSSES, getBadge, capNewChests, CHEST_META } from "@/lib/gamification";
-import type { StudentData, GamificationData, Chest, ChestType } from "@/lib/types";
+import {
+  BOSSES,
+  getBadge,
+  capNewChests,
+  CHEST_META,
+  BOSS_MODULES_PER_FIGHT,
+  completedModulesInStage,
+  bossWinsInStage,
+  getBossGate,
+  nextBossForStage,
+  bossPayout,
+  type BossQuestion,
+} from "@/lib/gamification";
+import { STAGES, getStage } from "@/lib/stages";
+import type { StudentData, GamificationData, Chest, ChestType, StageId } from "@/lib/types";
 
 const PASS_BADGE = "boss_slayer";
 
@@ -16,6 +30,32 @@ const CAT_LABELS: Record<string, string> = {
 };
 
 type Phase = "select" | "intro" | "battle" | "win" | "lose";
+
+function shuffle<T>(arr: T[]): T[] {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+/**
+ * The boss's questions in a fresh order, with the options shuffled too.
+ *
+ * They used to come in a fixed order with a fixed correctIndex, so a pupil who
+ * had met the boss a few times could clear it from memory in twenty seconds.
+ */
+function dealQuestions(questions: BossQuestion[]): BossQuestion[] {
+  return shuffle(questions).map((q) => {
+    const order = shuffle(q.options.map((_, i) => i));
+    return {
+      ...q,
+      options: order.map((i) => q.options[i]),
+      correctIndex: order.indexOf(q.correctIndex),
+    };
+  });
+}
 
 function DifficultyStars({ count }: { count: number }) {
   return (
@@ -27,13 +67,19 @@ function DifficultyStars({ count }: { count: number }) {
   );
 }
 
-export default function BossPage() {
+function BossPageInner() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const stageParam = searchParams.get("stage");
+  const stageId = (STAGES.find((s) => s.id === stageParam)?.id ?? null) as StageId | null;
+
   const [student, setStudent] = useState<StudentData | null>(null);
   const [gam, setGam] = useState<GamificationData | null>(null);
 
   const [phase, setPhase] = useState<Phase>("select");
   const [activeBossId, setActiveBossId] = useState<string | null>(null);
+  /** The questions for this run, shuffled when the battle starts. */
+  const [questions, setQuestions] = useState<BossQuestion[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [results, setResults] = useState<boolean[]>([]);
   const [selected, setSelected] = useState<number | null>(null);
@@ -46,12 +92,17 @@ export default function BossPage() {
     const g = loadGamification();
     setStudent(s);
     setGam(g);
-    if (!g.bossUnlocked) router.push("/kistor");
   }, []);
 
   if (!student || !gam) return null;
 
   const activeBoss = BOSSES.find((b) => b.id === activeBossId) ?? null;
+
+  // The lock, per world: every fight costs another ten chapters in that world.
+  const completedHere = stageId ? completedModulesInStage(student, stageId) : 0;
+  const winsHere = stageId ? bossWinsInStage(gam, stageId) : 0;
+  const gate = getBossGate(completedHere, winsHere);
+  const bossHere = stageId ? nextBossForStage(stageId, winsHere) : undefined;
 
   function handleSelectBoss(bossId: string) {
     setActiveBossId(bossId);
@@ -59,6 +110,7 @@ export default function BossPage() {
   }
 
   function handleStartBattle() {
+    if (activeBoss) setQuestions(dealQuestions(activeBoss.questions));
     setCurrentIndex(0);
     setResults([]);
     setSelected(null);
@@ -74,7 +126,6 @@ export default function BossPage() {
   function handleConfirm() {
     if (!activeBoss || selected === null || confirmed) return;
     setConfirmed(true);
-    const questions = activeBoss.questions;
     const currentQ = questions[currentIndex];
 
     setTimeout(() => {
@@ -97,7 +148,10 @@ export default function BossPage() {
           const newBadges = hasBossSlayer ? gam!.badges : [...gam!.badges, PASS_BADGE];
           const prevWins = gam!.bossWinsPerBoss ?? {};
           const prevBossWins = prevWins[activeBoss.id] ?? 0;
-          const actualBonus = prevBossWins === 0 ? Math.min(activeBoss.bonusPoints, 200) : prevBossWins === 1 ? 50 : 0;
+          // The same every time. Ten chapters buy the fight, so the chapters are
+          // the brake — a fight that paid nothing would stop being a reason to
+          // do them, which is the whole point of the lock.
+          const actualBonus = bossPayout(activeBoss);
           const newGam: GamificationData = {
             ...gam!,
             chests: [...gam!.chests, ...cappedChests],
@@ -134,6 +188,7 @@ export default function BossPage() {
   }
 
   function handleRetry() {
+    if (activeBoss) setQuestions(dealQuestions(activeBoss.questions));
     setCurrentIndex(0);
     setResults([]);
     setSelected(null);
@@ -150,64 +205,149 @@ export default function BossPage() {
     setConfirmed(false);
   }
 
-  // ── Boss selection ───────────────────────────────────────────────────────────
-  if (phase === "select") {
+  // ── Which world? ─────────────────────────────────────────────────────────────
+  // The boss used to be one global list of six, all open at once after five
+  // chapters anywhere. It now belongs to a world, and every fight there costs
+  // another ten chapters in that same world.
+  if (phase === "select" && !stageId) {
     return (
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
         <Header student={student} />
         <div style={{ background: "linear-gradient(135deg, #1f2937, #374151, #4b5563)" }}>
           <div className="max-w-3xl mx-auto px-4 py-6">
-            <Link href="/kistor" className="inline-flex items-center gap-1 text-white/70 hover:text-white text-sm mb-3 transition-colors">
-              ← Hemliga kistor
+            <Link href="/" className="inline-flex items-center gap-1 text-white/70 hover:text-white text-sm mb-3 transition-colors">
+              ← Tillbaka
             </Link>
             <div className="flex items-center gap-3">
               <span className="text-4xl">⚔️</span>
               <div>
-                <h1 className="text-2xl font-black text-white">Boss Challenge</h1>
-                <p className="text-white/70 text-sm">Välj en boss att utmana!</p>
+                <h1 className="text-2xl font-black text-white">Bossutmaningen</h1>
+                <p className="text-white/70 text-sm">Varje värld har sin egen boss</p>
               </div>
             </div>
           </div>
         </div>
 
         <main className="max-w-3xl mx-auto px-4 py-8 space-y-4">
-          {BOSSES.map((boss) => {
-            const wins = gam.bossWinsPerBoss?.[boss.id] ?? 0;
+          <p className="text-sm text-gray-600 dark:text-gray-300">
+            Du tjänar en bossmatch för varje <strong>{BOSS_MODULES_PER_FIGHT} kapitel</strong> du
+            klarar i en värld. Bossen är belöningen för övningarna, inte en väg runt dem.
+          </p>
+          {STAGES.map((st) => {
+            const done = completedModulesInStage(student, st.id);
+            const wins = bossWinsInStage(gam, st.id);
+            const g = getBossGate(done, wins);
+            const boss = nextBossForStage(st.id, wins);
             return (
-              <button
-                key={boss.id}
-                onClick={() => handleSelectBoss(boss.id)}
-                className="w-full text-left rounded-3xl overflow-hidden transition-all active:scale-[0.99] cursor-pointer"
-                style={{ border: `3px solid ${boss.borderColor}`, boxShadow: `0 6px 24px rgba(0,0,0,0.15)` }}
+              <Link
+                key={st.id}
+                href={`/boss?stage=${st.id}`}
+                className="block rounded-3xl overflow-hidden transition-all hover:-translate-y-0.5"
+                style={{ border: "3px solid", borderColor: g.unlocked ? "#ef4444" : "#d1d5db", boxShadow: "0 6px 24px rgba(0,0,0,0.12)" }}
               >
-                <div className="flex items-center gap-4 px-5 py-4" style={{ background: boss.gradient }}>
-                  <div className="text-5xl flex-shrink-0 drop-shadow-lg">{boss.emoji}</div>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2 mb-0.5">
-                      <h2 className="text-lg font-black text-white">{boss.name}</h2>
-                      {wins > 0 && (
-                        <span className="text-xs font-bold bg-white/20 text-white px-2 py-0.5 rounded-full">
-                          {wins}× vunnit
-                        </span>
-                      )}
-                    </div>
-                    <p className="text-white/80 text-sm leading-snug">{boss.subtitle}</p>
-                  </div>
-                  <div className="flex-shrink-0 text-right">
-                    <DifficultyStars count={boss.difficultyStars} />
-                    <p className="text-white/70 text-xs mt-1">{boss.difficulty}</p>
+                <div className={`flex items-center gap-3 px-5 py-4 ${st.bgClass}`}>
+                  <span className="text-4xl drop-shadow">{st.emoji}</span>
+                  <div className="min-w-0">
+                    <h2 className="text-lg font-black text-white">{st.name}</h2>
+                    <p className="text-white/80 text-sm">{boss ? boss.name : "Ingen boss"}</p>
                   </div>
                 </div>
-                <div className="bg-white dark:bg-gray-800 px-5 py-3 flex items-center justify-between">
-                  <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-300">
-                    <span>📝 {boss.questions.length} frågor</span>
-                    <span>🏆 +{boss.bonusPoints} poäng</span>
-                  </div>
-                  <span className="font-bold text-gray-500 dark:text-gray-300 text-sm">Utmana →</span>
+                <div className="bg-white dark:bg-gray-800 px-5 py-3 flex items-center justify-between gap-3">
+                  <span className="text-sm text-gray-600 dark:text-gray-300">
+                    {/* Past the line "12 av 10 kapitel" reads as a mistake. */}
+                    {g.unlocked ? `${done} kapitel klara` : `${done} av ${g.needed} kapitel`}
+                    {wins > 0 && <span className="ml-2 text-xs font-bold text-gray-500 dark:text-gray-400">{wins}× vunnen</span>}
+                  </span>
+                  <span className={`text-sm font-bold ${g.unlocked ? "text-red-600 dark:text-red-400" : "text-gray-500 dark:text-gray-400"}`}>
+                    {g.unlocked ? "Utmana →" : `🔒 om ${g.remaining} kapitel`}
+                  </span>
                 </div>
-              </button>
+              </Link>
             );
           })}
+        </main>
+      </div>
+    );
+  }
+
+  // ── The world's boss: locked, or ready to fight ──────────────────────────────
+  if (phase === "select" && stageId) {
+    const stage = getStage(stageId)!;
+    return (
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+        <Header student={student} />
+        <div className={stage.bgClass}>
+          <div className="max-w-3xl mx-auto px-4 py-6">
+            <Link href={`/world/${stageId}`} className="inline-flex items-center gap-1 text-white/70 hover:text-white text-sm mb-3 transition-colors">
+              ← {stage.name}
+            </Link>
+            <div className="flex items-center gap-3">
+              <span className="text-4xl">⚔️</span>
+              <div>
+                <h1 className="text-2xl font-black text-white">Bossutmaningen</h1>
+                <p className="text-white/70 text-sm">{stage.name}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <main className="max-w-3xl mx-auto px-4 py-8 space-y-4">
+          {!bossHere ? (
+            <p className="text-gray-600 dark:text-gray-300">Den här världen har ingen boss ännu.</p>
+          ) : gate.unlocked ? (
+            <button
+              onClick={() => handleSelectBoss(bossHere.id)}
+              className="w-full text-left rounded-3xl overflow-hidden transition-all active:scale-[0.99] cursor-pointer"
+              style={{ border: `3px solid ${bossHere.borderColor}`, boxShadow: "0 6px 24px rgba(0,0,0,0.15)" }}
+            >
+              <div className="flex items-center gap-4 px-5 py-4" style={{ background: bossHere.gradient }}>
+                <div className="text-5xl flex-shrink-0 drop-shadow-lg">{bossHere.emoji}</div>
+                <div className="flex-1 min-w-0">
+                  <h2 className="text-lg font-black text-white">{bossHere.name}</h2>
+                  <p className="text-white/80 text-sm leading-snug">{bossHere.subtitle}</p>
+                </div>
+                <div className="flex-shrink-0 text-right">
+                  <DifficultyStars count={bossHere.difficultyStars} />
+                  <p className="text-white/70 text-xs mt-1">{bossHere.difficulty}</p>
+                </div>
+              </div>
+              <div className="bg-white dark:bg-gray-800 px-5 py-3 flex items-center justify-between">
+                <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-300">
+                  <span>📝 {bossHere.questions.length} frågor</span>
+                  {/* The real payout. The card used to print bonusPoints, up to
+                      "+1200", while the most that has ever been paid is 200. */}
+                  <span>🏆 +{bossPayout(bossHere)} poäng</span>
+                </div>
+                <span className="font-bold text-gray-500 dark:text-gray-300 text-sm">Utmana →</span>
+              </div>
+            </button>
+          ) : (
+            <div className="rounded-3xl border-3 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-5 py-6 text-center">
+              <div className="text-5xl mb-2">🔒</div>
+              <h2 className="text-lg font-black text-gray-800 dark:text-gray-100 mb-1">
+                {bossHere.name} väntar
+              </h2>
+              <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
+                Klara <strong>{gate.remaining} kapitel till</strong> i {stage.name} så öppnas matchen.
+              </p>
+              <div className="h-3 rounded-full bg-gray-100 dark:bg-gray-700 overflow-hidden mb-2">
+                <div
+                  className="h-full rounded-full bg-gradient-to-r from-amber-400 to-red-500 transition-all"
+                  style={{ width: `${Math.min(100, (gate.completed / gate.needed) * 100)}%` }}
+                />
+              </div>
+              <p className="text-xs font-bold text-gray-500 dark:text-gray-400">
+                {gate.completed} / {gate.needed} kapitel
+              </p>
+              <Link
+                href={`/world/${stageId}`}
+                className="mt-5 inline-flex btn-primary text-sm"
+                style={{ background: "linear-gradient(135deg, #006AA7, #004a75)" }}
+              >
+                Till kapitlen →
+              </Link>
+            </div>
+          )}
         </main>
       </div>
     );
@@ -216,15 +356,14 @@ export default function BossPage() {
   // ── Boss intro ───────────────────────────────────────────────────────────────
   if (phase === "intro" && activeBoss) {
     const neededCorrect = Math.ceil(activeBoss.questions.length * activeBoss.passThreshold);
-    const currentWins = gam.bossWinsPerBoss?.[activeBoss.id] ?? 0;
-    const expectedBonus = currentWins === 0 ? Math.min(activeBoss.bonusPoints, 200) : currentWins === 1 ? 50 : 0;
+    const expectedBonus = bossPayout(activeBoss);
     return (
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
         <Header student={student} />
         <div style={{ background: activeBoss.gradient }}>
           <div className="max-w-3xl mx-auto px-4 py-6">
             <button onClick={handleBackToSelect} className="inline-flex items-center gap-1 text-white/70 hover:text-white text-sm mb-3 transition-colors">
-              ← Välj boss
+              ← Tillbaka
             </button>
             <div className="flex items-center gap-3">
               <span className="text-4xl">{activeBoss.emoji}</span>
@@ -290,7 +429,6 @@ export default function BossPage() {
 
   // ── Battle ───────────────────────────────────────────────────────────────────
   if (phase === "battle" && activeBoss) {
-    const questions = activeBoss.questions;
     const currentQ = questions[currentIndex];
     const progress = (currentIndex / questions.length) * 100;
     const isCorrect = confirmed && selected === currentQ.correctIndex;
@@ -508,4 +646,13 @@ export default function BossPage() {
   }
 
   return null;
+}
+
+// useSearchParams needs a Suspense boundary or the page cannot be prerendered.
+export default function BossPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-gray-50 dark:bg-gray-900" />}>
+      <BossPageInner />
+    </Suspense>
+  );
 }

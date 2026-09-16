@@ -6,6 +6,7 @@ import Link from "next/link";
 import Header from "@/components/ui/Header";
 import { loadStudent, createStudent, clearStudent, studentExists, loadLastVisited } from "@/lib/storage";
 import { STAGES, getStage } from "@/lib/stages";
+import { MODULE_COUNTS } from "@/lib/moduleCounts";
 import { STARTER_AVATARS } from "@/lib/avatars";
 import { getThemeClassName, getThemeStyle, getThemeWrapperClass } from "@/lib/shop";
 import { BlurFade } from "@/components/magicui/blur-fade";
@@ -211,12 +212,18 @@ export default function HomePage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {STAGES.map((stage, i) => {
                 const stageProgress = student.stages[stage.id];
-                const grammarMods  = Object.values(stageProgress.grammarModules);
-                const spellingMods = Object.values(stageProgress.spellingModules ?? {});
-                const totalCompleted = grammarMods.filter((m) => m.completed).length
-                  + spellingMods.filter((m) => m.completed).length;
-                const stagePoints = [...grammarMods, ...spellingMods]
-                  .reduce((sum, m) => sum + m.points, 0);
+                // All four kinds count. Word searches and spelling tests were
+                // missing here, so the number on the card was lower than the
+                // one the world's own page showed.
+                const allMods = [
+                  ...Object.values(stageProgress.grammarModules),
+                  ...Object.values(stageProgress.spellingModules ?? {}),
+                  ...Object.values(stageProgress.wordsearchModules ?? {}),
+                  ...Object.values(stageProgress.stavningstestModules ?? {}),
+                ];
+                const totalCompleted = allMods.filter((m) => m.completed).length;
+                const totalModules = MODULE_COUNTS[stage.id];
+                const stagePoints = allMods.reduce((sum, m) => sum + m.points, 0);
 
                 return (
                   <BlurFade key={stage.id} delay={0.05 + i * 0.06}>
@@ -257,11 +264,11 @@ export default function HomePage() {
                           {totalCompleted > 0 ? (
                             <span className="text-sm font-bold text-sv-800 dark:text-gray-300 flex items-center gap-1.5">
                               <span className="w-2 h-2 rounded-full bg-emerald-400 inline-block" />
-                              {totalCompleted} modul{totalCompleted !== 1 ? "er" : ""} klarade
+                              {totalCompleted} av {totalModules} kapitel klara
                             </span>
                           ) : (
                             <span className="text-sm font-semibold text-sv-800 dark:text-gray-300">
-                              Inte börjat än
+                              0 av {totalModules} kapitel klara
                             </span>
                           )}
                           <span

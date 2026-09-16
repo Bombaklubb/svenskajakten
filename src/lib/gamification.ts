@@ -4,12 +4,100 @@ import type {
   MysteryBoxReward,
   GamificationData,
   StudentData,
+  StageId,
 } from "./types";
 import { localDayKey } from "./dates";
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
+/**
+ * Completed chapters needed in a world to earn one boss fight there.
+ *
+ * The boss used to open once, after five chapters anywhere in the app, and then
+ * stand open for ever — so it became a way of earning points instead of a
+ * reward for earning them. The lock now returns after every fight, and it
+ * counts chapters in the world the boss belongs to.
+ */
+export const BOSS_MODULES_PER_FIGHT = 10;
+
+/** Kept for saves written before the per-world lock; nothing gates on it now. */
 export const BOSS_UNLOCK_THRESHOLD = 5;
+
+/** Which bosses belong to which world, easiest world to hardest. */
+export const BOSSES_BY_STAGE: Record<StageId, string[]> = {
+  lagstadiet:    ["grammatikbossen", "stavningsdrakens"],
+  mellanstadiet: ["ordkungen", "grammatikgiganten"],
+  hogstadiet:    ["ordmastaren"],
+  gymnasiet:     ["sprakprofessorn"],
+};
+
+/** How many chapters a pupil has finished in one world, all four kinds counted. */
+export function completedModulesInStage(student: StudentData | null, stageId: StageId): number {
+  const stage = student?.stages?.[stageId];
+  if (!stage) return 0;
+  const maps = [
+    stage.grammarModules,
+    stage.spellingModules,
+    stage.wordsearchModules,
+    stage.stavningstestModules,
+  ];
+  return maps.reduce(
+    (n, map) => n + Object.values(map ?? {}).filter((m) => m.completed).length,
+    0
+  );
+}
+
+/** Boss fights already won in one world, summed over that world's bosses. */
+export function bossWinsInStage(gam: GamificationData | null, stageId: StageId): number {
+  const wins = gam?.bossWinsPerBoss ?? {};
+  return (BOSSES_BY_STAGE[stageId] ?? []).reduce((n, id) => n + (wins[id] ?? 0), 0);
+}
+
+export interface BossGate {
+  /** True when a fight is available in this world right now. */
+  unlocked: boolean;
+  /** Chapters needed in this world for the next fight. */
+  needed: number;
+  /** Chapters still to go. Zero when unlocked. */
+  remaining: number;
+  /** Chapters finished in this world. */
+  completed: number;
+}
+
+/**
+ * Whether the pupil has earned a boss fight in this world.
+ *
+ * Every fight costs another BOSS_MODULES_PER_FIGHT chapters, so the boss is the
+ * reward for doing the exercises rather than a way around them.
+ */
+export function getBossGate(completed: number, winsInStage: number): BossGate {
+  const needed = BOSS_MODULES_PER_FIGHT * (winsInStage + 1);
+  return {
+    unlocked: completed >= needed,
+    needed,
+    remaining: Math.max(0, needed - completed),
+    completed,
+  };
+}
+
+/** The boss a world offers next: its roster in order, repeating once exhausted. */
+export function nextBossForStage(stageId: StageId, winsInStage: number): Boss | undefined {
+  const roster = BOSSES_BY_STAGE[stageId] ?? [];
+  if (roster.length === 0) return undefined;
+  const id = roster[winsInStage % roster.length];
+  return BOSSES.find((b) => b.id === id);
+}
+
+/**
+ * What a boss win pays. The same every time: the chapters spent unlocking the
+ * fight are the brake, so a fight that paid nothing would simply stop being a
+ * reason to do them.
+ */
+export const BOSS_MAX_BONUS = 200;
+export function bossPayout(boss: Boss): number {
+  return Math.min(boss.bonusPoints, BOSS_MAX_BONUS);
+}
+
 export const MYSTERY_BOX_CHANCE = 0.15;
 export const MAX_CHESTS_PER_TYPE = 30;
 

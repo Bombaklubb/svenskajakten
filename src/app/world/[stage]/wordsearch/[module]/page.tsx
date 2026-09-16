@@ -7,7 +7,7 @@ import { notFound } from "next/navigation";
 import Header from "@/components/ui/Header";
 import WordSearch from "@/components/exercises/WordSearch";
 import { loadStudent, saveStudent, saveModuleProgress, loadGamification, saveGamification, recordLastVisited } from "@/lib/storage";
-import { chestsEarnedFromPoints, chestsEarnedFromExercises, chestsEarnedFromAchievements, rollMysteryBox, rollSurpriseMultiplier, capNewChests, BOSS_UNLOCK_THRESHOLD, getPointsMultiplier } from "@/lib/gamification";
+import { chestsEarnedFromPoints, chestsEarnedFromExercises, chestsEarnedFromAchievements, rollMysteryBox, rollSurpriseMultiplier, capNewChests, bossWinsInStage, getBossGate, completedModulesInStage, getPointsMultiplier } from "@/lib/gamification";
 import { ACHIEVEMENTS, isUnlocked } from "@/lib/achievements";
 import MysteryBoxPopup from "@/components/ui/MysteryBoxPopup";
 import { BlurFade } from "@/components/magicui/blur-fade";
@@ -98,7 +98,11 @@ export default function WordSearchModulePage({ params }: Props) {
     const mysteryPoints = mystery?.type === "points" && mystery.points ? mystery.points : 0;
     const mysteryBadge = mystery?.type === "badge" && mystery.badgeId ? mystery.badgeId : null;
 
-    const bossNowUnlocked = !gam.bossUnlocked && newExercises >= BOSS_UNLOCK_THRESHOLD;
+    // Same per-world gate as the other chapter kinds.
+    const winsHere = bossWinsInStage(gam, stage!.id);
+    const gateBefore = getBossGate(completedModulesInStage(student, stage!.id), winsHere);
+    const gateAfter = getBossGate(completedModulesInStage(updatedStudent, stage!.id), winsHere);
+    const bossNowUnlocked = !gateBefore.unlocked && gateAfter.unlocked;
     if (firstChest) setChestEarned(firstChest.type as ChestType);
     if (bossNowUnlocked) setBossJustUnlocked(true);
 
@@ -113,7 +117,7 @@ export default function WordSearchModulePage({ params }: Props) {
       chests: [...gam.chests, ...capNewChests(gam.chests, [...allNewChests, ...extraMysteryChest])],
       badges: mysteryBadge && !gam.badges.includes(mysteryBadge) ? [...gam.badges, mysteryBadge] : gam.badges,
       exercisesCompleted: newExercises,
-      bossUnlocked: bossNowUnlocked || gam.bossUnlocked,
+      bossUnlocked: gateAfter.unlocked || gam.bossUnlocked,
       pointsMilestonesRewarded: [...gam.pointsMilestonesRewarded, ...ptChests.map(c => c.milestone)],
       exerciseMilestonesRewarded: [...gam.exerciseMilestonesRewarded, ...exChests.map(c => c.milestone)],
       achievementsRewarded: [...(gam.achievementsRewarded ?? []), ...achChests.map(c => c.achievementId)],

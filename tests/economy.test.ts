@@ -19,6 +19,11 @@ import {
   computeGameAward,
   MINIGAME_DAILY_CAP,
   RETRY_CORRECT_POINTS,
+  getBossGate,
+  completedModulesInStage,
+  nextBossForStage,
+  bossPayout,
+  BOSSES,
   rollSurpriseMultiplier,
   POINT_CHEST_MILESTONES,
   EXERCISE_CHEST_MILESTONES,
@@ -29,7 +34,7 @@ import {
   capNewChests,
 } from "../src/lib/gamification.ts";
 import { getLevel, MAX_LEVEL } from "../src/lib/levels.ts";
-import { getSpendable } from "../src/lib/storage.ts";
+import { getSpendable, hasDoneModuleToday } from "../src/lib/storage.ts";
 import type { Chest, StudentData, StageContent } from "../src/lib/types.ts";
 
 /** Points a pupil banks for a typical completed module, used to sanity-check pacing. */
@@ -378,5 +383,112 @@ describe("minispelens innehåll hämtas från övningarna", () => {
     const merged = mergeUnique(seed, hangmanWordsFromContent(content), (w) => w.word);
     assert.deepEqual(merged.map((w) => w.word), ["SOL", "VERB", "FISK", "CITRON"]);
     assert.equal(merged[0].hint, "egen");
+  });
+});
+
+describe("bosslåset, en värld i taget", () => {
+  const stage = (completed: number) => ({
+    stageId: "lagstadiet",
+    grammarModules: Object.fromEntries(
+      Array.from({ length: completed }, (_, i) => [`m${i}`, { moduleId: `m${i}`, completed: true, points: 0, attempts: 1, lastAttempt: "" }])
+    ),
+    spellingModules: {}, wordsearchModules: {}, stavningstestModules: {},
+  });
+  const pupil = (perStage: Record<string, number>) => ({
+    name: "T", totalPoints: 0,
+    stages: Object.fromEntries(
+      ["lagstadiet", "mellanstadiet", "hogstadiet", "gymnasiet"].map((s) => [s, stage(perStage[s] ?? 0)])
+    ),
+  }) as unknown as StudentData;
+
+  test("stängd före tio kapitel, öppen vid tio", () => {
+    for (const n of [0, 1, 5, 9]) {
+      assert.equal(getBossGate(n, 0).unlocked, false, `${n} kapitel borde inte räcka`);
+    }
+    assert.equal(getBossGate(10, 0).unlocked, true);
+  });
+
+  test("låset återkommer: nästa match kostar tio kapitel till", () => {
+    assert.equal(getBossGate(10, 1).unlocked, false);   // vunnit en gång
+    assert.equal(getBossGate(19, 1).unlocked, false);
+    assert.equal(getBossGate(20, 1).unlocked, true);
+    assert.equal(getBossGate(30, 2).unlocked, true);
+  });
+
+  test("räknaren visar hur många kapitel som är kvar", () => {
+    assert.equal(getBossGate(4, 0).remaining, 6);
+    assert.equal(getBossGate(12, 1).remaining, 8);
+    assert.equal(getBossGate(25, 0).remaining, 0);
+  });
+
+  test("alla fyra sorters kapitel räknas", () => {
+    const s = {
+      stages: {
+        lagstadiet: {
+          grammarModules: { a: { completed: true } },
+          spellingModules: { b: { completed: true } },
+          wordsearchModules: { c: { completed: true } },
+          stavningstestModules: { d: { completed: true }, e: { completed: false } },
+        },
+      },
+    } as unknown as StudentData;
+    assert.equal(completedModulesInStage(s, "lagstadiet"), 4);
+  });
+
+  test("kapitel i en annan värld öppnar inte bossen här", () => {
+    // Detta var hela hålet: låset räknade en global räknare, så fem lätta
+    // kapitel i Ordängen öppnade bossen överallt, för alltid.
+    const p = pupil({ lagstadiet: 30 });
+    assert.equal(completedModulesInStage(p, "lagstadiet"), 30);
+    assert.equal(completedModulesInStage(p, "hogstadiet"), 0);
+    assert.equal(getBossGate(completedModulesInStage(p, "hogstadiet"), 0).unlocked, false);
+  });
+
+  test("varje värld har en boss, och den byts när man vunnit", () => {
+    for (const s of ["lagstadiet", "mellanstadiet", "hogstadiet", "gymnasiet"] as const) {
+      assert.ok(nextBossForStage(s, 0), `${s} saknar boss`);
+    }
+    // Ordängen har två bossar som växlar.
+    const first = nextBossForStage("lagstadiet", 0);
+    const second = nextBossForStage("lagstadiet", 1);
+    assert.notEqual(first!.id, second!.id);
+    assert.equal(nextBossForStage("lagstadiet", 2)!.id, first!.id);
+  });
+
+  test("bossen kan aldrig ge fler matcher än kapitlen räcker till", () => {
+    // Testet som hade fångat dagens farmning: utan låset var antalet matcher
+    // obegränsat, och varje vinst präglade en kista.
+    const chaptersInOrdangen = 51;
+    let wins = 0;
+    while (getBossGate(chaptersInOrdangen, wins).unlocked) wins++;
+    assert.equal(wins, 5, `51 kapitel ska ge 5 matcher, inte ${wins}`);
+  });
+
+  test("utbetalningen är densamma varje gång och aldrig över taket", () => {
+    for (const boss of BOSSES) {
+      assert.ok(bossPayout(boss) <= 200, `${boss.id} betalar ${bossPayout(boss)}`);
+      assert.ok(bossPayout(boss) > 0);
+    }
+  });
+});
+
+describe("spelen öppnar med dagens första kapitel", () => {
+  const pupil = (day?: string) => ({ name: "T", totalPoints: 0, stages: {}, lastModuleDay: day }) as unknown as StudentData;
+
+  test("ingen elev alls är inte upplåst", () => {
+    assert.equal(hasDoneModuleToday(null), false);
+  });
+
+  test("utan kapitel i dag är spelen stängda", () => {
+    assert.equal(hasDoneModuleToday(pupil(undefined)), false);
+    assert.equal(hasDoneModuleToday(pupil("2020-01-01")), false);
+  });
+
+  test("ett kapitel i dag öppnar dem", () => {
+    assert.equal(hasDoneModuleToday(pupil(localDayKey())), true);
+  });
+
+  test("gårdagens kapitel räcker inte", () => {
+    assert.equal(hasDoneModuleToday(pupil(previousLocalDayKey())), false);
   });
 });

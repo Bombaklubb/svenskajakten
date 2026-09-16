@@ -21,7 +21,9 @@ import {
   rollMysteryBox,
   rollSurpriseMultiplier,
   capNewChests,
-  BOSS_UNLOCK_THRESHOLD,
+  bossWinsInStage,
+  getBossGate,
+  completedModulesInStage,
 } from "@/lib/gamification";
 import { ACHIEVEMENTS, isUnlocked } from "@/lib/achievements";
 import MysteryBoxPopup from "@/components/ui/MysteryBoxPopup";
@@ -179,8 +181,13 @@ export default function GrammarModulePage({ params }: Props) {
         ];
         const firstChest = allNewChests[0];
 
-        const wasBossUnlocked = gam.bossUnlocked;
-        const nowBossUnlocked = wasBossUnlocked || newExercises >= BOSS_UNLOCK_THRESHOLD;
+        // The boss belongs to this world now: the fanfare fires when this very
+        // chapter brought the world up to its next ten.
+        const winsHere = bossWinsInStage(gam, stage!.id);
+        const gateBefore = getBossGate(completedModulesInStage(student, stage!.id), winsHere);
+        const gateAfter = getBossGate(completedModulesInStage(updated, stage!.id), winsHere);
+        const nowBossUnlocked = gam.bossUnlocked || gateAfter.unlocked;
+        const bossOpenedNow = !gateBefore.unlocked && gateAfter.unlocked;
 
         const mystery = wasAlreadyCompleted ? null : rollMysteryBox(gam.badges);
         const extraMysteryChest = mystery?.type === "chest" && mystery.chestType
@@ -210,7 +217,7 @@ export default function GrammarModulePage({ params }: Props) {
         }
 
         if (firstChest) setChestEarned(firstChest.type as ChestType);
-        if (nowBossUnlocked && !wasBossUnlocked) setBossJustUnlocked(true);
+        if (bossOpenedNow) setBossJustUnlocked(true);
         if (mystery) setMysteryBox(mystery);
       }
       setShowResult(true);

@@ -14,6 +14,7 @@
 import { readFileSync } from "fs";
 // The very same matcher the app grades with, so the two cannot drift apart.
 import { isAnswerCorrect } from "../src/lib/answers.ts";
+import { countModules, render } from "./module-counts.mjs";
 
 const STAGES = ["lagstadiet", "mellanstadiet", "hogstadiet", "gymnasiet"];
 const errors = [];
@@ -315,6 +316,18 @@ for (const stage of STAGES) {
 }
 const shared = [...across.values()].filter((s) => s.size > 1).length;
 if (shared) warn("progression", `${shared} övningar förekommer ordagrant i flera stadier`);
+
+// The start page reads chapter totals from a generated file rather than loading
+// 2.6 MB of content. It is only correct while it matches the content.
+try {
+  const fresh = render(countModules());
+  const onDisk = readFileSync("src/lib/moduleCounts.ts", "utf8");
+  if (fresh !== onDisk) {
+    err("moduleCounts", "src/lib/moduleCounts.ts stämmer inte med innehållet – kör `npm run module-counts`");
+  }
+} catch {
+  err("moduleCounts", "src/lib/moduleCounts.ts saknas – kör `npm run module-counts`");
+}
 
 const line = "=".repeat(72);
 console.log(line);

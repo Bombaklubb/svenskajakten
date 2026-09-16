@@ -208,6 +208,13 @@ export interface GameAward {
   multiplier: number;
   /** True when the daily cap swallowed part or all of the round. */
   capped: boolean;
+  /** True when no chapter has been finished today, so the games pay nothing. */
+  locked: boolean;
+}
+
+/** True once the pupil has finished a chapter today, which opens the games. */
+export function hasDoneModuleToday(student: StudentData | null): boolean {
+  return !!student && student.lastModuleDay === localDayKey();
 }
 
 /**
@@ -223,12 +230,18 @@ export interface GameAward {
  * held in component state cannot overwrite progress saved elsewhere.
  */
 export function awardGamePoints(gameId: string, rawPoints: number): GameAward {
-  const empty: GameAward = { student: null, awarded: 0, multiplier: 1, capped: false };
+  const empty: GameAward = { student: null, awarded: 0, multiplier: 1, capped: false, locked: false };
   if (typeof window === "undefined") return empty;
   const name = getCurrentName();
   if (!name) return empty;
   const current = getAllStudents()[name];
   if (!current) return empty;
+  // The games are a reward for doing the exercises, so they pay nothing on a day
+  // with no chapter behind it. The tab is locked in the UI as well — paying zero
+  // without saying why would read as a bug.
+  if (!hasDoneModuleToday(current)) {
+    return { ...empty, student: current, locked: true };
+  }
   // A round worth nothing must not burn a step of the replay decay, or a pupil
   // who has a bad first go would earn less for the good round that follows.
   if (Math.round(Math.max(0, rawPoints)) === 0) return { ...empty, student: current };
@@ -247,7 +260,7 @@ export function awardGamePoints(gameId: string, rawPoints: number): GameAward {
     gamePlays: { date: today, games },
   };
   saveStudent(updated);
-  return { student: updated, awarded, multiplier, capped };
+  return { student: updated, awarded, multiplier, capped, locked: false };
 }
 
 export function createStudent(name: string, avatar?: string): StudentData {
@@ -334,6 +347,10 @@ export function saveModuleProgress(
     attempts: prevAttempts + 1,
     lastAttempt: new Date().toISOString(),
   };
+
+  // Finishing a chapter opens the mini-games for the rest of the day. Every
+  // kind of chapter goes through here, so this is the one place to record it.
+  if (completed) data.lastModuleDay = localDayKey();
 
   data.totalPoints += addedPoints;
   saveStudent(data);

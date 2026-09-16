@@ -188,8 +188,8 @@ export default function ResultModal({
           <div className="bg-red-50 dark:bg-red-900/30 border-2 border-red-300 dark:border-red-600 rounded-2xl p-3 mb-3 flex items-center gap-3">
             <span className="text-3xl">⚔️</span>
             <div className="text-left">
-              <p className="text-sm font-bold text-red-800 dark:text-red-300">Boss Challenge upplåst!</p>
-              <p className="text-xs text-red-600 dark:text-red-400">Gå till Hemliga kistor för att utmana bossen.</p>
+              <p className="text-sm font-bold text-red-800 dark:text-red-300">Bossen är upplåst!</p>
+              <p className="text-xs text-red-600 dark:text-red-400">Du har klarat tillräckligt många kapitel i den här världen. Bossen finns under Spel.</p>
             </div>
           </div>
         )}

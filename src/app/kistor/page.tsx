@@ -14,7 +14,7 @@ import {
 import {
   CHEST_META,
   ALL_BADGES,
-  BOSS_UNLOCK_THRESHOLD,
+  BOSS_MODULES_PER_FIGHT,
   getBadge,
   openWoodChest,
   openSilverChest,
@@ -294,7 +294,6 @@ export default function KistorPage() {
     (a, b) => CHEST_ORDER.indexOf(a.type) - CHEST_ORDER.indexOf(b.type)
   );
   const opened = gam.chests.filter((c) => c.opened);
-  const exercisesLeft = Math.max(0, BOSS_UNLOCK_THRESHOLD - gam.exercisesCompleted);
 
   function handleOpenChest(chestId: string) {
     if (!gam || !student) return;
@@ -371,55 +370,37 @@ export default function KistorPage() {
           </BlurFade>
         )}
 
-        {/* Boss challenge */}
+        {/* Boss challenge — now one per world, earned with chapters there */}
         <BlurFade delay={0.0}>
-          <div
-            className="rounded-3xl p-5 border-3"
+          <Link
+            href="/boss"
+            className="block rounded-3xl p-5 border-3 transition-all hover:-translate-y-0.5"
             style={{
-              background: gam.bossUnlocked
-                ? "linear-gradient(135deg, #7f1d1d, #991b1b, #dc2626)"
-                : "linear-gradient(135deg, #374151, #4b5563)",
-              borderColor: gam.bossUnlocked ? "#ef4444" : "#6b7280",
-              boxShadow: gam.bossUnlocked
-                ? "0 6px 0 0 rgba(239,68,68,0.3), 0 12px 24px -4px rgba(239,68,68,0.2)"
-                : "0 4px 0 0 rgba(0,0,0,0.2)",
+              background: "linear-gradient(135deg, #7f1d1d, #991b1b, #dc2626)",
+              borderColor: "#ef4444",
+              boxShadow: "0 6px 0 0 rgba(239,68,68,0.3), 0 12px 24px -4px rgba(239,68,68,0.2)",
             }}
           >
             <div className="flex items-center justify-between flex-wrap gap-4">
               <div className="flex items-center gap-3">
-                <span className="text-4xl">{gam.bossUnlocked ? "⚔️" : "🔒"}</span>
+                <span className="text-4xl">⚔️</span>
                 <div>
-                  <h2 className="text-lg font-black text-white">Boss Challenge</h2>
+                  <h2 className="text-lg font-black text-white">Bossutmaningen</h2>
                   <p className="text-white/70 text-sm">
-                    {gam.bossUnlocked
-                      ? `Utmana bossen! Du har vunnit ${gam.bossWins} gång${gam.bossWins !== 1 ? "er" : ""}.`
-                      : `Slutför ${exercisesLeft} övning${exercisesLeft !== 1 ? "ar" : ""} till för att låsa upp.`}
+                    Varje värld har sin egen boss. Du tjänar en match för varje{" "}
+                    {BOSS_MODULES_PER_FIGHT} kapitel du klarar där.
+                    {gam.bossWins > 0 && ` Du har vunnit ${gam.bossWins} gång${gam.bossWins !== 1 ? "er" : ""}.`}
                   </p>
                 </div>
               </div>
-              {gam.bossUnlocked ? (
-                <Link
-                  href="/boss"
-                  className="px-5 py-2.5 rounded-2xl font-bold text-sm text-red-900 cursor-pointer transition-all active:scale-95 bg-gradient-to-b from-red-50 to-red-100 border-2 border-red-200 hover:border-red-300"
-                  style={{ boxShadow: "0 3px 0 0 rgba(239,68,68,0.3)" }}
-                >
-                  Utmana bossen! ⚔️
-                </Link>
-              ) : (
-                <div className="text-white/50 text-sm font-medium">
-                  {gam.exercisesCompleted}/{BOSS_UNLOCK_THRESHOLD} övningar
-                </div>
-              )}
+              <span
+                className="px-5 py-2.5 rounded-2xl font-bold text-sm text-red-900 bg-gradient-to-b from-red-50 to-red-100 border-2 border-red-200"
+                style={{ boxShadow: "0 3px 0 0 rgba(239,68,68,0.3)" }}
+              >
+                Välj värld ⚔️
+              </span>
             </div>
-            {!gam.bossUnlocked && (
-              <div className="mt-4 h-2 bg-white/10 rounded-full overflow-hidden">
-                <div
-                  className="h-full bg-white/40 rounded-full transition-all duration-700"
-                  style={{ width: `${Math.min(100, (gam.exercisesCompleted / BOSS_UNLOCK_THRESHOLD) * 100)}%` }}
-                />
-              </div>
-            )}
-          </div>
+          </Link>
         </BlurFade>
 
         {/* Unopened chests */}

@@ -204,6 +204,9 @@ export interface StudentData {
     date: string;
     games: Record<string, { plays: number; points: number }>;
   };
+  /** The day (YYYY-MM-DD, local) the pupil last finished a chapter. The games
+   *  open once a chapter is done, so they stay a reward rather than a substitute. */
+  lastModuleDay?: string;
 }
 
 // ─── Gamification ─────────────────────────────────────────────────────────────
