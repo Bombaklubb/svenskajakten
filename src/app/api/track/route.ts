@@ -82,13 +82,19 @@ export async function POST(req: NextRequest) {
       const seconds = Math.min(Math.max(Math.floor(durationSeconds), 0), 4 * 60 * 60);
       if (seconds > 0) await kv.incrby("total:duration", seconds);
     } else if (type === "exercise_done") {
+      // Sent once per finished chapter, carrying how many answers were right,
+      // instead of once per answer. A twenty-question chapter used to cost
+      // eighty Redis commands; it now costs four. Older clients that still
+      // send no count mean one, so a stale tab keeps counting correctly.
+      const raw = typeof body.count === "number" ? Math.floor(body.count) : 1;
+      const count = Math.min(Math.max(raw, 1), 200);
       const ops: Promise<unknown>[] = [
-        kv.incr("total:exercises"),
-        kv.incr(`daily:${day}:exercises`),
+        kv.incrby("total:exercises", count),
+        kv.incrby(`daily:${day}:exercises`, count),
         kv.expire(`daily:${day}:exercises`, 60 * 60 * 24 * 90),
       ];
       if (stage) {
-        ops.push(kv.incr(`stage:${stage}:exercises`));
+        ops.push(kv.incrby(`stage:${stage}:exercises`, count));
       }
       await Promise.all(ops);
     } else if (

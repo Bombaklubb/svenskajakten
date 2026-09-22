@@ -73,12 +73,42 @@ export default function LararePage() {
     }
   }, []);
 
-  // Load stats when token is available + auto-refresh every 30s for online count
+  // Refreshed every two minutes, and only while the tab is actually being
+  // looked at. One reading costs thirteen Redis commands, so the old
+  // every-thirty-seconds timer spent 1 560 an hour whether or not anyone was
+  // watching — a tab left open across a school day was the single largest
+  // consumer of the month's quota. Coming back to the tab refreshes at once,
+  // so the numbers are never stale on screen.
   useEffect(() => {
     if (!token) return;
+
+    let timer: ReturnType<typeof setInterval> | null = null;
+
+    function start() {
+      if (timer) return;
+      timer = setInterval(() => fetchStats(token!), 2 * 60_000);
+    }
+    function stop() {
+      if (!timer) return;
+      clearInterval(timer);
+      timer = null;
+    }
+    function onVisibility() {
+      if (document.hidden) {
+        stop();
+      } else {
+        fetchStats(token!);
+        start();
+      }
+    }
+
     fetchStats(token);
-    const interval = setInterval(() => fetchStats(token), 30_000);
-    return () => clearInterval(interval);
+    if (!document.hidden) start();
+    document.addEventListener("visibilitychange", onVisibility);
+    return () => {
+      stop();
+      document.removeEventListener("visibilitychange", onVisibility);
+    };
   }, [token, fetchStats]);
 
   async function handleLogin(e: React.FormEvent) {

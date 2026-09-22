@@ -8,6 +8,9 @@ export interface TrackEvent {
   durationSeconds?: number;
   deviceId?: string;
   sessionId?: string;
+  /** How many correct answers an "exercise_done" event stands for. Sent once
+   *  when a chapter is finished rather than after every single answer. */
+  count?: number;
 }
 
 /** Returns a persistent anonymous device ID (survives across sessions on same browser). */

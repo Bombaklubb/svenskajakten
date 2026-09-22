@@ -124,9 +124,10 @@ export default function SpellingModulePage({ params }: Props) {
         : currentExercise.type === "listen-spell" ? `Lyssna och stava: ${currentExercise.word}`.slice(0, 60)
         : currentExercise.instruction.slice(0, 60);
 
-      if (correct) {
-        trackEvent({ type: "exercise_done", stage: stageId, moduleId });
-      } else {
+      // Correct answers are counted once for the whole chapter, below. A wrong
+      // answer is still reported on its own: it carries the question text the
+      // teacher's mistake list is built from, and there are far fewer of them.
+      if (!correct) {
         trackEvent({
           type: "wrong_answer",
           stage: stageId,
@@ -142,6 +143,9 @@ export default function SpellingModulePage({ params }: Props) {
       if (finishedRef.current) return;
       finishedRef.current = true;
       const totalCorrect = newResults.filter(Boolean).length;
+      if (totalCorrect > 0) {
+        trackEvent({ type: "exercise_done", stage: stageId, moduleId, count: totalCorrect });
+      }
       const pts = totalCorrect * POINTS_PER_CORRECT;
       const passed = (totalCorrect / totalExercises) >= 0.6;
       const finalPts = passed ? pts + mod!.bonusPoints : pts;
