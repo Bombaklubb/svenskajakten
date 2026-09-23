@@ -2,11 +2,20 @@
 
 import { useState, useRef, useEffect } from "react";
 
-const LINKS = [
-  { label: "Läsjakten",      href: "https://lasjakten.vercel.app",       icon: <span>📚</span> },
-  { label: "Mattejakten",    href: "https://mattejakten.vercel.app",     icon: <span>🔢</span> },
-  { label: "Engelskajakten", href: "https://engelskajakten.vercel.app",  icon: <img src="/flags/gb.svg" alt="GB" width={20} height={14} style={{ borderRadius: 2 }} /> },
-  { label: "Readhunt",       href: "https://readhunt.vercel.app",        icon: <span>📖</span> },
+/**
+ * The sister apps, exported so the About page can describe the same list
+ * rather than keep a copy of it that quietly falls out of date.
+ * `subject` is for that page; the menu itself only needs label, href and icon.
+ */
+export const LINKS = [
+  { label: "Läsjakten",      href: "https://lasjakten.vercel.app",       icon: <span>📚</span>,
+    subject: "Läsförståelse på svenska – texter att läsa och frågor på det du läst." },
+  { label: "Mattejakten",    href: "https://mattejakten.vercel.app",     icon: <span>🔢</span>,
+    subject: "Matematik – räkning och problemlösning på samma sätt som här." },
+  { label: "Engelskajakten", href: "https://engelskajakten.vercel.app",  icon: <img src="/flags/gb.svg" alt="GB" width={20} height={14} style={{ borderRadius: 2 }} />,
+    subject: "Engelsk grammatik, stavning och ordförråd." },
+  { label: "Readhunt",       href: "https://readhunt.vercel.app",        icon: <span>📖</span>,
+    subject: "Läsförståelse på engelska – Engelskajaktens systerapp för text." },
 ];
 
 export default function JaktlankarMenu() {

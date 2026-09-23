@@ -7,6 +7,7 @@ import { loadStudent } from "@/lib/storage";
 import { STAGES } from "@/lib/stages";
 import { CHEST_META, BOSS_MODULES_PER_FIGHT } from "@/lib/gamification";
 import { MAX_LEVEL } from "@/lib/levels";
+import { LINKS as JAKTLANKAR } from "@/components/ui/JaktlankarMenu";
 import type { StudentData, ChestType } from "@/lib/types";
 
 // ─── Om Svenskajakten ────────────────────────────────────────────────────────
@@ -130,9 +131,8 @@ export default function OmPage() {
             surfplatta och mobil.
           </p>
           <p className="text-sm">
-            Det finns systerappar för andra ämnen: <strong>Läsjakten</strong>, <strong>Mattejakten</strong>,{" "}
-            <strong>Engelskajakten</strong> och <strong>Readhunt</strong>. De når du via Jaktlänkar nere
-            till höger.
+            Det finns systerappar för andra ämnen. Dem når du via <strong>Jaktlänkar</strong> –
+            se längre ner på den här sidan.
           </p>
         </Section>
 
@@ -324,6 +324,38 @@ export default function OmPage() {
           </p>
         </Section>
 
+        <Section emoji="🔗" title="Jaktlänkar – systerapparna">
+          <p>
+            Längst ner till höger på <em>varje</em> sida står <strong>🔗 Jaktlänkar</strong>. Klicka på
+            den så fälls en lista ut uppåt med appens systerappar. De fungerar likadant som
+            Svenskajakten – samma världar, poäng, kistor och affär – men tränar andra ämnen. Varje
+            app har sina egna poäng och sin egen progression; de delar ingenting med varandra.
+          </p>
+          <ul className="space-y-2.5">
+            {JAKTLANKAR.map((l) => (
+              <li key={l.href} className="flex gap-3 items-start">
+                <span className="flex-none w-8 h-8 rounded-xl bg-sv-50 dark:bg-gray-700 flex items-center justify-center text-base">
+                  {l.icon}
+                </span>
+                <span>
+                  <a
+                    href={l.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-bold text-sv-800 dark:text-sv-300 underline underline-offset-2 hover:text-sv-900 dark:hover:text-sv-200"
+                  >
+                    {l.label}
+                  </a>{" "}
+                  – {l.subject}
+                </span>
+              </li>
+            ))}
+          </ul>
+          <p className="text-sm">
+            Länkarna öppnas i en ny flik, så det du håller på med här ligger kvar.
+          </p>
+        </Section>
+
         <Section emoji="💡" title="Bra att veta">
           <ul className="space-y-1.5 list-disc pl-5 marker:text-gray-400">
             <li>
@@ -340,6 +372,14 @@ export default function OmPage() {
             </li>
             <li>
               Lämnar du ett kapitel mitt i kommer appen ihåg både var du var och vilka svar du hunnit ge.
+            </li>
+            <li>
+              <strong>Den här sidan</strong> når du när som helst via <strong>❓</strong> uppe till
+              höger, och från startsidan innan du skrivit ditt namn.
+            </li>
+            <li>
+              Undrar du något står <strong>✉️ Kontakta Martin</strong> längst ner till vänster på
+              varje sida. Peka på texten så visas e-postadressen, och ett klick öppnar ett nytt mejl.
             </li>
           </ul>
         </Section>
