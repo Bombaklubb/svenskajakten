@@ -98,7 +98,7 @@ export default function OmPage() {
         style={{ background: "linear-gradient(135deg, #7c2d12, #c2570a, #f97316)" }}
       >
         <div className="max-w-3xl mx-auto px-4 py-6">
-          <Link
+          <Link prefetch={false}
             href="/"
             className="inline-flex items-center gap-1 text-white/75 hover:text-white text-sm mb-3 transition-colors"
           >
@@ -388,7 +388,7 @@ export default function OmPage() {
             sida (se layout.tsx) – ingen dubblett här. */}
 
         <div className="pt-1 pb-16">
-          <Link
+          <Link prefetch={false}
             href="/"
             className="btn-primary w-full"
             style={{ background: "linear-gradient(135deg, #006AA7, #004a75)" }}

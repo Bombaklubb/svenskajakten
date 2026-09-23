@@ -23,7 +23,7 @@ export default function FinalTestCard({ stage, progress, moduleId = "sluttest", 
   const completed = !!progress?.completed;
 
   return (
-    <Link href={href} className="block group mt-4">
+    <Link prefetch={false} href={href} className="block group mt-4">
       <div
         className="relative rounded-3xl overflow-hidden border-3 transition-all duration-300 group-hover:-translate-y-1.5 group-hover:shadow-2xl cursor-pointer"
         style={{

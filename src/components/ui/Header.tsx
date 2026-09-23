@@ -45,7 +45,7 @@ export default function Header({ student, onLogout }: HeaderProps) {
     >
       <div className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link
+        <Link prefetch={false}
           href="/"
           className="flex items-center gap-2 py-0.5 min-h-[44px] hover:scale-105 transition-transform min-w-0 flex-shrink-0"
         >
@@ -73,7 +73,7 @@ export default function Header({ student, onLogout }: HeaderProps) {
         {student && (
           <nav className="flex items-center gap-1.5 sm:gap-2 md:gap-3 flex-shrink-0">
             {/* Kistor */}
-            <Link
+            <Link prefetch={false}
               href="/kistor"
               title="Hemliga kistor"
               className="relative flex items-center justify-center w-11 h-11 rounded-xl bg-gradient-to-b from-amber-100 to-amber-50 dark:from-amber-900/40 dark:to-amber-800/20 border-2 border-amber-300 dark:border-amber-600 hover:border-amber-400 hover:scale-110 transition-all touch-manipulation cursor-pointer"
@@ -88,7 +88,7 @@ export default function Header({ student, onLogout }: HeaderProps) {
             </Link>
 
             {/* Affären – spenderbara poäng */}
-            <Link
+            <Link prefetch={false}
               href="/butik"
               title="Affären · poäng att spendera"
               className="flex items-center gap-1.5 min-h-[44px] bg-gradient-to-b from-orange-50 to-orange-100 dark:from-orange-900/40 dark:to-orange-800/20 border-2 border-orange-300 dark:border-orange-600 hover:border-orange-400 hover:scale-105 transition-all touch-manipulation cursor-pointer px-2.5 py-1.5 rounded-xl"
@@ -112,7 +112,7 @@ export default function Header({ student, onLogout }: HeaderProps) {
             {(() => {
               const av = getAvatar(student.avatar ?? "ninja");
               return (
-                <Link
+                <Link prefetch={false}
                   href="/profile"
                   className="relative hidden md:flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-sv-50 dark:hover:bg-gray-800 transition-all cursor-pointer border-2 border-transparent hover:border-sv-200"
                 >
@@ -149,7 +149,7 @@ export default function Header({ student, onLogout }: HeaderProps) {
             </button>
 
             {/* Om Svenskajakten */}
-            <Link
+            <Link prefetch={false}
               href="/om"
               title="Om Svenskajakten – så fungerar appen"
               aria-label="Om Svenskajakten"

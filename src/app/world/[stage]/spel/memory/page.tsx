@@ -272,7 +272,7 @@ function MemoryGame({ stageId, stage, student, onStudentChange }: {
       <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900">
         <Header student={student} />
         <div className="flex-1 max-w-md mx-auto w-full px-4 py-8 pt-24">
-          <Link
+          <Link prefetch={false}
             href={`/world/${stageId}`}
             className="inline-flex items-center gap-1.5 text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-200 text-sm mb-6"
           >
@@ -356,7 +356,7 @@ function MemoryGame({ stageId, stage, student, onStudentChange }: {
               >
                 Välj svårighetsgrad
               </button>
-              <Link
+              <Link prefetch={false}
                 href={`/world/${stageId}`}
                 className={`${stage!.textClass} text-sm font-semibold hover:opacity-70 transition`}
               >

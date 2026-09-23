@@ -215,7 +215,7 @@ function BossPageInner() {
         <Header student={student} />
         <div style={{ background: "linear-gradient(135deg, #1f2937, #374151, #4b5563)" }}>
           <div className="max-w-3xl mx-auto px-4 py-6">
-            <Link href="/" className="inline-flex items-center gap-1 text-white/70 hover:text-white text-sm mb-3 transition-colors">
+            <Link prefetch={false} href="/" className="inline-flex items-center gap-1 text-white/70 hover:text-white text-sm mb-3 transition-colors">
               ← Tillbaka
             </Link>
             <div className="flex items-center gap-3">
@@ -239,7 +239,7 @@ function BossPageInner() {
             const g = getBossGate(done, wins);
             const boss = nextBossForStage(st.id, wins);
             return (
-              <Link
+              <Link prefetch={false}
                 key={st.id}
                 href={`/boss?stage=${st.id}`}
                 className="block rounded-3xl overflow-hidden transition-all hover:-translate-y-0.5"
@@ -278,7 +278,7 @@ function BossPageInner() {
         <Header student={student} />
         <div className={stage.bgClass}>
           <div className="max-w-3xl mx-auto px-4 py-6">
-            <Link href={`/world/${stageId}`} className="inline-flex items-center gap-1 text-white/70 hover:text-white text-sm mb-3 transition-colors">
+            <Link prefetch={false} href={`/world/${stageId}`} className="inline-flex items-center gap-1 text-white/70 hover:text-white text-sm mb-3 transition-colors">
               ← {stage.name}
             </Link>
             <div className="flex items-center gap-3">
@@ -339,7 +339,7 @@ function BossPageInner() {
               <p className="text-xs font-bold text-gray-500 dark:text-gray-400">
                 {gate.completed} / {gate.needed} kapitel
               </p>
-              <Link
+              <Link prefetch={false}
                 href={`/world/${stageId}`}
                 className="mt-5 inline-flex btn-primary text-sm"
                 style={{ background: "linear-gradient(135deg, #006AA7, #004a75)" }}
@@ -574,7 +574,7 @@ function BossPageInner() {
             </div>
 
             <div className="flex gap-3">
-              <Link
+              <Link prefetch={false}
                 href="/kistor"
                 className="flex-1 py-3 rounded-2xl font-bold text-white text-center cursor-pointer transition-all active:scale-95"
                 style={{ background: "linear-gradient(135deg, #16a34a, #15803d)", border: "3px solid #15803d" }}
@@ -626,7 +626,7 @@ function BossPageInner() {
               >
                 Försök igen ↺
               </button>
-              <Link
+              <Link prefetch={false}
                 href="/"
                 className="flex-1 py-3 rounded-2xl font-bold text-red-700 border-2 border-red-300 bg-white cursor-pointer text-center transition-all hover:bg-red-50 active:scale-95"
               >

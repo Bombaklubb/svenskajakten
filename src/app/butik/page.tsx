@@ -62,7 +62,7 @@ export default function ButikPage() {
       <div className="min-h-screen bg-amber-50 dark:bg-gray-900 flex items-center justify-center">
         <div className="text-center">
           <p className="text-sv-800 dark:text-gray-300 mb-4">Du är inte inloggad.</p>
-          <Link
+          <Link prefetch={false}
             href="/"
             className="btn-primary border-3 border-sv-400"
             style={{ background: "linear-gradient(135deg, #f97316, #ea6c0a)" }}
@@ -160,7 +160,7 @@ export default function ButikPage() {
         style={{ background: "linear-gradient(135deg, #7c2d12, #c2570a, #f97316)" }}
       >
         <div className="max-w-5xl mx-auto px-4 py-6">
-          <Link
+          <Link prefetch={false}
             href="/"
             className="inline-flex items-center gap-1.5 text-white/80 hover:text-white text-sm bg-black/20 hover:bg-black/30 px-3 py-1.5 rounded-full transition-colors mb-4"
           >

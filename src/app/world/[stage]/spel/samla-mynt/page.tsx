@@ -209,7 +209,7 @@ function SamlaMyntGame({ stageId, stage, student, onStudentChange, deck }: {
       <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900">
         <Header student={student} />
         <div className="flex-1 max-w-md mx-auto w-full px-4 py-8 pt-24 flex flex-col items-center justify-center text-center">
-          <Link href={`/world/${stageId}`} className="self-start text-gray-500 dark:text-gray-300 hover:text-gray-700 text-sm font-semibold mb-8">
+          <Link prefetch={false} href={`/world/${stageId}`} className="self-start text-gray-500 dark:text-gray-300 hover:text-gray-700 text-sm font-semibold mb-8">
             ← Tillbaka till Spel
           </Link>
           <div className="text-7xl mb-4">🪙</div>
@@ -266,7 +266,7 @@ function SamlaMyntGame({ stageId, stage, student, onStudentChange, deck }: {
               >
                 Spela igen 🏃
               </button>
-              <Link
+              <Link prefetch={false}
                 href={`/world/${stageId}`}
                 className="w-full py-3 rounded-2xl font-bold text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition text-center block"
               >

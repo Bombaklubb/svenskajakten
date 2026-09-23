@@ -319,7 +319,7 @@ function SnogubbenGame({ stageId, stage, student, setStudent, deck }: {
       <div className="flex-1 max-w-lg mx-auto w-full px-4 py-4 pt-20">
         {/* Top bar */}
         <div className="flex items-center justify-between mb-4">
-          <Link href={`/world/${stageId}`} className="text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-200 text-sm font-semibold">
+          <Link prefetch={false} href={`/world/${stageId}`} className="text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-200 text-sm font-semibold">
             ← Avsluta
           </Link>
           <span className="text-sm font-black text-amber-700 dark:text-amber-300">⭐ {score}p</span>
@@ -418,7 +418,7 @@ function SnogubbenGame({ stageId, stage, student, setStudent, deck }: {
               >
                 Spela igen 🔄
               </button>
-              <Link
+              <Link prefetch={false}
                 href={`/world/${stageId}`}
                 className="px-4 py-2 rounded-xl font-bold text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 text-sm"
               >

@@ -164,7 +164,7 @@ export default function HomePage() {
                 white card: below it the link would sit behind the fixed contact
                 bar on a short screen. */}
             <div className="text-center mt-4 pt-4 border-t border-sv-100 dark:border-gray-700">
-              <Link
+              <Link prefetch={false}
                 href="/om"
                 className="inline-flex items-center gap-1.5 text-sm font-bold text-sv-700 hover:text-sv-800 hover:underline underline-offset-4 transition-colors dark:text-sv-300 dark:hover:text-sv-200"
               >
@@ -227,7 +227,7 @@ export default function HomePage() {
 
                 return (
                   <BlurFade key={stage.id} delay={0.05 + i * 0.06}>
-                    <Link href={`/world/${stage.id}`} className="block group">
+                    <Link prefetch={false} href={`/world/${stage.id}`} className="block group">
                       <div
                         className={`rounded-3xl overflow-hidden border-3 transition-all duration-200 group-hover:-translate-y-1.5 group-hover:shadow-xl cursor-pointer ${stage.borderClass}`}
                         style={{ boxShadow: "0 4px 0 0 rgba(0,0,0,0.1), 0 8px 20px -4px rgba(0,0,0,0.12)" }}
@@ -310,7 +310,7 @@ function ResumeCard({ student, last }: { student: StudentData; last: LastVisited
 
   return (
     <BlurFade delay={0} className="mb-4">
-      <Link
+      <Link prefetch={false}
         href={href}
         className="group flex items-center gap-3 rounded-2xl px-4 py-3 border-3 border-sv-300 dark:border-sv-700 bg-white dark:bg-gray-800 transition-all hover:-translate-y-0.5 hover:shadow-lg"
         style={{ boxShadow: "0 4px 0 0 rgba(0,106,167,0.2)" }}

@@ -140,7 +140,7 @@ export default function WorldPage({ params }: Props) {
       {/* Hero */}
       <div className={`relative overflow-hidden ${stage.bgClass}`}>
         <div className="max-w-5xl mx-auto px-4 py-8">
-          <Link
+          <Link prefetch={false}
             href="/"
             className="inline-flex items-center gap-1.5 text-white/80 hover:text-white text-sm bg-black/20 hover:bg-black/30 px-3 py-1.5 rounded-full transition-colors mb-4"
           >
@@ -252,7 +252,7 @@ export default function WorldPage({ params }: Props) {
             ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Memory */}
-              <Link href={`/world/${stageId}/spel/memory`} className="block group rounded-3xl overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-xl"
+              <Link prefetch={false} href={`/world/${stageId}/spel/memory`} className="block group rounded-3xl overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-xl"
                 style={{ background: "linear-gradient(135deg, #06b6d4, #0891b2)", boxShadow: "0 4px 0 0 rgba(6,182,212,0.4)" }}>
                 <div className="px-5 py-5">
                   <div className="flex items-start gap-3 mb-3">
@@ -269,7 +269,7 @@ export default function WorldPage({ params }: Props) {
               </Link>
 
               {/* Snögubben */}
-              <Link href={`/world/${stageId}/spel/hangman`} className="block group rounded-3xl overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-xl"
+              <Link prefetch={false} href={`/world/${stageId}/spel/hangman`} className="block group rounded-3xl overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-xl"
                 style={{ background: "linear-gradient(135deg, #38bdf8, #0ea5e9)", boxShadow: "0 4px 0 0 rgba(56,189,248,0.4)" }}>
                 <div className="px-5 py-5">
                   <div className="flex items-start gap-3 mb-3">
@@ -286,7 +286,7 @@ export default function WorldPage({ params }: Props) {
               </Link>
 
               {/* Tidsattack */}
-              <Link href={`/world/${stageId}/spel/tidsattack`} className="block group rounded-3xl overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-xl"
+              <Link prefetch={false} href={`/world/${stageId}/spel/tidsattack`} className="block group rounded-3xl overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-xl"
                 style={{ background: "linear-gradient(135deg, #3b82f6, #1d4ed8)", boxShadow: "0 4px 0 0 rgba(59,130,246,0.4)" }}>
                 <div className="px-5 py-5">
                   <div className="flex items-start gap-3 mb-3">
@@ -303,7 +303,7 @@ export default function WorldPage({ params }: Props) {
               </Link>
 
               {/* Samla mynt */}
-              <Link href={`/world/${stageId}/spel/samla-mynt`} className="block group rounded-3xl overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-xl"
+              <Link prefetch={false} href={`/world/${stageId}/spel/samla-mynt`} className="block group rounded-3xl overflow-hidden transition-all duration-200 hover:-translate-y-1 hover:shadow-xl"
                 style={{ background: "linear-gradient(135deg, #f59e0b, #d97706)", boxShadow: "0 4px 0 0 rgba(245,158,11,0.4)" }}>
                 <div className="px-5 py-5">
                   <div className="flex items-start gap-3 mb-3">
@@ -625,7 +625,7 @@ function BossTeaser({ stageId, student }: { stageId: StageId; student: StudentDa
   if (!boss) return null;
 
   return (
-    <Link
+    <Link prefetch={false}
       href={`/boss?stage=${stageId}`}
       className="mb-5 block rounded-3xl overflow-hidden transition-all hover:-translate-y-0.5"
       style={{ border: "3px solid", borderColor: gate.unlocked ? "#ef4444" : "#d1d5db", boxShadow: "0 4px 16px rgba(0,0,0,0.1)" }}

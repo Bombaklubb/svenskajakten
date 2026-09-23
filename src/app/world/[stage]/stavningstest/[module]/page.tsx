@@ -279,7 +279,7 @@ export default function StavningstestPage({ params }: Props) {
         <Header student={student} />
         <div className={`${stage.bgClass} text-white`}>
           <div className="max-w-3xl mx-auto px-4 py-6">
-            <Link
+            <Link prefetch={false}
               href={`/world/${stageId}`}
               className="inline-flex items-center gap-1 text-white/70 hover:text-white text-sm mb-3 transition-colors"
             >
@@ -345,7 +345,7 @@ export default function StavningstestPage({ params }: Props) {
       {/* Stage header with progress bar */}
       <div className={`${stage.bgClass} text-white`}>
         <div className="max-w-3xl mx-auto px-4 py-4">
-          <Link
+          <Link prefetch={false}
             href={`/world/${stageId}`}
             className="inline-flex items-center gap-1 text-white/70 hover:text-white text-sm mb-2 transition-colors"
           >

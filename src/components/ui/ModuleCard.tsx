@@ -65,7 +65,7 @@ export default function ModuleCard({
   }
 
   return (
-    <Link href={href} className="block group h-full">
+    <Link prefetch={false} href={href} className="block group h-full">
       <MagicCard
         className={`h-full rounded-3xl border-3 bg-white dark:bg-gray-800 transition-all duration-200 group-hover:-translate-y-1 ${
           progress?.completed ? stage.borderClass : "border-sv-100 dark:border-gray-700 group-hover:border-sv-200"

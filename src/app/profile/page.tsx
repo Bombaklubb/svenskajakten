@@ -28,7 +28,7 @@ export default function ProfilePage() {
       <div className="min-h-screen bg-amber-50 dark:bg-gray-900 flex items-center justify-center">
         <div className="text-center">
           <p className="text-sv-800 dark:text-gray-300 mb-4">Du är inte inloggad.</p>
-          <Link
+          <Link prefetch={false}
             href="/"
             className="btn-primary border-3 border-sv-400"
             style={{ background: "linear-gradient(135deg, #f97316, #ea6c0a)" }}
@@ -121,7 +121,7 @@ export default function ProfilePage() {
 
                 return (
                   <BlurFade key={stage.id} delay={0.07 + i * 0.04}>
-                    <Link href={`/world/${stage.id}`} className="block group">
+                    <Link prefetch={false} href={`/world/${stage.id}`} className="block group">
                       <div className="card group-hover:-translate-y-0.5 transition-transform duration-200">
                         <div className="flex items-center gap-3 mb-3">
                           <span className="text-2xl">{stage.emoji}</span>

@@ -335,7 +335,7 @@ export default function KistorPage() {
       {/* Hero */}
       <div style={{ background: "linear-gradient(135deg, #7c2d12, #b45309, #d97706)" }}>
         <div className="max-w-4xl mx-auto px-4 py-6">
-          <Link href="/" className="inline-flex items-center gap-1 text-white/70 hover:text-white text-sm mb-3 transition-colors bg-black/20 hover:bg-black/30 px-3 py-1.5 rounded-full">
+          <Link prefetch={false} href="/" className="inline-flex items-center gap-1 text-white/70 hover:text-white text-sm mb-3 transition-colors bg-black/20 hover:bg-black/30 px-3 py-1.5 rounded-full">
             ← Tillbaka
           </Link>
           <div className="flex items-center gap-3">
@@ -372,7 +372,7 @@ export default function KistorPage() {
 
         {/* Boss challenge — now one per world, earned with chapters there */}
         <BlurFade delay={0.0}>
-          <Link
+          <Link prefetch={false}
             href="/boss"
             className="block rounded-3xl p-5 border-3 transition-all hover:-translate-y-0.5"
             style={{

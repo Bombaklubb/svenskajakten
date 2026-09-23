@@ -133,7 +133,7 @@ export default function WordSearchModulePage({ params }: Props) {
       {/* Hero banner */}
       <div className={`${stage.bgClass} py-4`}>
         <div className="max-w-3xl mx-auto px-4 flex items-center gap-3">
-          <Link href={`/world/${stageId}`} className="text-white/70 hover:text-white text-sm transition-colors bg-black/20 hover:bg-black/30 px-3 py-1.5 rounded-full">
+          <Link prefetch={false} href={`/world/${stageId}`} className="text-white/70 hover:text-white text-sm transition-colors bg-black/20 hover:bg-black/30 px-3 py-1.5 rounded-full">
             ← Tillbaka
           </Link>
           <span className="text-3xl">{mod.icon}</span>
@@ -274,7 +274,7 @@ export default function WordSearchModulePage({ params }: Props) {
               )}
 
               <div className="flex gap-3 mt-6">
-                <Link
+                <Link prefetch={false}
                   href={`/world/${stageId}`}
                   className="flex-1 btn-secondary text-center border-3 border-sv-200 font-bold py-3 rounded-2xl"
                 >
