@@ -8,7 +8,8 @@ import { loadStudent, createStudent, clearStudent, studentExists, loadLastVisite
 import { STAGES, getStage } from "@/lib/stages";
 import { MODULE_COUNTS } from "@/lib/moduleCounts";
 import { STARTER_AVATARS } from "@/lib/avatars";
-import { getThemeClassName, getThemeStyle, getThemeWrapperClass } from "@/lib/shop";
+import { getThemeClassName, getThemeWrapperClass } from "@/lib/shop";
+import ThemeBackdrop from "@/components/ui/ThemeBackdrop";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { NumberTicker } from "@/components/magicui/number-ticker";
 import type { StudentData, StageId, LastVisited } from "@/lib/types";
@@ -180,7 +181,8 @@ export default function HomePage() {
 
   // ─── Logged in – stage selection ────────────────────────────────────────────
   return (
-    <div className={`min-h-screen ${getThemeClassName(student.equippedTheme)} ${getThemeWrapperClass(student.equippedTheme)}`} style={getThemeStyle(student.equippedTheme)}>
+    <div className={`min-h-screen ${getThemeClassName(student.equippedTheme)} ${getThemeWrapperClass(student.equippedTheme)}`}>
+      <ThemeBackdrop themeId={student.equippedTheme} />
       <Header student={student} onLogout={handleLogout} />
 
       <main className="max-w-5xl mx-auto px-4 py-4">

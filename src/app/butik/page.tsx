@@ -20,7 +20,9 @@ import {
   equipEffect,
 } from "@/lib/storage";
 import { getAvatar, CATEGORY_LABELS } from "@/lib/avatars";
-import { SHOP_AVATARS, FRAMES, THEMES, EFFECTS, RARITY_META, groupAvatarsByCategory, getThemeClassName, getThemeStyle, getThemeWrapperClass, type Rarity } from "@/lib/shop";
+import { SHOP_AVATARS, FRAMES, THEMES, EFFECTS, RARITY_META, groupAvatarsByCategory, groupThemesByCategory, THEME_CATEGORY_LABELS, getThemeClassName, getThemeWrapperClass, type Rarity } from "@/lib/shop";
+import ThemeBackdrop from "@/components/ui/ThemeBackdrop";
+import { getThemeArt } from "@/lib/themeArt";
 import type { StudentData } from "@/lib/types";
 
 type Tab = "avatarer" | "ramar" | "teman" | "effekter" | "mina";
@@ -149,9 +151,11 @@ export default function ButikPage() {
   ];
 
   const avatarGroups = groupAvatarsByCategory(SHOP_AVATARS);
+  const themeGroups = groupThemesByCategory(THEMES);
 
   return (
-    <div className={`min-h-screen ${getThemeClassName(student.equippedTheme)} ${getThemeWrapperClass(student.equippedTheme)}`} style={getThemeStyle(student.equippedTheme)}>
+    <div className={`min-h-screen ${getThemeClassName(student.equippedTheme)} ${getThemeWrapperClass(student.equippedTheme)}`}>
+      <ThemeBackdrop themeId={student.equippedTheme} />
       <Header student={student} />
 
       {/* Banner */}
@@ -320,14 +324,14 @@ export default function ButikPage() {
         {tab === "teman" && (
           <BlurFade>
             <h2 className="on-theme-muted text-xs font-black uppercase tracking-wider text-sv-800 dark:text-gray-300 mb-3">Bakgrundsteman för appen</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 mb-7">
               {/* Standard – återställ den ursprungliga startsidan (gratis) */}
               {(() => {
                 const isStandard = !student.equippedTheme;
                 return (
                   <div className="card flex flex-col items-center text-center !p-4">
                     <div
-                      className="w-full h-14 rounded-xl mb-2 border-2 border-white/40 flex items-center justify-center"
+                      className="w-full h-24 rounded-xl mb-2 border-2 border-white/40 flex items-center justify-center"
                       style={{ background: "linear-gradient(135deg, #fffbeb, #fde68a)", boxShadow: "inset 0 2px 4px 0 rgba(255,255,255,0.4)" }}
                     >
                       <span className="text-2xl">🏠</span>
@@ -352,52 +356,63 @@ export default function ButikPage() {
                   </div>
                 );
               })()}
-              {THEMES.map((t) => {
-                const owned = ownedThemes.includes(t.id);
-                const equipped = student.equippedTheme === t.id;
-                const affordable = spendable >= t.price;
-                return (
-                  <div key={t.id} className="card flex flex-col items-center text-center !p-4">
-                    <div
-                      className="w-full h-14 rounded-xl mb-2 border-2 border-white/40"
-                      style={{ background: t.swatch, boxShadow: "inset 0 2px 4px 0 rgba(255,255,255,0.4)" }}
-                    />
-                    <div className="font-black text-sm text-sv-900 dark:text-gray-100 leading-tight">{t.name}</div>
-                    <div className="my-1.5"><RarityBadge rarity={t.rarity} /></div>
-                    {!owned && <PriceTag price={t.price} />}
-                    <div className="w-full mt-2">
-                      {equipped ? (
-                        <button
-                          onClick={() => handleEquipTheme("")}
-                          className="w-full py-2 rounded-xl font-bold text-sm bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 border-2 border-emerald-300 dark:border-emerald-700 cursor-pointer"
-                        >
-                          ✓ Vald · ta bort
-                        </button>
-                      ) : owned ? (
-                        <button
-                          onClick={() => handleEquipTheme(t.id)}
-                          className="w-full py-2 rounded-xl font-bold text-sm text-white cursor-pointer"
-                          style={{ background: "linear-gradient(135deg, #006AA7, #004a75)", boxShadow: "0 3px 0 0 rgba(0,0,0,0.18)" }}
-                        >
-                          Använd
-                        </button>
-                      ) : affordable ? (
-                        <button
-                          onClick={() => handleBuyTheme(t.id, t.name)}
-                          className="w-full py-2 rounded-xl font-bold text-sm text-white cursor-pointer"
-                          style={{ background: "linear-gradient(135deg, #f97316, #ea6c0a)", boxShadow: "0 3px 0 0 rgba(234,108,10,0.4)" }}
-                        >
-                          Köp
-                        </button>
-                      ) : (
-                        <button disabled className="w-full py-2 rounded-xl font-bold text-sm bg-sv-100 dark:bg-gray-700 text-sv-800 dark:text-gray-300 cursor-not-allowed">
-                          För dyrt
-                        </button>
-                      )}
-                    </div>
+            </div>
+            <div className="space-y-7">
+              {themeGroups.map(({ category, items }) => (
+                <div key={category}>
+                  <h2 className="on-theme-muted text-xs font-black uppercase tracking-wider text-sv-800 dark:text-gray-300 mb-3">
+                    {THEME_CATEGORY_LABELS[category]}
+                  </h2>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+                    {items.map((t) => {
+                      const owned = ownedThemes.includes(t.id);
+                      const equipped = student.equippedTheme === t.id;
+                      const affordable = spendable >= t.price;
+                      return (
+                        <div key={t.id} className="card flex flex-col items-center text-center !p-4">
+                          <div
+                            className="w-full h-24 rounded-xl mb-2 border-2 border-white/40"
+                            style={{ background: getThemeArt(t.id)?.preview, boxShadow: "inset 0 2px 4px 0 rgba(255,255,255,0.4)" }}
+                          />
+                          <div className="font-black text-sm text-sv-900 dark:text-gray-100 leading-tight">{t.name}</div>
+                          <div className="my-1.5"><RarityBadge rarity={t.rarity} /></div>
+                          {!owned && <PriceTag price={t.price} />}
+                          <div className="w-full mt-2">
+                            {equipped ? (
+                              <button
+                                onClick={() => handleEquipTheme("")}
+                                className="w-full py-2 rounded-xl font-bold text-sm bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 border-2 border-emerald-300 dark:border-emerald-700 cursor-pointer"
+                              >
+                                ✓ Vald · ta bort
+                              </button>
+                            ) : owned ? (
+                              <button
+                                onClick={() => handleEquipTheme(t.id)}
+                                className="w-full py-2 rounded-xl font-bold text-sm text-white cursor-pointer"
+                                style={{ background: "linear-gradient(135deg, #006AA7, #004a75)", boxShadow: "0 3px 0 0 rgba(0,0,0,0.18)" }}
+                              >
+                                Använd
+                              </button>
+                            ) : affordable ? (
+                              <button
+                                onClick={() => handleBuyTheme(t.id, t.name)}
+                                className="w-full py-2 rounded-xl font-bold text-sm text-white cursor-pointer"
+                                style={{ background: "linear-gradient(135deg, #f97316, #ea6c0a)", boxShadow: "0 3px 0 0 rgba(234,108,10,0.4)" }}
+                              >
+                                Köp
+                              </button>
+                            ) : (
+                              <button disabled className="w-full py-2 rounded-xl font-bold text-sm bg-sv-100 dark:bg-gray-700 text-sv-800 dark:text-gray-300 cursor-not-allowed">
+                                För dyrt
+                              </button>
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
-                );
-              })}
+                </div>
+              ))}
             </div>
           </BlurFade>
         )}
@@ -580,8 +595,8 @@ export default function ButikPage() {
                       return (
                         <div key={t.id} className="card flex flex-col items-center text-center !p-4">
                           <div
-                            className="w-full h-14 rounded-xl mb-2 border-2 border-white/40"
-                            style={{ background: t.swatch, boxShadow: "inset 0 2px 4px 0 rgba(255,255,255,0.4)" }}
+                            className="w-full h-20 rounded-xl mb-2 border-2 border-white/40"
+                            style={{ background: getThemeArt(t.id)?.preview, boxShadow: "inset 0 2px 4px 0 rgba(255,255,255,0.4)" }}
                           />
                           <div className="font-black text-sm text-sv-900 dark:text-gray-100 leading-tight">{t.name}</div>
                           <div className="my-1.5"><RarityBadge rarity={t.rarity} /></div>

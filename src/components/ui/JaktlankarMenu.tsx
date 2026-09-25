@@ -36,7 +36,7 @@ export default function JaktlankarMenu() {
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors flex items-center gap-1 cursor-pointer"
+        className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors flex items-center gap-1 cursor-pointer rounded-lg px-2 py-1.5 bg-white/80 backdrop-blur-sm shadow-sm dark:bg-gray-900/70"
       >
         🔗 Jaktlänkar
         <span className={`transition-transform duration-150 ${open ? "rotate-180" : ""}`}>▲</span>

@@ -13,7 +13,8 @@ import MysteryBoxPopup from "@/components/ui/MysteryBoxPopup";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { getStage } from "@/lib/stages";
 import { loadStageContent } from "@/lib/content";
-import { getThemeClassName, getThemeStyle, getThemeWrapperClass } from "@/lib/shop";
+import { getThemeClassName, getThemeWrapperClass } from "@/lib/shop";
+import ThemeBackdrop from "@/components/ui/ThemeBackdrop";
 import type { StudentData, StageContent, WordSearchModule, ChestType, MysteryBoxReward } from "@/lib/types";
 
 const POINTS_PER_WORD = 10;
@@ -127,7 +128,8 @@ export default function WordSearchModulePage({ params }: Props) {
   }
 
   return (
-    <div className={`min-h-screen ${getThemeClassName(student?.equippedTheme)} ${getThemeWrapperClass(student?.equippedTheme)}`} style={getThemeStyle(student?.equippedTheme)}>
+    <div className={`min-h-screen ${getThemeClassName(student?.equippedTheme)} ${getThemeWrapperClass(student?.equippedTheme)}`}>
+      <ThemeBackdrop themeId={student?.equippedTheme} />
       <Header student={student} />
 
       {/* Hero banner */}

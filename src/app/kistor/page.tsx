@@ -27,7 +27,8 @@ import {
   checkMissedPointMilestones,
   capNewChests,
 } from "@/lib/gamification";
-import { getThemeClassName, getThemeStyle, getThemeWrapperClass } from "@/lib/shop";
+import { getThemeClassName, getThemeWrapperClass } from "@/lib/shop";
+import ThemeBackdrop from "@/components/ui/ThemeBackdrop";
 import type { StudentData, GamificationData, Chest, ChestType } from "@/lib/types";
 
 function ChestCard({ chest, onOpen }: { chest: Chest; onOpen: (id: string) => void }) {
@@ -329,7 +330,8 @@ export default function KistorPage() {
   }
 
   return (
-    <div className={`min-h-screen ${getThemeClassName(student.equippedTheme)} ${getThemeWrapperClass(student.equippedTheme)}`} style={getThemeStyle(student.equippedTheme)}>
+    <div className={`min-h-screen ${getThemeClassName(student.equippedTheme)} ${getThemeWrapperClass(student.equippedTheme)}`}>
+      <ThemeBackdrop themeId={student.equippedTheme} />
       <Header student={student} />
 
       {/* Hero */}

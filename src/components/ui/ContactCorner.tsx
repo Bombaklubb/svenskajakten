@@ -84,7 +84,7 @@ export default function ContactCorner() {
           The card is lifted above it by position, not by source order. */}
       <a
         href={mailto()}
-        className="inline-flex items-center gap-1 rounded-lg px-1.5 py-1.5 text-xs font-bold text-slate-600 transition-colors hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"
+        className="inline-flex items-center gap-1 rounded-lg px-2 py-1.5 text-xs font-bold text-slate-600 bg-white/80 backdrop-blur-sm shadow-sm transition-colors hover:text-slate-900 dark:bg-gray-900/70 dark:text-slate-300 dark:hover:text-white"
       >
         <span aria-hidden="true">✉️</span>
         <span>Kontakta Martin</span>

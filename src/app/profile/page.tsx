@@ -8,7 +8,8 @@ import { loadStudent, saveStudent, exportProgress, readProgressFile, getExisting
 import { STAGES } from "@/lib/stages";
 import { ACHIEVEMENTS, ACHIEVEMENT_ICONS, isUnlocked } from "@/lib/achievements";
 import { getAvatar } from "@/lib/avatars";
-import { getThemeClassName, getThemeStyle, getThemeWrapperClass } from "@/lib/shop";
+import { getThemeClassName, getThemeWrapperClass } from "@/lib/shop";
+import ThemeBackdrop from "@/components/ui/ThemeBackdrop";
 import { getLevel, MAX_LEVEL } from "@/lib/levels";
 import FramedAvatar from "@/components/ui/FramedAvatar";
 import { NumberTicker } from "@/components/magicui/number-ticker";
@@ -57,7 +58,8 @@ export default function ProfilePage() {
   const av = getAvatar(student.avatar ?? "ninja");
 
   return (
-    <div className={`min-h-screen ${getThemeClassName(student.equippedTheme)} ${getThemeWrapperClass(student.equippedTheme)}`} style={getThemeStyle(student.equippedTheme)}>
+    <div className={`min-h-screen ${getThemeClassName(student.equippedTheme)} ${getThemeWrapperClass(student.equippedTheme)}`}>
+      <ThemeBackdrop themeId={student.equippedTheme} />
       <Header student={student} />
 
       <main className="max-w-3xl mx-auto px-4 py-8 space-y-6">

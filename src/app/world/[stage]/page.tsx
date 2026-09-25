@@ -9,7 +9,8 @@ import FinalTestCard from "@/components/ui/FinalTestCard";
 import { loadStudent, loadRetryQueue, removeFromRetryQueue, addPointsToStored, hasDoneModuleToday, loadGamification } from "@/lib/storage";
 import { getStage } from "@/lib/stages";
 import { loadStageContent } from "@/lib/content";
-import { getThemeClassName, getThemeStyle, getThemeWrapperClass } from "@/lib/shop";
+import { getThemeClassName, getThemeWrapperClass } from "@/lib/shop";
+import ThemeBackdrop from "@/components/ui/ThemeBackdrop";
 import {
   RETRY_CORRECT_POINTS,
   getPointsMultiplier,
@@ -134,7 +135,8 @@ export default function WorldPage({ params }: Props) {
   }
 
   return (
-    <div className={`min-h-screen ${getThemeClassName(student?.equippedTheme)} ${getThemeWrapperClass(student?.equippedTheme)}`} style={getThemeStyle(student?.equippedTheme)}>
+    <div className={`min-h-screen ${getThemeClassName(student?.equippedTheme)} ${getThemeWrapperClass(student?.equippedTheme)}`}>
+      <ThemeBackdrop themeId={student?.equippedTheme} />
       <Header student={student} />
 
       {/* Hero */}
