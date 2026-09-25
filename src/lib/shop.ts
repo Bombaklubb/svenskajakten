@@ -170,28 +170,42 @@ export function groupAvatarsByCategory(avatars: ShopAvatar[]): { category: Avata
 // ─── Frames (Ramar) ──────────────────────────────────────────────────────────────
 // A frame is a decorative ring drawn around the student's avatar.
 
+export type FrameOrnament = "leaves" | "bubbles" | "gem" | "flames" | "diamonds" | "crown" | "pixels" | "petals" | "rivets" | "stars";
+export type FrameMotion = "shimmer" | "spin" | "pulse";
+
 export interface Frame {
   id: string;
   name: string;
   rarity: Rarity;
   price: number;
-  /** CSS gradient used for the ring around the avatar */
-  gradient: string;
-  /** Glow colour for the ring's box-shadow */
+  /** CSS background of the ring. Conic gradients give a metallic sheen. */
+  ring: string;
+  /** Glow colour around the ring */
   glow: string;
+  /** Small decorations drawn on the ring (only on larger avatars) */
+  ornament?: FrameOrnament;
+  /** Animation: a light sweeping over the ring, the ring turning, or a pulsing glow */
+  motion?: FrameMotion;
 }
 
+const metal = (dark: string, mid: string, light: string) =>
+  `conic-gradient(from 200deg, ${dark}, ${light} 12%, ${mid} 25%, ${dark} 38%, ${light} 52%, ${mid} 65%, ${dark} 78%, ${light} 90%, ${dark})`;
+
 const RAW_FRAMES: Omit<Frame, "price">[] = [
-  { id: "brons",     name: "Bronsram",      rarity: "vanlig",      gradient: "linear-gradient(135deg, #d97706, #b45309)",            glow: "rgba(217,119,6,0.45)" },
-  { id: "silver",    name: "Silverram",     rarity: "vanlig",      gradient: "linear-gradient(135deg, #cbd5e1, #94a3b8)",            glow: "rgba(148,163,184,0.45)" },
-  { id: "skog",      name: "Skogsram",      rarity: "ovanlig",     gradient: "linear-gradient(135deg, #34d399, #059669)",            glow: "rgba(5,150,105,0.45)" },
-  { id: "hav",       name: "Havsram",       rarity: "ovanlig",     gradient: "linear-gradient(135deg, #38bdf8, #2563eb)",            glow: "rgba(37,99,235,0.45)" },
-  { id: "guld",      name: "Guldram",       rarity: "sallsynt",    gradient: "linear-gradient(135deg, #fde047, #f59e0b)",            glow: "rgba(245,158,11,0.5)" },
-  { id: "eld",       name: "Eldram",        rarity: "sallsynt",    gradient: "linear-gradient(135deg, #fb923c, #ef4444)",            glow: "rgba(239,68,68,0.5)" },
-  { id: "regnbage",  name: "Regnbågsram",   rarity: "episk",       gradient: "linear-gradient(135deg, #f43f5e, #f59e0b, #22c55e, #3b82f6, #a855f7)", glow: "rgba(168,85,247,0.5)" },
-  { id: "neon",      name: "Neonram",       rarity: "episk",       gradient: "linear-gradient(135deg, #22d3ee, #a855f7, #ec4899)",   glow: "rgba(34,211,238,0.55)" },
-  { id: "diamant",   name: "Diamantram",    rarity: "legendarisk", gradient: "linear-gradient(135deg, #a5f3fc, #818cf8, #c084fc)",   glow: "rgba(129,140,248,0.6)" },
-  { id: "kunglig",   name: "Kunglig ram",   rarity: "legendarisk", gradient: "linear-gradient(135deg, #facc15, #7c3aed, #facc15)",   glow: "rgba(124,58,237,0.55)" },
+  { id: "brons",    name: "Bronsram",      rarity: "vanlig",      ring: metal("#7c3f13", "#b8692c", "#f2b27a"), glow: "rgba(217,119,6,0.45)" },
+  { id: "silver",   name: "Silverram",     rarity: "vanlig",      ring: metal("#64748b", "#a8b3c2", "#f8fafc"), glow: "rgba(148,163,184,0.5)" },
+  { id: "skog",     name: "Skogsram",      rarity: "ovanlig",     ring: metal("#14532d", "#16a34a", "#86efac"), glow: "rgba(5,150,105,0.45)",  ornament: "leaves" },
+  { id: "hav",      name: "Havsram",       rarity: "ovanlig",     ring: metal("#1e3a8a", "#2563eb", "#7dd3fc"), glow: "rgba(37,99,235,0.45)",  ornament: "bubbles" },
+  { id: "pixel",    name: "Pixelram",      rarity: "ovanlig",     ring: "repeating-conic-gradient(#22c55e 0 25%, #15803d 0 50%) 0 0 / 8px 8px", glow: "rgba(34,197,94,0.45)", ornament: "pixels" },
+  { id: "guld",     name: "Guldram",       rarity: "sallsynt",    ring: metal("#92400e", "#eab308", "#fef9c3"), glow: "rgba(245,158,11,0.55)", ornament: "gem",   motion: "shimmer" },
+  { id: "eld",      name: "Eldram",        rarity: "sallsynt",    ring: metal("#991b1b", "#f97316", "#fde047"), glow: "rgba(239,68,68,0.55)",  ornament: "flames", motion: "pulse" },
+  { id: "sakura",   name: "Körsbärsram",   rarity: "sallsynt",    ring: metal("#be185d", "#f472b6", "#fce7f3"), glow: "rgba(244,114,182,0.5)", ornament: "petals" },
+  { id: "riddare",  name: "Riddarram",     rarity: "sallsynt",    ring: metal("#334155", "#64748b", "#e2e8f0"), glow: "rgba(71,85,105,0.5)",   ornament: "rivets" },
+  { id: "regnbage", name: "Regnbågsram",   rarity: "episk",       ring: "conic-gradient(#f43f5e, #f59e0b, #facc15, #22c55e, #06b6d4, #3b82f6, #a855f7, #f43f5e)", glow: "rgba(168,85,247,0.55)", motion: "spin" },
+  { id: "neon",     name: "Neonram",       rarity: "episk",       ring: "conic-gradient(from 90deg, #22d3ee, #a855f7, #ec4899, #22d3ee)", glow: "rgba(34,211,238,0.7)", motion: "pulse" },
+  { id: "stjarnor", name: "Stjärnram",     rarity: "episk",       ring: metal("#1e1b4b", "#4338ca", "#c7d2fe"), glow: "rgba(99,102,241,0.6)",  ornament: "stars", motion: "shimmer" },
+  { id: "diamant",  name: "Diamantram",    rarity: "legendarisk", ring: metal("#4f46e5", "#a5f3fc", "#ffffff"), glow: "rgba(129,140,248,0.65)", ornament: "diamonds", motion: "shimmer" },
+  { id: "kunglig",  name: "Kunglig ram",   rarity: "legendarisk", ring: metal("#581c87", "#a16207", "#fde68a"), glow: "rgba(124,58,237,0.6)",  ornament: "crown", motion: "shimmer" },
 ];
 
 export const FRAMES: Frame[] = RAW_FRAMES.map((f) => ({ ...f, price: RARITY_META[f.rarity].price }));
@@ -339,23 +353,30 @@ export interface Effect {
   name: string;
   rarity: Rarity;
   price: number;
-  /** Emoji particles used to render the effect */
+  /** Emoji particles used to render the effect (drawn from the sprite sheet) */
   particles: string[];
+  /** Soft glow behind the avatar, in the effect's colour */
+  aura: string;
 }
 
 const RAW_EFFECTS: Omit<Effect, "price">[] = [
-  { id: "stjarnor",     name: "Glittrande stjärnor", rarity: "vanlig",   particles: ["✨", "⭐", "🌟"] },
-  { id: "snoflingor",   name: "Snöfall",             rarity: "vanlig",   particles: ["❄️", "❅", "❄️"] },
-  { id: "regn",         name: "Regn",                rarity: "vanlig",   particles: ["💧", "💧", "💧"] },
-  { id: "sapbubblor",   name: "Såpbubblor",          rarity: "ovanlig",  particles: ["🫧", "🫧", "🫧"] },
-  { id: "hjartan",      name: "Hjärtan",             rarity: "ovanlig",  particles: ["💖", "💕", "💗"] },
-  { id: "blixtar",      name: "Blixtar",             rarity: "sallsynt", particles: ["⚡", "⚡", "⚡"] },
-  { id: "eldlagor",     name: "Eldlågor",            rarity: "sallsynt", particles: ["🔥", "🔥", "🔥"] },
-  { id: "hostlov",      name: "Höstlöv",             rarity: "sallsynt", particles: ["🍂", "🍁", "🍂"] },
-  { id: "korsbarsblom", name: "Körsbärsblom",        rarity: "sallsynt", particles: ["🌸", "🌸", "🌼"] },
-  { id: "stjarnglitter", name: "Stjärnglitter",      rarity: "episk",    particles: ["⭐", "✨", "💫"] },
-  { id: "regnbage",     name: "Regnbåge",            rarity: "episk",    particles: ["🌈", "🌈", "🌈"] },
-  { id: "konfetti",     name: "Konfetti",            rarity: "episk",    particles: ["🎉", "🎊", "🎉"] },
+  { id: "stjarnor",      name: "Glittrande stjärnor", rarity: "vanlig",      particles: ["✨", "⭐", "🌟"], aura: "#fde68a" },
+  { id: "snoflingor",    name: "Snöfall",             rarity: "vanlig",      particles: ["❄️"],            aura: "#bae6fd" },
+  { id: "regn",          name: "Regn",                rarity: "vanlig",      particles: ["💧"],            aura: "#93c5fd" },
+  { id: "klover",        name: "Fyrklöver",           rarity: "vanlig",      particles: ["🍀"],            aura: "#86efac" },
+  { id: "sapbubblor",    name: "Såpbubblor",          rarity: "ovanlig",     particles: ["🫧"],            aura: "#a5f3fc" },
+  { id: "hjartan",       name: "Hjärtan",             rarity: "ovanlig",     particles: ["💖", "💕", "💗"], aura: "#f9a8d4" },
+  { id: "musik",         name: "Musiknoter",          rarity: "ovanlig",     particles: ["🎵", "🎶"],       aura: "#c4b5fd" },
+  { id: "blixtar",       name: "Blixtar",             rarity: "sallsynt",    particles: ["⚡"],            aura: "#fde047" },
+  { id: "eldlagor",      name: "Eldlågor",            rarity: "sallsynt",    particles: ["🔥"],            aura: "#fb923c" },
+  { id: "hostlov",       name: "Höstlöv",             rarity: "sallsynt",    particles: ["🍂", "🍁"],       aura: "#fdba74" },
+  { id: "korsbarsblom",  name: "Körsbärsblom",        rarity: "sallsynt",    particles: ["🌸", "🌼"],       aura: "#fbcfe8" },
+  { id: "fjarilar",      name: "Fjärilar",            rarity: "sallsynt",    particles: ["🦋"],            aura: "#7dd3fc" },
+  { id: "stjarnglitter", name: "Stjärnglitter",       rarity: "episk",       particles: ["⭐", "✨", "💫"], aura: "#fcd34d" },
+  { id: "regnbage",      name: "Regnbåge",            rarity: "episk",       particles: ["🌈"],            aura: "#f0abfc" },
+  { id: "konfetti",      name: "Konfetti",            rarity: "episk",       particles: ["🎉", "🎊"],       aura: "#fda4af" },
+  { id: "mynt",          name: "Myntregn",            rarity: "episk",       particles: ["🪙"],            aura: "#facc15" },
+  { id: "stjarnfall",    name: "Stjärnfall",          rarity: "legendarisk", particles: ["🌠", "✨"],       aura: "#a5b4fc" },
 ];
 
 export const EFFECTS: Effect[] = RAW_EFFECTS.map((e) => ({ ...e, price: RARITY_META[e.rarity].price }));

@@ -255,3 +255,20 @@
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-gray-400;
 }
+
+/* ─── Avatar frames (Ramar) ──────────────────────────────────────────── */
+@keyframes sj-frame-spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes sj-frame-shimmer {
+  0%, 55% { transform: translateX(-120%) skewX(-20deg); }
+  100%    { transform: translateX(220%) skewX(-20deg); }
+}
+@keyframes sj-frame-pulse {
+  0%, 100% { filter: brightness(1); }
+  50%      { filter: brightness(1.25); }
+}
+@keyframes sj-aura {
+  0%, 100% { opacity: 0.55; transform: scale(0.96); }
+  50%      { opacity: 0.9;  transform: scale(1.04); }
+}

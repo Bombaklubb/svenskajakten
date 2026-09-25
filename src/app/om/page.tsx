@@ -293,13 +293,16 @@ export default function OmPage() {
           </p>
           <ul className="space-y-1.5 list-disc pl-5 marker:text-emerald-500">
             <li><strong>Figurer</strong> – din avatar. 96 stycken, 100–5 000 poäng.</li>
-            <li><strong>Ramar</strong> – en ram runt figuren, 100–2 500 poäng.</li>
-            <li><strong>Teman</strong> – bakgrunden i hela appen, 100–2 500 poäng.</li>
-            <li><strong>Effekter</strong> – rörelse och glitter runt figuren, 100–1 000 poäng.</li>
+            <li><strong>Ramar</strong> – en ram runt figuren. 14 stycken, 100–2 500 poäng.</li>
+            <li><strong>Teman</strong> – en tecknad bakgrund i hela appen. 49 stycken, 100–2 500 poäng.</li>
+            <li><strong>Effekter</strong> – rörelse och glitter runt figuren. 17 stycken, 100–2 500 poäng.</li>
           </ul>
           <p className="text-sm">
             Det du äger sätts på och av i affären, och du kan alltid välja <strong>Standard</strong> för
             att få tillbaka appens vanliga utseende.
+          </p>
+          <p className="text-xs text-sv-700 dark:text-gray-400">
+            Figurerna och effekterna är Fluent Emoji från Microsoft, fria att använda under MIT-licensen.
           </p>
         </Section>
 

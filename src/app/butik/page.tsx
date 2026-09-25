@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Header from "@/components/ui/Header";
 import FramedAvatar from "@/components/ui/FramedAvatar";
-import EffectOverlay from "@/components/ui/EffectOverlay";
 import { NumberTicker } from "@/components/magicui/number-ticker";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import {
@@ -429,7 +428,7 @@ export default function ButikPage() {
                 return (
                   <div key={e.id} className="card flex flex-col items-center text-center !p-4">
                     <div className="relative w-full h-24 rounded-xl mb-2 overflow-hidden" style={{ background: "linear-gradient(160deg, #1e293b, #0f172a)" }}>
-                      <EffectOverlay effectId={e.id} size={70} count={8} />
+                      <div className="absolute inset-0 flex items-center justify-center"><FramedAvatar avatar={currentAvatar} frameId={student.equippedFrame} effectId={e.id} size={52} /></div>
                     </div>
                     <div className="font-black text-sm text-sv-900 dark:text-gray-100 leading-tight">{e.name}</div>
                     <div className="my-1.5"><RarityBadge rarity={e.rarity} /></div>
@@ -640,7 +639,7 @@ export default function ButikPage() {
                       return (
                         <div key={e.id} className="card flex flex-col items-center text-center !p-4">
                           <div className="relative w-full h-24 rounded-xl mb-2 overflow-hidden" style={{ background: "linear-gradient(160deg, #1e293b, #0f172a)" }}>
-                            <EffectOverlay effectId={e.id} size={70} count={8} />
+                            <div className="absolute inset-0 flex items-center justify-center"><FramedAvatar avatar={currentAvatar} frameId={student.equippedFrame} effectId={e.id} size={52} /></div>
                           </div>
                           <div className="font-black text-sm text-sv-900 dark:text-gray-100 leading-tight">{e.name}</div>
                           <div className="my-1.5"><RarityBadge rarity={e.rarity} /></div>

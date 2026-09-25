@@ -4,8 +4,9 @@ export interface Avatar {
   id: string;
   emoji: string;
   name: string;
-  image?: string;
   category?: AvatarCategory;
+  /** Background colour behind the picture. Shop avatars use their category's. */
+  tint?: string;
 }
 
 export const CATEGORY_LABELS: Record<AvatarCategory, string> = {
@@ -19,72 +20,45 @@ export const CATEGORY_LABELS: Record<AvatarCategory, string> = {
   fantasi: "Fantasi",
 };
 
-const DB = "https://api.dicebear.com/9.x";
-const ADV = `${DB}/adventurer/svg`;
-const BOT = `${DB}/bottts/svg`;
-const PIX = `${DB}/pixel-art/svg`;
-const EMO = `${DB}/fun-emoji/svg`;
-
+// Every avatar is drawn from the emoji in the sprite sheet (see
+// scripts/build-sprites.mjs), so the name must describe what that picture
+// shows. An id is what pupils have bought and must never change; the emoji
+// and name can, as long as they still match each other.
 export const AVATARS: Avatar[] = [
-  { id: "ninja",       emoji: "🥷",  name: "Ninjan",
-    image: `${PIX}?seed=Ninjan&backgroundColor=1e1b4b&backgroundType=gradientLinear&radius=50` },
-  { id: "wizard",      emoji: "🧙",  name: "Trollkarlen",
-    image: `${ADV}?seed=Trollkarlen&backgroundColor=4a1d96&backgroundType=gradientLinear&radius=50` },
-  { id: "fox",         emoji: "🦊",  name: "Räven",
-    image: `${ADV}?seed=R%C3%A4ven&backgroundColor=c2410c&backgroundType=gradientLinear&radius=50` },
-  { id: "lion",        emoji: "🦁",  name: "Lejonet",
-    image: `${ADV}?seed=Lejonet&backgroundColor=b45309&backgroundType=gradientLinear&radius=50` },
-  { id: "dragon",      emoji: "🐲",  name: "Draken",
-    image: `${ADV}?seed=Draken&backgroundColor=14532d&backgroundType=gradientLinear&radius=50` },
-  { id: "unicorn",     emoji: "🦄",  name: "Enhörningen",
-    image: `${ADV}?seed=Enh%C3%B6rningen&backgroundColor=831843&backgroundType=gradientLinear&radius=50` },
-  { id: "robot",       emoji: "🤖",  name: "Roboten",
-    image: `${BOT}?seed=Roboten&backgroundColor=1e3a8a&backgroundType=gradientLinear&radius=50` },
-  { id: "astronaut",   emoji: "🧑",  name: "Astronauten",
-    image: `${ADV}?seed=Astronauten&backgroundColor=0c4a6e&backgroundType=gradientLinear&radius=50` },
-  { id: "owl",         emoji: "🦉",  name: "Ugglan",
-    image: `${ADV}?seed=Ugglan&backgroundColor=78350f&backgroundType=gradientLinear&radius=50` },
-  { id: "pirate",      emoji: "🏴",  name: "Piraten",
-    image: `${ADV}?seed=Piraten&backgroundColor=1c1917&backgroundType=gradientLinear&radius=50` },
-  { id: "princess",    emoji: "👸",  name: "Prinsessan",
-    image: `${ADV}?seed=Prinsessan&backgroundColor=9d174d&backgroundType=gradientLinear&radius=50` },
-  { id: "prince",      emoji: "🤴",  name: "Prinsen",
-    image: `${ADV}?seed=Prinsen&backgroundColor=1e3a8a&backgroundType=gradientLinear&radius=50` },
-  { id: "elf",         emoji: "🧝",  name: "Alven",
-    image: `${ADV}?seed=Alven&backgroundColor=14532d&backgroundType=gradientLinear&radius=50` },
-  { id: "mermaid",     emoji: "🧜",  name: "Sjöjungfrun",
-    image: `${ADV}?seed=Sj%C3%B6jungfrun&backgroundColor=0c4a6e&backgroundType=gradientLinear&radius=50` },
-  { id: "superhero",   emoji: "🦸",  name: "Superhjälten",
-    image: `${ADV}?seed=Superh%C3%A4lten&backgroundColor=1d4ed8&backgroundType=gradientLinear&radius=50` },
-  { id: "villain",     emoji: "🦹",  name: "Skurken",
-    image: `${ADV}?seed=Skurken&backgroundColor=3b0764&backgroundType=gradientLinear&radius=50` },
-  { id: "vampire",     emoji: "🧛",  name: "Vampyren",
-    image: `${ADV}?seed=Vampyren&backgroundColor=1e1b4b&backgroundType=gradientLinear&radius=50` },
-  { id: "ghost",       emoji: "👻",  name: "Spöket",
-    image: `${EMO}?seed=Sp%C3%B6ket&backgroundColor=312e81&backgroundType=gradientLinear&radius=50` },
-  { id: "fairy",       emoji: "🧚",  name: "Fen",
-    image: `${ADV}?seed=Fen&backgroundColor=831843&backgroundType=gradientLinear&radius=50` },
-  { id: "genie",       emoji: "🧞",  name: "Anden",
-    image: `${ADV}?seed=Anden&backgroundColor=78350f&backgroundType=gradientLinear&radius=50` },
-  { id: "cowboy",      emoji: "🤠",  name: "Cowboyen",
-    image: `${ADV}?seed=Cowboyen&backgroundColor=7c2d12&backgroundType=gradientLinear&radius=50` },
-  { id: "rockstar",    emoji: "🎤",  name: "Rockstjärnan",
-    image: `${ADV}?seed=Rockstj%C3%A4rnan&backgroundColor=111827&backgroundType=gradientLinear&radius=50` },
-  { id: "detective",   emoji: "🕵",  name: "Detektiven",
-    image: `${ADV}?seed=Detektiven&backgroundColor=1c1917&backgroundType=gradientLinear&radius=50` },
-  { id: "frog",        emoji: "🐸",  name: "Grodan",
-    image: `${ADV}?seed=Grodan&backgroundColor=14532d&backgroundType=gradientLinear&radius=50` },
-  { id: "footballer",  emoji: "⚽",  name: "Fotbollsspelaren",
-    image: `${ADV}?seed=Fotbollsspelaren&backgroundColor=14532d&backgroundType=gradientLinear&radius=50` },
+  { id: "ninja",       emoji: "🥷",  name: "Ninjan",       tint: "#c7d2fe" },
+  { id: "wizard",      emoji: "🧙",  name: "Trollkarlen",  tint: "#ddd6fe" },
+  { id: "fox",         emoji: "🦊",  name: "Räven",        tint: "#fed7aa" },
+  { id: "lion",        emoji: "🦁",  name: "Lejonet",      tint: "#fde68a" },
+  { id: "dragon",      emoji: "🐲",  name: "Draken",       tint: "#bbf7d0" },
+  { id: "unicorn",     emoji: "🦄",  name: "Enhörningen",  tint: "#fbcfe8" },
+  { id: "robot",       emoji: "🤖",  name: "Roboten",      tint: "#bfdbfe" },
+  { id: "astronaut",   emoji: "🧑‍🚀", name: "Astronauten",  tint: "#bae6fd" },
+  { id: "owl",         emoji: "🦉",  name: "Ugglan",       tint: "#fde68a" },
+  { id: "pirate",      emoji: "🏴‍☠️", name: "Piratflaggan", tint: "#e2e8f0" },
+  { id: "princess",    emoji: "👸",  name: "Prinsessan",   tint: "#fbcfe8" },
+  { id: "prince",      emoji: "🤴",  name: "Prinsen",      tint: "#bfdbfe" },
+  { id: "elf",         emoji: "🧝",  name: "Alven",        tint: "#bbf7d0" },
+  { id: "mermaid",     emoji: "🧜‍♀️", name: "Sjöjungfrun",  tint: "#a5f3fc" },
+  { id: "superhero",   emoji: "🦸",  name: "Superhjälten", tint: "#bfdbfe" },
+  { id: "villain",     emoji: "🦹",  name: "Skurken",      tint: "#e9d5ff" },
+  { id: "vampire",     emoji: "🧛",  name: "Vampyren",     tint: "#fecaca" },
+  { id: "ghost",       emoji: "👻",  name: "Spöket",       tint: "#e0e7ff" },
+  { id: "fairy",       emoji: "🧚",  name: "Fen",          tint: "#f5d0fe" },
+  { id: "genie",       emoji: "🧞",  name: "Anden",        tint: "#a5f3fc" },
+  { id: "cowboy",      emoji: "🤠",  name: "Cowboyen",     tint: "#fed7aa" },
+  { id: "rockstar",    emoji: "🧑‍🎤", name: "Rockstjärnan", tint: "#f5d0fe" },
+  { id: "detective",   emoji: "🕵️",  name: "Detektiven",   tint: "#e7e5e4" },
+  { id: "frog",        emoji: "🐸",  name: "Grodan",       tint: "#bbf7d0" },
+  { id: "footballer",  emoji: "⚽",  name: "Fotbollen",    tint: "#bbf7d0" },
 
   // ─── Utvalda ────────────────────────────────────────────────────────────
-  { id: "artsoul",     emoji: "🎭",  name: "Konstnärssjälen",  category: "utvalda" },
-  { id: "cyborg",      emoji: "🦾",  name: "Cyborgen",         category: "utvalda" },
-  { id: "pixelhero",   emoji: "🎮",  name: "Pixelhjälten",     category: "utvalda" },
-  { id: "retrofigure", emoji: "👾",  name: "Retrofiguren",     category: "utvalda" },
-  { id: "hero",        emoji: "🛡️",  name: "Hjälten",          category: "utvalda" },
-  { id: "megabot",     emoji: "🛸",  name: "Rymdboten",        category: "utvalda" },
-  { id: "eightbit",    emoji: "🕹️",  name: "8-bitaren",        category: "utvalda" },
+  { id: "artsoul",     emoji: "🎭",  name: "Teatermaskerna",    category: "utvalda" },
+  { id: "cyborg",      emoji: "🦾",  name: "Robotarmen",        category: "utvalda" },
+  { id: "pixelhero",   emoji: "🎮",  name: "Spelkontrollen",    category: "utvalda" },
+  { id: "retrofigure", emoji: "👾",  name: "Pixelmonstret",     category: "utvalda" },
+  { id: "hero",        emoji: "🛡️",  name: "Skölden",           category: "utvalda" },
+  { id: "megabot",     emoji: "🛸",  name: "Flygande tefatet",  category: "utvalda" },
+  { id: "eightbit",    emoji: "🕹️",  name: "Joysticken",        category: "utvalda" },
 
   // ─── Djur ───────────────────────────────────────────────────────────────
   { id: "puppy",       emoji: "🐶",  name: "Valpen",     category: "djur" },
@@ -97,14 +71,14 @@ export const AVATARS: Avatar[] = [
   { id: "giraffe",     emoji: "🦒",  name: "Giraffen",   category: "djur" },
 
   // ─── Skoltema ───────────────────────────────────────────────────────────
-  { id: "bookworm",    emoji: "🐛",  name: "Bokmasken",        category: "skoltema" },
-  { id: "mathwhiz",    emoji: "🔢",  name: "Mattesnillet",     category: "skoltema" },
-  { id: "artist",      emoji: "🎨",  name: "Konstnären",       category: "skoltema" },
-  { id: "musicstar",   emoji: "🎵",  name: "Musikstjärnan",    category: "skoltema" },
-  { id: "scientist",   emoji: "🔬",  name: "Vetenskapsgeniet", category: "skoltema" },
-  { id: "linguist",    emoji: "📚",  name: "Språkmästaren",    category: "skoltema" },
-  { id: "librarian",   emoji: "📖",  name: "Bibliotekarien",   category: "skoltema" },
-  { id: "inventor",    emoji: "💡",  name: "Uppfinnaren",      category: "skoltema" },
+  { id: "bookworm",    emoji: "🧑‍🎓", name: "Studenten",   category: "skoltema" },
+  { id: "mathwhiz",    emoji: "🧮",  name: "Kulramen",     category: "skoltema" },
+  { id: "artist",      emoji: "🧑‍🎨", name: "Konstnären",  category: "skoltema" },
+  { id: "musicstar",   emoji: "🎸",  name: "Gitarren",     category: "skoltema" },
+  { id: "scientist",   emoji: "🧑‍🔬", name: "Forskaren",   category: "skoltema" },
+  { id: "linguist",    emoji: "📚",  name: "Bokhögen",     category: "skoltema" },
+  { id: "librarian",   emoji: "📖",  name: "Den öppna boken", category: "skoltema" },
+  { id: "inventor",    emoji: "💡",  name: "Glödlampan",   category: "skoltema" },
 
   // ─── Fordon ─────────────────────────────────────────────────────────────
   { id: "car",         emoji: "🚗",  name: "Bilen",         category: "fordon" },
@@ -119,7 +93,7 @@ export const AVATARS: Avatar[] = [
   // ─── Yrken ──────────────────────────────────────────────────────────────
   { id: "police",      emoji: "👮",  name: "Polisen",       category: "yrken" },
   { id: "builder",     emoji: "👷",  name: "Byggaren",      category: "yrken" },
-  { id: "chef",        emoji: "👨‍🍳", name: "Kocken",        category: "yrken" },
+  { id: "chef",        emoji: "🧑‍🍳", name: "Kocken",        category: "yrken" },
   { id: "farmer",      emoji: "🧑‍🌾", name: "Bonden",        category: "yrken" },
   { id: "teacher",     emoji: "🧑‍🏫", name: "Läraren",       category: "yrken" },
   { id: "doctor",      emoji: "🧑‍⚕️", name: "Doktorn",       category: "yrken" },
@@ -127,42 +101,42 @@ export const AVATARS: Avatar[] = [
   { id: "mechanic",    emoji: "🧑‍🔧", name: "Mekanikern",    category: "yrken" },
 
   // ─── Roligt ─────────────────────────────────────────────────────────────
-  { id: "coolpotato",    emoji: "🥔",  name: "Potatis med solglasögon", category: "roligt" },
-  { id: "dancingtaco",   emoji: "🌮",  name: "Dansande taco",           category: "roligt" },
-  { id: "flyingbanana",  emoji: "🍌",  name: "Flygande banan",          category: "roligt" },
-  { id: "zombie",        emoji: "🧟",  name: "Zombie med lunch",        category: "roligt" },
-  { id: "sourcucumber",  emoji: "🥒",  name: "Sur gurka",               category: "roligt" },
-  { id: "broccolihero",  emoji: "🥦",  name: "Broccolisuperhjälte",     category: "roligt" },
-  { id: "ogremonster",   emoji: "👹",  name: "Toffelmonster",           category: "roligt" },
-  { id: "coffeecup",     emoji: "☕",  name: "Kaffekopp med min",       category: "roligt" },
-  { id: "discoegg",      emoji: "🥚",  name: "Discoägg",                category: "roligt" },
-  { id: "sneakypizza",   emoji: "🍕",  name: "Smygande pizzabit",       category: "roligt" },
-  { id: "moodydonut",    emoji: "🍩",  name: "Sur munk",                category: "roligt" },
-  { id: "sleepysloth",   emoji: "🦥",  name: "Sömnig sengångare",       category: "roligt" },
-  { id: "partypoop",     emoji: "💩",  name: "Festbajset",              category: "roligt" },
-  { id: "screamingegg",  emoji: "🍳",  name: "Skrikande ägg",           category: "roligt" },
-  { id: "sassysushi",    emoji: "🍣",  name: "Sassig sushi",            category: "roligt" },
-  { id: "grumpycactus",  emoji: "🌵",  name: "Grinig kaktus",           category: "roligt" },
-  { id: "hotdogboss",    emoji: "🌭",  name: "Korvbossen",              category: "roligt" },
-  { id: "wobblyjelly",   emoji: "🍮",  name: "Vobblig pudding",         category: "roligt" },
-  { id: "spicypepper",   emoji: "🌶️", name: "Het chilipeppar",         category: "roligt" },
+  { id: "coolpotato",    emoji: "🥔",  name: "Potatisen",       category: "roligt" },
+  { id: "dancingtaco",   emoji: "🌮",  name: "Tacon",           category: "roligt" },
+  { id: "flyingbanana",  emoji: "🍌",  name: "Bananen",         category: "roligt" },
+  { id: "zombie",        emoji: "🧟",  name: "Zombien",         category: "roligt" },
+  { id: "sourcucumber",  emoji: "🥒",  name: "Gurkan",          category: "roligt" },
+  { id: "broccolihero",  emoji: "🥦",  name: "Broccolin",       category: "roligt" },
+  { id: "ogremonster",   emoji: "👹",  name: "Monstret",        category: "roligt" },
+  { id: "coffeecup",     emoji: "☕",  name: "Kaffekoppen",     category: "roligt" },
+  { id: "discoegg",      emoji: "🥚",  name: "Ägget",           category: "roligt" },
+  { id: "sneakypizza",   emoji: "🍕",  name: "Pizzabiten",      category: "roligt" },
+  { id: "moodydonut",    emoji: "🍩",  name: "Munken",          category: "roligt" },
+  { id: "sleepysloth",   emoji: "🦥",  name: "Sengångaren",     category: "roligt" },
+  { id: "partypoop",     emoji: "💩",  name: "Bajskorven",      category: "roligt" },
+  { id: "screamingegg",  emoji: "🍳",  name: "Stekpannan",      category: "roligt" },
+  { id: "sassysushi",    emoji: "🍣",  name: "Sushin",          category: "roligt" },
+  { id: "grumpycactus",  emoji: "🌵",  name: "Kaktusen",        category: "roligt" },
+  { id: "hotdogboss",    emoji: "🌭",  name: "Varmkorven",      category: "roligt" },
+  { id: "wobblyjelly",   emoji: "🍮",  name: "Puddingen",       category: "roligt" },
+  { id: "spicypepper",   emoji: "🌶️", name: "Chilipepparn",    category: "roligt" },
 
   // ─── Säsong ─────────────────────────────────────────────────────────────
-  { id: "easterbunny",   emoji: "🐇",  name: "Påskhare",        category: "sasong" },
-  { id: "summerpirate",  emoji: "🏴‍☠️", name: "Sommarpirat",     category: "sasong" },
-  { id: "halloween",     emoji: "🎃",  name: "Halloweenpumpa",  category: "sasong" },
-  { id: "santa",         emoji: "🎅",  name: "Jultomte",        category: "sasong" },
-  { id: "snowman",       emoji: "⛄",  name: "Snögubbe",        category: "sasong" },
-  { id: "midsummer",     emoji: "💐",  name: "Midsommarfirare", category: "sasong" },
+  { id: "easterbunny",   emoji: "🐇",  name: "Haren",             category: "sasong" },
+  { id: "summerpirate",  emoji: "🏖️",  name: "Sommarstranden",    category: "sasong" },
+  { id: "halloween",     emoji: "🎃",  name: "Halloweenpumpan",   category: "sasong" },
+  { id: "santa",         emoji: "🎅",  name: "Jultomten",         category: "sasong" },
+  { id: "snowman",       emoji: "⛄",  name: "Snögubben",         category: "sasong" },
+  { id: "midsummer",     emoji: "💐",  name: "Blombuketten",      category: "sasong" },
 
-  // ─── Fantasi (extra) ────────────────────────────────────────────────────
-  { id: "phoenix",       emoji: "🔥",  name: "Fenix",                 category: "fantasi" },
-  { id: "firedragon",    emoji: "🐉",  name: "Elddrake",              category: "fantasi" },
-  { id: "icemage",       emoji: "🧊",  name: "Ismagiker",             category: "fantasi" },
-  { id: "rainbow",       emoji: "🌈",  name: "Regnbågsenhörning",     category: "fantasi" },
-  { id: "diamonddragon", emoji: "💎",  name: "Diamantdrake",          category: "fantasi" },
-  { id: "galaxyhero",    emoji: "🌟",  name: "Galaxhjälte",           category: "fantasi" },
-  { id: "legendwizard",  emoji: "🔮",  name: "Legendarisk trollkarl", category: "fantasi" },
+  // ─── Fantasi ────────────────────────────────────────────────────────────
+  { id: "phoenix",       emoji: "🪄",  name: "Trollstaven",   category: "fantasi" },
+  { id: "firedragon",    emoji: "🐉",  name: "Jättedraken",   category: "fantasi" },
+  { id: "icemage",       emoji: "🧌",  name: "Trollet",       category: "fantasi" },
+  { id: "rainbow",       emoji: "🌈",  name: "Regnbågen",     category: "fantasi" },
+  { id: "diamonddragon", emoji: "💎",  name: "Diamanten",     category: "fantasi" },
+  { id: "galaxyhero",    emoji: "🌌",  name: "Vintergatan",   category: "fantasi" },
+  { id: "legendwizard",  emoji: "🔮",  name: "Kristallkulan", category: "fantasi" },
 ];
 
 export function getAvatar(id: string): Avatar {

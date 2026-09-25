@@ -10,6 +10,7 @@ import { MODULE_COUNTS } from "@/lib/moduleCounts";
 import { STARTER_AVATARS } from "@/lib/avatars";
 import { getThemeClassName, getThemeWrapperClass } from "@/lib/shop";
 import ThemeBackdrop from "@/components/ui/ThemeBackdrop";
+import { AvatarPicture } from "@/components/ui/FramedAvatar";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { NumberTicker } from "@/components/magicui/number-ticker";
 import type { StudentData, StageId, LastVisited } from "@/lib/types";
@@ -140,9 +141,7 @@ export default function HomePage() {
                           : "0 3px 0 0 rgba(249,115,22,0.1), inset 0 2px 4px 0 rgba(255,255,255,0.8)"
                       }}
                     >
-                      {avatar.image
-                        ? <img src={avatar.image} alt={avatar.name} className="w-full h-full object-contain p-1" />
-                        : avatar.emoji}
+                      <AvatarPicture avatar={avatar} radius={10} />
                     </button>
                   ))}
                 </div>

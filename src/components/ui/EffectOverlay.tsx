@@ -1,6 +1,7 @@
 "use client";
 
 import { getEffect } from "@/lib/shop";
+import EmojiSprite from "@/components/ui/EmojiSprite";
 
 interface EffectOverlayProps {
   effectId?: string;
@@ -8,6 +9,8 @@ interface EffectOverlayProps {
   size: number;
   /** How many particles to render (default 6) */
   count?: number;
+  /** Draw a ring of light round the avatar. Only for a square avatar box. */
+  aura?: boolean;
   className?: string;
 }
 
@@ -15,18 +18,23 @@ interface EffectOverlayProps {
 const MOTION: Record<string, string> = {
   snoflingor:    "fall",
   regn:          "fall",
+  mynt:          "fall",
+  stjarnfall:    "fall",
   hostlov:       "spin",
   korsbarsblom:  "spin",
   konfetti:      "spin",
+  klover:        "spin",
   sapbubblor:    "rise",
   bubblor:       "rise",
   hjartan:       "rise",
+  musik:         "rise",
   stjarnor:      "twinkle",
   stjarnglitter: "twinkle",
   eldlagor:      "flicker",
   eld:           "flicker",
   blixtar:       "flash",
   regnbage:      "floaty",
+  fjarilar:      "floaty",
 };
 
 /** Deterministic particle slots (percent positions) – avoids hydration mismatch. */
@@ -41,8 +49,8 @@ const SLOTS = [
   { left: 18,  top: 80, delay: 1.4,  dur: 2.9, scale: 0.7  },
 ];
 
-/** Renders animated emoji particles spread around an avatar / username when an effect is equipped. */
-export default function EffectOverlay({ effectId, size, count = 6, className = "" }: EffectOverlayProps) {
+/** Renders a soft glow and animated particles around an avatar when an effect is equipped. */
+export default function EffectOverlay({ effectId, size, count = 6, aura = false, className = "" }: EffectOverlayProps) {
   const effect = getEffect(effectId);
   if (!effect) return null;
 
@@ -51,21 +59,34 @@ export default function EffectOverlay({ effectId, size, count = 6, className = "
 
   return (
     <div className={`absolute inset-0 pointer-events-none ${className}`} style={{ overflow: "visible", zIndex: 2 }}>
-      {slots.map((s, i) => (
-        <span
-          key={i}
-          className="absolute select-none leading-none"
-          style={{
-            left: `${s.left}%`,
-            top: `${s.top}%`,
-            fontSize: Math.max(9, Math.round(size * 0.42 * s.scale)),
-            animation: `sj-${motion} ${s.dur}s ease-in-out ${s.delay}s infinite`,
-            willChange: "transform, opacity",
-          }}
-        >
-          {effect.particles[i % effect.particles.length]}
-        </span>
-      ))}
+      {/* A ring of light just outside the avatar, clear in the middle so the picture stays sharp. */}
+      {aura && <div
+        className="absolute rounded-full"
+        style={{
+          inset: "-28%",
+          background: `radial-gradient(circle, transparent 50%, ${effect.aura}aa 62%, transparent 72%)`,
+          animation: "sj-aura 2.6s ease-in-out infinite",
+        }}
+      />}
+      {slots.map((s, i) => {
+        const px = Math.max(10, Math.round(size * 0.4 * s.scale));
+        return (
+          <span
+            key={i}
+            className="absolute select-none leading-none"
+            style={{
+              left: `${s.left}%`,
+              top: `${s.top}%`,
+              width: px,
+              height: px,
+              animation: `sj-${motion} ${s.dur}s ease-in-out ${s.delay}s infinite`,
+              willChange: "transform, opacity",
+            }}
+          >
+            <EmojiSprite emoji={effect.particles[i % effect.particles.length]} className="w-full h-full" />
+          </span>
+        );
+      })}
     </div>
   );
 }

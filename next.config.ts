@@ -24,6 +24,13 @@ const nextConfig: NextConfig = {
           { key: "Cache-Control", value: "public, max-age=3600, stale-while-revalidate=86400" },
         ],
       },
+      // Last, because when two rules set the same header the later one wins.
+      {
+        // The sprite sheet's name carries a hash of its content, so a new
+        // sheet gets a new name and the old one can be kept for good.
+        source: "/sprites/:all*",
+        headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
+      },
     ];
   },
 };

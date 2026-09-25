@@ -9,7 +9,8 @@
     "lint": "next lint",
     "test": "node --experimental-strip-types --import ./tests/register.mjs --test tests/*.test.ts",
     "validate-content": "node --experimental-strip-types --no-warnings --import ./tests/register.mjs scripts/validate-content.mjs",
-    "module-counts": "node scripts/module-counts.mjs"
+    "module-counts": "node scripts/module-counts.mjs",
+    "build-sprites": "node --experimental-strip-types --no-warnings --import ./tests/register.mjs scripts/build-sprites.mjs"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.11",

@@ -15,7 +15,8 @@ import { test, describe } from "node:test";
 import assert from "node:assert/strict";
 
 import { AVATARS, STARTER_AVATARS, getAvatar } from "../src/lib/avatars.ts";
-import { getShopAvatar } from "../src/lib/shop.ts";
+import { getShopAvatar, EFFECTS } from "../src/lib/shop.ts";
+import { SPRITE_INDEX } from "../src/lib/emojiSprites.ts";
 
 describe("avatarkatalogen", () => {
   test("varje avatar har ett unikt id", () => {
@@ -25,10 +26,7 @@ describe("avatarkatalogen", () => {
   });
 
   test("inga två avatarer visar samma emoji", () => {
-    // FramedAvatar draws avatar.image when there is one and falls back to the
-    // emoji otherwise — including when the image fails to load, which is what
-    // happens if a school network cannot reach api.dicebear.com. So two
-    // avatars sharing an emoji are identical either always or on a bad day.
+    // Every avatar is drawn from its emoji, so two sharing one look identical.
     const byEmoji = new Map<string, string[]>();
     for (const a of AVATARS) {
       byEmoji.set(a.emoji, [...(byEmoji.get(a.emoji) ?? []), a.id]);
@@ -41,14 +39,15 @@ describe("avatarkatalogen", () => {
     );
   });
 
-  test("inga två avatarer ritas identiskt", () => {
-    const seen = new Map<string, string>();
-    for (const a of AVATARS) {
-      const drawn = a.image ?? a.emoji;
-      const other = seen.get(drawn);
-      assert.equal(other, undefined, `${a.id} ser likadan ut som ${other}`);
-      seen.set(drawn, a.id);
-    }
+  test("varje avatar och effekt finns på sprite-arket", () => {
+    // FramedAvatar and EffectOverlay draw from the sheet built by
+    // scripts/build-sprites.mjs. A new emoji that nobody rebuilt the sheet for
+    // would fall back to the system's own emoji and look out of place.
+    const missing = [
+      ...AVATARS.map((a) => a.emoji),
+      ...EFFECTS.flatMap((e) => e.particles),
+    ].filter((e) => SPRITE_INDEX[e] === undefined);
+    assert.deepEqual(missing, [], `saknas på arket: ${missing.join(" ")} – kör npm run build-sprites`);
   });
 
   test("varje avatar har ett namn och en emoji", () => {
