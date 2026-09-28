@@ -33,7 +33,7 @@ export function AvatarPicture({ avatar, radius }: { avatar: Avatar; radius: numb
         boxShadow: "inset 0 -3px 6px rgba(0,0,0,0.08), inset 0 2px 3px rgba(255,255,255,0.9)",
       }}
     >
-      <EmojiSprite emoji={avatar.emoji} className="w-[80%] h-[80%] drop-shadow-sm" />
+      <EmojiSprite emoji={avatar.emoji} label={avatar.name} className="w-[80%] h-[80%] drop-shadow-sm" />
     </div>
   );
 }
@@ -170,9 +170,10 @@ export default function FramedAvatar({ avatar, frameId, effectId, size = 40, cla
   const radius = Math.round(size * 0.28);
   const pad = Math.max(3, Math.round(size * 0.09));
 
+  // Read out as one picture with the avatar's name, not as its parts.
   if (!frame) {
     return (
-      <div className={`relative flex-shrink-0 ${className}`} style={{ width: size, height: size }}>
+      <div role="img" aria-label={avatar.name} className={`relative flex-shrink-0 ${className}`} style={{ width: size, height: size }}>
         <div className="w-full h-full p-[2px] bg-white/70 dark:bg-gray-600" style={{ borderRadius: radius }}>
           <AvatarPicture avatar={avatar} radius={radius - 2} />
         </div>
@@ -182,7 +183,7 @@ export default function FramedAvatar({ avatar, frameId, effectId, size = 40, cla
   }
 
   return (
-    <div className={`relative flex-shrink-0 ${className}`} style={{ width: size, height: size }}>
+    <div role="img" aria-label={avatar.name} className={`relative flex-shrink-0 ${className}`} style={{ width: size, height: size }}>
       <Ring frame={frame} radius={radius} />
       <div className="absolute" style={{ inset: pad }}>
         <AvatarPicture avatar={avatar} radius={radius - pad} />

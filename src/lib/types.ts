@@ -40,6 +40,9 @@ export interface FillInBlankExercise {
   /** Set when the capital letter is the point of the exercise, so that
    *  "mamma" is not accepted for "Mamma". */
   caseSensitive?: boolean;
+  /** Set when the punctuation is the answer (a comma, a quotation mark), so
+   *  that trailing punctuation is not stripped before comparing. */
+  punctuationStrict?: boolean;
   hint?: string;
   explanation?: string;
 }
@@ -123,7 +126,8 @@ export interface SpellingTimedModule {
   icon: string;
   pointsRequired: number;
   bonusPoints: number;
-  timeLimit?: number; // seconds, default 60
+  /** Seconds for the whole test (not per word). The page falls back to 150. */
+  timeLimit?: number;
   words: SpellingTimedWord[];
 }
 

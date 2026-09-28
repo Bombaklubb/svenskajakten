@@ -349,7 +349,7 @@ describe("minispelens innehåll hämtas från övningarna", () => {
       id: "m", title: "M", description: "", icon: "", pointsRequired: 0, bonusPoints: 0,
       exercises: [
         { id: "a", type: "multiple-choice", question: "Vilket ord är ett verb?", options: ["hund", "springer", "glad"], correctIndex: 1 },
-        { id: "b", type: "multiple-choice", question: "Vilket ord är ett verb?", options: ["katt", "hoppar"], correctIndex: 1 }, // dubblett
+        { id: "b", type: "multiple-choice", question: "Vilket ord är ett verb?", options: ["glad", "springer", "hund"], correctIndex: 1 }, // dubblett: samma fråga och alternativ
         { id: "c", type: "multiple-choice", question: "Läs texten nedan och avgör vilket påstående som bäst sammanfattar författarens huvudsakliga argument i det andra stycket av texten", options: ["A", "B"], correctIndex: 0 },
         { id: "d", type: "multiple-choice", question: "Kort?", options: ["Ett väldigt långt svarsalternativ som inte hinner läsas", "B"], correctIndex: 0 },
         { id: "e", type: "multiple-choice", question: "Trasig?", options: ["A", "B"], correctIndex: 5 },

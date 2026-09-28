@@ -13,10 +13,13 @@
 
 import { readFileSync } from "fs";
 // The very same matcher the app grades with, so the two cannot drift apart.
-import { isAnswerCorrect } from "../src/lib/answers.ts";
+import { gappedWord, isAnswerCorrect } from "../src/lib/answers.ts";
 import { countModules, render } from "./module-counts.mjs";
 
 const STAGES = ["lagstadiet", "mellanstadiet", "hogstadiet", "gymnasiet"];
+
+/** Least time per word in the timed spelling tests – younger pupils type slower. */
+const SECONDS_PER_WORD = { lagstadiet: 8, mellanstadiet: 6, hogstadiet: 5, gymnasiet: 4 };
 const errors = [];
 const warnings = [];
 
@@ -27,7 +30,15 @@ const warn = (where, msg) => warnings.push(`${where}: ${msg}`);
 /** Naming the alternatives — "(de/dem)" or "(de eller dem)" — is the format, not a giveaway. */
 const isChoicePair = (text) => /^[a-zåäö]+\s*(?:\/|eller)\s*[a-zåäö]+$/.test(norm(text));
 
-function checkMultipleChoice(ex, where) {
+/**
+ * Modules where the spelling of the word is the point and capitals are not.
+ * "Onsdag" is a correct spelling at the start of a sentence, so offering it as
+ * the wrong answer next to "onsdag" makes two options defensible.
+ */
+const SPELLING_TITLE = /stav|särskriv|samman|ihop|veckodag|månad|dubbel|lånord|ljud|eller/i;
+const CASE_TOPIC_TITLE = /stor bokstav|versal|skiljetecken|interpunktion|dialog|citat|talstreck/i;
+
+function checkMultipleChoice(ex, where, mod) {
   const options = ex.options ?? [];
   const ci = ex.correctIndex;
 
@@ -48,6 +59,19 @@ function checkMultipleChoice(ex, where) {
     if (count > 1) err(where, `dubblerat svarsalternativ "${value}" (${count}x) – rätt svar kan räknas som fel`);
   }
   if (options.some((o) => !String(o).trim())) err(where, "tomt svarsalternativ");
+
+  const title = String(mod?.title ?? "");
+  if (SPELLING_TITLE.test(title) && !CASE_TOPIC_TITLE.test(title)) {
+    const right = String(options[ci]).trim();
+    options.forEach((o, j) => {
+      const other = String(o).trim();
+      // Only a real alternative spelling counts: "HandVäska" is wrong anyway.
+      const plausible = other === other.toLowerCase() || other === other[0].toUpperCase() + other.slice(1).toLowerCase();
+      if (j !== ci && other !== right && other.toLowerCase() === right.toLowerCase() && plausible) {
+        err(where, `"${other}" skiljer sig bara i versal från rätt svar "${right}" – båda kan vara rätt stavade`);
+      }
+    });
+  }
 }
 
 function checkFillInBlank(ex, where) {
@@ -71,8 +95,17 @@ function checkFillInBlank(ex, where) {
   // punctuation mark stopped doing so for a while — normalizeAnswer stripped
   // the mark and left nothing — so 19 exercises could not be answered
   // correctly at all. This is the invariant that catches that class outright.
-  if (!isAnswerCorrect(answer, answer, ex.alternativeAnswers, ex.caseSensitive)) {
+  if (!isAnswerCorrect(answer, answer, ex.alternativeAnswers, ex)) {
     err(where, `facit ${JSON.stringify(answer)} godkänns inte av svarskontrollen – övningen går inte att klara`);
+  }
+
+  checkTypable(ex, where, answer);
+  checkGapGiveaway(ex, where, question, answer);
+
+  // A bare mark as facit ("”,", "?") is the skill itself; without the flag a
+  // trailing mark is forgiven, so "”" would pass for "”,".
+  if (!/[\p{L}\p{N}]/u.test(answer) && answer.length > 1 && !ex.punctuationStrict) {
+    err(where, `facit ${JSON.stringify(answer)} är bara skiljetecken men saknar "punctuationStrict": true`);
   }
 
   const alts = (ex.alternativeAnswers ?? []).map(norm);
@@ -114,6 +147,45 @@ function checkFillInBlank(ex, where) {
       err(where, `ledtråden avslöjar svaret "${answer}": ${hint.slice(0, 60)}`);
     }
   }
+}
+
+/**
+ * Characters a school keyboard cannot type, and what a pupil types instead.
+ *
+ * Six fill-ins wanted the en dash "–", which a Chromebook has no key for, and
+ * iOS turns " into ” as you type. The matcher folds these; this makes sure
+ * every such facit is still reachable from a plain keyboard.
+ */
+const TYPED_INSTEAD = [
+  [/[–—]/g, "-"],
+  [/[”“„″]/g, '"'],
+  [/[’‘‚′]/g, "'"],
+  [/[»«]/g, '"'],
+];
+function checkTypable(ex, where, answer) {
+  if (!/[–—”“„″’‘‚′»«]/.test(answer)) return;
+  let typed = answer;
+  for (const [re, plain] of TYPED_INSTEAD) typed = typed.replace(re, plain);
+  if (!isAnswerCorrect(typed, answer, ex.alternativeAnswers, ex)) {
+    err(where, `facit ${JSON.stringify(answer)} går inte att skriva på ett vanligt tangentbord och ${JSON.stringify(typed)} godkänns inte`);
+  }
+}
+
+/**
+ * A letter-gap item ("h___st", facit "ä") is only a test while the whole word
+ * is not printed somewhere else: "'g___rd' (bondgård med djur)" or an example
+ * sentence containing "bordet" hands the letter over. A hint phrased as the
+ * choice itself ("Häst eller hest?") is the format and is allowed.
+ */
+function checkGapGiveaway(ex, where, question, answer) {
+  const gap = gappedWord(question);
+  if (!gap || !/^\p{L}+$/u.test(answer)) return;
+  const full = (gap[0] + answer + gap[1]).toLowerCase();
+  if (full.length < 3) return;
+  const rest = question.replace(`${gap[0]}___${gap[1]}`, " ").toLowerCase();
+  if (rest.includes(full)) err(where, `luckordet "${full}" står utskrivet i frågan`);
+  const hint = String(ex.hint ?? "").toLowerCase();
+  if (hint.includes(full) && !/\beller\b/.test(hint)) err(where, `ledtråden skriver ut luckordet "${full}"`);
 }
 
 function checkBuildSentence(ex, where) {
@@ -251,7 +323,7 @@ for (const stage of STAGES) {
         }
 
         if (ex.type === "multiple-choice") {
-          checkMultipleChoice(ex, where);
+          checkMultipleChoice(ex, where, mod);
           const key = `${norm(ex.question)}|${(ex.options ?? []).map(norm).sort().join("|")}`;
           if (stems.has(key)) err(where, `identisk med övning #${stems.get(key)} (samma fråga och alternativ)`);
           else stems.set(key, i);
@@ -282,10 +354,24 @@ for (const stage of STAGES) {
   }
 
   for (const mod of data.stavningstest ?? []) {
+    // timeLimit is the whole test, in seconds; the page falls back to 150.
+    const count = (mod.words ?? []).length;
+    const perWord = count ? (mod.timeLimit ?? 150) / count : Infinity;
+    if (perWord < SECONDS_PER_WORD[stage]) {
+      err(`${stage}/${mod.id}`, `${mod.timeLimit ?? 150} s för ${count} ord är ${perWord.toFixed(1)} s/ord – minst ${SECONDS_PER_WORD[stage]} s/ord på ${stage} (timeLimit ≥ ${count * SECONDS_PER_WORD[stage]})`);
+    }
+    const seenWords = new Set();
     (mod.words ?? []).forEach((w, i) => {
       const where = `${stage}/${mod.id}#${i}`;
       if (!String(w.word ?? "").trim()) err(where, "tomt ord");
       if (!String(w.clue ?? "").trim()) err(where, `"${w.word}" saknar ledtråd`);
+      if (seenWords.has(w.word)) err(where, `"${w.word}" förekommer två gånger i samma test`);
+      seenWords.add(w.word);
+      // The page draws one box per letter, so a space would show as a letter.
+      if (/\s/.test(String(w.word).trim())) err(where, `"${w.word}" innehåller mellanslag – bokstavsledtråden visar det som en lucka`);
+      if (String(w.clue ?? "").toLowerCase().includes(String(w.word).toLowerCase())) {
+        err(where, `ledtråden innehåller själva ordet "${w.word}"`);
+      }
     });
   }
 }

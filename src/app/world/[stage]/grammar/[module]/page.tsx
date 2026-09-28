@@ -12,20 +12,10 @@ import FillInBlank from "@/components/exercises/FillInBlank";
 import BuildSentence from "@/components/exercises/BuildSentence";
 import WordClues from "@/components/exercises/WordClues";
 import ListenSpell from "@/components/exercises/ListenSpell";
-import { loadStudent, saveStudent, saveModuleProgress, loadGamification, saveGamification, addToRetryQueue, recordLastVisited } from "@/lib/storage";
+import { loadStudent, addToRetryQueue, recordLastVisited } from "@/lib/storage";
+import { finishChapter } from "@/lib/chapter";
 import { trackEvent } from "@/lib/analytics";
-import {
-  chestsEarnedFromPoints,
-  chestsEarnedFromExercises,
-  chestsEarnedFromAchievements,
-  rollMysteryBox,
-  rollSurpriseMultiplier,
-  capNewChests,
-  bossWinsInStage,
-  getBossGate,
-  completedModulesInStage,
-} from "@/lib/gamification";
-import { ACHIEVEMENTS, isUnlocked } from "@/lib/achievements";
+import { rollSurpriseMultiplier } from "@/lib/gamification";
 import MysteryBoxPopup from "@/components/ui/MysteryBoxPopup";
 import type { ChestType, MysteryBoxReward } from "@/lib/types";
 import { getStage } from "@/lib/stages";
@@ -153,76 +143,20 @@ export default function GrammarModulePage({ params }: Props) {
       setSurpriseMult(surprise);
 
       if (student) {
-        const wasAlreadyCompleted = student.stages[stage!.id]?.grammarModules?.[mod!.id]?.completed ?? false;
-        setPrevAttemptCount(student.stages[stage!.id]?.grammarModules?.[mod!.id]?.attempts ?? 0);
-        const updated = saveModuleProgress(
-          student,
-          stage!.id,
-          "grammar",
-          mod!.id,
-          finalPts * surprise,
-          passed
-        );
-        setStudent(updated);
-
-        const gam = loadGamification();
-        const prevPoints = student.totalPoints;
-        const newPoints = updated.totalPoints;
-        const prevExercises = gam.exercisesCompleted;
-        const newExercises = prevExercises + 1;
-
-        const pointChests = chestsEarnedFromPoints(prevPoints, newPoints, gam.pointsMilestonesRewarded);
-        const exChests = chestsEarnedFromExercises(prevExercises, newExercises, gam.exerciseMilestonesRewarded);
-
-        const prevUnlocked = ACHIEVEMENTS.filter((a) => isUnlocked(a, student)).map((a) => a.id);
-        const nowUnlocked = ACHIEVEMENTS.filter((a) => isUnlocked(a, updated)).map((a) => a.id);
-        const achChests = chestsEarnedFromAchievements(prevUnlocked, nowUnlocked, gam.achievementsRewarded ?? []);
-
-        const allNewChests = [
-          ...pointChests.map((c) => c.chest),
-          ...exChests.map((c) => c.chest),
-          ...achChests.map((c) => c.chest),
-        ];
-        const firstChest = allNewChests[0];
-
-        // The boss belongs to this world now: the fanfare fires when this very
-        // chapter brought the world up to its next ten.
-        const winsHere = bossWinsInStage(gam, stage!.id);
-        const gateBefore = getBossGate(completedModulesInStage(student, stage!.id), winsHere);
-        const gateAfter = getBossGate(completedModulesInStage(updated, stage!.id), winsHere);
-        const nowBossUnlocked = gam.bossUnlocked || gateAfter.unlocked;
-        const bossOpenedNow = !gateBefore.unlocked && gateAfter.unlocked;
-
-        const mystery = wasAlreadyCompleted ? null : rollMysteryBox(gam.badges);
-        const extraMysteryChest = mystery?.type === "chest" && mystery.chestType
-          ? [{ id: `chest_m_${Date.now()}`, type: mystery.chestType, earnedAt: new Date().toISOString(), opened: false } as import("@/lib/types").Chest]
-          : [];
-        const mysteryBadge = mystery?.type === "badge" && mystery.badgeId ? mystery.badgeId : null;
-        const mysteryPoints = mystery?.type === "points" && mystery.points ? mystery.points : 0;
-
-        const newGam = {
-          ...gam,
-          chests: [...gam.chests, ...capNewChests(gam.chests, [...allNewChests, ...extraMysteryChest])],
-          badges: mysteryBadge && !gam.badges.includes(mysteryBadge)
-            ? [...gam.badges, mysteryBadge]
-            : gam.badges,
-          exercisesCompleted: newExercises,
-          bossUnlocked: nowBossUnlocked,
-          pointsMilestonesRewarded: [...gam.pointsMilestonesRewarded, ...pointChests.map((c) => c.milestone)],
-          exerciseMilestonesRewarded: [...gam.exerciseMilestonesRewarded, ...exChests.map((c) => c.milestone)],
-          achievementsRewarded: [...(gam.achievementsRewarded ?? []), ...achChests.map((c) => c.achievementId)],
-        };
-        saveGamification(newGam);
-
-        if (mysteryPoints > 0) {
-          const withMystery = { ...updated, totalPoints: updated.totalPoints + mysteryPoints };
-          saveStudent(withMystery);
-          setStudent(withMystery);
-        }
-
-        if (firstChest) setChestEarned(firstChest.type as ChestType);
-        if (bossOpenedNow) setBossJustUnlocked(true);
-        if (mystery) setMysteryBox(mystery);
+        // Saving, chests, the boss gate and the mystery box all live in
+        // finishChapter so the four chapter kinds pay out by the same rules.
+        const outcome = finishChapter({
+          stageId: stage!.id,
+          kind: "grammar",
+          moduleId: mod!.id,
+          points: finalPts * surprise,
+          passed,
+        });
+        setPrevAttemptCount(outcome.prevAttempts);
+        if (outcome.student) setStudent(outcome.student);
+        setChestEarned(outcome.chestEarned);
+        setBossJustUnlocked(outcome.bossOpenedNow);
+        setMysteryBox(outcome.mystery);
       }
       setShowResult(true);
     } else {
@@ -231,10 +165,17 @@ export default function GrammarModulePage({ params }: Props) {
   }
 
   function handleRetry() {
+    // Every per-attempt result is cleared, or the last attempt's mystery box
+    // pops up over the first question of this one.
     finishedRef.current = false;
     setCurrentIndex(0);
     setResults([]);
     setShowResult(false);
+    setChestEarned(undefined);
+    setBossJustUnlocked(false);
+    setMysteryBox(null);
+    setSurpriseMult(1);
+    setPrevAttemptCount(0);
     setPhase("intro");
   }
 

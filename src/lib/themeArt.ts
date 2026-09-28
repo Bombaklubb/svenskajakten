@@ -1414,5 +1414,3 @@ export function getThemeArt(id: string | undefined): ThemeArt | undefined {
   cache.set(id, art);
   return art;
 }
-
-export const THEME_ART_IDS = Object.keys(BUILDERS);

@@ -1,36 +1,52 @@
 import { NextRequest, NextResponse } from "next/server";
-
-interface MistakeRecord {
-  count: number;
-  stage: string;
-  moduleId: string;
-  moduleTitle: string;
-  exerciseIdx: number;
-  questionPreview: string;
-}
+import {
+  getKv,
+  safeId,
+  safeStage,
+  safeText,
+  mistakesKey,
+  mistakeInfoKey,
+  MISTAKE_TTL_SECONDS,
+  type ValidStage,
+} from "../_lib/kv";
 
 function todayKey(): string {
   return new Date().toISOString().slice(0, 10);
 }
 
-/** The only stages that may appear in a KV key. */
-const VALID_STAGES = new Set(["lagstadiet", "mellanstadiet", "hogstadiet", "gymnasiet"]);
+/** How many wrong answers one request may carry. Matches the client's batch size. */
+const MAX_MISTAKES = 50;
 
-/**
- * This endpoint is unauthenticated by design (it is called from every pupil's
- * browser), so every value that reaches KV is validated first: ids that become
- * part of a key are restricted to a safe character set and free text is capped,
- * otherwise anyone could mint unlimited keys or store unbounded strings.
- */
-function safeId(value: unknown, maxLength = 64): string | null {
-  if (typeof value !== "string") return null;
-  const trimmed = value.trim();
-  if (!trimmed || trimmed.length > maxLength) return null;
-  return /^[A-Za-z0-9_-]+$/.test(trimmed) ? trimmed : null;
+interface Mistake {
+  stage: ValidStage;
+  member: string;
+  title: string;
+  preview: string;
 }
 
-function safeText(value: unknown, maxLength: number): string {
-  return typeof value === "string" ? value.slice(0, maxLength) : "";
+/**
+ * Validates a batch of wrong answers. Anything malformed is dropped on its
+ * own; the rest of the batch still counts.
+ */
+function parseMistakes(raw: unknown): Mistake[] {
+  if (!Array.isArray(raw)) return [];
+  const out: Mistake[] = [];
+  for (const item of raw.slice(0, MAX_MISTAKES)) {
+    if (!item || typeof item !== "object") continue;
+    const stage = safeStage(item.stage);
+    const moduleId = safeId(item.moduleId);
+    const idx = item.exerciseIdx;
+    if (!stage || !moduleId || typeof idx !== "number" || !Number.isInteger(idx) || idx < 0 || idx >= 500) {
+      continue;
+    }
+    out.push({
+      stage,
+      member: `${moduleId}:${idx}`,
+      title: safeText(item.moduleTitle, 120) || moduleId,
+      preview: safeText(item.questionPreview, 200),
+    });
+  }
+  return out;
 }
 
 export async function POST(req: NextRequest) {
@@ -39,88 +55,90 @@ export async function POST(req: NextRequest) {
     if (!body || typeof body !== "object") {
       return NextResponse.json({ ok: true });
     }
-    const { type, exerciseIdx, moduleTitle, questionPreview, durationSeconds } = body;
+    const { type } = body;
 
-    const stage = typeof body.stage === "string" && VALID_STAGES.has(body.stage) ? body.stage : null;
-    const moduleId = safeId(body.moduleId);
-    const deviceId = safeId(body.deviceId, 100);
-    const sessionId = safeId(body.sessionId, 100);
+    const kv = await getKv();
+    if (!kv) return NextResponse.json({ ok: true });
 
-    // Lazily import kv – silently skip if env vars not configured
-    let kv: import("@vercel/kv").VercelKV;
-    try {
-      const mod = await import("@vercel/kv");
-      kv = mod.kv;
-    } catch {
-      return NextResponse.json({ ok: true });
-    }
-
-    const day = todayKey();
-    const ONLINE_TTL = 5 * 60 * 1000; // 5 min in ms
+    // Everything a request writes goes out as one pipeline: one round trip,
+    // and only the commands that are actually needed.
+    const p = kv.pipeline();
+    let commands = 0;
 
     if (type === "session_start") {
-      const ops: Promise<unknown>[] = [
-        kv.incr("total:sessions"),
-        kv.incr(`daily:${day}:sessions`),
-        kv.expire(`daily:${day}:sessions`, 60 * 60 * 24 * 90),
-        kv.setnx("stats:started", new Date().toISOString()),
-      ];
+      // Sent once per browser session (see SessionTracker). The totals that
+      // used to be counted here — sessions, daily sessions, time spent — were
+      // never shown anywhere, so they are no longer kept.
+      const day = todayKey();
+      const deviceId = safeId(body.deviceId, 100);
+      const sessionId = safeId(body.sessionId, 100);
+      p.setnx("stats:started", new Date().toISOString());
+      commands++;
       // Track unique devices (anonymous random ID from browser)
       if (deviceId) {
-        ops.push(kv.sadd("unique:devices", deviceId));
-        ops.push(kv.sadd(`daily:${day}:devices`, deviceId));
-        ops.push(kv.expire(`daily:${day}:devices`, 60 * 60 * 24 * 90));
+        p.sadd("unique:devices", deviceId);
+        p.sadd(`daily:${day}:devices`, deviceId);
+        p.expire(`daily:${day}:devices`, 60 * 60 * 24 * 90);
+        commands += 3;
       }
-      // Track online now via sorted set (score = timestamp)
+      // Track online now via sorted set (score = timestamp). Stale entries are
+      // pruned by the stats route, which is the only reader.
       if (sessionId) {
-        ops.push(kv.zadd("online:sessions", { score: Date.now(), member: sessionId }));
-        ops.push(kv.zremrangebyscore("online:sessions", 0, Date.now() - ONLINE_TTL));
+        p.zadd("online:sessions", { score: Date.now(), member: sessionId });
+        commands++;
       }
-      await Promise.all(ops);
-    } else if (type === "session_end" && typeof durationSeconds === "number") {
-      // Cap a single session at 4 hours so a forged value can't skew the total.
-      const seconds = Math.min(Math.max(Math.floor(durationSeconds), 0), 4 * 60 * 60);
-      if (seconds > 0) await kv.incrby("total:duration", seconds);
     } else if (type === "exercise_done") {
       // Sent once per finished chapter, carrying how many answers were right,
-      // instead of once per answer. A twenty-question chapter used to cost
-      // eighty Redis commands; it now costs four. Older clients that still
-      // send no count mean one, so a stale tab keeps counting correctly.
+      // instead of once per answer. Older clients that still send no count
+      // mean one, so a stale tab keeps counting correctly.
       const raw = typeof body.count === "number" ? Math.floor(body.count) : 1;
       const count = Math.min(Math.max(raw, 1), 200);
-      const ops: Promise<unknown>[] = [
-        kv.incrby("total:exercises", count),
-        kv.incrby(`daily:${day}:exercises`, count),
-        kv.expire(`daily:${day}:exercises`, 60 * 60 * 24 * 90),
-      ];
+      p.incrby("total:exercises", count);
+      commands++;
+      const stage = safeStage(body.stage);
       if (stage) {
-        ops.push(kv.incrby(`stage:${stage}:exercises`, count));
+        p.incrby(`stage:${stage}:exercises`, count);
+        commands++;
       }
-      await Promise.all(ops);
-    } else if (
-      type === "wrong_answer" &&
-      stage &&
-      moduleId &&
-      typeof exerciseIdx === "number" &&
-      Number.isInteger(exerciseIdx) &&
-      exerciseIdx >= 0 &&
-      exerciseIdx < 500
-    ) {
-      const mistakeKey = `mistake:${stage}:${moduleId}:${exerciseIdx}`;
-      const existing = await kv.get<MistakeRecord>(mistakeKey);
-      const updated: MistakeRecord = {
-        count: (existing?.count ?? 0) + 1,
-        stage,
-        moduleId,
-        moduleTitle: safeText(moduleTitle, 120) || moduleId,
-        exerciseIdx,
-        questionPreview: safeText(questionPreview, 200),
-      };
-      await Promise.all([
-        kv.set(mistakeKey, updated),
-        kv.incr("total:wrong"),
-      ]);
     }
+
+    // Wrong answers: batched by the client, and carried either by the chapter's
+    // "exercise_done" or by a request of their own ("mistakes"). A single
+    // "wrong_answer" from a tab still running the old code is accepted too.
+    const mistakes =
+      type === "wrong_answer" ? parseMistakes([body]) : parseMistakes(body.mistakes);
+
+    if (mistakes.length > 0) {
+      // Collapse repeats within the batch, so one command covers each question.
+      const counts = new Map<string, { m: Mistake; n: number }>();
+      for (const m of mistakes) {
+        const key = `${m.stage}|${m.member}`;
+        const entry = counts.get(key);
+        if (entry) entry.n++;
+        else counts.set(key, { m, n: 1 });
+      }
+
+      const infoByStage = new Map<ValidStage, Record<string, { t: string; q: string }>>();
+      for (const { m, n } of counts.values()) {
+        p.zincrby(mistakesKey(m.stage), n, m.member);
+        commands++;
+        const info = infoByStage.get(m.stage) ?? {};
+        info[m.member] = { t: m.title, q: m.preview };
+        infoByStage.set(m.stage, info);
+      }
+      // One HSET per stage for all its previews, and the TTL is refreshed on
+      // every write, so questions nobody gets wrong any more fade away.
+      for (const [stage, info] of infoByStage) {
+        p.hset(mistakeInfoKey(stage), info);
+        p.expire(mistakesKey(stage), MISTAKE_TTL_SECONDS);
+        p.expire(mistakeInfoKey(stage), MISTAKE_TTL_SECONDS);
+        commands += 3;
+      }
+      p.incrby("total:wrong", mistakes.length);
+      commands++;
+    }
+
+    if (commands > 0) await p.exec();
 
     return NextResponse.json({ ok: true });
   } catch {

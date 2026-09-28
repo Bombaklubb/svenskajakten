@@ -20,9 +20,6 @@ import { localDayKey } from "./dates";
  */
 export const BOSS_MODULES_PER_FIGHT = 10;
 
-/** Kept for saves written before the per-world lock; nothing gates on it now. */
-export const BOSS_UNLOCK_THRESHOLD = 5;
-
 /** Which bosses belong to which world, easiest world to hardest. */
 export const BOSSES_BY_STAGE: Record<StageId, string[]> = {
   lagstadiet:    ["grammatikbossen", "stavningsdrakens"],
@@ -102,8 +99,10 @@ export const MYSTERY_BOX_CHANCE = 0.15;
 export const MAX_CHESTS_PER_TYPE = 30;
 
 /** Version of the chest milestone scale. Bump when the milestones change so
- *  existing saves get migrated instead of paying out everything retroactively. */
-export const MILESTONE_SCALE = 2;
+ *  existing saves get migrated instead of paying out everything retroactively.
+ *  2: point milestones rebalanced. 3: chapter milestones rescaled to the 169
+ *  chapters, counted as first-time passes only. */
+export const MILESTONE_SCALE = 3;
 
 /** Points awarded for the first activity of each day (ties into the streak system). */
 export const DAILY_LOGIN_BONUS = 50;
@@ -216,40 +215,47 @@ export const POINT_CHEST_MILESTONES: { points: number; type: ChestType }[] = [
   { points: 65000,  type: "hemlig" },
 ];
 
+/**
+ * Chests for chapters passed for the first time. There are 169 chapters in all
+ * (see moduleCounts.ts), so the top milestone sits just below that: every
+ * chest on the list can actually be earned. Dense at the start, where a pupil
+ * needs early rewards, sparser later. Changing this list means bumping
+ * MILESTONE_SCALE so existing saves are migrated (see migrateExerciseMilestones).
+ */
 export const EXERCISE_CHEST_MILESTONES: { exercises: number; type: ChestType }[] = [
   { exercises: 1,   type: "wood" },
   { exercises: 2,   type: "wood" },
   { exercises: 3,   type: "wood" },
   { exercises: 4,   type: "wood" },
   { exercises: 5,   type: "wood" },
-  { exercises: 7,   type: "wood" },
-  { exercises: 10,  type: "wood" },
+  { exercises: 6,   type: "wood" },
+  { exercises: 8,   type: "wood" },
+  { exercises: 10,  type: "silver" },
   { exercises: 12,  type: "silver" },
-  { exercises: 15,  type: "silver" },
+  { exercises: 14,  type: "silver" },
+  { exercises: 16,  type: "wood" },
+  { exercises: 18,  type: "gold" },
   { exercises: 20,  type: "silver" },
-  { exercises: 25,  type: "wood" },
-  { exercises: 30,  type: "gold" },
-  { exercises: 35,  type: "silver" },
+  { exercises: 23,  type: "silver" },
+  { exercises: 26,  type: "wood" },
+  { exercises: 29,  type: "silver" },
+  { exercises: 32,  type: "wood" },
+  { exercises: 36,  type: "gold" },
   { exercises: 40,  type: "silver" },
-  { exercises: 45,  type: "wood" },
+  { exercises: 45,  type: "gold" },
   { exercises: 50,  type: "silver" },
-  { exercises: 55,  type: "wood" },
+  { exercises: 55,  type: "silver" },
   { exercises: 60,  type: "gold" },
-  { exercises: 70,  type: "silver" },
-  { exercises: 75,  type: "gold" },
-  { exercises: 80,  type: "silver" },
-  { exercises: 90,  type: "silver" },
-  { exercises: 100, type: "gold" },
-  { exercises: 125, type: "gold" },
-  { exercises: 150, type: "emerald" },
-  { exercises: 175, type: "emerald" },
-  { exercises: 200, type: "emerald" },
-  { exercises: 225, type: "ruby" },
-  { exercises: 250, type: "ruby" },
-  { exercises: 275, type: "diamond" },
-  { exercises: 300, type: "diamond" },
-  { exercises: 350, type: "hemlig" },
-  { exercises: 400, type: "hemlig" },
+  { exercises: 70,  type: "gold" },
+  { exercises: 80,  type: "emerald" },
+  { exercises: 90,  type: "emerald" },
+  { exercises: 100, type: "emerald" },
+  { exercises: 110, type: "ruby" },
+  { exercises: 120, type: "ruby" },
+  { exercises: 130, type: "diamond" },
+  { exercises: 140, type: "diamond" },
+  { exercises: 150, type: "hemlig" },
+  { exercises: 160, type: "hemlig" },
 ];
 
 // ─── Achievement → chest rewards ─────────────────────────────────────────────
@@ -455,12 +461,12 @@ export const BOSSES: Boss[] = [
         options: ["Vännar", "Venner", "Vennar", "Vänner"],
         correctIndex: 3 },
       { id: "g7", type: "multiple-choice", category: "grammar",
-        question: "Välj rätt ordform: 'Det ___ regna imorgon.'",
+        question: "Välj rätt ord: 'Det ___ regna imorgon.'",
         options: ["kanske", "möjlig", "trolig", "kan"],
         correctIndex: 3 },
       { id: "g8", type: "multiple-choice", category: "grammar",
-        question: "Om någon är 'förtjust', hur mår de?",
-        options: ["Mycket arga", "Mycket glada och nöjda", "Mycket trötta", "Mycket ledsna"],
+        question: "Om någon är 'förtjust', hur mår hen?",
+        options: ["Mycket arg", "Mycket glad och nöjd", "Mycket trött", "Mycket ledsen"],
         correctIndex: 1 },
       { id: "g9", type: "multiple-choice", category: "spelling",
         question: "Vilket ord stavas rätt?",
@@ -549,7 +555,7 @@ export const BOSSES: Boss[] = [
         options: ["Talar för fort", "Pratar för mycket", "Har en vacker röst", "Duktig på att tala övertygande"],
         correctIndex: 3 },
       { id: "o4", type: "multiple-choice", category: "grammar",
-        question: "Vilket ord är ett antonym (motsats) till 'frivillig'?",
+        question: "Vilket ord är en antonym (motsats) till 'frivillig'?",
         options: ["Valfri", "Önskad", "Obligatorisk", "Spontan"],
         correctIndex: 2 },
       { id: "o5", type: "multiple-choice", category: "grammar",
@@ -577,7 +583,7 @@ export const BOSSES: Boss[] = [
     subtitle: "Aktiv/passiv & sammansatta ord",
     difficulty: "Mästerlig",
     difficultyStars: 4,
-    description: "En gigant som mästrar alla grammatikregler! Svara rätt på minst 7 av 10 avancerade grammatikfrågor!",
+    description: "En gigant som behärskar alla grammatikregler! Svara rätt på minst 7 av 10 avancerade grammatikfrågor!",
     gradient: "linear-gradient(135deg, #064e3b, #065f46, #059669)",
     accentColor: "#059669",
     borderColor: "#6ee7b7",
@@ -594,7 +600,7 @@ export const BOSSES: Boss[] = [
         options: ["Fotbollsspelare", "Fotbolsspelare", "Fotbols-spelare", "Fotbollspelaren"],
         correctIndex: 0 },
       { id: "gg3", type: "multiple-choice", category: "grammar",
-        question: "Vilken konjunktion passar bäst: 'Jag kom sent ___ bussen var försenad.'?",
+        question: "Vilket bindeord passar bäst: 'Jag kom sent ___ bussen var försenad.'?",
         options: ["men", "eller", "eftersom", "fast"],
         correctIndex: 2 },
       { id: "gg4", type: "multiple-choice", category: "grammar",
@@ -647,7 +653,7 @@ export const BOSSES: Boss[] = [
         options: ["Mycket", "Fel, dåligt", "Utan", "Över"],
         correctIndex: 1 },
       { id: "om2", type: "multiple-choice", category: "grammar",
-        question: "Vilket ord är ett substantiverat adjektiv?",
+        question: "Vilket alternativ är ett substantiverat adjektiv?",
         options: ["Snabb", "De fattiga", "Snabbt", "Snabbare"],
         correctIndex: 1 },
       { id: "om3", type: "multiple-choice", category: "grammar",
@@ -671,7 +677,7 @@ export const BOSSES: Boss[] = [
         options: ["Extraordinnär", "Extraordinär", "Extraordenär", "Extraordiner"],
         correctIndex: 1 },
       { id: "om8", type: "multiple-choice", category: "grammar",
-        question: "Vad är antonymet till 'magnifik'?",
+        question: "Vad är antonymen till 'magnifik'?",
         options: ["Stor", "Oansenlig", "Magnifikt", "Magnifikens"],
         correctIndex: 1 },
       { id: "om9", type: "multiple-choice", category: "grammar",
@@ -717,7 +723,7 @@ export const BOSSES: Boss[] = [
         correctIndex: 1 },
       { id: "sp5", type: "multiple-choice", category: "grammar",
         question: "Vilket retoriskt begrepp handlar om talarens trovärdighet och karaktär?",
-        options: ["Pathos", "Logos", "Ethos", "Kairos"],
+        options: ["Patos", "Logos", "Etos", "Kairos"],
         correctIndex: 2 },
       { id: "sp6", type: "multiple-choice", category: "grammar",
         question: "Vad innebär 'hyperbol' som stilfigur?",
@@ -733,7 +739,7 @@ export const BOSSES: Boss[] = [
         correctIndex: 0 },
       { id: "sp9", type: "multiple-choice", category: "grammar",
         question: "Vad kallas den retoriska tekniken att ställa en fråga man inte förväntar sig svar på?",
-        options: ["Aposiopesis", "Retorisk fråga", "Antites", "Oxymoron"],
+        options: ["Aposiopes", "Retorisk fråga", "Antites", "Oxymoron"],
         correctIndex: 1 },
       { id: "sp10", type: "multiple-choice", category: "grammar",
         question: "Vilket begrepp beskriver skillnaden mellan vad texten säger och vad som faktiskt menas?",
@@ -824,6 +830,38 @@ export function chestsEarnedFromExercises(
   return earned;
 }
 
+/** Chapters passed at least once, over every world and all four kinds. */
+export function completedChaptersTotal(student: StudentData | null): number {
+  const stages: StageId[] = ["lagstadiet", "mellanstadiet", "hogstadiet", "gymnasiet"];
+  return stages.reduce((n, id) => n + completedModulesInStage(student, id), 0);
+}
+
+/**
+ * Move a save from before MILESTONE_SCALE 3 onto the rescaled chapter chests.
+ *
+ * Old saves counted every finish (failed tries and replays too) against the
+ * old list, so both the counter and the rewarded list are replaced:
+ *  - the counter becomes the chapters actually passed, which is what it
+ *    counts from now on;
+ *  - the pupil keeps every chest they already got, and is owed as many chapter
+ *    chests as the new list gives for that count — no more, no fewer. The
+ *    first `min(owed, alreadyGot)` new milestones are marked as rewarded; any
+ *    left over stay open, so the chest page's missed-milestone check hands
+ *    exactly those out. Nobody gets a second round of chests for chapters
+ *    already paid, and nobody loses chests the new scale says they earned.
+ */
+export function migrateExerciseMilestones(
+  gam: GamificationData,
+  completedChapters: number
+): Pick<GamificationData, "exercisesCompleted" | "exerciseMilestonesRewarded"> {
+  const alreadyGot = new Set(gam.exerciseMilestonesRewarded ?? []).size;
+  const owed = EXERCISE_CHEST_MILESTONES.filter((m) => m.exercises <= completedChapters);
+  return {
+    exercisesCompleted: completedChapters,
+    exerciseMilestonesRewarded: owed.slice(0, Math.min(owed.length, alreadyGot)).map((m) => m.exercises),
+  };
+}
+
 export function rollMysteryBox(badges: string[]): MysteryBoxReward | null {
   if (Math.random() > MYSTERY_BOX_CHANCE) return null;
 
@@ -860,6 +898,14 @@ export function rollMysteryBox(badges: string[]): MysteryBoxReward | null {
       description: `Märke: ${badge.label} ${badge.emoji}`,
     };
   }
+}
+
+/**
+ * Badges a chest can hand out: every one the pupil lacks except "Bossbesegrare",
+ * which is only ever earned by beating a boss.
+ */
+function chestBadgePool(badges: string[]) {
+  return ALL_BADGES.filter((b) => b.id !== "boss_slayer" && !badges.includes(b.id));
 }
 
 export function openWoodChest(): {
@@ -902,7 +948,7 @@ export function openGoldChest(badges: string[]): {
   description: string;
 } {
   const pts = Math.floor(Math.random() * 101) + 20;
-  const available = ALL_BADGES.filter((b) => !badges.includes(b.id));
+  const available = chestBadgePool(badges);
   const badge = available.length > 0
     ? available[Math.floor(Math.random() * available.length)]
     : null;
@@ -924,7 +970,7 @@ export function openEmeraldChest(badges: string[]): {
   description: string;
 } {
   const pts = Math.floor(Math.random() * 101) + 20;
-  const available = ALL_BADGES.filter((b) => !badges.includes(b.id));
+  const available = chestBadgePool(badges);
   const badge = available.length > 0
     ? available[Math.floor(Math.random() * available.length)]
     : null;
@@ -946,7 +992,7 @@ export function openRubyChest(badges: string[]): {
   description: string;
 } {
   const pts = Math.floor(Math.random() * 101) + 20;
-  const available = ALL_BADGES.filter((b) => !badges.includes(b.id));
+  const available = chestBadgePool(badges);
   const badge = available.length > 0
     ? available[Math.floor(Math.random() * available.length)]
     : null;
@@ -968,7 +1014,7 @@ export function openDiamondChest(badges: string[]): {
   description: string;
 } {
   const pts = Math.floor(Math.random() * 101) + 20;
-  const available = ALL_BADGES.filter((b) => !badges.includes(b.id));
+  const available = chestBadgePool(badges);
   const badge = available.length > 0
     ? available[Math.floor(Math.random() * available.length)]
     : null;
@@ -990,7 +1036,7 @@ export function openHemligChest(badges: string[]): {
   description: string;
 } {
   const pts = Math.floor(Math.random() * 201) + 100;
-  const available = ALL_BADGES.filter((b) => !badges.includes(b.id));
+  const available = chestBadgePool(badges);
   const badge = available.length > 0
     ? available[Math.floor(Math.random() * available.length)]
     : null;
@@ -1005,9 +1051,69 @@ export function openHemligChest(badges: string[]): {
   return { points: pts, badge: badge?.id, bonusChest, description: desc };
 }
 
+export interface ChestOpening {
+  /** The gamification data with the chest opened and any reward applied. */
+  gam: GamificationData;
+  chest: Chest;
+  points: number;
+  badge?: string;
+  /** A bonus chest that was actually added (after the cap). */
+  bonusChest?: Chest;
+  description: string;
+}
+
+/**
+ * Open one chest in `gam` and return the new data plus what it gave, or null
+ * when the chest does not exist or is already open. Pure: the caller saves the
+ * result and pays out the points. Callers should pass freshly loaded data so a
+ * chest cannot be opened, and paid out, twice.
+ */
+export function openChest(gam: GamificationData, chestId: string): ChestOpening | null {
+  const chest = gam.chests.find((c) => c.id === chestId);
+  if (!chest || chest.opened) return null;
+
+  let result: { points: number; badge?: string; bonusChest?: Chest; description: string };
+  if (chest.type === "wood") result = openWoodChest();
+  else if (chest.type === "silver") result = openSilverChest(gam.badges);
+  else if (chest.type === "gold") result = openGoldChest(gam.badges);
+  else if (chest.type === "emerald") result = openEmeraldChest(gam.badges);
+  else if (chest.type === "ruby") result = openRubyChest(gam.badges);
+  else if (chest.type === "diamond") result = openDiamondChest(gam.badges);
+  else result = openHemligChest(gam.badges);
+
+  const chests = gam.chests.map((c) =>
+    c.id === chestId ? { ...c, opened: true, openedReward: result.description } : c
+  );
+  const bonusChest = result.bonusChest && capNewChests(chests, [result.bonusChest]).length > 0
+    ? result.bonusChest
+    : undefined;
+  if (bonusChest) chests.push(bonusChest);
+  const badges = result.badge && !gam.badges.includes(result.badge)
+    ? [...gam.badges, result.badge]
+    : gam.badges;
+
+  return {
+    gam: { ...gam, chests, badges },
+    chest,
+    points: result.points,
+    badge: result.badge,
+    bonusChest,
+    description: result.description,
+  };
+}
+
+/**
+ * The chests from `toAdd` that fit under MAX_CHESTS_PER_TYPE.
+ *
+ * The cap limits how many of a kind can wait unopened, so a pile of the same
+ * chest cannot build up. Opened chests are trophies and do not count — they
+ * used to, which turned the cap into a lifetime limit on earning a kind.
+ */
 export function capNewChests(existing: Chest[], toAdd: Chest[]): Chest[] {
   const counts: Partial<Record<ChestType, number>> = {};
-  for (const c of existing) counts[c.type] = (counts[c.type] ?? 0) + 1;
+  for (const c of existing) {
+    if (!c.opened) counts[c.type] = (counts[c.type] ?? 0) + 1;
+  }
   const result: Chest[] = [];
   for (const c of toAdd) {
     const current = counts[c.type] ?? 0;
@@ -1021,6 +1127,9 @@ export function capNewChests(existing: Chest[], toAdd: Chest[]): Chest[] {
 
 export function defaultGamificationData(): GamificationData {
   return {
+    // A new save starts on the current scale; without this the old-save
+    // migration in loadGamification ran for every new pupil.
+    milestoneScale: MILESTONE_SCALE,
     chests: [],
     badges: [],
     exercisesCompleted: 0,

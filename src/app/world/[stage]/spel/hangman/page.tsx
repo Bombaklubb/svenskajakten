@@ -4,9 +4,10 @@ import { useState, useEffect, useCallback, useRef, use } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/ui/Header";
-import { loadStudent, awardGamePoints, type GameAward } from "@/lib/storage";
+import { loadStudent, awardGamePoints, hasDoneModuleToday, type GameAward } from "@/lib/storage";
 import { loadStageContent } from "@/lib/content";
-import { hangmanWordsFromContent, mergeUnique, type HangmanWord } from "@/lib/gameContent";
+import { hangmanWordsFromContent, mergeUnique, shuffle, type HangmanWord } from "@/lib/gameContent";
+import { GameLockedScreen, zeroAwardReason } from "@/components/ui/GameAwardNote";
 import { getStage } from "@/lib/stages";
 import type { StudentData } from "@/lib/types";
 
@@ -86,15 +87,6 @@ const WORDS: Record<string, { word: string; hint: string }[]> = {
 const MAX_LIVES = 6;
 const SWEDISH_ALPHA = "ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ".split("");
 
-function shuffle<T>(arr: T[]): T[] {
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
-
 interface Props {
   params: Promise<{ stage: string }>;
 }
@@ -115,6 +107,8 @@ export default function SnogubbenPage({ params }: Props) {
       .catch(() => setWords(seed));
   }, [stageId]);
   if (!stage) return notFound();
+  // The games open with the day's first chapter, as on the world's game tab.
+  if (words && !hasDoneModuleToday(student)) return <GameLockedScreen stageId={stageId} emoji="⛄" />;
   if (!words) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-900">
@@ -296,6 +290,22 @@ function SnogubbenGame({ stageId, stage, student, setStudent, deck }: {
     setGuessed(prev => new Set([...prev, letter]));
   }, [phase, guessed]);
 
+  // A physical keyboard types guesses too, å ä ö included. Shortcuts such as
+  // Ctrl+R or Cmd+F are left alone, as is typing into a form field.
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.ctrlKey || e.metaKey || e.altKey || e.repeat) return;
+      const target = e.target as HTMLElement | null;
+      if (target && (target.tagName === "INPUT" || target.tagName === "TEXTAREA" || target.isContentEditable)) return;
+      const letter = e.key.toLocaleUpperCase("sv-SE");
+      if (!SWEDISH_ALPHA.includes(letter)) return;
+      e.preventDefault();
+      guess(letter);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [guess]);
+
   const nextWord = useCallback(() => {
     awardedRef.current = false;
     setAward(null);
@@ -401,13 +411,21 @@ function SnogubbenGame({ stageId, stage, student, setStudent, deck }: {
             <p className="font-black text-gray-900 dark:text-gray-100 text-base">
               {phase === "won"
                 ? award && award.awarded === 0
-                  ? "Rätt! (dagens poäng för spelet är slut)"
+                  ? "Rätt!"
                   : `Rätt! +${award?.awarded ?? 0}p`
                 : `Ordet var: ${current.word}`}
             </p>
+            {phase === "won" && award && zeroAwardReason(award) && (
+              <p className="text-xs text-gray-600 dark:text-gray-300 mt-1">{zeroAwardReason(award)}</p>
+            )}
+            {/* Each solved word is its own round for the replay decay, so the
+                second word of the day already pays less. It used to say
+                "Omspel" (replay), which read as a mistake to a pupil who had
+                only just started. */}
             {phase === "won" && award && award.multiplier < 1 && award.awarded > 0 && (
               <p className="text-xs text-gray-600 dark:text-gray-300 mt-1">
-                Omspel – {Math.round(award.multiplier * 100)}% poäng
+                Varje ord idag ger lite mindre än det förra – det här gav {Math.round(award.multiplier * 100)}%
+                {award.capped && " · dagens gräns för spelet är nådd"}
               </p>
             )}
             <div className="flex gap-2 justify-center mt-3">

@@ -19,7 +19,7 @@ const config: Config = {
     },
     extend: {
       fontFamily: {
-        sans: ["Baloo 2", "Comic Neue", "system-ui", "sans-serif"],
+        sans: ["var(--font-baloo)", "Baloo 2", "Comic Neue", "system-ui", "sans-serif"],
       },
       borderWidth: {
         "3": "3px",

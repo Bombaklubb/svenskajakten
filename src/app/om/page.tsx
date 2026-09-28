@@ -45,7 +45,7 @@ const OVNINGSTYPER = [
 
 const AKTIVITETER = [
   { emoji: "📝", name: "Grammatik", desc: "Appens kärna. 111 kapitel – från alfabetet och stor bokstav till satsdelar, retorik och litteraturhistoria." },
-  { emoji: "✏️", name: "Stavning", desc: "Ord som ofta blir fel. Här finns också stavningstest på tid: sextio sekunder och alla rätt krävs." },
+  { emoji: "✏️", name: "Stavning", desc: "Ord som ofta blir fel. Här finns också stavningstest på tid: 8 sekunder per ord i Ordängen, 6 i Berättelseskogen, 5 i Texthavet och 4 i Skrivakademin. Klockan står still medan du ser om du svarade rätt, och 90 procent rätt krävs för att klara testet." },
   { emoji: "📐", name: "Språkregler", desc: "Uppslagsdelen. Reglerna förklarade med exempel – bra att titta i före eller under ett kapitel." },
   { emoji: "🔍", name: "Ordsökning", desc: "Hitta gömda ord i rutnätet. Lugnare träning på ordbilder." },
   { emoji: "🎮", name: "Spel", desc: "Memory, Snögubben, Tidsattack och Samla mynt. Alla ger riktiga poäng." },
@@ -53,10 +53,26 @@ const AKTIVITETER = [
 ];
 
 const SPEL = [
-  { emoji: "🃏", name: "Memory", desc: "Para ihop begrepp med förklaring. Lätt, Medel eller Svår." },
-  { emoji: "⛄", name: "Snögubben", desc: "Gissa ordet bokstav för bokstav. Sex liv – varje fel smälter snögubben lite." },
-  { emoji: "⏱️", name: "Tidsattack", desc: "Sextio sekunder. Hur många frågor hinner du svara rätt på?" },
-  { emoji: "🪙", name: "Samla mynt", desc: "Spring och samla mynt genom att svara rätt. Tre hinder och loppet är slut." },
+  {
+    emoji: "🃏",
+    name: "Memory",
+    desc: "Para ihop begrepp med förklaring. Lätt, Medel eller Svår. Paren kommer ur en fast lista för varje värld, inte ur kapitlen. 20 poäng per par (80, 120 eller 180 för en perfekt omgång); varje extra försök drar 3 poäng och varje påbörjad fyrasekundersperiod utöver 5 sekunder per par drar 1, men en klarad omgång ger alltid minst 10.",
+  },
+  {
+    emoji: "⛄",
+    name: "Snögubben",
+    desc: "Gissa ordet bokstav för bokstav. Sex liv – varje fel smälter snögubben lite. Orden kommer från världens lyssna-och-stava-övningar, kluringar och ordsökningar, blandade med spelets egna. 30 poäng per löst ord plus 5 för varje liv du har kvar. Varje ord räknas som en omgång.",
+  },
+  {
+    emoji: "⏱️",
+    name: "Tidsattack",
+    desc: "Sextio sekunder. Hur många frågor hinner du svara rätt på? Flervalsfrågorna kommer ur världens kapitel, blandade med spelets egna. 10 poäng per rätt svar.",
+  },
+  {
+    emoji: "🪙",
+    name: "Samla mynt",
+    desc: "Spring och samla tio mynt genom att svara rätt på flervalsfrågor ur världens kapitel och spelets egen lista. Du tål tre missar. 15 poäng per mynt.",
+  },
 ];
 
 // Kistorna i den ordning de delas ut, med appens egna bilder.
@@ -67,7 +83,7 @@ const KISTOR: { type: ChestType; points: string }[] = [
   { type: "emerald", points: "20–120 poäng + märke" },
   { type: "ruby",    points: "20–120 poäng + märke" },
   { type: "diamond", points: "20–120 poäng + märke" },
-  { type: "hemlig",  points: "100–300 poäng" },
+  { type: "hemlig",  points: "100–300 poäng + märke" },
 ];
 
 function Section({ emoji, title, children }: { emoji: string; title: string; children: React.ReactNode }) {
@@ -139,9 +155,9 @@ export default function OmPage() {
         <Section emoji="🚀" title="Kom igång">
           <ol className="space-y-2.5">
             {[
-              ["Skriv ditt namn", "Välj en figur och skriv ett namn. Nästa gång du skriver samma namn hittar appen dina poäng igen."],
+              ["Skriv ditt namn", "Skriv ett namn och välj en av startfigurerna – fler figurer finns att köpa i affären. Nästa gång du skriver samma namn hittar appen dina poäng och din figur igen; stora och små bokstäver spelar ingen roll."],
               ["Välj värld", "Ordängen är lättast, Skrivakademin svårast. Du väljer fritt och kan byta när du vill."],
-              ["Öppna ett kapitel", "Svara på övningarna. Behöver du sluta mitt i är det ingen fara – på startsidan står Fortsätt där du var."],
+              ["Öppna ett kapitel", "Svara på övningarna. Måste du sluta mitt i kommer appen ihåg vilket kapitel du var i – på startsidan står Fortsätt där du var – men svaren sparas inte, så kapitlet börjar om från början."],
             ].map(([rubrik, text], i) => (
               <li key={rubrik} className="flex gap-3">
                 <span className="flex-none w-6 h-6 rounded-full bg-sv-600 text-white text-xs font-bold flex items-center justify-center mt-0.5">
@@ -220,11 +236,11 @@ export default function OmPage() {
             ))}
           </ul>
           <p className="text-sm">
-            <strong>Spelen öppnar när du klarat dagens första kapitel</strong> och står sedan öppna
-            resten av dagen. Frågorna och orden hämtas ur världens egna kapitel, så de byts ut efter
-            hand. Varje spel ger som mest <strong>400 poäng per dag</strong>, och varje ny omgång samma
-            dag ger lite mindre: 100, 80, 60, 50 och sedan 40 procent. Spelen är ett komplement till
-            kapitlen, inte en genväg.
+            <strong>Alla fyra spelen är låsta tills du klarat dagens första kapitel</strong> och står
+            sedan öppna resten av dagen. Varje spel ger som mest <strong>400 poäng per dag</strong>, och
+            varje ny omgång samma dag ger lite mindre: 100, 80, 60, 50 och sedan 40 procent. Spelen är
+            ett komplement till kapitlen, inte en genväg. Svarsalternativen kommer i ny ordning varje
+            gång, så det lönar sig inte att lära sig vilken knapp som brukar vara rätt.
           </p>
         </Section>
 
@@ -262,11 +278,17 @@ export default function OmPage() {
         </Section>
 
         <Section emoji="🎁" title="Kistorna">
-          <p>Kistor samlas under kistknappen uppe till höger. De kommer på tre sätt:</p>
+          <p>Kistor samlas under kistknappen uppe till höger. De kommer på flera sätt:</p>
           <ul className="space-y-1.5 list-disc pl-5 marker:text-amber-500">
             <li>När du passerar en <strong>poänggräns</strong> – den första vid 300 poäng.</li>
-            <li>När du klarat ett visst <strong>antal kapitel</strong> – den första efter ett enda.</li>
-            <li>Som ren <strong>tur</strong> efter ett avklarat kapitel.</li>
+            <li>När du klarat ett visst <strong>antal kapitel</strong> för första gången.</li>
+            <li>När du låser upp vissa <strong>prestationer</strong>, till exempel ett antal kapitel i en värld.</li>
+            <li>Varje gång du <strong>besegrar en boss</strong>.</li>
+            <li>
+              Ur <strong>mysterielådan</strong>, som ibland dyker upp när du klarar ett kapitel för
+              första gången. Den kan också innehålla bonuspoäng eller ett märke.
+            </li>
+            <li>Som <strong>bonuskista</strong> inuti en större kista.</li>
           </ul>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1">
             {KISTOR.map((c) => {
@@ -281,8 +303,10 @@ export default function OmPage() {
             })}
           </div>
           <p className="text-sm">
-            En kista öppnas med ett klick. Poängen är ungefär desamma oavsett kista – det är märkena och
-            chansen till en bonuskista som skiljer dem åt. Den hemliga kistan ger mest.
+            En kista öppnas med ett klick, och har du flera öppnar <strong>Öppna alla</strong> dem på en
+            gång. Du kan ha högst 30 oöppnade kistor av varje sort. Poängen är ungefär desamma för de sex vanliga kistorna – det
+            är märkena och chansen till en bonuskista som skiljer dem åt. Den hemliga kistan ger mest:
+            100–300 poäng, ett märke och 60 procents chans till en diamantkista på köpet.
           </p>
         </Section>
 
@@ -314,14 +338,19 @@ export default function OmPage() {
           </p>
           <p>
             Matchen är en snabb frågeomgång som ger extrapoäng, en kista och märket Bossbesegrare.
-            Den betalar lika mycket varje gång: det är kapitlen som är priset, inte segern.
+            En vinst ger 200 poäng – utom mot Ordängens första boss, som ger 150. Samma boss betalar
+            lika mycket varje gång: det är kapitlen som är priset, inte segern.
+          </p>
+          <p>
+            Förlorar du kan du försöka igen så länge matchen står öppen. Efter en vinst finns ingen
+            direkt revansch: nästa match i världen kräver {BOSS_MODULES_PER_FIGHT} nya kapitel där.
             Bossen finns under fliken <strong>Spel</strong> i varje värld.
           </p>
         </Section>
 
         <Section emoji="👤" title="Profil och märken">
           <p>
-            Klicka på ditt namn uppe till höger för att se din statistik: nivå, poäng per värld och
+            Klicka på din figur uppe till höger för att se din statistik: nivå, poäng per värld och
             avklarade kapitel. Där finns också <strong>märkena</strong> – för de första stegen, för
             grammatik, stavning och spel, för att vara flitig, och några som är svårare att lista ut.
           </p>
@@ -362,9 +391,16 @@ export default function OmPage() {
         <Section emoji="💡" title="Bra att veta">
           <ul className="space-y-1.5 list-disc pl-5 marker:text-gray-400">
             <li>
-              <strong>Allt sparas på den enhet du använder</strong> – poäng, märken, kistor och köp.
-              Ingenting ligger på en server. Byter du dator eller webbläsare börjar du om från noll, och
-              rensar du webbläsarens data försvinner allt.
+              <strong>Allt sparas på den enhet du använder</strong> – namn, poäng, märken, kistor och
+              köp. Byter du dator eller webbläsare börjar du om från noll, och rensar du webbläsarens
+              data försvinner allt.
+            </li>
+            <li>
+              <strong>Det här skickas till servern</strong>, för lärarens statistik: ett slumpat
+              anonymt ID för enheten och webbläsarfliken, antal rätta svar per värld, och vilka frågor
+              som besvaras fel – kapitlets namn och frågans text, men aldrig vad du svarade. Ingenting
+              av det innehåller ditt namn eller går att koppla till dig. Statistiken om fel frågor
+              raderas efter 90 dagar utan nya fel.
             </li>
             <li>
               Flera elever kan dela samma enhet. Var och en skriver sitt eget namn och har egna poäng,
@@ -374,11 +410,13 @@ export default function OmPage() {
               <strong>Mörkt läge</strong> slås på med måne-knappen uppe till höger.
             </li>
             <li>
-              Lämnar du ett kapitel mitt i kommer appen ihåg både var du var och vilka svar du hunnit ge.
+              Lämnar du ett kapitel mitt i kommer appen ihåg vilket kapitel det var, men inte svaren du
+              hunnit ge – nästa gång börjar kapitlet om.
             </li>
             <li>
               <strong>Den här sidan</strong> når du när som helst via <strong>❓</strong> uppe till
-              höger, och från startsidan innan du skrivit ditt namn.
+              höger – på en smal mobil i stället via <strong>🔗 Jaktlänkar</strong> längst ner till
+              höger – och från startsidan innan du skrivit ditt namn.
             </li>
             <li>
               Undrar du något står <strong>✉️ Kontakta Martin</strong> längst ner till vänster på

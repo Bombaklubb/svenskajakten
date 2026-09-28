@@ -4,10 +4,10 @@ import { useState, useEffect, useCallback, useRef, use } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/ui/Header";
-import { loadStudent, awardGamePoints, type GameAward } from "@/lib/storage";
+import { loadStudent, awardGamePoints, hasDoneModuleToday, type GameAward } from "@/lib/storage";
 import { loadStageContent } from "@/lib/content";
-import { quizQuestionsFromContent, mergeUnique, type QuizQuestion } from "@/lib/gameContent";
-import GameAwardNote from "@/components/ui/GameAwardNote";
+import { quizQuestionsFromContent, mergeUnique, quizKey, dealQuiz, SAMLA_MYNT_POINTS_PER_COIN, type QuizQuestion } from "@/lib/gameContent";
+import GameAwardNote, { GameLockedScreen } from "@/components/ui/GameAwardNote";
 import { getStage } from "@/lib/stages";
 import type { StudentData } from "@/lib/types";
 
@@ -15,25 +15,25 @@ import type { StudentData } from "@/lib/types";
 
 const QUESTIONS: Record<string, { q: string; options: string[]; correct: number }[]> = {
   lagstadiet: [
-    { q: "Vad är ett SUBSTANTIV?", options: ["Handlingsord", "Namn på saker, djur, personer", "Beskrivningsord", "Kopplings-ord"], correct: 1 },
+    { q: "Vad är ett SUBSTANTIV?", options: ["Handlingsord", "Namn på saker, djur, personer", "Beskrivningsord", "Bindeord"], correct: 1 },
     { q: "Vad är ett VERB?", options: ["Namn på saker", "Beskriver hur något är", "Handlingsord", "Kopplar meningar"], correct: 2 },
     { q: "Vad är ett ADJEKTIV?", options: ["Handlingsord", "Namn på saker", "Anger tid", "Beskriver hur något är"], correct: 3 },
     { q: "Vad sätts efter en FRÅGA?", options: ["Punkt", "Komma", "Frågetecken", "Utropstecken"], correct: 2 },
     { q: "Vad börjar varje mening med?", options: ["Liten bokstav", "Siffra", "Stor bokstav", "Punkt"], correct: 2 },
     { q: "Vad är en VOKAL?", options: ["B, C, D, F", "A, E, I, O, U, Y, Å, Ä, Ö", "Bara A och E", "Alla bokstäver"], correct: 1 },
-    { q: "Vad är ett SYNONYM?", options: ["Motsatsord", "Ord med liknande betydelse", "Felstavat ord", "Frågeord"], correct: 1 },
+    { q: "Vad är en SYNONYM?", options: ["Motsatsord", "Ord med liknande betydelse", "Felstavat ord", "Frågeord"], correct: 1 },
     { q: "Vad är en MENING?", options: ["En bok", "En bokstav", "Ord som bildar en hel tanke", "En rubrik"], correct: 2 },
     { q: "Vad kallas textens TITEL?", options: ["Stycke", "Rubrik", "Dialog", "Paragraf"], correct: 1 },
     { q: "Vad markerar TALSTRECK?", options: ["En paus", "Vad någon säger", "Frågans slut", "En lista"], correct: 1 },
   ],
   mellanstadiet: [
     { q: "Vad är ett SUBJEKT?", options: ["Verbets tidsform", "Vem/vad meningen handlar om", "Det verbet gör", "En tidsangivelse"], correct: 1 },
-    { q: "Vad är PREDIKAT?", options: ["Subjektets funktion", "Verbets funktion i meningen", "En bisats", "Tidsangivelse"], correct: 1 },
+    { q: "Vad är ett PREDIKAT?", options: ["Subjektets funktion", "Verbets funktion i meningen", "En bisats", "Tidsangivelse"], correct: 1 },
     { q: "Vad är TEMPUS?", options: ["Verbets tidsform", "Meningens längd", "Ordets stavning", "En adjektivform"], correct: 0 },
     { q: "Vad är NUTID?", options: ["Något hände förr", "Något ska hända", "Något händer just nu", "Något händer ibland"], correct: 2 },
     { q: "Vad är ett PRONOMEN?", options: ["Ersätter substantiv", "Ersätter verb", "Ersätter adjektiv", "Anger tid"], correct: 0 },
-    { q: "Vad är ADVERB?", options: ["Namn på saker", "Beskriver hur ett verb utförs", "Ersätter substantiv", "Anger relation"], correct: 1 },
-    { q: "Vad är SAMMANSATT ORD?", options: ["Två ord ihopsatta", "Ord med många bokstäver", "Ord med förled", "Lånat ord"], correct: 0 },
+    { q: "Vad är ett ADVERB?", options: ["Namn på saker", "Beskriver hur ett verb utförs", "Ersätter substantiv", "Anger relation"], correct: 1 },
+    { q: "Vad är ett SAMMANSATT ORD?", options: ["Två ord ihopsatta", "Ord med många bokstäver", "Ord med förled", "Lånat ord"], correct: 0 },
     { q: "Vad är KÄLLKRITIK?", options: ["Att skriva snabbt", "Att granska källors trovärdighet", "Att kopiera text", "Att hitta synonymer"], correct: 1 },
     { q: "Vad är en PREPOSITION?", options: ["Handlingsord", "Anger relation – på, i, av", "Ersätter substantiv", "Tidsform"], correct: 1 },
     { q: "Vad är DÅTID?", options: ["Något händer nu", "Något hände förr", "Något ska hända", "Något händer ofta"], correct: 1 },
@@ -47,8 +47,8 @@ const QUESTIONS: Record<string, { q: string; options: string[]; correct: number 
     { q: "Vad är ett ARGUMENT?", options: ["En fråga", "En berättelse", "Skäl som stödjer ett påstående", "En slutsats"], correct: 2 },
     { q: "Vad är INVERSION?", options: ["Att skriva baklänges", "Subjektet kommer efter predikatet", "En bisats", "Passiv form"], correct: 1 },
     { q: "Vad är en NOMINALFRAS?", options: ["En verbfras", "Substantiv med bestämningar", "En adverbfras", "En prepositionsfras"], correct: 1 },
-    { q: "Vad är GENRE?", options: ["Stil", "Ton", "Typ av text med gemensamma drag", "Register"], correct: 2 },
-    { q: "Vad är PARTICIP?", options: ["Verbets grundform", "Verbform som fungerar som adjektiv", "Dåtidsformen", "En bisats"], correct: 1 },
+    { q: "Vad är en GENRE?", options: ["Stil", "Ton", "Typ av text med gemensamma drag", "Register"], correct: 2 },
+    { q: "Vad är ett PARTICIP?", options: ["Verbets grundform", "Verbform som fungerar som adjektiv", "Dåtidsformen", "En bisats"], correct: 1 },
   ],
   gymnasiet: [
     { q: "Vad är LOGOS?", options: ["Känsloargument", "Förnuftsbaserat argument", "Talarens trovärdighet", "Bildspråk"], correct: 1 },
@@ -67,15 +67,6 @@ const QUESTIONS: Record<string, { q: string; options: string[]; correct: number 
 const TOTAL_COINS = 10;
 const WRONG_LIMIT = 3;
 
-function shuffle<T>(arr: T[]): T[] {
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
-
 interface Props {
   params: Promise<{ stage: string }>;
 }
@@ -90,10 +81,12 @@ export default function SamlaMyntPage({ params }: Props) {
     setStudent(loadStudent());
     const seed = QUESTIONS[stageId] ?? QUESTIONS.lagstadiet;
     loadStageContent(stageId)
-      .then((content) => setQuestions(mergeUnique(seed, quizQuestionsFromContent(content), (q) => q.q.toLowerCase())))
+      .then((content) => setQuestions(mergeUnique(seed, quizQuestionsFromContent(content), quizKey)))
       .catch(() => setQuestions(seed));
   }, [stageId]);
   if (!stage) return notFound();
+  // The games open with the day's first chapter, as on the world's game tab.
+  if (questions && !hasDoneModuleToday(student)) return <GameLockedScreen stageId={stageId} emoji="🪙" />;
   if (!questions) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-900">
@@ -114,7 +107,7 @@ function SamlaMyntGame({ stageId, stage, student, onStudentChange, deck }: {
   deck: QuizQuestion[];
 }) {
   const [phase, setPhase] = useState<"ready" | "playing" | "done">("ready");
-  const [questions, setQuestions] = useState(() => shuffle(deck));
+  const [questions, setQuestions] = useState(() => dealQuiz(deck));
   const [picked, setPicked] = useState<number | null>(null);
   const [qIndex, setQIndex] = useState(0);
   const [coins, setCoins] = useState(0);
@@ -123,7 +116,15 @@ function SamlaMyntGame({ stageId, stage, student, onStudentChange, deck }: {
   const [score, setScore] = useState(0);
   const [runFrame, setRunFrame] = useState(0);
   const runRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  // The pause after an answer. Left running past the end of a round it used to
+  // skip a question in, or even end, the next one, so it is cleared on start,
+  // on "Avsluta" and on unmount.
   const feedbackTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const clearFeedbackTimeout = useCallback(() => {
+    if (feedbackTimeout.current) clearTimeout(feedbackTimeout.current);
+    feedbackTimeout.current = null;
+  }, []);
+  useEffect(() => clearFeedbackTimeout, [clearFeedbackTimeout]);
 
   const currentQ = questions[qIndex % questions.length];
 
@@ -155,9 +156,11 @@ function SamlaMyntGame({ stageId, stage, student, onStudentChange, deck }: {
     if (isCorrect) {
       const newCoins = coins + 1;
       setCoins(newCoins);
-      setScore(s => s + 15);
+      setScore(s => s + SAMLA_MYNT_POINTS_PER_COIN);
       setFeedback("coin");
+      clearFeedbackTimeout();
       feedbackTimeout.current = setTimeout(() => {
+        feedbackTimeout.current = null;
         setFeedback(null);
         setPicked(null);
         if (newCoins >= TOTAL_COINS) {
@@ -171,7 +174,9 @@ function SamlaMyntGame({ stageId, stage, student, onStudentChange, deck }: {
       setObstacles(newObstacles);
       setFeedback("obstacle");
       // Long enough to read which answer was right, not just that this one was wrong.
+      clearFeedbackTimeout();
       feedbackTimeout.current = setTimeout(() => {
+        feedbackTimeout.current = null;
         setFeedback(null);
         setPicked(null);
         if (newObstacles >= WRONG_LIMIT) {
@@ -181,16 +186,17 @@ function SamlaMyntGame({ stageId, stage, student, onStudentChange, deck }: {
         }
       }, 1300);
     }
-  }, [phase, feedback, currentQ, coins, obstacles]);
+  }, [phase, feedback, currentQ, coins, obstacles, clearFeedbackTimeout]);
 
   const start = () => {
     // Cleared so a replay banks its (reduced) score too. Leaving it set meant a
     // pupil who pressed "Spela igen" earned nothing, while one who reloaded the
     // page got full points for the very same round.
+    clearFeedbackTimeout();
     awardedRef.current = false;
     setAward(null);
     setPhase("playing");
-    setQuestions(shuffle(deck)); // a fresh order every round
+    setQuestions(dealQuiz(deck)); // a fresh order, and fresh option order, every round
     setPicked(null);
     setQIndex(0);
     setCoins(0);
@@ -215,6 +221,7 @@ function SamlaMyntGame({ stageId, stage, student, onStudentChange, deck }: {
           <div className="text-7xl mb-4">🪙</div>
           <h1 className="text-3xl font-black text-gray-900 dark:text-gray-100 mb-2">Samla mynt!</h1>
           <p className="text-gray-500 dark:text-gray-300 mb-2">Svara rätt = samla mynt 🪙 · Svara fel = hinder 🚧</p>
+          <p className="text-gray-600 dark:text-gray-300 text-sm mb-2">Varje mynt = {SAMLA_MYNT_POINTS_PER_COIN} poäng.</p>
           <p className="text-gray-600 dark:text-gray-300 text-sm mb-8">
             Samla <span className="font-black text-amber-700 dark:text-amber-300">{TOTAL_COINS} mynt</span> utan att träffa <span className="font-black text-red-500">{WRONG_LIMIT} hinder</span>!
           </p>
@@ -286,7 +293,7 @@ function SamlaMyntGame({ stageId, stage, student, onStudentChange, deck }: {
       <div className="flex-1 max-w-lg mx-auto w-full px-4 py-4 pt-20">
         {/* HUD */}
         <div className="flex items-center justify-between mb-4">
-          <button onClick={() => setPhase("done")} className="text-gray-600 hover:text-gray-600 text-sm font-semibold cursor-pointer dark:text-gray-300">
+          <button onClick={() => { clearFeedbackTimeout(); setFeedback(null); setPicked(null); setPhase("done"); }} className="text-gray-600 hover:text-gray-600 text-sm font-semibold cursor-pointer dark:text-gray-300">
             ← Avsluta
           </button>
           <span className={`font-black text-sm ${stage!.textClass}`}>⭐ {score}p</span>

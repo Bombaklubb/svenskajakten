@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback, useEffect, useRef } from "react";
 import type { WordSearchWord } from "@/lib/types";
 
 interface Cell { row: number; col: number }
@@ -111,6 +111,12 @@ export default function WordSearch({ words, onAllFound, pointsPerWord = 5 }: Wor
   }, [preview]);
 
   function handleCellClick(r: number, c: number) {
+    if (start && start.row === r && start.col === c) {
+      // Tapping the start letter again means "never mind", not a wrong word.
+      setStart(null);
+      setHover(null);
+      return;
+    }
     if (!start) {
       setStart({ row: r, col: c });
       setHover({ row: r, col: c });
@@ -147,7 +153,50 @@ export default function WordSearch({ words, onAllFound, pointsPerWord = 5 }: Wor
   }
 
   const gridSize = grid.length;
-  const cellSize = Math.min(32, Math.floor(Math.min(340, typeof window !== "undefined" ? window.innerWidth - 32 : 340) / gridSize));
+
+  // Size the cells from the width actually available. Guessing from the window
+  // width missed the card and page padding (~70 px, not 32), so on 360–412 px
+  // phones the grid ran out of the card.
+  const boxRef = useRef<HTMLDivElement>(null);
+  const [boxWidth, setBoxWidth] = useState<number | null>(null);
+  useEffect(() => {
+    const el = boxRef.current;
+    if (!el) return;
+    const measure = () => setBoxWidth(el.clientWidth);
+    measure();
+    if (typeof ResizeObserver === "undefined") return;
+    const ro = new ResizeObserver(measure);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+  const GRID_BORDER = 6; // border-3 on both sides of the grid
+  const cellSize = Math.max(
+    16,
+    Math.min(32, Math.floor(((boxWidth ?? 26 * gridSize) - GRID_BORDER) / gridSize))
+  );
+
+  // Roving focus: one cell is in the tab order and the arrow keys move it, so
+  // the grid is one tab stop rather than 169.
+  const [focusCell, setFocusCell] = useState<Cell>({ row: 0, col: 0 });
+  const cellRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  function handleCellKey(e: React.KeyboardEvent, r: number, c: number) {
+    const moves: Record<string, [number, number]> = {
+      ArrowUp: [-1, 0], ArrowDown: [1, 0], ArrowLeft: [0, -1], ArrowRight: [0, 1],
+    };
+    if (e.key === "Escape" && start) {
+      setStart(null);
+      setHover(null);
+      return;
+    }
+    const move = moves[e.key];
+    if (!move) return;
+    e.preventDefault();
+    const row = Math.min(gridSize - 1, Math.max(0, r + move[0]));
+    const col = Math.min(gridSize - 1, Math.max(0, c + move[1]));
+    setFocusCell({ row, col });
+    if (start) setHover({ row, col });
+    cellRefs.current[row * gridSize + col]?.focus();
+  }
 
   return (
     <div className="select-none">
@@ -190,35 +239,46 @@ export default function WordSearch({ words, onAllFound, pointsPerWord = 5 }: Wor
       </p>
 
       {/* Grid */}
-      <div
-        className={`inline-block rounded-2xl overflow-hidden border-3 border-sv-200 dark:border-gray-600 ${shakeCell ? "animate-shake" : ""}`}
-        style={{ boxShadow: "0 4px 0 0 rgba(249,115,22,0.1)" }}
-      >
-        {grid.map((row, r) => (
-          <div key={r} className="flex">
-            {row.map((letter, c) => {
-              const foundColor = isCellFound(r, c);
-              const inPreview = isInPreview(r, c);
-              const isStart = start?.row === r && start?.col === c;
-              return (
-                <div
-                  key={c}
-                  onClick={() => handleCellClick(r, c)}
-                  className={`flex items-center justify-center font-black cursor-pointer transition-all duration-100 select-none text-sm
-                    ${foundColor ? foundColor + " text-white" : ""}
-                    ${inPreview && !foundColor ? "bg-sv-200 dark:bg-sv-700 text-sv-900 dark:text-white scale-105" : ""}
-                    ${isStart && !foundColor ? "bg-sv-400 text-white ring-2 ring-sv-600 scale-105" : ""}
-                    ${!foundColor && !inPreview && !isStart ? "bg-white dark:bg-gray-800 text-sv-800 dark:text-gray-200 hover:bg-sv-50 dark:hover:bg-gray-700" : ""}
-                    border border-sv-50 dark:border-gray-700`}
-                  style={{ width: cellSize, height: cellSize, fontSize: Math.max(10, cellSize - 10) }}
-                  onMouseEnter={() => start && setHover({ row: r, col: c })}
-                >
-                  {letter}
-                </div>
-              );
-            })}
-          </div>
-        ))}
+      <div ref={boxRef} className="w-full">
+        <div
+          role="group"
+          aria-label={`Bokstavsrutnät, ${gridSize} gånger ${gridSize}. Välj första och sista bokstaven i ett ord.`}
+          className={`inline-block max-w-full rounded-2xl overflow-hidden border-3 border-sv-200 dark:border-gray-600 ${shakeCell ? "animate-shake" : ""}`}
+          style={{ boxShadow: "0 4px 0 0 rgba(249,115,22,0.1)" }}
+        >
+          {grid.map((row, r) => (
+            <div key={r} className="flex">
+              {row.map((letter, c) => {
+                const foundColor = isCellFound(r, c);
+                const inPreview = isInPreview(r, c);
+                const isStart = start?.row === r && start?.col === c;
+                return (
+                  <button
+                    type="button"
+                    key={c}
+                    ref={(el) => { cellRefs.current[r * gridSize + c] = el; }}
+                    tabIndex={focusCell.row === r && focusCell.col === c ? 0 : -1}
+                    aria-label={`${letter}, rad ${r + 1}, kolumn ${c + 1}${foundColor ? ", hittad" : ""}`}
+                    aria-pressed={isStart}
+                    onClick={() => { setFocusCell({ row: r, col: c }); handleCellClick(r, c); }}
+                    onKeyDown={(e) => handleCellKey(e, r, c)}
+                    className={`flex items-center justify-center p-0 font-black cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-sv-700 focus-visible:z-10 transition-all duration-100 select-none text-sm
+                      ${foundColor ? foundColor + " text-white" : ""}
+                      ${inPreview && !foundColor ? "bg-sv-200 dark:bg-sv-700 text-sv-900 dark:text-white scale-105" : ""}
+                      ${isStart && !foundColor ? "bg-sv-400 text-white ring-2 ring-sv-600 scale-105" : ""}
+                      ${!foundColor && !inPreview && !isStart ? "bg-white dark:bg-gray-800 text-sv-800 dark:text-gray-200 hover:bg-sv-50 dark:hover:bg-gray-700" : ""}
+                      border border-sv-50 dark:border-gray-700`}
+                    style={{ width: cellSize, height: cellSize, fontSize: Math.max(10, cellSize - 10) }}
+                    onMouseEnter={() => start && setHover({ row: r, col: c })}
+                    onFocus={() => start && setHover({ row: r, col: c })}
+                  >
+                    {letter}
+                  </button>
+                );
+              })}
+            </div>
+          ))}
+        </div>
       </div>
 
       <style jsx>{`

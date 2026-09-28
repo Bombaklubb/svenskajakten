@@ -2,6 +2,12 @@
 
 import { useState, useEffect } from "react";
 
+/**
+ * The saved light/dark choice (localStorage "darkMode", else the system
+ * setting). The class on <html> is already applied before the first paint by
+ * the inline script in app/layout.tsx; this hook keeps the toggle in sync with
+ * it. Change the key or the fallback in both places.
+ */
 export function useDarkMode() {
   const [dark, setDark] = useState(false);
 

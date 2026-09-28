@@ -154,7 +154,15 @@
           "question": "Fyll i ett bindeord: 'Ring mig ___ du kommer fram.'",
           "answer": "när",
           "hint": "Bisatsen anger en tidpunkt.",
-          "explanation": "'När' inleder en tidsbisats och är rätt bindeord här."
+          "explanation": "'När' inleder en tidsbisats och är rätt bindeord här.",
+          "alternativeAnswers": [
+            "så fort",
+            "så snart",
+            "innan",
+            "efter att",
+            "om",
+            "då"
+          ]
         },
         {
           "type": "multiple-choice",
@@ -230,7 +238,12 @@
           "question": "Fyll i: 'Jag läser böcker ___ jag kan lära mig nya saker.'",
           "answer": "för att",
           "hint": "Bisatsen anger syftet.",
-          "explanation": "'För att' inleder en avsiktsbisats och anger syftet med handlingen."
+          "explanation": "'För att' inleder en avsiktsbisats och anger syftet med handlingen.",
+          "alternativeAnswers": [
+            "så att",
+            "eftersom",
+            "därför att"
+          ]
         },
         {
           "type": "multiple-choice",
@@ -475,14 +488,17 @@
           "question": "Vilket suffix bildar ett adjektiv av substantivet 'fara'? fara + ___",
           "answer": "-lig",
           "hint": "Samma ändelse används i 'lycklig' och 'trevlig'.",
-          "explanation": "Suffixet '-lig' läggs till substantiv eller verb för att bilda adjektiv: fara → farlig, lycka → lycklig."
+          "explanation": "Suffixet '-lig' läggs till substantiv eller verb för att bilda adjektiv: fara → farlig, lycka → lycklig.",
+          "alternativeAnswers": [
+            "lig"
+          ]
         },
         {
           "type": "multiple-choice",
-          "question": "Vad kallas det att skriva ihop ord som egentligen är två ord?",
+          "question": "Vad kallas det när två ord sätts ihop till ett nytt ord?",
           "options": [
             "Derivation",
-            "Särkrivning",
+            "Särskrivning",
             "Sammansättning",
             "Prefixering"
           ],
@@ -534,7 +550,8 @@
           "question": "Vilket tecken saknas? 'Hjälp___ Jag kan inte simma!'",
           "answer": "!",
           "hint": "Det är ett nödrop.",
-          "explanation": "Utropstecken används för starka känslor och rop."
+          "explanation": "Utropstecken används för starka känslor och rop.",
+          "punctuationStrict": true
         },
         {
           "type": "multiple-choice",
@@ -844,7 +861,11 @@
           "question": "I meningen 'Den stängda dörren gnisslade' fungerar perfektparticipet 'stängda' som ett ___.",
           "answer": "adjektiv",
           "hint": "Ordet står framför substantivet och böjs efter det.",
-          "explanation": "Perfektparticip böjs som adjektiv (stängd – stängt – stängda) och beskriver här substantivet 'dörren'. Det är alltså inte satsens verb – det är 'gnisslade'."
+          "explanation": "Perfektparticip böjs som adjektiv (stängd – stängt – stängda) och beskriver här substantivet 'dörren'. Det är alltså inte satsens verb – det är 'gnisslade'.",
+          "alternativeAnswers": [
+            "attribut",
+            "adjektivattribut"
+          ]
         },
         {
           "type": "multiple-choice",
@@ -1059,7 +1080,8 @@
           "question": "Fyll i rätt tecken: Maria utropade___ \"Det är fantastiskt!\"",
           "answer": ":",
           "hint": "Vilket skiljetecken används direkt innan ett citat?",
-          "explanation": "Kolon (:) används för att introducera ett direkt citat."
+          "explanation": "Kolon (:) används för att introducera ett direkt citat.",
+          "punctuationStrict": true
         },
         {
           "id": "dc-hog-4",
@@ -1093,7 +1115,8 @@
           "question": "Skriv rätt: Läraren sa: ___Nu börjar vi.___",
           "answer": "\"",
           "hint": "Vilket tecken omger det direkta citatet?",
-          "explanation": "Citattecken omger det direkta citatet på båda sidor."
+          "explanation": "Citattecken omger det direkta citatet på båda sidor.",
+          "punctuationStrict": true
         },
         {
           "id": "dc-hog-7",
@@ -1127,7 +1150,8 @@
           "question": "Komplettera: ___Hjälp!___ skrek hon.",
           "answer": "\"",
           "hint": "Citattecknet omger replikens innehåll.",
-          "explanation": "\"Hjälp!\" skrek hon. – citattecken runt repliken och utropstecken inuti."
+          "explanation": "\"Hjälp!\" skrek hon. – citattecken runt repliken och utropstecken inuti.",
+          "punctuationStrict": true
         },
         {
           "id": "dc-hog-10",
@@ -2022,7 +2046,7 @@
           "question": "Välj rätt mening med omvänd ordföljd:",
           "options": [
             "Vi stannade inne när det regnade igår.",
-            "Igår stannade vi inne, när det regnade.",
+            "Igår stannade vi inne när det regnade.",
             "Vi stannade inne igår när det regnade.",
             "Vi stannade inne hela dagen eftersom det regnade."
           ],
@@ -2230,13 +2254,13 @@
           "type": "multiple-choice",
           "question": "Vilket påstående om vokalkvantitet är korrekt?",
           "options": [
-            "Lång vokal föregår alltid en dubbel konsonant.",
-            "Kort betonad vokal föregår dubbel konsonant eller konsonantkluster.",
+            "Lång vokal följs alltid av dubbel konsonant.",
+            "Efter kort betonad vokal följer dubbelteckning eller flera konsonanter – men flera konsonanter betyder inte alltid kort vokal (jfr barn, bord, gård).",
             "Vokalkvantitet är irrelevant i skrift.",
             "Alla vokaler är lika långa i betonad stavelse."
           ],
           "correctIndex": 1,
-          "explanation": "Kort betonad vokal → dubbel konsonant eller konsonantkluster. Lång betonad vokal → en konsonant."
+          "explanation": "Kort betonad vokal följs av dubbelteckning (katt) eller flera konsonanter (hjälp). Det omvända gäller inte: i barn, bord och gård är vokalen lång trots två konsonanter."
         },
         {
           "type": "multiple-choice",
@@ -2519,7 +2543,7 @@
       "helpText": [
         "Vokalkvantitet: Vokal kan vara lång (/V:/) eller kort (/V/) beroende på stavelsen.",
         "Öppen betonad stavelse (V + en konsonant) = lång vokal: so-l, bi-l, ma-t.",
-        "Sluten betonad stavelse (V + konsonantkluster eller dubbel konsonant) = kort vokal: katt, hjälp, full.",
+        "Kort betonad vokal följs av dubbel konsonant (katt, full) eller flera konsonanter (hjälp). Men flera konsonanter betyder inte alltid kort vokal: barn, bord och gård har lång vokal.",
         "I svenska är vokalkvantitet fonematisk – den avgör ordets betydelse: 'ful' ≠ 'full'."
       ],
       "exercises": [
@@ -2561,26 +2585,26 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "I ord med konsonantkluster, t.ex. 'hjälp', är vokalen alltid ___.",
+          "question": "I ordet 'hjälp' följs vokalen av två olika konsonanter (lp). Är ä-ljudet långt eller kort? Det är ___.",
           "answer": "kort",
           "alternativeAnswers": [
             "korta",
             "en kort"
           ],
-          "hint": "Konsonantkluster = sluten stavelse",
-          "explanation": "Konsonantkluster stänger stavelsen och ger kort vokal. 'Hjälp': ä + lp-kluster = kort ä."
+          "hint": "Säg ordet långsamt: hjä-lp. Drar du ut på vokalen?",
+          "explanation": "Ä-ljudet i 'hjälp' är kort. Men se upp: flera konsonanter efter vokalen betyder inte alltid kort vokal – i barn, bord och gård är vokalen lång."
         },
         {
           "type": "multiple-choice",
           "question": "Vilket påstående om vokalkvantitet är korrekt?",
           "options": [
-            "Lång vokal föregår alltid en dubbel konsonant.",
-            "Kort vokal föregår alltid dubbel konsonant eller konsonantkluster i betonad stavelse.",
+            "Lång vokal följs alltid av dubbel konsonant.",
+            "Efter kort betonad vokal följer dubbelteckning eller flera konsonanter – men flera konsonanter betyder inte alltid kort vokal (jfr barn, bord, gård).",
             "Vokalkvantitet är irrelevant i skrift.",
             "Alla vokaler är lika långa i betonad stavelse."
           ],
           "correctIndex": 1,
-          "explanation": "Kort betonad vokal → dubbel konsonant eller konsonantkluster. Lång betonad vokal → en konsonant."
+          "explanation": "Kort betonad vokal följs av dubbelteckning (katt) eller flera konsonanter (hjälp). Det omvända gäller inte: i barn, bord och gård är vokalen lång trots två konsonanter."
         }
       ]
     },
@@ -3842,10 +3866,10 @@
             "skol buss",
             "skol-buss",
             "skolbuss",
-            "Skolbuss"
+            "skollbuss"
           ],
           "correctIndex": 2,
-          "explanation": "'Skolbuss' – sammansatta ord skrivs ihop på svenska."
+          "explanation": "'skolbuss' – sammansatta ord skrivs ihop på svenska."
         },
         {
           "type": "multiple-choice",
@@ -3885,7 +3909,7 @@
             "hand väska",
             "hand-väska",
             "handväska",
-            "HandVäska"
+            "handväskka"
           ],
           "correctIndex": 2,
           "explanation": "'Handväska' – sammansatta ord skrivs ihop: hand + väska."
@@ -4121,7 +4145,7 @@
       "icon": "⭐",
       "pointsRequired": 0,
       "bonusPoints": 30,
-      "timeLimit": 60,
+      "timeLimit": 100,
       "words": [
         {
           "word": "argument",
@@ -4145,7 +4169,7 @@
         },
         {
           "word": "källkritik",
-          "clue": "Granska hur tillförlitliga källor är"
+          "clue": "Att granska hur trovärdig en text eller webbsida är"
         },
         {
           "word": "primärkälla",
@@ -4177,7 +4201,7 @@
         },
         {
           "word": "slutledning",
-          "clue": "Logisk slutsats baserad på fakta"
+          "clue": "Tankesteg från fakta fram till ett resultat"
         },
         {
           "word": "konsekvens",
@@ -4212,7 +4236,7 @@
       "icon": "⭐⭐",
       "pointsRequired": 0,
       "bonusPoints": 35,
-      "timeLimit": 60,
+      "timeLimit": 100,
       "words": [
         {
           "word": "konstitution",
@@ -4220,39 +4244,39 @@
         },
         {
           "word": "parlamentarism",
-          "clue": "Styrelseskick där parlamentet är överordnat"
+          "clue": "Principen att regeringen måste tolereras av riksdagen"
         },
         {
           "word": "suveränitet",
           "clue": "Statens rätt att styra sig själv"
         },
         {
-          "word": "legitimitet",
-          "clue": "Erkänd rätt att utöva makt"
+          "word": "rättsstat",
+          "clue": "Stat där lagarna gäller lika för alla"
         },
         {
           "word": "transparens",
           "clue": "Öppenhet och insyn i beslutsprocesser"
         },
         {
-          "word": "meritokrati",
-          "clue": "System där framgång beror på förtjänst"
+          "word": "yttrandefrihet",
+          "clue": "Rätten att säga vad man tycker"
         },
         {
           "word": "byråkrati",
           "clue": "Stort system med många regler och tjänstemän"
         },
         {
-          "word": "oligarki",
-          "clue": "Fåmansvälde – makten hos några få"
+          "word": "opposition",
+          "clue": "Partierna som inte sitter i regeringen"
         },
         {
-          "word": "plutokrati",
-          "clue": "Styre av de rika"
+          "word": "demonstration",
+          "clue": "Protestmarsch för en viss fråga"
         },
         {
-          "word": "ratificering",
-          "clue": "Formellt godkännande av ett avtal"
+          "word": "kommunfullmäktige",
+          "clue": "Den folkvalda församling som styr på lokal nivå"
         },
         {
           "word": "globalisering",
@@ -4260,7 +4284,7 @@
         },
         {
           "word": "nationalism",
-          "clue": "Stark lojalitet och kärlek till den egna nationen"
+          "clue": "Idén att varje folk ska ha en egen stat"
         },
         {
           "word": "imperialism",
@@ -4272,7 +4296,7 @@
         },
         {
           "word": "dekolonisering",
-          "clue": "Frigörelseprocess från kolonial makt"
+          "clue": "När länder under europeiskt styre blev självständiga"
         },
         {
           "word": "sekularisering",
@@ -4292,7 +4316,7 @@
         },
         {
           "word": "välfärdsstat",
-          "clue": "Stat som ansvarar för medborgares trygghet"
+          "clue": "Land där det allmänna ger alla trygghet genom vård, skola och omsorg"
         }
       ]
     },
@@ -4303,7 +4327,7 @@
       "icon": "⭐⭐⭐",
       "pointsRequired": 0,
       "bonusPoints": 40,
-      "timeLimit": 60,
+      "timeLimit": 100,
       "words": [
         {
           "word": "fotosyntes",
@@ -4334,36 +4358,36 @@
           "clue": "Samspelet mellan organismer och deras miljö"
         },
         {
-          "word": "kvantmekanik",
-          "clue": "Fysik på atomär och subatomär nivå"
+          "word": "atomkärna",
+          "clue": "Den lilla tunga mitten av en atom"
         },
         {
-          "word": "relativitetsteori",
-          "clue": "Einsteins teori om rum, tid och gravitation"
+          "word": "gravitation",
+          "clue": "Kraften som får äpplet att falla mot marken"
         },
         {
-          "word": "termodynamik",
-          "clue": "Läran om värme och energiomvandling"
+          "word": "kretslopp",
+          "clue": "Hur ämnen går runt i naturen om och om igen"
         },
         {
-          "word": "elektromagnetism",
-          "clue": "Samspelet mellan elektriska och magnetiska fält"
+          "word": "magnetfält",
+          "clue": "Osynligt område där en kompassnål påverkas"
         },
         {
           "word": "kärnfusion",
-          "clue": "Atomkärnor slås ihop och frigör energi"
+          "clue": "Så skapar solen sin energi – lätta atomer slås ihop"
         },
         {
           "word": "radioaktivitet",
           "clue": "Instabila atomkärnors spontana sönderfall"
         },
         {
-          "word": "partikelfysik",
-          "clue": "Studiet av materians minsta beståndsdelar"
+          "word": "elektron",
+          "clue": "Negativt laddad liten partikel i atomen"
         },
         {
-          "word": "astrobiologi",
-          "clue": "Forskning om liv utanför jorden"
+          "word": "solsystem",
+          "clue": "Solen och alla planeter som kretsar runt den"
         },
         {
           "word": "genetik",
@@ -4394,43 +4418,43 @@
       "icon": "⭐⭐⭐⭐",
       "pointsRequired": 0,
       "bonusPoints": 45,
-      "timeLimit": 60,
+      "timeLimit": 100,
       "words": [
         {
-          "word": "intertextualitet",
-          "clue": "Hur texter refererar till och påverkar varandra"
+          "word": "spänningskurva",
+          "clue": "Hur nerven stiger och sjunker i en berättelse"
         },
         {
-          "word": "narratologi",
-          "clue": "Studiet av berättarstrukturer"
+          "word": "novell",
+          "clue": "Kort berättelse med få personer"
         },
         {
-          "word": "fokalisering",
-          "clue": "Vems synvinkel berättelsen förmedlas genom"
+          "word": "gestaltning",
+          "clue": "Visa i stället för att berätta, t.ex. 'hon darrade' i stället för 'hon var rädd'"
         },
         {
           "word": "berättarperspektiv",
-          "clue": "Vem som berättar och hur nära karaktärerna"
+          "clue": "Vems ögon vi ser handlingen genom"
         },
         {
           "word": "kronologisk",
           "clue": "Ordnad i tidsföljd från äldst till nyast"
         },
         {
-          "word": "analepsis",
-          "clue": "Tillbakablick – berättaren går bakåt i tid"
+          "word": "tillbakablick",
+          "clue": "Berättelsen hoppar bakåt i tiden"
         },
         {
-          "word": "prolepsis",
-          "clue": "Föregriper framtida händelser i berättandet"
+          "word": "miljöbeskrivning",
+          "clue": "Text som visar var och när berättelsen utspelar sig"
         },
         {
           "word": "allegori",
           "clue": "Berättelse med en dold symbolisk mening"
         },
         {
-          "word": "symbolism",
-          "clue": "Användning av symboler för djupare mening"
+          "word": "symbolik",
+          "clue": "Att låta saker stå för något mer, t.ex. en duva för fred"
         },
         {
           "word": "ironi",
@@ -4453,28 +4477,28 @@
           "clue": "Medveten överdrift i språket"
         },
         {
-          "word": "litotes",
-          "clue": "Underdrift för att framhäva"
+          "word": "liknelse",
+          "clue": "Jämförelse med 'som', t.ex. 'stark som en björn'"
         },
         {
           "word": "anafor",
           "clue": "Upprepning av ord i inledningen av meningar"
         },
         {
-          "word": "epifor",
-          "clue": "Upprepning av ord i slutet av meningar"
+          "word": "allitteration",
+          "clue": "Flera ord börjar med samma ljud, t.ex. 'sju sjösjuka sjömän'"
         },
         {
-          "word": "kiasm",
-          "clue": "Korsvis växling av grammatiska mönster"
+          "word": "personifikation",
+          "clue": "Djur eller saker får mänskliga egenskaper"
         },
         {
           "word": "oxymoron",
           "clue": "Kombination av motsatta ord, t.ex. 'levande död'"
         },
         {
-          "word": "stilistik",
-          "clue": "Läran om språklig stil och uttrycksmedel"
+          "word": "retorik",
+          "clue": "Konsten att tala och övertyga"
         }
       ]
     },
@@ -4485,87 +4509,87 @@
       "icon": "⭐⭐⭐⭐⭐",
       "pointsRequired": 0,
       "bonusPoints": 50,
-      "timeLimit": 60,
+      "timeLimit": 100,
       "words": [
         {
-          "word": "epistemologi",
-          "clue": "Filosofigrenen om kunskapens natur"
+          "word": "rekommendera",
+          "clue": "Föreslå något som bra"
         },
         {
-          "word": "ontologi",
-          "clue": "Filosofigrenen om varats natur"
+          "word": "intressant",
+          "clue": "Något som väcker nyfikenhet"
         },
         {
-          "word": "hermeneutik",
-          "clue": "Tolkningsteori för texter och mening"
+          "word": "definitivt",
+          "clue": "Helt säkert, utan tvekan"
         },
         {
-          "word": "fenomenologi",
-          "clue": "Filosofi om den direkta upplevelsen"
+          "word": "entusiastisk",
+          "clue": "Mycket ivrig och engagerad"
         },
         {
-          "word": "dialektik",
-          "clue": "Tankemetod med tes, antites och syntes"
+          "word": "förmodligen",
+          "clue": "Troligtvis, antagligen"
         },
         {
-          "word": "empirism",
-          "clue": "Kunskap grundas på erfarenhet och observation"
+          "word": "existens",
+          "clue": "Det att finnas till"
         },
         {
-          "word": "rationalism",
-          "clue": "Kunskap grundas på förnuft och logik"
+          "word": "självklart",
+          "clue": "Så tydligt att man inte behöver fråga"
         },
         {
-          "word": "konstruktivism",
-          "clue": "Kunskap konstrueras aktivt av individen"
+          "word": "ansvarsfull",
+          "clue": "Sköter sina uppgifter och plikter"
         },
         {
-          "word": "positivism",
-          "clue": "Vetenskaplig kunskap baseras enbart på fakta"
+          "word": "regissör",
+          "clue": "Leder arbetet med en film eller pjäs"
         },
         {
-          "word": "relativism",
-          "clue": "Sanningen är relativ och kontextberoende"
+          "word": "restaurang",
+          "clue": "Ställe där man betalar för att äta lagad mat"
         },
         {
-          "word": "determinism",
-          "clue": "Allt är förutbestämt av orsaker"
+          "word": "schema",
+          "clue": "Plan över lektioner eller aktiviteter"
         },
         {
-          "word": "existentialism",
-          "clue": "Filosofi om individens frihet och ansvar"
+          "word": "garage",
+          "clue": "Byggnad där bilen står"
         },
         {
-          "word": "strukturalism",
-          "clue": "Strukturer styr mänskligt tänkande och kultur"
+          "word": "kollega",
+          "clue": "Person man arbetar tillsammans med"
         },
         {
-          "word": "poststrukturalism",
-          "clue": "Ifrågasätter fasta strukturer och mening"
+          "word": "ingenjör",
+          "clue": "Yrke där man konstruerar tekniska lösningar"
         },
         {
-          "word": "dekonstruktion",
-          "clue": "Derridas metod att avslöja textens motsägelser"
+          "word": "journalist",
+          "clue": "Yrke där man skriver och granskar nyheter"
         },
         {
-          "word": "diskursanalys",
-          "clue": "Analys av hur makt skapas via språk"
+          "word": "initiativ",
+          "clue": "Att själv ta första steget"
         },
         {
-          "word": "intersektionalitet",
-          "clue": "Hur olika maktstrukturer samverkar"
+          "word": "psykologi",
+          "clue": "Läran om hur människor tänker och känner"
         },
         {
-          "word": "normalisering",
-          "clue": "Process där det avvikande görs normalt"
+          "word": "karaktär",
+          "clue": "En persons egenskaper och personlighet"
         },
         {
-          "word": "stigmatisering",
-          "clue": "Märkning av grupp som mindervärd"
+          "word": "accelerera",
+          "clue": "Öka farten"
         },
         {
-          "word": "marginalisering",
-          "clue": "Utestängning från samhällets centrum"
+          "word": "omedelbart",
+          "clue": "Genast, med en gång"
         }
       ]
     }

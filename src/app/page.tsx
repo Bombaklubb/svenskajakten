@@ -4,10 +4,19 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Header from "@/components/ui/Header";
-import { loadStudent, createStudent, clearStudent, studentExists, loadLastVisited } from "@/lib/storage";
+import {
+  loadStudent,
+  createStudent,
+  clearStudent,
+  studentExists,
+  loadLastVisited,
+  validateStudentName,
+  isFreeStarterAvatar,
+  DEFAULT_AVATAR,
+  FREE_STARTER_AVATARS,
+} from "@/lib/storage";
 import { STAGES, getStage } from "@/lib/stages";
 import { MODULE_COUNTS } from "@/lib/moduleCounts";
-import { STARTER_AVATARS } from "@/lib/avatars";
 import { getThemeClassName, getThemeWrapperClass } from "@/lib/shop";
 import ThemeBackdrop from "@/components/ui/ThemeBackdrop";
 import { AvatarPicture } from "@/components/ui/FramedAvatar";
@@ -19,11 +28,13 @@ import type { StudentData, StageId, LastVisited } from "@/lib/types";
 export default function HomePage() {
   const [student, setStudent] = useState<StudentData | null>(null);
   const [nameInput, setNameInput] = useState("");
-  const [selectedAvatar, setSelectedAvatar] = useState("ninja");
+  const [selectedAvatar, setSelectedAvatar] = useState(DEFAULT_AVATAR);
   const [loading, setLoading] = useState(true);
   const [isReturning, setIsReturning] = useState(false);
   const [dailyBonus, setDailyBonus] = useState<number | null>(null);
   const [lastVisited, setLastVisited] = useState<LastVisited | null>(null);
+  /** Why the last login attempt was refused (e.g. a reserved name), for the login card. */
+  const [loginError, setLoginError] = useState<string | null>(null);
 
   useEffect(() => {
     setStudent(loadStudent());
@@ -42,14 +53,26 @@ export default function HomePage() {
 
   function handleNameChange(value: string) {
     setNameInput(value);
+    setLoginError(null);
     setIsReturning(studentExists(value.trim()));
   }
 
   function handleLogin(e: React.FormEvent) {
     e.preventDefault();
-    if (!nameInput.trim()) return;
-    const data = createStudent(nameInput.trim(), selectedAvatar);
-    setStudent(data);
+    const invalid = validateStudentName(nameInput);
+    if (invalid) {
+      setLoginError(invalid);
+      return;
+    }
+    setLoginError(null);
+    // The chosen avatar only applies to a new pupil, and only if it is one of
+    // the free starters; createStudent enforces both.
+    const avatar = isFreeStarterAvatar(selectedAvatar) ? selectedAvatar : DEFAULT_AVATAR;
+    try {
+      setStudent(createStudent(nameInput.trim(), avatar));
+    } catch (err) {
+      setLoginError(err instanceof Error ? err.message : "Det gick inte att logga in.");
+    }
   }
 
   function handleLogout() {
@@ -92,19 +115,26 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Login card */}
+          {/* Login card. Dark-aware all through: it used to be white in both
+              modes while its text turned light in dark mode, which after a
+              logout left white text on white. */}
           <div
-            className="bg-white rounded-3xl p-5 border-3 border-sv-100"
-            style={{ boxShadow: "0 8px 0 0 rgba(249,115,22,0.12), 0 16px 32px -8px rgba(249,115,22,0.18), inset 0 4px 8px 0 rgba(255,255,255,0.8)" }}
+            className="bg-white dark:bg-gray-800 rounded-3xl p-5 border-3 border-sv-100 dark:border-gray-700"
+            style={{ boxShadow: "0 8px 0 0 rgba(249,115,22,0.12), 0 16px 32px -8px rgba(249,115,22,0.18)" }}
           >
-            <h2 className="text-xl font-black mb-0.5" style={{ color: "#7c2d12" }}>Välkommen!</h2>
-            <p className="text-sv-800 text-sm mb-4 font-medium dark:text-gray-200">
+            <h2 className="text-xl font-black mb-0.5 text-sv-900 dark:text-sv-100">Välkommen!</h2>
+            <p id="login-hint" className="text-sv-800 text-sm mb-4 font-medium dark:text-gray-200">
               Skriv ditt namn för att börja eller fortsätta.
             </p>
 
             <form onSubmit={handleLogin} className="space-y-4">
               <div className="relative">
+                <label htmlFor="student-name" className="sr-only">Ditt namn</label>
                 <input
+                  id="student-name"
+                  aria-describedby={loginError ? "login-hint login-error" : "login-hint"}
+                  aria-invalid={loginError ? true : undefined}
+                  autoComplete="off"
                   type="text"
                   value={nameInput}
                   onChange={(e) => handleNameChange(e.target.value)}
@@ -113,27 +143,38 @@ export default function HomePage() {
                   autoFocus
                   maxLength={30}
                 />
-                {isReturning && (
-                  <p className="mt-1.5 text-xs font-bold text-emerald-600 flex items-center gap-1">
-                    <span>✅</span> Välkommen tillbaka! Din data är sparad.
+                {loginError && (
+                  <p id="login-error" role="alert" className="mt-1.5 text-xs font-bold text-red-700 dark:text-red-300">
+                    {loginError}
+                  </p>
+                )}
+                {isReturning && !loginError && (
+                  <p className="mt-1.5 text-xs font-bold text-emerald-700 dark:text-emerald-300 flex items-center gap-1">
+                    <span aria-hidden="true">✅</span> Välkommen tillbaka! Din data är sparad.
                   </p>
                 )}
               </div>
 
-              {/* Avatar selection */}
-              <div>
-                <p className="text-sm font-bold mb-2" style={{ color: "#c2570a" }}>Välj din karaktär</p>
+              {/* Avatar selection – only for a new pupil. A returning pupil
+                  keeps the avatar they have, so offering a choice here would
+                  only suggest it could change. Only the free starters are
+                  offered: the rarer ones are sold in the shop. */}
+              {!isReturning && (
+              <div role="group" aria-labelledby="avatar-picker-label">
+                <p id="avatar-picker-label" className="text-sm font-bold mb-2 text-sv-700 dark:text-sv-300">Välj din karaktär</p>
                 <div className="grid grid-cols-5 gap-2">
-                  {STARTER_AVATARS.map((avatar) => (
+                  {FREE_STARTER_AVATARS.map((avatar) => (
                     <button
                       key={avatar.id}
                       type="button"
                       onClick={() => setSelectedAvatar(avatar.id)}
                       title={avatar.name}
+                      aria-label={avatar.name}
+                      aria-pressed={selectedAvatar === avatar.id}
                       className={`aspect-square rounded-xl flex items-center justify-center transition-all duration-200 overflow-hidden text-xl cursor-pointer border-3 ${
                         selectedAvatar === avatar.id
-                          ? "border-sang-400 scale-110 bg-sang-50"
-                          : "border-sv-100 bg-sv-50 hover:border-sv-300 hover:scale-105"
+                          ? "border-sang-400 scale-110 bg-sang-50 dark:bg-sang-900/40"
+                          : "border-sv-100 bg-sv-50 hover:border-sv-300 hover:scale-105 dark:border-gray-600 dark:bg-gray-700 dark:hover:border-sv-400"
                       }`}
                       style={{
                         boxShadow: selectedAvatar === avatar.id
@@ -145,15 +186,16 @@ export default function HomePage() {
                     </button>
                   ))}
                 </div>
-                <p className="text-xs font-bold mt-2 text-center" style={{ color: "#f97316" }}>
-                  {STARTER_AVATARS.find((a) => a.id === selectedAvatar)?.name}
+                <p className="text-xs font-bold mt-2 text-center text-sv-700 dark:text-sv-300" aria-hidden="true">
+                  {FREE_STARTER_AVATARS.find((a) => a.id === selectedAvatar)?.name}
                 </p>
               </div>
+              )}
 
               <button
                 type="submit"
                 disabled={!nameInput.trim()}
-                className="w-full btn-primary text-base py-3 rounded-xl border-3 border-sv-400 disabled:from-gray-200 disabled:to-gray-300 disabled:text-gray-600 disabled:border-gray-200 dark:text-gray-300"
+                className="w-full btn-primary text-base py-3 rounded-xl border-3 border-sv-400 disabled:from-gray-200 disabled:to-gray-300 disabled:text-gray-600 disabled:border-gray-200"
                 style={{ background: nameInput.trim() ? "linear-gradient(135deg, #f97316, #ea6c0a)" : undefined }}
               >
                 {isReturning ? "Fortsätt jakten! 🏆" : "Starta jakten! 🚀"}
@@ -161,8 +203,8 @@ export default function HomePage() {
             </form>
 
             {/* Om Svenskajakten – reachable before logging in. Kept inside the
-                white card: below it the link would sit behind the fixed contact
-                bar on a short screen. */}
+                card: below it the link would sit behind the fixed contact bar
+                on a short screen. */}
             <div className="text-center mt-4 pt-4 border-t border-sv-100 dark:border-gray-700">
               <Link prefetch={false}
                 href="/om"
@@ -235,15 +277,18 @@ export default function HomePage() {
                       >
                         {/* Gradient header */}
                         <div className={`${stage.bgClass} px-5 py-5`}>
-                          <div className="flex items-start justify-between">
-                            <div className="flex items-center gap-3">
-                              <span className="text-5xl drop-shadow-lg">{stage.emoji}</span>
-                              <div>
+                          <div className="flex items-start justify-between gap-2">
+                            <div className="flex items-center gap-3 min-w-0">
+                              <span className="text-4xl sm:text-5xl drop-shadow-lg flex-shrink-0" aria-hidden="true">{stage.emoji}</span>
+                              <div className="min-w-0">
                                 <div className="text-xs font-bold text-white bg-black/30 rounded-full px-2.5 py-0.5 inline-block mb-1.5">
                                   {stage.subtitle}
                                 </div>
+                                {/* "Berättelseskogen" is one long word: at 360px it
+                                    was clipped at text-2xl, so it is smaller below
+                                    sm and may break rather than overflow. */}
                                 <h3
-                                  className="text-2xl font-black text-white leading-tight"
+                                  className="text-xl sm:text-2xl font-black text-white leading-tight break-words hyphens-auto"
                                   style={{ textShadow: "0 1px 3px rgba(0,0,0,0.6), 0 2px 8px rgba(0,0,0,0.4)" }}
                                 >
                                   {stage.name}

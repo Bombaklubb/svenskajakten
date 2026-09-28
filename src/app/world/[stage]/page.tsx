@@ -620,6 +620,19 @@ function BossTeaser({ stageId, student }: { stageId: StageId; student: StudentDa
   const [gam, setGam] = useState<ReturnType<typeof loadGamification> | null>(null);
   useEffect(() => { setGam(loadGamification()); }, []);
 
+  // Until both the pupil and their boss wins are loaded the gate cannot be
+  // worked out: with no wins counted yet, a pupil who has already used up this
+  // world's fight would briefly see the boss as open. Hold a neutral card of
+  // the same size instead.
+  if (!gam || !student) {
+    return (
+      <div
+        className="mb-5 h-[124px] rounded-3xl border-3 border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 animate-pulse"
+        aria-hidden="true"
+      />
+    );
+  }
+
   const done = completedModulesInStage(student, stageId);
   const wins = bossWinsInStage(gam, stageId);
   const gate = getBossGate(done, wins);

@@ -20,6 +20,7 @@ import {
   type BossQuestion,
 } from "@/lib/gamification";
 import { STAGES, getStage } from "@/lib/stages";
+import { shuffle, shuffleOptions } from "@/lib/gameContent";
 import type { StudentData, GamificationData, Chest, ChestType, StageId } from "@/lib/types";
 
 const PASS_BADGE = "boss_slayer";
@@ -31,15 +32,6 @@ const CAT_LABELS: Record<string, string> = {
 
 type Phase = "select" | "intro" | "battle" | "win" | "lose";
 
-function shuffle<T>(arr: T[]): T[] {
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
-
 /**
  * The boss's questions in a fresh order, with the options shuffled too.
  *
@@ -47,14 +39,7 @@ function shuffle<T>(arr: T[]): T[] {
  * had met the boss a few times could clear it from memory in twenty seconds.
  */
 function dealQuestions(questions: BossQuestion[]): BossQuestion[] {
-  return shuffle(questions).map((q) => {
-    const order = shuffle(q.options.map((_, i) => i));
-    return {
-      ...q,
-      options: order.map((i) => q.options[i]),
-      correctIndex: order.indexOf(q.correctIndex),
-    };
-  });
+  return shuffle(questions).map((q) => ({ ...q, ...shuffleOptions(q.options, q.correctIndex) }));
 }
 
 function DifficultyStars({ count }: { count: number }) {
@@ -109,8 +94,32 @@ function BossPageInner() {
     setPhase("intro");
   }
 
+  /**
+   * Whether a fight may start right now, worked out from what is stored rather
+   * than from component state. Every start goes through here: the win screen
+   * used to offer "Spela igen", which skipped the gate and paid +200 and a
+   * chest for every rematch. Refreshes the page's copies as a side effect so a
+   * refused start shows the up-to-date lock.
+   */
+  function mayFight(): boolean {
+    if (!stageId || !activeBoss) return false;
+    const freshStudent = loadStudent();
+    const freshGam = loadGamification();
+    if (!freshStudent) return false;
+    setStudent(freshStudent);
+    setGam(freshGam);
+    const wins = bossWinsInStage(freshGam, stageId);
+    const open = getBossGate(completedModulesInStage(freshStudent, stageId), wins).unlocked;
+    // The boss on offer must also still be this world's next one.
+    return open && nextBossForStage(stageId, wins)?.id === activeBoss.id;
+  }
+
   function handleStartBattle() {
-    if (activeBoss) setQuestions(dealQuestions(activeBoss.questions));
+    if (!activeBoss || !mayFight()) {
+      handleBackToSelect();
+      return;
+    }
+    setQuestions(dealQuestions(activeBoss.questions));
     setCurrentIndex(0);
     setResults([]);
     setSelected(null);
@@ -136,6 +145,9 @@ function BossPageInner() {
         const totalCorrect = newResults.filter(Boolean).length;
         const passed = totalCorrect / questions.length >= activeBoss.passThreshold;
 
+        // Built on the stored copy, not component state, so nothing saved
+        // elsewhere since the page loaded is overwritten.
+        const baseGam = loadGamification();
         if (passed) {
           const bonusChest: Chest = {
             id: `chest_boss_${Date.now()}`,
@@ -143,20 +155,20 @@ function BossPageInner() {
             earnedAt: new Date().toISOString(),
             opened: false,
           };
-          const cappedChests = capNewChests(gam!.chests, [bonusChest]);
-          const hasBossSlayer = gam!.badges.includes(PASS_BADGE);
-          const newBadges = hasBossSlayer ? gam!.badges : [...gam!.badges, PASS_BADGE];
-          const prevWins = gam!.bossWinsPerBoss ?? {};
+          const cappedChests = capNewChests(baseGam.chests, [bonusChest]);
+          const hasBossSlayer = baseGam.badges.includes(PASS_BADGE);
+          const newBadges = hasBossSlayer ? baseGam.badges : [...baseGam.badges, PASS_BADGE];
+          const prevWins = baseGam.bossWinsPerBoss ?? {};
           const prevBossWins = prevWins[activeBoss.id] ?? 0;
           // The same every time. Ten chapters buy the fight, so the chapters are
           // the brake — a fight that paid nothing would stop being a reason to
           // do them, which is the whole point of the lock.
           const actualBonus = bossPayout(activeBoss);
           const newGam: GamificationData = {
-            ...gam!,
-            chests: [...gam!.chests, ...cappedChests],
+            ...baseGam,
+            chests: [...baseGam.chests, ...cappedChests],
             badges: newBadges,
-            bossWins: gam!.bossWins + 1,
+            bossWins: baseGam.bossWins + 1,
             bossLastAttempt: new Date().toISOString(),
             bossWinsPerBoss: { ...prevWins, [activeBoss.id]: prevBossWins + 1 },
           };
@@ -167,7 +179,7 @@ function BossPageInner() {
           if (updatedStudent) setStudent(updatedStudent);
         } else {
           const newGam: GamificationData = {
-            ...gam!,
+            ...baseGam,
             bossLastAttempt: new Date().toISOString(),
           };
           saveGamification(newGam);
@@ -187,13 +199,9 @@ function BossPageInner() {
     }, 400);
   }
 
+  /** A new try after a loss. Gate-checked like any other start. */
   function handleRetry() {
-    if (activeBoss) setQuestions(dealQuestions(activeBoss.questions));
-    setCurrentIndex(0);
-    setResults([]);
-    setSelected(null);
-    setConfirmed(false);
-    setPhase("battle");
+    handleStartBattle();
   }
 
   function handleBackToSelect() {
@@ -405,8 +413,12 @@ function BossPageInner() {
                 Vinn: {expectedBonus > 0 ? `+${expectedBonus} poäng + ` : ""}märket &quot;Bossbesegrare&quot; + {CHEST_META[activeBoss.rewardChestType].label.toLowerCase()}!
               </li>
               <li className="flex items-start gap-2">
+                <span className="text-gray-400 mt-0.5 flex-shrink-0">🔒</span>
+                Efter en vinst öppnas nästa match när du klarat {BOSS_MODULES_PER_FIGHT} kapitel till i den här världen.
+              </li>
+              <li className="flex items-start gap-2">
                 <span className="text-orange-500 mt-0.5 flex-shrink-0">↺</span>
-                Förlora: Försök igen när du vill.
+                Förlora: Försök igen när du vill – så länge matchen är öppen.
               </li>
             </ul>
 
@@ -543,6 +555,8 @@ function BossPageInner() {
     const badge = getBadge(PASS_BADGE);
     const chestLabel = CHEST_META[activeBoss.rewardChestType].label;
     const chestEmoji = CHEST_META[activeBoss.rewardChestType].emoji;
+    // The win has been counted, so this is the gate for the next fight.
+    const nextGate = stageId ? getBossGate(completedModulesInStage(student, stageId), bossWinsInStage(gam, stageId)) : null;
 
     return (
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
@@ -573,6 +587,16 @@ function BossPageInner() {
               </div>
             </div>
 
+            {/* No rematch from here: a win spends the fight, and the next one
+                is earned with more chapters in this world. */}
+            {nextGate && (
+              <p className="text-sm text-green-700 mb-4">
+                {nextGate.unlocked
+                  ? "Du har redan tjänat nästa match – den väntar i världen."
+                  : `Nästa match öppnas när du klarat ${nextGate.remaining} kapitel till i den här världen.`}
+              </p>
+            )}
+
             <div className="flex gap-3">
               <Link prefetch={false}
                 href="/kistor"
@@ -582,18 +606,20 @@ function BossPageInner() {
                 Öppna kistor →
               </Link>
               <button
-                onClick={handleRetry}
+                onClick={handleBackToSelect}
                 className="flex-1 py-3 rounded-2xl font-bold text-green-700 border-2 border-green-300 bg-white cursor-pointer transition-all hover:bg-green-50 active:scale-95"
               >
-                Spela igen
+                Tillbaka
               </button>
             </div>
-            <button
-              onClick={handleBackToSelect}
-              className="mt-3 w-full py-2 rounded-2xl text-sm font-bold text-green-600 hover:underline"
-            >
-              Välj annan boss
-            </button>
+            {stageId && (
+              <Link prefetch={false}
+                href={`/world/${stageId}`}
+                className="mt-3 block w-full py-2 rounded-2xl text-sm font-bold text-green-600 hover:underline"
+              >
+                Till kapitlen →
+              </Link>
+            )}
           </div>
         </main>
       </div>
@@ -648,11 +674,21 @@ function BossPageInner() {
   return null;
 }
 
+/**
+ * Remounts the page when ?stage= changes. Next keeps the component mounted on
+ * a same-route navigation, so the phase, the chosen boss and the questions of
+ * one world used to carry over into another.
+ */
+function BossPageKeyed() {
+  const stageParam = useSearchParams().get("stage");
+  return <BossPageInner key={stageParam ?? ""} />;
+}
+
 // useSearchParams needs a Suspense boundary or the page cannot be prerendered.
 export default function BossPage() {
   return (
     <Suspense fallback={<div className="min-h-screen bg-gray-50 dark:bg-gray-900" />}>
-      <BossPageInner />
+      <BossPageKeyed />
     </Suspense>
   );
 }

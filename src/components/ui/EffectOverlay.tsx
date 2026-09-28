@@ -31,7 +31,6 @@ const MOTION: Record<string, string> = {
   stjarnor:      "twinkle",
   stjarnglitter: "twinkle",
   eldlagor:      "flicker",
-  eld:           "flicker",
   blixtar:       "flash",
   regnbage:      "floaty",
   fjarilar:      "floaty",
@@ -58,7 +57,9 @@ export default function EffectOverlay({ effectId, size, count = 6, aura = false,
   const slots = SLOTS.slice(0, Math.min(count, SLOTS.length));
 
   return (
-    <div className={`absolute inset-0 pointer-events-none ${className}`} style={{ overflow: "visible", zIndex: 2 }}>
+    // Pure decoration. Hidden from screen readers, or every particle's
+    // role="img" would be read out as part of the link or button it sits in.
+    <div aria-hidden="true" className={`absolute inset-0 pointer-events-none ${className}`} style={{ overflow: "visible", zIndex: 2 }}>
       {/* A ring of light just outside the avatar, clear in the middle so the picture stays sharp. */}
       {aura && <div
         className="absolute rounded-full"

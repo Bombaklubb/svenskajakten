@@ -4,8 +4,9 @@ import { useState, useEffect, useCallback, useRef, use } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/ui/Header";
-import { loadStudent, awardGamePoints, type GameAward } from "@/lib/storage";
-import GameAwardNote from "@/components/ui/GameAwardNote";
+import { loadStudent, awardGamePoints, hasDoneModuleToday, type GameAward } from "@/lib/storage";
+import GameAwardNote, { GameLockedScreen } from "@/components/ui/GameAwardNote";
+import { shuffle, memoryScore } from "@/lib/gameContent";
 import { getStage } from "@/lib/stages";
 import type { StudentData } from "@/lib/types";
 
@@ -122,15 +123,6 @@ const DIFF_EMOJIS: Record<Difficulty, string> = { easy: "🟢", medium: "🟡", 
 
 // ── Hjälpfunktioner ───────────────────────────────────────────────────────────
 
-function shuffle<T>(arr: T[]): T[] {
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
-
 function buildCards(stageId: string, difficulty: Difficulty): MemCard[] {
   const count = PAIR_COUNTS[difficulty];
   const pairs = shuffle(CONCEPT_PAIRS[stageId] ?? CONCEPT_PAIRS.lagstadiet).slice(0, count);
@@ -152,10 +144,14 @@ export default function MemoryGamePage({ params }: Props) {
   const { stage: stageId } = use(params);
   const stage = getStage(stageId);
   const [student, setStudent] = useState<StudentData | null>(null);
+  const [loaded, setLoaded] = useState(false);
 
-  useEffect(() => { setStudent(loadStudent()); }, []);
+  useEffect(() => { setStudent(loadStudent()); setLoaded(true); }, []);
 
   if (!stage) return notFound();
+  if (!loaded) return <div className="min-h-screen bg-white dark:bg-gray-900" />;
+  // The games open with the day's first chapter, as on the world's game tab.
+  if (!hasDoneModuleToday(student)) return <GameLockedScreen stageId={stageId} emoji="🃏" />;
 
   return <MemoryGame stageId={stageId} stage={stage} student={student} onStudentChange={setStudent} />;
 }
@@ -178,6 +174,29 @@ function MemoryGame({ stageId, stage, student, onStudentChange }: {
   const [locked, setLocked]         = useState(false);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const startRef = useRef(0);
+  // The flip-back and victory timeouts of the round in progress. Card ids are
+  // reused from round to round, so a timeout left over from an abandoned round
+  // used to match or flip cards in the next one — wrong matches, an instant
+  // victory, or a board that could not be finished. Cleared whenever a round
+  // ends or starts, and on unmount.
+  const pendingRef = useRef<ReturnType<typeof setTimeout>[]>([]);
+  const clearPending = useCallback(() => {
+    pendingRef.current.forEach(clearTimeout);
+    pendingRef.current = [];
+  }, []);
+  const later = useCallback((fn: () => void, ms: number) => {
+    const id = setTimeout(() => {
+      pendingRef.current = pendingRef.current.filter((t) => t !== id);
+      fn();
+    }, ms);
+    pendingRef.current.push(id);
+  }, []);
+  useEffect(() => clearPending, [clearPending]);
+
+  // Bank the score once the game is over. Guarded by a ref because the phase is
+  // state: without it a re-render before the flag settles would pay out twice.
+  const awardedRef = useRef(false);
+  const [award, setAward] = useState<GameAward | null>(null);
 
   const totalPairs = PAIR_COUNTS[difficulty];
 
@@ -195,6 +214,7 @@ function MemoryGame({ stageId, stage, student, onStudentChange }: {
     // Cleared so a replay banks its (reduced) score too. Leaving it set meant a
     // pupil who pressed "Spela igen" earned nothing, while one who reloaded the
     // page got full points for the very same round.
+    clearPending();
     awardedRef.current = false;
     setAward(null);
     setDifficulty(diff);
@@ -205,7 +225,15 @@ function MemoryGame({ stageId, stage, student, onStudentChange }: {
     setSeconds(0);
     setLocked(false);
     setPhase("playing");
-  }, [stageId]);
+  }, [stageId, clearPending]);
+
+  /** Leave the board for the difficulty picker, dropping the round's timeouts. */
+  const quit = useCallback(() => {
+    clearPending();
+    setLocked(false);
+    setFlippedUids([]);
+    setPhase("select");
+  }, [clearPending]);
 
   const handleCardClick = useCallback((uid: number) => {
     if (locked) return;
@@ -224,17 +252,19 @@ function MemoryGame({ stageId, stage, student, onStudentChange }: {
       const c1 = cards.find(c => c.uid === uid1)!;
       const c2 = card;
 
-      setTimeout(() => {
+      later(() => {
         const isMatch = c1.pairId === c2.pairId && c1.side !== c2.side;
         if (isMatch) {
           setCards(prev => prev.map(c =>
             c.uid === uid1 || c.uid === uid2 ? { ...c, matched: true, flipped: true } : c
           ));
-          const newMatches = matches + 1;
-          setMatches(newMatches);
-          if (newMatches >= totalPairs) {
+          // Counted from the cards rather than a captured match count, which
+          // could be stale by the time this runs.
+          setMatches(m => m + 1);
+          const matchedAfter = cards.filter(c => c.matched).length / 2 + 1;
+          if (matchedAfter >= totalPairs) {
             if (timerRef.current) clearInterval(timerRef.current);
-            setTimeout(() => setPhase("victory"), 600);
+            later(() => setPhase("victory"), 600);
           }
         } else {
           setCards(prev => prev.map(c =>
@@ -245,17 +275,13 @@ function MemoryGame({ stageId, stage, student, onStudentChange }: {
         setLocked(false);
       }, 900);
     }
-  }, [locked, cards, flippedUids, matches, totalPairs]);
+  }, [locked, cards, flippedUids, totalPairs, later]);
 
   const mins = Math.floor(seconds / 60);
   const secs = seconds % 60;
   const timeStr = mins > 0 ? `${mins}:${secs.toString().padStart(2, "0")}` : `${secs}s`;
-  const score = Math.max(10, 180 - moves * 3 - Math.floor(seconds / 4));
-
-  // Bank the score once the game is over. Guarded by a ref because the phase is
-  // state: without it a re-render before the flag settles would pay out twice.
-  const awardedRef = useRef(false);
-  const [award, setAward] = useState<GameAward | null>(null);
+  // Scaled by the number of pairs, so a hard board is worth more than an easy one.
+  const score = memoryScore(totalPairs, moves, seconds);
   useEffect(() => {
     if (!(phase === "victory") || awardedRef.current) return;
     awardedRef.current = true;
@@ -377,7 +403,7 @@ function MemoryGame({ stageId, stage, student, onStudentChange }: {
         {/* HUD */}
         <div className="flex items-center justify-between mb-3">
           <button
-            onClick={() => setPhase("select")}
+            onClick={quit}
             className={`${stage!.textClass} text-sm font-semibold hover:opacity-70 transition cursor-pointer`}
           >
             ← Avsluta

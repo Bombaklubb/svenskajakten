@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Header from "@/components/ui/Header";
@@ -16,37 +16,47 @@ import {
   ALL_BADGES,
   BOSS_MODULES_PER_FIGHT,
   getBadge,
-  openWoodChest,
-  openSilverChest,
-  openGoldChest,
-  openEmeraldChest,
-  openRubyChest,
-  openDiamondChest,
-  openHemligChest,
+  openChest,
   checkMissedExerciseMilestones,
   checkMissedPointMilestones,
   capNewChests,
+  POINT_CHEST_MILESTONES,
+  EXERCISE_CHEST_MILESTONES,
 } from "@/lib/gamification";
+import SaveWarning from "@/components/ui/SaveWarning";
 import { getThemeClassName, getThemeWrapperClass } from "@/lib/shop";
 import ThemeBackdrop from "@/components/ui/ThemeBackdrop";
 import type { StudentData, GamificationData, Chest, ChestType } from "@/lib/types";
 
-function ChestCard({ chest, onOpen }: { chest: Chest; onOpen: (id: string) => void }) {
+/** How long a chest shakes before it opens. */
+const OPEN_ANIMATION_MS = 500;
+
+function ChestCard({
+  chest,
+  animating,
+  disabled,
+  onOpen,
+}: {
+  chest: Chest;
+  animating: boolean;
+  /** True while any chest is opening: taps are ignored until it is done. */
+  disabled: boolean;
+  onOpen: (id: string) => void;
+}) {
   const meta = CHEST_META[chest.type];
-  const [animating, setAnimating] = useState(false);
 
   function handleClick() {
-    if (chest.opened || animating) return;
-    setAnimating(true);
-    setTimeout(() => {
-      onOpen(chest.id);
-      setAnimating(false);
-    }, 500);
+    if (chest.opened || disabled) return;
+    onOpen(chest.id);
   }
 
   return (
     <div
       onClick={handleClick}
+      role="button"
+      tabIndex={chest.opened ? -1 : 0}
+      aria-disabled={disabled}
+      onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); handleClick(); } }}
       className={`w-full relative flex items-center gap-4 px-5 py-4 rounded-2xl transition-all cursor-pointer select-none ${
         !chest.opened
           ? `bg-gradient-to-r ${meta.color} active:scale-[0.98]`
@@ -106,7 +116,7 @@ function ChestCard({ chest, onOpen }: { chest: Chest; onOpen: (id: string) => vo
   );
 }
 
-interface RewardResult { description: string; points: number; }
+interface RewardResult { title?: string; description: string; points: number; }
 
 function RewardPopup({ result, onClose }: { result: RewardResult; onClose: () => void }) {
   return (
@@ -117,12 +127,13 @@ function RewardPopup({ result, onClose }: { result: RewardResult; onClose: () =>
       >
         <div className="text-6xl mb-4 animate-bounce-slow">🎉</div>
         <h2 className="text-2xl font-black text-amber-700 dark:text-amber-300 mb-3">
-          Kistan är öppnad!
+          {result.title ?? "Kistan är öppnad!"}
         </h2>
-        <p className="text-base font-semibold text-sv-800 dark:text-gray-100 mb-6 leading-relaxed">
+        <p className="text-base font-semibold text-sv-800 dark:text-gray-100 mb-6 leading-relaxed whitespace-pre-line">
           {result.description}
         </p>
         <button
+          autoFocus
           onClick={onClose}
           className="w-full btn-primary border-3 border-amber-400 text-lg"
           style={{ background: "linear-gradient(135deg, #f59e0b, #d97706)" }}
@@ -247,6 +258,10 @@ export default function KistorPage() {
   const [gam, setGam] = useState<GamificationData | null>(null);
   const [rewardResult, setRewardResult] = useState<RewardResult | null>(null);
   const [missedChestsCount, setMissedChestsCount] = useState(0);
+  // The chest currently shaking. Only one opens at a time: the ref blocks a
+  // second tap before React has re-rendered.
+  const [animatingId, setAnimatingId] = useState<string | null>(null);
+  const busyRef = useRef(false);
 
   useEffect(() => {
     const s = loadStudent();
@@ -268,9 +283,10 @@ export default function KistorPage() {
     const totalMissed = [...missedEx, ...missedPts];
 
     if (totalMissed.length > 0) {
+      const added = capNewChests(loaded.chests, totalMissed.map((m) => m.chest));
       const updated: GamificationData = {
         ...loaded,
-        chests: [...loaded.chests, ...totalMissed.map((m) => m.chest)],
+        chests: [...loaded.chests, ...added],
         exerciseMilestonesRewarded: [
           ...loaded.exerciseMilestonesRewarded,
           ...missedEx.map((m) => m.milestone),
@@ -282,7 +298,7 @@ export default function KistorPage() {
       };
       saveGamification(updated);
       setGam(updated);
-      setMissedChestsCount(totalMissed.length);
+      setMissedChestsCount(added.length);
     } else {
       setGam(loaded);
     }
@@ -296,38 +312,99 @@ export default function KistorPage() {
   );
   const opened = gam.chests.filter((c) => c.opened);
 
-  function handleOpenChest(chestId: string) {
-    if (!gam || !student) return;
-    const chest = gam.chests.find((c) => c.id === chestId);
-    if (!chest || chest.opened) return;
-
-    let result: { points: number; badge?: string; bonusChest?: Chest; description: string };
-    if (chest.type === "wood") result = { ...openWoodChest(), badge: undefined, bonusChest: undefined };
-    else if (chest.type === "silver") result = openSilverChest(gam.badges);
-    else if (chest.type === "gold") result = openGoldChest(gam.badges);
-    else if (chest.type === "emerald") result = openEmeraldChest(gam.badges);
-    else if (chest.type === "ruby") result = openRubyChest(gam.badges);
-    else if (chest.type === "diamond") result = openDiamondChest(gam.badges);
-    else result = openHemligChest(gam.badges);
-
-    const newChests = gam.chests.map((c) =>
-      c.id === chestId ? { ...c, opened: true, openedReward: result.description } : c
-    );
-    const newBadges = result.badge && !gam.badges.includes(result.badge)
-      ? [...gam.badges, result.badge]
-      : gam.badges;
-    if (result.bonusChest && capNewChests(newChests, [result.bonusChest]).length > 0) {
-      newChests.push(result.bonusChest);
-    }
-
-    const newGam = { ...gam, chests: newChests, badges: newBadges };
-    saveGamification(newGam);
-    setGam({ ...newGam });
-
-    const updatedStudent = addPointsToStored(result.points);
+  /**
+   * Open one chest. Reads the stored data rather than `gam` from state: a
+   * second chest tapped during the first one's animation used to open against
+   * the old state, undoing the first chest so it could be opened — and paid —
+   * again.
+   */
+  function openNow(chestId: string): void {
+    const opening = openChest(loadGamification(), chestId);
+    if (!opening) return;
+    saveGamification(opening.gam);
+    setGam(opening.gam);
+    const updatedStudent = addPointsToStored(opening.points);
     if (updatedStudent) setStudent(updatedStudent);
-    setRewardResult({ description: result.description, points: result.points });
+    setRewardResult({ description: opening.description, points: opening.points });
   }
+
+  function handleOpenChest(chestId: string) {
+    if (busyRef.current) return;
+    busyRef.current = true;
+    setAnimatingId(chestId);
+    setTimeout(() => {
+      try {
+        openNow(chestId);
+      } finally {
+        busyRef.current = false;
+        setAnimatingId(null);
+      }
+    }, OPEN_ANIMATION_MS);
+  }
+
+  /** Open every chest waiting right now and show one summary of the lot. */
+  function handleOpenAll() {
+    if (busyRef.current) return;
+    busyRef.current = true;
+    try {
+      let current = loadGamification();
+      const ids = current.chests.filter((c) => !c.opened).map((c) => c.id);
+      let points = 0;
+      const perType: Partial<Record<ChestType, number>> = {};
+      const badges: string[] = [];
+      const bonus: ChestType[] = [];
+      for (const id of ids) {
+        const opening = openChest(current, id);
+        if (!opening) continue;
+        current = opening.gam;
+        points += opening.points;
+        perType[opening.chest.type] = (perType[opening.chest.type] ?? 0) + 1;
+        if (opening.badge && !badges.includes(opening.badge)) badges.push(opening.badge);
+        if (opening.bonusChest) bonus.push(opening.bonusChest.type);
+      }
+      const opened = Object.values(perType).reduce((n, c) => n + (c ?? 0), 0);
+      if (opened === 0) return;
+      saveGamification(current);
+      setGam(current);
+      const updatedStudent = addPointsToStored(points);
+      if (updatedStudent) setStudent(updatedStudent);
+
+      const lines = [
+        CHEST_ORDER.filter((t) => perType[t])
+          .map((t) => `${perType[t]} × ${CHEST_META[t].label}`)
+          .join(", "),
+        `+${points} poäng`,
+        ...badges.map((id) => {
+          const b = getBadge(id);
+          return b ? `Märke: ${b.label} ${b.emoji}` : "";
+        }).filter(Boolean),
+        bonus.length > 0
+          ? `Bonus: ${bonus.map((t) => CHEST_META[t].label).join(", ")} – öppna ${bonus.length === 1 ? "den" : "dem"} nedan!`
+          : "",
+      ].filter(Boolean);
+      setRewardResult({
+        title: `${opened} ${opened === 1 ? "kista öppnad" : "kistor öppnade"}!`,
+        description: lines.join("\n"),
+        points,
+      });
+    } finally {
+      busyRef.current = false;
+    }
+  }
+
+  /** "Bronskista: 300 – 2 300 poäng" style ranges, straight from the milestone lists. */
+  function milestoneRanges(list: { value: number; type: ChestType }[]) {
+    return CHEST_ORDER.map((type) => {
+      const values = list.filter((m) => m.type === type).map((m) => m.value);
+      if (values.length === 0) return null;
+      const min = Math.min(...values);
+      const max = Math.max(...values);
+      const fmt = (n: number) => n.toLocaleString("sv-SE");
+      return { type, text: min === max ? fmt(min) : `${fmt(min)} – ${fmt(max)}` };
+    }).filter((r): r is { type: ChestType; text: string } => r !== null);
+  }
+  const pointRanges = milestoneRanges(POINT_CHEST_MILESTONES.map((m) => ({ value: m.points, type: m.type })));
+  const exerciseRanges = milestoneRanges(EXERCISE_CHEST_MILESTONES.map((m) => ({ value: m.exercises, type: m.type })));
 
   return (
     <div className={`min-h-screen ${getThemeClassName(student.equippedTheme)} ${getThemeWrapperClass(student.equippedTheme)}`}>
@@ -351,6 +428,8 @@ export default function KistorPage() {
       </div>
 
       <main className="max-w-4xl mx-auto px-4 py-6 space-y-8">
+
+        <SaveWarning />
 
         {/* Missed milestones notice */}
         {missedChestsCount > 0 && (
@@ -408,14 +487,26 @@ export default function KistorPage() {
         {/* Unopened chests */}
         <BlurFade delay={0.05}>
           <section>
-            <h2 className="text-lg font-black text-sv-900 dark:text-gray-100 mb-4 flex items-center gap-2">
-              🎁 Oöppnade kistor
-              {unopened.length > 0 && (
-                <span className="px-2 py-0.5 text-xs font-bold bg-sv-700 text-white rounded-full">
-                  {unopened.length}
-                </span>
+            <div className="flex items-center justify-between gap-3 mb-4 flex-wrap">
+              <h2 className="text-lg font-black text-sv-900 dark:text-gray-100 flex items-center gap-2">
+                🎁 Oöppnade kistor
+                {unopened.length > 0 && (
+                  <span className="px-2 py-0.5 text-xs font-bold bg-sv-700 text-white rounded-full">
+                    {unopened.length}
+                  </span>
+                )}
+              </h2>
+              {unopened.length > 1 && (
+                <button
+                  onClick={handleOpenAll}
+                  disabled={animatingId !== null}
+                  className="px-4 py-2 rounded-xl font-bold text-sm text-white disabled:opacity-50 cursor-pointer"
+                  style={{ background: "linear-gradient(135deg, #f59e0b, #d97706)", boxShadow: "0 3px 0 0 rgba(0,0,0,0.18)" }}
+                >
+                  Öppna alla ({unopened.length})
+                </button>
               )}
-            </h2>
+            </div>
             {unopened.length === 0 ? (
               <div className="rounded-3xl p-8 text-center border-2 border-dashed border-sv-200 dark:border-gray-600 bg-white dark:bg-gray-800">
                 <p className="text-4xl mb-3">🏅</p>
@@ -426,7 +517,13 @@ export default function KistorPage() {
             ) : (
               <div className="flex flex-col gap-3">
                 {unopened.map((chest) => (
-                  <ChestCard key={chest.id} chest={chest} onOpen={handleOpenChest} />
+                  <ChestCard
+                    key={chest.id}
+                    chest={chest}
+                    animating={animatingId === chest.id}
+                    disabled={animatingId !== null}
+                    onOpen={handleOpenChest}
+                  />
                 ))}
               </div>
             )}
@@ -496,28 +593,47 @@ export default function KistorPage() {
             </h3>
             <p className="text-xs font-bold text-sv-800 dark:text-sv-300 uppercase tracking-wide mb-2">Poängmilstolpar</p>
             <ul className="space-y-2 text-sm text-sv-800 dark:text-sv-100 mb-4">
-              <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/bronskista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Bronskista:</strong> 10 – 200 poäng</span></li>
-              <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/silverkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Silverkista:</strong> 300 – 4 000 poäng</span></li>
-              <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/guldkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Guldkista:</strong> 1 000 – 7 000 poäng</span></li>
-              <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/smaragdkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Smaragdkista:</strong> 8 000 – 12 000 poäng</span></li>
-              <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/rubinkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Rubinkista:</strong> 15 000 – 20 000 poäng</span></li>
-              <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/diamantkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Diamantkista:</strong> 25 000 – 40 000 poäng</span></li>
-              <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/hemligkista.png" alt="" className="w-6 h-6 object-contain scale-[1.55]" /></div><span><strong>Hemliga kistan:</strong> 60 000 – 100 000 poäng 🔒</span></li>
+              {pointRanges.map(({ type, text }) => (
+                <li key={type} className="flex items-center gap-3">
+                  <div className="w-6 h-6 flex-shrink-0 flex items-center justify-center">
+                    <img src={CHEST_META[type].image} alt="" className={`w-6 h-6 object-contain ${CHEST_META[type].imageClass ?? ""}`} />
+                  </div>
+                  <span><strong>{CHEST_META[type].label}:</strong> {text} poäng</span>
+                </li>
+              ))}
             </ul>
-            <p className="text-xs font-bold text-sv-800 dark:text-sv-300 uppercase tracking-wide mb-2">Övningsmilstolpar</p>
+            <p className="text-xs font-bold text-sv-800 dark:text-sv-300 uppercase tracking-wide mb-2">Klarade kapitel</p>
+            <p className="text-xs text-sv-800 dark:text-sv-300 mb-2">
+              Räknas första gången du klarar ett kapitel (grammatik, stavning, ordsökning eller stavningstest).
+            </p>
             <ul className="space-y-2 text-sm text-sv-800 dark:text-sv-100 mb-4">
-              <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/bronskista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Bronskista:</strong> 1 – 55 övningar</span></li>
-              <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/silverkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Silverkista:</strong> 12 – 90 övningar</span></li>
-              <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/guldkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Guldkista:</strong> 30 – 125 övningar</span></li>
-              <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/smaragdkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Smaragdkista:</strong> 150 – 200 övningar</span></li>
-              <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/rubinkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Rubinkista:</strong> 250 – 300 övningar</span></li>
-              <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/diamantkista.png" alt="" className="w-6 h-6 object-contain" /></div><span><strong>Diamantkista:</strong> 400 – 500 övningar</span></li>
-              <li className="flex items-center gap-3"><div className="w-6 h-6 flex-shrink-0 flex items-center justify-center"><img src="/content/hemligkista.png" alt="" className="w-6 h-6 object-contain scale-[1.55]" /></div><span><strong>Hemliga kistan:</strong> 750 – 1 000 övningar 🔒</span></li>
+              {exerciseRanges.map(({ type, text }) => (
+                <li key={type} className="flex items-center gap-3">
+                  <div className="w-6 h-6 flex-shrink-0 flex items-center justify-center">
+                    <img src={CHEST_META[type].image} alt="" className={`w-6 h-6 object-contain ${CHEST_META[type].imageClass ?? ""}`} />
+                  </div>
+                  <span><strong>{CHEST_META[type].label}:</strong> {text} kapitel</span>
+                </li>
+              ))}
             </ul>
-            <div className="flex items-center gap-3 text-sm text-sv-800 dark:text-sv-100 pt-3 border-t border-sv-100 dark:border-gray-700">
-              <span>🎁</span>
-              <span><strong>Mysterykista:</strong> Slumpmässig chans efter varje övning!</span>
-            </div>
+            <ul className="space-y-2 text-sm text-sv-800 dark:text-sv-100 pt-3 border-t border-sv-100 dark:border-gray-700">
+              <li className="flex items-center gap-3">
+                <span>🏅</span>
+                <span><strong>Utmärkelser:</strong> vissa utmärkelser ger en kista – det står i utmärkelsen på din profil.</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <span>⚔️</span>
+                <span><strong>Bossen:</strong> varje vinst mot en boss ger en kista.</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <span>🎁</span>
+                <span><strong>Mysterykista:</strong> en slumpmässig chans när du klarar ett kapitel för första gången!</span>
+              </li>
+              <li className="flex items-center gap-3">
+                <span>✨</span>
+                <span><strong>Bonuskistor:</strong> finare kistor kan innehålla en kista till.</span>
+              </li>
+            </ul>
           </section>
         </BlurFade>
       </main>

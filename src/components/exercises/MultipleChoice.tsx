@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import type { MultipleChoiceExercise } from "@/lib/types";
 import { getCorrectMessage } from "@/lib/feedback";
 
@@ -15,6 +15,13 @@ export default function MultipleChoice({ exercise, onAnswer, isLast }: Props) {
   const [revealed, setRevealed] = useState(false);
   const [correctMsg, setCorrectMsg] = useState("");
   const [showHint, setShowHint] = useState(false);
+  // Move focus to "Nästa fråga" once the answer is shown, so Enter continues
+  // and a keyboard or screen-reader user lands on what comes next.
+  const nextRef = useRef<HTMLButtonElement>(null);
+  const answered = revealed;
+  useEffect(() => {
+    if (answered) nextRef.current?.focus();
+  }, [answered]);
 
   function handleSelect(idx: number) {
     if (revealed) return;
@@ -22,6 +29,30 @@ export default function MultipleChoice({ exercise, onAnswer, isLast }: Props) {
     setRevealed(true);
     if (idx === exercise.correctIndex) setCorrectMsg(getCorrectMessage());
   }
+
+  // Keys 1–4 and A–D pick an option, matching the letters on the buttons.
+  // Read through a ref so the listener, added once, always sees this render.
+  const selectRef = useRef(handleSelect);
+  selectRef.current = handleSelect;
+  const optionCount = exercise.options.length;
+  useEffect(() => {
+    if (revealed) return;
+    function onKey(e: KeyboardEvent) {
+      if (e.ctrlKey || e.metaKey || e.altKey || e.repeat) return;
+      // Never steal a letter from someone typing, e.g. in a chat or name field.
+      const t = e.target as HTMLElement | null;
+      if (t && (t.isContentEditable || ["INPUT", "TEXTAREA", "SELECT"].includes(t.tagName))) return;
+      const key = e.key.toLowerCase();
+      const idx = /^[1-9]$/.test(key) ? Number(key) - 1
+        : /^[a-z]$/.test(key) ? key.charCodeAt(0) - 97
+        : -1;
+      if (idx < 0 || idx >= Math.min(optionCount, 4)) return;
+      e.preventDefault();
+      selectRef.current(idx);
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [revealed, optionCount]);
 
   function optionStyle(idx: number): string {
     const base =
@@ -63,7 +94,13 @@ export default function MultipleChoice({ exercise, onAnswer, isLast }: Props) {
 
       <div className="space-y-3">
         {exercise.options.map((opt, idx) => (
-          <button key={idx} className={optionStyle(idx)} onClick={() => handleSelect(idx)} disabled={revealed}>
+          <button
+            key={idx}
+            className={optionStyle(idx)}
+            onClick={() => handleSelect(idx)}
+            disabled={revealed}
+            aria-keyshortcuts={idx < 4 ? `${idx + 1} ${String.fromCharCode(65 + idx)}` : undefined}
+          >
             <span className="inline-flex items-center gap-3">
               <span className="w-7 h-7 rounded-full border-2 border-current flex items-center justify-center text-sm flex-shrink-0">
                 {revealed && idx === exercise.correctIndex
@@ -101,6 +138,7 @@ export default function MultipleChoice({ exercise, onAnswer, isLast }: Props) {
       {revealed && (
         <div className="flex justify-end pt-2">
           <button
+            ref={nextRef}
             onClick={() => onAnswer(selected === exercise.correctIndex)}
             className="btn-primary animate-slide-up"
             style={{ background: "linear-gradient(135deg, #006AA7, #004a75)" }}

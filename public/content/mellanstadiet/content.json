@@ -813,7 +813,7 @@
           "type": "fill-in-blank",
           "question": "Fyll i rätt stavning: '___uta' (avfyra en pistol eller ett gevär)",
           "answer": "skj",
-          "hint": "Skjuta eller sjuta? Det här ordet börjar med skj-.",
+          "hint": "Skjuta eller sjuta? Här skrivs sj-ljudet med tre bokstäver.",
           "explanation": "'Skjuta' stavas skj – s-k-j-u-t-a. Sj-ljudet skrivs skj i detta ord."
         },
         {
@@ -894,7 +894,7 @@
           "type": "fill-in-blank",
           "question": "Fyll i rätt stavning: '___äl' (djuret med fenor som solar sig på klippor)",
           "answer": "s",
-          "hint": "Säl stavas enkelt: s + ä + l. Inget sj-ljud!",
+          "hint": "Säg ordet högt: hör du något sj-ljud alls?",
           "explanation": "'Säl' stavas s-ä-l. Inte sj-ljud – bara ett vanligt s-ljud."
         },
         {
@@ -945,11 +945,12 @@
           "instruction": "Bygg meningen med rätt sj-ord!",
           "words": [
             "Hon",
-            "skidade",
-            "nedför",
+            "åkte",
+            "skidor",
+            "i",
             "den",
             "sköna",
-            "backen."
+            "vårsolen."
           ],
           "correctOrder": [
             0,
@@ -957,9 +958,10 @@
             2,
             3,
             4,
-            5
+            5,
+            6
           ],
-          "explanation": "'Skidade' (sk+i=sj-ljud) och 'sköna' (sk+ö=sj-ljud) – båda har sj-ljud med sk-stavning."
+          "explanation": "'Skidor' (sk + i) och 'sköna' (sk + ö) har sj-ljud men stavas med sk."
         }
       ]
     },
@@ -1001,9 +1003,9 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Fyll i rätt stavning: '___är' (ha starka känslor för någon, kärlek)",
+          "question": "Fyll i rätt stavning: '___är' (förälskad)",
           "answer": "k",
-          "hint": "Kär eller tjär? Tänk: k + ä ger tj-ljud.",
+          "hint": "Vilken bokstav ger tj-ljud framför mjuk vokal (e, i, y, ä, ö)?",
           "explanation": "'Kär' stavas k + ä – k följt av ä ger tj-ljud. k-ä-r."
         },
         {
@@ -1067,7 +1069,7 @@
           "type": "fill-in-blank",
           "question": "Fyll i rätt stavning: '___öp' (att betala och ta med sig en vara)",
           "answer": "k",
-          "hint": "K + ö ger tj-ljud. Köpa stavas k + ö.",
+          "hint": "Vilken bokstav ger tj-ljud framför mjuk vokal (e, i, y, ä, ö)?",
           "explanation": "'Köp' stavas k + ö – k följt av ö ger tj-ljud. k-ö-p."
         },
         {
@@ -1168,7 +1170,7 @@
       "bonusPoints": 25,
       "helpText": [
         "Kort betonad vokal följs av dubbel konsonant: hammare, vänner, gubbe.",
-        "Lång vokal ger enkel konsonant: hamare → fel! hammare → rätt.",
+        "Lång vokal ger enkel konsonant: hal, tak, spenat. Kort vokal ger dubbel: hammare (inte hamare).",
         "Testtrick: säg ordet långsamt – är vokalen kort och tryckstark?"
       ],
       "exercises": [
@@ -1262,7 +1264,7 @@
           "type": "fill-in-blank",
           "question": "Rätt stavning: 'Vi ska ta en pra___stund.' (prata, substantiv)",
           "answer": "t",
-          "hint": "Pratstund – är a-et i 'prat' långt eller kort?",
+          "hint": "Grundordet är 'prata'. Är a-et långt eller kort?",
           "explanation": "'Pratstund' – a-et i 'prat' är långt (man drar ut på det), därför enkelt t. p-r-a-t."
         },
         {
@@ -1293,7 +1295,7 @@
           "type": "fill-in-blank",
           "question": "Rätt stavning: 'Han la___e sig tidigt.' (verbet 'lägga', dåtid)",
           "answer": "d",
-          "hint": "Lade eller ladde? Är a-et i 'lade' kort eller långt?",
+          "hint": "Lade eller ladde? Är a-et kort eller långt?",
           "explanation": "'Lade' – a-et är långt i denna form, därför enkelt d: l-a-d-e."
         },
         {
@@ -1324,7 +1326,7 @@
           "type": "fill-in-blank",
           "question": "Rätt stavning: 'Vi åt spe___at till middag.' (grönsaken)",
           "answer": "n",
-          "hint": "Spenat – är e-et i 'spe-' kort eller långt?",
+          "hint": "Säg ordet högt. Är e-et långt eller kort?",
           "explanation": "'Spenat' – e-et är långt, därför enkelt n: s-p-e-n-a-t."
         },
         {
@@ -1773,7 +1775,8 @@
           "question": "Vilket skiljetecken fattas? 'Vad heter din bästa vän___'",
           "answer": "?",
           "hint": "Meningen är en fråga.",
-          "explanation": "Frågor avslutas med frågetecken (?). 'Vad heter din bästa vän?'"
+          "explanation": "Frågor avslutas med frågetecken (?). 'Vad heter din bästa vän?'",
+          "punctuationStrict": true
         },
         {
           "type": "multiple-choice",
@@ -1823,19 +1826,20 @@
           "question": "Vilket skiljetecken fattas? 'Han frågade___ \"Vad heter du?\"'",
           "answer": ":",
           "hint": "Vilket tecken används direkt innan ett citat eller en lista?",
-          "explanation": "Kolon (:) används för att introducera ett direkt citat: Han frågade: \"Vad heter du?\""
+          "explanation": "Kolon (:) används för att introducera ett direkt citat: Han frågade: \"Vad heter du?\"",
+          "punctuationStrict": true
         },
         {
           "type": "multiple-choice",
-          "question": "Var ska kommat sitta? 'Om det regnar stannar vi hemma.'",
+          "question": "Var ska kommat sitta? 'Vi köpte äpplen päron och bananer.'",
           "options": [
-            "Om det regnar, stannar vi hemma.",
-            "Om det, regnar stannar vi hemma.",
-            "Om det regnar stannar, vi hemma.",
+            "Vi köpte äpplen, päron och bananer.",
+            "Vi köpte, äpplen päron och bananer.",
+            "Vi köpte äpplen päron, och bananer.",
             "Inget komma behövs."
           ],
-          "correctIndex": 3,
-          "explanation": "Inget komma behövs: 'Om det regnar stannar vi hemma.' Komma efter inledande bisats är valfritt och ålderdomligt – modern rekommendation är att skriva utan."
+          "correctIndex": 0,
+          "explanation": "I en uppräkning sätts komma mellan orden, men inte före 'och': Vi köpte äpplen, päron och bananer."
         },
         {
           "type": "multiple-choice",
@@ -1854,7 +1858,8 @@
           "question": "Sätt in rätt skiljetecken: 'Vi behöver följande saker___ mjölk, bröd och smör.'",
           "answer": ":",
           "hint": "Vilket tecken introducerar en lista?",
-          "explanation": "Kolon (:) används för att inleda en lista: 'Vi behöver: mjölk, bröd och smör.'"
+          "explanation": "Kolon (:) används för att inleda en lista: 'Vi behöver: mjölk, bröd och smör.'",
+          "punctuationStrict": true
         },
         {
           "type": "multiple-choice",
@@ -1870,22 +1875,23 @@
         },
         {
           "type": "multiple-choice",
-          "question": "Var ska kommat sitta? 'Eftersom jag var trött gick jag och lade mig.'",
+          "question": "Var ska kommat sitta? 'Ja det vill jag gärna.'",
           "options": [
-            "Eftersom jag var trött, gick jag och lade mig.",
-            "Eftersom, jag var trött gick jag och lade mig.",
-            "Eftersom jag var trött gick jag, och lade mig.",
+            "Ja, det vill jag gärna.",
+            "Ja det, vill jag gärna.",
+            "Ja det vill, jag gärna.",
             "Inget komma behövs."
           ],
-          "correctIndex": 3,
-          "explanation": "Inget komma behövs: 'Eftersom jag var trött gick jag och lade mig.' Komma efter inledande bisats är valfritt och ålderdomligt – modern rekommendation är att skriva utan."
+          "correctIndex": 0,
+          "explanation": "Efter ett inledande ja, nej eller en interjektion sätts komma: Ja, det vill jag gärna."
         },
         {
           "type": "fill-in-blank",
           "question": "Vilket tecken fattas? 'Oj___ vad fint det är!'",
           "answer": ",",
           "hint": "Efter ett utrop som 'Oj' sätter man oftast ett komma.",
-          "explanation": "Komma efter utropet: 'Oj, vad fint det är!' – kommat markerar en kort paus."
+          "explanation": "Komma efter utropet: 'Oj, vad fint det är!' – kommat markerar en kort paus.",
+          "punctuationStrict": true
         },
         {
           "type": "build-sentence",
@@ -1964,7 +1970,12 @@
           "question": "Ordet 'springa' börjar med konsonantklustret 'spr'. Hur många stavelser har ordet? ___",
           "answer": "2",
           "hint": "Räkna vokalerna: en vokal = en stavelse. Vilka vokaler finns i 'springa'?",
-          "explanation": "'Springa' har 2 stavelser: sprin-ga. Det finns 2 vokaler (i och a) = 2 stavelser."
+          "explanation": "'Springa' har 2 stavelser: sprin-ga. Det finns 2 vokaler (i och a) = 2 stavelser.",
+          "alternativeAnswers": [
+            "två",
+            "2 stavelser",
+            "två stavelser"
+          ]
         },
         {
           "type": "multiple-choice",
@@ -2014,7 +2025,13 @@
           "question": "Ordet 'ström' innehåller konsonantklustret 'str'. Räkna vokalerna – hur många stavelser har det? ___",
           "answer": "1",
           "hint": "Räkna vokalerna: ö är den enda vokalen i 'ström'.",
-          "explanation": "'Ström' har 1 stavelse och 1 vokal (ö). Str-ö-m = ett ord, en stavelse."
+          "explanation": "'Ström' har 1 stavelse och 1 vokal (ö). Str-ö-m = ett ord, en stavelse.",
+          "alternativeAnswers": [
+            "en",
+            "ett",
+            "1 stavelse",
+            "en stavelse"
+          ]
         },
         {
           "type": "multiple-choice",
@@ -2359,7 +2376,7 @@
           "type": "fill-in-blank",
           "question": "Fyll i rätt bokstav: 'Hon är mycket snäll och v___nlig.' (trevlig mot andra)",
           "answer": "ä",
-          "hint": "Vänlig eller venlig? Grundordet är 'vän' – med ä.",
+          "hint": "Tänk på grundordet – ett annat ord för kompis.",
           "explanation": "'Vänlig' stavas med ä – det kommer från ordet 'vän'. v-ä-n-l-i-g."
         },
         {
@@ -2442,7 +2459,7 @@
           "type": "fill-in-blank",
           "question": "Fyll i rätt bokstav: 'Han l___mnar skolan klockan tre.' (går därifrån)",
           "answer": "ä",
-          "hint": "Lämnar eller lemnar? Grundordet är 'lämna' – med ä.",
+          "hint": "Lyssna på vokalljudet: e som i 'se' eller ä som i 'säl'?",
           "explanation": "'Lämnar' stavas med ä – l-ä-m-n-a-r. Grundordet 'lämna' har ä."
         },
         {
@@ -2459,12 +2476,12 @@
         },
         {
           "type": "multiple-choice",
-          "question": "Vilket ord är rätt stavat? (att känna fruktan)",
+          "question": "Välj rätt stavning: 'Du behöver inte ___ för hunden.' (vara rädd)",
           "options": [
             "rädas",
             "redas",
-            "räddes",
-            "rades"
+            "rädass",
+            "rädes"
           ],
           "correctIndex": 0,
           "explanation": "'Rädas' stavas med ä – r-ä-d-a-s. Att rädas = att vara rädd för något."
@@ -2473,7 +2490,7 @@
           "type": "fill-in-blank",
           "question": "Fyll i rätt bokstav: 'Jag tr___ffar min kompis imorgon.' (möter)",
           "answer": "ä",
-          "hint": "Träffar eller treffar? Grundordet är 'träff' – med ä.",
+          "hint": "Tänk på substantivet: när man möts har man en ...",
           "explanation": "'Träffar' stavas med ä – t-r-ä-f-f-a-r. Att träffa någon = att möta dem."
         },
         {
@@ -2613,7 +2630,15 @@
           "question": "En synonym till 'svar' i formell text är '___'.",
           "answer": "respons",
           "hint": "Det engelska låneordet som används i formella sammanhang.",
-          "explanation": "'Respons' är en synonym till 'svar' och används ofta i formella och akademiska texter."
+          "explanation": "'Respons' är en synonym till 'svar' och används ofta i formella och akademiska texter.",
+          "alternativeAnswers": [
+            "reaktion",
+            "återkoppling",
+            "gensvar",
+            "besked",
+            "feedback",
+            "replik"
+          ]
         },
         {
           "type": "multiple-choice",
@@ -2820,7 +2845,14 @@
           "question": "Motsatsen till 'frihet' är '___'.",
           "answer": "fångenskap",
           "hint": "Om man inte är fri, vad är man då? Tänk på fängelse.",
-          "explanation": "'Fångenskap' är motsatsen till 'frihet' – att vara inlåst och inte fri."
+          "explanation": "'Fångenskap' är motsatsen till 'frihet' – att vara inlåst och inte fri.",
+          "alternativeAnswers": [
+            "ofrihet",
+            "fångenskapen",
+            "fängelse",
+            "slaveri",
+            "tvång"
+          ]
         },
         {
           "type": "multiple-choice",
@@ -3216,7 +3248,8 @@
           "question": "Fyll i rätt skiljetecken: '– Vi ses imorgon___ sa Amir.'",
           "answer": ",",
           "hint": "Repliken är ett påstående och anföringssatsen ska hänga ihop med den utan att bli en ny mening.",
-          "explanation": "Punkt byts mot komma när en anföringssats följer efter repliken: '– Vi ses imorgon, sa Amir.'"
+          "explanation": "Punkt byts mot komma när en anföringssats följer efter repliken: '– Vi ses imorgon, sa Amir.'",
+          "punctuationStrict": true
         },
         {
           "type": "multiple-choice",
@@ -3313,7 +3346,8 @@
           "question": "Skriv rätt tecken före repliken: '___ Nu går vi, sa pappa.'",
           "answer": "–",
           "hint": "Ett långt streck används i svensk skönlitteratur för att markera att någon talar.",
-          "explanation": "Talstrecket (–) är ett långt streck och markerar början på en replik. Det är inte samma tecken som bindestrecket (-)."
+          "explanation": "Talstrecket (–) är ett långt streck och markerar början på en replik. Det är längre än bindestrecket (-), men saknar tangentbordet talstreck går det bra att skriva - här.",
+          "punctuationStrict": true
         },
         {
           "type": "multiple-choice",
@@ -3444,7 +3478,8 @@
           "question": "Lägg till rätt interpunktion: ___ Hjälp mig! ___ skrek hon.",
           "answer": "\"",
           "hint": "Citattecken sätts runt det talaren säger.",
-          "explanation": "Korrekt: \"Hjälp mig!\" skrek hon. Utropstecknet sitter inuti citattecknen."
+          "explanation": "Korrekt: \"Hjälp mig!\" skrek hon. Utropstecknet sitter inuti citattecknen.",
+          "punctuationStrict": true
         },
         {
           "type": "multiple-choice",
@@ -3530,26 +3565,26 @@
           "type": "multiple-choice",
           "question": "Var placeras frågetecknet när repliken är en fråga med citattecken?",
           "options": [
-            "“Var är du”? frågade hon.",
-            "“Var är du?” frågade hon.",
-            "“Var är du” frågade hon?",
+            "”Var är du”? frågade hon.",
+            "”Var är du?” frågade hon.",
+            "”Var är du” frågade hon?",
             "Var är du? frågade hon."
           ],
           "correctIndex": 1,
-          "explanation": "Frågetecknet hör till repliken och placeras inuti citattecknen: “Var är du?”",
+          "explanation": "Frågetecknet hör till repliken och placeras inuti citattecknen: ”Var är du?”",
           "points": 10
         },
         {
           "type": "multiple-choice",
           "question": "Var placeras utropstecknet i meningen: Hon skrek ___ Passa på___",
           "options": [
-            "“Passa på”! skrek hon.",
-            "“Passa på!” skrek hon.",
-            "“Passa på” skrek hon!",
-            "“Passa på.” skrek hon!"
+            "”Passa på”! skrek hon.",
+            "”Passa på!” skrek hon.",
+            "”Passa på” skrek hon!",
+            "”Passa på.” skrek hon!"
           ],
           "correctIndex": 1,
-          "explanation": "Utropstecknet hör till repliken: “Passa på!” skrek hon.",
+          "explanation": "Utropstecknet hör till repliken: ”Passa på!” skrek hon.",
           "points": 10
         },
         {
@@ -3562,19 +3597,20 @@
           "alternativeAnswers": [
             "\"",
             "“"
-          ]
+          ],
+          "punctuationStrict": true
         },
         {
           "type": "multiple-choice",
           "question": "Hur skriver man rätt när talaren presenteras FÖRE repliken?",
           "options": [
-            "Läraren sa “Sitt ner”.",
-            "Läraren sa: “Sitt ner.”",
-            "Läraren sa, “Sitt ner.”",
-            "Läraren: “Sitt ner”."
+            "Läraren sa ”Sitt ner”.",
+            "Läraren sa: ”Sitt ner.”",
+            "Läraren sa, ”Sitt ner.”",
+            "Läraren: ”Sitt ner”."
           ],
           "correctIndex": 1,
-          "explanation": "När talaren presenteras före repliken används kolon: Läraren sa: “Sitt ner.”",
+          "explanation": "När talaren presenteras före repliken används kolon: Läraren sa: ”Sitt ner.”",
           "points": 10
         },
         {
@@ -3594,25 +3630,26 @@
           "type": "multiple-choice",
           "question": "Vilken mening är FEL?",
           "options": [
-            "“Jag är trött”, sa hon.",
-            "“Kom nu!” ropade han.",
-            "“Vad heter du?” frågade flickan.",
-            "“Det är kallt.” Sa han med darrande röst."
+            "”Jag är trött”, sa hon.",
+            "”Kom nu!” ropade han.",
+            "”Vad heter du?” frågade flickan.",
+            "”Det är kallt.” Sa han med darrande röst."
           ],
           "correctIndex": 3,
-          "explanation": "Talverbet 'sa' ska ha liten bokstav och kommat sättas efter citattecknet: “Det är kallt”, sa han med darrande röst.",
+          "explanation": "Talverbet 'sa' ska ha liten bokstav och kommat sättas efter citattecknet: ”Det är kallt”, sa han med darrande röst.",
           "points": 10
         },
         {
           "type": "fill-in-blank",
-          "question": "Komplettera med rätt interpunktion: “Jag kommer imorgon___ lovade Anton.",
+          "question": "Komplettera med rätt interpunktion: ”Jag kommer imorgon___ lovade Anton.",
           "answer": "”,",
           "hint": "Stäng citattecknet och sätt kommat efter det, innan talverbet.",
-          "explanation": "Efter en påståendereplik sätts kommat efter citattecknet: “Jag kommer imorgon”, lovade Anton.",
+          "explanation": "Efter en påståendereplik sätts kommat efter citattecknet: ”Jag kommer imorgon”, lovade Anton.",
           "points": 10,
           "alternativeAnswers": [
             "\","
-          ]
+          ],
+          "punctuationStrict": true
         },
         {
           "type": "multiple-choice",
@@ -3620,11 +3657,11 @@
           "options": [
             "Hon läste boken -Alfons Åberg- högt.",
             "Hon läste boken 'Alfons Åberg' högt.",
-            "Hon läste boken “Alfons Åberg” högt.",
+            "Hon läste boken ”Alfons Åberg” högt.",
             "Hon läste boken (Alfons Åberg) högt."
           ],
           "correctIndex": 2,
-          "explanation": "Citattecken används för att markera titlar och citat: “Alfons Åberg”.",
+          "explanation": "Citattecken används för att markera titlar och citat: ”Alfons Åberg”.",
           "points": 10
         },
         {
@@ -4220,7 +4257,7 @@
           "question": "Vilken mening innehåller en metafor?",
           "options": [
             "Orden var vapen i debatten.",
-            "Ordena var skarpa som knivar.",
+            "Orden var skarpa som knivar.",
             "Han använde många ord i debatten.",
             "Debatten handlade om viktiga ämnen."
           ],
@@ -4293,15 +4330,15 @@
         },
         {
           "type": "multiple-choice",
-          "question": "Vad betyder metaforen 'Klassrummet är en zoo'?",
+          "question": "Vad betyder metaforen 'Klassrummet är ett zoo'?",
           "options": [
             "Det finns djur i klassrummet",
-            "Klassrummet är kaotiskt och livligt som ett djurhem",
+            "Klassrummet är kaotiskt och livligt som ett zoo",
             "Eleverna äter som djur",
             "Klassrummet luktar illa"
           ],
           "correctIndex": 1,
-          "explanation": "Att kalla klassrummet en zoo beskriver kaos och larm – en metafor för stökighet.",
+          "explanation": "Att kalla klassrummet ett zoo beskriver kaos och larm – en metafor för stökighet.",
           "points": 10
         },
         {
@@ -4665,9 +4702,9 @@
         {
           "id": "o-aa-mel-1-3",
           "type": "fill-in-blank",
-          "question": "Fyll i O eller Å: 'b___rd' – 'Vi åt middag vid bordet.'",
+          "question": "Fyll i O eller Å: 'b___rd' (möbeln vi äter middag vid)",
           "answer": "O",
-          "hint": "Möbeln du sitter vid och äter vid – hur stavas den?",
+          "hint": "Tänk på möbeln du sitter vid och äter.",
           "explanation": "'Bord' (möbeln) stavas med O.",
           "alternativeAnswers": [
             "bord"
@@ -4676,9 +4713,9 @@
         {
           "id": "o-aa-mel-1-4",
           "type": "fill-in-blank",
-          "question": "Fyll i O eller Å: 'f___lk' – 'Det var mycket folk på torget.'",
+          "question": "Fyll i O eller Å: 'f___lk' (många människor, t.ex. på ett torg)",
           "answer": "O",
-          "hint": "Många människor på ett ställe – vilket ord är det?",
+          "hint": "Många människor på ett ställe – lyssna på vokalen.",
           "explanation": "'Folk' (människor) stavas med O.",
           "alternativeAnswers": [
             "folk"
@@ -4687,9 +4724,9 @@
         {
           "id": "o-aa-mel-1-5",
           "type": "fill-in-blank",
-          "question": "Fyll i O eller Å: 'g___rd' – 'Familjen bor på en liten bondgård.'",
+          "question": "Fyll i O eller Å: 'g___rd' (där en bondefamilj bor med sina djur)",
           "answer": "Å",
-          "hint": "Platsen med ladugård, åkrar och djur.",
+          "hint": "Platsen med lada, åkrar och djur.",
           "explanation": "'Gård' (bondgård) stavas med Å.",
           "alternativeAnswers": [
             "gård"
@@ -4750,9 +4787,9 @@
         {
           "id": "o-aa-mel-1-10",
           "type": "fill-in-blank",
-          "question": "Fyll i O eller Å: 'l___g' – 'Hon log när hon fick beröm.'",
+          "question": "Fyll i O eller Å: 'l___g' (dåtid av verbet le – hon ... när hon fick beröm)",
           "answer": "O",
-          "hint": "Det är dåtid av 'le' – att le/skratta tyst.",
+          "hint": "Lyssna på vokalljudet: låter det som i 'sol' eller som i 'båt'?",
           "explanation": "'Log' (dåtid av le) stavas med O.",
           "alternativeAnswers": [
             "log"
@@ -4761,9 +4798,9 @@
         {
           "id": "o-aa-mel-1-11",
           "type": "fill-in-blank",
-          "question": "Fyll i O eller Å: 'l___g' – 'Hunden låg still under bordet.'",
+          "question": "Fyll i O eller Å: 'l___g' (dåtid av verbet ligga – hunden ... under bordet)",
           "answer": "Å",
-          "hint": "Det är dåtid av 'ligga' – att befinna sig liggandes.",
+          "hint": "Lyssna på vokalljudet: låter det som i 'sol' eller som i 'båt'?",
           "explanation": "'Låg' (dåtid av ligga) stavas med Å.",
           "alternativeAnswers": [
             "låg"
@@ -4837,9 +4874,9 @@
         {
           "id": "o-aa-mel-1-17",
           "type": "fill-in-blank",
-          "question": "Fyll i O eller Å: 'm___rd' – 'Polisen utredde mordet noggrant.'",
+          "question": "Fyll i O eller Å: 'm___rd' (ett allvarligt brott som polisen utreder)",
           "answer": "O",
-          "hint": "Det allvarligaste brottet – hur stavas det?",
+          "hint": "Lyssna på vokalljudet: låter det som i 'sol' eller som i 'båt'?",
           "explanation": "'Mord' (brottet) stavas med O.",
           "alternativeAnswers": [
             "mord"
@@ -5495,7 +5532,8 @@
           "question": "Fyll i rätt tecken: '___ Vi ses imorgon!' sa hon.",
           "answer": "–",
           "hint": "Repliker inleds med talstreck.",
-          "explanation": "Talstrecket (–) är längre än bindestrecket (-) och används för att markera dialog."
+          "explanation": "Talstrecket (–) är längre än bindestrecket (-) och används för att markera dialog. Saknar tangentbordet talstreck går det bra att skriva - (bindestreck).",
+          "punctuationStrict": true
         },
         {
           "type": "multiple-choice",
@@ -5585,7 +5623,7 @@
           "type": "fill-in-blank",
           "question": "Fyll i rätt bokstav: 'Hon s___ger alltid rätt svar.'",
           "answer": "ä",
-          "hint": "Verbet 'säger' innehåller ett ä-ljud.",
+          "hint": "Lyssna på vokalljudet: e som i 'se' eller ä som i 'säl'?",
           "explanation": "'Säger' stavas med ä – e och ä kan lätt förväxlas."
         }
       ]
@@ -5824,7 +5862,7 @@
       "bonusPoints": 25,
       "helpText": [
         "Regel: Betonad vokal + EN konsonant = lång vokal (sol, bil, mat).",
-        "Regel: Betonad vokal + DUBBEL konsonant eller konsonantkluster = kort vokal (katt, full, hjälp).",
+        "Regel: Kort betonad vokal följs av DUBBEL konsonant eller flera konsonanter (katt, full, hjälp). Se upp: i barn, bord och gård är vokalen lång trots två konsonanter.",
         "Paret 'ful/full' visar skillnaden: ful (lång u) = ful, full (kort u) = fylld.",
         "Paret 'hal/hall': hal (lång a, = slippery), hall (kort a = hallway)."
       ],
@@ -6218,7 +6256,7 @@
           "type": "fill-in-blank",
           "question": "Fyll i rätt stavning: '___ärlek är ett fint ord.' (känslor för någon)",
           "answer": "k",
-          "hint": "Kärlek börjar med k- + ä = tj-ljud.",
+          "hint": "Vilken bokstav ger tj-ljud framför mjuk vokal (e, i, y, ä, ö)?",
           "explanation": "'Kärlek' – k + ä ger tj-ljud. Alltså k-ä-r-l-e-k."
         },
         {
@@ -6287,7 +6325,10 @@
           "question": "Fyll i: 'Det finns ___ kvar i skåpet.' (inget alls)",
           "answer": "ingenting",
           "hint": "Tänk på: ing + en + ting.",
-          "explanation": "'Ingenting' – innehåller 'ng' + 't': ing-en-ting."
+          "explanation": "'Ingenting' – innehåller 'ng' + 't': ing-en-ting.",
+          "alternativeAnswers": [
+            "inget"
+          ]
         },
         {
           "type": "multiple-choice",
@@ -6366,15 +6407,15 @@
         {
           "id": "lanord-4",
           "type": "multiple-choice",
-          "question": "Välj den korrekta svenska stavningen av det ord som betyder 'att skicka ett textmeddelande':",
+          "question": "Välj den korrekta stavningen av verbet som betyder 'att skicka ett textmeddelande' och kommer från engelskans 'text':",
           "options": [
             "texta",
+            "täxta",
             "texxa",
-            "textsa",
-            "smsa"
+            "tekksta"
           ],
-          "correctIndex": 3,
-          "explanation": "'Smsa' är det vardagliga svenska ordet för att skicka SMS/textmeddelande."
+          "correctIndex": 0,
+          "explanation": "'Texta' är försvenskat från engelskans text och böjs som ett svenskt verb: textar, textade. Man kan också säga sms:a."
         },
         {
           "id": "lanord-5",
@@ -6411,7 +6452,7 @@
           "options": [
             "sol glasögon",
             "solglasögon",
-            "Sol glasögon",
+            "solglasögonn",
             "sol-glasögon"
           ],
           "correctIndex": 1,
@@ -6433,10 +6474,10 @@
             "fotbolls plan",
             "fotbollsplan",
             "fotbolls-plan",
-            "Fotbollsplan"
+            "fotbollplan"
           ],
           "correctIndex": 1,
-          "explanation": "'Fotbollsplan' – ett sammansatt ord som skrivs ihop. Notera fuge-s: fotbolls-plan."
+          "explanation": "'fotbollsplan' – ett sammansatt ord som skrivs ihop. Notera fogeordet s: fotboll + s + plan."
         },
         {
           "id": "sammord-4",
@@ -6707,7 +6748,7 @@
       "icon": "⭐",
       "pointsRequired": 0,
       "bonusPoints": 30,
-      "timeLimit": 60,
+      "timeLimit": 120,
       "words": [
         {
           "word": "berätta",
@@ -6763,7 +6804,7 @@
         },
         {
           "word": "rättigheter",
-          "clue": "Saker man har rätt att göra och få"
+          "clue": "Det alla barn har enligt barnkonventionen, t.ex. att få gå i skolan"
         },
         {
           "word": "skyldigheter",
@@ -6798,7 +6839,7 @@
       "icon": "⭐⭐",
       "pointsRequired": 0,
       "bonusPoints": 35,
-      "timeLimit": 60,
+      "timeLimit": 120,
       "words": [
         {
           "word": "experiment",
@@ -6853,8 +6894,8 @@
           "clue": "Hur växter gör mat av ljus och koldioxid"
         },
         {
-          "word": "metabolism",
-          "clue": "Kroppens kemiska processer för att leva"
+          "word": "matspjälkning",
+          "clue": "Hur kroppen bryter ner det du äter"
         },
         {
           "word": "organism",
@@ -6865,8 +6906,8 @@
           "clue": "Hur arter förändras och anpassas över tid"
         },
         {
-          "word": "genetik",
-          "clue": "Läran om arv och DNA"
+          "word": "näringskedja",
+          "clue": "Visar vem som äter vem i naturen"
         },
         {
           "word": "mineral",
@@ -6889,7 +6930,7 @@
       "icon": "⭐⭐⭐",
       "pointsRequired": 0,
       "bonusPoints": 40,
-      "timeLimit": 60,
+      "timeLimit": 120,
       "words": [
         {
           "word": "kontinent",
@@ -6904,12 +6945,12 @@
           "clue": "Den imaginära linjen mitt runt jordklotet"
         },
         {
-          "word": "longitud",
-          "clue": "Koordinat som mäter läge öst–väst"
+          "word": "längdgrad",
+          "clue": "Linje på kartan från nordpolen till sydpolen"
         },
         {
-          "word": "latitud",
-          "clue": "Koordinat som mäter läge nord–syd"
+          "word": "breddgrad",
+          "clue": "Linje på kartan som går parallellt med ekvatorn"
         },
         {
           "word": "migration",
@@ -6921,27 +6962,27 @@
         },
         {
           "word": "reformation",
-          "clue": "1500-talets religionsreform av kyrkan"
+          "clue": "När Sverige bytte från katolsk till luthersk kyrka på 1500-talet"
         },
         {
           "word": "kolonisering",
           "clue": "Att ett land tar kontroll över ett annat"
         },
         {
-          "word": "nationalism",
-          "clue": "Stark kärlek till det egna landet"
+          "word": "flykting",
+          "clue": "Person som har tvingats lämna sitt land"
         },
         {
-          "word": "industrialism",
-          "clue": "Samhällsepoken med fabriker och maskiner"
+          "word": "ångmaskin",
+          "clue": "Uppfinning som drev de första fabrikerna och tågen"
         },
         {
-          "word": "parlamentarism",
-          "clue": "Styrelsesätt där parlamentet har makten"
+          "word": "folkomröstning",
+          "clue": "När alla som får rösta säger ja eller nej i en viss fråga"
         },
         {
-          "word": "absolutism",
-          "clue": "Styrelsesätt där kungen hade all makt"
+          "word": "stormakt",
+          "clue": "Mäktigt land – som Sverige på 1600-talet"
         },
         {
           "word": "monarki",
@@ -6956,8 +6997,8 @@
           "clue": "Land styrt av en person med total makt"
         },
         {
-          "word": "imperialism",
-          "clue": "Stormakts strävan att kontrollera andra länder"
+          "word": "upptäcktsresa",
+          "clue": "Lång färd till okända platser, som Columbus gjorde"
         },
         {
           "word": "globalisering",
@@ -6980,23 +7021,23 @@
       "icon": "⭐⭐⭐⭐",
       "pointsRequired": 0,
       "bonusPoints": 45,
-      "timeLimit": 60,
+      "timeLimit": 120,
       "words": [
         {
           "word": "grammatik",
           "clue": "Reglerna för hur ett språk är uppbyggt"
         },
         {
-          "word": "interpunktion",
-          "clue": "Skiljeteckens samlade användning i text"
+          "word": "skiljetecken",
+          "clue": "Punkt, komma och kolon är exempel på ..."
         },
         {
-          "word": "meningsbyggnad",
-          "clue": "Hur ord sätts ihop till meningar"
+          "word": "huvudsats",
+          "clue": "Den del av en mening som kan stå helt ensam"
         },
         {
-          "word": "intonation",
-          "clue": "Hur tonhöjden varierar i talet"
+          "word": "stavelse",
+          "clue": "Del av ett ord – 'ba-nan' har två"
         },
         {
           "word": "synonym",
@@ -7015,16 +7056,16 @@
           "clue": "Jämförelse med 'som', t.ex. 'snabb som vinden'"
         },
         {
-          "word": "allitteration",
-          "clue": "Upprepning av samma begynnelseljud"
+          "word": "adjektiv",
+          "clue": "Ordklass som beskriver hur något är, t.ex. glad"
         },
         {
-          "word": "personifikation",
-          "clue": "Ge ting mänskliga egenskaper"
+          "word": "besjälning",
+          "clue": "Att ge saker och djur mänskliga egenskaper, t.ex. 'solen ler'"
         },
         {
-          "word": "berättarperspektiv",
-          "clue": "Vem som berättar historien – jagperson eller han/hon"
+          "word": "tillbakablick",
+          "clue": "När en berättelse hoppar bakåt i tiden"
         },
         {
           "word": "klimax",
@@ -7035,12 +7076,12 @@
           "clue": "Motsättning eller problem i en berättelse"
         },
         {
-          "word": "protagonist",
-          "clue": "Huvudpersonen i en berättelse"
+          "word": "huvudperson",
+          "clue": "Den som berättelsen mest handlar om"
         },
         {
-          "word": "antagonist",
-          "clue": "Motståndaren till huvudpersonen"
+          "word": "skurk",
+          "clue": "Den elaka personen i en saga eller film"
         },
         {
           "word": "detaljer",
@@ -7055,12 +7096,12 @@
           "clue": "Hänvisning till en källa"
         },
         {
-          "word": "parafrasera",
-          "clue": "Återberätta med egna ord"
+          "word": "återberätta",
+          "clue": "Säga med egna ord vad en text handlar om"
         },
         {
           "word": "sammanfatta",
-          "clue": "Kortfattat återge det viktigaste"
+          "clue": "Kort återge det viktigaste i en text"
         }
       ]
     },
@@ -7071,7 +7112,7 @@
       "icon": "⭐⭐⭐⭐⭐",
       "pointsRequired": 0,
       "bonusPoints": 50,
-      "timeLimit": 60,
+      "timeLimit": 120,
       "words": [
         {
           "word": "analysera",
@@ -7082,56 +7123,56 @@
           "clue": "Ge skäl och motiveringar för en ståndpunkt"
         },
         {
-          "word": "kategorisera",
-          "clue": "Dela in i grupper eller kategorier"
+          "word": "sortera",
+          "clue": "Dela in saker i grupper"
         },
         {
-          "word": "problematisera",
-          "clue": "Lyfta fram komplexiteten i en fråga"
+          "word": "diskutera",
+          "clue": "Samtala om något och lyssna på olika åsikter"
         },
         {
-          "word": "generalisera",
-          "clue": "Dra allmänna slutsatser utifrån enskilda fall"
+          "word": "jämföra",
+          "clue": "Se vad som är lika och vad som är olika"
         },
         {
-          "word": "konkretisera",
-          "clue": "Göra abstrakt mer tydligt och gripbart"
+          "word": "exempel",
+          "clue": "Något man ger för att visa vad man menar, förkortas t.ex."
         },
         {
-          "word": "systematisera",
-          "clue": "Ordna på ett ordnat och planerat sätt"
+          "word": "strategi",
+          "clue": "Plan för hur man ska nå ett mål"
         },
         {
           "word": "källkritik",
-          "clue": "Granska hur trovärdiga källorna är"
+          "clue": "Att granska om en text eller webbsida går att lita på"
         },
         {
           "word": "primärkälla",
-          "clue": "Originalkälla t.ex. brev eller dagbok"
+          "clue": "Originalet, t.ex. ett brev eller en dagbok från den tiden"
         },
         {
-          "word": "sekundärkälla",
-          "clue": "Källa som tolkar eller refererar primärkällor"
+          "word": "uppslagsverk",
+          "clue": "Bok eller webbplats med fakta om många ämnen, t.ex. ett lexikon"
         },
         {
-          "word": "reliabilitet",
-          "clue": "Hur tillförlitliga mätresultaten är"
+          "word": "trovärdig",
+          "clue": "Går att lita på"
         },
         {
-          "word": "validitet",
-          "clue": "Om man verkligen mäter det man vill mäta"
+          "word": "påstående",
+          "clue": "Något man säger är sant, men som kanske måste bevisas"
         },
         {
-          "word": "representativ",
-          "clue": "Speglar helheten rättvist"
+          "word": "faktatext",
+          "clue": "Text som informerar om något verkligt"
         },
         {
-          "word": "objektivitet",
-          "clue": "Att vara saklig och opartisk"
+          "word": "opartisk",
+          "clue": "Håller inte på någon sida"
         },
         {
-          "word": "subjektivitet",
-          "clue": "Påverkas av egna åsikter och känslor"
+          "word": "åsikt",
+          "clue": "Det någon tycker om något"
         },
         {
           "word": "perspektiv",
@@ -7142,8 +7183,8 @@
           "clue": "Följd eller resultat av en handling"
         },
         {
-          "word": "proportioner",
-          "clue": "Förhållanden mellan delar och helhet"
+          "word": "tabell",
+          "clue": "Rutor i rader och kolumner som visar siffror"
         },
         {
           "word": "kompromiss",

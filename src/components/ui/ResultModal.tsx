@@ -4,8 +4,10 @@ import { useEffect } from "react";
 import type { ChestType } from "@/lib/types";
 import { getPointsMultiplier } from "@/lib/gamification";
 import { Button } from "@/components/ui/button";
+import SaveWarning from "@/components/ui/SaveWarning";
 
-const CHEST_LABELS: Record<ChestType, string> = {
+/** Chest names and pictures for every kind, shared by all result screens. */
+export const CHEST_LABELS: Record<ChestType, string> = {
   wood: "Bronskista",
   silver: "Silverkista",
   gold: "Guldkista",
@@ -14,7 +16,7 @@ const CHEST_LABELS: Record<ChestType, string> = {
   diamond: "Diamantkista",
   hemlig: "Hemliga kistan",
 };
-const CHEST_IMAGES: Record<ChestType, string> = {
+export const CHEST_IMAGES: Record<ChestType, string> = {
   wood: "/content/bronskista.png",
   silver: "/content/silverkista.png",
   gold: "/content/guldkista.png",
@@ -23,6 +25,10 @@ const CHEST_IMAGES: Record<ChestType, string> = {
   diamond: "/content/diamantkista.png",
   hemlig: "/content/hemligkista.png",
 };
+
+/** What to tell a pupil whose chapter just opened a boss fight. */
+export const BOSS_UNLOCKED_TEXT =
+  "Du har klarat tillräckligt många kapitel i den här världen. Bossen väntar under fliken 🎮 Spel i världen.";
 
 interface ResultModalProps {
   points: number;
@@ -125,9 +131,7 @@ export default function ResultModal({
         {prevAttempts > 0 && (
           <div className="bg-blue-50 dark:bg-blue-900/30 border-2 border-blue-200 dark:border-blue-700 rounded-2xl p-3 mb-4 text-left">
             <p className="text-sm font-bold text-blue-800 dark:text-blue-300">
-              {multiplier === 0
-                ? "ℹ️ Du har gjort denna övning flera gånger – du får inga fler poäng för den."
-                : `ℹ️ Du har gjort denna övning förut – du får ${Math.round(multiplier * 100)}% av poängen.`}
+              ℹ️ Du har gjort denna övning förut – du får {Math.round(multiplier * 100)}% av poängen.
             </p>
           </div>
         )}
@@ -170,6 +174,8 @@ export default function ResultModal({
           )}
         </div>
 
+        <SaveWarning />
+
         {chestEarned && (
           <div className="bg-amber-50 dark:bg-amber-900/30 border-2 border-amber-300 dark:border-amber-600 rounded-2xl p-3 mb-3 flex items-center gap-3">
             <img src={CHEST_IMAGES[chestEarned]} alt={CHEST_LABELS[chestEarned]} className="w-10 h-10 object-contain" />
@@ -189,7 +195,7 @@ export default function ResultModal({
             <span className="text-3xl">⚔️</span>
             <div className="text-left">
               <p className="text-sm font-bold text-red-800 dark:text-red-300">Bossen är upplåst!</p>
-              <p className="text-xs text-red-600 dark:text-red-400">Du har klarat tillräckligt många kapitel i den här världen. Bossen finns under Spel.</p>
+              <p className="text-xs text-red-600 dark:text-red-400">{BOSS_UNLOCKED_TEXT}</p>
             </div>
           </div>
         )}
@@ -198,7 +204,9 @@ export default function ResultModal({
           <Button variant="outline" onClick={onRetry} className="flex-1 border-sv-200 text-sv-800 dark:text-gray-200">
             🔄 Försök igen
           </Button>
+          {/* Focused on open so Enter continues, as it did through the questions. */}
           <button
+            autoFocus
             onClick={onContinue}
             className="flex-1 btn-primary border-3 border-sv-400 text-lg"
             style={{ background: "linear-gradient(135deg, #f97316, #ea6c0a)" }}

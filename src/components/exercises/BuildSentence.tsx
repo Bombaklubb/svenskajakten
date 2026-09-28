@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import type { BuildSentenceExercise } from "@/lib/types";
 import { getCorrectMessage } from "@/lib/feedback";
 import { isSentenceCorrect } from "@/lib/answers";
@@ -25,6 +25,13 @@ export default function BuildSentence({ exercise, onAnswer, isLast }: Props) {
   const [state, setState] = useState<"idle" | "correct" | "wrong">("idle");
   const [correctMsg, setCorrectMsg] = useState("");
   const [showHint, setShowHint] = useState(false);
+  // Move focus to "Nästa fråga" once the answer is shown, so Enter continues
+  // and a keyboard or screen-reader user lands on what comes next.
+  const nextRef = useRef<HTMLButtonElement>(null);
+  const answered = state !== "idle";
+  useEffect(() => {
+    if (answered) nextRef.current?.focus();
+  }, [answered]);
   const [shuffledOrder] = useState<number[]>(() =>
     shuffle(exercise.words.map((_, i) => i))
   );
@@ -175,6 +182,7 @@ export default function BuildSentence({ exercise, onAnswer, isLast }: Props) {
       {state !== "idle" && (
         <div className="flex justify-end pt-2">
           <button
+            ref={nextRef}
             onClick={() => onAnswer(state === "correct")}
             className="btn-primary animate-slide-up"
             style={{ background: "linear-gradient(135deg, #006AA7, #004a75)" }}

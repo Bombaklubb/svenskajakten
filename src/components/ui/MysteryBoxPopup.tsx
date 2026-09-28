@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import type { MysteryBoxReward } from "@/lib/types";
+import { CHEST_IMAGES, CHEST_LABELS } from "@/components/ui/ResultModal";
 
 interface MysteryBoxPopupProps {
   reward: MysteryBoxReward;
@@ -14,11 +15,6 @@ const REWARD_ICONS: Record<string, string> = {
   badge: "🎖️",
 };
 
-const CHEST_IMAGES: Record<string, string> = {
-  wood: "/content/bronskista.png",
-  silver: "/content/silverkista.png",
-  gold: "/content/guldkista.png",
-};
 
 export default function MysteryBoxPopup({ reward, onClose }: MysteryBoxPopupProps) {
   // Escape closes the popup, same as the button.
@@ -60,6 +56,7 @@ export default function MysteryBoxPopup({ reward, onClose }: MysteryBoxPopupProp
               Du hittade en mysterykista! Klicka för att öppna den.
             </p>
             <button
+              autoFocus
               onClick={() => setOpened(true)}
               className="w-full py-3 px-6 rounded-2xl font-bold text-white text-lg cursor-pointer transition-all active:scale-95"
               style={{
@@ -78,7 +75,7 @@ export default function MysteryBoxPopup({ reward, onClose }: MysteryBoxPopupProp
               style={{ animation: "pop 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97)" }}
             >
               {chestImage ? (
-                <img src={chestImage} alt="kista" className="w-24 h-24 object-contain drop-shadow-lg" />
+                <img src={chestImage} alt={reward.chestType ? CHEST_LABELS[reward.chestType] : "kista"} className="w-24 h-24 object-contain drop-shadow-lg" />
               ) : (
                 <span className="text-7xl">{icon}</span>
               )}
@@ -90,6 +87,7 @@ export default function MysteryBoxPopup({ reward, onClose }: MysteryBoxPopupProp
               {reward.description}
             </p>
             <button
+              autoFocus
               onClick={onClose}
               className="w-full py-3 px-6 rounded-2xl font-bold text-white text-base cursor-pointer transition-all active:scale-95"
               style={{

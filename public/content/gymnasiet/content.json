@@ -479,22 +479,31 @@
         },
         {
           "type": "multiple-choice",
-          "question": "Vilken konjunktion signalerar formellt akademiskt språk?",
+          "question": "Vilket sambandsord signalerar formellt akademiskt språk?",
           "options": [
             "och sen",
             "plus att",
-            "Följaktligen",
+            "följaktligen",
             "dessutom liksom"
           ],
           "correctIndex": 2,
-          "explanation": "'Följaktligen' är en formell kausalkonjunktion som används i akademiska texter."
+          "explanation": "'Följaktligen' är ett formellt sambandsord (ett konjunktionellt adverb, inte en konjunktion) som markerar slutsats i akademiska texter."
         },
         {
           "type": "fill-in-blank",
           "question": "Skriv om informellt till formellt: 'Resultaten visar att det funkar' → 'Resultaten ___ att metoden är verksam.'",
           "answer": "påvisar",
-          "hint": "Använd ett mer formellt synonym till 'visar'.",
-          "explanation": "'Påvisar' är ett formellare verb än 'visar' – typiskt för akademiskt skrivande."
+          "hint": "Använd ett mer precist, formellt verb – det informella ordet i originalet var 'funkar'.",
+          "explanation": "'Påvisar' är ett typiskt formellt verb i akademiskt skrivande; även t.ex. 'visar', 'belägger' eller 'tyder på' fungerar. Det informella var 'funkar', som här blir 'är verksam'.",
+          "alternativeAnswers": [
+            "visar",
+            "demonstrerar",
+            "indikerar",
+            "tyder på",
+            "bekräftar",
+            "styrker",
+            "belägger"
+          ]
         },
         {
           "type": "multiple-choice",
@@ -1562,12 +1571,14 @@
         },
         {
           "type": "fill-in-blank",
-          "question": "Vilket retoriskt begrepp beskriver en fråga som inte förväntar sig ett svar?",
+          "question": "Vad kallas det stilgrepp där talaren ställer en fråga utan att vänta sig svar, t.ex. 'Vem vill inte ha fred?' Svar: ___",
           "answer": "retorisk fråga",
           "hint": "Talaren ställer den för att påverka, inte för att få ett faktiskt svar.",
           "explanation": "En retorisk fråga är ett stilistiskt grepp för att övertala och engagera publiken.",
           "alternativeAnswers": [
-            "erotema"
+            "erotema",
+            "en retorisk fråga",
+            "retoriska frågor"
           ]
         },
         {
@@ -2609,19 +2620,20 @@
           "question": "Hur skriver man korrekt när man citerar någon direkt?",
           "options": [
             "Han sa, jag är trött.",
-            "Han sa: 'Jag är trött.'",
+            "Han sa: ”Jag är trött.”",
             "Han sa jag är trött!",
             "Han sa – jag är trött"
           ],
           "correctIndex": 1,
-          "explanation": "Direkta citat inleds med kolon och skrivs inom citattecken."
+          "explanation": "Direkta citat inleds med kolon och skrivs inom citattecken. I svensk text används ”…” (eller »…«); enkla citattecken används för citat inuti citat."
         },
         {
           "type": "fill-in-blank",
           "question": "Vilket tecken markerar ett inskott/parentes i meningen: 'Sverige ___landet i norr___ är känt för sin natur'?",
           "answer": "–",
           "hint": "Det är ett tankstreck.",
-          "explanation": "Tankstreck (–) används för att rama in ett inskott."
+          "explanation": "Tankstreck (–) används för att rama in ett inskott. På ett tangentbord utan tankstreck går det bra att skriva - eller --.",
+          "punctuationStrict": true
         },
         {
           "type": "multiple-choice",
@@ -2629,11 +2641,11 @@
           "options": [
             "Jonas's bok",
             "Jonas bok",
-            "Jonas' bok",
+            "Jonass bok",
             "Jonases bok"
           ],
           "correctIndex": 1,
-          "explanation": "Namn som slutar på s får ingen extra ändelse i genitiv: Jonas bok. Apostrof (Jonas' bok) är endast en nödlösning – den rekommenderade formen är utan ändelse."
+          "explanation": "Namn som slutar på s får ingen extra ändelse i genitiv: Jonas bok. Apostrof (Jonas' bok) är tillåten när det behövs för tydlighets skull, men 's och -es är fel på svenska."
         },
         {
           "type": "multiple-choice",
@@ -2641,11 +2653,11 @@
           "options": [
             "Elision",
             "Apostrof",
-            "Synkope",
+            "Assimilation",
             "Apokope"
           ],
           "correctIndex": 0,
-          "explanation": "Elision är utelämning av ljud, vanligt i talspråk."
+          "explanation": "Elision är samlingsnamnet för att ljud faller bort i uttalet, vanligt i talspråk: nån, sån, dom. (Bortfall mitt i ett ord kallas mer specifikt synkope.)"
         }
       ]
     },
@@ -2983,7 +2995,7 @@
       "icon": "⭐",
       "pointsRequired": 0,
       "bonusPoints": 30,
-      "timeLimit": 60,
+      "timeLimit": 80,
       "words": [
         {
           "word": "argumentation",
@@ -2995,11 +3007,11 @@
         },
         {
           "word": "inledning",
-          "clue": "Textens inledande del som introducerar ämnet"
+          "clue": "Textens första del som presenterar ämnet"
         },
         {
           "word": "avslutning",
-          "clue": "Textens avslutande del med slutsatser"
+          "clue": "Textens sista del med slutsatser"
         },
         {
           "word": "parafrasera",
@@ -3007,7 +3019,7 @@
         },
         {
           "word": "källförteckning",
-          "clue": "Lista över använda källor i en text"
+          "clue": "Lista över det material man hänvisar till"
         },
         {
           "word": "plagiat",
@@ -3074,7 +3086,7 @@
       "icon": "⭐⭐",
       "pointsRequired": 0,
       "bonusPoints": 35,
-      "timeLimit": 60,
+      "timeLimit": 80,
       "words": [
         {
           "word": "epistemologi",
@@ -3086,7 +3098,7 @@
         },
         {
           "word": "metafysik",
-          "clue": "Filosofi bortom det fysiskt iakttagbara"
+          "clue": "Filosofi om det som ligger bortom det iakttagbara"
         },
         {
           "word": "etik",
@@ -3110,11 +3122,11 @@
         },
         {
           "word": "dygdetik",
-          "clue": "Fokus på karaktär och dygder"
+          "clue": "Etik med fokus på goda karaktärsdrag"
         },
         {
           "word": "kontraktualism",
-          "clue": "Moralens grund är ett tänkt kontrakt"
+          "clue": "Moralen vilar på en tänkt överenskommelse"
         },
         {
           "word": "nihilism",
@@ -3154,7 +3166,7 @@
         },
         {
           "word": "konstruktivism",
-          "clue": "Verkligheten konstrueras socialt"
+          "clue": "Verkligheten skapas socialt"
         }
       ]
     },
@@ -3165,7 +3177,7 @@
       "icon": "⭐⭐⭐",
       "pointsRequired": 0,
       "bonusPoints": 40,
-      "timeLimit": 60,
+      "timeLimit": 80,
       "words": [
         {
           "word": "intertextualitet",
@@ -3205,7 +3217,7 @@
         },
         {
           "word": "dialogism",
-          "clue": "Bachtins teori om ord i ständig dialog"
+          "clue": "Bachtins teori om att ord alltid svarar på andra ord"
         },
         {
           "word": "karnevalisering",
@@ -3228,16 +3240,16 @@
           "clue": "Text skriven ovanpå en äldre text som skymtar fram"
         },
         {
-          "word": "intertextuell",
-          "clue": "Som hänvisar till eller beror på andra texter"
+          "word": "epilog",
+          "clue": "Avslutande del efter själva berättelsen"
         },
         {
           "word": "paratext",
-          "clue": "Titel, omslag och noter runt en text"
+          "clue": "Titel, omslag och förord kring själva verket"
         },
         {
-          "word": "hyperdiegesis",
-          "clue": "Detaljrikt världsskapande i en berättelse"
+          "word": "modernism",
+          "clue": "Riktning i början av 1900-talet som bröt med traditionen"
         },
         {
           "word": "postkolonialt",
@@ -3256,7 +3268,7 @@
       "icon": "⭐⭐⭐⭐",
       "pointsRequired": 0,
       "bonusPoints": 45,
-      "timeLimit": 60,
+      "timeLimit": 80,
       "words": [
         {
           "word": "socialisering",
@@ -3267,8 +3279,8 @@
           "clue": "Bourdieus begrepp för inbyggda dispositioner"
         },
         {
-          "word": "kulturellt kapital",
-          "clue": "Bourdieu – kunskap och bildning som resurs"
+          "word": "ackulturation",
+          "clue": "När en grupp tar till sig seder från en annan grupp"
         },
         {
           "word": "intersektionalitet",
@@ -3296,7 +3308,7 @@
         },
         {
           "word": "normalisering",
-          "clue": "Processen att göra avvikande till normalt"
+          "clue": "Att det avvikande blir det vanliga"
         },
         {
           "word": "stigmatisering",
@@ -3328,11 +3340,11 @@
         },
         {
           "word": "multikulturalism",
-          "clue": "Erkännande och respekt för kulturell mångfald"
+          "clue": "Erkännande av många olika seder och traditioner i ett samhälle"
         },
         {
           "word": "transnationell",
-          "clue": "Sträcker sig över nationella gränser"
+          "clue": "Sträcker sig över landsgränser"
         },
         {
           "word": "diaspora",
@@ -3347,7 +3359,7 @@
       "icon": "⭐⭐⭐⭐⭐",
       "pointsRequired": 0,
       "bonusPoints": 50,
-      "timeLimit": 60,
+      "timeLimit": 80,
       "words": [
         {
           "word": "epistemologisk",
@@ -3375,7 +3387,7 @@
         },
         {
           "word": "fenomenologisk",
-          "clue": "Rör den direkta upplevelsen av fenomen"
+          "clue": "Rör den direkta upplevelsen av det som visar sig"
         },
         {
           "word": "dialektisk",
@@ -3387,11 +3399,11 @@
         },
         {
           "word": "autoreflektion",
-          "clue": "Text som reflekterar över sin egen status"
+          "clue": "Text som granskar sig själv"
         },
         {
           "word": "interdisciplinär",
-          "clue": "Rör flera akademiska discipliner"
+          "clue": "Rör flera akademiska ämnesområden"
         },
         {
           "word": "komparativ",

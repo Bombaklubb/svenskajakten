@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import type { ListenSpellExercise } from "@/lib/types";
 import { getCorrectMessage } from "@/lib/feedback";
 import { isAnswerCorrect } from "@/lib/answers";
@@ -11,17 +11,32 @@ interface Props {
   isLast?: boolean;
 }
 
-function speak(text: string, rate = 0.85) {
-  if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
-  window.speechSynthesis.cancel();
+function hasSpeech(): boolean {
+  return typeof window !== "undefined" && "speechSynthesis" in window;
+}
+
+function swedishVoice(): SpeechSynthesisVoice | undefined {
+  return window.speechSynthesis
+    .getVoices()
+    .find((v) => v.lang.toLowerCase().replace("_", "-").startsWith("sv"));
+}
+
+function utterance(text: string, rate: number): SpeechSynthesisUtterance {
   const utter = new SpeechSynthesisUtterance(text);
   utter.lang = "sv-SE";
   utter.rate = rate;
-  const svVoice = window.speechSynthesis
-    .getVoices()
-    .find((v) => v.lang.toLowerCase().startsWith("sv"));
+  const svVoice = swedishVoice();
   if (svVoice) utter.voice = svVoice;
-  window.speechSynthesis.speak(utter);
+  return utter;
+}
+
+/** Pause between the word and its context sentence, counted from when the word ends. */
+const SENTENCE_PAUSE_MS = 400;
+
+/** Covers the word in the context sentence, so the sentence can be read as a clue. */
+function sentenceWithGap(sentence: string, word: string): string {
+  const escaped = word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return sentence.replace(new RegExp(escaped, "gi"), "___");
 }
 
 export default function ListenSpell({ exercise, onAnswer, isLast }: Props) {
@@ -29,29 +44,67 @@ export default function ListenSpell({ exercise, onAnswer, isLast }: Props) {
   const [state, setState] = useState<"idle" | "correct" | "wrong">("idle");
   const [correctMsg, setCorrectMsg] = useState("");
   const [showHint, setShowHint] = useState(false);
+  // Move focus to "Nästa fråga" once the answer is shown, so Enter continues
+  // and a keyboard or screen-reader user lands on what comes next.
+  const nextRef = useRef<HTMLButtonElement>(null);
+  const answered = state !== "idle";
+  useEffect(() => {
+    if (answered) nextRef.current?.focus();
+  }, [answered]);
   const [hasSpoken, setHasSpoken] = useState(false);
-  const [supported, setSupported] = useState(true);
+  // "unknown" until the voice list has loaded: Chrome fills it asynchronously,
+  // and claiming there is no Swedish voice before then would be wrong.
+  const [voice, setVoice] = useState<"unknown" | "ok" | "no-swedish" | "unsupported">("unknown");
+  const pauseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  // Bumped on every new request and on unmount, so a word that finishes after
+  // the pupil has pressed again (or left) does not start a stale sentence.
+  const speakToken = useRef(0);
 
   useEffect(() => {
-    setSupported(typeof window !== "undefined" && "speechSynthesis" in window);
-    // Chrome loads voices asynchronously – warm the list up.
-    if (typeof window !== "undefined" && "speechSynthesis" in window) {
-      window.speechSynthesis.getVoices();
+    if (!hasSpeech()) {
+      setVoice("unsupported");
+      return;
     }
+    const synth = window.speechSynthesis;
+    const check = (final: boolean) => {
+      if (swedishVoice()) setVoice("ok");
+      else if (final || synth.getVoices().length > 0) setVoice("no-swedish");
+    };
+    const onVoices = () => check(false);
+    check(false);
+    synth.addEventListener?.("voiceschanged", onVoices);
+    // Some browsers never fire voiceschanged; decide after a moment anyway.
+    const giveUp = setTimeout(() => check(true), 2000);
     return () => {
-      if (typeof window !== "undefined" && "speechSynthesis" in window) {
-        window.speechSynthesis.cancel();
-      }
+      clearTimeout(giveUp);
+      synth.removeEventListener?.("voiceschanged", onVoices);
+      speakToken.current++;
+      if (pauseTimer.current) clearTimeout(pauseTimer.current);
+      synth.cancel();
     };
   }, []);
 
   const handleSpeak = useCallback(() => {
-    speak(exercise.word);
-    if (exercise.sentence) {
-      // Read the context sentence after a short pause
-      setTimeout(() => speak(exercise.sentence!, 0.95), 900);
-    }
     setHasSpoken(true);
+    if (!hasSpeech()) return;
+    const synth = window.speechSynthesis;
+    const token = ++speakToken.current;
+    if (pauseTimer.current) clearTimeout(pauseTimer.current);
+    synth.cancel();
+    const word = utterance(exercise.word, 0.85);
+    if (exercise.sentence) {
+      // Queue the context sentence after the word has finished. A fixed delay
+      // cut long words off, because speaking again cancels what is playing.
+      const sentence = exercise.sentence;
+      word.onend = () => {
+        if (token !== speakToken.current) return;
+        pauseTimer.current = setTimeout(() => {
+          if (token !== speakToken.current) return;
+          synth.speak(utterance(sentence, 0.95));
+        }, SENTENCE_PAUSE_MS);
+      };
+    }
+    synth.speak(word);
   }, [exercise.word, exercise.sentence]);
 
   function handleSubmit() {
@@ -82,10 +135,22 @@ export default function ListenSpell({ exercise, onAnswer, isLast }: Props) {
         </button>
       </div>
 
-      {!supported && (
-        <p className="text-center text-sm font-bold text-red-500">
-          ⚠️ Din webbläsare stödjer tyvärr inte uppläsning.
-        </p>
+      {(voice === "unsupported" || voice === "no-swedish") && (
+        <div
+          role="status"
+          className="rounded-xl border border-sky-200 dark:border-sky-700 bg-sky-50 dark:bg-sky-900/20 px-4 py-3 text-sm text-sky-900 dark:text-sky-200 space-y-1"
+        >
+          <p className="font-semibold">
+            {voice === "unsupported"
+              ? "🙉 Den här webbläsaren kan tyvärr inte läsa upp ord."
+              : "🙉 Den här enheten har ingen svensk röst, så uppläsningen kan låta konstig."}
+          </p>
+          <p>
+            {exercise.sentence
+              ? <>Ingen fara! Här är meningen i stället – skriv ordet som fattas: <span className="font-bold">”{sentenceWithGap(exercise.sentence, exercise.word)}”</span></>
+              : "Ingen fara! Be en kompis eller vuxen läsa ordet för dig, eller titta på tipset."}
+          </p>
+        </div>
       )}
 
       {exercise.hint && (
@@ -111,7 +176,7 @@ export default function ListenSpell({ exercise, onAnswer, isLast }: Props) {
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            onKeyDown={(e) => { if (e.key === "Enter") handleSubmit(); }}
+            onKeyDown={(e) => { if (e.key === "Enter") { e.preventDefault(); handleSubmit(); } }}
             placeholder="Stava ordet här..."
             className="flex-1 px-4 py-3 text-lg bg-transparent outline-none text-gray-900 dark:text-gray-100 placeholder:text-gray-600 dark:placeholder:text-gray-500"
             autoComplete="off"
@@ -151,6 +216,7 @@ export default function ListenSpell({ exercise, onAnswer, isLast }: Props) {
       {state !== "idle" && (
         <div className="flex justify-end pt-2">
           <button
+            ref={nextRef}
             onClick={() => onAnswer(state === "correct")}
             className="btn-primary animate-slide-up"
             style={{ background: "linear-gradient(135deg, #006AA7, #004a75)" }}

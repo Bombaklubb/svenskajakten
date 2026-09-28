@@ -6,15 +6,27 @@ interface Stats {
   totals: {
     exercises: number;
     wrong: number;
-    sessions: number;
-    durationSeconds: number;
     uniqueDevices: number;
     onlineNow: number;
     todayDevices: number;
   };
   stageExercises: Record<string, number>;
+  /** Up to twenty per stage, most common first. */
+  mistakes?: MistakeRow[];
   statsStartedAt: string | null;
 }
+
+interface MistakeRow {
+  stage: string;
+  moduleId: string;
+  exerciseIdx: number;
+  moduleTitle: string;
+  questionPreview: string;
+  count: number;
+}
+
+/** How many rows the "Vanligaste felen" list shows. */
+const TOP_MISTAKES = 20;
 
 const STAGES = [
   { id: "lagstadiet",    label: "Nivå 1–3",  subtitle: "Ordängen", color: "#f59e0b", bg: "bg-amber-50 dark:bg-amber-900/20", border: "border-amber-200 dark:border-amber-700", text: "text-amber-700 dark:text-amber-300" },
@@ -39,6 +51,7 @@ export default function LararePage() {
   const [stats, setStats] = useState<Stats | null>(null);
   const [statsError, setStatsError] = useState("");
   const [statsLoading, setStatsLoading] = useState(false);
+  const [mistakeStage, setMistakeStage] = useState<string>("all");
 
   // Restore token from sessionStorage
   useEffect(() => {
@@ -74,11 +87,11 @@ export default function LararePage() {
   }, []);
 
   // Refreshed every two minutes, and only while the tab is actually being
-  // looked at. One reading costs thirteen Redis commands, so the old
-  // every-thirty-seconds timer spent 1 560 an hour whether or not anyone was
-  // watching — a tab left open across a school day was the single largest
-  // consumer of the month's quota. Coming back to the tab refreshes at once,
-  // so the numbers are never stale on screen.
+  // looked at. One reading costs up to seventeen Redis commands (the route
+  // shares a reading between requests for a minute), so the old
+  // every-thirty-seconds timer was the single largest consumer of the month's
+  // quota when a tab was left open across a school day. Coming back to the tab
+  // refreshes at once, so the numbers are never stale on screen.
   useEffect(() => {
     if (!token) return;
 
@@ -157,14 +170,16 @@ export default function LararePage() {
             className="bg-white dark:bg-gray-800 rounded-3xl shadow-xl p-6 border border-slate-100 dark:border-gray-700 space-y-4"
           >
             <div>
-              <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1.5">
+              <label htmlFor="teacher-password" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1.5">
                 Lösenord
               </label>
               <input
+                id="teacher-password"
                 type="password"
+                autoComplete="current-password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="Ange läsarlösenord"
+                placeholder="Ange lärarlösenord"
                 required
                 className="w-full border-2 border-gray-200 dark:border-gray-600 rounded-xl px-4 py-3 text-gray-900 dark:text-gray-100 dark:bg-gray-700 focus:outline-none focus:border-blue-400 transition-colors"
               />
@@ -181,8 +196,8 @@ export default function LararePage() {
               {loginLoading ? "Loggar in…" : "Logga in →"}
             </button>
           </form>
-          <p className="text-center text-xs text-gray-600 dark:text-gray-600 mt-4">
-            Lösenordet sätts i Vercel → Environment Variables → TEACHER_PASSWORD
+          <p className="text-center text-xs text-gray-600 dark:text-gray-300 mt-4">
+            Lösenordet får du av den som driver Svenskajakten på din skola.
           </p>
         </div>
       </div>
@@ -194,11 +209,11 @@ export default function LararePage() {
     <div className="min-h-screen bg-slate-50 dark:bg-gray-900">
       {/* Header */}
       <div className="bg-white dark:bg-gray-800 border-b border-slate-200 dark:border-gray-700 shadow-sm">
-        <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
+        <div className="max-w-5xl mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+          <div className="flex items-center gap-3 min-w-0">
             <span className="text-2xl">🏫</span>
             <div>
-              <h1 className="font-black text-gray-900 dark:text-gray-100 text-lg">Lärarvy – Svenskajakten</h1>
+              <h1 className="font-black text-gray-900 dark:text-gray-100 text-base sm:text-lg">Lärarvy – Svenskajakten</h1>
               <p className="text-xs text-gray-600 dark:text-gray-300">Anonymiserad aggregerad statistik · GDPR-säkrad</p>
             </div>
           </div>
@@ -239,7 +254,9 @@ export default function LararePage() {
             {/* Totals cards */}
             <section>
               <h2 className="font-black text-gray-800 dark:text-gray-100 mb-3 text-sm uppercase tracking-wider">Översikt</h2>
-              <div className="grid grid-cols-3 gap-3 max-w-3xl">
+              {/* Two columns on a phone: three tiles of a 360px screen left each one
+                  about 100px, and a five-digit number spilled out of it. */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 max-w-3xl">
                 {[
                   { label: "Inloggade nu", value: String(stats.totals.onlineNow), icon: "🟢", highlight: stats.totals.onlineNow > 0 },
                   { label: "Inloggade idag", value: stats.totals.todayDevices.toLocaleString("sv-SE"), icon: "📅", highlight: stats.totals.todayDevices > 0 },
@@ -259,15 +276,15 @@ export default function LararePage() {
                 ].map(({ label, value, icon, highlight }) => (
                   <div
                     key={label}
-                    className={`rounded-2xl border p-4 text-center shadow-sm transition-colors ${
+                    className={`min-w-0 rounded-2xl border p-3 sm:p-4 text-center shadow-sm transition-colors ${
                       highlight
                         ? "bg-green-50 dark:bg-green-900/20 border-green-300 dark:border-green-700"
                         : "bg-white dark:bg-gray-800 border-slate-200 dark:border-gray-700"
                     }`}
                   >
-                    <div className="text-2xl mb-1">{icon}</div>
-                    <div className="text-2xl font-black text-gray-900 dark:text-gray-100">{value}</div>
-                    <div className="text-xs text-gray-500 dark:text-gray-300 mt-0.5 font-medium">{label}</div>
+                    <div className="text-xl sm:text-2xl mb-1" aria-hidden="true">{icon}</div>
+                    <div className="text-xl sm:text-2xl font-black text-gray-900 dark:text-gray-100 break-words">{value}</div>
+                    <div className="text-xs text-gray-600 dark:text-gray-300 mt-0.5 font-medium">{label}</div>
                   </div>
                 ))}
               </div>
@@ -293,15 +310,15 @@ export default function LararePage() {
                     const barWidth = Math.max((count / maxVal) * 100, count > 0 ? 3 : 0);
                     return (
                       <div key={s.id}>
-                        <div className="flex items-center justify-between mb-1.5">
-                          <div className="flex items-center gap-2">
+                        <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 mb-1.5">
+                          <div className="flex flex-wrap items-baseline gap-x-2 min-w-0">
                             <span className="font-bold text-gray-800 dark:text-gray-100 text-sm">{s.label}</span>
                             {s.subtitle && (
                               <span className="text-xs text-gray-600 dark:text-gray-300">{s.subtitle}</span>
                             )}
                           </div>
-                          <div className="flex items-center gap-3">
-                            <span className="text-xs text-gray-500 dark:text-gray-300 font-medium">
+                          <div className="flex items-center gap-3 ml-auto">
+                            <span className="text-xs text-gray-600 dark:text-gray-300 font-medium whitespace-nowrap">
                               {count.toLocaleString("sv-SE")} uppgifter
                             </span>
                             <span className={`text-xs font-bold px-2 py-0.5 rounded-full border ${s.bg} ${s.border} ${s.text}`}>
@@ -325,6 +342,13 @@ export default function LararePage() {
               </div>
             </section>
 
+            {/* Most common mistakes */}
+            <MistakesSection
+              mistakes={stats.mistakes ?? []}
+              stage={mistakeStage}
+              onStageChange={setMistakeStage}
+            />
+
             {/* GDPR notice */}
             <section className="rounded-2xl overflow-hidden border border-green-700/40" style={{ background: "#0d1f1a" }}>
               <div className="p-5">
@@ -335,7 +359,7 @@ export default function LararePage() {
                 <ul className="space-y-1 text-green-400 text-sm">
                   <li>✓ Inga namn, IP-adresser eller inloggningsuppgifter lagras</li>
                   <li>✓ Anonymt enhets-ID (UUID) – kan inte kopplas till en elev</li>
-                  <li>✓ Endast summerad data visas (antal, tid, uppgifter)</li>
+                  <li>✓ Endast summerad data visas (antal uppgifter och fel per fråga)</li>
                 </ul>
               </div>
               {stats.statsStartedAt && (
@@ -344,7 +368,7 @@ export default function LararePage() {
                   <p className="text-green-300 text-sm">
                     Svenskajakten började samla in anonym statistik{" "}
                     <strong className="text-green-200">{formatStartDate(stats.statsStartedAt)}</strong>.{" "}
-                    Data äldre än 14 dagar visas inte i grafen.
+                    Listan över vanliga fel glömmer en fråga som ingen svarat fel på under 90 dagar.
                   </p>
                 </div>
               )}
@@ -353,5 +377,85 @@ export default function LararePage() {
         )}
       </main>
     </div>
+  );
+}
+
+/**
+ * "Vanligaste felen" – the questions pupils get wrong most often. The route
+ * returns the top list per stage; "Alla" merges them and keeps the top twenty.
+ */
+function MistakesSection({
+  mistakes,
+  stage,
+  onStageChange,
+}: {
+  mistakes: MistakeRow[];
+  stage: string;
+  onStageChange: (stage: string) => void;
+}) {
+  const rows = (stage === "all" ? mistakes : mistakes.filter((m) => m.stage === stage))
+    .slice()
+    .sort((a, b) => b.count - a.count)
+    .slice(0, TOP_MISTAKES);
+
+  return (
+    <section>
+      <div className="flex flex-wrap items-end justify-between gap-2 mb-3">
+        <h2 className="font-black text-gray-800 dark:text-gray-100 text-sm uppercase tracking-wider">
+          Vanligaste felen
+        </h2>
+        <label className="flex items-center gap-2 text-xs font-semibold text-gray-700 dark:text-gray-300">
+          Stadie
+          <select
+            value={stage}
+            onChange={(e) => onStageChange(e.target.value)}
+            className="rounded-lg border border-slate-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 px-2 py-1 text-sm"
+          >
+            <option value="all">Alla</option>
+            {STAGES.map((s) => (
+              <option key={s.id} value={s.id}>
+                {s.label} · {s.subtitle}
+              </option>
+            ))}
+          </select>
+        </label>
+      </div>
+      <div className="bg-white dark:bg-gray-800 rounded-2xl border border-slate-200 dark:border-gray-700 shadow-sm">
+        {rows.length === 0 ? (
+          <p className="text-center text-gray-600 dark:text-gray-300 text-sm py-6 px-4">
+            Inga fel registrerade ännu.
+          </p>
+        ) : (
+          <ol className="divide-y divide-slate-100 dark:divide-gray-700">
+            {rows.map((m, i) => {
+              const st = STAGES.find((s) => s.id === m.stage);
+              return (
+                <li key={`${m.stage}:${m.moduleId}:${m.exerciseIdx}`} className="flex items-start gap-3 px-4 py-3">
+                  <span className="w-6 flex-shrink-0 text-right text-sm font-black text-gray-500 dark:text-gray-400">
+                    {i + 1}.
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-sm font-semibold text-gray-900 dark:text-gray-100 break-words">
+                      {m.questionPreview || `Fråga ${m.exerciseIdx + 1}`}
+                    </p>
+                    <p className="text-xs text-gray-600 dark:text-gray-300 mt-0.5 flex flex-wrap items-center gap-x-2 gap-y-1">
+                      <span className="break-words">{m.moduleTitle} · fråga {m.exerciseIdx + 1}</span>
+                      {st && (
+                        <span className={`font-bold px-2 py-0.5 rounded-full border ${st.bg} ${st.border} ${st.text}`}>
+                          {st.label}
+                        </span>
+                      )}
+                    </p>
+                  </div>
+                  <span className="flex-shrink-0 text-sm font-black text-red-700 dark:text-red-300 whitespace-nowrap">
+                    {m.count.toLocaleString("sv-SE")} fel
+                  </span>
+                </li>
+              );
+            })}
+          </ol>
+        )}
+      </div>
+    </section>
   );
 }

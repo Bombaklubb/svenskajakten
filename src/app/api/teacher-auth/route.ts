@@ -33,7 +33,9 @@ export async function POST(req: NextRequest) {
   const expected = getTeacherPassword();
   if (!expected) {
     return NextResponse.json(
-      { error: "Lärarlösenordet är inte konfigurerat. Sätt miljövariabeln TEACHER_PASSWORD." },
+      // Deliberately vague: the page is public, and pupils have no business
+      // knowing where the password is kept. The developer knows where to look.
+      { error: "Lärarinloggningen är inte konfigurerad ännu." },
       { status: 503 }
     );
   }

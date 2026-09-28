@@ -1,14 +1,16 @@
 "use client";
 
-import { useState, useEffect, use } from "react";
+import { useState, useEffect, useRef, use } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/ui/Header";
 import WordSearch from "@/components/exercises/WordSearch";
-import { loadStudent, saveStudent, saveModuleProgress, loadGamification, saveGamification, recordLastVisited } from "@/lib/storage";
-import { chestsEarnedFromPoints, chestsEarnedFromExercises, chestsEarnedFromAchievements, rollMysteryBox, rollSurpriseMultiplier, capNewChests, bossWinsInStage, getBossGate, completedModulesInStage, getPointsMultiplier } from "@/lib/gamification";
-import { ACHIEVEMENTS, isUnlocked } from "@/lib/achievements";
+import { loadStudent, recordLastVisited } from "@/lib/storage";
+import { finishChapter } from "@/lib/chapter";
+import { rollSurpriseMultiplier, getPointsMultiplier } from "@/lib/gamification";
+import { CHEST_LABELS, CHEST_IMAGES, BOSS_UNLOCKED_TEXT } from "@/components/ui/ResultModal";
+import SaveWarning from "@/components/ui/SaveWarning";
 import MysteryBoxPopup from "@/components/ui/MysteryBoxPopup";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { getStage } from "@/lib/stages";
@@ -38,6 +40,8 @@ export default function WordSearchModulePage({ params }: Props) {
   const [mysteryBox, setMysteryBox] = useState<MysteryBoxReward | null>(null);
   const [prevAttemptCount, setPrevAttemptCount] = useState(0);
   const [surpriseMult, setSurpriseMult] = useState(1);
+  // One payout per round, however many times the grid reports "all found".
+  const finishedRef = useRef(false);
 
   useEffect(() => {
     const s = loadStudent();
@@ -67,6 +71,8 @@ export default function WordSearchModulePage({ params }: Props) {
   if (!mod) return notFound();
 
   function handleAllFound(points: number) {
+    if (finishedRef.current) return;
+    finishedRef.current = true;
     const totalPoints = points + (mod?.bonusPoints ?? 0);
     setEarnedPoints(totalPoints);
     const surprise = rollSurpriseMultiplier();
@@ -74,56 +80,21 @@ export default function WordSearchModulePage({ params }: Props) {
 
     if (!student) { setPhase("done"); return; }
 
-    const wasAlreadyCompleted = student.stages[stage!.id]?.wordsearchModules?.[moduleId]?.completed ?? false;
-    setPrevAttemptCount(student.stages[stage!.id]?.wordsearchModules?.[moduleId]?.attempts ?? 0);
-    const oldPoints = student.totalPoints;
-    const updatedStudent = saveModuleProgress(student, stageId as any, "wordsearch", moduleId, totalPoints * surprise, true);
-    setStudent(updatedStudent);
-
-    const gam = loadGamification();
-    const prevExercises = gam.exercisesCompleted;
-    const newExercises = prevExercises + 1;
-
-    const ptChests = chestsEarnedFromPoints(oldPoints, updatedStudent.totalPoints, gam.pointsMilestonesRewarded);
-    const exChests = chestsEarnedFromExercises(prevExercises, newExercises, gam.exerciseMilestonesRewarded);
-    const prevUnlocked = ACHIEVEMENTS.filter((a) => isUnlocked(a, student)).map((a) => a.id);
-    const nowUnlocked = ACHIEVEMENTS.filter((a) => isUnlocked(a, updatedStudent)).map((a) => a.id);
-    const achChests = chestsEarnedFromAchievements(prevUnlocked, nowUnlocked, gam.achievementsRewarded ?? []);
-    const allNewChests = [...ptChests.map(c => c.chest), ...exChests.map(c => c.chest), ...achChests.map(c => c.chest)];
-    const firstChest = allNewChests[0];
-
-    const mystery = wasAlreadyCompleted ? null : rollMysteryBox(gam.badges);
-    const extraMysteryChest = mystery?.type === "chest" && mystery.chestType
-      ? [{ id: `chest_m_${Date.now()}`, type: mystery.chestType, earnedAt: new Date().toISOString(), opened: false } as import("@/lib/types").Chest]
-      : [];
-    const mysteryPoints = mystery?.type === "points" && mystery.points ? mystery.points : 0;
-    const mysteryBadge = mystery?.type === "badge" && mystery.badgeId ? mystery.badgeId : null;
-
-    // Same per-world gate as the other chapter kinds.
-    const winsHere = bossWinsInStage(gam, stage!.id);
-    const gateBefore = getBossGate(completedModulesInStage(student, stage!.id), winsHere);
-    const gateAfter = getBossGate(completedModulesInStage(updatedStudent, stage!.id), winsHere);
-    const bossNowUnlocked = !gateBefore.unlocked && gateAfter.unlocked;
-    if (firstChest) setChestEarned(firstChest.type as ChestType);
-    if (bossNowUnlocked) setBossJustUnlocked(true);
-
-    if (mysteryPoints > 0) {
-      const withMystery = { ...updatedStudent, totalPoints: updatedStudent.totalPoints + mysteryPoints };
-      saveStudent(withMystery);
-      setStudent(withMystery);
-    }
-
-    saveGamification({
-      ...gam,
-      chests: [...gam.chests, ...capNewChests(gam.chests, [...allNewChests, ...extraMysteryChest])],
-      badges: mysteryBadge && !gam.badges.includes(mysteryBadge) ? [...gam.badges, mysteryBadge] : gam.badges,
-      exercisesCompleted: newExercises,
-      bossUnlocked: gateAfter.unlocked || gam.bossUnlocked,
-      pointsMilestonesRewarded: [...gam.pointsMilestonesRewarded, ...ptChests.map(c => c.milestone)],
-      exerciseMilestonesRewarded: [...gam.exerciseMilestonesRewarded, ...exChests.map(c => c.milestone)],
-      achievementsRewarded: [...(gam.achievementsRewarded ?? []), ...achChests.map(c => c.achievementId)],
+    // Saving, chests, the boss gate and the mystery box all live in
+    // finishChapter so the four chapter kinds pay out by the same rules.
+    // Finding every word is the only way to finish, so it always passes.
+    const outcome = finishChapter({
+      stageId: stage!.id,
+      kind: "wordsearch",
+      moduleId,
+      points: totalPoints * surprise,
+      passed: true,
     });
-    if (mystery) setMysteryBox(mystery);
+    setPrevAttemptCount(outcome.prevAttempts);
+    if (outcome.student) setStudent(outcome.student);
+    setChestEarned(outcome.chestEarned);
+    setBossJustUnlocked(outcome.bossOpenedNow);
+    setMysteryBox(outcome.mystery);
     setPhase("done");
   }
 
@@ -213,9 +184,7 @@ export default function WordSearchModulePage({ params }: Props) {
                 return (
                   <div className="bg-blue-50 dark:bg-blue-900/30 border-2 border-blue-200 dark:border-blue-700 rounded-2xl p-3 mb-4 text-left">
                     <p className="text-sm font-bold text-blue-800 dark:text-blue-300">
-                      {m === 0
-                        ? "ℹ️ Du har gjort denna övning flera gånger – du får inga fler poäng för den."
-                        : `ℹ️ Du har gjort denna övning förut – du får ${Math.round(m * 100)}% av poängen.`}
+                      ℹ️ Du har gjort denna övning förut – du får {Math.round(m * 100)}% av poängen.
                     </p>
                   </div>
                 );
@@ -255,11 +224,13 @@ export default function WordSearchModulePage({ params }: Props) {
                 </p>
               </div>
 
+              <SaveWarning />
+
               {chestEarned && (
                 <div className="bg-amber-50 dark:bg-amber-900/30 border-2 border-amber-300 dark:border-amber-600 rounded-2xl p-3 mb-3 flex items-center gap-3 text-left">
-                  <img src={chestEarned === "gold" ? "/content/guldkista.png" : chestEarned === "silver" ? "/content/silverkista.png" : "/content/bronskista.png"} alt="kista" className="w-10 h-10 object-contain" />
+                  <img src={CHEST_IMAGES[chestEarned]} alt={CHEST_LABELS[chestEarned]} className="w-10 h-10 object-contain" />
                   <div>
-                    <p className="text-sm font-bold text-amber-800 dark:text-amber-300">Du fick en {chestEarned === "gold" ? "Guldkista" : chestEarned === "silver" ? "Silverkista" : "Bronskista"}!</p>
+                    <p className="text-sm font-bold text-amber-800 dark:text-amber-300">Du fick en {CHEST_LABELS[chestEarned]}!</p>
                     <p className="text-xs text-amber-700 dark:text-amber-400">Öppna den på Hemliga kistor-sidan.</p>
                   </div>
                 </div>
@@ -269,8 +240,8 @@ export default function WordSearchModulePage({ params }: Props) {
                 <div className="bg-red-50 dark:bg-red-900/30 border-2 border-red-300 dark:border-red-600 rounded-2xl p-3 mb-3 flex items-center gap-3 text-left">
                   <span className="text-3xl">⚔️</span>
                   <div>
-                    <p className="text-sm font-bold text-red-800 dark:text-red-300">Boss Challenge upplåst!</p>
-                    <p className="text-xs text-red-600 dark:text-red-400">Gå till Hemliga kistor för att utmana bossen.</p>
+                    <p className="text-sm font-bold text-red-800 dark:text-red-300">Bossen är upplåst!</p>
+                    <p className="text-xs text-red-600 dark:text-red-400">{BOSS_UNLOCKED_TEXT}</p>
                   </div>
                 </div>
               )}
@@ -283,7 +254,18 @@ export default function WordSearchModulePage({ params }: Props) {
                   ← Tillbaka
                 </Link>
                 <button
-                  onClick={() => { setPhase("playing"); setEarnedPoints(0); setChestEarned(undefined); setBossJustUnlocked(false); }}
+                  onClick={() => {
+                    // Clear everything from the round just finished, the
+                    // mystery box included, before the next one starts.
+                    finishedRef.current = false;
+                    setPhase("playing");
+                    setEarnedPoints(0);
+                    setChestEarned(undefined);
+                    setBossJustUnlocked(false);
+                    setMysteryBox(null);
+                    setSurpriseMult(1);
+                    setPrevAttemptCount(0);
+                  }}
                   className="flex-1 btn-primary border-3 border-sv-400"
                   style={{ background: "linear-gradient(135deg, #f97316, #ea6c0a)" }}
                 >

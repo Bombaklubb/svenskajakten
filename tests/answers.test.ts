@@ -9,7 +9,7 @@
 import { test, describe } from "node:test";
 import assert from "node:assert/strict";
 
-import { isAnswerCorrect, isSentenceCorrect, normalizeAnswer } from "../src/lib/answers.ts";
+import { gappedWord, isAnswerCorrect, isSentenceCorrect, normalizeAnswer } from "../src/lib/answers.ts";
 
 describe("förlåtande stavning av samma svar", () => {
   test("skiftläge spelar ingen roll som standard", () => {
@@ -161,7 +161,7 @@ describe("svar som själva är skiljetecken", () => {
             if (ex.type !== "fill-in-blank") continue;
             checked++;
             assert.ok(
-              isAnswerCorrect(ex.answer, ex.answer, ex.alternativeAnswers, ex.caseSensitive),
+              isAnswerCorrect(ex.answer, ex.answer, ex.alternativeAnswers, ex),
               `${stage}/${mod.id}: facit "${ex.answer}" godkänns inte`
             );
           }
@@ -169,5 +169,118 @@ describe("svar som själva är skiljetecken", () => {
       }
     }
     assert.ok(checked > 300, `granskade bara ${checked} övningar`);
+  });
+});
+
+
+describe("tecken som tangentbordet inte har", () => {
+  // iOS and macOS turn " into ” or “ as you type; Chromebooks have no – key.
+  test("krusiga och tyska citattecken jämställs med raka", () => {
+    for (const q of ["”", "“", "„", "″"]) {
+      assert.ok(isAnswerCorrect(q, '"'), `${q} borde godkännas för "`);
+      assert.ok(isAnswerCorrect('"', q), `" borde godkännas för ${q}`);
+    }
+  });
+
+  test("bindestreck och dubbelt bindestreck godkänns för tankstreck", () => {
+    for (const typed of ["-", "--", "–", "—"]) {
+      assert.ok(isAnswerCorrect(typed, "–"), `"${typed}" borde godkännas för –`);
+      assert.ok(isAnswerCorrect(typed, "—"), `"${typed}" borde godkännas för —`);
+    }
+  });
+
+  test("andra tecken är fortfarande fel", () => {
+    assert.equal(isAnswerCorrect("'", "–"), false);
+    assert.equal(isAnswerCorrect(",", '"'), false);
+  });
+});
+
+describe("övningar där skiljetecknet är svaret", () => {
+  const strict = { punctuationStrict: true };
+
+  test("utan flagga förlåts ett avslutande komma – tidigare beteende", () => {
+    assert.ok(isAnswerCorrect("”", "”,"));
+  });
+
+  test("med punctuationStrict måste kommat vara med", () => {
+    assert.equal(isAnswerCorrect("”", "”,", ['",'], strict), false);
+    assert.ok(isAnswerCorrect("”,", "”,", ['",'], strict));
+    assert.ok(isAnswerCorrect('",', "”,", [], strict));
+  });
+
+  test("ett svar som bara är ett tecken går fortfarande att svara", () => {
+    for (const mark of ["?", ".", "!", ",", ":", ";", '"', "–"]) {
+      assert.ok(isAnswerCorrect(mark, mark, [], strict), `"${mark}" borde godkännas`);
+    }
+    assert.equal(isAnswerCorrect("?.", "?", [], strict), false);
+    assert.equal(isAnswerCorrect("", "?", [], strict), false);
+  });
+
+  test("den gamla booleska flaggan för versaler fungerar fortfarande", () => {
+    assert.equal(isAnswerCorrect("mamma", "Mamma", [], { caseSensitive: true }), false);
+    assert.equal(isAnswerCorrect("mamma", "Mamma", [], true), false);
+  });
+});
+
+describe("luckord – hela ordet godkänns", () => {
+  const question = "Fyll i rätt bokstav: 'Jag rider på en h___st.'";
+
+  test("gappedWord hittar bokstäverna runt luckan", () => {
+    assert.deepEqual(gappedWord("h___st"), ["h", "st"]);
+    assert.deepEqual(gappedWord("'___röd'"), ["", "röd"]);
+    assert.equal(gappedWord("Jag ___ hem."), null);
+    assert.equal(gappedWord("___ Kom hit! ___"), null);
+  });
+
+  test("bokstaven och hela ordet godkänns båda", () => {
+    assert.ok(isAnswerCorrect("ä", "ä", [], { question }));
+    assert.ok(isAnswerCorrect("häst", "ä", [], { question }));
+    assert.ok(isAnswerCorrect("Häst.", "ä", [], { question }));
+  });
+
+  test("fel bokstav eller fel ord är fortfarande fel", () => {
+    assert.equal(isAnswerCorrect("e", "ä", [], { question }), false);
+    assert.equal(isAnswerCorrect("hest", "ä", [], { question }), false);
+    assert.equal(isAnswerCorrect("hst", "ä", [], { question }), false);
+  });
+
+  test("godkända varianter ger också hela ord", () => {
+    const q = "En synonym till 'kasta' är 'sl___nga'.";
+    assert.ok(isAnswerCorrect("slunga", "u", ["ä"], { question: q }));
+    assert.ok(isAnswerCorrect("slänga", "u", ["ä"], { question: q }));
+  });
+
+  test("utan frågan blir det ingen utvidgning", () => {
+    assert.equal(isAnswerCorrect("häst", "ä"), false);
+  });
+
+  test("skiljeteckenluckor utvidgas inte till ordet framför", () => {
+    const q = "Vilket tecken fattas? 'Vem är din lärare___'";
+    assert.ok(isAnswerCorrect("?", "?", [], { question: q }));
+    assert.equal(isAnswerCorrect("lärare", "?", [], { question: q }), false);
+  });
+
+  test("varje luckövning i innehållet godkänner hela ordet", async () => {
+    const { readFileSync } = await import("node:fs");
+    let checked = 0;
+    for (const stage of ["lagstadiet", "mellanstadiet", "hogstadiet", "gymnasiet"]) {
+      const data = JSON.parse(readFileSync(`public/content/${stage}/content.json`, "utf8"));
+      for (const kind of ["grammar", "spelling"]) {
+        for (const mod of data[kind] ?? []) {
+          for (const ex of mod.exercises ?? []) {
+            if (ex.type !== "fill-in-blank" || !/^\p{L}+$/u.test(ex.answer)) continue;
+            const gap = gappedWord(ex.question);
+            if (!gap) continue;
+            checked++;
+            const full = gap[0] + ex.answer + gap[1];
+            assert.ok(
+              isAnswerCorrect(full, ex.answer, ex.alternativeAnswers, ex),
+              `${stage}/${mod.id}: "${full}" godkänns inte`
+            );
+          }
+        }
+      }
+    }
+    assert.ok(checked > 40, `granskade bara ${checked} luckövningar`);
   });
 });

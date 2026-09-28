@@ -43,10 +43,11 @@ export default function Header({ student, onLogout }: HeaderProps) {
         boxShadow: "0 4px 0 0 rgba(249, 115, 22, 0.08), 0 6px 12px -4px rgba(249, 115, 22, 0.1)"
       }}
     >
-      <div className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
+      <div className="max-w-5xl mx-auto px-3 sm:px-4 h-16 flex items-center justify-between gap-2">
         {/* Logo */}
         <Link prefetch={false}
           href="/"
+          aria-label="Svenskajakten – startsidan"
           className="flex items-center gap-2 py-0.5 min-h-[44px] hover:scale-105 transition-transform min-w-0 flex-shrink-0"
         >
           <svg
@@ -54,6 +55,7 @@ export default function Header({ student, onLogout }: HeaderProps) {
             height="40"
             viewBox="0 0 40 40"
             xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
             className="flex-shrink-0"
             style={{ filter: "drop-shadow(0 3px 0 rgba(0,60,100,0.35))" }}
           >
@@ -71,17 +73,27 @@ export default function Header({ student, onLogout }: HeaderProps) {
 
         {/* Nav */}
         {student && (
-          <nav className="flex items-center gap-1.5 sm:gap-2 md:gap-3 flex-shrink-0">
+          // Widths below sm, in px: chests 44 + shop ~76 (four digits) +
+          // avatar 44 + dark mode 44 + logout 44, with 4px gaps, beside the
+          // 40px logo and an 8px gap — about 316 of the 336 a 360px phone
+          // leaves inside the padding. The ❓ link (44 + 4 more) joins at xs,
+          // where 400px leaves 376.
+          <nav className="flex items-center gap-1 sm:gap-2 md:gap-3 flex-shrink-0">
             {/* Kistor */}
             <Link prefetch={false}
               href="/kistor"
               title="Hemliga kistor"
+              aria-label={
+                unopenedChests > 0
+                  ? `Hemliga kistor – ${unopenedChests} ${unopenedChests === 1 ? "oöppnad" : "oöppnade"}`
+                  : "Hemliga kistor"
+              }
               className="relative flex items-center justify-center w-11 h-11 rounded-xl bg-gradient-to-b from-amber-100 to-amber-50 dark:from-amber-900/40 dark:to-amber-800/20 border-2 border-amber-300 dark:border-amber-600 hover:border-amber-400 hover:scale-110 transition-all touch-manipulation cursor-pointer"
               style={{ boxShadow: "0 3px 0 0 rgba(245, 158, 11, 0.2), inset 0 2px 4px 0 rgba(255, 255, 255, 0.8)" }}
             >
-              <span className="text-lg leading-none select-none">🏆</span>
+              <span className="text-lg leading-none select-none" aria-hidden="true">🏆</span>
               {unopenedChests > 0 && (
-                <span className="absolute -top-1 -right-1 min-w-[16px] h-4 px-0.5 bg-red-700 text-white text-[10px] font-bold rounded-full flex items-center justify-center">
+                <span aria-hidden="true" className="absolute -top-1 -right-1 min-w-[16px] h-4 px-0.5 bg-red-700 text-white text-[10px] font-bold rounded-full flex items-center justify-center">
                   {unopenedChests > 9 ? "9+" : unopenedChests}
                 </span>
               )}
@@ -91,10 +103,11 @@ export default function Header({ student, onLogout }: HeaderProps) {
             <Link prefetch={false}
               href="/butik"
               title="Affären · poäng att spendera"
-              className="flex items-center gap-1.5 min-h-[44px] bg-gradient-to-b from-orange-50 to-orange-100 dark:from-orange-900/40 dark:to-orange-800/20 border-2 border-orange-300 dark:border-orange-600 hover:border-orange-400 hover:scale-105 transition-all touch-manipulation cursor-pointer px-2.5 py-1.5 rounded-xl"
+              aria-label={`Affären – ${getSpendable(student)} poäng att spendera`}
+              className="flex items-center gap-1 sm:gap-1.5 min-h-[44px] bg-gradient-to-b from-orange-50 to-orange-100 dark:from-orange-900/40 dark:to-orange-800/20 border-2 border-orange-300 dark:border-orange-600 hover:border-orange-400 hover:scale-105 transition-all touch-manipulation cursor-pointer px-2 sm:px-2.5 py-1.5 rounded-xl"
               style={{ boxShadow: "0 3px 0 0 rgba(249, 115, 22, 0.2), inset 0 2px 4px 0 rgba(255, 255, 255, 0.8)" }}
             >
-              <span className="text-base leading-none select-none">🛒</span>
+              <span className="text-base leading-none select-none" aria-hidden="true">🛒</span>
               <span className="text-sm font-bold text-orange-900 dark:text-orange-300">{getSpendable(student)}</span>
             </Link>
 
@@ -104,24 +117,29 @@ export default function Header({ student, onLogout }: HeaderProps) {
               title="Totala poäng du samlat"
               style={{ boxShadow: "0 3px 0 0 rgba(245, 158, 11, 0.25), inset 0 2px 4px 0 rgba(255, 255, 255, 0.8)" }}
             >
-              <span className="text-amber-700 text-base dark:text-amber-300">⭐</span>
+              <span className="text-amber-700 text-base dark:text-amber-300" aria-hidden="true">⭐</span>
               <span className="text-sm font-bold text-amber-900 dark:text-amber-300">{student.totalPoints}</span>
             </div>
 
-            {/* Avatar */}
+            {/* Avatar → profile. At every width: below md it is only the
+                picture in a 44px square, from md the name and level join it.
+                It used to be hidden below md, which left phones with no way
+                to reach the profile at all. */}
             {(() => {
               const av = getAvatar(student.avatar ?? "ninja");
               return (
                 <Link prefetch={false}
                   href="/profile"
-                  className="relative hidden md:flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-sv-50 dark:hover:bg-gray-800 transition-all cursor-pointer border-2 border-transparent hover:border-sv-200"
+                  aria-label={`Din profil – ${student.name}`}
+                  title="Din profil"
+                  className="relative flex items-center justify-center gap-2 w-11 h-11 md:w-auto md:h-auto md:px-3 md:py-2 rounded-xl hover:bg-sv-50 dark:hover:bg-gray-800 transition-all cursor-pointer border-2 border-transparent hover:border-sv-200 touch-manipulation flex-shrink-0"
                 >
                   <EffectOverlay effectId={student.equippedEffect} size={40} count={6} />
                   <FramedAvatar avatar={av} frameId={student.equippedFrame} size={36} className="flex-shrink-0" />
                   {(() => {
                     const lvl = getLevel(student.totalPoints);
                     return (
-                      <span className="flex flex-col min-w-0" title={`Nivå ${lvl.level} · ${lvl.title}`}>
+                      <span className="hidden md:flex flex-col min-w-0" title={`Nivå ${lvl.level} · ${lvl.title}`}>
                         <span className="text-sm font-bold text-sv-800 dark:text-gray-200 leading-tight">{student.name}</span>
                         <span className="flex items-center gap-1.5">
                           <span className="text-[10px] font-black text-amber-700 dark:text-amber-400 leading-none">Nv {lvl.level}</span>
@@ -142,7 +160,7 @@ export default function Header({ student, onLogout }: HeaderProps) {
             {/* Dark mode */}
             <button
               onClick={toggle}
-              className="p-2.5 rounded-xl text-sv-800 dark:text-gray-300 hover:bg-sv-50 dark:hover:bg-gray-800 hover:text-sv-800 transition-all touch-manipulation cursor-pointer border-2 border-transparent hover:border-sv-200"
+              className="flex items-center justify-center min-w-[44px] min-h-[44px] px-2 rounded-xl text-sv-800 dark:text-gray-300 hover:bg-sv-50 dark:hover:bg-gray-800 hover:text-sv-800 transition-all touch-manipulation cursor-pointer border-2 border-transparent hover:border-sv-200"
               aria-label={dark ? "Ljust läge" : "Mörkt läge"}
             >
               {dark ? "☀️" : "🌙"}
@@ -155,7 +173,8 @@ export default function Header({ student, onLogout }: HeaderProps) {
               aria-label="Om Svenskajakten"
               // Below 400px the row is full without it, and a page that
               // scrolls sideways is worse than a button one step further away:
-              // there the About page is still reached from the start screen.
+              // there it sits in the "🔗 Jaktlänkar" menu in the corner, which
+              // is on every page.
               className="hidden xs:flex items-center justify-center gap-1.5 min-w-[44px] min-h-[44px] px-2.5 rounded-xl text-sv-800 dark:text-gray-300 hover:bg-sv-50 dark:hover:bg-gray-800 transition-all touch-manipulation cursor-pointer border-2 border-transparent hover:border-sv-200"
             >
               <span aria-hidden="true">❓</span>

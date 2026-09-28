@@ -4,10 +4,10 @@ import { useState, useEffect, useCallback, useRef, use } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/ui/Header";
-import { loadStudent, awardGamePoints, type GameAward } from "@/lib/storage";
+import { loadStudent, awardGamePoints, hasDoneModuleToday, type GameAward } from "@/lib/storage";
 import { loadStageContent } from "@/lib/content";
-import { quizQuestionsFromContent, mergeUnique, type QuizQuestion } from "@/lib/gameContent";
-import GameAwardNote from "@/components/ui/GameAwardNote";
+import { quizQuestionsFromContent, mergeUnique, quizKey, dealQuiz, TIDSATTACK_POINTS_PER_CORRECT, type QuizQuestion } from "@/lib/gameContent";
+import GameAwardNote, { GameLockedScreen } from "@/components/ui/GameAwardNote";
 import { getStage } from "@/lib/stages";
 import type { StudentData } from "@/lib/types";
 
@@ -21,7 +21,7 @@ const QUESTIONS: Record<string, { q: string; options: string[]; correct: number 
     { q: "Vad sätts i slutet av en mening?", options: ["Komma", "Punkt", "Kolon", "Bindestreck"], correct: 1 },
     { q: "Hur börjar varje ny mening?", options: ["Med gemen", "Med siffra", "Med stor bokstav", "Med punkt"], correct: 2 },
     { q: "Vad är en VOKAL?", options: ["B, C, D", "A, E, I, O, U, Y, Å, Ä, Ö", "F, G, H", "Alla bokstäver"], correct: 1 },
-    { q: "Vad är ett SYNONYM?", options: ["Motsatsord", "Ord med liknande betydelse", "Felstavat ord", "Frågeord"], correct: 1 },
+    { q: "Vad är en SYNONYM?", options: ["Motsatsord", "Ord med liknande betydelse", "Felstavat ord", "Frågeord"], correct: 1 },
     { q: "Vad är ett RIM?", options: ["Ord som stavas lika", "Ord som slutar med samma ljud", "Ord med samma innebörd", "Långa ord"], correct: 1 },
     { q: "Vad används TALSTRECK till?", options: ["Att räkna", "Att markera vad någon säger", "Att avsluta meningar", "Att lista saker"], correct: 1 },
     { q: "Vad är en STAVELSE?", options: ["En bokstav", "En mening", "En del av ett ord med vokalljud", "En paragraf"], correct: 2 },
@@ -59,7 +59,7 @@ const QUESTIONS: Record<string, { q: string; options: string[]; correct: number 
     { q: "Vad är ett SYFTNINGSFEL?", options: ["Felaktig stavning", "Oklart vad ett pronomen syftar på", "Fel ordföljd", "Tempusfel"], correct: 1 },
     { q: "Vad inleder en BISATS?", options: ["Konjunktion", "Subjunktion", "Pronomen", "Preposition"], correct: 1 },
     { q: "Vad är en NOMINALFRAS?", options: ["En verbfras", "Substantiv med bestämningar", "En adverbfras", "En prepositionsfras"], correct: 1 },
-    { q: "Vad kallas en text med gemensamma drag?", options: ["Stil", "Ton", "Genre", "Register"], correct: 2 },
+    { q: "Vad kallas en typ av text med gemensamma drag?", options: ["Stil", "Ton", "Genre", "Register"], correct: 2 },
     { q: "Vad är FORMELLT SPRÅK?", options: ["Vardagligt och personligt", "Officiellt och neutralt", "Känslosamt och målande", "Enkelt och kortfattat"], correct: 1 },
     { q: "Vad är ett PARTICIP?", options: ["Verbets grundform", "Verbform som fungerar som adjektiv", "Verbets dåtidsform", "En bisats"], correct: 1 },
     { q: "Vad kallas en självständig sats?", options: ["Bisats", "Subjunktion", "Huvudsats", "Nominalfras"], correct: 2 },
@@ -86,15 +86,6 @@ const QUESTIONS: Record<string, { q: string; options: string[]; correct: number 
 
 const GAME_DURATION = 60;
 
-function shuffle<T>(arr: T[]): T[] {
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
-
 interface Props {
   params: Promise<{ stage: string }>;
 }
@@ -111,10 +102,12 @@ export default function TidsattackPage({ params }: Props) {
     setStudent(loadStudent());
     const seed = QUESTIONS[stageId] ?? QUESTIONS.lagstadiet;
     loadStageContent(stageId)
-      .then((content) => setQuestions(mergeUnique(seed, quizQuestionsFromContent(content), (q) => q.q.toLowerCase())))
+      .then((content) => setQuestions(mergeUnique(seed, quizQuestionsFromContent(content), quizKey)))
       .catch(() => setQuestions(seed));
   }, [stageId]);
   if (!stage) return notFound();
+  // The games open with the day's first chapter, as on the world's game tab.
+  if (questions && !hasDoneModuleToday(student)) return <GameLockedScreen stageId={stageId} emoji="⏱️" />;
   if (!questions) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-900">
@@ -133,7 +126,7 @@ function TidsattackGame({ stageId, stage, student, onStudentChange, deck }: {
   deck: QuizQuestion[];
 }) {
   const [phase, setPhase] = useState<"ready" | "playing" | "done">("ready");
-  const [questions, setQuestions] = useState(() => shuffle(deck));
+  const [questions, setQuestions] = useState(() => dealQuiz(deck));
   const [qIndex, setQIndex] = useState(0);
   const [timeLeft, setTimeLeft] = useState(GAME_DURATION);
   const [score, setScore] = useState(0);
@@ -143,6 +136,14 @@ function TidsattackGame({ stageId, stage, student, onStudentChange, deck }: {
   /** The option the pupil pressed, so a miss can be shown next to the right one. */
   const [picked, setPicked] = useState<number | null>(null);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  // The pause after an answer. Left running past the end of a round it used to
+  // skip question 1 of the next one, so it is cleared on start and unmount.
+  const advanceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const clearAdvance = useCallback(() => {
+    if (advanceRef.current) clearTimeout(advanceRef.current);
+    advanceRef.current = null;
+  }, []);
+  useEffect(() => clearAdvance, [clearAdvance]);
 
   const currentQ = questions[qIndex % questions.length];
 
@@ -160,20 +161,26 @@ function TidsattackGame({ stageId, stage, student, onStudentChange, deck }: {
 
   const endGame = useCallback(() => {
     if (timerRef.current) clearInterval(timerRef.current);
+    clearAdvance();
+    setFlash(null);
+    setPicked(null);
     setPhase("done");
-  }, []);
+  }, [clearAdvance]);
 
   useEffect(() => {
     if (phase === "playing") {
+      // The updater only counts down; ending the round is a side effect and
+      // belongs in the effect below, not inside a state updater.
       timerRef.current = setInterval(() => {
-        setTimeLeft(t => {
-          if (t <= 1) { endGame(); return 0; }
-          return t - 1;
-        });
+        setTimeLeft(t => Math.max(0, t - 1));
       }, 1000);
     }
     return () => { if (timerRef.current) clearInterval(timerRef.current); };
-  }, [phase, endGame]);
+  }, [phase]);
+
+  useEffect(() => {
+    if (phase === "playing" && timeLeft === 0) endGame();
+  }, [phase, timeLeft, endGame]);
 
   const answer = useCallback((idx: number) => {
     if (phase !== "playing") return;
@@ -181,28 +188,31 @@ function TidsattackGame({ stageId, stage, student, onStudentChange, deck }: {
     setFlash(isCorrect ? "correct" : "wrong");
     setPicked(idx);
     if (isCorrect) {
-      setScore(s => s + 10);
+      setScore(s => s + TIDSATTACK_POINTS_PER_CORRECT);
       setCorrect(c => c + 1);
     } else {
       setWrong(w => w + 1);
     }
     // A miss lingers long enough to read the right answer — otherwise the game
     // only tells the pupil they were wrong, never what was right.
-    setTimeout(() => {
+    clearAdvance();
+    advanceRef.current = setTimeout(() => {
+      advanceRef.current = null;
       setFlash(null);
       setPicked(null);
       setQIndex(i => i + 1);
     }, isCorrect ? 400 : 1300);
-  }, [phase, currentQ]);
+  }, [phase, currentQ, clearAdvance]);
 
   const start = () => {
     // Cleared so a replay banks its (reduced) score too. Leaving it set meant a
     // pupil who pressed "Spela igen" earned nothing, while one who reloaded the
     // page got full points for the very same round.
+    clearAdvance();
     awardedRef.current = false;
     setAward(null);
     setPhase("playing");
-    setQuestions(shuffle(deck)); // a fresh order every round
+    setQuestions(dealQuiz(deck)); // a fresh order, and fresh option order, every round
     setQIndex(0);
     setTimeLeft(GAME_DURATION);
     setScore(0);
@@ -226,7 +236,7 @@ function TidsattackGame({ stageId, stage, student, onStudentChange, deck }: {
           <div className="text-7xl mb-4">⏱️</div>
           <h1 className="text-3xl font-black text-gray-900 dark:text-gray-100 mb-2">Tidsattack!</h1>
           <p className="text-gray-500 dark:text-gray-300 mb-2">60 sekunder – svara på så många frågor du hinner!</p>
-          <p className="text-gray-600 dark:text-gray-300 text-sm mb-8">Rätt svar = 15 poäng. Snabba reflexer lönar sig!</p>
+          <p className="text-gray-600 dark:text-gray-300 text-sm mb-8">Rätt svar = {TIDSATTACK_POINTS_PER_CORRECT} poäng. Snabba reflexer lönar sig!</p>
           <button
             onClick={start}
             className={`w-full max-w-xs py-4 rounded-2xl font-black text-white text-xl cursor-pointer ${stage!.colorClass}`}

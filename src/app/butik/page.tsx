@@ -21,6 +21,7 @@ import {
 import { getAvatar, CATEGORY_LABELS } from "@/lib/avatars";
 import { SHOP_AVATARS, FRAMES, THEMES, EFFECTS, RARITY_META, groupAvatarsByCategory, groupThemesByCategory, THEME_CATEGORY_LABELS, getThemeClassName, getThemeWrapperClass, type Rarity } from "@/lib/shop";
 import ThemeBackdrop from "@/components/ui/ThemeBackdrop";
+import SaveWarning from "@/components/ui/SaveWarning";
 import { getThemeArt } from "@/lib/themeArt";
 import type { StudentData } from "@/lib/types";
 
@@ -156,6 +157,9 @@ export default function ButikPage() {
     <div className={`min-h-screen ${getThemeClassName(student.equippedTheme)} ${getThemeWrapperClass(student.equippedTheme)}`}>
       <ThemeBackdrop themeId={student.equippedTheme} />
       <Header student={student} />
+      <div className="max-w-5xl mx-auto px-4 [&:has(*)]:pt-3">
+        <SaveWarning />
+      </div>
 
       {/* Banner */}
       <div

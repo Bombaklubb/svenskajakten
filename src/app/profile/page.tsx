@@ -6,10 +6,12 @@ import Header from "@/components/ui/Header";
 import ProgressBar from "@/components/ui/ProgressBar";
 import { loadStudent, saveStudent, exportProgress, readProgressFile, getExistingProgress } from "@/lib/storage";
 import { STAGES } from "@/lib/stages";
+import { MODULE_COUNTS } from "@/lib/moduleCounts";
 import { ACHIEVEMENTS, ACHIEVEMENT_ICONS, isUnlocked } from "@/lib/achievements";
 import { getAvatar } from "@/lib/avatars";
 import { getThemeClassName, getThemeWrapperClass } from "@/lib/shop";
 import ThemeBackdrop from "@/components/ui/ThemeBackdrop";
+import SaveWarning from "@/components/ui/SaveWarning";
 import { getLevel, MAX_LEVEL } from "@/lib/levels";
 import FramedAvatar from "@/components/ui/FramedAvatar";
 import { NumberTicker } from "@/components/magicui/number-ticker";
@@ -63,6 +65,7 @@ export default function ProfilePage() {
       <Header student={student} />
 
       <main className="max-w-3xl mx-auto px-4 py-8 space-y-6">
+        <SaveWarning />
 
         {/* Profile hero */}
         <BlurFade delay={0}>
@@ -118,8 +121,11 @@ export default function ProfilePage() {
             <div className="space-y-3">
               {STAGES.map((stage, i) => {
                 const { completed, totalPoints, grammarMods, spellingMods } = getStageStats(stage.id);
-                const total = grammarMods.length + spellingMods.length;
-                const pct = total > 0 ? (completed / total) * 100 : 0;
+                // Every chapter in the world, all four kinds — the same things
+                // `completed` counts — not just the ones already started.
+                const total = MODULE_COUNTS[stage.id] ?? 0;
+                const pct = total > 0 ? Math.min(100, (completed / total) * 100) : 0;
+                const started = grammarMods.length + spellingMods.length;
 
                 return (
                   <BlurFade key={stage.id} delay={0.07 + i * 0.04}>
@@ -148,7 +154,7 @@ export default function ProfilePage() {
                           }
                           showPercent
                         />
-                        {total > 0 && (
+                        {started > 0 && (
                           <div className="mt-3 grid grid-cols-2 gap-2">
                             {[
                               { mods: grammarMods, label: "📝 Grammatik" },
@@ -296,14 +302,23 @@ export default function ProfilePage() {
                     try {
                       const incoming = await readProgressFile(file);
                       const existing = getExistingProgress(incoming.name);
-                      if (
-                        existing &&
-                        existing.totalPoints > incoming.totalPoints &&
-                        !window.confirm(
-                          `${incoming.name} har redan ${existing.totalPoints} poäng på den här datorn, ` +
-                          `men filen innehåller ${incoming.totalPoints}. Vill du ersätta det som finns?`
-                        )
-                      ) {
+                      // A login finds "Emma" for "emma", so the file lands on
+                      // that pupil rather than creating a near-duplicate.
+                      if (existing) incoming.name = existing.name;
+                      const switching = incoming.name !== student.name;
+                      const warnings: string[] = [];
+                      if (switching) {
+                        warnings.push(
+                          `Filen tillhör ${incoming.name}, inte ${student.name}. Om du läser in den loggas du in som ${incoming.name}.`
+                        );
+                      }
+                      if (existing) {
+                        warnings.push(
+                          `${existing.name} har redan ${existing.totalPoints} poäng på den här datorn och filen innehåller ${incoming.totalPoints}. ` +
+                          `Det som finns sparat ersätts.`
+                        );
+                      }
+                      if (warnings.length > 0 && !window.confirm(`${warnings.join("\n\n")}\n\nVill du fortsätta?`)) {
                         setImportMsg("Inläsningen avbröts – inget ändrades.");
                         return;
                       }

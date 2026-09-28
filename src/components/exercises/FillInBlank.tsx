@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import type { FillInBlankExercise } from "@/lib/types";
 import { getCorrectMessage } from "@/lib/feedback";
 import { isAnswerCorrect } from "@/lib/answers";
@@ -16,19 +16,33 @@ export default function FillInBlank({ exercise, onAnswer, isLast }: Props) {
   const [state, setState] = useState<"idle" | "correct" | "wrong">("idle");
   const [correctMsg, setCorrectMsg] = useState("");
   const [showHint, setShowHint] = useState(false);
+  // Move focus to "Nästa fråga" once the answer is shown, so Enter continues
+  // and a keyboard or screen-reader user lands on what comes next.
+  const nextRef = useRef<HTMLButtonElement>(null);
+  const answered = state !== "idle";
+  useEffect(() => {
+    if (answered) nextRef.current?.focus();
+  }, [answered]);
   const inputRef = useRef<HTMLInputElement>(null);
 
   const parts = exercise.question.split("___");
 
   function handleSubmit() {
     if (state !== "idle" || !input.trim()) return;
-    const correct = isAnswerCorrect(input, exercise.answer, exercise.alternativeAnswers, exercise.caseSensitive);
+    // The exercise itself carries the flags (caseSensitive, punctuationStrict)
+    // and the question, whose gapped word lets "häst" count for "h___st".
+    const correct = isAnswerCorrect(input, exercise.answer, exercise.alternativeAnswers, exercise);
     if (correct) setCorrectMsg(getCorrectMessage());
     setState(correct ? "correct" : "wrong");
   }
 
   function handleKeyDown(e: React.KeyboardEvent) {
-    if (e.key === "Enter") handleSubmit();
+    // preventDefault stops this Enter from also pressing "Nästa fråga",
+    // which takes focus as soon as the answer is shown.
+    if (e.key === "Enter") {
+      e.preventDefault();
+      handleSubmit();
+    }
   }
 
   const borderColor =
@@ -136,6 +150,7 @@ export default function FillInBlank({ exercise, onAnswer, isLast }: Props) {
       {state !== "idle" && (
         <div className="flex justify-end pt-2">
           <button
+            ref={nextRef}
             onClick={() => onAnswer(state === "correct")}
             className="btn-primary animate-slide-up"
             style={{ background: "linear-gradient(135deg, #006AA7, #004a75)" }}

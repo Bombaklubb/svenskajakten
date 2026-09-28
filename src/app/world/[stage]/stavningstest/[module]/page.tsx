@@ -6,19 +6,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/ui/Header";
 import ResultModal from "@/components/ui/ResultModal";
-import { loadStudent, saveStudent, saveModuleProgress, loadGamification, saveGamification, recordLastVisited } from "@/lib/storage";
-import {
-  chestsEarnedFromPoints,
-  chestsEarnedFromExercises,
-  chestsEarnedFromAchievements,
-  rollMysteryBox,
-  rollSurpriseMultiplier,
-  capNewChests,
-  bossWinsInStage,
-  getBossGate,
-  completedModulesInStage,
-} from "@/lib/gamification";
-import { ACHIEVEMENTS, isUnlocked } from "@/lib/achievements";
+import { loadStudent, recordLastVisited } from "@/lib/storage";
+import { finishChapter } from "@/lib/chapter";
+import { isAnswerCorrect } from "@/lib/answers";
+import { rollSurpriseMultiplier } from "@/lib/gamification";
 import MysteryBoxPopup from "@/components/ui/MysteryBoxPopup";
 import type { ChestType, MysteryBoxReward } from "@/lib/types";
 import { getStage } from "@/lib/stages";
@@ -27,6 +18,15 @@ import type { StudentData, StageContent, SpellingTimedModule } from "@/lib/types
 
 const POINTS_PER_CORRECT = 15;
 const DEFAULT_TIME_LIMIT = 150;
+/** Share of the words that must be right to pass the test. */
+const PASS_SHARE = 0.9;
+/** How long the right/wrong feedback stays up before the next word. */
+const FEEDBACK_MS = 600;
+
+/** Words needed to pass a test of this length. */
+function wordsToPass(total: number): number {
+  return Math.ceil(total * PASS_SHARE);
+}
 
 function getLetterHint(word: string): string {
   if (word.length <= 2) return word.split("").join(" ");
@@ -71,6 +71,10 @@ export default function StavningstestPage({ params }: Props) {
 
   const inputRef = useRef<HTMLInputElement>(null);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  // True while the feedback for an answer is on screen. The clock stands still
+  // then: the pupil has answered, and the 600 ms is the app's time, not theirs.
+  // It also means an answer given in the last second is always counted.
+  const pausedRef = useRef(false);
 
   useEffect(() => {
     const s = loadStudent();
@@ -92,6 +96,7 @@ export default function StavningstestPage({ params }: Props) {
   useEffect(() => {
     if (phase !== "playing") return;
     timerRef.current = setInterval(() => {
+      if (pausedRef.current) return;
       setTimeLeft((t) => {
         if (t <= 1) {
           clearInterval(timerRef.current!);
@@ -106,7 +111,7 @@ export default function StavningstestPage({ params }: Props) {
 
   // When time runs out, finish the test
   useEffect(() => {
-    if (!timesUp || phase !== "playing") return;
+    if (!timesUp || phase !== "playing" || finishedRef.current) return;
     // Fill remaining words as wrong
     const remaining = (mod?.words.length ?? 0) - currentIndex;
     const finalResults = [...results, ...Array(remaining).fill(false)];
@@ -140,104 +145,68 @@ export default function StavningstestPage({ params }: Props) {
   function finishTest(finalResults: boolean[]) {
     if (phase === "done" || finishedRef.current) return;
     finishedRef.current = true;
+    clearInterval(timerRef.current!);
     setPhase("done");
     const totalCorrect = finalResults.filter(Boolean).length;
-    const passed = totalCorrect === totalWords; // must get ALL correct
+    const passed = totalCorrect >= wordsToPass(totalWords);
     const pts = passed ? totalCorrect * POINTS_PER_CORRECT + (mod?.bonusPoints ?? 0) : totalCorrect * POINTS_PER_CORRECT;
     const surprise = rollSurpriseMultiplier();
     setSurpriseMult(surprise);
 
     if (student && mod) {
-      const wasAlreadyCompleted = student.stages[stage!.id]?.stavningstestModules?.[mod.id]?.completed ?? false;
-      setPrevAttemptCount(student.stages[stage!.id]?.stavningstestModules?.[mod.id]?.attempts ?? 0);
-      const updated = saveModuleProgress(student, stage!.id, "stavningstest", mod.id, pts * surprise, passed);
-      setStudent(updated);
-
-      const gam = loadGamification();
-      const prevPoints = student.totalPoints;
-      const newPoints = updated.totalPoints;
-      const prevExercises = gam.exercisesCompleted;
-      const newExercises = prevExercises + 1;
-
-      const pointChests = chestsEarnedFromPoints(prevPoints, newPoints, gam.pointsMilestonesRewarded);
-      const exChests = chestsEarnedFromExercises(prevExercises, newExercises, gam.exerciseMilestonesRewarded);
-      const prevUnlocked = ACHIEVEMENTS.filter((a) => isUnlocked(a, student)).map((a) => a.id);
-      const nowUnlocked = ACHIEVEMENTS.filter((a) => isUnlocked(a, updated)).map((a) => a.id);
-      const achChests = chestsEarnedFromAchievements(prevUnlocked, nowUnlocked, gam.achievementsRewarded ?? []);
-
-      const allNewChests = [
-        ...pointChests.map((c) => c.chest),
-        ...exChests.map((c) => c.chest),
-        ...achChests.map((c) => c.chest),
-      ];
-      const firstChest = allNewChests[0];
-      // The boss belongs to this world now: the fanfare fires when this very
-      // chapter brought the world up to its next ten.
-      const winsHere = bossWinsInStage(gam, stage!.id);
-      const gateBefore = getBossGate(completedModulesInStage(student, stage!.id), winsHere);
-      const gateAfter = getBossGate(completedModulesInStage(updated, stage!.id), winsHere);
-      const nowBossUnlocked = gam.bossUnlocked || gateAfter.unlocked;
-      const bossOpenedNow = !gateBefore.unlocked && gateAfter.unlocked;
-
-      const mystery = wasAlreadyCompleted ? null : rollMysteryBox(gam.badges);
-      const extraMysteryChest =
-        mystery?.type === "chest" && mystery.chestType
-          ? [{ id: `chest_m_${Date.now()}`, type: mystery.chestType, earnedAt: new Date().toISOString(), opened: false } as import("@/lib/types").Chest]
-          : [];
-      const mysteryBadge = mystery?.type === "badge" && mystery.badgeId ? mystery.badgeId : null;
-      const mysteryPoints = mystery?.type === "points" && mystery.points ? mystery.points : 0;
-
-      saveGamification({
-        ...gam,
-        chests: [...gam.chests, ...capNewChests(gam.chests, [...allNewChests, ...extraMysteryChest])],
-        badges: mysteryBadge && !gam.badges.includes(mysteryBadge) ? [...gam.badges, mysteryBadge] : gam.badges,
-        exercisesCompleted: newExercises,
-        bossUnlocked: nowBossUnlocked,
-        pointsMilestonesRewarded: [...gam.pointsMilestonesRewarded, ...pointChests.map((c) => c.milestone)],
-        exerciseMilestonesRewarded: [...gam.exerciseMilestonesRewarded, ...exChests.map((c) => c.milestone)],
-        achievementsRewarded: [...(gam.achievementsRewarded ?? []), ...achChests.map((c) => c.achievementId)],
+      // Saving, chests, the boss gate and the mystery box all live in
+      // finishChapter so the four chapter kinds pay out by the same rules.
+      const outcome = finishChapter({
+        stageId: stage!.id,
+        kind: "stavningstest",
+        moduleId: mod.id,
+        points: pts * surprise,
+        passed,
       });
-
-      if (mysteryPoints > 0) {
-        const withMystery = { ...updated, totalPoints: updated.totalPoints + mysteryPoints };
-        saveStudent(withMystery);
-        setStudent(withMystery);
-      }
-      if (firstChest) setChestEarned(firstChest.type as ChestType);
-      if (bossOpenedNow) setBossJustUnlocked(true);
-      if (mystery) setMysteryBox(mystery);
+      setPrevAttemptCount(outcome.prevAttempts);
+      if (outcome.student) setStudent(outcome.student);
+      setChestEarned(outcome.chestEarned);
+      setBossJustUnlocked(outcome.bossOpenedNow);
+      setMysteryBox(outcome.mystery);
     }
     setResults(finalResults);
     setShowResult(true);
   }
 
   function handleSubmit() {
-    if (!currentWord || feedback) return;
-    const correct = input.trim().toLowerCase() === currentWord.word.toLowerCase();
+    if (!currentWord || feedback || finishedRef.current || timesUp) return;
+    const correct = isAnswerCorrect(input, currentWord.word);
+    pausedRef.current = true;
     setFeedback(correct ? "correct" : "wrong");
 
     setTimeout(() => {
+      pausedRef.current = false;
+      // The test may have ended another way meanwhile; never overwrite it.
+      if (finishedRef.current) return;
       const newResults = [...results, correct];
       setFeedback(null);
       setInput("");
 
       if (currentIndex + 1 >= totalWords) {
-        clearInterval(timerRef.current!);
         finishTest(newResults);
       } else {
         setResults(newResults);
         setCurrentIndex((i) => i + 1);
         setHintUsed(false);
       }
-    }, 600);
+    }, FEEDBACK_MS);
   }
 
   function handleKeyDown(e: React.KeyboardEvent) {
-    if (e.key === "Enter") handleSubmit();
+    if (e.key === "Enter") {
+      e.preventDefault();
+      handleSubmit();
+    }
   }
 
   function handleRetry() {
     finishedRef.current = false;
+    pausedRef.current = false;
     setCurrentIndex(0);
     setResults([]);
     setInput("");
@@ -248,6 +217,8 @@ export default function StavningstestPage({ params }: Props) {
     setChestEarned(undefined);
     setBossJustUnlocked(false);
     setMysteryBox(null);
+    setSurpriseMult(1);
+    setPrevAttemptCount(0);
     setHintUsed(false);
     setPhase("intro");
   }
@@ -266,6 +237,7 @@ export default function StavningstestPage({ params }: Props) {
   }
 
   const totalCorrect = results.filter(Boolean).length;
+  const testPassed = totalCorrect >= wordsToPass(totalWords);
   const earnedPoints = totalCorrect * POINTS_PER_CORRECT;
   const progress = totalWords > 0 ? (currentIndex / totalWords) * 100 : 0;
   const timerPercent = (timeLeft / timeLimit) * 100;
@@ -306,11 +278,11 @@ export default function StavningstestPage({ params }: Props) {
 
             <ul className="space-y-2.5">
               {[
-                `Du får ${timeLimit} sekunder på dig att stava ${totalWords} ord.`,
+                `Du får ${timeLimit} sekunder på dig att stava ${totalWords} ord. Klockan står still medan du ser om du svarade rätt.`,
                 "Läs ledtråden och skriv ordet med rätt stavning.",
                 "Tryck på Enter eller klicka på knappen för att svara.",
                 "Fastnar du? Tryck på 💡 Visa ledtråd för att se första och sista bokstaven.",
-                "Du måste ha ALLA rätt för att klara testet och få bonuspoäng.",
+                `Du behöver minst ${wordsToPass(totalWords)} av ${totalWords} rätt (90 %) för att klara testet och få bonuspoäng.`,
               ].map((tip, i) => (
                 <li
                   key={i}
@@ -472,7 +444,8 @@ export default function StavningstestPage({ params }: Props) {
                 placeholder="Skriv ordet här..."
                 className="w-full border-2 border-gray-200 dark:border-gray-600 rounded-xl px-4 py-3 text-base font-medium text-center text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-700 focus:outline-none focus:border-sv-400 dark:focus:border-sv-500 transition-colors"
                 autoComplete="off"
-                autoCapitalize="none"
+                autoCorrect="off"
+                autoCapitalize="off"
                 spellCheck={false}
               />
               <button
@@ -504,15 +477,17 @@ export default function StavningstestPage({ params }: Props) {
           bossUnlocked={bossJustUnlocked}
           onContinue={handleContinue}
           onRetry={handleRetry}
-          passedOverride={totalCorrect === totalWords}
+          passedOverride={testPassed}
           prevAttempts={prevAttemptCount}
           surpriseMultiplier={surpriseMult}
           subtitle={
             totalCorrect === totalWords
               ? "🎉 Perfekt! Alla ord rätt – testet klarat!"
+              : testPassed
+              ? `🎉 Du fick ${totalCorrect} av ${totalWords} rätt – testet klarat!`
               : timesUp
-              ? `⏰ Tiden tog slut! Du fick ${totalCorrect} av ${totalWords} rätt. Du behöver alla rätt för att klara testet.`
-              : `Du fick ${totalWords - totalCorrect} fel. Du behöver alla rätt för att klara testet!`
+              ? `⏰ Tiden tog slut! Du fick ${totalCorrect} av ${totalWords} rätt. Du behöver minst ${wordsToPass(totalWords)} rätt för att klara testet.`
+              : `Du fick ${totalCorrect} av ${totalWords} rätt. Du behöver minst ${wordsToPass(totalWords)} rätt för att klara testet!`
           }
         />
       )}
