@@ -316,7 +316,7 @@ export default function OmPage() {
             eller svårighetsgraden.
           </p>
           <ul className="space-y-1.5 list-disc pl-5 marker:text-emerald-500">
-            <li><strong>Figurer</strong> – din avatar. 96 stycken, 100–5 000 poäng.</li>
+            <li><strong>Figurer</strong> – din avatar. 136 stycken, 100–5 000 poäng.</li>
             <li><strong>Ramar</strong> – en ram runt figuren. 14 stycken, 100–2 500 poäng.</li>
             <li><strong>Teman</strong> – en tecknad bakgrund i hela appen. 49 stycken, 100–2 500 poäng.</li>
             <li><strong>Effekter</strong> – rörelse och glitter runt figuren. 17 stycken, 100–2 500 poäng.</li>

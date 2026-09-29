@@ -15,6 +15,8 @@ const CATEGORY_TINT: Record<AvatarCategory, string> = {
   roligt: "#fbcfe8",
   sasong: "#fed7aa",
   fantasi: "#e9d5ff",
+  scifi: "#a5f3fc",
+  klassiker: "#e0e7ff",
 };
 
 export function avatarTint(av: Avatar): string {

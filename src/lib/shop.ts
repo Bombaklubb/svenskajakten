@@ -137,6 +137,54 @@ const AVATAR_RARITY: Record<string, Rarity> = {
   diamonddragon: "mytisk",
   galaxyhero: "mytisk",
   legendwizard: "mytisk",
+
+  // Djur (nya)
+  trex: "sallsynt",
+  longneck: "sallsynt",
+  octopus: "ovanlig",
+  flamingo: "ovanlig",
+  llama: "ovanlig",
+  raccoon: "ovanlig",
+  moose: "sallsynt",
+  otter: "ovanlig",
+
+  // Roligt (nya)
+  clown: "ovanlig",
+  zanyface: "ovanlig",
+  disguise: "sallsynt",
+  coolface: "sallsynt",
+  meltingface: "sallsynt",
+  partyface: "sallsynt",
+  mindblown: "episk",
+  tooth: "vanlig",
+  socks: "vanlig",
+  cheese: "vanlig",
+  avocado: "vanlig",
+
+  // Fantasi (nya)
+  witch: "episk",
+  merman: "episk",
+  elfwoman: "episk",
+  wolf: "sallsynt",
+  castle: "sallsynt",
+  crown: "legendarisk",
+  dagger: "sallsynt",
+  swords: "episk",
+  bow: "sallsynt",
+  volcano: "episk",
+
+  // Rymd & sci-fi
+  alien: "sallsynt",
+  rocket: "ovanlig",
+  satellite: "sallsynt",
+  ringplanet: "legendarisk",
+  comet: "episk",
+  telescope: "ovanlig",
+  robotleg: "sallsynt",
+  dna: "episk",
+  atom: "episk",
+  earth: "ovanlig",
+  fullmoon: "sallsynt",
 };
 
 export interface ShopAvatar extends Avatar {
@@ -156,13 +204,14 @@ export function getShopAvatar(id: string): ShopAvatar | undefined {
 // ─── Category groups ─────────────────────────────────────────────────────────────
 // Order in which categories appear in the shop.
 
-export const CATEGORY_ORDER: AvatarCategory[] = ["utvalda", "djur", "skoltema", "fordon", "yrken", "roligt", "sasong", "fantasi"];
+export const CATEGORY_ORDER: AvatarCategory[] = ["utvalda", "klassiker", "djur", "roligt", "fantasi", "scifi", "skoltema", "fordon", "yrken", "sasong"];
 
 export function groupAvatarsByCategory(avatars: ShopAvatar[]): { category: AvatarCategory; items: ShopAvatar[] }[] {
   return CATEGORY_ORDER.map((category) => ({
     category,
     items: avatars
-      .filter((a) => (a.category ?? "fantasi") === category)
+      // The original starter figures carry no category; they get their own heading.
+      .filter((a) => (a.category ?? "klassiker") === category)
       .sort((a, b) => a.price - b.price),
   })).filter((g) => g.items.length > 0);
 }

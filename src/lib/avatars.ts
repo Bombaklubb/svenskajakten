@@ -1,4 +1,4 @@
-export type AvatarCategory = "utvalda" | "djur" | "skoltema" | "fordon" | "yrken" | "roligt" | "sasong" | "fantasi";
+export type AvatarCategory = "utvalda" | "djur" | "skoltema" | "fordon" | "yrken" | "roligt" | "sasong" | "fantasi" | "scifi" | "klassiker";
 
 export interface Avatar {
   id: string;
@@ -18,6 +18,8 @@ export const CATEGORY_LABELS: Record<AvatarCategory, string> = {
   roligt: "Roligt",
   sasong: "Säsong",
   fantasi: "Fantasi",
+  scifi: "Rymd & sci-fi",
+  klassiker: "Klassiska figurer",
 };
 
 // Every avatar is drawn from the emoji in the sprite sheet (see
@@ -61,14 +63,22 @@ export const AVATARS: Avatar[] = [
   { id: "eightbit",    emoji: "🕹️",  name: "Joysticken",        category: "utvalda" },
 
   // ─── Djur ───────────────────────────────────────────────────────────────
-  { id: "puppy",       emoji: "🐶",  name: "Valpen",     category: "djur" },
-  { id: "kitten",      emoji: "🐱",  name: "Kattungen",  category: "djur" },
+  { id: "puppy",       emoji: "🐶",  name: "Hunden",     category: "djur" },
+  { id: "kitten",      emoji: "🐱",  name: "Katten",     category: "djur" },
   { id: "bunny",       emoji: "🐰",  name: "Kaninen",    category: "djur" },
   { id: "chick",       emoji: "🐥",  name: "Kycklingen", category: "djur" },
   { id: "penguin",     emoji: "🐧",  name: "Pingvinen",  category: "djur" },
   { id: "koala",       emoji: "🐨",  name: "Koalan",     category: "djur" },
   { id: "zebra",       emoji: "🦓",  name: "Zebran",     category: "djur" },
   { id: "giraffe",     emoji: "🦒",  name: "Giraffen",   category: "djur" },
+  { id: "trex",        emoji: "🦖",  name: "T-rexen",       category: "djur" },
+  { id: "longneck",    emoji: "🦕",  name: "Långhalsdinon", category: "djur" },
+  { id: "octopus",     emoji: "🐙",  name: "Bläckfisken",   category: "djur" },
+  { id: "flamingo",    emoji: "🦩",  name: "Flamingon",     category: "djur" },
+  { id: "llama",       emoji: "🦙",  name: "Laman",         category: "djur" },
+  { id: "raccoon",     emoji: "🦝",  name: "Tvättbjörnen",  category: "djur" },
+  { id: "moose",       emoji: "🫎",  name: "Älgen",         category: "djur" },
+  { id: "otter",       emoji: "🦦",  name: "Uttern",        category: "djur" },
 
   // ─── Skoltema ───────────────────────────────────────────────────────────
   { id: "bookworm",    emoji: "🧑‍🎓", name: "Studenten",   category: "skoltema" },
@@ -120,9 +130,20 @@ export const AVATARS: Avatar[] = [
   { id: "hotdogboss",    emoji: "🌭",  name: "Varmkorven",      category: "roligt" },
   { id: "wobblyjelly",   emoji: "🍮",  name: "Puddingen",       category: "roligt" },
   { id: "spicypepper",   emoji: "🌶️", name: "Chilipepparn",    category: "roligt" },
+  { id: "clown",         emoji: "🤡",  name: "Clownen",               category: "roligt" },
+  { id: "zanyface",      emoji: "🤪",  name: "Tokiga ansiktet",       category: "roligt" },
+  { id: "disguise",      emoji: "🥸",  name: "Förklädnaden",          category: "roligt" },
+  { id: "coolface",      emoji: "😎",  name: "Coola ansiktet",        category: "roligt" },
+  { id: "meltingface",   emoji: "🫠",  name: "Smältande ansiktet",    category: "roligt" },
+  { id: "partyface",     emoji: "🥳",  name: "Festansiktet",          category: "roligt" },
+  { id: "mindblown",     emoji: "🤯",  name: "Exploderande huvudet",  category: "roligt" },
+  { id: "tooth",         emoji: "🦷",  name: "Tanden",                category: "roligt" },
+  { id: "socks",         emoji: "🧦",  name: "Strumporna",            category: "roligt" },
+  { id: "cheese",        emoji: "🧀",  name: "Osten",                 category: "roligt" },
+  { id: "avocado",       emoji: "🥑",  name: "Avokadon",              category: "roligt" },
 
   // ─── Säsong ─────────────────────────────────────────────────────────────
-  { id: "easterbunny",   emoji: "🐇",  name: "Haren",             category: "sasong" },
+  { id: "easterbunny",   emoji: "🐇",  name: "Vita kaninen",      category: "sasong" },
   { id: "summerpirate",  emoji: "🏖️",  name: "Sommarstranden",    category: "sasong" },
   { id: "halloween",     emoji: "🎃",  name: "Halloweenpumpan",   category: "sasong" },
   { id: "santa",         emoji: "🎅",  name: "Jultomten",         category: "sasong" },
@@ -137,6 +158,29 @@ export const AVATARS: Avatar[] = [
   { id: "diamonddragon", emoji: "💎",  name: "Diamanten",     category: "fantasi" },
   { id: "galaxyhero",    emoji: "🌌",  name: "Vintergatan",   category: "fantasi" },
   { id: "legendwizard",  emoji: "🔮",  name: "Kristallkulan", category: "fantasi" },
+  { id: "witch",         emoji: "🧙‍♀️", name: "Häxan",          category: "fantasi" },
+  { id: "merman",        emoji: "🧜‍♂️", name: "Havsmannen",     category: "fantasi" },
+  { id: "elfwoman",      emoji: "🧝‍♀️", name: "Alvkvinnan",     category: "fantasi" },
+  { id: "wolf",          emoji: "🐺",  name: "Vargen",          category: "fantasi" },
+  { id: "castle",        emoji: "🏰",  name: "Slottet",         category: "fantasi" },
+  { id: "crown",         emoji: "👑",  name: "Kronan",          category: "fantasi" },
+  { id: "dagger",        emoji: "🗡️",  name: "Dolken",          category: "fantasi" },
+  { id: "swords",        emoji: "⚔️",  name: "Korsade svärden", category: "fantasi" },
+  { id: "bow",           emoji: "🏹",  name: "Pilbågen",        category: "fantasi" },
+  { id: "volcano",       emoji: "🌋",  name: "Vulkanen",        category: "fantasi" },
+
+  // ─── Rymd & sci-fi ──────────────────────────────────────────────────────
+  { id: "alien",         emoji: "👽",  name: "Utomjordingen",   category: "scifi" },
+  { id: "rocket",        emoji: "🚀",  name: "Raketen",         category: "scifi" },
+  { id: "satellite",     emoji: "🛰️",  name: "Satelliten",      category: "scifi" },
+  { id: "ringplanet",    emoji: "🪐",  name: "Ringplaneten",    category: "scifi" },
+  { id: "comet",         emoji: "☄️",  name: "Kometen",         category: "scifi" },
+  { id: "telescope",     emoji: "🔭",  name: "Teleskopet",      category: "scifi" },
+  { id: "robotleg",      emoji: "🦿",  name: "Robotbenet",      category: "scifi" },
+  { id: "dna",           emoji: "🧬",  name: "DNA-spiralen",    category: "scifi" },
+  { id: "atom",          emoji: "⚛️",  name: "Atomen",          category: "scifi" },
+  { id: "earth",         emoji: "🌍",  name: "Jordklotet",      category: "scifi" },
+  { id: "fullmoon",      emoji: "🌕",  name: "Fullmånen",       category: "scifi" },
 ];
 
 export function getAvatar(id: string): Avatar {
