@@ -350,7 +350,7 @@ export default function OmPage() {
 
         <Section emoji="👤" title="Profil och märken">
           <p>
-            Klicka på din figur uppe till höger för att se din statistik: nivå, poäng per värld och
+            Klicka på din figur uppe till höger för att se dina framsteg: nivå, poäng per värld och
             avklarade kapitel. Där finns också <strong>märkena</strong> – för de första stegen, för
             grammatik, stavning och spel, för att vara flitig, och några som är svårare att lista ut.
           </p>
@@ -394,13 +394,6 @@ export default function OmPage() {
               <strong>Allt sparas på den enhet du använder</strong> – namn, poäng, märken, kistor och
               köp. Byter du dator eller webbläsare börjar du om från noll, och rensar du webbläsarens
               data försvinner allt.
-            </li>
-            <li>
-              <strong>Det här skickas till servern</strong>, för lärarens statistik: ett slumpat
-              anonymt ID för enheten och webbläsarfliken, antal rätta svar per värld, och vilka frågor
-              som besvaras fel – kapitlets namn och frågans text, men aldrig vad du svarade. Ingenting
-              av det innehåller ditt namn eller går att koppla till dig. Statistiken om fel frågor
-              raderas efter 90 dagar utan nya fel.
             </li>
             <li>
               Flera elever kan dela samma enhet. Var och en skriver sitt eget namn och har egna poäng,
