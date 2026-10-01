@@ -33,12 +33,12 @@ export default function MysteryBoxPopup({ reward, onClose }: MysteryBoxPopupProp
 
   return (
     <div
-      className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[60] p-4 animate-fade-in"
+      className="fixed inset-0 bg-black/60 backdrop-blur-sm flex overflow-y-auto overscroll-contain z-[60] p-3 sm:p-4 animate-fade-in"
       role="dialog"
       aria-modal="true"
     >
       <div
-        className="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-8 max-w-sm w-full text-center"
+        className="m-auto bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-6 sm:p-8 max-w-sm w-full text-center"
         style={{
           border: "3px solid #006AA7",
           boxShadow: "0 8px 32px rgba(0,106,167,0.3), 0 2px 8px rgba(0,0,0,0.2)",

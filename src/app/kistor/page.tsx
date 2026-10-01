@@ -120,9 +120,9 @@ interface RewardResult { title?: string; description: string; points: number; }
 
 function RewardPopup({ result, onClose }: { result: RewardResult; onClose: () => void }) {
   return (
-    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fade-in">
+    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex overflow-y-auto overscroll-contain z-50 p-3 sm:p-4 animate-fade-in">
       <div
-        className="bg-white dark:bg-gray-800 rounded-4xl p-8 max-w-sm w-full text-center border-3 border-amber-300"
+        className="m-auto bg-white dark:bg-gray-800 rounded-4xl p-6 sm:p-8 max-w-sm w-full text-center border-3 border-amber-300"
         style={{ boxShadow: "0 8px 0 0 rgba(245,158,11,0.3), 0 16px 32px -8px rgba(245,158,11,0.25)" }}
       >
         <div className="text-6xl mb-4 animate-bounce-slow">🎉</div>

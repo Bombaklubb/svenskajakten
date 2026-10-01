@@ -82,30 +82,30 @@ export default function ResultModal({
 
   return (
     <div
-      className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fade-in"
+      className="fixed inset-0 bg-black/50 backdrop-blur-sm flex overflow-y-auto overscroll-contain z-50 px-3 pt-3 sm:px-4 sm:pt-4 animate-fade-in"
       role="dialog"
       aria-modal="true"
       aria-labelledby="resultat-rubrik"
     >
       <div
-        className="bg-white dark:bg-gray-800 rounded-4xl p-8 max-w-md w-full text-center animate-slide-up border-3 border-sv-100 dark:border-gray-700"
+        className="m-auto bg-white dark:bg-gray-800 rounded-4xl px-5 pt-5 sm:px-8 sm:pt-8 max-w-md w-full text-center animate-slide-up border-3 border-sv-100 dark:border-gray-700"
         style={{
           boxShadow: "0 10px 0 0 rgba(249,115,22,0.12), 0 20px 40px -8px rgba(249,115,22,0.2), inset 0 4px 8px 0 rgba(255,255,255,0.8)"
         }}
       >
-        <div className="text-7xl mb-4 animate-bounce-slow">{passed ? "🎉" : "💪"}</div>
+        <div className="text-6xl sm:text-7xl mb-2 sm:mb-4 animate-bounce-slow">{passed ? "🎉" : "💪"}</div>
 
         <h2 id="resultat-rubrik" className="text-3xl font-black text-sv-900 dark:text-gray-100 mb-2">
           {passed ? "Bra jobbat!" : "Försök igen!"}
         </h2>
-        <p className="text-sv-800 dark:text-gray-300 mb-6 text-base font-medium">
+        <p className="text-sv-800 dark:text-gray-300 mb-4 sm:mb-6 text-base font-medium">
           {subtitle ?? (passed
             ? "Du klarade övningen med godkänt resultat."
             : "Du är nästan framme – öva lite till!")}
         </p>
 
         {/* Score ring */}
-        <div className="flex justify-center mb-6">
+        <div className="flex justify-center mb-4 sm:mb-6">
           <div
             className={`w-32 h-32 rounded-full flex flex-col items-center justify-center border-4 ${
               passed
@@ -200,7 +200,10 @@ export default function ResultModal({
           </div>
         )}
 
-        <div className="flex gap-3 mt-6">
+        {/* The buttons stick to the bottom of the screen while the card scrolls,
+            so they are always reachable — a result with many boxes (replay,
+            lucky bonus, chest, boss) is taller than a Chromebook screen. */}
+        <div className="sticky bottom-0 -mx-5 sm:-mx-8 mt-4 px-5 sm:px-8 pt-3 pb-5 sm:pb-8 flex gap-3 bg-white dark:bg-gray-800 rounded-b-4xl shadow-[0_-10px_14px_-10px_rgba(0,0,0,0.18)]">
           <Button variant="outline" onClick={onRetry} className="flex-1 border-sv-200 text-sv-800 dark:text-gray-200">
             🔄 Försök igen
           </Button>
