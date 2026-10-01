@@ -120,9 +120,9 @@ interface RewardResult { title?: string; description: string; points: number; }
 
 function RewardPopup({ result, onClose }: { result: RewardResult; onClose: () => void }) {
   return (
-    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex overflow-y-auto overscroll-contain z-50 p-3 sm:p-4 animate-fade-in">
+    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex overflow-y-auto overscroll-contain z-50 px-3 pt-3 sm:px-4 sm:pt-4 animate-fade-in">
       <div
-        className="m-auto bg-white dark:bg-gray-800 rounded-4xl p-6 sm:p-8 max-w-sm w-full text-center border-3 border-amber-300"
+        className="m-auto bg-white dark:bg-gray-800 rounded-4xl px-6 pt-6 sm:px-8 sm:pt-8 max-w-sm w-full text-center border-3 border-amber-300"
         style={{ boxShadow: "0 8px 0 0 rgba(245,158,11,0.3), 0 16px 32px -8px rgba(245,158,11,0.25)" }}
       >
         <div className="text-6xl mb-4 animate-bounce-slow">🎉</div>
@@ -132,14 +132,18 @@ function RewardPopup({ result, onClose }: { result: RewardResult; onClose: () =>
         <p className="text-base font-semibold text-sv-800 dark:text-gray-100 mb-6 leading-relaxed whitespace-pre-line">
           {result.description}
         </p>
-        <button
-          autoFocus
-          onClick={onClose}
-          className="w-full btn-primary border-3 border-amber-400 text-lg"
-          style={{ background: "linear-gradient(135deg, #f59e0b, #d97706)" }}
-        >
-          Toppen! ✓
-        </button>
+        {/* Sticks to the bottom of the screen when many chests and badges make
+            the card taller than the window, like the chapter result does. */}
+        <div className="sticky bottom-0 -mx-6 sm:-mx-8 px-6 sm:px-8 pt-3 pb-6 sm:pb-8 bg-white dark:bg-gray-800 rounded-b-4xl">
+          <button
+            autoFocus
+            onClick={onClose}
+            className="w-full btn-primary border-3 border-amber-400 text-lg"
+            style={{ background: "linear-gradient(135deg, #f59e0b, #d97706)" }}
+          >
+            Toppen! ✓
+          </button>
+        </div>
       </div>
     </div>
   );

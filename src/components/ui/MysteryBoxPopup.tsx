@@ -33,12 +33,12 @@ export default function MysteryBoxPopup({ reward, onClose }: MysteryBoxPopupProp
 
   return (
     <div
-      className="fixed inset-0 bg-black/60 backdrop-blur-sm flex overflow-y-auto overscroll-contain z-[60] p-3 sm:p-4 animate-fade-in"
+      className="fixed inset-0 bg-black/60 backdrop-blur-sm flex overflow-y-auto overscroll-contain z-[60] px-3 pt-3 sm:px-4 sm:pt-4 animate-fade-in"
       role="dialog"
       aria-modal="true"
     >
       <div
-        className="m-auto bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-6 sm:p-8 max-w-sm w-full text-center"
+        className="m-auto bg-white dark:bg-gray-800 rounded-3xl shadow-2xl px-6 pt-6 sm:px-8 sm:pt-8 max-w-sm w-full text-center"
         style={{
           border: "3px solid #006AA7",
           boxShadow: "0 8px 32px rgba(0,106,167,0.3), 0 2px 8px rgba(0,0,0,0.2)",
@@ -55,6 +55,7 @@ export default function MysteryBoxPopup({ reward, onClose }: MysteryBoxPopupProp
             <p className="text-gray-500 dark:text-gray-300 mb-6 text-sm">
               Du hittade en mysterykista! Klicka för att öppna den.
             </p>
+            <div className="sticky bottom-0 -mx-6 sm:-mx-8 px-6 sm:px-8 pt-3 pb-6 sm:pb-8 bg-white dark:bg-gray-800 rounded-b-3xl">
             <button
               autoFocus
               onClick={() => setOpened(true)}
@@ -67,6 +68,7 @@ export default function MysteryBoxPopup({ reward, onClose }: MysteryBoxPopupProp
             >
               Öppna kistan!
             </button>
+            </div>
           </>
         ) : (
           <>
@@ -86,6 +88,7 @@ export default function MysteryBoxPopup({ reward, onClose }: MysteryBoxPopupProp
             <p className="text-lg font-bold text-gray-800 dark:text-gray-100 mb-6">
               {reward.description}
             </p>
+            <div className="sticky bottom-0 -mx-6 sm:-mx-8 px-6 sm:px-8 pt-3 pb-6 sm:pb-8 bg-white dark:bg-gray-800 rounded-b-3xl">
             <button
               autoFocus
               onClick={onClose}
@@ -98,6 +101,7 @@ export default function MysteryBoxPopup({ reward, onClose }: MysteryBoxPopupProp
             >
               Häftigt! Fortsätt →
             </button>
+            </div>
           </>
         )}
       </div>
