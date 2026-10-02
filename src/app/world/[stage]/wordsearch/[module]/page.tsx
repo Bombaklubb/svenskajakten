@@ -10,6 +10,7 @@ import { loadStudent, recordLastVisited } from "@/lib/storage";
 import { finishChapter } from "@/lib/chapter";
 import { rollSurpriseMultiplier, getPointsMultiplier } from "@/lib/gamification";
 import { CHEST_LABELS, CHEST_IMAGES, BOSS_UNLOCKED_TEXT } from "@/components/ui/ResultModal";
+import SecretMissionOffer from "@/components/ui/SecretMissionOffer";
 import SaveWarning from "@/components/ui/SaveWarning";
 import MysteryBoxPopup from "@/components/ui/MysteryBoxPopup";
 import { BlurFade } from "@/components/magicui/blur-fade";
@@ -37,6 +38,7 @@ export default function WordSearchModulePage({ params }: Props) {
   const [earnedPoints, setEarnedPoints] = useState(0);
   const [chestEarned, setChestEarned] = useState<ChestType | undefined>();
   const [bossJustUnlocked, setBossJustUnlocked] = useState(false);
+  const [missionOffered, setMissionOffered] = useState(false);
   const [mysteryBox, setMysteryBox] = useState<MysteryBoxReward | null>(null);
   const [prevAttemptCount, setPrevAttemptCount] = useState(0);
   const [surpriseMult, setSurpriseMult] = useState(1);
@@ -94,6 +96,7 @@ export default function WordSearchModulePage({ params }: Props) {
     if (outcome.student) setStudent(outcome.student);
     setChestEarned(outcome.chestEarned);
     setBossJustUnlocked(outcome.bossOpenedNow);
+    setMissionOffered(outcome.missionOffered);
     setMysteryBox(outcome.mystery);
     setPhase("done");
   }
@@ -236,6 +239,7 @@ export default function WordSearchModulePage({ params }: Props) {
                 </div>
               )}
 
+              {missionOffered && <SecretMissionOffer />}
               {bossJustUnlocked && (
                 <div className="bg-red-50 dark:bg-red-900/30 border-2 border-red-300 dark:border-red-600 rounded-2xl p-3 mb-3 flex items-center gap-3 text-left">
                   <span className="text-3xl">⚔️</span>
@@ -262,6 +266,7 @@ export default function WordSearchModulePage({ params }: Props) {
                     setEarnedPoints(0);
                     setChestEarned(undefined);
                     setBossJustUnlocked(false);
+                    setMissionOffered(false);
                     setMysteryBox(null);
                     setSurpriseMult(1);
                     setPrevAttemptCount(0);

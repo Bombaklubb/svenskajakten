@@ -61,6 +61,7 @@ export default function StavningstestPage({ params }: Props) {
   const [showResult, setShowResult] = useState(false);
   const [chestEarned, setChestEarned] = useState<ChestType | undefined>();
   const [bossJustUnlocked, setBossJustUnlocked] = useState(false);
+  const [missionOffered, setMissionOffered] = useState(false);
   const [mysteryBox, setMysteryBox] = useState<MysteryBoxReward | null>(null);
   const [prevAttemptCount, setPrevAttemptCount] = useState(0);
   const [surpriseMult, setSurpriseMult] = useState(1);
@@ -167,6 +168,7 @@ export default function StavningstestPage({ params }: Props) {
       if (outcome.student) setStudent(outcome.student);
       setChestEarned(outcome.chestEarned);
       setBossJustUnlocked(outcome.bossOpenedNow);
+        setMissionOffered(outcome.missionOffered);
       setMysteryBox(outcome.mystery);
     }
     setResults(finalResults);
@@ -216,6 +218,7 @@ export default function StavningstestPage({ params }: Props) {
     setShowResult(false);
     setChestEarned(undefined);
     setBossJustUnlocked(false);
+    setMissionOffered(false);
     setMysteryBox(null);
     setSurpriseMult(1);
     setPrevAttemptCount(0);
@@ -480,6 +483,7 @@ export default function StavningstestPage({ params }: Props) {
           passedOverride={testPassed}
           prevAttempts={prevAttemptCount}
           surpriseMultiplier={surpriseMult}
+          missionOffered={missionOffered}
           subtitle={
             totalCorrect === totalWords
               ? "🎉 Perfekt! Alla ord rätt – testet klarat!"

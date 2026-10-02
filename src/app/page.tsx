@@ -19,6 +19,8 @@ import { STAGES, getStage } from "@/lib/stages";
 import { MODULE_COUNTS } from "@/lib/moduleCounts";
 import { getThemeClassName, getThemeWrapperClass } from "@/lib/shop";
 import ThemeBackdrop from "@/components/ui/ThemeBackdrop";
+import SecretStar from "@/components/ui/SecretStar";
+import { completedModulesInStage } from "@/lib/gamification";
 import { AvatarPicture } from "@/components/ui/FramedAvatar";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { NumberTicker } from "@/components/magicui/number-ticker";
@@ -226,7 +228,13 @@ export default function HomePage() {
       <ThemeBackdrop themeId={student.equippedTheme} />
       <Header student={student} onLogout={handleLogout} />
 
-      <main className="max-w-5xl mx-auto px-4 py-4">
+      <main className="relative max-w-5xl mx-auto px-4 py-4">
+        {/* Today's hidden star, in the world the pupil has done most in. */}
+        <SecretStar
+          spot="home"
+          stageId={[...STAGES].sort((a, b) => completedModulesInStage(student, b.id) - completedModulesInStage(student, a.id))[0]?.id}
+          student={student}
+        />
         {dailyBonus !== null && (
           <BlurFade delay={0} className="mb-4">
             <div

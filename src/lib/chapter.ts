@@ -19,6 +19,7 @@ import {
   completedModulesInStage,
 } from "./gamification";
 import { ACHIEVEMENTS, isUnlocked } from "./achievements";
+import { rollChapterMission } from "./secretMission";
 
 export type ChapterKind = "grammar" | "spelling" | "wordsearch" | "stavningstest";
 
@@ -32,6 +33,8 @@ export interface FinishChapterInput {
   passed: boolean;
   /** Mystery box roll, injectable so tests do not depend on chance. */
   rollMystery?: (badges: string[]) => MysteryBoxReward | null;
+  /** Skips the secret-mission roll, for tests that count exact rewards. */
+  noMission?: boolean;
 }
 
 export interface FinishChapterResult {
@@ -51,6 +54,8 @@ export interface FinishChapterResult {
   mystery: MysteryBoxReward | null;
   /** True when something could not be saved to the device. */
   saveFailed: boolean;
+  /** True when this passed chapter turned up today's secret mission (see secretMission.ts). */
+  missionOffered: boolean;
 }
 
 function unlockedIds(student: StudentData): string[] {
@@ -87,7 +92,7 @@ export function finishChapter(input: FinishChapterInput): FinishChapterResult {
   if (!before) {
     return {
       student: null, wasAlreadyCompleted: false, prevAttempts: 0, newChests: [],
-      bossOpenedNow: false, mystery: null, saveFailed: false,
+      bossOpenedNow: false, mystery: null, saveFailed: false, missionOffered: false,
     };
   }
 
@@ -158,6 +163,10 @@ export function finishChapter(input: FinishChapterInput): FinishChapterResult {
   });
   saveFailed = saveFailed || hasSaveFailed();
 
+  // A passed chapter may turn up the secret mission. Not on top of a mystery
+  // box, which already has its own popup after the result screen.
+  const missionOffered = passed && !mystery && !input.noMission && rollChapterMission(stageId);
+
   return {
     student: after,
     wasAlreadyCompleted,
@@ -168,5 +177,6 @@ export function finishChapter(input: FinishChapterInput): FinishChapterResult {
     bossOpenedNow: !gateBefore.unlocked && gateAfter.unlocked,
     mystery,
     saveFailed,
+    missionOffered,
   };
 }

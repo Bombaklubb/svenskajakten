@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import SecretMissionOffer from "@/components/ui/SecretMissionOffer";
 import type { ChestType } from "@/lib/types";
 import { getPointsMultiplier } from "@/lib/gamification";
 import { Button } from "@/components/ui/button";
@@ -44,6 +45,8 @@ interface ResultModalProps {
   prevAttempts?: number;
   /** Surprise bonus: 2 = double points, 3 = triple points (1/undefined = none) */
   surpriseMultiplier?: number;
+  /** Shows the one-time secret-mission offer (see secretMission.ts). */
+  missionOffered?: boolean;
 }
 
 export default function ResultModal({
@@ -59,6 +62,7 @@ export default function ResultModal({
   subtitle,
   prevAttempts = 0,
   surpriseMultiplier = 1,
+  missionOffered = false,
 }: ResultModalProps) {
   // Escape closes the dialog the same way "Fortsätt" does.
   useEffect(() => {
@@ -199,6 +203,8 @@ export default function ResultModal({
             </div>
           </div>
         )}
+
+        {missionOffered && <SecretMissionOffer />}
 
         {/* The buttons stick to the bottom of the screen while the card scrolls,
             so they are always reachable — a result with many boxes (replay,

@@ -400,6 +400,10 @@ export default function OmPage() {
               kistor och köp.
             </li>
             <li>
+              <strong>Håll ögonen öppna.</strong> Ibland, när du har jobbat en stund, dyker något
+              hemligt upp i appen. Mer än så avslöjar vi inte.
+            </li>
+            <li>
               <strong>Mörkt läge</strong> slås på med måne-knappen uppe till höger.
             </li>
             <li>

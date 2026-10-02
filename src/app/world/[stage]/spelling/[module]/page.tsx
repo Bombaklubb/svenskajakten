@@ -48,6 +48,7 @@ export default function SpellingModulePage({ params }: Props) {
   const [showResult, setShowResult] = useState(false);
   const [chestEarned, setChestEarned] = useState<ChestType | undefined>();
   const [bossJustUnlocked, setBossJustUnlocked] = useState(false);
+  const [missionOffered, setMissionOffered] = useState(false);
   const [mysteryBox, setMysteryBox] = useState<MysteryBoxReward | null>(null);
   const [prevAttemptCount, setPrevAttemptCount] = useState(0);
   const [surpriseMult, setSurpriseMult] = useState(1);
@@ -156,6 +157,7 @@ export default function SpellingModulePage({ params }: Props) {
         if (outcome.student) setStudent(outcome.student);
         setChestEarned(outcome.chestEarned);
         setBossJustUnlocked(outcome.bossOpenedNow);
+        setMissionOffered(outcome.missionOffered);
         setMysteryBox(outcome.mystery);
       }
       setShowResult(true);
@@ -173,6 +175,7 @@ export default function SpellingModulePage({ params }: Props) {
     setShowResult(false);
     setChestEarned(undefined);
     setBossJustUnlocked(false);
+    setMissionOffered(false);
     setMysteryBox(null);
     setSurpriseMult(1);
     setPrevAttemptCount(0);
@@ -372,6 +375,7 @@ export default function SpellingModulePage({ params }: Props) {
           onRetry={handleRetry}
           prevAttempts={prevAttemptCount}
           surpriseMultiplier={surpriseMult}
+          missionOffered={missionOffered}
         />
       )}
 

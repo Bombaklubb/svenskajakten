@@ -5,6 +5,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/ui/Header";
 import ModuleCard from "@/components/ui/ModuleCard";
+import SecretStar from "@/components/ui/SecretStar";
 import FinalTestCard from "@/components/ui/FinalTestCard";
 import { loadStudent, loadRetryQueue, removeFromRetryQueue, addPointsToStored, hasDoneModuleToday, loadGamification } from "@/lib/storage";
 import { getStage } from "@/lib/stages";
@@ -190,7 +191,8 @@ export default function WorldPage({ params }: Props) {
         </div>
       )}
 
-      <main className="max-w-5xl mx-auto px-4 py-8">
+      <main className="relative max-w-5xl mx-auto px-4 py-8">
+        <SecretStar spot="world" stageId={stage.id} student={student} />
         {/* Tabs */}
         <BlurFade delay={0.05} className="overflow-x-auto pb-1 mb-6">
           <div className="flex gap-1.5 bg-white dark:bg-gray-800 p-1.5 rounded-2xl w-max min-w-full border-2 border-sv-100 dark:border-gray-700" style={{ boxShadow: "0 2px 0 0 rgba(249,115,22,0.08), inset 0 1px 3px rgba(0,0,0,0.04)" }}>
@@ -519,7 +521,13 @@ export default function WorldPage({ params }: Props) {
                 <div className="flex items-center gap-2 mb-3 mt-2">
                   <span className="text-xl">⏱️</span>
                   <h3 className="font-black text-gray-800 dark:text-gray-100 text-base">Stavningstest på tid</h3>
-                  <span className="badge bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 border border-red-200 dark:border-red-700 text-xs">60 sek · Alla rätt krävs</span>
+                  <span className="badge bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 border border-red-200 dark:border-red-700 text-xs">
+                    {(() => {
+                      const first = (content.stavningstest ?? [])[0];
+                      const perWord = first && first.words.length ? Math.round((first.timeLimit ?? 150) / first.words.length) : null;
+                      return `${perWord ? `${perWord} sek per ord · ` : ""}90 % rätt krävs`;
+                    })()}
+                  </span>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {(content.stavningstest ?? []).map((mod, idx, arr) => (
